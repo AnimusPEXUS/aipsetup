@@ -2,27 +2,28 @@ package aipsetup
 
 import (
 	"path/filepath"
-	"strings"
+
+	augfilepath "github.com/AnimusPEXUS/filepath"
 )
 
 func IsRootPath(path string) bool {
-	abs := filepath.Abs(path)
-	res:=augfilepath.Split(path)
+	res := augfilepath.Split(path)
 	return len(res) == 2 && res[0] == "" && res[1] == ""
-}
-
-func IsUsrPath(path string) bool {
 }
 
 func IsPathAHostRoot(path string) bool {
 
-	splitted := filepath.SplitList(dir_i)
+	splitted := augfilepath.Split(path)
 
-	if len(splitted) != 2 {
+	if len(splitted) != 3 {
 		return false
 	}
 
-	if splitted[0] != MULTIHOST_DIR_NAME {
+	if splitted[0] != "" {
+		return false
+	}
+
+	if splitted[1] != MULTIHOST_DIR_NAME {
 		return false
 	}
 
@@ -32,17 +33,21 @@ func IsPathAHostRoot(path string) bool {
 
 func IsPathAnArchDir(path string) bool {
 
-	splitted := filepath.SplitList(dir_i)
+	splitted := augfilepath.Split(path)
 
-	if len(splitted) != 4 {
+	if len(splitted) != 5 {
 		return false
 	}
 
-	if splitted[0] != MULTIHOST_DIR_NAME {
+	if splitted[0] != "" {
 		return false
 	}
 
-	if splitted[2] != MULTIARCH_DIR_NAME {
+	if splitted[1] != MULTIHOST_DIR_NAME {
+		return false
+	}
+
+	if splitted[3] != MULTIARCH_DIR_NAME {
 		return false
 	}
 
@@ -52,11 +57,13 @@ func IsPathAnArchDir(path string) bool {
 
 func NameIsLibDirName(base_dir_name string) bool {
 
-	if !strings.HasPrefix(base_dir_name, "lib") {
-		return false
+	for _, i := range []string{"lib", "libx32", "lib64"} {
+		if i == base_dir_name {
+			return true
+		}
 	}
 
-	return true
+	return false
 
 }
 

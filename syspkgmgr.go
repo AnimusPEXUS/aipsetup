@@ -3,18 +3,20 @@ package aipsetup
 import (
 	"bytes"
 	"errors"
+	"fmt"
 	"io"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"github.com/ulikunitz/xz"
-	
+
 	augfilepath "github.com/AnimusPEXUS/filepath"
 )
 
 type SystemPackages struct {
-	system *System
+	Sys *System
 }
 
 func NewSystemPackages(system *System) *SystemPackages {
@@ -24,16 +26,12 @@ func NewSystemPackages(system *System) *SystemPackages {
 	)
 
 	ret = new(SystemPackages)
-	ret.system = system
+	ret.Sys = system
 
 	return ret
 }
 
-func (self *SystemPackages) InstallASP(filename string) int {
-	return 1
-}
-
-func (self *SystemPackages) UninstallASP(filename string) int {
+func (self *SystemPackages) UninstallName(filename string) int {
 	return 1
 }
 
@@ -45,7 +43,7 @@ func (self *SystemPackages) ListInstalledASPs(host, arch string) []string {
 
 	asps := make([]string, 0)
 
-	dir, err := os.Open(self.system.GetInstalledASPDir())
+	dir, err := os.Open(self.Sys.GetInstalledASPDir())
 	if dir != nil && err == nil {
 		files_in_dir, err := dir.Readdir(-1)
 		if files_in_dir != nil && err == nil {
@@ -125,7 +123,7 @@ func (self *SystemPackages) GenASPFileListPath(
 	aspname string,
 ) string {
 	aspname = NormalizeASPName(aspname)
-	return path.Join(self.system.GetInstalledASPDir(), aspname) + ".xz"
+	return augfilepath.Join(self.Sys.GetInstalledASPDir(), aspname) + ".xz"
 }
 
 func (self *SystemPackages) IsASPInstalled(
@@ -205,7 +203,7 @@ func (self *SystemPackages) ListInstalledASPFiles(
 	}
 	if ret_err == nil {
 		parsed_name := NewASPNameParsedFromString(aspname)
-		sys := self.system
+		sys := self.Sys
 		if parsed_name != nil {
 			ret = &ListInstalledASPFilesResult{
 				ret_lst,
@@ -223,121 +221,147 @@ func (self *SystemPackages) ListInstalledASPFiles(
 func (self *SystemPackages) RemoveASP(
 	aspname string,
 	keepnewest bool,
-	exclude_so_files_removal_from_lib_dirs bool,
+	exclude_shared_object_files bool,
 ) error {
 
-	aspname = NormalizeASPName(aspname)
-
-	if !self.IsASPInstalled(aspname) {
-		return errors.New("such ASP not presen in the system")
-	}
-
-	parsed_name_aspname := NewASPNameParsedFromString(aspname)
-
-	all_asps = self.ListInstalledPackageNameASPs(
-		parsed_name_aspname.Name,
-		parsed_name_aspname.Host,
-		parsed_name_aspname.Arch,
+	var (
+		files_which_need_to_be_removed *ListInstalledASPFilesResult
+		files_which_need_to_be_keeped  *ListInstalledASPFilesResult
 	)
 
-	switch len(all_asps) {
-	case 0:
-		panic("this shouldn't been happen. programming error")
-	case 1:
-		if keepnewest {
+	{
+
+		var err error
+
+		aspname = NormalizeASPName(aspname)
+
+		if !self.IsASPInstalled(aspname) {
+			return errors.New("such ASP not presen in the system")
+		}
+
+		parsed_name_aspname := NewASPNameParsedFromString(aspname)
+
+		all_asps := self.ListInstalledPackageNameASPs(
+			parsed_name_aspname.Name,
+			parsed_name_aspname.Host,
+			parsed_name_aspname.Arch,
+		)
+
+		sort.Sort(ASPNameSorter(all_asps))
+
+		if len(all_asps) == 0 {
+			panic("this shouldn't been happen. programming error")
+		}
+
+		files_which_need_to_be_removed, err = self.ListInstalledASPFiles(aspname)
+		if files_which_need_to_be_removed == nil || err != nil {
 			return errors.New(
-				"last ASP of name can't be removed. use name removal cmd",
+				"self.ListInstalledASPFiles(apsname) returned nil. " +
+					err.Error(),
 			)
 		}
+
+		if keepnewest {
+			newest := all_asps[len(all_asps)-1]
+
+			if keepnewest && newest == aspname {
+				return errors.New(
+					"last ASP of name can't be removed. use name removal cmd",
+				)
+			}
+
+			files_which_need_to_be_keeped, err = self.ListInstalledASPFiles(newest)
+
+			if files_which_need_to_be_keeped == nil || err != nil {
+				return errors.New(
+					"self.ListInstalledASPFiles(newest) returned nil. " +
+						err.Error(),
+				)
+			}
+		}
+
 	}
 
-	sort.Sort(ASPNameSorter(all_asps))
-
-	//exclusions := ([]*ListInstalledASPFilesResult){}
-
-	if keepnewest {
-		newest := all_asps[len(all_asps)-1]
-
-		all_asps = all_asps[:len(all_asps)-1]
-
-	}
-
-	if aspname == newest && keepnewest {
-		return errors.New(
-			"can not remove already latest asp, " +
-				"while keeping lates at the same time",
-		)
-	}
-
-	// newest_files :=
-
-	return nil
+	return self.RemoveASPFiles(
+		files_which_need_to_be_removed,
+		files_which_need_to_be_keeped,
+		exclude_shared_object_files,
+	)
 }
 
 func (self *SystemPackages) RemoveASPFiles(
 	files_which_need_to_be_removed *ListInstalledASPFilesResult,
 	files_which_need_to_be_keeped *ListInstalledASPFilesResult,
-	exclude_so_files_removal_from_lib_dirs bool,
+	exclude_shared_object_files bool,
 ) error {
 
-	ret := error(nil)
+	var (
+		ret error
+	)
 
-	{
-		if files_which_need_to_be_removed == nil {
-			panic("files_which_need_to_be_removed == nil")
-		}
-
-		if files_which_need_to_be_removed.Sys == nil {
-			panic("files_which_need_to_be_removed.Sys == nil")
-		}
-
-		if files_which_need_to_be_keeped != nil &&
-			files_which_need_to_be_removed.Sys != files_which_need_to_be_keeped.Sys {
-			panic(
-				"files_which_need_to_be_removed.Sys !=" +
-					" files_which_need_to_be_keeped.Sys",
-			)
-		}
+	if files_which_need_to_be_removed == nil {
+		panic("files_which_need_to_be_removed == nil")
 	}
 
-	if ret == nil {
-	removing_files:
+	if files_which_need_to_be_removed.Sys == nil {
+		panic("files_which_need_to_be_removed.Sys == nil")
+	}
 
-		for _, i := range files_which_need_to_be_removed.FileList {
+	if files_which_need_to_be_keeped != nil &&
+		files_which_need_to_be_removed.Sys != files_which_need_to_be_keeped.Sys {
+		panic(
+			"files_which_need_to_be_removed.Sys !=" +
+				" files_which_need_to_be_keeped.Sys",
+		)
+	}
 
-			if files_which_need_to_be_keeped != nil {
+removing_files:
+	for _, i := range files_which_need_to_be_removed.FileList {
 
-				for _, j := range files_which_need_to_be_keeped.FileList {
+		rooted_i := augfilepath.Join(self.Sys.Root(), i)
 
-					if i == j {
-						continue removing_files
-					}
+		if files_which_need_to_be_keeped != nil {
 
+			for _, j := range files_which_need_to_be_keeped.FileList {
+
+				if i == j {
+					// debug
+					//fmt.Println("skipping newer file", j)
+					continue removing_files
 				}
 
 			}
-
-			abs_i := filepath.Abs(i)
-			dir_abs_i := filepath.Dir(abs_i)
-			base_dir_abs_i := filepath.Base(dir_abs_i)
-
-			if exclude_so_files_removal_from_lib_dirs {
-
-				if IsPathAHostRoot(dir_abs_i) || IsPathAnArchDir(dir_abs_i) {
-
-					if strings.HasPrefix(base_dir_abs_i, "lib") {
-
-					}
-
-				}
-
-			}
-
-			fmt.Println("TODO: remove file", filepath.Join(self.Sys.Root(), i))
 
 		}
+
+		abs_i, err := filepath.Abs(i)
+		if err != nil {
+			panic("can't evaluate filepath.Abs(i)")
+		}
+		dir_abs_i := filepath.Dir(abs_i)
+
+		if exclude_shared_object_files && IsALibDirPath(dir_abs_i) {
+
+			mutched, err := filepath.Match("*.so*", filepath.Base(i))
+			if err != nil {
+				panic("looks like unpredicted error")
+			}
+
+			if mutched {
+				// debug
+				//fmt.Println("skipping .so file", rooted_i)
+
+				continue removing_files
+			}
+		}
+
+		fmt.Println("TODO: remove file", rooted_i)
 
 	}
 
 	return ret
+}
+
+func (self *SystemPackages) InstallASP(filename string) int {
+	return 1
 }

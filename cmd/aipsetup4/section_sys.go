@@ -34,6 +34,11 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 				Name:     "asp-files",
 				Callable: CmdAipsetupSysASPFiles,
 			},
+
+			&cliapp.AppCmdNode{
+				Name:     "asp-rm",
+				Callable: CmdAipsetupSysRemoveASP,
+			},
 		},
 	}
 
@@ -48,32 +53,20 @@ func CmdAipsetupSysAllAsps(
 	arg0 string,
 	pass_data *interface{},
 ) *cliapp.AppResult {
-	root := "/"
-	host := ""
-	arch := ""
 
-	root_opt := ReturnStdOptRoot(getopt_result)
+	var (
+		host string
+		arch string
+		sys  *aipsetup.System
+	)
 
-	if root_opt != nil {
-		root = *root_opt
-	}
+	{
+		var fast_ret *cliapp.AppResult
 
-	sys := aipsetup.NewSystem(root)
+		_, host, arch, sys, fast_ret = CmdRoutineRootHostArchSys(getopt_result)
 
-	host_opt, arch_opt := ReturnStdOptHostArch(getopt_result, sys.Host())
-
-	if host_opt != nil {
-		host = *host_opt
-	}
-
-	if arch_opt != nil {
-		arch = *arch_opt
-	}
-
-	if arch != "" && host == "" {
-		return &cliapp.AppResult{
-			Code:    10,
-			Message: "if host is empty, arch must be empty also",
+		if fast_ret != nil {
+			return fast_ret
 		}
 	}
 
@@ -99,32 +92,20 @@ func CmdAipsetupSysAllNames(
 	arg0 string,
 	pass_data *interface{},
 ) *cliapp.AppResult {
-	root := "/"
-	host := ""
-	arch := ""
 
-	root_opt := ReturnStdOptRoot(getopt_result)
+	var (
+		host string
+		arch string
+		sys  *aipsetup.System
+	)
 
-	if root_opt != nil {
-		root = *root_opt
-	}
+	{
+		var fast_ret *cliapp.AppResult
 
-	sys := aipsetup.NewSystem(root)
+		_, host, arch, sys, fast_ret = CmdRoutineRootHostArchSys(getopt_result)
 
-	host_opt, arch_opt := ReturnStdOptHostArch(getopt_result, sys.Host())
-
-	if host_opt != nil {
-		host = *host_opt
-	}
-
-	if arch_opt != nil {
-		arch = *arch_opt
-	}
-
-	if arch != "" && host == "" {
-		return &cliapp.AppResult{
-			Code:    10,
-			Message: "if host is empty, arch must be empty also",
+		if fast_ret != nil {
+			return fast_ret
 		}
 	}
 
@@ -152,40 +133,33 @@ func CmdAipsetupSysNameASPs(
 	arg0 string,
 	pass_data *interface{},
 ) *cliapp.AppResult {
-	root := "/"
-	host := ""
-	arch := ""
 
-	name := ""
+	var (
+		// root string = "/"
+		host string
+		arch string
+		name string
 
-	if len(getopt_result.Args) != 1 {
-		return &cliapp.AppResult{Code: 10, Message: "one argument is required"}
+		sys *aipsetup.System
+	)
+
+	{
+		var fast_ret *cliapp.AppResult
+
+		_, host, arch, sys, fast_ret = CmdRoutineRootHostArchSys(getopt_result)
+
+		if fast_ret != nil {
+			return fast_ret
+		}
 	}
 
-	name = getopt_result.Args[0]
+	{
+		var fast_ret *cliapp.AppResult
 
-	root_opt := ReturnStdOptRoot(getopt_result)
+		name, fast_ret = CmdRoutineASPName(getopt_result)
 
-	if root_opt != nil {
-		root = *root_opt
-	}
-
-	sys := aipsetup.NewSystem(root)
-
-	host_opt, arch_opt := ReturnStdOptHostArch(getopt_result, sys.Host())
-
-	if host_opt != nil {
-		host = *host_opt
-	}
-
-	if arch_opt != nil {
-		arch = *arch_opt
-	}
-
-	if arch != "" && host == "" {
-		return &cliapp.AppResult{
-			Code:    10,
-			Message: "if host is empty, arch must be empty also",
+		if fast_ret != nil {
+			return fast_ret
 		}
 	}
 
@@ -221,7 +195,7 @@ func CmdAipsetupSysASPFiles(
 	)
 
 	{
-		var fast_ret *cliapp.AppResult = nil
+		var fast_ret *cliapp.AppResult
 
 		_, sys, fast_ret = CmdRoutineRootSys(getopt_result)
 
@@ -231,7 +205,7 @@ func CmdAipsetupSysASPFiles(
 	}
 
 	{
-		var fast_ret *cliapp.AppResult = nil
+		var fast_ret *cliapp.AppResult
 
 		name, fast_ret = CmdRoutineASPName(getopt_result)
 
@@ -259,6 +233,54 @@ func CmdAipsetupSysASPFiles(
 
 	for ii, i := range files {
 		fmt.Printf(print_fmt, ii, i)
+	}
+
+	return &cliapp.AppResult{Code: 0}
+}
+
+func CmdAipsetupSysRemoveASP(
+	getopt_result *cliapp.GetOptResult,
+	available_options cliapp.GetOptCheckList,
+	depth_level []string,
+	subnode *cliapp.AppCmdNode,
+	rootnode *cliapp.AppCmdNode,
+	arg0 string,
+	pass_data *interface{},
+) *cliapp.AppResult {
+
+	var (
+		//	root string
+		asp string
+		sys *aipsetup.System
+	)
+
+	{
+		var fast_ret *cliapp.AppResult
+
+		_, sys, fast_ret = CmdRoutineRootSys(getopt_result)
+
+		if fast_ret != nil {
+			return fast_ret
+		}
+	}
+
+	{
+		var fast_ret *cliapp.AppResult
+
+		asp, fast_ret = CmdRoutineASPName(getopt_result)
+
+		if fast_ret != nil {
+			return fast_ret
+		}
+	}
+
+	err := sys.Asps().RemoveASP(asp, true, true)
+
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    10,
+			Message: err.Error(),
+		}
 	}
 
 	return &cliapp.AppResult{Code: 0}
