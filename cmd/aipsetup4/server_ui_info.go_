@@ -1,0 +1,198 @@
+package main
+
+import (
+	"bytes"
+	"fmt"
+	"html"
+	"html/template"
+	"io"
+	"net/http"
+	"net/url"
+	"sort"
+
+	"github.com/eknkc/amber"
+
+	"github.com/AnimusPEXUS/aipsetup"
+)
+
+var INFO_SERVER_SEARCH_FORM string = `
+	form[action="/goto"][method="GET"]
+		table
+			tr
+				td[colspan="2"]
+					| Go To Package Information
+			tr
+				td
+					| Package Name
+				td
+					input[type="text"][name="name"]
+			tr
+				td
+					| Output Format
+				td
+					select[name="format"]
+						option[value="text"][default="default"] Text
+						option[value="yaml"] YAML
+						option[value="json"] JSON
+			tr
+				td[colspan="2"]
+					button[type="submit"] Submit
+`
+
+var INFO_SERVER_SEARCH_FORM_C *template.Template
+
+var INFO_SERVER_BODY_HEADER string = `
+			div
+				div
+					h1 #{IndexPageTitle}
+				div
+					#{SearchForm}
+`
+
+var INFO_SERVER_BODY_HEADER_C *template.Template
+
+type INFO_SERVER_BODY_HEADER_S struct {
+	IndexPageTitle string
+	SearchForm     template.HTML
+}
+
+var INFO_SERVER_ALL_INDEX_BODY = `
+each $i in List
+	a[href="/html/#{i}"] 
+		| #{$i}
+`
+
+var INFO_SERVER_ALL_INDEX_BODY_C *template.Template
+
+func init() {
+	var err error
+
+	INFO_SERVER_SEARCH_FORM_C, err =
+		amber.Compile(INFO_SERVER_SEARCH_FORM, amber.Options{PrettyPrint: true})
+	if err != nil {
+		panic(err.Error())
+	}
+
+	INFO_SERVER_BODY_HEADER_C, err =
+		amber.Compile(INFO_SERVER_BODY_HEADER, amber.Options{PrettyPrint: true})
+	if err != nil {
+		panic(err.Error())
+	}
+
+	INFO_SERVER_ALL_INDEX_BODY_C, err =
+		amber.Compile(INFO_SERVER_ALL_INDEX_BODY, amber.Options{PrettyPrint: true})
+	if err != nil {
+		panic(err.Error())
+	}
+
+	/*
+		INFO_SERVER_ALL_INDEX_BODY_C, err =
+			template.New("name").Parse(INFO_SERVER_ALL_INDEX_BODY)
+		if err != nil {
+			panic(err.Error())
+		}
+	*/
+
+}
+
+func InfoServerNormalPage(
+	w io.Writer,
+	title string,
+	body template.HTML,
+) error {
+
+	var err error
+
+	sf := bytes.Buffer{}
+
+	INFO_SERVER_SEARCH_FORM_C.Execute(&sf, nil)
+
+	bh := bytes.Buffer{}
+
+	INFO_SERVER_BODY_HEADER_C.Execute(
+		&bh,
+		INFO_SERVER_BODY_HEADER_S{
+			IndexPageTitle: title,
+			SearchForm:     template.HTML(sf.String()),
+		},
+	)
+
+	err = WriteOveralHtmlTemplate(
+		w,
+		title,
+		template.HTML(bh.String()),
+		body,
+		template.HTML(""),
+	)
+
+	return err
+}
+
+func InfoServerIndexPage(w *http.ResponseWriter) error {
+
+	var err error
+
+	page_title := "AIPSETUP Package Info Index"
+
+	err = InfoServerNormalPage(
+		*w,
+		page_title,
+		template.HTML(
+			`This server main goal, is to serve as information about
+			 tarball relations to the AIPSETUP package name binding, 
+			 package building, package installation and removal
+			 `,
+		),
+	)
+
+	return err
+}
+
+func InfoServerAllPage(
+	w *http.ResponseWriter,
+	info_lst []string,
+) error {
+
+	var err error
+
+	page_title := "AIPSETUP Package Info Index :: All Packages"
+
+	ab := bytes.Buffer{}
+
+	sort.Strings(info_lst)
+
+	ab.Write([]byte(fmt.Sprintf("<div>Items count %d</div>\n", len(info_lst))))
+	ab.Write([]byte("<table>\n"))
+
+	for _, i := range info_lst {
+		hes := html.EscapeString(i)
+		qes := html.EscapeString(url.QueryEscape(i))
+		ab.Write(
+			[]byte(fmt.Sprintf(
+				"<tr><td><a href=\"/html/%s\">%s</a></td>"+
+					"<td><a href=\"/json/%s\">json</a></td>"+
+					"<td><a href=\"/yaml/%s\">yaml</a></td></tr>\n",
+				qes,
+				hes,
+				qes,
+				qes,
+			),
+			))
+	}
+
+	ab.Write([]byte("</table>\n"))
+
+	err = InfoServerNormalPage(
+		*w,
+		page_title,
+		template.HTML(ab.String()),
+	)
+
+	return err
+}
+
+func InfoServerHtmlInfo(
+	w *http.ResponseWriter,
+	i *aipsetup.CompletePackageInfo,
+) {
+}

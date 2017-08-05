@@ -1,0 +1,65 @@
+package main
+
+import (
+	"io"
+
+	"html/template"
+
+	"github.com/eknkc/amber"
+)
+
+var (
+	OVERAL_HTML_TEMPLATE string = `
+doctype 5
+html
+	head
+		title #{Title}
+	body
+			#{BodyHeader}
+			#{BodyMiddle}
+			#{BodyFooter}
+			div
+				| developed by github.com/AnimusPEXUS 2017
+`
+
+	OVERAL_HTML_TEMPLATE_C *template.Template
+)
+
+type (
+	OVERAL_HTML_TEMPLATE_S struct {
+		Title      string
+		BodyHeader template.HTML
+		BodyMiddle template.HTML
+		BodyFooter template.HTML
+	}
+)
+
+func init() {
+	var err error
+
+	OVERAL_HTML_TEMPLATE_C, err =
+		amber.Compile(OVERAL_HTML_TEMPLATE, amber.Options{PrettyPrint: true})
+	if err != nil {
+		panic(err.Error())
+	}
+
+}
+
+func WriteOveralHtmlTemplate(
+	w io.Writer,
+	title string,
+	body_header template.HTML,
+	body_middle template.HTML,
+	body_footer template.HTML,
+) error {
+	err := OVERAL_HTML_TEMPLATE_C.Execute(
+		w,
+		OVERAL_HTML_TEMPLATE_S{
+			Title:      title,
+			BodyHeader: body_header,
+			BodyMiddle: body_middle,
+			BodyFooter: body_footer,
+		},
+	)
+	return err
+}

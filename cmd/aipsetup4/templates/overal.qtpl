@@ -1,0 +1,33 @@
+
+
+{% func AipsetupServerOveralHtmlPage(
+    title      string, 
+    body_head  string,
+    body_middle string,
+    body_foot  string,
+    ) 
+%}<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>{%s title %}</title>
+        <link rel="stylesheet" href="/css.css" />
+    </head>
+    <body>
+        <div id="body_head">{%s= body_head %}</div>
+        <div id="body_middle">{%s= body_middle %}</div>
+        <div id="body_foot">{%s= body_foot %}</div>
+        <div id="developerinfo">developed by github.com/AnimusPEXUS 2017</div>
+    </body>
+</html>
+{% endfunc %}
+
+
+{% func OveralBodyHeader(text string, additions string) %}
+<div>
+<h1>{%s text %}</h1>
+<div>
+{%s= additions %}
+</div>
+</div>
+{% endfunc %}
+

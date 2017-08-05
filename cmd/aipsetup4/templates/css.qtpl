@@ -1,0 +1,47 @@
+
+{% func OveralBodyHeader(text string, additions string) %}
+<div>
+<h1>{%s text %}</h1>
+<div>
+{%s= additions %}
+</div>
+</div>
+{% endfunc %}
+
+{% func OveralCSS() %}
+
+html, body {
+    display: block;
+
+    position: absolute;
+
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    border 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+div#developerinfo {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: cyan;
+}
+
+div#body_middle {
+    position: fixed;
+    overflow: scroll;
+    top: 200px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+}
+
+{% endfunc %}
+
