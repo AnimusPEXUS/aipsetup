@@ -1,6 +1,7 @@
 package aipsetup
 
 import (
+	"errors"
 	"fmt"
 	"path"
 	"regexp"
@@ -51,7 +52,7 @@ func NormalizeASPName(aspname string) string {
 	return aspname
 }
 
-func NewASPNameParsedFromString(str string) *ASPNameParsed {
+func NewASPNameParsedFromString(str string) (*ASPNameParsed, error) {
 
 	var ret *ASPNameParsed = nil
 
@@ -59,33 +60,37 @@ func NewASPNameParsedFromString(str string) *ASPNameParsed {
 
 	str = NormalizeASPName(str)
 
+	if !ASP_NAME_REGEXPS_AIPSETUP3_COMPILED.MatchString(str) {
+		return nil, errors.New("not matching ASP name regexp")
+	}
+
 	parsed_strs :=
 		ASP_NAME_REGEXPS_AIPSETUP3_COMPILED.FindStringSubmatch(str)
 
-	if parsed_strs != nil {
-
-		ret = new(ASPNameParsed)
-
-		for ii, i := range ASP_NAME_REGEXPS_AIPSETUP3_COMPILED.SubexpNames() {
-			switch i {
-			case "name":
-				ret.Name = parsed_strs[ii]
-			case "version":
-				ret.Version = parsed_strs[ii]
-			case "status":
-				ret.Status = parsed_strs[ii]
-			case "timestamp":
-				ret.TimeStamp = parsed_strs[ii]
-			case "host":
-				ret.Host = parsed_strs[ii]
-			case "arch":
-				ret.Arch = parsed_strs[ii]
-			}
-		}
-
+	if parsed_strs == nil {
+		return nil, errors.New("Can't parse given str as ASP name")
 	}
 
-	return ret
+	ret = new(ASPNameParsed)
+
+	for ii, i := range ASP_NAME_REGEXPS_AIPSETUP3_COMPILED.SubexpNames() {
+		switch i {
+		case "name":
+			ret.Name = parsed_strs[ii]
+		case "version":
+			ret.Version = parsed_strs[ii]
+		case "status":
+			ret.Status = parsed_strs[ii]
+		case "timestamp":
+			ret.TimeStamp = parsed_strs[ii]
+		case "host":
+			ret.Host = parsed_strs[ii]
+		case "arch":
+			ret.Arch = parsed_strs[ii]
+		}
+	}
+
+	return ret, nil
 }
 
 type ASPNameSorter []string
@@ -99,11 +104,19 @@ func (self ASPNameSorter) Swap(i, j int) {
 }
 
 func (self ASPNameSorter) Less(i, j int) bool {
-	ni := NewASPNameParsedFromString(self[i])
-	nj := NewASPNameParsedFromString(self[j])
+	// sorter construction. only bool is valid return type
+
+	ni, err := NewASPNameParsedFromString(self[i])
+	if err != nil {
+		panic(err)
+	}
+	nj, err := NewASPNameParsedFromString(self[j])
+	if err != nil {
+		panic(err)
+	}
 
 	if ni.Host != nj.Host || ni.Arch != nj.Arch {
-		panic("programming error: Hosts or Archs missmatch")
+		panic("Hosts or Archs missmatch")
 	}
 
 	return ni.TimeStamp < nj.TimeStamp

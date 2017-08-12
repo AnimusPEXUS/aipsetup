@@ -1,21 +1,23 @@
 
-{% import "sort" %}
+{%
+import (
+  "sort"
+  "fmt"
+
+  "github.com/AnimusPEXUS/aipsetup"
+  )
+%}
 
 {% func InfoServerSearchForm() %}
 
 <form action="/goto" method="GET">
     <table>
         <tr>
-            <td colspan="2">Go To Package Information</td>
+            <td colspan="3">Go To Package Information</td>
         </tr>
 
         <tr>
-            <td>Package Name</td>
             <td><input type="text" name="name"/></td>
-        </tr>
-
-        <tr>
-            <td>Output Format</td>
             <td>
                 <select name="format">
                     <option value="text" default="default">Text</option>
@@ -23,9 +25,6 @@
                     <option value="json">JSON</option>
                 </select>
             </td>
-        </tr>
-
-        <tr>
             <td colspan="2"><button type="submit">Submit</button></td>
         </tr>
     </table>
@@ -59,7 +58,7 @@
     {% for _, i := range info_list %}
             <tr>
             <td>
-            <a href="/info/{%u i %}">{%s i %}</a>
+            <a href="/text/{%u i %}">{%s i %}</a>
             </td>
             <td>
             <a href="/json/{%u i %}">json</a>
@@ -87,6 +86,13 @@
 {% endfunc %}
 
 {% func InfoServerHtmlInfoPage(name string, info *aipsetup.CompletePackageInfo)
+%}{%= InfoServerNormalPage(
+    "AIPSETUP Package Info Index",
+    InfoServerHtmlInfoPageBlock(name, info),
+    )  %}{% endfunc %}
+
+
+{% func InfoServerHtmlInfoPageBlock(name string, info *aipsetup.CompletePackageInfo)
 %}
 
 <table>
@@ -143,7 +149,7 @@
             Removable
         </td>
         <td>
-            {%s info.Removable %}
+            {%s fmt.Sprintf("%v", info.Removable) %}
         </td>
         <td>
             Is package can be removed automatically?
@@ -154,7 +160,7 @@
             Reducible
         </td>
         <td>
-            {%s info.Reducible %}
+            {%s fmt.Sprintf("%v", info.Reducible) %}
         </td>
         <td>
             Is aipsetup able automatically reduce older package's version files
@@ -166,7 +172,7 @@
             Non Installable?
         </td>
         <td>
-            {%b info.NonInstallable %}
+            {%s fmt.Sprintf("%v", info.NonInstallable) %}
         </td>
         <td>
             Not an installable package
@@ -177,7 +183,7 @@
             Deprecated
         </td>
         <td>
-            {%b info.Deprecated %}
+            {%s fmt.Sprintf("%v", info.Deprecated) %}
         </td>
         <td>
             Is Package Geprecatred? aipsetup will refuse installing such files
@@ -188,7 +194,7 @@
             PrimaryInstallOnly
         </td>
         <td>
-            {%b PrimaryInstallOnly %}
+            {%s fmt.Sprintf("%v", info.PrimaryInstallOnly) %}
         </td>
         <td>
             Is package may be instaslled for other than primary architecture
@@ -268,7 +274,7 @@
             SourcePathPrefixes
         </td>
         <td>
-            {%s info.SourcePathPrefixes %}
+            {%s fmt.Sprintf("%v", info.SourcePathPrefixes) %}
         </td>
         <td>
             One more mechanism to filterout SRC server output.
@@ -290,7 +296,7 @@
             BuilderName
         </td>
         <td>
-            {%s BuilderName %}
+            {%s info.BuilderName %}
         </td>
         <td>
             Used by package building mechanism to select right builder code

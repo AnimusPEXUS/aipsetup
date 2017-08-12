@@ -14,6 +14,8 @@ func SectionAipsetupBuildBS() *cliapp.AppCmdNode {
 			&cliapp.AppCmdNode{
 				Name:     "init",
 				Callable: CmdAipsetupBuildBSInit,
+				MinArgs:  0,
+				MaxArgs:  1,
 			},
 		},
 	}
@@ -22,22 +24,13 @@ func SectionAipsetupBuildBS() *cliapp.AppCmdNode {
 
 func CmdAipsetupBuildBSInit(
 	getopt_result *cliapp.GetOptResult,
-	available_options cliapp.GetOptCheckList,
-	depth_level []string,
-	subnode *cliapp.AppCmdNode,
-	rootnode *cliapp.AppCmdNode,
-	arg0 string,
-	pass_data *interface{},
+	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
 	target_dir := "."
 
-	switch len(getopt_result.Args) {
-	case 0:
-	case 1:
+	if len(getopt_result.Args) != 0 {
 		target_dir = getopt_result.Args[0]
-	default:
-		return &cliapp.AppResult{Code: 10, Message: "too many arguments"}
 	}
 
 	bs_ctl, err := aipsetup.NewBuildingSiteCtl(target_dir)

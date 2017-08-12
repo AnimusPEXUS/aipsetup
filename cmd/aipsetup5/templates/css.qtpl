@@ -1,16 +1,28 @@
 
-{% func OveralBodyHeader(text string, additions string) %}
-<div>
-<h1>{%s text %}</h1>
-<div>
-{%s= additions %}
-</div>
-</div>
-{% endfunc %}
 
 {% func OveralCSS() %}
 
-html, body {
+/*
+html {
+    display: block;
+
+    position: absolute;
+
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    border 0px;
+    margin: 0px;
+    padding: 3px;
+
+    font-family: Go Mono;
+    font-size: 10px;
+}
+*/
+
+body {
     display: block;
 
     position: absolute;
@@ -23,7 +35,11 @@ html, body {
     border 0px;
     margin: 0px;
     padding: 0px;
+
+    font-family: Go Mono;
+    font-size: 10px;
 }
+
 
 
 div#developerinfo {
@@ -32,16 +48,16 @@ div#developerinfo {
     left: 0px;
     right: 0px;
     background: cyan;
+    height: 20px;
 }
 
 div#body_middle {
     position: fixed;
     overflow: scroll;
     top: 200px;
-    left: 20px;
-    right: 20px;
+    left: 0px;
+    right: 0px;
     bottom: 20px;
 }
 
 {% endfunc %}
-

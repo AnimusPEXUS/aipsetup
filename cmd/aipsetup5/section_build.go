@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/AnimusPEXUS/cliapp"
-)
+import "github.com/AnimusPEXUS/cliapp"
 
 func SectionAipsetupBuild() *cliapp.AppCmdNode {
 

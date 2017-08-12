@@ -1,11 +1,13 @@
 package aipsetup
 
 import (
+	"archive/tar"
 	"bytes"
 	"errors"
 	"fmt"
 	"io"
 	"os"
+	"path"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -35,7 +37,9 @@ func (self *SystemPackages) UninstallName(filename string) int {
 	return 1
 }
 
-func (self *SystemPackages) ListInstalledASPs(host, arch string) []string {
+func (self *SystemPackages) ListInstalledASPs(
+	host, arch string,
+) ([]string, error) {
 
 	if arch != "" && host == "" {
 		panic("if host is empty, arch must be empty also")
@@ -51,7 +55,12 @@ func (self *SystemPackages) ListInstalledASPs(host, arch string) []string {
 			for _, i := range files_in_dir {
 				if !i.IsDir() && strings.HasSuffix(i.Name(), ").xz") {
 
-					parsed_asp_name := NewASPNameParsedFromString(i.Name())
+					parsed_asp_name, err := NewASPNameParsedFromString(i.Name())
+					if err != nil {
+						return make([]string, 0),
+							errors.New("could not parse string as ASP name: " + i.Name())
+					}
+
 					if (host == "") ||
 						((host != "" && host == parsed_asp_name.Host) &&
 							((arch == "") || (arch != "" && arch == parsed_asp_name.Arch))) {
@@ -63,21 +72,33 @@ func (self *SystemPackages) ListInstalledASPs(host, arch string) []string {
 		}
 	}
 
-	return asps
+	return asps, nil
 }
 
 func (self *SystemPackages) ListInstalledPackageNames(
 	host, arch string,
-) []string {
+) ([]string, error) {
 
-	res := self.ListInstalledASPs(host, arch)
+	res, err := self.ListInstalledASPs(host, arch)
+	if err != nil {
+		return make([]string, 0),
+			errors.New(
+				"Error listing installed package names: " + err.Error(),
+			)
+	}
 
 	names := []string{}
 
 searching_missing_names:
 	for _, i := range res {
 
-		parsed_asp_name := NewASPNameParsedFromString(i)
+		parsed_asp_name, err := NewASPNameParsedFromString(i)
+		if err != nil {
+			return make([]string, 0),
+				errors.New(
+					"Can't parse package name: " + i,
+				)
+		}
 
 		for _, j := range names {
 			if parsed_asp_name.Name == j {
@@ -87,22 +108,33 @@ searching_missing_names:
 		names = append(names, parsed_asp_name.Name)
 	}
 
-	return names
+	return names, nil
 }
 
 func (self *SystemPackages) ListInstalledPackageNameASPs(
 	name string,
 	host, arch string,
-) []string {
+) ([]string, error) {
 
 	ret := []string{}
 
-	res := self.ListInstalledASPs(host, arch)
+	res, err := self.ListInstalledASPs(host, arch)
+	if err != nil {
+		return make([]string, 0), errors.New(
+			"Error listing installed package names: " + err.Error(),
+		)
+	}
 
 search:
 	for _, i := range res {
 
-		parsed_asp_name := NewASPNameParsedFromString(i)
+		parsed_asp_name, err := NewASPNameParsedFromString(i)
+		if err != nil {
+			return make([]string, 0),
+				errors.New(
+					"Can't parse package name: " + i,
+				)
+		}
 
 		if parsed_asp_name.Name != name {
 			continue search
@@ -116,7 +148,7 @@ search:
 		ret = append(ret, parsed_asp_name.String())
 	}
 
-	return ret
+	return ret, nil
 }
 
 func (self *SystemPackages) GenASPFileListPath(
@@ -202,17 +234,17 @@ func (self *SystemPackages) ListInstalledASPFiles(
 		}
 	}
 	if ret_err == nil {
-		parsed_name := NewASPNameParsedFromString(aspname)
-		sys := self.Sys
-		if parsed_name != nil {
+		parsed_name, err := NewASPNameParsedFromString(aspname)
+		if err != nil {
+			ret_err = errors.New("couldn't parse asp name")
+			ret = nil
+		} else {
+			sys := self.Sys
 			ret = &ListInstalledASPFilesResult{
 				ret_lst,
 				parsed_name,
 				sys,
 			}
-		} else {
-			ret_err = errors.New("couldn't parse asp name")
-			ret = nil
 		}
 	}
 	return ret, ret_err
@@ -239,13 +271,19 @@ func (self *SystemPackages) RemoveASP(
 			return errors.New("such ASP not presen in the system")
 		}
 
-		parsed_name_aspname := NewASPNameParsedFromString(aspname)
+		parsed_name_aspname, err := NewASPNameParsedFromString(aspname)
+		if err != nil {
+			return errors.New("Can't parse ASP name: " + aspname)
+		}
 
-		all_asps := self.ListInstalledPackageNameASPs(
+		all_asps, err := self.ListInstalledPackageNameASPs(
 			parsed_name_aspname.Name,
 			parsed_name_aspname.Host,
 			parsed_name_aspname.Arch,
 		)
+		if err != nil {
+			return err
+		}
 
 		sort.Sort(ASPNameSorter(all_asps))
 
@@ -336,7 +374,7 @@ removing_files:
 
 		abs_i, err := filepath.Abs(i)
 		if err != nil {
-			panic("can't evaluate filepath.Abs(i)")
+			panic("can't evaluate absolut path for filename")
 		}
 		dir_abs_i := filepath.Dir(abs_i)
 
@@ -362,6 +400,87 @@ removing_files:
 	return ret
 }
 
-func (self *SystemPackages) InstallASP(filename string) int {
-	return 1
+func (self *SystemPackages) InstallASP(filename string) error {
+
+	parsed, err := NewASPNameParsedFromString(filename)
+	if err != nil {
+		return err
+	}
+
+	host := parsed.Host
+	arch := parsed.Arch
+
+	if host == "" || arch == "" {
+		return errors.New("Invalid value for host or arch")
+	}
+
+	tar_file_obj, err := os.Open(filename)
+	if err != nil {
+		return err
+	}
+
+	defer tar_file_obj.Close()
+
+	tar_obj := tar.NewReader(tar_file_obj)
+
+	package_name := parsed.String()
+
+	var head *tar.Header
+
+	for {
+		var err error
+
+		head, err = tar_obj.Next()
+		if err != nil {
+			break
+		}
+
+		for _, i := range [][3]string{
+			{
+				"./06.LISTS/DESTDIR.lst.xz",
+				self.Sys.GetInstalledASPDir(),
+				"package's file list",
+			},
+			{
+				"./06.LISTS/DESTDIR.sha512.xz",
+				self.Sys.GetInstalledASPSumsDir(),
+				"package's check sums",
+			},
+			{
+				"./05.BUILD_LOGS.tar.xz",
+				self.Sys.GetInstalledASPBuildLogsDir(),
+				"package's buildlogs",
+			},
+			{
+				"./06.LISTS/DESTDIR.dep_c.xz",
+				self.Sys.GetInstalledASPDepsDir(),
+				"package's dependencies listing",
+			},
+		} {
+			var dst_dir string
+
+			if head.Name == i[0] {
+				dst_dir = path.Dir(i[1])
+				os.MkdirAll(dst_dir, 0755)
+			}
+
+			var dst_filename string
+
+			if i[0] == "./05.BUILD_LOGS.tar.xz" {
+				dst_filename = fmt.Sprintf("%s.tar.xz", package_name)
+			} else {
+				dst_filename = fmt.Sprintf("%s.xz", package_name)
+			}
+
+			dst_filename = path.Join(dst_dir, dst_filename)
+
+			dst_file_obj, err := os.Create(dst_filename)
+			if err != nil {
+				return err
+			}
+			io.Copy(dst_file_obj, tar_obj)
+		}
+	}
+
+	return nil
 }

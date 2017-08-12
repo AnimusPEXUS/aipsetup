@@ -11,41 +11,33 @@ import (
 	"strings"
 	"time"
 
+	"github.com/go-ini/ini"
 	"github.com/gorilla/mux"
 	"gopkg.in/yaml.v2"
 
 	"github.com/AnimusPEXUS/aipsetup"
 
-	"github.com/AnimusPEXUS/aipsetup/cmd/aipsetup4/templates"
+	"github.com/AnimusPEXUS/aipsetup/cmd/aipsetup5/templates"
 )
 
-type InfoServerConfig struct {
-	Host    string `yaml:"host"`
-	Port    int    `yaml:"port"`
-	Prefix  string `yaml:"prefix"`
-	InfoDir string `yaml:"info_dir"`
-}
-
 type InfoServer struct {
-	path     string
-	host     string
-	port     int
-	prefix   string //TODO: decide if this field is needed
-	info_dir string
+	//path    string
+	host    string
+	port    int
+	prefix  string //TODO: decide if this field is needed
+	infodir string
 
 	srv     *http.Server
 	handler *mux.Router
 }
 
-func NewInfoServerConfig() *InfoServerConfig {
-	ret := &InfoServerConfig{
-		Host:    "localhost",
-		Port:    8080,
-		Prefix:  "",
-		InfoDir: "info",
-	}
-	return ret
-}
+var INFO_SERVER_CONFIG = []byte(`
+[main]
+host = localhost
+port = 8080
+prefix =
+infodir = info
+`)
 
 func ReworkInfoDir(cfg_filename, info_dir string) (string, error) {
 
@@ -75,47 +67,41 @@ func ReworkInfoDir(cfg_filename, info_dir string) (string, error) {
 	return ret, nil
 }
 
-func (self *InfoServerConfig) YAMLString() (string, error) {
-	ret, err := yaml.Marshal(self)
-	return string(ret), err
-}
-
-func (self *InfoServerConfig) LoadFromFile(filename string) error {
-
-	yaml_file, err := ioutil.ReadFile(filename)
-
-	if err == nil {
-		if yaml.Unmarshal(yaml_file, self) != nil {
-			return err
-		}
-	}
-
-	return nil
-}
-
-func NewInfoServer(path string) (*InfoServer, error) {
+func NewInfoServer() (*InfoServer, error) {
 
 	var err error
 
 	ret := new(InfoServer)
 
-	ret.path = path
+	cfg_path := filepath.Join("/etc", "aipsetup5.info_server.ini")
 
-	cfg_file := filepath.Join(path, "aipsetup_info_server.cfg.yaml")
-
-	cfg := NewInfoServerConfig()
-
-	err = cfg.LoadFromFile(cfg_file)
-
+	cfg, err := ini.Load(INFO_SERVER_CONFIG)
 	if err != nil {
 		return nil, err
 	}
 
-	ret.host = cfg.Host
-	ret.port = cfg.Port
-	ret.prefix = cfg.Prefix
+	_, err = os.Stat(cfg_path)
+	if err != nil && !os.IsNotExist(err) {
+		return nil, err
+	}
 
-	ret.info_dir, err = ReworkInfoDir(cfg_file, cfg.InfoDir)
+	if !os.IsNotExist(err) {
+		cfg.Append(cfg_path)
+	} else {
+		fmt.Println("[w] config file not found")
+	}
+
+	sect, err := cfg.GetSection("main")
+	if err != nil {
+		return nil, err
+	}
+
+	ret.host = sect.Key("host").MustString("localhost")
+	ret.port = sect.Key("port").MustInt(8080)
+	ret.prefix = sect.Key("prefix").MustString("")
+	ret.infodir = sect.Key("infodir").MustString("info")
+
+	ret.infodir, err = ReworkInfoDir(cfg_path, ret.infodir)
 	if err != nil {
 		return nil, err
 	}
@@ -148,7 +134,7 @@ func NewInfoServer(path string) (*InfoServer, error) {
 
 func (self *InfoServer) infoFileName(name string) string {
 	return filepath.Join(
-		self.info_dir,
+		self.infodir,
 		fmt.Sprintf("%s.json", name),
 	)
 }
@@ -200,7 +186,7 @@ func (self *InfoServer) ListInfo() (
 		ret []string
 	)
 
-	dir, err = ioutil.ReadDir(self.info_dir)
+	dir, err = ioutil.ReadDir(self.infodir)
 	if err != nil {
 		return []string{}, err
 	}
@@ -226,7 +212,7 @@ func (self *InfoServer) requestGetName(req *http.Request) string {
 func (self *InfoServer) printInfoNotFoundError(w http.ResponseWriter) {
 	w.Header().Set("Content-Type", "text/plain;charset=UTF8")
 	w.WriteHeader(404)
-	w.Write(([]byte)("404. not found or some other error\n"))
+	w.Write(([]byte)("404. info not found or some other error\n"))
 	return
 }
 
@@ -329,12 +315,14 @@ func (self *InfoServer) RenderInfoText(
 	info, err = self.LoadInfo(name)
 	if err != nil || info == nil {
 		self.printInfoNotFoundError(w)
+		// w.Write([]byte(err.Error()))
 		return
 	}
 
 	w.Header().Set("Content-Type", "text/html;charset=UTF8")
 	w.WriteHeader(200)
 
+	w.Write([]byte(templates.InfoServerHtmlInfoPage(name, info)))
 	//templates.InfoServerIndexPage()
 
 	return

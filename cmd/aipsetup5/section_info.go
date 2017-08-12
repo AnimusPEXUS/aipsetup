@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	//"github.com/AnimusPEXUS/aipsetup"
+
 	"github.com/AnimusPEXUS/cliapp"
 )
 
@@ -18,7 +18,7 @@ func SectionAipsetupInfo() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
-				Name:     "print-server-example-config",
+				Name:     "serve-cfg",
 				Callable: CmdAipsetupInfoServePrintExampleConfig,
 			},
 		},
@@ -28,31 +28,17 @@ func SectionAipsetupInfo() *cliapp.AppCmdNode {
 
 func CmdAipsetupInfoServe(
 	getopt_result *cliapp.GetOptResult,
-	available_options cliapp.GetOptCheckList,
-	depth_level []string,
-	subnode *cliapp.AppCmdNode,
-	rootnode *cliapp.AppCmdNode,
-	arg0 string,
-	pass_data *interface{},
+	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	var (
-		target_dir string = "."
-		err        error
-	)
-
-	switch len(getopt_result.Args) {
-	case 0:
-	case 1:
-		target_dir = getopt_result.Args[0]
-	default:
-		return &cliapp.AppResult{Code: 10, Message: "too many arguments"}
-	}
-
-	srv, err := NewInfoServer(target_dir)
+	srv, err := NewInfoServer()
 	if err != nil {
 		return &cliapp.AppResult{Code: 10, Message: err.Error()}
 	}
+	fmt.Println("Host", srv.host)
+	fmt.Println("Port", srv.port)
+	fmt.Println("Prefix", srv.prefix)
+	fmt.Println("Infodir", srv.infodir)
 	srv.Run()
 
 	return &cliapp.AppResult{Code: 0}
@@ -60,14 +46,9 @@ func CmdAipsetupInfoServe(
 
 func CmdAipsetupInfoServePrintExampleConfig(
 	getopt_result *cliapp.GetOptResult,
-	available_options cliapp.GetOptCheckList,
-	depth_level []string,
-	subnode *cliapp.AppCmdNode,
-	rootnode *cliapp.AppCmdNode,
-	arg0 string,
-	pass_data *interface{},
+	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
-	t := NewInfoServerConfig()
-	fmt.Println(t.YAMLString())
+	fmt.Println("aipsetup5.info_server.ini")
+	fmt.Println(string(INFO_SERVER_CONFIG))
 	return &cliapp.AppResult{Code: 0, DoNotPrintResult: true}
 }
