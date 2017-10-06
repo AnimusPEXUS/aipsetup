@@ -2,39 +2,45 @@ package aipsetup
 
 type CompletePackageInfo struct {
 	OveralPackageInfo
-	TarballServerTraversePackageInfo
+	TarballPackageInfo
 	BuildingPackageInfo
 	CategorizationPackageInfo
+	DependenciesPackageInfo
 }
 
 type OveralPackageInfo struct {
-	Description string `json:"description" yaml:"description"`
-	HomePage    string `json:"home_page" yaml:"home_page"`
-	VersionTool string `json:"version_tool" yaml:"version_tool"`
+	Description string
+	HomePage    string
 
-	Removable          bool `json:"removable" yaml:"removable"`
-	Reducible          bool `json:"reducible" yaml:"reducible"`
-	NonInstallable     bool `json:"non_installable" yaml:"non_installable"`
-	Deprecated         bool `json:"deprecated" yaml:"deprecated"`
-	PrimaryInstallOnly bool `json:"only_primary_install" yaml:"only_primary_install"`
+	Removable          bool
+	Reducible          bool
+	NonInstallable     bool
+	Deprecated         bool
+	PrimaryInstallOnly bool
 
-	BuildDeps   []string `json:"build_deps" yaml:"build_deps"`
-	SODeps      []string `json:"so_deps" yaml:"so_deps"`
-	RunTimeDeps []string `json:"runtime_deps" yaml:"runtime_deps"`
+	BuildDeps   []string
+	SODeps      []string
+	RunTimeDeps []string
 }
 
-type TarballServerTraversePackageInfo struct {
-	BaseName           string   `json:"basename" yaml:"basename"`
-	Filters            string   `json:"filters" yaml:"filters"`
-	SourcePathPrefixes []string `json:"source_path_prefixes" yaml:"source_path_prefixes"`
+type TarballPackageInfo struct {
+	Name        string
+	VersionTool string
+	Filters     string
 }
 
 type BuildingPackageInfo struct {
-	BuilderName string `json:"buildscript" yaml:"buildscript"`
+	BuilderName string
 }
 
 type CategorizationPackageInfo struct {
-	Tags []string `json:"tags" yaml:"tags"`
+	Tags []string
+}
+
+type DependenciesPackageInfo struct {
+	BuildDeps   []string
+	SODeps      []string
+	RunTimeDeps []string
 }
 
 /*

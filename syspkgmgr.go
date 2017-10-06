@@ -3,6 +3,7 @@ package aipsetup
 import (
 	"archive/tar"
 	"bytes"
+	"debug/elf"
 	"errors"
 	"fmt"
 	"io"
@@ -14,7 +15,7 @@ import (
 
 	"github.com/ulikunitz/xz"
 
-	augfilepath "github.com/AnimusPEXUS/filepath"
+	"github.com/AnimusPEXUS/goset"
 )
 
 type SystemPackages struct {
@@ -31,6 +32,29 @@ func NewSystemPackages(system *System) *SystemPackages {
 	ret.Sys = system
 
 	return ret
+}
+
+func (self *SystemPackages) _TestHostArchParameters(host, arch string) error {
+
+	if host == "" && arch != "" {
+		return errors.New("if `host' is empty, `arch' must be empty too")
+	}
+
+	if host != "" {
+		_, err := NewSystemTripletFromString(host)
+		if err != nil {
+			return err
+		}
+	}
+
+	if arch != "" {
+		_, err := NewSystemTripletFromString(arch)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
 }
 
 func (self *SystemPackages) UninstallName(filename string) int {
@@ -55,7 +79,7 @@ func (self *SystemPackages) ListInstalledASPs(
 			for _, i := range files_in_dir {
 				if !i.IsDir() && strings.HasSuffix(i.Name(), ").xz") {
 
-					parsed_asp_name, err := NewASPNameParsedFromString(i.Name())
+					parsed_asp_name, err := NewASPNameFromString(i.Name())
 					if err != nil {
 						return make([]string, 0),
 							errors.New("could not parse string as ASP name: " + i.Name())
@@ -92,7 +116,7 @@ func (self *SystemPackages) ListInstalledPackageNames(
 searching_missing_names:
 	for _, i := range res {
 
-		parsed_asp_name, err := NewASPNameParsedFromString(i)
+		parsed_asp_name, err := NewASPNameFromString(i)
 		if err != nil {
 			return make([]string, 0),
 				errors.New(
@@ -128,7 +152,7 @@ func (self *SystemPackages) ListInstalledPackageNameASPs(
 search:
 	for _, i := range res {
 
-		parsed_asp_name, err := NewASPNameParsedFromString(i)
+		parsed_asp_name, err := NewASPNameFromString(i)
 		if err != nil {
 			return make([]string, 0),
 				errors.New(
@@ -152,267 +176,385 @@ search:
 }
 
 func (self *SystemPackages) GenASPFileListPath(
-	aspname string,
-) string {
-	aspname = NormalizeASPName(aspname)
-	return augfilepath.Join(self.Sys.GetInstalledASPDir(), aspname) + ".xz"
+	aspname *ASPName,
+) (string, error) {
+	return path.Join(
+		self.Sys.GetInstalledASPDir(),
+		aspname.String(),
+	) + ".xz", nil
 }
 
 func (self *SystemPackages) IsASPInstalled(
-	aspname string,
-) bool {
-	fullname := self.GenASPFileListPath(aspname)
+	aspname *ASPName,
+) (bool, error) {
+	fullname, err := self.GenASPFileListPath(aspname)
+	if err != nil {
+		return false, err
+	}
 	f, err := os.Open(fullname)
+	if err != nil {
+		return false, err
+	}
 	if err == nil {
 		f.Close()
 	}
-	return err == nil
+	return err == nil, nil
 }
 
-type ListInstalledASPFilesResult struct {
-	FileList   []string
-	ParsedName *ASPNameParsed
-	Sys        *System
-}
+// type ListInstalledASPFilesResult struct {
+// 	FileList   []string
+// 	ParsedName *ASPName
+// 	Sys        *System
+// }
 
 func (self *SystemPackages) ListInstalledASPFiles(
-	aspname string,
-) (*ListInstalledASPFilesResult, error) {
+	aspname *ASPName,
+) ([]string, error) {
 
-	var (
-		ret     *ListInstalledASPFilesResult
-		ret_lst []string
-		ret_err error
-	)
+	ret := make([]string, 0)
 
-	fullname := self.GenASPFileListPath(aspname)
+	fullname, err := self.GenASPFileListPath(aspname)
+	if err != nil {
+		return []string{}, err
+	}
 
 	file, err := os.Open(fullname)
 	if err != nil {
-		ret_err = err
-	} else {
-		defer file.Close()
+		return []string{}, err
+	}
 
-		reader, err := xz.NewReader(file)
+	defer file.Close()
 
-		if err != nil {
-			ret_err = err
-		} else {
+	reader, err := xz.NewReader(file)
 
-			b := new(bytes.Buffer)
-			_, err := b.ReadFrom(reader)
+	if err != nil {
+		return []string{}, err
+	}
 
-			if err != nil {
-				ret_err = err
+	b := new(bytes.Buffer)
+	_, err = b.ReadFrom(reader)
+
+	if err != nil {
+		return []string{}, err
+	}
+
+reading_lines:
+	for {
+		line, err := b.ReadString(0xa)
+
+		for {
+			if strings.HasSuffix(line, "\n") {
+				line = line[:len(line)-1]
 			} else {
-
-			reading_lines:
-				for true {
-					line, err := b.ReadString(0xa)
-
-					for true {
-						if strings.HasSuffix(line, "\n") {
-							line = line[:len(line)-1]
-						} else {
-							break
-						}
-					}
-
-					if len(line) != 0 {
-						ret_lst = append(ret_lst, line)
-					}
-
-					if err != nil {
-						if err != io.EOF {
-							ret_err = err
-						}
-						break reading_lines
-					}
-
-				}
+				break
 			}
 		}
-	}
-	if ret_err == nil {
-		parsed_name, err := NewASPNameParsedFromString(aspname)
+
+		if len(line) != 0 {
+			ret = append(ret, line)
+		}
+
 		if err != nil {
-			ret_err = errors.New("couldn't parse asp name")
-			ret = nil
-		} else {
-			sys := self.Sys
-			ret = &ListInstalledASPFilesResult{
-				ret_lst,
-				parsed_name,
-				sys,
+			if err != io.EOF {
+				return []string{}, err
 			}
+			break reading_lines
 		}
+
 	}
-	return ret, ret_err
+
+	return ret, nil
 }
 
-func (self *SystemPackages) RemoveASP(
-	aspname string,
-	keepnewest bool,
-	exclude_shared_object_files bool,
+func (self *SystemPackages) RemoveASP_DestDir(
+	aspname *ASPName,
+	exclude_files []string,
 ) error {
 
-	var (
-		files_which_need_to_be_removed *ListInstalledASPFilesResult
-		files_which_need_to_be_keeped  *ListInstalledASPFilesResult
-	)
+	lib_dirs := make([]string, 0)
 
-	{
-
-		var err error
-
-		aspname = NormalizeASPName(aspname)
-
-		if !self.IsASPInstalled(aspname) {
-			return errors.New("such ASP not presen in the system")
-		}
-
-		parsed_name_aspname, err := NewASPNameParsedFromString(aspname)
-		if err != nil {
-			return errors.New("Can't parse ASP name: " + aspname)
-		}
-
-		all_asps, err := self.ListInstalledPackageNameASPs(
-			parsed_name_aspname.Name,
-			parsed_name_aspname.Host,
-			parsed_name_aspname.Arch,
+	for _, i := range []string{"lib", "lib64", "lib32", "libx32"} {
+		res, err := filepath.Glob(
+			path.Join(self.Sys.Root(), "/", "multihost", "*", i),
 		)
 		if err != nil {
 			return err
 		}
-
-		sort.Sort(ASPNameSorter(all_asps))
-
-		if len(all_asps) == 0 {
-			panic("this shouldn't been happen. programming error")
-		}
-
-		files_which_need_to_be_removed, err = self.ListInstalledASPFiles(aspname)
-		if files_which_need_to_be_removed == nil || err != nil {
-			return errors.New(
-				"self.ListInstalledASPFiles(apsname) returned nil. " +
-					err.Error(),
-			)
-		}
-
-		if keepnewest {
-			newest := all_asps[len(all_asps)-1]
-
-			if keepnewest && newest == aspname {
-				return errors.New(
-					"last ASP of name can't be removed. use name removal cmd",
-				)
-			}
-
-			files_which_need_to_be_keeped, err = self.ListInstalledASPFiles(newest)
-
-			if files_which_need_to_be_keeped == nil || err != nil {
-				return errors.New(
-					"self.ListInstalledASPFiles(newest) returned nil. " +
-						err.Error(),
-				)
-			}
-		}
-
+		lib_dirs = append(lib_dirs, res...)
 	}
 
-	return self.RemoveASPFiles(
-		files_which_need_to_be_removed,
-		files_which_need_to_be_keeped,
-		exclude_shared_object_files,
-	)
-}
-
-func (self *SystemPackages) RemoveASPFiles(
-	files_which_need_to_be_removed *ListInstalledASPFilesResult,
-	files_which_need_to_be_keeped *ListInstalledASPFilesResult,
-	exclude_shared_object_files bool,
-) error {
-
-	var (
-		ret error
-	)
-
-	if files_which_need_to_be_removed == nil {
-		panic("files_which_need_to_be_removed == nil")
-	}
-
-	if files_which_need_to_be_removed.Sys == nil {
-		panic("files_which_need_to_be_removed.Sys == nil")
-	}
-
-	if files_which_need_to_be_keeped != nil &&
-		files_which_need_to_be_removed.Sys != files_which_need_to_be_keeped.Sys {
-		panic(
-			"files_which_need_to_be_removed.Sys !=" +
-				" files_which_need_to_be_keeped.Sys",
+	for _, i := range []string{"lib", "lib64", "lib32", "libx32"} {
+		res, err := filepath.Glob(
+			path.Join(self.Sys.Root(), "/", "multihost", "*", i),
 		)
+		if err != nil {
+			return err
+		}
+		lib_dirs = append(lib_dirs, res...)
 	}
 
-removing_files:
-	for _, i := range files_which_need_to_be_removed.FileList {
+	// TODO:  is this variant with multiarch ok? we only have multihost dir
+	//        directly under root. may be /multiarch variant is explicit
+	// FIXME: so may be this is error
 
-		rooted_i := augfilepath.Join(self.Sys.Root(), i)
+	// NOTE: this was commented at 2017-08-20
+	// for _, i := range []string{"lib", "lib64", "lib32", "libx32"} {
+	// 	lib_dirs = append(
+	// 		lib_dirs,
+	// 		path.Join(self.Sys.Root(), "multiarch", "*", i),
+	// 	)
+	// }
 
-		if files_which_need_to_be_keeped != nil {
+	// TODO: and why there is no variant with /multihost/*/multiarch/*/lib* ?
+	// FIXME: so may be this is error too
 
-			for _, j := range files_which_need_to_be_keeped.FileList {
+	// NOTE: variants with /multihost/*/multiarch/lib* added at 2017-08-20
+	for _, i := range []string{"lib", "lib64", "lib32", "libx32"} {
+		res, err := filepath.Glob(
+			path.Join(
+				self.Sys.Root(),
+				"/",
+				"multihost",
+				"*",
+				"multiarch",
+				"*",
+				i,
+			),
+		)
+		if err != nil {
+			return err
+		}
+		lib_dirs = append(lib_dirs, res...)
+	}
 
-				if i == j {
-					// debug
-					//fmt.Println("skipping newer file", j)
-					continue removing_files
+	dirs := goset.NewSetString()
+	{
+		res, err := self.ListInstalledASPFiles(aspname)
+		if err != nil {
+			return err
+		}
+		{
+			lst := goset.NewSetString()
+			for _, i := range res {
+				lst.Add(i)
+			}
+			res = lst.ListStrings()
+		}
+
+		{
+			sort.Sort(sort.Reverse(sort.StringSlice(res)))
+		}
+
+	deleting_files:
+		for _, i := range res {
+
+			i_joined := path.Join(self.Sys.Root(), "/", i)
+			i_joined_dir := path.Dir(i_joined)
+
+			// exclude shared objects
+			// TODO: todo
+			for _, j := range lib_dirs {
+				j_joined := path.Join(self.Sys.Root(), "/", j)
+				if _t, err := filepath.Abs(j); err != nil {
+					return err
+				} else {
+					j_joined = _t
+				}
+
+				if i_joined_dir == j_joined {
+					elf_obj, err := elf.Open(i_joined)
+					if err == nil && elf_obj.Type == elf.ET_DYN {
+						elf_obj.Close()
+						fmt.Println(" SO!", i_joined)
+						continue deleting_files
+					}
 				}
 
 			}
 
-		}
+			for _, j := range exclude_files {
+				if j == i {
+					fmt.Println(" EX!", i_joined)
+					continue deleting_files
+				}
+			}
 
-		abs_i, err := filepath.Abs(i)
-		if err != nil {
-			panic("can't evaluate absolut path for filename")
-		}
-		dir_abs_i := filepath.Dir(abs_i)
+			dirs.Add(path.Dir(i_joined))
 
-		if exclude_shared_object_files && IsALibDirPath(dir_abs_i) {
-
-			mutched, err := filepath.Match("*.so*", filepath.Base(i))
+			fmt.Println(" -  ", i_joined)
+			err := os.Remove(i_joined)
 			if err != nil {
-				panic("looks like unpredicted error")
-			}
-
-			if mutched {
-				// debug
-				//fmt.Println("skipping .so file", rooted_i)
-
-				continue removing_files
+				return err
 			}
 		}
 
-		fmt.Println("TODO: remove file", rooted_i)
+		res = dirs.ListStrings()
 
+		for {
+			removed := 0
+
+			for _, i := range res {
+				d := i
+				for {
+
+					if err := os.Remove(d); err == nil {
+						fmt.Println(" -  ", d)
+						removed++
+					}
+
+					d = path.Dir(d)
+
+					if d == "/" || d == self.Sys.Root() {
+						break
+					}
+				}
+			}
+
+			if removed == 0 {
+				break
+			}
+		}
 	}
 
-	return ret
+	return nil
 }
 
-func (self *SystemPackages) InstallASP(filename string) error {
+func (self *SystemPackages) RemoveASP_FileLists(
+	aspname *ASPName,
+) error {
+	for _, i := range [][3]string{
+		{
+			"./06.LISTS/DESTDIR.sha512.xz",
+			self.Sys.GetInstalledASPSumsDir(),
+			"package's check sums",
+		},
+		{
+			"./05.BUILD_LOGS.tar.xz",
+			self.Sys.GetInstalledASPBuildLogsDir(),
+			"package's buildlogs",
+		},
+		{
+			"./06.LISTS/DESTDIR.dep_c.xz",
+			self.Sys.GetInstalledASPDepsDir(),
+			"package's dependencies listing",
+		},
+		{
+			"./06.LISTS/DESTDIR.lst.xz",
+			self.Sys.GetInstalledASPDir(),
+			"package's file list",
+		},
+	} {
+		var dst_dir string
 
-	parsed, err := NewASPNameParsedFromString(filename)
+		dst_dir = i[1]
+
+		var dst_filename string
+
+		if i[0] == "./05.BUILD_LOGS.tar.xz" {
+			dst_filename = fmt.Sprintf("%s.tar.xz", aspname.String())
+		} else {
+			dst_filename = fmt.Sprintf("%s.xz", aspname.String())
+		}
+
+		dst_filename = path.Join(dst_dir, dst_filename)
+
+		err := os.Remove(dst_filename)
+		if err != nil {
+			return err
+		}
+
+	}
+	return nil
+}
+
+func (self *SystemPackages) RemoveASP(
+	aspname *ASPName,
+	unregister_only bool,
+	exclude_files []string,
+) error {
+
+	var err error = nil
+
+	if !unregister_only {
+		err = self.RemoveASP_DestDir(aspname, exclude_files)
+		if err != nil {
+			return err
+		}
+	}
+
+	err = self.RemoveASP_FileLists(aspname)
 	if err != nil {
 		return err
 	}
 
-	host := parsed.Host
-	arch := parsed.Arch
+	return nil
+}
 
-	if host == "" || arch == "" {
-		return errors.New("Invalid value for host or arch")
+func (self *SystemPackages) ReduceASP(
+	reduce_to *ASPName,
+	reduce_what []*ASPName,
+	host, arch string,
+) error {
+
+	reduce_what_copy := make([]*ASPName, 0)
+	reduce_what_copy = append(reduce_what_copy, reduce_what...)
+
+	err := self._TestHostArchParameters(host, arch)
+	if err != nil {
+		return err
 	}
+
+	if yes, err := self.IsASPInstalled(reduce_to); err != nil {
+		return err
+	} else if !yes {
+		return errors.New("asp not installed")
+	}
+
+	for _, ii := range reduce_what_copy {
+		if yes, err := self.IsASPInstalled(ii); err != nil {
+			return err
+		} else if !yes {
+			return errors.New("asp not installed")
+		}
+	}
+
+	for i := range reduce_what_copy {
+		reduce_what_i := reduce_what_copy[i]
+		if err != nil {
+			return err
+		}
+		if reduce_what_i.String() == reduce_to.String() {
+			reduce_what_copy =
+				append(reduce_what_copy[0:i], reduce_what_copy[:i+1]...)
+		}
+	}
+
+	fiba, err := self.ListInstalledASPFiles(reduce_to)
+	if err != nil {
+		return err
+	}
+
+	errors_while_reducing_asps := make([]*ASPName, 0)
+	for _, i := range reduce_what_copy {
+		err := self.RemoveASP(i, false, fiba)
+		if err != nil {
+			// NOTE: error should be reported, but process should continue.
+			//       in the end function should exit with error
+			errors_while_reducing_asps = append(errors_while_reducing_asps, i)
+		}
+	}
+
+	if len(errors_while_reducing_asps) > 0 {
+		return errors.New("error removing packages")
+	}
+
+	return nil
+}
+
+func (self *SystemPackages) InstallASP_FileLists(
+	filename string,
+	parsed *ASPName,
+) error {
 
 	tar_file_obj, err := os.Open(filename)
 	if err != nil {
@@ -460,26 +602,287 @@ func (self *SystemPackages) InstallASP(filename string) error {
 			var dst_dir string
 
 			if head.Name == i[0] {
-				dst_dir = path.Dir(i[1])
+				dst_dir = i[1]
 				os.MkdirAll(dst_dir, 0755)
+
+				var dst_filename string
+
+				if i[0] == "./05.BUILD_LOGS.tar.xz" {
+					dst_filename = fmt.Sprintf("%s.tar.xz", package_name)
+				} else {
+					dst_filename = fmt.Sprintf("%s.xz", package_name)
+				}
+
+				dst_filename = path.Join(dst_dir, dst_filename)
+
+				dst_file_obj, err := os.Create(dst_filename)
+				if err != nil {
+					return err
+				}
+
+				if _, err := io.Copy(dst_file_obj, tar_obj); err != nil {
+					return err
+				}
+
+				dst_file_obj.Close()
+
+				os.Chtimes(dst_filename, head.AccessTime, head.ModTime)
 			}
 
-			var dst_filename string
+		}
+	}
+	return nil
+}
 
-			if i[0] == "./05.BUILD_LOGS.tar.xz" {
-				dst_filename = fmt.Sprintf("%s.tar.xz", package_name)
-			} else {
-				dst_filename = fmt.Sprintf("%s.xz", package_name)
-			}
+func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 
-			dst_filename = path.Join(dst_dir, dst_filename)
+	tar_file_obj, err := os.Open(filename)
+	if err != nil {
+		return err
+	}
 
-			dst_file_obj, err := os.Create(dst_filename)
+	defer tar_file_obj.Close()
+
+	tar_obj := tar.NewReader(tar_file_obj)
+
+	directories := goset.NewSetString()
+	hardlinks := make(map[string]string)
+
+	var head *tar.Header
+
+	for {
+		var err error
+
+		head, err = tar_obj.Next()
+		if err != nil {
+			break
+		}
+
+		if head.Name == "./04.DESTDIR.tar.xz" {
+			xz_reader, err := xz.NewReader(tar_obj)
 			if err != nil {
 				return err
 			}
-			io.Copy(dst_file_obj, tar_obj)
+
+			xztar_obj := tar.NewReader(xz_reader)
+
+			var xztar_head *tar.Header
+
+		continue_xztar_obj:
+			for {
+				var err error
+
+				xztar_head, err = xztar_obj.Next()
+				if err != nil {
+					if err == io.EOF {
+						break
+					} else {
+						return err
+					}
+				}
+
+				for _, i := range []byte{tar.TypeDir} {
+					if xztar_head.Typeflag == i {
+						continue continue_xztar_obj
+					}
+				}
+
+				{
+					if !strings.HasPrefix(xztar_head.Name, "./") {
+						fmt.Println("   not allowed Name")
+						return errors.New(
+							"tar file provided forbidden name elements",
+						)
+					}
+
+					test_abs, err := filepath.Abs(xztar_head.Name[1:])
+					if err != nil {
+						return err
+					}
+
+					if test_abs != xztar_head.Name[1:] {
+						return errors.New(
+							"tar file provided forbidden name elements",
+						)
+					}
+				}
+
+				new_file_path := path.Join(
+					self.Sys.Root(),
+					"/",
+					xztar_head.Name[1:],
+				)
+				new_file_path, err = filepath.Abs(new_file_path)
+				if err != nil {
+					return err
+				}
+
+				new_file_dir := path.Dir(new_file_path)
+
+				switch xztar_head.Typeflag {
+				default:
+					return errors.New(
+						fmt.Sprintf("file type not supported: %v",
+							xztar_head.Typeflag,
+						),
+					)
+				case tar.TypeReg:
+					fallthrough
+				case tar.TypeRegA:
+					fmt.Println(" +", new_file_path)
+
+					err := os.MkdirAll(new_file_dir, 0755)
+					if err != nil {
+						return err
+					}
+
+					directories.Add(new_file_dir)
+					new_file, err := os.Create(new_file_path)
+					if err != nil {
+						return err
+					}
+
+					_, err = io.Copy(new_file, xztar_obj)
+					if err != nil {
+						new_file.Close()
+						return err
+					}
+					new_file.Close()
+
+					/* NOTE: this should be uncommented when this functionality is
+								 ready to work with root
+					err = os.Chown(new_file_path, 0, 0)
+					if err != nil {
+						return err
+					}
+					*/
+
+					err = os.Chmod(new_file_path, 0755)
+					if err != nil {
+						return err
+					}
+
+					err = os.Chtimes(
+						new_file_path,
+						xztar_head.AccessTime,
+						xztar_head.ModTime,
+					)
+					if err != nil {
+						return err
+					}
+
+				case tar.TypeLink:
+					err := os.MkdirAll(new_file_dir, 0755)
+					if err != nil {
+						return err
+					}
+
+					directories.Add(new_file_dir)
+
+					ln_value := xztar_head.Linkname
+					if !strings.HasPrefix("/", ln_value) {
+						ln_value := path.Join(path.Dir(new_file_path), ln_value)
+						abs, err := filepath.Abs(ln_value)
+						if err != nil {
+							return err
+						}
+						ln_value = abs
+					}
+
+					hardlinks[new_file_path] = ln_value
+				case tar.TypeSymlink:
+
+					err := os.MkdirAll(new_file_dir, 0755)
+					if err != nil {
+						return err
+					}
+
+					directories.Add(new_file_dir)
+
+					fmt.Printf(
+						" + %s\n  s -> %s\n",
+						new_file_path,
+						xztar_head.Linkname,
+					)
+
+					_, err = os.Lstat(new_file_path)
+
+					if err != nil {
+						//if !strings.HasSuffix(err.Error(), "no such file or directory") {
+						if !os.IsNotExist(err) {
+							return err
+						}
+					}
+
+					if err == nil {
+						err = os.Remove(new_file_path)
+						if err != nil {
+							return err
+						}
+					}
+
+					err = os.Symlink(xztar_head.Linkname, new_file_path)
+					if err != nil {
+						return err
+					}
+				}
+
+			}
+
+			for _, i := range directories.ListStrings() {
+				/*
+					err := os.Chown(i, 0, 0)
+					if err != nil {
+						return err
+					}
+				*/
+				err := os.Chmod(i, 0755)
+				if err != nil {
+					return err
+				}
+			}
+
+			for key, val := range hardlinks {
+				fmt.Printf(
+					" + %s\n  h -> %s\n",
+					val,
+					key,
+				)
+				err = os.Link(val, key)
+				if err != nil {
+					return err
+				}
+			}
+
+			break
 		}
+
+	}
+	return nil
+}
+
+func (self *SystemPackages) InstallASP(filename string) error {
+
+	parsed, err := NewASPNameFromString(filename)
+	if err != nil {
+		return err
+	}
+
+	host := parsed.Host
+	arch := parsed.Arch
+
+	if host == "" || arch == "" {
+		return errors.New("Invalid value for host or arch")
+	}
+
+	err = self.InstallASP_FileLists(filename, parsed)
+	if err != nil {
+		return err
+	}
+
+	err = self.InstallASP_DestDir(filename)
+	if err != nil {
+		return err
 	}
 
 	return nil

@@ -21,6 +21,9 @@ func SectionAipsetupSysConfig() *cliapp.AppCmdNode {
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
 				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
 			},
 		},
 	}

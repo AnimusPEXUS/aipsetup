@@ -138,16 +138,22 @@ func StdRoutineMustGetOneArg(getopt_result *cliapp.GetOptResult) (
 }
 
 func StdRoutineMustGetASPName(getopt_result *cliapp.GetOptResult) (
-	res string,
-	err *cliapp.AppResult,
+	*aipsetup.ASPName,
+	*cliapp.AppResult,
 ) {
 
-	res, err = StdRoutineMustGetOneArg(getopt_result)
-	if err.Code != 0 {
-		return
+	res, res_err := StdRoutineMustGetOneArg(getopt_result)
+	if res_err.Code != 0 {
+		return nil, res_err
 	}
 
-	// TODO: add ASP name validity check
+	name, err := aipsetup.NewASPNameFromString(res)
+	if err != nil {
+		return nil, &cliapp.AppResult{
+			Code:    11,
+			Message: "Can't parse given string as ASP name",
+		}
+	}
 
-	return
+	return name, &cliapp.AppResult{Code: 0}
 }

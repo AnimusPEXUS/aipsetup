@@ -39,10 +39,16 @@ var EXAMPLES []string = []string{
 
 func main() {
 	for ii, i := range EXAMPLES {
-		v := aipsetup.NewASPNameParsedFromString(i)
+		v, err := aipsetup.NewASPNameFromString(i)
 		fmt.Printf("Example #%02d:\n", ii)
-		fmt.Printf("%s\n", i)
-		fmt.Printf("%s\n", v.String())
+		if err != nil {
+			fmt.Println("error", err)
+		} else {
+			fmt.Printf("%s\n", i)
+			fmt.Printf("%s\n", v.String())
+			t, err := v.TimeStampTime()
+			fmt.Printf("%v, %v, %v, %v\n", v.Name, v.TimeStamp, t, err)
+		}
 		fmt.Println()
 	}
 }

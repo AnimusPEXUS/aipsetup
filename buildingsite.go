@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 )
@@ -64,7 +65,9 @@ var (
 )
 
 type (
-	BuildingSitePackageInfo struct {
+	BuildingSiteInfo struct {
+		Constitution *BuildingSiteConstitution `json:"constitution"`
+		PkgInfo      *BuildingSitePackageInfo  `json:"pkg_info"`
 	}
 )
 
@@ -141,4 +144,97 @@ func (self *BuildingSiteCtl) Init() error {
 		}
 	}
 	return nil
+}
+
+func (self *BuildingSiteCtl) GetDIR_TARBALL() string {
+	return GetDIR_TARBALL(self.Path)
+}
+
+func (self *BuildingSiteCtl) GetDIR_SOURCE() string {
+	return GetDIR_SOURCE(self.Path)
+}
+
+func (self *BuildingSiteCtl) GetDIR_PATCHES() string {
+	return GetDIR_PATCHES(self.Path)
+}
+
+func (self *BuildingSiteCtl) GetDIR_BUILDING() string {
+	return GetDIR_BUILDING(self.Path)
+}
+
+func (self *BuildingSiteCtl) GetDIR_DESTDIR() string {
+	return GetDIR_DESTDIR(self.Path)
+}
+
+func (self *BuildingSiteCtl) GetDIR_BUILD_LOGS() string {
+	return GetDIR_BUILD_LOGS(self.Path)
+}
+
+func (self *BuildingSiteCtl) GetDIR_LISTS() string {
+	return GetDIR_LISTS(self.Path)
+}
+
+func (self *BuildingSiteCtl) GetDIR_TEMP() string {
+	return GetDIR_TEMP(self.Path)
+}
+
+func (self *BuildingSiteCtl) IsWdDirRestricted() bool {
+	return IsWdDirRestricted(self.Path)
+}
+
+func (self *BuildingSiteCtl) IsDirRestrictedForWork() bool {
+	return IsDirRestrictedForWork(self.Path)
+}
+
+func getDIR_x(pth string, x string) string {
+	res, err := filepath.Abs(path.Join(pth, x))
+	if err != nil {
+		panic(
+			"TODO " +
+				"(if you reading this," +
+				" write a bugreport) with name 'getDIR_x Abs error'",
+		)
+	}
+	return res
+}
+
+func GetDIR_TARBALL(pth string) string {
+	return getDIR_x(pth, DIR_TARBALL)
+}
+
+func GetDIR_SOURCE(pth string) string {
+	return getDIR_x(pth, DIR_SOURCE)
+}
+
+func GetDIR_PATCHES(pth string) string {
+	return getDIR_x(pth, DIR_PATCHES)
+}
+
+func GetDIR_BUILDING(pth string) string {
+	return getDIR_x(pth, DIR_BUILDING)
+}
+
+func GetDIR_DESTDIR(pth string) string {
+	return getDIR_x(pth, DIR_DESTDIR)
+}
+
+func GetDIR_BUILD_LOGS(pth string) string {
+	return getDIR_x(pth, DIR_BUILD_LOGS)
+}
+
+func GetDIR_LISTS(pth string) string {
+	return getDIR_x(pth, DIR_LISTS)
+}
+
+func GetDIR_TEMP(pth string) string {
+	return getDIR_x(pth, DIR_TEMP)
+}
+
+func IsWdDirRestricted(pth string) bool {
+	panic("use IsDirRestrictedForWork() instead")
+	return true
+}
+
+func ReadConfig() (*BuildingSiteInfo, error) {
+	return nil, nil
 }

@@ -14,35 +14,87 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 		SubCmds: []*cliapp.AppCmdNode{
 
 			&cliapp.AppCmdNode{
-				Name:     "asps",
-				Callable: CmdAipsetupSysAllAsps,
-			},
-
-			&cliapp.AppCmdNode{
-				Name:     "names",
-				Callable: CmdAipsetupSysAllNames,
-			},
-
-			&cliapp.AppCmdNode{
-				Name:     "name-asps",
-				Callable: CmdAipsetupSysNameASPs,
-			},
-
-			&cliapp.AppCmdNode{
-				Name:     "asp-files",
-				Callable: CmdAipsetupSysASPFiles,
-			},
-
-			&cliapp.AppCmdNode{
-				Name:     "asp-rm",
-				Callable: CmdAipsetupSysRemoveASP,
-			},
-
-			&cliapp.AppCmdNode{
-				Name:     "asp-install",
-				Callable: CmdAipsetupSysInstallASP,
+				Name:             "names",
+				Callable:         CmdAipsetupSysAllNames,
+				ShortDescription: "list installed package names",
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:             "name-asps",
+				Callable:         CmdAipsetupSysNameASPs,
+				ShortDescription: "list asps with given package name",
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   1,
+				MaxArgs:   1,
+			},
+
+			// &cliapp.AppCmdNode{
+			// 	Name:    "pkg",
+			// 	SubCmds: []*cliapp.AppCmdNode{},
+			// },
+
+			&cliapp.AppCmdNode{
+				Name: "asp",
+				SubCmds: []*cliapp.AppCmdNode{
+
+					&cliapp.AppCmdNode{
+						Name:             "list",
+						ShortDescription: "list installed asps",
+						Callable:         CmdAipsetupSysAllAsps,
+						AvailableOptions: cliapp.GetOptCheckList{
+							STD_ROOT_OPTION,
+						},
+						CheckArgs: true,
+						MinArgs:   0,
+						MaxArgs:   0,
+					},
+
+					&cliapp.AppCmdNode{
+						Name:             "files",
+						ShortDescription: "list files installed by named asp",
+						Callable:         CmdAipsetupSysASPFiles,
+						AvailableOptions: cliapp.GetOptCheckList{
+							STD_ROOT_OPTION,
+						},
+						CheckArgs: true,
+						MaxArgs:   1,
+						MinArgs:   1,
+					},
+
+					&cliapp.AppCmdNode{
+						Name:             "remove",
+						ShortDescription: "remove asp package",
+						Callable:         CmdAipsetupSysRemoveASP,
+						AvailableOptions: cliapp.GetOptCheckList{
+							STD_ROOT_OPTION,
+						},
+						CheckArgs: true,
+						MinArgs:   1,
+						MaxArgs:   1,
+					},
+
+					&cliapp.AppCmdNode{
+						Name: "install",
+						ShortDescription: "install asp package.\n" +
+							"install asps via 'sys pkg install' for automatic " +
+							"uninstallation of old asps",
+						Callable: CmdAipsetupSysInstallASP,
+						AvailableOptions: cliapp.GetOptCheckList{
+							STD_ROOT_OPTION,
+						},
+						CheckArgs: true,
+						MinArgs:   1,
+						MaxArgs:   1,
+					},
 				},
 			},
 		},
@@ -114,7 +166,7 @@ func CmdAipsetupSysNameASPs(
 		return res
 	}
 
-	name, res := StdRoutineMustGetASPName(getopt_result)
+	name, res := StdRoutineMustGetOneArg(getopt_result)
 	if res.Code != 0 {
 		return res
 	}
@@ -148,20 +200,18 @@ func CmdAipsetupSysASPFiles(
 		return res
 	}
 
-	name, res := StdRoutineMustGetOneArg(getopt_result)
+	name, res := StdRoutineMustGetASPName(getopt_result)
 	if res.Code != 0 {
 		return res
 	}
 
-	liaf_res, err := sys.ASPs.ListInstalledASPFiles(name)
+	files, err := sys.ASPs.ListInstalledASPFiles(name)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
 			Message: "can't get file list for named ASP",
 		}
 	}
-
-	files := liaf_res.FileList
 
 	sort.Strings(files)
 
@@ -191,8 +241,7 @@ func CmdAipsetupSysRemoveASP(
 		return res
 	}
 
-	err := sys.ASPs.RemoveASP(name, true, true)
-
+	err := sys.ASPs.RemoveASP(name, false, []string{})
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -215,7 +264,7 @@ func CmdAipsetupSysInstallASP(
 		return res
 	}
 
-	name, res := StdRoutineMustGetASPName(getopt_result)
+	name, res := StdRoutineMustGetOneArg(getopt_result)
 	if res.Code != 0 {
 		return res
 	}
