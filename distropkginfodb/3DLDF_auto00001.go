@@ -1,37 +1,29 @@
 package distropkginfodb
 
-import (
-  "github.com/AnimusPEXUS/aipsetup"
-  // "github.com/AnimusPEXUS/aipsetup/buildercollection"
-  // "github.com/AnimusPEXUS/aipsetup/versiontools"
-  )
+import "github.com/AnimusPEXUS/aipsetup/basictypes"
 
-var DistroPackageInfo_3DLDF = &aipsetup.CompletePackageInfo{
-  OveralPackageInfo: aipsetup.OveralPackageInfo{
-    Description: ``,
-    HomePage: "",
+// "github.com/AnimusPEXUS/aipsetup/buildercollection"
+// "github.com/AnimusPEXUS/aipsetup/versiontools"
 
-    Removable: true,
-    Reducible: true,
-    NonInstallable: false,
-    Deprecated: false,
-    PrimaryInstallOnly: false,
+var DistroPackageInfo_3DLDF = &basictypes.PackageInfo{
+	Description: ``,
+	HomePage:    "",
 
-    BuildDeps   : []string{},
-    SODeps      : []string{},
-    RunTimeDeps : []string{},
-  },
+	Removable:          true,
+	Reducible:          true,
+	NonInstallable:     false,
+	Deprecated:         false,
+	PrimaryInstallOnly: false,
 
-  TarballPackageInfo: aipsetup.TarballPackageInfo{
-    Name : "3DLDF",
-    VersionTool: "std", //versiontools.Standard,
-  },
+	BuildDeps:   []string{},
+	SODeps:      []string{},
+	RunTimeDeps: []string{},
 
-  BuildingPackageInfo: aipsetup.BuildingPackageInfo{
-    BuilderName : "std", //buildercollection.Builder_std,
-  },
+	TarballFileNameParser: "std",
+	TarballName:           "3DLDF",
 
+	TarballVersionTool: "std", //versiontools.Standard,
+
+	BuilderName: "std", //buildercollection.Builder_std,
 
 }
-
-

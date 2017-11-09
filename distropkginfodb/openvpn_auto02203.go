@@ -1,37 +1,30 @@
 package distropkginfodb
 
 import (
-  "github.com/AnimusPEXUS/aipsetup"
-  // "github.com/AnimusPEXUS/aipsetup/buildercollection"
-  // "github.com/AnimusPEXUS/aipsetup/versiontools"
-  )
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	// "github.com/AnimusPEXUS/aipsetup/buildercollection"
+	// "github.com/AnimusPEXUS/aipsetup/versiontools"
+)
 
-var DistroPackageInfo_openvpn = &aipsetup.CompletePackageInfo{
-  OveralPackageInfo: aipsetup.OveralPackageInfo{
-    Description: `write something here, please`,
-    HomePage: "http://www.openvpn.net",
+var DistroPackageInfo_openvpn = &basictypes.PackageInfo{
+	Description: `write something here, please`,
+	HomePage:    "http://www.openvpn.net",
 
-    Removable: true,
-    Reducible: true,
-    NonInstallable: false,
-    Deprecated: false,
-    PrimaryInstallOnly: false,
+	Removable:          true,
+	Reducible:          true,
+	NonInstallable:     false,
+	Deprecated:         false,
+	PrimaryInstallOnly: false,
 
-    BuildDeps   : []string{},
-    SODeps      : []string{},
-    RunTimeDeps : []string{},
-  },
+	BuildDeps:   []string{},
+	SODeps:      []string{},
+	RunTimeDeps: []string{},
 
-  TarballPackageInfo: aipsetup.TarballPackageInfo{
-    Name : "openvpn",
-    VersionTool: "std", //versiontools.Standard,
-  },
+	TarballFileNameParser: "std",
+	TarballName:           "openvpn",
 
-  BuildingPackageInfo: aipsetup.BuildingPackageInfo{
-    BuilderName : "std", //buildercollection.Builder_openvpn,
-  },
+	TarballVersionTool: "std", //versiontools.Standard,
 
+	BuilderName: "std", //buildercollection.Builder_std,
 
 }
-
-

@@ -1,37 +1,30 @@
 package distropkginfodb
 
 import (
-  "github.com/AnimusPEXUS/aipsetup"
-  // "github.com/AnimusPEXUS/aipsetup/buildercollection"
-  // "github.com/AnimusPEXUS/aipsetup/versiontools"
-  )
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	// "github.com/AnimusPEXUS/aipsetup/buildercollection"
+	// "github.com/AnimusPEXUS/aipsetup/versiontools"
+)
 
-var DistroPackageInfo_firefox = &aipsetup.CompletePackageInfo{
-  OveralPackageInfo: aipsetup.OveralPackageInfo{
-    Description: `write something here, please`,
-    HomePage: "http://mozilla.org",
+var DistroPackageInfo_firefox = &basictypes.PackageInfo{
+	Description: `write something here, please`,
+	HomePage:    "http://mozilla.org",
 
-    Removable: true,
-    Reducible: true,
-    NonInstallable: false,
-    Deprecated: false,
-    PrimaryInstallOnly: false,
+	Removable:          true,
+	Reducible:          true,
+	NonInstallable:     false,
+	Deprecated:         false,
+	PrimaryInstallOnly: false,
 
-    BuildDeps   : []string{},
-    SODeps      : []string{},
-    RunTimeDeps : []string{},
-  },
+	BuildDeps:   []string{},
+	SODeps:      []string{},
+	RunTimeDeps: []string{},
 
-  TarballPackageInfo: aipsetup.TarballPackageInfo{
-    Name : "firefox",
-    VersionTool: "std", //versiontools.Standard,
-  },
+	TarballFileNameParser: "std",
+	TarballName:           "firefox",
 
-  BuildingPackageInfo: aipsetup.BuildingPackageInfo{
-    BuilderName : "std", //buildercollection.Builder_firefox,
-  },
+	TarballVersionTool: "std", //versiontools.Standard,
 
+	BuilderName: "std", //buildercollection.Builder_std,
 
 }
-
-

@@ -1,37 +1,30 @@
 package distropkginfodb
 
 import (
-  "github.com/AnimusPEXUS/aipsetup"
-  // "github.com/AnimusPEXUS/aipsetup/buildercollection"
-  // "github.com/AnimusPEXUS/aipsetup/versiontools"
-  )
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	// "github.com/AnimusPEXUS/aipsetup/buildercollection"
+	// "github.com/AnimusPEXUS/aipsetup/versiontools"
+)
 
-var DistroPackageInfo_cdparanoia_III = &aipsetup.CompletePackageInfo{
-  OveralPackageInfo: aipsetup.OveralPackageInfo{
-    Description: `write something here, please`,
-    HomePage: "http://www.xiph.org",
+var DistroPackageInfo_cdparanoia_III = &basictypes.PackageInfo{
+	Description: `write something here, please`,
+	HomePage:    "http://www.xiph.org",
 
-    Removable: true,
-    Reducible: true,
-    NonInstallable: false,
-    Deprecated: false,
-    PrimaryInstallOnly: false,
+	Removable:          true,
+	Reducible:          true,
+	NonInstallable:     false,
+	Deprecated:         false,
+	PrimaryInstallOnly: false,
 
-    BuildDeps   : []string{},
-    SODeps      : []string{},
-    RunTimeDeps : []string{},
-  },
+	BuildDeps:   []string{},
+	SODeps:      []string{},
+	RunTimeDeps: []string{},
 
-  TarballPackageInfo: aipsetup.TarballPackageInfo{
-    Name : "cdparanoia-III",
-    VersionTool: "std", //versiontools.Standard,
-  },
+	TarballFileNameParser: "std",
+	TarballName:           "cdparanoia-III",
 
-  BuildingPackageInfo: aipsetup.BuildingPackageInfo{
-    BuilderName : "std", //buildercollection.Builder_std,
-  },
+	TarballVersionTool: "std", //versiontools.Standard,
 
+	BuilderName: "std", //buildercollection.Builder_std,
 
 }
-
-

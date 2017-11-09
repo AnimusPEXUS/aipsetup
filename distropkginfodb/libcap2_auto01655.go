@@ -1,37 +1,30 @@
 package distropkginfodb
 
 import (
-  "github.com/AnimusPEXUS/aipsetup"
-  // "github.com/AnimusPEXUS/aipsetup/buildercollection"
-  // "github.com/AnimusPEXUS/aipsetup/versiontools"
-  )
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	// "github.com/AnimusPEXUS/aipsetup/buildercollection"
+	// "github.com/AnimusPEXUS/aipsetup/versiontools"
+)
 
-var DistroPackageInfo_libcap2 = &aipsetup.CompletePackageInfo{
-  OveralPackageInfo: aipsetup.OveralPackageInfo{
-    Description: ``,
-    HomePage: "https://sites.google.com/site/fullycapable/",
+var DistroPackageInfo_libcap2 = &basictypes.PackageInfo{
+	Description: ``,
+	HomePage:    "https://sites.google.com/site/fullycapable/",
 
-    Removable: true,
-    Reducible: true,
-    NonInstallable: false,
-    Deprecated: false,
-    PrimaryInstallOnly: false,
+	Removable:          true,
+	Reducible:          true,
+	NonInstallable:     false,
+	Deprecated:         false,
+	PrimaryInstallOnly: false,
 
-    BuildDeps   : []string{},
-    SODeps      : []string{},
-    RunTimeDeps : []string{},
-  },
+	BuildDeps:   []string{},
+	SODeps:      []string{},
+	RunTimeDeps: []string{},
 
-  TarballPackageInfo: aipsetup.TarballPackageInfo{
-    Name : "libcap",
-    VersionTool: "std", //versiontools.Standard,
-  },
+	TarballFileNameParser: "std",
+	TarballName:           "libcap",
 
-  BuildingPackageInfo: aipsetup.BuildingPackageInfo{
-    BuilderName : "std", //buildercollection.Builder_libcap2,
-  },
+	TarballVersionTool: "std", //versiontools.Standard,
 
+	BuilderName: "std", //buildercollection.Builder_std,
 
 }
-
-

@@ -1,37 +1,30 @@
 package distropkginfodb
 
 import (
-  "github.com/AnimusPEXUS/aipsetup"
-  // "github.com/AnimusPEXUS/aipsetup/buildercollection"
-  // "github.com/AnimusPEXUS/aipsetup/versiontools"
-  )
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	// "github.com/AnimusPEXUS/aipsetup/buildercollection"
+	// "github.com/AnimusPEXUS/aipsetup/versiontools"
+)
 
-var DistroPackageInfo_libsecret = &aipsetup.CompletePackageInfo{
-  OveralPackageInfo: aipsetup.OveralPackageInfo{
-    Description: ``,
-    HomePage: "http://gnome.org/",
+var DistroPackageInfo_libsecret = &basictypes.PackageInfo{
+	Description: ``,
+	HomePage:    "http://gnome.org/",
 
-    Removable: true,
-    Reducible: true,
-    NonInstallable: false,
-    Deprecated: false,
-    PrimaryInstallOnly: false,
+	Removable:          true,
+	Reducible:          true,
+	NonInstallable:     false,
+	Deprecated:         false,
+	PrimaryInstallOnly: false,
 
-    BuildDeps   : []string{},
-    SODeps      : []string{},
-    RunTimeDeps : []string{},
-  },
+	BuildDeps:   []string{},
+	SODeps:      []string{},
+	RunTimeDeps: []string{},
 
-  TarballPackageInfo: aipsetup.TarballPackageInfo{
-    Name : "libsecret",
-    VersionTool: "std", //versiontools.Standard,
-  },
+	TarballFileNameParser: "std",
+	TarballName:           "libsecret",
 
-  BuildingPackageInfo: aipsetup.BuildingPackageInfo{
-    BuilderName : "std", //buildercollection.Builder_std,
-  },
+	TarballVersionTool: "std", //versiontools.Standard,
 
+	BuilderName: "std", //buildercollection.Builder_std,
 
 }
-
-

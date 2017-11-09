@@ -30,7 +30,9 @@ lst=sorted(os.listdir(src_dir))
 index_file = open(os.path.join(tgt_dir, "0000000000000000.go"), "w")
 index_file.write('''package distropkginfodb
 
-var Index = map[string]*aipsetup.CompletePackageInfo{
+import "github.com/AnimusPEXUS/aipsetup"
+
+var Index = map[string]*aipsetup.PackageInfo{
 '''
 )
 
@@ -69,8 +71,7 @@ import (
   // "github.com/AnimusPEXUS/aipsetup/versiontools"
   )
 
-var DistroPackageInfo_{pkgname} = &aipsetup.CompletePackageInfo{{
-  OveralPackageInfo: aipsetup.OveralPackageInfo{{
+var DistroPackageInfo_{pkgname} = &aipsetup.PackageInfo{{
     Description: `{pkg_descript}`,
     HomePage: "{pkg_homepage}",
 
@@ -83,17 +84,11 @@ var DistroPackageInfo_{pkgname} = &aipsetup.CompletePackageInfo{{
     BuildDeps   : []string{{}},
     SODeps      : []string{{}},
     RunTimeDeps : []string{{}},
-  }},
 
-  TarballPackageInfo: aipsetup.TarballPackageInfo{{
-    Name : "{pkg_basename}",
-    VersionTool: "std", //{pkg_versiontool},
-  }},
+    TarballName : "{pkg_basename}",
+    TarballVersionTool: "std", //{pkg_versiontool},
 
-  BuildingPackageInfo: aipsetup.BuildingPackageInfo{{
     BuilderName : "std", //buildercollection.Builder_{builder_name},
-  }},
-
 
 }}
 

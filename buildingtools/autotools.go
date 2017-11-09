@@ -2,12 +2,23 @@ package buildingtools
 
 import (
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
+	"path/filepath"
 
 	"github.com/AnimusPEXUS/gologger"
+)
+
+type (
+	EnvironmentOperationMode uint
+)
+
+const (
+	Copy EnvironmentOperationMode = iota
+	Clean
 )
 
 type Autotools struct {
@@ -36,19 +47,29 @@ func (self *Autotools) Extract(
 	os.MkdirAll(srcdir, 0700)
 
 	// TODO: mega fast decision. this should be replaced by internal functionality
+	log.Info("starting tar utility")
 	c := exec.Command("tar", "-xf", filename, "-C", tempdir)
 	c_res := c.Run()
 
 	if c_res != nil {
+		log.Error("error running tar utility: " + c_res.Error())
 		return c_res
 	}
 
+	log.Info("tar exited ok")
+
 	info, err := ioutil.ReadDir(tempdir)
-	if err == nil {
+	if err != nil {
 		return err
 	}
 
+	log.Info(
+		fmt.Sprintf("tar work resulted in %d files and/or directories", len(info)),
+	)
+
 	if unwrap {
+
+		log.Info("unwrapping and moving files to source directory")
 
 		if len(info) != 1 && !is_more_than_one_extracted_ok {
 			return errors.New("extracted more than one item")
@@ -70,7 +91,7 @@ func (self *Autotools) Extract(
 		extracted_dir = path.Join(tempdir, extracted_dir)
 
 		info, err = ioutil.ReadDir(extracted_dir)
-		if err == nil {
+		if err != nil {
 			return err
 		}
 
@@ -82,6 +103,7 @@ func (self *Autotools) Extract(
 		}
 
 	} else {
+		log.Info("moving files to source directory")
 		for _, i := range info {
 			os.Rename(
 				path.Join(tempdir, i.Name()),
@@ -89,6 +111,8 @@ func (self *Autotools) Extract(
 			)
 		}
 	}
+
+	log.Info("extraction procedure ended without errors")
 
 	return nil
 }
@@ -192,4 +216,73 @@ func (self *Autotools) GenerateConfigureIfNeeded(
 	}
 
 	return nil
+}
+
+func (self *Autotools) Configure(
+	args []string,
+	env []string,
+	env_mode EnvironmentOperationMode,
+	configure_filename string,
+	configure_dirpath string,
+	working_dirpath string,
+	// 1) calculates absolute path to configure and uses it as
+	// run-path or 2) calculates relative path from working dir to configure file
+	// and runs it relatively
+	run_relative bool,
+	// whatever to start script it self or to
+	// execute shell programm with configure's path as parameter
+	run_as_argument_to_shell bool,
+	shell_program string,
+	log *gologger.Logger,
+) error {
+
+	configure_dirpath, err := filepath.Abs(configure_dirpath)
+	if err != nil {
+		return err
+	}
+
+	working_dirpath, err = filepath.Abs(working_dirpath)
+	if err != nil {
+		return err
+	}
+
+	var dirpath string
+
+	if run_relative {
+		dirpath, err = filepath.Rel(working_dirpath, configure_dirpath)
+		if err != nil {
+			return err
+		}
+	} else {
+		dirpath = configure_dirpath
+	}
+
+	executable := configure_filename
+
+	int_env := make([]string, 0)
+	if env_mode == Copy {
+		int_env = append(int_env, os.Environ()...)
+	}
+	int_env = append(int_env, env...)
+
+	int_args := make([]string, 0)
+
+	dirpath_script_to_run := path.Join(dirpath, configure_filename)
+
+	if run_as_argument_to_shell {
+		executable = shell_program
+		int_args = append(int_args, dirpath_script_to_run)
+		int_args = append(int_args, args...)
+	} else {
+		executable = dirpath_script_to_run
+		// int_args = append(int_args, path.Join(dirpath, script_to_run))
+		int_args = append(int_args, args...)
+	}
+
+	cmd := exec.Command(executable, int_args...)
+	cmd.Env = env
+	cmd.Dir = working_dirpath
+	ret := cmd.Run()
+
+	return ret
 }

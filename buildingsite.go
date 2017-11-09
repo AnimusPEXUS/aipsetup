@@ -1,12 +1,21 @@
 package aipsetup
 
 import (
+	"bytes"
+	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
+	"io/ioutil"
 	"os"
 	"path"
 	"path/filepath"
 	"strings"
+	"time"
+
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/buildercollection"
+	"github.com/AnimusPEXUS/gologger"
 )
 
 var (
@@ -64,12 +73,7 @@ var (
 	}
 )
 
-type (
-	BuildingSiteInfo struct {
-		Constitution *BuildingSiteConstitution `json:"constitution"`
-		PkgInfo      *BuildingSitePackageInfo  `json:"pkg_info"`
-	}
-)
+const PACKAGE_INFO_FILENAME_V5 = "package_info_v5.json"
 
 func IsDirRestrictedForWork(path string) bool {
 	var err error
@@ -102,6 +106,10 @@ func IsDirRestrictedForWork(path string) bool {
 	return false
 }
 
+// forced compile-time type checking: BuildingSiteCtl must fullfill
+// BuildingSiteCtlI
+var _ basictypes.BuildingSiteCtlI = &BuildingSiteCtl{}
+
 type BuildingSiteCtl struct {
 	Path string
 }
@@ -129,6 +137,47 @@ func NewBuildingSiteCtl(path string) (*BuildingSiteCtl, error) {
 	return ret, nil
 }
 
+func (self *BuildingSiteCtl) ReadInfo() (*basictypes.BuildingSiteInfo, error) {
+	fullpath := path.Join(self.Path, PACKAGE_INFO_FILENAME_V5)
+
+	res, err := ioutil.ReadFile(fullpath)
+	if err != nil {
+		return nil, err
+	}
+
+	j_res := new(basictypes.BuildingSiteInfo)
+
+	err = json.Unmarshal(res, j_res)
+	if err != nil {
+		return nil, err
+	}
+
+	return j_res, nil
+}
+
+func (self *BuildingSiteCtl) WriteInfo(info *basictypes.BuildingSiteInfo) error {
+	fullpath := path.Join(self.Path, PACKAGE_INFO_FILENAME_V5)
+
+	res, err := json.Marshal(info)
+	if err != nil {
+		return err
+	}
+
+	b := new(bytes.Buffer)
+
+	err = json.Indent(b, res, "", "  ")
+	if err != nil {
+		return err
+	}
+
+	err = ioutil.WriteFile(fullpath, b.Bytes(), 0700)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (self *BuildingSiteCtl) Init() error {
 	fmt.Println("Going to initiate directory", self.Path)
 	for _, i := range DIR_ALL {
@@ -137,12 +186,158 @@ func (self *BuildingSiteCtl) Init() error {
 		if err != nil {
 			err := os.MkdirAll(j, 0700)
 			if err != nil {
-				return errors.New("Can't create dir " + err.Error())
+				return errors.New("Can't create dir: " + err.Error())
 			}
 		} else {
 			f.Close()
 		}
 	}
+	return nil
+}
+
+func (self *BuildingSiteCtl) ApplyInitialInfo(
+	pkgname string,
+	info *basictypes.PackageInfo,
+) error {
+
+	b_info := new(basictypes.BuildingSiteInfo)
+	b_info.SetInfoLailalo50()
+
+	b_info.MainTarballInfo = info
+	b_info.PackageName = pkgname
+
+	err := self.WriteInfo(b_info)
+
+	return err
+}
+
+func (self *BuildingSiteCtl) ApplyHostArchBuildTarget(
+	host, arch, build, target string,
+) error {
+	i, err := self.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	i.Host = host
+	i.Arch = arch
+	i.Build = build
+	i.Target = target
+
+	err = self.WriteInfo(i)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (self *BuildingSiteCtl) CopyInTarballs(filelist []string) error {
+
+	read_buffer := make([]byte, 2*1024*1024)
+
+	for _, i := range filelist {
+
+		b := path.Base(i)
+
+		new_full_path := path.Join(self.GetDIR_TARBALL(), b)
+
+		in_f, err := os.Open(i)
+		if err != nil {
+			return err
+		}
+		defer in_f.Close()
+
+		of_f, err := os.Create(new_full_path)
+		if err != nil {
+			return err
+		}
+		defer of_f.Close()
+
+		for {
+
+			count, err := in_f.Read(read_buffer)
+			if err != nil {
+				if err != nil {
+					if err == io.EOF {
+						break
+					} else {
+						return err
+					}
+				}
+			}
+
+			_, err = of_f.Write(read_buffer[:count])
+			if err != nil {
+				return err
+			}
+
+		}
+
+		stat, err := os.Stat(i)
+		if err != nil {
+			return err
+		}
+
+		os.Chtimes(new_full_path, stat.ModTime(), stat.ModTime())
+
+	}
+
+	return nil
+
+}
+
+func (self *BuildingSiteCtl) ApplyTarballs(maintarball string) error {
+
+	maintarball = path.Base(maintarball)
+
+	lst, err := ioutil.ReadDir(self.GetDIR_TARBALL())
+	if err != nil {
+		return err
+	}
+
+	for _, i := range lst {
+		if maintarball == path.Base(i.Name()) {
+			goto maintarball_found
+		}
+	}
+
+	return errors.New("specified main tarball not found in tarball dir")
+
+maintarball_found:
+
+	filelist := make([]string, 0)
+
+	filelist = append(filelist, maintarball)
+
+	for _, i := range lst {
+		b := path.Base(i.Name())
+		found := false
+
+		for _, j := range filelist {
+			if j == b {
+				found = true
+				break
+			}
+		}
+
+		if !found {
+			filelist = append(filelist, b)
+		}
+	}
+
+	info, err := self.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	info.Sources = filelist
+
+	err = self.WriteInfo(info)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -184,6 +379,152 @@ func (self *BuildingSiteCtl) IsWdDirRestricted() bool {
 
 func (self *BuildingSiteCtl) IsDirRestrictedForWork() bool {
 	return IsDirRestrictedForWork(self.Path)
+}
+
+func (self *BuildingSiteCtl) IsBuildingSite() bool {
+	pkg_file := path.Join(self.Path, PACKAGE_INFO_FILENAME_V5)
+	_, err := os.Stat(pkg_file)
+	if os.IsNotExist(err) {
+		return false
+	}
+	return true
+}
+
+func (self *BuildingSiteCtl) Run(targets []string) error {
+
+	l, err := self.CreateLogger("aipsetup bs run log", true)
+	if err != nil {
+		return err
+	}
+	defer l.Close()
+
+	info, err := self.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	builder_name := info.MainTarballInfo.BuilderName
+
+	var builder basictypes.BuilderI
+	if b, ok := buildercollection.Index[builder_name]; !ok {
+		return errors.New("Named builder not found")
+	} else {
+		builder = b()
+	}
+
+	builder.SetBuildingSite(self)
+
+	actions_list, actions := builder.DefineActions()
+
+	{
+		actions_missing := false
+		for _, i := range targets {
+			if _, ok := actions[i]; !ok {
+				actions_missing = true
+				fmt.Println("missing requested target actions:", i)
+			}
+		}
+		if actions_missing {
+			return errors.New(
+				"some requested targets not found in builder's action list",
+			)
+		}
+	}
+
+main_loop:
+	for _, i := range actions_list {
+		for key, val := range actions {
+			if key == i {
+				l.Info("starting target " + key)
+				lo, err := self.CreateLogger(key, true)
+				if err != nil {
+					return err
+				}
+				lo.Info(key + " log started")
+				err = val(lo)
+				lo.Info(key + " log ended")
+				lo.Close()
+				if err != nil {
+					return err
+				}
+				l.Info("---------------------")
+				continue main_loop
+			}
+		}
+	}
+
+	return nil
+}
+
+func (self *BuildingSiteCtl) CreateLogger(name string, console_output bool) (
+	*gologger.Logger,
+	error,
+) {
+	ret := gologger.New()
+
+	t := time.Now().UTC()
+
+	pathname := path.Join(
+		self.GetDIR_BUILD_LOGS(),
+		fmt.Sprintf(
+			"%s %s.txt",
+			t.Format(time.RFC3339Nano),
+			name,
+		),
+	)
+
+	f, err := os.Create(pathname)
+	if err != nil {
+		return nil, err
+	}
+	ret.AddOutputOpt(
+		f,
+		&gologger.OutputOptions{
+			TextIcon:       "",
+			InfoIcon:       "[i]",
+			WarningIcon:    "[w]",
+			ErrorIcon:      "[e]",
+			InsertTime:     true,
+			TimeLayout:     time.RFC3339Nano,
+			ClosedByLogger: true,
+		},
+	)
+
+	if console_output {
+		ret.AddOutputOpt(
+			os.Stdout,
+			&gologger.OutputOptions{
+				TextIcon:       "",
+				InfoIcon:       "[i]",
+				WarningIcon:    "[w]",
+				ErrorIcon:      "[e]",
+				InsertTime:     true,
+				TimeLayout:     time.RFC3339Nano,
+				ClosedByLogger: false,
+			},
+		)
+	}
+
+	return ret, nil
+}
+
+func (self *BuildingSiteCtl) ListActions() ([]string, error) {
+	ret := make([]string, 0)
+
+	info, err := self.ReadInfo()
+	if err != nil {
+		return ret, err
+	}
+
+	b, ok := buildercollection.Index[info.MainTarballInfo.BuilderName]
+	if !ok {
+		return ret, errors.New("requested builder not found")
+	}
+
+	builder := b()
+	ret, _ = builder.DefineActions()
+
+	return ret, nil
 }
 
 func getDIR_x(pth string, x string) string {
@@ -233,8 +574,4 @@ func GetDIR_TEMP(pth string) string {
 func IsWdDirRestricted(pth string) bool {
 	panic("use IsDirRestrictedForWork() instead")
 	return true
-}
-
-func ReadConfig() (*BuildingSiteInfo, error) {
-	return nil, nil
 }

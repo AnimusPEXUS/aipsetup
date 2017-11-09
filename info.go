@@ -1,102 +1,77 @@
 package aipsetup
 
-type CompletePackageInfo struct {
-	OveralPackageInfo
-	TarballPackageInfo
-	BuildingPackageInfo
-	CategorizationPackageInfo
-	DependenciesPackageInfo
+import (
+	"errors"
+	"fmt"
+	"path"
+
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
+	"github.com/AnimusPEXUS/aipsetup/tarballnameparsers"
+	"github.com/AnimusPEXUS/golistfilter"
+)
+
+func DetermineTarballsBuildinfo(filename string) (
+	map[string]*basictypes.PackageInfo,
+	error,
+) {
+
+	ret := make(map[string]*basictypes.PackageInfo)
+
+	filename_s_base := path.Base(filename)
+	filename_s_base_list := []string{filename_s_base}
+
+searching:
+	for key, value := range distropkginfodb.Index {
+
+		name_parser_name := value.TarballFileNameParser
+
+		parser_const, ok := tarballnameparsers.Index[name_parser_name]
+		if !ok {
+			return nil, errors.New("parser " + name_parser_name + "not found")
+		}
+
+		parser := parser_const()
+
+		parse_result, err := parser.ParseName(filename_s_base)
+		if err != nil {
+			fmt.Sprintln(
+				"can't parse %s with %s parser",
+				filename_s_base,
+				name_parser_name,
+			)
+			continue searching
+		}
+
+		if parse_result.Name == value.TarballName {
+
+			fres, err := golistfilter.FilterList(
+				filename_s_base_list,
+				value.Filters,
+				StdVersionFilterFunctions,
+			)
+			if err != nil {
+				return nil, err
+			}
+
+			switch len(fres) {
+			case 0:
+			case 1:
+				ret[key] = value
+			default:
+				panic("this shoud be unreachable")
+			}
+
+		}
+
+	}
+
+	switch len(ret) {
+	case 0:
+		return ret, errors.New("not found")
+	case 1:
+		return ret, nil
+	default:
+		return ret, errors.New("too many matches")
+	}
 }
-
-type OveralPackageInfo struct {
-	Description string
-	HomePage    string
-
-	Removable          bool
-	Reducible          bool
-	NonInstallable     bool
-	Deprecated         bool
-	PrimaryInstallOnly bool
-
-	BuildDeps   []string
-	SODeps      []string
-	RunTimeDeps []string
-}
-
-type TarballPackageInfo struct {
-	Name        string
-	VersionTool string
-	Filters     string
-}
-
-type BuildingPackageInfo struct {
-	BuilderName string
-}
-
-type CategorizationPackageInfo struct {
-	Tags []string
-}
-
-type DependenciesPackageInfo struct {
-	BuildDeps   []string
-	SODeps      []string
-	RunTimeDeps []string
-}
-
-/*
-SAMPLE_PACKAGE_INFO_STRUCTURE = collections.OrderedDict([
-    # description
-    ('description', ""),
-
-    # not required, but can be useful
-    ('home_page', ""),
-
-    # string
-    ('buildscript', ''),
-
-    # string
-    ('version_tool', ''),
-
-    # file name base
-    ('basename', ''),
-
-    # filters. various filters to provide correct list of acceptable tarballs
-    # by they filenames
-    ('filters', ''),
-
-    # can package be deleted without hazard to aipsetup functionality
-    # (including system stability)?
-    ('removable', True),
-
-    # can package be updated without hazard to aipsetup functionality
-    # (including system stability)?
-    ('reducible', True),
-
-    # package can not be installed
-    ('non_installable', False),
-
-    # package outdated and need to be removed
-    ('deprecated', False),
-
-    # some shitty packages
-    # (like python2 and python3: see https://bugs.python.org/issue1294959)
-    # can't be forced to be installed in lib64
-    ('only_primary_install', False),
-
-    # list of str
-    ('tags', []),
-
-    # to make search faster and exclude not related sources
-    ('source_path_prefixes', []),
-
-    # following packages required to build this package
-    ('build_deps', []),
-
-    # depends on .so files in following packages
-    ('so_deps', []),
-
-    # run time dependenties. (man pages reader requiers 'less' command i.e.)
-    ('runtime_deps', [])
-
-    ])
-*/

@@ -1,0 +1,7 @@
+[i] 2017-11-08T00:02:16.437280579Z primary_extract log started
+[i] 2017-11-08T00:02:16.470887068Z starting tar utility
+[i] 2017-11-08T00:02:16.965060408Z tar exited ok
+[i] 2017-11-08T00:02:17.047639688Z tar work resulted in 1 files and/or directories
+[i] 2017-11-08T00:02:17.080958233Z unwrapping and moving files to source directory
+[i] 2017-11-08T00:02:17.115885942Z extraction procedure ended without errors
+[i] 2017-11-08T00:02:17.15813302Z  primary_extract log ended
