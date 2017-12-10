@@ -1,0 +1,33 @@
+{
+  "system_title": "LAILALO",
+  "system_version": "5.0",
+  "host": "x86_64-pc-linux-gnu",
+  "arch": "x86_64-pc-linux-gnu",
+  "build": "x86_64-pc-linux-gnu",
+  "target": "x86_64-pc-linux-gnu",
+  "package_name": "make",
+  "package_version": "4.2.1",
+  "package_status": "",
+  "package_timestamp": "20171127.114708.0860249",
+  "sources": [
+    "make-4.2.1.tar.bz2"
+  ],
+  "main_tarball_info": {
+    "description": "write something here, please",
+    "homepage": "http://www.gnu.org",
+    "tarball_filename_parser": "std",
+    "tarball_name": "make",
+    "Filters": null,
+    "tarball_version_tool": "std",
+    "builder_name": "std",
+    "removable": true,
+    "reducible": true,
+    "non_installable": false,
+    "deprecated": false,
+    "primary_install_only": false,
+    "build_deps": [],
+    "so_deps": [],
+    "runtime_deps": [],
+    "tags": null
+  }
+}

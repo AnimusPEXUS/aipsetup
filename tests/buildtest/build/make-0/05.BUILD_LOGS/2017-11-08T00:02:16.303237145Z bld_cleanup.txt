@@ -1,2 +1,0 @@
-[i] 2017-11-08T00:02:16.30330075Z  bld_cleanup log started
-[i] 2017-11-08T00:02:16.336877472Z bld_cleanup log ended

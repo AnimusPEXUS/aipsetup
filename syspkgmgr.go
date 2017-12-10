@@ -13,9 +13,8 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/AnimusPEXUS/utils/set"
 	"github.com/ulikunitz/xz"
-
-	"github.com/AnimusPEXUS/goset"
 )
 
 type SystemPackages struct {
@@ -327,14 +326,14 @@ func (self *SystemPackages) RemoveASP_DestDir(
 		lib_dirs = append(lib_dirs, res...)
 	}
 
-	dirs := goset.NewSetString()
+	dirs := set.NewSetString()
 	{
 		res, err := self.ListInstalledASPFiles(aspname)
 		if err != nil {
 			return err
 		}
 		{
-			lst := goset.NewSetString()
+			lst := set.NewSetString()
 			for _, i := range res {
 				lst.Add(i)
 			}
@@ -645,7 +644,7 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 
 	tar_obj := tar.NewReader(tar_file_obj)
 
-	directories := goset.NewSetString()
+	directories := set.NewSetString()
 	hardlinks := make(map[string]string)
 
 	var head *tar.Header

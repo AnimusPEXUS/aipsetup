@@ -8,8 +8,9 @@ import (
 	"os/exec"
 	"path"
 	"path/filepath"
+	"strings"
 
-	"github.com/AnimusPEXUS/gologger"
+	"github.com/AnimusPEXUS/utils/logger"
 )
 
 type (
@@ -33,7 +34,7 @@ func (self *Autotools) Extract(
 	new_name string,
 	is_more_than_one_extracted_ok bool,
 	cleanup_srcdir bool,
-	log *gologger.Logger,
+	log *logger.Logger,
 ) error {
 
 	os.RemoveAll(tempdir)
@@ -48,7 +49,11 @@ func (self *Autotools) Extract(
 
 	// TODO: mega fast decision. this should be replaced by internal functionality
 	log.Info("starting tar utility")
-	c := exec.Command("tar", "-xf", filename, "-C", tempdir)
+	c := exec.Command("tar", "-vxf", filename, "-C", tempdir)
+
+	c.Stdout = log.StdoutLbl()
+	c.Stderr = log.StderrLbl()
+
 	c_res := c.Run()
 
 	if c_res != nil {
@@ -233,7 +238,7 @@ func (self *Autotools) Configure(
 	// execute shell programm with configure's path as parameter
 	run_as_argument_to_shell bool,
 	shell_program string,
-	log *gologger.Logger,
+	log *logger.Logger,
 ) error {
 
 	configure_dirpath, err := filepath.Abs(configure_dirpath)
@@ -267,7 +272,10 @@ func (self *Autotools) Configure(
 
 	int_args := make([]string, 0)
 
-	dirpath_script_to_run := path.Join(dirpath, configure_filename)
+	dirpath_script_to_run := strings.Join(
+		[]string{dirpath, configure_filename},
+		string(os.PathSeparator),
+	)
 
 	if run_as_argument_to_shell {
 		executable = shell_program
@@ -282,7 +290,105 @@ func (self *Autotools) Configure(
 	cmd := exec.Command(executable, int_args...)
 	cmd.Env = env
 	cmd.Dir = working_dirpath
+
+	log.Info("Configure Parameters:")
+	log.Info("  executable: " + executable)
+	log.Info("  arguments:")
+	for _, i := range int_args {
+		log.Info(fmt.Sprintf("    %s", i))
+	}
+	log.Info("  environment:")
+	for _, i := range env {
+		log.Info(fmt.Sprintf("    %s", i))
+	}
+	log.Info("  configure dir: " + configure_dirpath)
+	log.Info("  working dir: " + working_dirpath)
+
+	cmd.Stdout = log.StdoutLbl()
+	cmd.Stderr = log.StderrLbl()
+
 	ret := cmd.Run()
+
+	log.Info(cmd.ProcessState.String())
+
+	return ret
+}
+
+func (self *Autotools) Make(
+	args []string,
+	env []string,
+	env_mode EnvironmentOperationMode,
+	makefile_filename string,
+	makefile_dirpath string,
+	working_dirpath string,
+	// // 1) calculates absolute path to configure and uses it as
+	// // run-path or 2) calculates relative path from working dir to configure file
+	// // and runs it relatively
+	// run_relative bool,
+	// whatever to start script it self or to
+	// execute shell programm with configure's path as parameter
+	// run_as_argument_to_shell bool,
+	make_program string,
+	log *logger.Logger,
+) error {
+
+	makefile_dirpath, err := filepath.Abs(makefile_dirpath)
+	if err != nil {
+		return err
+	}
+
+	working_dirpath, err = filepath.Abs(working_dirpath)
+	if err != nil {
+		return err
+	}
+
+	executable := make_program
+
+	int_env := make([]string, 0)
+	if env_mode == Copy {
+		int_env = append(int_env, os.Environ()...)
+	}
+	int_env = append(int_env, env...)
+
+	int_args := make([]string, 0)
+
+	dirpath, err := filepath.Rel(working_dirpath, makefile_dirpath)
+	if err != nil {
+		return err
+	}
+
+	dirpath_script_to_run := strings.Join(
+		[]string{dirpath, makefile_filename},
+		string(os.PathSeparator),
+	)
+
+	int_args = append(int_args, []string{"-f", dirpath_script_to_run}...)
+
+	int_args = append(int_args, args...)
+
+	cmd := exec.Command(executable, int_args...)
+	cmd.Env = env
+	cmd.Dir = working_dirpath
+
+	log.Info("Make Parameters:")
+	log.Info("  executable: " + executable)
+	log.Info("  arguments:")
+	for _, i := range int_args {
+		log.Info(fmt.Sprintf("    %s", i))
+	}
+	log.Info("  environment:")
+	for _, i := range env {
+		log.Info(fmt.Sprintf("    %s", i))
+	}
+	log.Info("  Makefile dir: " + makefile_dirpath)
+	log.Info("  working dir: " + working_dirpath)
+
+	cmd.Stdout = log.StdoutLbl()
+	cmd.Stderr = log.StderrLbl()
+
+	ret := cmd.Run()
+
+	log.Info(cmd.ProcessState.String())
 
 	return ret
 }

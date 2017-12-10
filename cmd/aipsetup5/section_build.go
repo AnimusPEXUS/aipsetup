@@ -1,13 +1,15 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/cliapp"
+	"github.com/AnimusPEXUS/aipsetup/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
 func SectionAipsetupBuild() *cliapp.AppCmdNode {
@@ -60,17 +62,108 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 
 				Callable: CmdAipsetupBuildRun,
 			},
+
+			&cliapp.AppCmdNode{
+				Name: "pack",
+
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+
+				Callable: CmdAipsetupBuildPack,
+			},
 		},
 	}
 
+}
+
+func CmdAipsetupBuildInitSub01(
+	main_tarball string,
+	addittional_tarballs []string,
+	host, arch, build, target string,
+) error {
+
+	target_tarball := main_tarball
+
+	buildinfo, err := aipsetup.DetermineTarballsBuildinfo(target_tarball)
+	if err != nil {
+		return errors.New("error searching matching info record: " + err.Error())
+	}
+
+	var buildinfoname string
+	var buildinfo0 *basictypes.PackageInfo = nil
+
+	for n, v := range buildinfo {
+		buildinfoname = n
+		buildinfo0 = v
+		break
+	}
+
+	var version string
+	{
+		var parser tarballnameparsers.TarballNameParserI
+
+		{
+			parser_c, ok :=
+				tarballnameparsers.Index[buildinfo0.TarballFileNameParser]
+			if !ok {
+				return errors.New(
+					"can't find tarball name parser pointed by info file: " + err.Error(),
+				)
+			}
+
+			parser = parser_c()
+		}
+
+		parsed, err := parser.ParseName(target_tarball)
+		if err != nil {
+			return err
+		}
+
+		version = parsed.VersionString()
+
+	}
+
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(
+		fmt.Sprintf("build/%s-%s", buildinfoname, version),
+	)
+
+	err = bs_ctl.Init()
+	if err != nil {
+		return errors.New("can't init new building site: " + err.Error())
+	}
+
+	err = bs_ctl.ApplyInitialInfo(buildinfoname, buildinfo0)
+	if err != nil {
+		return errors.New("can't apply initial info to building site: " + err.Error())
+	}
+
+	err = bs_ctl.ApplyHostArchBuildTarget(host, arch, build, target)
+	if err != nil {
+		return errors.New("can't apply habt info to building site: " + err.Error())
+	}
+
+	all_tarballs := make([]string, 0)
+	all_tarballs = append(all_tarballs, main_tarball)
+	all_tarballs = append(all_tarballs, addittional_tarballs...)
+
+	err = bs_ctl.CopyInTarballs(all_tarballs)
+	if err != nil {
+		return errors.New("can't copy tarballs into building site: " + err.Error())
+	}
+
+	err = bs_ctl.ApplyTarballs(all_tarballs[0])
+	if err != nil {
+		return errors.New("can't apply tarballs to building site: " + err.Error())
+	}
+
+	return nil
 }
 
 func CmdAipsetupBuildInit(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
-
-	// TODO: this function requires optimization
 
 	sys := aipsetup.NewSystem(
 		getopt_result.GetLastNamedRetOptItem("--root").Value,
@@ -97,149 +190,37 @@ func CmdAipsetupBuildInit(
 		}
 	}
 
+	var err error
+
 	if getopt_result.DoesHaveNamedRetOptItem("-o") {
-
-		target_tarball := getopt_result.Args[0]
-
-		buildinfo, err := aipsetup.DetermineTarballsBuildinfo(target_tarball)
-		if err != nil {
-			if len(buildinfo) > 1 {
-				fmt.Println("error: too many info records match this tarball")
-				for i, _ := range buildinfo {
-					fmt.Println("  ", i)
-				}
-			}
-			return &cliapp.AppResult{
-				Code:    15,
-				Message: "error getting buildinfo for tarball: " + err.Error(),
-			}
-		}
-
-		var buildinfoname string
-		var buildinfo0 *basictypes.PackageInfo = nil
-
-		for n, v := range buildinfo {
-			buildinfoname = n
-			buildinfo0 = v
-		}
-
-		bs_ctl, err := aipsetup.NewBuildingSiteCtl(fmt.Sprintf("build/%s", buildinfoname))
-
-		err = bs_ctl.Init()
-		if err != nil {
-			return &cliapp.AppResult{
-				Code:    16,
-				Message: "can't init new building site",
-			}
-		}
-
-		err = bs_ctl.ApplyInitialInfo(buildinfoname, buildinfo0)
-		if err != nil {
-			return &cliapp.AppResult{
-				Code:    16,
-				Message: "can't apply initial info to building site",
-			}
-		}
-
-		err = bs_ctl.ApplyHostArchBuildTarget(host, arch, build, target)
-		if err != nil {
-			return &cliapp.AppResult{
-				Code:    16,
-				Message: "can't apply habt info to building site",
-			}
-		}
-
-		err = bs_ctl.CopyInTarballs(getopt_result.Args)
-		if err != nil {
-			return &cliapp.AppResult{
-				Code:    16,
-				Message: "can't copy tarballs into building site",
-			}
-		}
-
-		err = bs_ctl.ApplyTarballs(getopt_result.Args[0])
-		if err != nil {
-			return &cliapp.AppResult{
-				Code:    16,
-				Message: "can't apply tarballs to building site",
-			}
-		}
-
+		err = CmdAipsetupBuildInitSub01(
+			getopt_result.Args[0],
+			getopt_result.Args[1:],
+			host, arch, build, target,
+		)
 	} else {
-
-		counter := 0
 
 		for _, i := range getopt_result.Args {
 
-			buildinfo, err := aipsetup.DetermineTarballsBuildinfo(i)
-			if err != nil {
-				if len(buildinfo) > 1 {
-					fmt.Println("error: too many info records match this tarball")
-					for i, _ := range buildinfo {
-						fmt.Println("  ", i)
-					}
-				}
-				return &cliapp.AppResult{
-					Code:    15,
-					Message: "error getting buildinfo for tarball: " + err.Error(),
-				}
-			}
-
-			var buildinfoname string
-			var buildinfo0 *basictypes.PackageInfo = nil
-
-			for n, v := range buildinfo {
-				buildinfoname = n
-				buildinfo0 = v
-			}
-
-			bs_ctl, err := aipsetup.NewBuildingSiteCtl(
-				fmt.Sprintf("build/%s-%d", buildinfoname, counter),
+			err = CmdAipsetupBuildInitSub01(
+				i,
+				[]string{},
+				host, arch, build, target,
 			)
 
-			err = bs_ctl.Init()
 			if err != nil {
-				return &cliapp.AppResult{
-					Code:    16,
-					Message: "can't init new building site",
-				}
+				break
 			}
 
-			err = bs_ctl.ApplyInitialInfo(buildinfoname, buildinfo0)
-			if err != nil {
-				return &cliapp.AppResult{
-					Code:    16,
-					Message: "can't apply initial info to building site",
-				}
-			}
-
-			err = bs_ctl.ApplyHostArchBuildTarget(host, arch, build, target)
-			if err != nil {
-				return &cliapp.AppResult{
-					Code:    16,
-					Message: "can't apply habt info to building site",
-				}
-			}
-
-			err = bs_ctl.CopyInTarballs([]string{i})
-			if err != nil {
-				return &cliapp.AppResult{
-					Code:    16,
-					Message: "can't copy tarball into building site",
-				}
-			}
-
-			err = bs_ctl.ApplyTarballs(i)
-			if err != nil {
-				return &cliapp.AppResult{
-					Code:    16,
-					Message: "can't apply tarballs to building site",
-				}
-			}
-
-			counter++
 		}
 
+	}
+
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    15,
+			Message: err.Error(),
+		}
 	}
 
 	return &cliapp.AppResult{Code: 0}
@@ -326,6 +307,41 @@ func CmdAipsetupBuildRun(
 			Message: err.Error(),
 		}
 	}
+
+	return new(cliapp.AppResult)
+}
+
+func CmdAipsetupBuildPack(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(".")
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    10,
+			Message: "Can't create building site object",
+		}
+	}
+
+	log, err := bs_ctl.CreateLogger("packaging", true)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    11,
+			Message: "Can't create logger",
+		}
+	}
+
+	err = bs_ctl.Packager().Run(log)
+	if err != nil {
+		log.Error(err.Error())
+		return &cliapp.AppResult{
+			Code:    12,
+			Message: "Packaging error",
+		}
+	}
+
+	log.Info("Finished")
+	log.Close()
 
 	return new(cliapp.AppResult)
 }

@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/AnimusPEXUS/goset"
+	"github.com/AnimusPEXUS/utils/set"
 	"github.com/go-ini/ini"
 )
 
@@ -16,9 +16,14 @@ var (
 )
 
 var DEFAULT_AIPSETUP_SYSTEM_CONFIG = []byte("" +
-	`[main]
+	`
+[main]
 host = x86_64-pc-linux-gnu
 archs = i686-pc-linux-gnu
+
+[tarball_downloading]
+enabled = false
+repository = path
 `)
 
 type System struct {
@@ -55,7 +60,7 @@ func (self *System) Archs() []string {
 	lst = append(lst, self.Host())
 	lst = append(lst, res...)
 
-	s := goset.NewSetString()
+	s := set.NewSetString()
 	for _, val := range lst {
 		s.Add(val)
 	}
@@ -81,6 +86,10 @@ func (self *System) GetInstalledASPBuildLogsDir() string {
 
 func (self *System) GetInstalledASPDepsDir() string {
 	return path.Join(self.GetInstalledASPDir(), "deps")
+}
+
+func (self *System) GetTarballRepoRootDir() string {
+	return self.cfg.Section("tarball_downloading").Key("path").MustString("")
 }
 
 func NewSystem(root string) *System {

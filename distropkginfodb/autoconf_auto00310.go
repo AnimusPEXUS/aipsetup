@@ -2,7 +2,7 @@ package distropkginfodb
 
 import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/golistfilter"
+	"github.com/AnimusPEXUS/utils/textlist"
 	// "github.com/AnimusPEXUS/aipsetup/buildercollection"
 	// "github.com/AnimusPEXUS/aipsetup/versiontools"
 )
@@ -24,7 +24,7 @@ var DistroPackageInfo_autoconf = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballName:           "autoconf",
 
-	Filters: golistfilter.ParseFilterTextLinesMust(
+	Filters: textlist.ParseFilterTextLinesMust(
 		[]string{
 			"- version-== 2.13",
 		},

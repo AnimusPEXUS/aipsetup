@@ -15,7 +15,8 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildercollection"
-	"github.com/AnimusPEXUS/gologger"
+	"github.com/AnimusPEXUS/aipsetup/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/logger"
 )
 
 var (
@@ -74,6 +75,7 @@ var (
 )
 
 const PACKAGE_INFO_FILENAME_V5 = "package_info_v5.json"
+const PACKAGE_CHECKSUM_FILENAME = "package.sha512"
 
 func IsDirRestrictedForWork(path string) bool {
 	var err error
@@ -333,6 +335,32 @@ maintarball_found:
 
 	info.Sources = filelist
 
+	{
+
+		var parser tarballnameparsers.TarballNameParserI
+
+		{
+			parser_c, ok :=
+				tarballnameparsers.Index[info.MainTarballInfo.TarballFileNameParser]
+			if !ok {
+				return errors.New("can't find tarball name parser pointed by info file")
+			}
+
+			parser = parser_c()
+		}
+
+		parsed, err := parser.ParseName(filelist[0])
+		if err != nil {
+			return err
+		}
+
+		info.PackageVersion = parsed.VersionString()
+		if parsed.HaveStatus {
+			info.PackageStatus = parsed.Status.String()
+		}
+
+	}
+
 	err = self.WriteInfo(info)
 	if err != nil {
 		return err
@@ -409,10 +437,10 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 	if b, ok := buildercollection.Index[builder_name]; !ok {
 		return errors.New("Named builder not found")
 	} else {
-		builder = b()
+		builder = b(self)
 	}
 
-	builder.SetBuildingSite(self)
+	// builder.SetBuildingSite(self)
 
 	actions_list, actions := builder.DefineActions()
 
@@ -457,10 +485,10 @@ main_loop:
 }
 
 func (self *BuildingSiteCtl) CreateLogger(name string, console_output bool) (
-	*gologger.Logger,
+	*logger.Logger,
 	error,
 ) {
-	ret := gologger.New()
+	ret := logger.New()
 
 	t := time.Now().UTC()
 
@@ -479,7 +507,7 @@ func (self *BuildingSiteCtl) CreateLogger(name string, console_output bool) (
 	}
 	ret.AddOutputOpt(
 		f,
-		&gologger.OutputOptions{
+		&logger.OutputOptions{
 			TextIcon:       "",
 			InfoIcon:       "[i]",
 			WarningIcon:    "[w]",
@@ -493,7 +521,7 @@ func (self *BuildingSiteCtl) CreateLogger(name string, console_output bool) (
 	if console_output {
 		ret.AddOutputOpt(
 			os.Stdout,
-			&gologger.OutputOptions{
+			&logger.OutputOptions{
 				TextIcon:       "",
 				InfoIcon:       "[i]",
 				WarningIcon:    "[w]",
@@ -521,10 +549,63 @@ func (self *BuildingSiteCtl) ListActions() ([]string, error) {
 		return ret, errors.New("requested builder not found")
 	}
 
-	builder := b()
+	builder := b(self)
 	ret, _ = builder.DefineActions()
 
 	return ret, nil
+}
+
+func (self *BuildingSiteCtl) GetConfiguredHost() (string, error) {
+	i, err := self.ReadInfo()
+	if err != nil {
+		return "", err
+	}
+
+	return i.Host, nil
+}
+
+func (self *BuildingSiteCtl) GetConfiguredArch() (string, error) {
+	i, err := self.ReadInfo()
+	if err != nil {
+		return "", err
+	}
+
+	return i.Arch, nil
+}
+
+func (self *BuildingSiteCtl) GetConfiguredBuild() (string, error) {
+	i, err := self.ReadInfo()
+	if err != nil {
+		return "", err
+	}
+
+	return i.Build, nil
+}
+
+func (self *BuildingSiteCtl) GetConfiguredTarget() (string, error) {
+	i, err := self.ReadInfo()
+	if err != nil {
+		return "", err
+	}
+
+	return i.Target, nil
+}
+
+func (self *BuildingSiteCtl) GetConfiguredHABT() (string, string, string, string, error) {
+	i, err := self.ReadInfo()
+	if err != nil {
+		return "", "", "", "", err
+	}
+
+	return i.Host, i.Arch, i.Build, i.Target, nil
+}
+
+func (self *BuildingSiteCtl) SystemValuesCalculator() basictypes.SystemValuesCalculatorI {
+	return NewValuesCalculator(self)
+}
+
+func (self *BuildingSiteCtl) Packager() *ASPackager {
+	return NewASPackager(self)
 }
 
 func getDIR_x(pth string, x string) string {

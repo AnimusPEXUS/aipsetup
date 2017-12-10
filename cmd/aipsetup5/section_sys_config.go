@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/AnimusPEXUS/aipsetup"
-	"github.com/AnimusPEXUS/cliapp"
+	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
 func SectionAipsetupSysConfig() *cliapp.AppCmdNode {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/AnimusPEXUS/cliapp"
+	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
 func SectionAipsetupSys() *cliapp.AppCmdNode {

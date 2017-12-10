@@ -1,2 +1,0 @@
-[i] 2017-11-08T00:02:15.950926978Z dst_cleanup log started
-[i] 2017-11-08T00:02:15.993045784Z dst_cleanup log ended

@@ -1,7 +1,6 @@
 package basictypes
 
 type BuildingSiteCtlI interface {
-	ReadInfo() (*BuildingSiteInfo, error)
 	GetDIR_TARBALL() string
 	GetDIR_SOURCE() string
 	GetDIR_PATCHES() string
@@ -11,31 +10,13 @@ type BuildingSiteCtlI interface {
 	GetDIR_LISTS() string
 	GetDIR_TEMP() string
 
-	GetConfiguredHost() string
-	GetConfiguredArch() string
-	GetConfiguredBuild() string
-	GetConfiguredTarget() string
-}
+	ReadInfo() (*BuildingSiteInfo, error)
 
-type BuildingProcessValuesCalculator interface {
-	CalculateIsCrossbuild() bool
-	CalculateIsCrossbuilder() bool
-	CalculateIsOnlyArchIsDifferent() bool
+	GetConfiguredHost() (string, error)
+	GetConfiguredArch() (string, error)
+	GetConfiguredBuild() (string, error)
+	GetConfiguredTarget() (string, error)
+	GetConfiguredHABT() (string, string, string, string, error)
 
-	CalculateMultihostDir() string
-	CalculateDstMultihostDir() string
-
-	CalculateHostMultiarchDir() string
-	CalculateDstHostMultiarchDir() string
-
-	CalculateHostArchDir() string
-	CalculateDstHostArchDir() string
-
-	// /{hostpath}/corssbuilders
-	CalculateHostCrossbuildersDir() string
-	CalculateDstHostCrossbuildersDir() string
-
-	// /{hostpath}/corssbuilders/{target}
-	CalculateHostCrossbuilderDir() string
-	CalculateDstHostCrossbuilderDir() string
+	SystemValuesCalculator() SystemValuesCalculatorI
 }

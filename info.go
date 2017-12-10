@@ -8,7 +8,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballnameparsers"
-	"github.com/AnimusPEXUS/golistfilter"
+	"github.com/AnimusPEXUS/utils/textlist"
 )
 
 func DetermineTarballsBuildinfo(filename string) (
@@ -45,7 +45,7 @@ searching:
 
 		if parse_result.Name == value.TarballName {
 
-			fres, err := golistfilter.FilterList(
+			fres, err := textlist.FilterList(
 				filename_s_base_list,
 				value.Filters,
 				StdVersionFilterFunctions,

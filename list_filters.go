@@ -5,19 +5,19 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/AnimusPEXUS/golistfilter"
-	"github.com/AnimusPEXUS/goversion"
-	"github.com/AnimusPEXUS/tarball"
+	"github.com/AnimusPEXUS/utils/tarballname"
+	"github.com/AnimusPEXUS/utils/textlist"
+	"github.com/AnimusPEXUS/utils/version"
 )
 
-var StdVersionFilterFunctions golistfilter.FilterFunctions
+var StdVersionFilterFunctions textlist.FilterFunctions
 
 func VersionCheck(
 	function string,
 	parameter string,
 	value_to_match string,
 ) (bool, error) {
-	res, err := tarball.Parse(value_to_match)
+	res, err := tarballname.Parse(value_to_match)
 	if err != nil {
 		return false, err
 	}
@@ -44,19 +44,19 @@ func VersionCheck(
 	default:
 		return false, errors.New("invalid version comparison function")
 	case "<":
-		ret = goversion.Compare(vtm_i_array, param_i_array) == -1
+		ret = version.Compare(vtm_i_array, param_i_array) == -1
 	case "<=":
-		r := goversion.Compare(vtm_i_array, param_i_array)
+		r := version.Compare(vtm_i_array, param_i_array)
 		ret = r == -1 || r == 0
 	case "==":
-		ret = goversion.Compare(vtm_i_array, param_i_array) == 0
+		ret = version.Compare(vtm_i_array, param_i_array) == 0
 	case ">=":
-		r := goversion.Compare(vtm_i_array, param_i_array)
+		r := version.Compare(vtm_i_array, param_i_array)
 		ret = r == 0 || r == 1
 	case ">":
-		ret = goversion.Compare(vtm_i_array, param_i_array) == 1
+		ret = version.Compare(vtm_i_array, param_i_array) == 1
 	case "!=":
-		ret = goversion.Compare(vtm_i_array, param_i_array) != 0
+		ret = version.Compare(vtm_i_array, param_i_array) != 0
 	}
 
 	return ret, nil
@@ -64,7 +64,7 @@ func VersionCheck(
 
 func init() {
 
-	StdVersionFilterFunctions = make(golistfilter.FilterFunctions)
+	StdVersionFilterFunctions = make(textlist.FilterFunctions)
 
 	for k, v := range StdVersionFilterFunctions {
 		StdVersionFilterFunctions[k] = v

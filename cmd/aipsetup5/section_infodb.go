@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
-	"github.com/AnimusPEXUS/cliapp"
+	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
 func SectionAipsetupInfoDB() *cliapp.AppCmdNode {

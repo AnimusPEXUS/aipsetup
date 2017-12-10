@@ -1,0 +1,41 @@
+{
+  "system_title": "LAILALO",
+  "system_version": "5.0",
+  "host": "x86_64-pc-linux-gnu",
+  "arch": "x86_64-pc-linux-gnu",
+  "build": "x86_64-pc-linux-gnu",
+  "target": "x86_64-pc-linux-gnu",
+  "package_name": "autoconf",
+  "package_version": "2.69",
+  "package_status": "",
+  "package_timestamp": "20171127.114510.0601898",
+  "sources": [
+    "autoconf-2.69.tar.xz"
+  ],
+  "main_tarball_info": {
+    "description": "write something here, please",
+    "homepage": "http://www.gnu.org",
+    "tarball_filename_parser": "std",
+    "tarball_name": "autoconf",
+    "Filters": [
+      {
+        "Add": false,
+        "NotFunc": false,
+        "Func": "version-==",
+        "CaseSensitive": false,
+        "FuncParam": "2.13"
+      }
+    ],
+    "tarball_version_tool": "std",
+    "builder_name": "std",
+    "removable": true,
+    "reducible": true,
+    "non_installable": false,
+    "deprecated": false,
+    "primary_install_only": false,
+    "build_deps": [],
+    "so_deps": [],
+    "runtime_deps": [],
+    "tags": null
+  }
+}

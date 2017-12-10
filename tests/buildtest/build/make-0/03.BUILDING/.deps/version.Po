@@ -1,6 +1,0 @@
-version.o: ../01.SOURCE/version.c \
- /multihost/x86_64-pc-linux-gnu/include/stdc-predef.h config.h
-
-/multihost/x86_64-pc-linux-gnu/include/stdc-predef.h:
-
-config.h:

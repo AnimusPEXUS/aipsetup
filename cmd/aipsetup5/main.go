@@ -1,13 +1,13 @@
 package main
 
-import "github.com/AnimusPEXUS/cliapp"
+import "github.com/AnimusPEXUS/utils/cliapp"
 
 func main() {
 
 	app := cliapp.AppCmdNode{
 		Name:        "aipsetup",
 		Description: "LAILALO GNU/Linux system's package manager",
-		DevStatus:   "pre-alpha",
+		DevStatus:   "dev",
 		License:     "GPLv3+",
 		Version:     "5.0",
 		SubCmds: []*cliapp.AppCmdNode{
@@ -15,6 +15,7 @@ func main() {
 			SectionAipsetupSysConfig(),
 			SectionAipsetupBuild(),
 			SectionAipsetupInfoDB(),
+			SectionAipsetupTarGet(),
 		},
 	}
 

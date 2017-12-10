@@ -2,8 +2,7 @@ package main
 
 import (
 	"github.com/AnimusPEXUS/aipsetup"
-
-	"github.com/AnimusPEXUS/cliapp"
+	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
 var (

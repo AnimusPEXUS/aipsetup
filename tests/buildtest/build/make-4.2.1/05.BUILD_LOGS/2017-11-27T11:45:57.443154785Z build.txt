@@ -1,0 +1,100 @@
+[i] 2017-11-27T11:45:57.443222969Z build log started
+[i] 2017-11-27T11:45:57.493399298Z this builder uses same environment variables for make as for configure
+[i] 2017-11-27T11:45:57.544197011Z Make Parameters:
+[i] 2017-11-27T11:45:57.593519418Z   executable: make
+[i] 2017-11-27T11:45:57.635275753Z   arguments:
+[i] 2017-11-27T11:45:57.67697596Z      -f
+[i] 2017-11-27T11:45:57.718770407Z     ./Makefile
+[i] 2017-11-27T11:45:57.760487588Z     -j2
+[i] 2017-11-27T11:45:57.80225749Z    environment:
+[i] 2017-11-27T11:45:57.84394296Z      C_INCLUDE_PATH=/multihost/x86_64-pc-linux-gnu/include
+[i] 2017-11-27T11:45:57.885703663Z     PATH=/multihost/x86_64-pc-linux-gnu/bin:/multihost/x86_64-pc-linux-gnu/sbin
+[i] 2017-11-27T11:45:57.930674411Z     CC=x86_64-pc-linux-gnu-gcc -m64
+[i] 2017-11-27T11:45:57.969150472Z     CXX=x86_64-pc-linux-gnu-g++ -m64
+[i] 2017-11-27T11:45:58.010902296Z     PKG_CONFIG_PATH=/multihost/x86_64-pc-linux-gnu/share/pkgconfig:/multihost/x86_64-pc-linux-gnu/lib/pkgconfig:/multihost/x86_64-pc-linux-gnu/lib64/pkgconfig
+[i] 2017-11-27T11:45:58.060985558Z     LD_LIBRARY_PATH=/multihost/x86_64-pc-linux-gnu/lib:/multihost/x86_64-pc-linux-gnu/lib64
+[i] 2017-11-27T11:45:58.102700725Z     LIBRARY_PATH=/multihost/x86_64-pc-linux-gnu/lib:/multihost/x86_64-pc-linux-gnu/lib64
+[i] 2017-11-27T11:45:58.144504125Z   Makefile dir: /home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE
+[i] 2017-11-27T11:45:58.194525489Z   working dir: /home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE
+[i] 2017-11-27T11:45:58.246632606Z make  all-recursive
+[i] 2017-11-27T11:45:58.303220596Z make[1]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE'
+[i] 2017-11-27T11:45:58.345151868Z Making all in glob
+[i] 2017-11-27T11:45:58.40362825Z  make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE/glob'
+[i] 2017-11-27T11:45:58.445368904Z make[2]: Nothing to be done for 'all'.
+[i] 2017-11-27T11:45:58.487143759Z make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE/glob'
+[i] 2017-11-27T11:45:58.545749316Z Making all in config
+[i] 2017-11-27T11:45:58.587792632Z make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE/config'
+[i] 2017-11-27T11:45:58.63793887Z  make[2]: Nothing to be done for 'all'.
+[i] 2017-11-27T11:45:58.681195942Z make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE/config'
+[i] 2017-11-27T11:45:58.731249762Z Making all in po
+[i] 2017-11-27T11:45:58.781338624Z make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE/po'
+[i] 2017-11-27T11:45:58.831397647Z make[2]: Nothing to be done for 'all'.
+[i] 2017-11-27T11:45:58.889991985Z make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE/po'
+[i] 2017-11-27T11:45:58.948670316Z Making all in doc
+[i] 2017-11-27T11:45:58.999013516Z make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE/doc'
+[i] 2017-11-27T11:45:59.049077483Z make[2]: Nothing to be done for 'all'.
+[i] 2017-11-27T11:45:59.099252952Z make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE/doc'
+[i] 2017-11-27T11:45:59.15802232Z  make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE'
+[i] 2017-11-27T11:45:59.208067992Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT ar.o -MD -MP -MF .deps/ar.Tpo -c -o ar.o ar.c
+[i] 2017-11-27T11:45:59.266484141Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT arscan.o -MD -MP -MF .deps/arscan.Tpo -c -o arscan.o arscan.c
+[i] 2017-11-27T11:45:59.30907505Z  mv -f .deps/arscan.Tpo .deps/arscan.Po
+[i] 2017-11-27T11:45:59.349983736Z mv -f .deps/ar.Tpo .deps/ar.Po
+[i] 2017-11-27T11:45:59.416986525Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT commands.o -MD -MP -MF .deps/commands.Tpo -c -o commands.o commands.c
+[i] 2017-11-27T11:45:59.492371171Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT default.o -MD -MP -MF .deps/default.Tpo -c -o default.o default.c
+[i] 2017-11-27T11:45:59.542462529Z mv -f .deps/default.Tpo .deps/default.Po
+[i] 2017-11-27T11:45:59.592659086Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT dir.o -MD -MP -MF .deps/dir.Tpo -c -o dir.o dir.c
+[i] 2017-11-27T11:45:59.651281943Z mv -f .deps/dir.Tpo .deps/dir.Po
+[i] 2017-11-27T11:45:59.701382092Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT expand.o -MD -MP -MF .deps/expand.Tpo -c -o expand.o expand.c
+[i] 2017-11-27T11:45:59.751453155Z mv -f .deps/commands.Tpo .deps/commands.Po
+[i] 2017-11-27T11:45:59.801560573Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT file.o -MD -MP -MF .deps/file.Tpo -c -o file.o file.c
+[i] 2017-11-27T11:45:59.851607241Z mv -f .deps/expand.Tpo .deps/expand.Po
+[i] 2017-11-27T11:45:59.901735589Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT function.o -MD -MP -MF .deps/function.Tpo -c -o function.o function.c
+[i] 2017-11-27T11:45:59.951759067Z mv -f .deps/file.Tpo .deps/file.Po
+[i] 2017-11-27T11:46:00.001822742Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT getopt.o -MD -MP -MF .deps/getopt.Tpo -c -o getopt.o getopt.c
+[i] 2017-11-27T11:46:00.051884423Z mv -f .deps/getopt.Tpo .deps/getopt.Po
+[i] 2017-11-27T11:46:00.101958932Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT getopt1.o -MD -MP -MF .deps/getopt1.Tpo -c -o getopt1.o getopt1.c
+[i] 2017-11-27T11:46:00.152075081Z mv -f .deps/getopt1.Tpo .deps/getopt1.Po
+[i] 2017-11-27T11:46:00.21067382Z  x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT guile.o -MD -MP -MF .deps/guile.Tpo -c -o guile.o guile.c
+[i] 2017-11-27T11:46:00.269342147Z mv -f .deps/guile.Tpo .deps/guile.Po
+[i] 2017-11-27T11:46:00.319455651Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT implicit.o -MD -MP -MF .deps/implicit.Tpo -c -o implicit.o implicit.c
+[i] 2017-11-27T11:46:00.369557474Z mv -f .deps/implicit.Tpo .deps/implicit.Po
+[i] 2017-11-27T11:46:00.419846556Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT job.o -MD -MP -MF .deps/job.Tpo -c -o job.o job.c
+[i] 2017-11-27T11:46:00.478348932Z mv -f .deps/function.Tpo .deps/function.Po
+[i] 2017-11-27T11:46:00.528431811Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT load.o -MD -MP -MF .deps/load.Tpo -c -o load.o load.c
+[i] 2017-11-27T11:46:00.578537451Z mv -f .deps/load.Tpo .deps/load.Po
+[i] 2017-11-27T11:46:00.637152945Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT loadapi.o -MD -MP -MF .deps/loadapi.Tpo -c -o loadapi.o loadapi.c
+[i] 2017-11-27T11:46:00.687260101Z mv -f .deps/loadapi.Tpo .deps/loadapi.Po
+[i] 2017-11-27T11:46:00.737407643Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o main.c
+[i] 2017-11-27T11:46:00.842923979Z mv -f .deps/job.Tpo .deps/job.Po
+[i] 2017-11-27T11:46:00.896012399Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT misc.o -MD -MP -MF .deps/misc.Tpo -c -o misc.o misc.c
+[i] 2017-11-27T11:46:01.082818213Z mv -f .deps/misc.Tpo .deps/misc.Po
+[i] 2017-11-27T11:46:01.138179525Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT posixos.o -MD -MP -MF .deps/posixos.Tpo -c -o posixos.o posixos.c
+[i] 2017-11-27T11:46:01.304553622Z mv -f .deps/posixos.Tpo .deps/posixos.Po
+[i] 2017-11-27T11:46:01.363692787Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT output.o -MD -MP -MF .deps/output.Tpo -c -o output.o output.c
+[i] 2017-11-27T11:46:01.431448718Z mv -f .deps/main.Tpo .deps/main.Po
+[i] 2017-11-27T11:46:01.482094807Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT read.o -MD -MP -MF .deps/read.Tpo -c -o read.o read.c
+[i] 2017-11-27T11:46:01.678675392Z mv -f .deps/output.Tpo .deps/output.Po
+[i] 2017-11-27T11:46:01.724304718Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT remake.o -MD -MP -MF .deps/remake.Tpo -c -o remake.o remake.c
+[i] 2017-11-27T11:46:02.287589657Z mv -f .deps/remake.Tpo .deps/remake.Po
+[i] 2017-11-27T11:46:02.358144425Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT rule.o -MD -MP -MF .deps/rule.Tpo -c -o rule.o rule.c
+[i] 2017-11-27T11:46:02.416870261Z mv -f .deps/read.Tpo .deps/read.Po
+[i] 2017-11-27T11:46:02.467122684Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT signame.o -MD -MP -MF .deps/signame.Tpo -c -o signame.o signame.c
+[i] 2017-11-27T11:46:02.51719891Z  mv -f .deps/signame.Tpo .deps/signame.Po
+[i] 2017-11-27T11:46:02.575882611Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT strcache.o -MD -MP -MF .deps/strcache.Tpo -c -o strcache.o strcache.c
+[i] 2017-11-27T11:46:02.625927721Z mv -f .deps/strcache.Tpo .deps/strcache.Po
+[i] 2017-11-27T11:46:02.676134058Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT variable.o -MD -MP -MF .deps/variable.Tpo -c -o variable.o variable.c
+[i] 2017-11-27T11:46:02.734780999Z mv -f .deps/rule.Tpo .deps/rule.Po
+[i] 2017-11-27T11:46:02.793388621Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT version.o -MD -MP -MF .deps/version.Tpo -c -o version.o version.c
+[i] 2017-11-27T11:46:02.843685101Z mv -f .deps/version.Tpo .deps/version.Po
+[i] 2017-11-27T11:46:02.893736988Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT vpath.o -MD -MP -MF .deps/vpath.Tpo -c -o vpath.o vpath.c
+[i] 2017-11-27T11:46:03.285748484Z mv -f .deps/vpath.Tpo .deps/vpath.Po
+[i] 2017-11-27T11:46:03.45278126Z  x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT hash.o -MD -MP -MF .deps/hash.Tpo -c -o hash.o hash.c
+[i] 2017-11-27T11:46:03.503019677Z mv -f .deps/variable.Tpo .deps/variable.Po
+[i] 2017-11-27T11:46:03.553038349Z x86_64-pc-linux-gnu-gcc -m64 -DLOCALEDIR=\"/multihost/x86_64-pc-linux-gnu/share/locale\" -DLIBDIR=\"/multihost/x86_64-pc-linux-gnu/lib64\" -DINCLUDEDIR=\"/multihost/x86_64-pc-linux-gnu/include\" -DHAVE_CONFIG_H -I.     -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -MT remote-stub.o -MD -MP -MF .deps/remote-stub.Tpo -c -o remote-stub.o remote-stub.c
+[i] 2017-11-27T11:46:03.603045745Z mv -f .deps/remote-stub.Tpo .deps/remote-stub.Po
+[i] 2017-11-27T11:46:03.653221653Z mv -f .deps/hash.Tpo .deps/hash.Po
+[i] 2017-11-27T11:46:03.703199685Z x86_64-pc-linux-gnu-gcc -m64 -pthread -I/multihost/x86_64-pc-linux-gnu/include/guile/2.0 -g -O2 -Wl,--export-dynamic  -o make ar.o arscan.o commands.o default.o dir.o expand.o file.o function.o getopt.o getopt1.o guile.o implicit.o job.o load.o loadapi.o main.o misc.o posixos.o output.o read.o remake.o rule.o signame.o strcache.o variable.o version.o vpath.o hash.o remote-stub.o  -L/multihost/x86_64-pc-linux-gnu/lib64 -lguile-2.0 -lgc  -ldl 
+[i] 2017-11-27T11:46:03.753249814Z make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE'
+[i] 2017-11-27T11:46:03.80345068Z  make[1]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/make-4.2.1/01.SOURCE'
+[i] 2017-11-27T11:46:03.853452333Z exit status 0
+[i] 2017-11-27T11:46:03.903457156Z build log ended

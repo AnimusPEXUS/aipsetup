@@ -1,0 +1,58 @@
+getopt1.o: getopt1.c /multihost/x86_64-pc-linux-gnu/include/stdc-predef.h \
+ config.h getopt.h /multihost/x86_64-pc-linux-gnu/include/stdio.h \
+ /multihost/x86_64-pc-linux-gnu/include/features.h \
+ /multihost/x86_64-pc-linux-gnu/include/sys/cdefs.h \
+ /multihost/x86_64-pc-linux-gnu/include/bits/wordsize.h \
+ /multihost/x86_64-pc-linux-gnu/include/gnu/stubs.h \
+ /multihost/x86_64-pc-linux-gnu/include/gnu/stubs-64.h \
+ /multihost/x86_64-pc-linux-gnu/lib64/gcc/x86_64-pc-linux-gnu/6.3.0/include/stddef.h \
+ /multihost/x86_64-pc-linux-gnu/include/bits/types.h \
+ /multihost/x86_64-pc-linux-gnu/include/bits/typesizes.h \
+ /multihost/x86_64-pc-linux-gnu/include/libio.h \
+ /multihost/x86_64-pc-linux-gnu/include/_G_config.h \
+ /multihost/x86_64-pc-linux-gnu/include/wchar.h \
+ /multihost/x86_64-pc-linux-gnu/lib64/gcc/x86_64-pc-linux-gnu/6.3.0/include/stdarg.h \
+ /multihost/x86_64-pc-linux-gnu/include/bits/stdio_lim.h \
+ /multihost/x86_64-pc-linux-gnu/include/bits/sys_errlist.h \
+ /multihost/x86_64-pc-linux-gnu/include/bits/stdio.h \
+ /multihost/x86_64-pc-linux-gnu/include/gnu-versions.h
+
+/multihost/x86_64-pc-linux-gnu/include/stdc-predef.h:
+
+config.h:
+
+getopt.h:
+
+/multihost/x86_64-pc-linux-gnu/include/stdio.h:
+
+/multihost/x86_64-pc-linux-gnu/include/features.h:
+
+/multihost/x86_64-pc-linux-gnu/include/sys/cdefs.h:
+
+/multihost/x86_64-pc-linux-gnu/include/bits/wordsize.h:
+
+/multihost/x86_64-pc-linux-gnu/include/gnu/stubs.h:
+
+/multihost/x86_64-pc-linux-gnu/include/gnu/stubs-64.h:
+
+/multihost/x86_64-pc-linux-gnu/lib64/gcc/x86_64-pc-linux-gnu/6.3.0/include/stddef.h:
+
+/multihost/x86_64-pc-linux-gnu/include/bits/types.h:
+
+/multihost/x86_64-pc-linux-gnu/include/bits/typesizes.h:
+
+/multihost/x86_64-pc-linux-gnu/include/libio.h:
+
+/multihost/x86_64-pc-linux-gnu/include/_G_config.h:
+
+/multihost/x86_64-pc-linux-gnu/include/wchar.h:
+
+/multihost/x86_64-pc-linux-gnu/lib64/gcc/x86_64-pc-linux-gnu/6.3.0/include/stdarg.h:
+
+/multihost/x86_64-pc-linux-gnu/include/bits/stdio_lim.h:
+
+/multihost/x86_64-pc-linux-gnu/include/bits/sys_errlist.h:
+
+/multihost/x86_64-pc-linux-gnu/include/bits/stdio.h:
+
+/multihost/x86_64-pc-linux-gnu/include/gnu-versions.h:

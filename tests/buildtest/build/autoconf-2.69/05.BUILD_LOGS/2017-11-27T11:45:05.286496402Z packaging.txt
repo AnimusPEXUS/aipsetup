@@ -1,0 +1,112 @@
+[i] 2017-11-27T11:45:05.286547322Z Checking pach correctness
+[i] 2017-11-27T11:45:05.333765919Z    no problems found
+[i] 2017-11-27T11:45:05.375197907Z Creating file list
+[i] 2017-11-27T11:45:05.417681322Z Calculating DESTDIR files' checksums
+[i] 2017-11-27T11:45:05.482594618Z Compressing 02.PATCHES, 04.DESTDIR and 05.BUILD_LOGS
+[i] 2017-11-27T11:45:05.52582617Z    02.PATCHES
+[i] 2017-11-27T11:45:05.570305582Z ./
+[i] 2017-11-27T11:45:05.617873405Z     02.PATCHES Done
+[i] 2017-11-27T11:45:05.659468702Z   04.DESTDIR
+[i] 2017-11-27T11:45:05.712492646Z ./
+[i] 2017-11-27T11:45:05.759786264Z ./multihost/
+[i] 2017-11-27T11:45:05.809784991Z ./multihost/x86_64-pc-linux-gnu/
+[i] 2017-11-27T11:45:05.859824192Z ./multihost/x86_64-pc-linux-gnu/bin/
+[i] 2017-11-27T11:45:05.909885875Z ./multihost/x86_64-pc-linux-gnu/bin/autoconf
+[i] 2017-11-27T11:45:05.959975071Z ./multihost/x86_64-pc-linux-gnu/bin/autoheader
+[i] 2017-11-27T11:45:06.010045308Z ./multihost/x86_64-pc-linux-gnu/bin/autom4te
+[i] 2017-11-27T11:45:06.060110879Z ./multihost/x86_64-pc-linux-gnu/bin/autoreconf
+[i] 2017-11-27T11:45:06.110224984Z ./multihost/x86_64-pc-linux-gnu/bin/autoscan
+[i] 2017-11-27T11:45:06.16025351Z  ./multihost/x86_64-pc-linux-gnu/bin/autoupdate
+[i] 2017-11-27T11:45:06.210352875Z ./multihost/x86_64-pc-linux-gnu/bin/ifnames
+[i] 2017-11-27T11:45:06.260439906Z ./multihost/x86_64-pc-linux-gnu/share/
+[i] 2017-11-27T11:45:06.310468504Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/
+[i] 2017-11-27T11:45:06.360532471Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/
+[i] 2017-11-27T11:45:06.410614329Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/C4che.pm
+[i] 2017-11-27T11:45:06.460686402Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/ChannelDefs.pm
+[i] 2017-11-27T11:45:06.510827143Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/Channels.pm
+[i] 2017-11-27T11:45:06.560842339Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/Configure_ac.pm
+[i] 2017-11-27T11:45:06.61089365Z  ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/FileUtils.pm
+[i] 2017-11-27T11:45:06.660958957Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/General.pm
+[i] 2017-11-27T11:45:06.711047627Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/Getopt.pm
+[i] 2017-11-27T11:45:06.761115772Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/Request.pm
+[i] 2017-11-27T11:45:06.811164884Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/Autom4te/XFile.pm
+[i] 2017-11-27T11:45:06.861256223Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/INSTALL
+[i] 2017-11-27T11:45:06.911320971Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/
+[i] 2017-11-27T11:45:06.96264473Z  ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/autoconf.m4
+[i] 2017-11-27T11:45:07.011505238Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/autoconf.m4f
+[i] 2017-11-27T11:45:07.061570701Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/autoheader.m4
+[i] 2017-11-27T11:45:07.111595036Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/autoscan.m4
+[i] 2017-11-27T11:45:07.161685727Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/autotest.m4
+[i] 2017-11-27T11:45:07.211747756Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/autoupdate.m4
+[i] 2017-11-27T11:45:07.261813475Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/c.m4
+[i] 2017-11-27T11:45:07.311893401Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/erlang.m4
+[i] 2017-11-27T11:45:07.361960434Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/fortran.m4
+[i] 2017-11-27T11:45:07.412027303Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/functions.m4
+[i] 2017-11-27T11:45:07.462147267Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/general.m4
+[i] 2017-11-27T11:45:07.512172207Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/go.m4
+[i] 2017-11-27T11:45:07.562261178Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/headers.m4
+[i] 2017-11-27T11:45:07.612345861Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/lang.m4
+[i] 2017-11-27T11:45:07.670743173Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/libs.m4
+[i] 2017-11-27T11:45:07.729209757Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/oldnames.m4
+[i] 2017-11-27T11:45:07.787659718Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/programs.m4
+[i] 2017-11-27T11:45:07.829332956Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/specific.m4
+[i] 2017-11-27T11:45:07.887757831Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/status.m4
+[i] 2017-11-27T11:45:07.929461492Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoconf/types.m4
+[i] 2017-11-27T11:45:07.9711799Z   ./multihost/x86_64-pc-linux-gnu/share/autoconf/autom4te.cfg
+[i] 2017-11-27T11:45:08.029610952Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoscan/
+[i] 2017-11-27T11:45:08.071333259Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autoscan/autoscan.list
+[i] 2017-11-27T11:45:08.121388313Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autotest/
+[i] 2017-11-27T11:45:08.163150643Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autotest/autotest.m4
+[i] 2017-11-27T11:45:08.20490329Z  ./multihost/x86_64-pc-linux-gnu/share/autoconf/autotest/autotest.m4f
+[i] 2017-11-27T11:45:08.271730978Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autotest/general.m4
+[i] 2017-11-27T11:45:08.313445516Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/autotest/specific.m4
+[i] 2017-11-27T11:45:08.355201061Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/m4sugar/
+[i] 2017-11-27T11:45:08.39692875Z  ./multihost/x86_64-pc-linux-gnu/share/autoconf/m4sugar/foreach.m4
+[i] 2017-11-27T11:45:08.438669065Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/m4sugar/m4sh.m4
+[i] 2017-11-27T11:45:08.48039374Z  ./multihost/x86_64-pc-linux-gnu/share/autoconf/m4sugar/m4sh.m4f
+[i] 2017-11-27T11:45:08.522154585Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/m4sugar/m4sugar.m4
+[i] 2017-11-27T11:45:08.563876699Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/m4sugar/m4sugar.m4f
+[i] 2017-11-27T11:45:08.605605246Z ./multihost/x86_64-pc-linux-gnu/share/autoconf/m4sugar/version.m4
+[i] 2017-11-27T11:45:08.647359132Z ./multihost/x86_64-pc-linux-gnu/share/emacs/
+[i] 2017-11-27T11:45:08.689087443Z ./multihost/x86_64-pc-linux-gnu/share/emacs/site-lisp/
+[i] 2017-11-27T11:45:08.730905735Z ./multihost/x86_64-pc-linux-gnu/share/emacs/site-lisp/autoconf-mode.el
+[i] 2017-11-27T11:45:08.772608297Z ./multihost/x86_64-pc-linux-gnu/share/emacs/site-lisp/autoconf-mode.elc
+[i] 2017-11-27T11:45:08.814358074Z ./multihost/x86_64-pc-linux-gnu/share/emacs/site-lisp/autotest-mode.el
+[i] 2017-11-27T11:45:08.856044367Z ./multihost/x86_64-pc-linux-gnu/share/emacs/site-lisp/autotest-mode.elc
+[i] 2017-11-27T11:45:08.897850068Z ./multihost/x86_64-pc-linux-gnu/share/info/
+[i] 2017-11-27T11:45:08.940706974Z ./multihost/x86_64-pc-linux-gnu/share/info/autoconf.info
+[i] 2017-11-27T11:45:08.990794541Z ./multihost/x86_64-pc-linux-gnu/share/info/dir
+[i] 2017-11-27T11:45:09.040858493Z ./multihost/x86_64-pc-linux-gnu/share/info/standards.info
+[i] 2017-11-27T11:45:09.090950875Z ./multihost/x86_64-pc-linux-gnu/share/man/
+[i] 2017-11-27T11:45:09.140991757Z ./multihost/x86_64-pc-linux-gnu/share/man/man1/
+[i] 2017-11-27T11:45:09.216092967Z ./multihost/x86_64-pc-linux-gnu/share/man/man1/autoconf.1
+[i] 2017-11-27T11:45:09.266162341Z ./multihost/x86_64-pc-linux-gnu/share/man/man1/autoheader.1
+[i] 2017-11-27T11:45:09.316196574Z ./multihost/x86_64-pc-linux-gnu/share/man/man1/autom4te.1
+[i] 2017-11-27T11:45:09.36625972Z  ./multihost/x86_64-pc-linux-gnu/share/man/man1/autoreconf.1
+[i] 2017-11-27T11:45:09.416326935Z ./multihost/x86_64-pc-linux-gnu/share/man/man1/autoscan.1
+[i] 2017-11-27T11:45:09.46641337Z  ./multihost/x86_64-pc-linux-gnu/share/man/man1/autoupdate.1
+[i] 2017-11-27T11:45:09.516477755Z ./multihost/x86_64-pc-linux-gnu/share/man/man1/config.guess.1
+[i] 2017-11-27T11:45:09.566545477Z ./multihost/x86_64-pc-linux-gnu/share/man/man1/config.sub.1
+[i] 2017-11-27T11:45:09.616643051Z ./multihost/x86_64-pc-linux-gnu/share/man/man1/ifnames.1
+[i] 2017-11-27T11:45:09.666723979Z     04.DESTDIR Done
+[i] 2017-11-27T11:45:09.716858255Z   05.BUILD_LOGS
+[i] 2017-11-27T11:45:09.76952936Z  ./
+[i] 2017-11-27T11:45:09.817144446Z ./2017-11-27T11:44:22.478691171Z aipsetup bs run log.txt
+[i] 2017-11-27T11:45:09.867296011Z ./2017-11-27T11:44:22.515807966Z dst_cleanup.txt
+[i] 2017-11-27T11:45:09.91733227Z  ./2017-11-27T11:44:22.691410488Z src_cleanup.txt
+[i] 2017-11-27T11:45:09.967420921Z ./2017-11-27T11:44:22.892082627Z bld_cleanup.txt
+[i] 2017-11-27T11:45:10.017467062Z ./2017-11-27T11:44:23.084327176Z primary_extract.txt
+[i] 2017-11-27T11:45:10.067536123Z ./2017-11-27T11:44:32.6866104Z configure.txt
+[i] 2017-11-27T11:45:10.117600757Z ./2017-11-27T11:44:38.847017851Z build.txt
+[i] 2017-11-27T11:45:10.167689841Z ./2017-11-27T11:44:50.418104639Z distribute.txt
+[i] 2017-11-27T11:45:10.217727514Z ./2017-11-27T11:45:05.286496402Z packaging.txt
+[i] 2017-11-27T11:45:10.267947864Z     05.BUILD_LOGS Done
+[i] 2017-11-27T11:45:10.317901401Z Compressing files in lists dir
+[i] 2017-11-27T11:45:10.367966723Z   DESTDIR.lst
+[i] 2017-11-27T11:45:10.438406807Z     DESTDIR.lst Done
+[i] 2017-11-27T11:45:10.484925605Z   DESTDIR.sha512
+[i] 2017-11-27T11:45:10.556726523Z     DESTDIR.sha512 Done
+[i] 2017-11-27T11:45:10.602074505Z Creating checksumms before packaging
+[i] 2017-11-27T11:45:10.668940899Z Creating package
+[i] 2017-11-27T11:45:10.719089552Z Resulting ASP filename will be: (autoconf)-(2.69)-()-(20171127.114510.0601898)-(x86_64-pc-linux-gnu).asp
+[i] 2017-11-27T11:45:10.77649474Z  Finished

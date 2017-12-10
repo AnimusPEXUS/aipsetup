@@ -1,0 +1,216 @@
+[i] 2017-11-27T11:44:38.847079868Z build log started
+[i] 2017-11-27T11:44:38.888951378Z this builder uses same environment variables for make as for configure
+[i] 2017-11-27T11:44:38.931292388Z Make Parameters:
+[i] 2017-11-27T11:44:38.98072372Z    executable: make
+[i] 2017-11-27T11:44:39.022480405Z   arguments:
+[i] 2017-11-27T11:44:39.080887822Z     -f
+[i] 2017-11-27T11:44:39.122585055Z     ./Makefile
+[i] 2017-11-27T11:44:39.164377783Z     -j2
+[i] 2017-11-27T11:44:39.21442905Z    environment:
+[i] 2017-11-27T11:44:39.256166942Z     CXX=x86_64-pc-linux-gnu-g++ -m64
+[i] 2017-11-27T11:44:39.298008621Z     PKG_CONFIG_PATH=/multihost/x86_64-pc-linux-gnu/share/pkgconfig:/multihost/x86_64-pc-linux-gnu/lib/pkgconfig:/multihost/x86_64-pc-linux-gnu/lib64/pkgconfig
+[i] 2017-11-27T11:44:39.339643289Z     LD_LIBRARY_PATH=/multihost/x86_64-pc-linux-gnu/lib:/multihost/x86_64-pc-linux-gnu/lib64
+[i] 2017-11-27T11:44:39.381433422Z     LIBRARY_PATH=/multihost/x86_64-pc-linux-gnu/lib:/multihost/x86_64-pc-linux-gnu/lib64
+[i] 2017-11-27T11:44:39.423100417Z     C_INCLUDE_PATH=/multihost/x86_64-pc-linux-gnu/include
+[i] 2017-11-27T11:44:39.464954342Z     PATH=/multihost/x86_64-pc-linux-gnu/bin:/multihost/x86_64-pc-linux-gnu/sbin
+[i] 2017-11-27T11:44:39.506562363Z     CC=x86_64-pc-linux-gnu-gcc -m64
+[i] 2017-11-27T11:44:39.548325772Z   Makefile dir: /home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE
+[i] 2017-11-27T11:44:39.59004439Z    working dir: /home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE
+[i] 2017-11-27T11:44:39.634826517Z make  all-recursive
+[i] 2017-11-27T11:44:39.681930461Z make[1]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE'
+[i] 2017-11-27T11:44:39.726062046Z Making all in bin
+[i] 2017-11-27T11:44:39.765643007Z make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/bin'
+[i] 2017-11-27T11:44:39.810172431Z rm -f autom4te autom4te.tmp
+[i] 2017-11-27T11:44:39.999695416Z cd ../lib && make  autom4te.cfg
+[i] 2017-11-27T11:44:40.06637529Z  srcdir=''; \
+[i] 2017-11-27T11:44:40.191458778Z   test -f ./autom4te.in || srcdir=./; \
+[i] 2017-11-27T11:44:40.249860541Z   sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/multihost/x86_64-pc-linux-gnu/bin/perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/multihost/x86_64-pc-linux-gnu/bin|g' -e 's|@pkgdatadir[@]|/multihost/x86_64-pc-linux-gnu/share/autoconf|g' -e 's|@prefix[@]|/multihost/x86_64-pc-linux-gnu|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/multihost/x86_64-pc-linux-gnu/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|'`sed 's/^\([0-9][0-9][0-9][0-9]\).*/\1/;q' ../ChangeLog`'|g' -e 's|@VERSION[@]|2.69|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from autom4te.in; do not edit by hand.|g' ${srcdir}autom4te.in >autom4te.tmp
+[i] 2017-11-27T11:44:40.308253317Z make[3]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib'
+[i] 2017-11-27T11:44:40.375010461Z rm -f autom4te.cfg autom4te.tmp
+[i] 2017-11-27T11:44:40.466850666Z sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/multihost/x86_64-pc-linux-gnu/bin/perl|g' -e 's|@bindir[@]|/multihost/x86_64-pc-linux-gnu/bin|g' -e 's|@pkgdatadir[@]|/multihost/x86_64-pc-linux-gnu/share/autoconf|g' -e 's|@prefix[@]|/multihost/x86_64-pc-linux-gnu|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/multihost/x86_64-pc-linux-gnu/bin/m4|g' -e 's|@AWK[@]|gawk|g' -e 's|@VERSION[@]|2.69|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' ./autom4te.in >autom4te.tmp
+[i] 2017-11-27T11:44:40.525180763Z chmod a-w autom4te.tmp
+[i] 2017-11-27T11:44:40.566945236Z mv autom4te.tmp autom4te.cfg
+[i] 2017-11-27T11:44:40.608650681Z make[3]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib'
+[i] 2017-11-27T11:44:40.650376364Z cd ../lib/m4sugar && make  version.m4
+[i] 2017-11-27T11:44:40.692144798Z make[3]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/m4sugar'
+[i] 2017-11-27T11:44:40.750521831Z :;{ \
+[i] 2017-11-27T11:44:40.808960942Z   echo '# This file is part of -*- Autoconf -*-.' && \
+[i] 2017-11-27T11:44:40.859075717Z   echo '# Version of Autoconf.' && \
+[i] 2017-11-27T11:44:40.917514627Z   echo '# Copyright (C) 1999, 2000, 2001, 2002, 2006, 2007, 2009' && \
+[i] 2017-11-27T11:44:41.001018476Z   echo '# Free Software Foundation, Inc.' && \
+[i] 2017-11-27T11:44:41.067731658Z   echo  &&\
+[i] 2017-11-27T11:44:41.126017328Z   echo 'm4_define([m4_PACKAGE_NAME],      [GNU Autoconf])' && \
+[i] 2017-11-27T11:44:41.167981551Z   echo 'm4_define([m4_PACKAGE_TARNAME],   [autoconf])' && \
+[i] 2017-11-27T11:44:41.210804166Z   echo 'm4_define([m4_PACKAGE_VERSION],   [2.69])' && \
+[i] 2017-11-27T11:44:41.251525Z      echo 'm4_define([m4_PACKAGE_STRING],    [GNU Autoconf 2.69])' && \
+[i] 2017-11-27T11:44:41.29388106Z    echo 'm4_define([m4_PACKAGE_BUGREPORT], [bug-autoconf@gnu.org])' && \
+[i] 2017-11-27T11:44:41.343633425Z   echo 'm4_define([m4_PACKAGE_URL],       [http://www.gnu.org/software/autoconf/])' && \
+[i] 2017-11-27T11:44:41.393689505Z   echo 'm4_define([m4_PACKAGE_YEAR],      ['`sed 's/^\([0-9][0-9][0-9][0-9]\).*/\1/;q' ../../ChangeLog`'])'; \
+[i] 2017-11-27T11:44:41.452053522Z } > version.m4-t
+[i] 2017-11-27T11:44:41.503361343Z chmod +x autom4te.tmp
+[i] 2017-11-27T11:44:41.55369416Z  chmod a-w autom4te.tmp
+[i] 2017-11-27T11:44:41.612117178Z mv autom4te.tmp autom4te
+[i] 2017-11-27T11:44:41.662256361Z rm -f autoheader autoheader.tmp
+[i] 2017-11-27T11:44:41.72078301Z  mv version.m4-t version.m4
+[i] 2017-11-27T11:44:41.771636876Z make[3]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/m4sugar'
+[i] 2017-11-27T11:44:41.829460852Z rm -f autoreconf autoreconf.tmp
+[i] 2017-11-27T11:44:41.879556176Z srcdir=''; \
+[i] 2017-11-27T11:44:41.938329502Z   test -f ./autoheader.in || srcdir=./; \
+[i] 2017-11-27T11:44:41.988327851Z   sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/multihost/x86_64-pc-linux-gnu/bin/perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/multihost/x86_64-pc-linux-gnu/bin|g' -e 's|@pkgdatadir[@]|/multihost/x86_64-pc-linux-gnu/share/autoconf|g' -e 's|@prefix[@]|/multihost/x86_64-pc-linux-gnu|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/multihost/x86_64-pc-linux-gnu/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|'`sed 's/^\([0-9][0-9][0-9][0-9]\).*/\1/;q' ../ChangeLog`'|g' -e 's|@VERSION[@]|2.69|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from autoheader.in; do not edit by hand.|g' ${srcdir}autoheader.in >autoheader.tmp
+[i] 2017-11-27T11:44:42.046974934Z srcdir=''; \
+[i] 2017-11-27T11:44:42.097100945Z   test -f ./autoreconf.in || srcdir=./; \
+[i] 2017-11-27T11:44:42.155515385Z   sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/multihost/x86_64-pc-linux-gnu/bin/perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/multihost/x86_64-pc-linux-gnu/bin|g' -e 's|@pkgdatadir[@]|/multihost/x86_64-pc-linux-gnu/share/autoconf|g' -e 's|@prefix[@]|/multihost/x86_64-pc-linux-gnu|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/multihost/x86_64-pc-linux-gnu/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|'`sed 's/^\([0-9][0-9][0-9][0-9]\).*/\1/;q' ../ChangeLog`'|g' -e 's|@VERSION[@]|2.69|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from autoreconf.in; do not edit by hand.|g' ${srcdir}autoreconf.in >autoreconf.tmp
+[i] 2017-11-27T11:44:42.213955559Z chmod +x autoheader.tmp
+[i] 2017-11-27T11:44:42.255685943Z chmod +x autoreconf.tmp
+[i] 2017-11-27T11:44:42.297478779Z chmod a-w autoheader.tmp
+[i] 2017-11-27T11:44:42.33914246Z  chmod a-w autoreconf.tmp
+[i] 2017-11-27T11:44:42.380883042Z mv autoheader.tmp autoheader
+[i] 2017-11-27T11:44:42.422650335Z mv autoreconf.tmp autoreconf
+[i] 2017-11-27T11:44:42.464403059Z rm -f ifnames ifnames.tmp
+[i] 2017-11-27T11:44:42.50611121Z  rm -f autoscan autoscan.tmp
+[i] 2017-11-27T11:44:42.547870111Z srcdir=''; \
+[i] 2017-11-27T11:44:42.589598269Z   test -f ./ifnames.in || srcdir=./; \
+[i] 2017-11-27T11:44:42.631329516Z   sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/multihost/x86_64-pc-linux-gnu/bin/perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/multihost/x86_64-pc-linux-gnu/bin|g' -e 's|@pkgdatadir[@]|/multihost/x86_64-pc-linux-gnu/share/autoconf|g' -e 's|@prefix[@]|/multihost/x86_64-pc-linux-gnu|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/multihost/x86_64-pc-linux-gnu/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|'`sed 's/^\([0-9][0-9][0-9][0-9]\).*/\1/;q' ../ChangeLog`'|g' -e 's|@VERSION[@]|2.69|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from ifnames.in; do not edit by hand.|g' ${srcdir}ifnames.in >ifnames.tmp
+[i] 2017-11-27T11:44:42.673057603Z srcdir=''; \
+[i] 2017-11-27T11:44:42.715392832Z   test -f ./autoscan.in || srcdir=./; \
+[i] 2017-11-27T11:44:42.756561216Z   sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/multihost/x86_64-pc-linux-gnu/bin/perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/multihost/x86_64-pc-linux-gnu/bin|g' -e 's|@pkgdatadir[@]|/multihost/x86_64-pc-linux-gnu/share/autoconf|g' -e 's|@prefix[@]|/multihost/x86_64-pc-linux-gnu|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/multihost/x86_64-pc-linux-gnu/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|'`sed 's/^\([0-9][0-9][0-9][0-9]\).*/\1/;q' ../ChangeLog`'|g' -e 's|@VERSION[@]|2.69|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from autoscan.in; do not edit by hand.|g' ${srcdir}autoscan.in >autoscan.tmp
+[i] 2017-11-27T11:44:42.798293651Z chmod +x ifnames.tmp
+[i] 2017-11-27T11:44:42.84004339Z  chmod a-w ifnames.tmp
+[i] 2017-11-27T11:44:42.881756316Z mv ifnames.tmp ifnames
+[i] 2017-11-27T11:44:42.923484773Z rm -f autoupdate autoupdate.tmp
+[i] 2017-11-27T11:44:42.965240777Z srcdir=''; \
+[i] 2017-11-27T11:44:43.008003779Z   test -f ./autoupdate.in || srcdir=./; \
+[i] 2017-11-27T11:44:43.048716583Z   sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/multihost/x86_64-pc-linux-gnu/bin/perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/multihost/x86_64-pc-linux-gnu/bin|g' -e 's|@pkgdatadir[@]|/multihost/x86_64-pc-linux-gnu/share/autoconf|g' -e 's|@prefix[@]|/multihost/x86_64-pc-linux-gnu|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/multihost/x86_64-pc-linux-gnu/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|'`sed 's/^\([0-9][0-9][0-9][0-9]\).*/\1/;q' ../ChangeLog`'|g' -e 's|@VERSION[@]|2.69|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from autoupdate.in; do not edit by hand.|g' ${srcdir}autoupdate.in >autoupdate.tmp
+[i] 2017-11-27T11:44:43.090467866Z chmod +x autoscan.tmp
+[i] 2017-11-27T11:44:43.13224368Z  chmod a-w autoscan.tmp
+[i] 2017-11-27T11:44:43.17394998Z  mv autoscan.tmp autoscan
+[i] 2017-11-27T11:44:43.21571591Z  autom4te_perllibdir='..'/lib AUTOM4TE_CFG='../lib/autom4te.cfg'         ../bin/autom4te -B '..'/lib -B '..'/lib         --language M4sh --cache '' --melt ./autoconf.as -o autoconf.in
+[i] 2017-11-27T11:44:43.2574633Z   chmod +x autoupdate.tmp
+[i] 2017-11-27T11:44:43.299192189Z chmod a-w autoupdate.tmp
+[i] 2017-11-27T11:44:43.342403458Z mv autoupdate.tmp autoupdate
+[i] 2017-11-27T11:44:43.39105206Z  rm -f autoconf autoconf.tmp
+[i] 2017-11-27T11:44:43.441099957Z srcdir=''; \
+[i] 2017-11-27T11:44:43.49118144Z    test -f ./autoconf.in || srcdir=./; \
+[i] 2017-11-27T11:44:43.541226465Z   sed -e 's|@SHELL[@]|/bin/sh|g' -e 's|@PERL[@]|/multihost/x86_64-pc-linux-gnu/bin/perl|g' -e 's|@PERL_FLOCK[@]|yes|g' -e 's|@bindir[@]|/multihost/x86_64-pc-linux-gnu/bin|g' -e 's|@pkgdatadir[@]|/multihost/x86_64-pc-linux-gnu/share/autoconf|g' -e 's|@prefix[@]|/multihost/x86_64-pc-linux-gnu|g' -e 's|@autoconf-name[@]|'`echo autoconf | sed 's,x,x,'`'|g' -e 's|@autoheader-name[@]|'`echo autoheader | sed 's,x,x,'`'|g' -e 's|@autom4te-name[@]|'`echo autom4te | sed 's,x,x,'`'|g' -e 's|@M4[@]|/multihost/x86_64-pc-linux-gnu/bin/m4|g' -e 's|@M4_DEBUGFILE[@]|--debugfile|g' -e 's|@M4_GNU[@]|--gnu|g' -e 's|@AWK[@]|gawk|g' -e 's|@RELEASE_YEAR[@]|'`sed 's/^\([0-9][0-9][0-9][0-9]\).*/\1/;q' ../ChangeLog`'|g' -e 's|@VERSION[@]|2.69|g' -e 's|@PACKAGE_NAME[@]|GNU Autoconf|g' -e 's|@configure_input[@]|Generated from autoconf.in; do not edit by hand.|g' ${srcdir}autoconf.in >autoconf.tmp
+[i] 2017-11-27T11:44:43.591262397Z chmod +x autoconf.tmp
+[i] 2017-11-27T11:44:43.641350611Z chmod a-w autoconf.tmp
+[i] 2017-11-27T11:44:43.691411662Z mv autoconf.tmp autoconf
+[i] 2017-11-27T11:44:43.74209792Z  make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/bin'
+[i] 2017-11-27T11:44:43.79156542Z  Making all in .
+[i] 2017-11-27T11:44:43.841667768Z make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE'
+[i] 2017-11-27T11:44:43.89170503Z  make[2]: Nothing to be done for 'all-am'.
+[i] 2017-11-27T11:44:43.941779638Z make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE'
+[i] 2017-11-27T11:44:43.991841345Z Making all in lib
+[i] 2017-11-27T11:44:44.041907461Z make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib'
+[i] 2017-11-27T11:44:44.091992041Z Making all in Autom4te
+[i] 2017-11-27T11:44:44.142066321Z make[3]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/Autom4te'
+[i] 2017-11-27T11:44:44.192112424Z make[3]: Nothing to be done for 'all'.
+[i] 2017-11-27T11:44:44.243440661Z make[3]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/Autom4te'
+[i] 2017-11-27T11:44:44.292272164Z Making all in m4sugar
+[i] 2017-11-27T11:44:44.342366648Z make[3]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/m4sugar'
+[i] 2017-11-27T11:44:44.392413552Z autom4te_perllibdir='../..'/lib AUTOM4TE_CFG='../../lib/autom4te.cfg'         ../../bin/autom4te -B '../..'/lib -B '../..'/lib        				\
+[i] 2017-11-27T11:44:44.442514032Z 	--language=m4sugar			\
+[i] 2017-11-27T11:44:44.492544245Z 	--freeze			\
+[i] 2017-11-27T11:44:44.542606242Z 	--output=m4sugar.m4f
+[i] 2017-11-27T11:44:44.592688616Z autom4te_perllibdir='../..'/lib AUTOM4TE_CFG='../../lib/autom4te.cfg'         ../../bin/autom4te -B '../..'/lib -B '../..'/lib        				\
+[i] 2017-11-27T11:44:44.642762055Z 	--language=m4sh			\
+[i] 2017-11-27T11:44:44.692918475Z 	--freeze			\
+[i] 2017-11-27T11:44:44.743064551Z 	--output=m4sh.m4f
+[i] 2017-11-27T11:44:44.793019289Z make[3]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/m4sugar'
+[i] 2017-11-27T11:44:44.843119041Z Making all in autoconf
+[i] 2017-11-27T11:44:44.893182477Z make[3]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/autoconf'
+[i] 2017-11-27T11:44:44.943224619Z autom4te_perllibdir='../..'/lib AUTOM4TE_CFG='../../lib/autom4te.cfg'         ../../bin/autom4te -B '../..'/lib -B '../..'/lib        				\
+[i] 2017-11-27T11:44:44.993331999Z 	--language=autoconf			\
+[i] 2017-11-27T11:44:45.043418967Z 	--freeze			\
+[i] 2017-11-27T11:44:45.093487708Z 	--output=autoconf.m4f
+[i] 2017-11-27T11:44:45.14351593Z  make[3]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/autoconf'
+[i] 2017-11-27T11:44:45.193578061Z Making all in autotest
+[i] 2017-11-27T11:44:45.243644173Z make[3]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/autotest'
+[i] 2017-11-27T11:44:45.293757028Z autom4te_perllibdir='../..'/lib AUTOM4TE_CFG='../../lib/autom4te.cfg'         ../../bin/autom4te -B '../..'/lib -B '../..'/lib        				\
+[i] 2017-11-27T11:44:45.344258641Z 	--language=autotest			\
+[i] 2017-11-27T11:44:45.393881064Z 	--freeze			\
+[i] 2017-11-27T11:44:45.560738588Z 	--output=autotest.m4f
+[i] 2017-11-27T11:44:45.944190838Z make[3]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/autotest'
+[i] 2017-11-27T11:44:45.994117341Z Making all in autoscan
+[i] 2017-11-27T11:44:46.044180611Z make[3]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/autoscan'
+[i] 2017-11-27T11:44:46.0942621Z   echo '# Automatically Generated: do not edit this file' >autoscan.list
+[i] 2017-11-27T11:44:46.144364448Z sed '/^[#]/!q' ./autoscan.pre                  >>autoscan.list
+[i] 2017-11-27T11:44:46.194387704Z ( \
+[i] 2017-11-27T11:44:46.269460946Z   sed -n '/^[^#]/p' ./autoscan.pre; \
+[i] 2017-11-27T11:44:46.319535234Z   autom4te_perllibdir='../..'/lib AUTOM4TE_CFG='../../lib/autom4te.cfg'         ../../bin/autom4te -B '../..'/lib -B '../..'/lib         --cache '' -M -l autoconf -t'AN_OUTPUT:$1: $2		$3' \
+[i] 2017-11-27T11:44:46.369600371Z ) | LC_ALL=C sort                                      >>autoscan.list
+[i] 2017-11-27T11:44:46.419688162Z make[3]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/autoscan'
+[i] 2017-11-27T11:44:46.469752429Z Making all in emacs
+[i] 2017-11-27T11:44:46.519827627Z make[3]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/emacs'
+[i] 2017-11-27T11:44:46.562755278Z WARNING: Warnings can be ignored. :-)
+[i] 2017-11-27T11:44:46.604459221Z if test "emacs" != no; then \
+[i] 2017-11-27T11:44:46.646236197Z   set x; \
+[i] 2017-11-27T11:44:46.68797215Z    list='autoconf-mode.el autotest-mode.el'; for p in $list; do \
+[i] 2017-11-27T11:44:46.729762889Z     if test -f "$p"; then d=; else d="./"; fi; \
+[i] 2017-11-27T11:44:46.771453759Z     set x "$@" "$d$p"; shift; \
+[i] 2017-11-27T11:44:46.813253808Z   done; \
+[i] 2017-11-27T11:44:46.854911762Z   shift; \
+[i] 2017-11-27T11:44:46.896666258Z   EMACS="emacs" /bin/sh ../../build-aux/elisp-comp "$@" || exit 1; \
+[i] 2017-11-27T11:44:46.938395121Z else : ; fi
+[i] 2017-11-27T11:44:46.980109673Z make[3]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib/emacs'
+[i] 2017-11-27T11:44:47.022216375Z make[3]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib'
+[i] 2017-11-27T11:44:47.063654268Z make[3]: Nothing to be done for 'all-am'.
+[i] 2017-11-27T11:44:47.105416401Z make[3]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib'
+[i] 2017-11-27T11:44:47.147140838Z make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/lib'
+[i] 2017-11-27T11:44:47.188871772Z Making all in doc
+[i] 2017-11-27T11:44:47.230619055Z make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/doc'
+[i] 2017-11-27T11:44:47.272355645Z make[2]: Nothing to be done for 'all'.
+[i] 2017-11-27T11:44:47.31408052Z  make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/doc'
+[i] 2017-11-27T11:44:47.355839784Z Making all in tests
+[i] 2017-11-27T11:44:47.397593543Z make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/tests'
+[i] 2017-11-27T11:44:47.439292863Z autom4te_perllibdir='..'/lib AUTOM4TE_CFG='../lib/autom4te.cfg'         ../bin/autom4te -B '..'/lib -B '..'/lib         --language=M4sh ./wrapper.as -o wrapper.in
+[i] 2017-11-27T11:44:47.481857911Z rm -f autoconf autoconf.tmp
+[i] 2017-11-27T11:44:47.523214252Z rm -f autoheader autoheader.tmp
+[i] 2017-11-27T11:44:47.566090916Z input=wrapper.in; \
+[i] 2017-11-27T11:44:47.607201536Z sed -e 's|@wrap_program[@]|autoconf|g' -e 's|@abs_top_srcdir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e 's|@abs_top_builddir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e "s|@configure_input[@]|Generated from $input.|g" wrapper.in >autoconf.tmp
+[i] 2017-11-27T11:44:47.647992234Z input=wrapper.in; \
+[i] 2017-11-27T11:44:47.689724895Z sed -e 's|@wrap_program[@]|autoheader|g' -e 's|@abs_top_srcdir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e 's|@abs_top_builddir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e "s|@configure_input[@]|Generated from $input.|g" wrapper.in >autoheader.tmp
+[i] 2017-11-27T11:44:47.731476935Z chmod +x autoconf.tmp
+[i] 2017-11-27T11:44:47.773189243Z chmod a-w autoconf.tmp
+[i] 2017-11-27T11:44:47.814935393Z mv -f autoconf.tmp autoconf
+[i] 2017-11-27T11:44:47.856688948Z rm -f autom4te autom4te.tmp
+[i] 2017-11-27T11:44:47.898467129Z input=wrapper.in; \
+[i] 2017-11-27T11:44:47.940363817Z sed -e 's|@wrap_program[@]|autom4te|g' -e 's|@abs_top_srcdir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e 's|@abs_top_builddir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e "s|@configure_input[@]|Generated from $input.|g" wrapper.in >autom4te.tmp
+[i] 2017-11-27T11:44:47.981912205Z chmod +x autom4te.tmp
+[i] 2017-11-27T11:44:48.025729963Z chmod a-w autom4te.tmp
+[i] 2017-11-27T11:44:48.065365831Z mv -f autom4te.tmp autom4te
+[i] 2017-11-27T11:44:48.107118856Z rm -f autoreconf autoreconf.tmp
+[i] 2017-11-27T11:44:48.148845995Z chmod +x autoheader.tmp
+[i] 2017-11-27T11:44:48.1905676Z   input=wrapper.in; \
+[i] 2017-11-27T11:44:48.232302199Z sed -e 's|@wrap_program[@]|autoreconf|g' -e 's|@abs_top_srcdir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e 's|@abs_top_builddir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e "s|@configure_input[@]|Generated from $input.|g" wrapper.in >autoreconf.tmp
+[i] 2017-11-27T11:44:48.274176105Z chmod a-w autoheader.tmp
+[i] 2017-11-27T11:44:48.315790608Z mv -f autoheader.tmp autoheader
+[i] 2017-11-27T11:44:48.358619095Z rm -f autoscan autoscan.tmp
+[i] 2017-11-27T11:44:48.407631906Z input=wrapper.in; \
+[i] 2017-11-27T11:44:48.457802333Z sed -e 's|@wrap_program[@]|autoscan|g' -e 's|@abs_top_srcdir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e 's|@abs_top_builddir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e "s|@configure_input[@]|Generated from $input.|g" wrapper.in >autoscan.tmp
+[i] 2017-11-27T11:44:48.507790775Z chmod +x autoscan.tmp
+[i] 2017-11-27T11:44:48.557887262Z chmod a-w autoscan.tmp
+[i] 2017-11-27T11:44:48.607931678Z mv -f autoscan.tmp autoscan
+[i] 2017-11-27T11:44:48.658020552Z rm -f autoupdate autoupdate.tmp
+[i] 2017-11-27T11:44:48.708130089Z input=wrapper.in; \
+[i] 2017-11-27T11:44:48.758175232Z sed -e 's|@wrap_program[@]|autoupdate|g' -e 's|@abs_top_srcdir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e 's|@abs_top_builddir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e "s|@configure_input[@]|Generated from $input.|g" wrapper.in >autoupdate.tmp
+[i] 2017-11-27T11:44:48.80821372Z  chmod +x autoreconf.tmp
+[i] 2017-11-27T11:44:48.866682739Z chmod +x autoupdate.tmp
+[i] 2017-11-27T11:44:48.916719726Z chmod a-w autoreconf.tmp
+[i] 2017-11-27T11:44:48.975100312Z chmod a-w autoupdate.tmp
+[i] 2017-11-27T11:44:49.025174966Z mv -f autoreconf.tmp autoreconf
+[i] 2017-11-27T11:44:49.083592358Z mv -f autoupdate.tmp autoupdate
+[i] 2017-11-27T11:44:49.133662742Z rm -f ifnames ifnames.tmp
+[i] 2017-11-27T11:44:49.192044028Z input=wrapper.in; \
+[i] 2017-11-27T11:44:49.242123077Z sed -e 's|@wrap_program[@]|ifnames|g' -e 's|@abs_top_srcdir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e 's|@abs_top_builddir[@]|/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE|g' -e "s|@configure_input[@]|Generated from $input.|g" wrapper.in >ifnames.tmp
+[i] 2017-11-27T11:44:49.308844734Z chmod +x ifnames.tmp
+[i] 2017-11-27T11:44:49.358927536Z chmod a-w ifnames.tmp
+[i] 2017-11-27T11:44:49.417386971Z mv -f ifnames.tmp ifnames
+[i] 2017-11-27T11:44:49.467416653Z make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/tests'
+[i] 2017-11-27T11:44:49.517476347Z Making all in man
+[i] 2017-11-27T11:44:49.567564898Z make[2]: Entering directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/man'
+[i] 2017-11-27T11:44:49.617634906Z make[2]: Nothing to be done for 'all'.
+[i] 2017-11-27T11:44:49.667667555Z make[2]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE/man'
+[i] 2017-11-27T11:44:49.717793956Z make[1]: Leaving directory '/home/agu/gopath_work/src/github.com/AnimusPEXUS/aipsetup/tests/buildtest/build/autoconf-2.69/01.SOURCE'
+[i] 2017-11-27T11:44:50.109665734Z exit status 0
+[i] 2017-11-27T11:44:50.268026445Z build log ended

@@ -1,10 +1,10 @@
 package basictypes
 
-import "github.com/AnimusPEXUS/gologger"
+import "github.com/AnimusPEXUS/utils/logger"
 
-type BuilderActions map[string](func(log *gologger.Logger) error)
+type BuilderActions map[string](func(log *logger.Logger) error)
 
 type BuilderI interface {
-	SetBuildingSite(building_site BuildingSiteCtlI)
+	//SetBuildingSite(building_site BuildingSiteCtlI)
 	DefineActions() ([]string, BuilderActions)
 }

@@ -9,7 +9,10 @@ type BuildingSiteInfo struct {
 	Build  string `json:"build"`
 	Target string `json:"target"`
 
-	PackageName string `json:"package_name"`
+	PackageName      string `json:"package_name"`
+	PackageVersion   string `json:"package_version"`
+	PackageStatus    string `json:"package_status"`
+	PackageTimestamp string `json:"package_timestamp"`
 
 	Sources []string `json:"sources"`
 
