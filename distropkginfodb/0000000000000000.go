@@ -1,6 +1,18 @@
 package distropkginfodb
 
-import "github.com/AnimusPEXUS/aipsetup/basictypes"
+import (
+	"errors"
+
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+)
+
+func Get(name string) (*basictypes.PackageInfo, error) {
+	if t, ok := Index[name]; ok {
+		return t, nil
+	} else {
+		return nil, errors.New("package info not found")
+	}
+}
 
 var Index = map[string]*basictypes.PackageInfo{
 	"3DLDF":                                DistroPackageInfo_3DLDF,

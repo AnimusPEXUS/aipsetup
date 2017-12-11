@@ -5,8 +5,8 @@ import (
 	"sort"
 
 	"github.com/AnimusPEXUS/aipsetup"
-	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
-	"github.com/AnimusPEXUS/aipsetup/tarballdownloader/providers"
+	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
+	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
 	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
@@ -84,42 +84,23 @@ func CmdAipsetupTarGetFor(
 	// TODO: add root parameter to command
 	sys := aipsetup.NewSystem("/")
 
-	names := []string{"make"}
-
-	sort.Strings(names)
-
-	for _, i := range names {
-		_, ok := distropkginfodb.Index[i]
-		if !ok {
-			return &cliapp.AppResult{
-				Code:    10,
-				Message: "info for " + i + " not found",
-			}
+	repo, err := tarballrepository.NewRepository(sys)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    11,
+			Message: err.Error(),
 		}
 	}
 
-	for _, i := range names {
-		info := distropkginfodb.Index[i]
+	name := getopt_result.Args[0]
 
-		provider_name := info.TarballProvider
-
-		prov_c, ok := providers.Index[provider_name]
-		if !ok {
-			return &cliapp.AppResult{
-				Code:    11,
-				Message: "provider " + provider_name + " not found",
-			}
+	err = repo.PerformPackageTarballsUpdate(name)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    10,
+			Message: err.Error(),
 		}
-
-		prov, err := prov_c(info, sys, info.TarballProviderArguments)
-		if err != nil {
-			return &cliapp.AppResult{
-				Code:    12,
-				Message: "error instantinating provider " + provider_name + ": " + err.Error(),
-			}
-		}
-
-		tarballs
 	}
 
+	return &cliapp.AppResult{Code: 0}
 }

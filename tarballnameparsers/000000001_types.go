@@ -4,6 +4,13 @@ import "strconv"
 
 type Status uint
 
+// TODO: move interface to basictypes if possible
+// NOTE: on other tout, possibly this package will be separated from aipsetup
+//       someday
+type TarballNameParserI interface {
+	ParseName(value string) (*ParseResult, error)
+}
+
 const (
 	PreAlpha Status = iota
 	Alpha

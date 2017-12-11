@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/set"
 	"github.com/go-ini/ini"
 )
@@ -26,12 +27,47 @@ enabled = false
 repository = path
 `)
 
+var _ basictypes.SystemI = &System{}
+
 type System struct {
 	root string
 
 	ASPs *SystemPackages
 
 	cfg *ini.File
+}
+
+func NewSystem(root string) *System {
+	ret := new(System)
+
+	if root, err := filepath.Abs(root); err != nil {
+		panic(err)
+	} else {
+		ret.root = root
+	}
+
+	if cfg, err := ini.Load(
+		DEFAULT_AIPSETUP_SYSTEM_CONFIG,
+	); err != nil {
+		panic(err)
+	} else {
+		ret.cfg = cfg
+	}
+
+	if res, err :=
+		ioutil.ReadFile(
+			path.Join(ret.root, "/etc", AIPSETUP_SYSTEM_CONFIG_FILENAME),
+		); err != nil {
+		panic(err)
+	} else {
+		if err := ret.cfg.Append(res); err != nil {
+			panic(err)
+		}
+	}
+
+	ret.ASPs = NewSystemPackages(ret)
+
+	return ret
 }
 
 func (self *System) Root() string {
@@ -92,35 +128,6 @@ func (self *System) GetTarballRepoRootDir() string {
 	return self.cfg.Section("tarball_downloading").Key("path").MustString("")
 }
 
-func NewSystem(root string) *System {
-	ret := new(System)
-
-	if root, err := filepath.Abs(root); err != nil {
-		panic(err)
-	} else {
-		ret.root = root
-	}
-
-	if cfg, err := ini.Load(
-		DEFAULT_AIPSETUP_SYSTEM_CONFIG,
-	); err != nil {
-		panic(err)
-	} else {
-		ret.cfg = cfg
-	}
-
-	if res, err :=
-		ioutil.ReadFile(
-			path.Join(ret.root, "/etc", AIPSETUP_SYSTEM_CONFIG_FILENAME),
-		); err != nil {
-		panic(err)
-	} else {
-		if err := ret.cfg.Append(res); err != nil {
-			panic(err)
-		}
-	}
-
-	ret.ASPs = NewSystemPackages(ret)
-
-	return ret
-}
+// func (self *System) GetTarballsRepository() *tarballrepository.Repository {
+// 	return tarballrepository.NewRepository(self)
+// }
