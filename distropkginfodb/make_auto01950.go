@@ -27,4 +27,7 @@ var DistroPackageInfo_make = &basictypes.PackageInfo{
 
 	BuilderName: "std", //buildercollection.Builder_std,
 
+	TarballProvider:          "https",
+	TarballProviderUseCache:  true,
+	TarballProviderArguments: []string{"https://ftp.gnu.org/gnu/make"},
 }

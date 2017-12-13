@@ -15,8 +15,9 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildercollection"
-	"github.com/AnimusPEXUS/aipsetup/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/logger"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
 )
 
 var (
@@ -337,7 +338,7 @@ maintarball_found:
 
 	{
 
-		var parser tarballnameparsers.TarballNameParserI
+		var parser types.TarballNameParserI
 
 		{
 			parser_c, ok :=
@@ -433,14 +434,10 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 
 	builder_name := info.MainTarballInfo.BuilderName
 
-	var builder basictypes.BuilderI
-	if b, ok := buildercollection.Index[builder_name]; !ok {
-		return errors.New("Named builder not found")
-	} else {
-		builder = b(self)
+	builder, err := buildercollection.Get(builder_name, self)
+	if err != nil {
+		return err
 	}
-
-	// builder.SetBuildingSite(self)
 
 	actions_list, actions := builder.DefineActions()
 

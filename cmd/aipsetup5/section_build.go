@@ -8,8 +8,9 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/aipsetup/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/cliapp"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
 )
 
 func SectionAipsetupBuild() *cliapp.AppCmdNode {
@@ -101,7 +102,7 @@ func CmdAipsetupBuildInitSub01(
 
 	var version string
 	{
-		var parser tarballnameparsers.TarballNameParserI
+		var parser types.TarballNameParserI
 
 		{
 			parser_c, ok :=

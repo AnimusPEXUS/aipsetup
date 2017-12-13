@@ -27,10 +27,10 @@ func SectionAipsetupTarGet() *cliapp.AppCmdNode {
 						Callable: CmdAipsetupTarGetProvidersList,
 					},
 
-					&cliapp.AppCmdNode{
-						Name: "tarballs",
-						//Callable: CmdAipsetupTarGetProvidersTarballs,
-					},
+					// &cliapp.AppCmdNode{
+					// 	Name:     "tarballs",
+					// 	Callable: CmdAipsetupTarGetProvidersTarballs,
+					// },
 				},
 			},
 

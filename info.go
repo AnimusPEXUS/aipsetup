@@ -7,8 +7,9 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
-	"github.com/AnimusPEXUS/aipsetup/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/textlist"
+	"github.com/AnimusPEXUS/utils/version/versionfilterfunctions"
 )
 
 func DetermineTarballsBuildinfo(filename string) (
@@ -48,7 +49,7 @@ searching:
 			fres, err := textlist.FilterList(
 				filename_s_base_list,
 				value.Filters,
-				StdVersionFilterFunctions,
+				versionfilterfunctions.StdVersionFilterFunctions,
 			)
 			if err != nil {
 				return nil, err

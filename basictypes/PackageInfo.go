@@ -27,8 +27,7 @@ type PackageInfo struct {
 	Tags []string //`json:"tags"`
 
 	TarballVersionTool string //`json:"tarball_version_tool"`
-
-	TarballProvider string //`json:"tarball_provider"`
+	TarballProvider    string //`json:"tarball_provider"`
 
 	// NOTE: some providers, like sf.net, requires to know additional data to
 	//       work with. for instance sf.net needs a project name, as one may
@@ -36,8 +35,8 @@ type PackageInfo struct {
 	//       field is provided. Providers, on theyr part, should describe
 	//       arguments which they require, using for this they'r source
 	//       files.
-	TarballProviderArguments []string // `json:"tarball_provider_arguments"`
-
-	TarballProviderUseCache        bool
-	TarballProviderCachePresetName string
+	TarballProviderArguments        []string // `json:"tarball_provider_arguments"`
+	TarballProviderUseCache         bool
+	TarballProviderCachePresetName  string
+	TarballProviderVersionSyncDepth int
 }

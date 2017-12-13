@@ -2,6 +2,7 @@ package aipsetup
 
 import (
 	"io/ioutil"
+	"os"
 	"path"
 	"path/filepath"
 	"strings"
@@ -125,7 +126,13 @@ func (self *System) GetInstalledASPDepsDir() string {
 }
 
 func (self *System) GetTarballRepoRootDir() string {
-	return self.cfg.Section("tarball_downloading").Key("path").MustString("")
+	ret := self.cfg.Section("tarball_downloading").Key("path").MustString("")
+	if ret == "" ||
+		!strings.HasPrefix(ret, "/") ||
+		(func() error { _, err := os.Stat(ret); return err }() != nil) {
+		panic("invalid value for tarball_downloading -> path")
+	}
+	return ret
 }
 
 // func (self *System) GetTarballsRepository() *tarballrepository.Repository {
