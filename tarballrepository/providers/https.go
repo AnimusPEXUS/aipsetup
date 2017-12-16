@@ -152,7 +152,7 @@ func (self *ProviderHttps) PerformUpdate() error {
 
 		fres, err := textlist.FilterList(
 			[]string{i},
-			self.pkg_info.Filters,
+			textlist.ParseFilterTextLinesMust(self.pkg_info.Filters),
 			versionfilterfunctions.StdVersionFilterFunctions,
 		)
 		if err != nil {

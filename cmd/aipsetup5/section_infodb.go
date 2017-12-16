@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
+	"github.com/AnimusPEXUS/aipsetup/infoeditor"
 	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
@@ -21,6 +22,15 @@ func SectionAipsetupInfoDB() *cliapp.AppCmdNode {
 				CheckArgs: true,
 				MinArgs:   1,
 				MaxArgs:   1,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:             "code",
+				ShortDescription: "Generate new distropkginfodb editing it with InfoEditor.go",
+				Callable:         CmdAipsetupInfoCode,
+				CheckArgs:        true,
+				MinArgs:          0,
+				MaxArgs:          0,
 			},
 		},
 	}
@@ -60,4 +70,21 @@ func CmdAipsetupInfoWrite(
 		Message: "looks like no errors",
 	}
 
+}
+
+func CmdAipsetupInfoCode(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+	ie := &infoeditor.InfoEditor{}
+	err := ie.Run()
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    10,
+			Message: err.Error(),
+		}
+	}
+	return &cliapp.AppResult{
+		Code: 0,
+	}
 }

@@ -48,7 +48,7 @@ searching:
 
 			fres, err := textlist.FilterList(
 				filename_s_base_list,
-				value.Filters,
+				textlist.ParseFilterTextLinesMust(value.Filters),
 				versionfilterfunctions.StdVersionFilterFunctions,
 			)
 			if err != nil {

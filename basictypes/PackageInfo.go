@@ -1,6 +1,8 @@
 package basictypes
 
-import "github.com/AnimusPEXUS/utils/textlist"
+import (
+	"github.com/AnimusPEXUS/utils/tags"
+)
 
 type PackageInfo struct {
 	// Name string `json:"name"`
@@ -10,7 +12,7 @@ type PackageInfo struct {
 
 	TarballFileNameParser string //`json:"tarball_filename_parser"`
 	TarballName           string //`json:"tarball_name"`
-	Filters               textlist.Filters
+	Filters               []string
 
 	BuilderName string //`json:"builder_name"`
 
@@ -24,7 +26,7 @@ type PackageInfo struct {
 	SODeps      []string //`json:"so_deps"`
 	RunTimeDeps []string //`json:"runtime_deps"`
 
-	Tags []string //`json:"tags"`
+	Tags tags.Tags //`json:"tags"`
 
 	TarballVersionTool string //`json:"tarball_version_tool"`
 	TarballProvider    string //`json:"tarball_provider"`
