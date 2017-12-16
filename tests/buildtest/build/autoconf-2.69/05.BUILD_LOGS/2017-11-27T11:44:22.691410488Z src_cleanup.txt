@@ -1,2 +1,0 @@
-[i] 2017-11-27T11:44:22.691470048Z src_cleanup log started
-[i] 2017-11-27T11:44:22.741746577Z src_cleanup log ended
