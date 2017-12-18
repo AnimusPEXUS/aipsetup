@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libical = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.sourceforge.net",
+	HomePage:    "https://sourceforge.net/projects/freeassociation",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libical",
@@ -29,12 +29,14 @@ var DistroPackageInfo_libical = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:freeassociation"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"freeassociation"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

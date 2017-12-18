@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gutenprint = &basictypes.PackageInfo{
 
 	Description: `None`,
-	HomePage:    "http://www.sourceforge.net",
+	HomePage:    "https://sourceforge.net/projects/gimp-print",
 
 	TarballFileNameParser: "std",
 	TarballName:           "gutenprint",
@@ -29,12 +29,14 @@ var DistroPackageInfo_gutenprint = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:gimp-print"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"gimp-print"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

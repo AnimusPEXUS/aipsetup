@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_googlizer = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://gnome.org/",
 
 	TarballFileNameParser: "std",
 	TarballName:           "googlizer",
@@ -29,13 +29,15 @@ var DistroPackageInfo_googlizer = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "gnome",
+	TarballProviderArguments: []string{
+		"googlizer"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

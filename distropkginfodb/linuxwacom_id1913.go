@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_linuxwacom = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://sourceforge.net/",
+	HomePage:    "https://sourceforge.net/projects/linuxwacom",
 
 	TarballFileNameParser: "std",
 	TarballName:           "linuxwacom",
@@ -29,12 +29,14 @@ var DistroPackageInfo_linuxwacom = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:linuxwacom"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"linuxwacom"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

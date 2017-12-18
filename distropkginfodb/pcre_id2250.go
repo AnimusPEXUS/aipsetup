@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pcre = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.csx.cam.ac.uk",
+	HomePage:    "https://sourceforge.net/projects/qpdf",
 
 	TarballFileNameParser: "std",
 	TarballName:           "pcre",
@@ -29,12 +29,14 @@ var DistroPackageInfo_pcre = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:qpdf"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"qpdf"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

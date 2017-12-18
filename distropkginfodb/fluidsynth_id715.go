@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_fluidsynth = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://None",
+	HomePage:    "https://sourceforge.net/projects/fluidsynth",
 
 	TarballFileNameParser: "std",
 	TarballName:           "fluidsynth",
@@ -29,12 +29,14 @@ var DistroPackageInfo_fluidsynth = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:fluidsynth"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"fluidsynth"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

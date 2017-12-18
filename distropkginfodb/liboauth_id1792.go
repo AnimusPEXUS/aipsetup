@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_liboauth = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://sourceforge.net",
+	HomePage:    "https://sourceforge.net/projects/liboauth",
 
 	TarballFileNameParser: "std",
 	TarballName:           "liboauth",
@@ -29,12 +29,14 @@ var DistroPackageInfo_liboauth = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:liboauth"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"liboauth"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

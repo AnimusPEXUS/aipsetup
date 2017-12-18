@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_librevenge = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://sourceforge.net/projects/libwpd",
 
 	TarballFileNameParser: "std",
 	TarballName:           "librevenge",
@@ -29,12 +29,14 @@ var DistroPackageInfo_librevenge = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:libwpd"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"libwpd"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

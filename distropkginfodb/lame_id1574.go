@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_lame = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.sourceforge.net",
+	HomePage:    "https://sourceforge.net/projects/lame",
 
 	TarballFileNameParser: "std",
 	TarballName:           "lame",
@@ -29,12 +29,14 @@ var DistroPackageInfo_lame = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:lame"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"lame"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

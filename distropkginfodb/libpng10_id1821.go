@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libpng10 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.sourceforge.net",
+	HomePage:    "https://sourceforge.net/projects/libpng",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libpng",
@@ -29,12 +29,14 @@ var DistroPackageInfo_libpng10 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:libpng"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"libpng"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

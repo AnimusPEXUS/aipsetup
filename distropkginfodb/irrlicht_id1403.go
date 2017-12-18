@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_irrlicht = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.sourceforge.net",
+	HomePage:    "https://sourceforge.net/projects/irrlicht",
 
 	TarballFileNameParser: "std",
 	TarballName:           "irrlicht",
@@ -29,12 +29,14 @@ var DistroPackageInfo_irrlicht = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:irrlicht"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"irrlicht"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

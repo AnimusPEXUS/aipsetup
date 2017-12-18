@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_docbook2X = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://None",
+	HomePage:    "https://sourceforge.net/projects/docbook2x",
 
 	TarballFileNameParser: "std",
 	TarballName:           "docbook2X",
@@ -29,12 +29,14 @@ var DistroPackageInfo_docbook2X = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:docbook2x"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"docbook2x"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

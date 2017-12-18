@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pygtksourceview = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://gnome.org/",
 
 	TarballFileNameParser: "std",
 	TarballName:           "pygtksourceview",
@@ -29,13 +29,15 @@ var DistroPackageInfo_pygtksourceview = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "gnome",
+	TarballProviderArguments: []string{
+		"pygtksourceview"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

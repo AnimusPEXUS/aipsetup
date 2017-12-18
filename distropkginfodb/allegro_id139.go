@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_allegro = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://alleg.sourceforge.net/",
+	HomePage:    "https://sourceforge.net/projects/alleg",
 
 	TarballFileNameParser: "std",
 	TarballName:           "allegro",
@@ -29,12 +29,14 @@ var DistroPackageInfo_allegro = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:alleg"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"alleg"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

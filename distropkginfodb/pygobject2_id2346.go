@@ -11,10 +11,10 @@ import (
 var DistroPackageInfo_pygobject2 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://www.gnome.org",
+	HomePage:    "https://gnome.org/",
 
 	TarballFileNameParser: "std",
-	TarballName:           "pygobject",
+	TarballName:           "pygobject2",
 	Filters:               []string{},
 
 	BuilderName: "std",
@@ -29,13 +29,15 @@ var DistroPackageInfo_pygobject2 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "gnome",
+	TarballProviderArguments: []string{
+		"pygobject2"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

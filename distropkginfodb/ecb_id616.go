@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ecb = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://None",
+	HomePage:    "https://sourceforge.net/projects/ecb",
 
 	TarballFileNameParser: "std",
 	TarballName:           "ecb",
@@ -29,12 +29,14 @@ var DistroPackageInfo_ecb = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:ecb"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"ecb"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

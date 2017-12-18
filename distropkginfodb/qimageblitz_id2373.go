@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_qimageblitz = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.kde.org",
+	HomePage:    "https://sourceforge.net/projects/qimageblitz",
 
 	TarballFileNameParser: "std",
 	TarballName:           "qimageblitz",
@@ -29,12 +29,14 @@ var DistroPackageInfo_qimageblitz = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:qimageblitz"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"qimageblitz"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

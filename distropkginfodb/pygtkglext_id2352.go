@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pygtkglext = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://sourceforge.net/projects/gtkglext",
 
 	TarballFileNameParser: "std",
 	TarballName:           "pygtkglext",
@@ -29,13 +29,15 @@ var DistroPackageInfo_pygtkglext = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:gtkglext", "gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"gtkglext"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

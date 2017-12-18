@@ -18,7 +18,7 @@ It is supported by Red Hat and Ximian as middleware of the GNOME project.
 required by gconf
 
 deprecated! use --disable-orbit for GConf`,
-	HomePage: "http://www.gnome.org",
+	HomePage: "https://gnome.org/",
 
 	TarballFileNameParser: "std",
 	TarballName:           "ORBit2",
@@ -36,13 +36,15 @@ deprecated! use --disable-orbit for GConf`,
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "gnome",
+	TarballProviderArguments: []string{
+		"ORBit2"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

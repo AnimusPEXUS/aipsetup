@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_e2fsprogs = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://sf.net",
+	HomePage:    "https://sourceforge.net/projects/e2fsprogs",
 
 	TarballFileNameParser: "std",
 	TarballName:           "e2fsprogs",
@@ -29,12 +29,14 @@ var DistroPackageInfo_e2fsprogs = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:e2fsprogs"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"e2fsprogs"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

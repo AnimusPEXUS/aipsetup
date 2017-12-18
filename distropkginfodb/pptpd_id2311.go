@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pptpd = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://sourceforge.net/projects/poptop",
 
 	TarballFileNameParser: "std",
 	TarballName:           "pptpd",
@@ -29,12 +29,14 @@ var DistroPackageInfo_pptpd = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:poptop"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"poptop"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

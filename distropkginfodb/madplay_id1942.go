@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_madplay = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://sf.net",
+	HomePage:    "https://sourceforge.net/projects/mad",
 
 	TarballFileNameParser: "std",
 	TarballName:           "madplay",
@@ -29,12 +29,14 @@ var DistroPackageInfo_madplay = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:mad"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"mad"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_tiff = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.remotesensing.org",
+	HomePage:    "https://sourceforge.net/projects/wxwindows",
 
 	TarballFileNameParser: "std",
 	TarballName:           "tiff",
@@ -29,12 +29,14 @@ var DistroPackageInfo_tiff = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:wxwindows"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"wxwindows"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_nas = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://radscan.com/",
+	HomePage:    "https://sourceforge.net/projects/nas",
 
 	TarballFileNameParser: "std",
 	TarballName:           "nas",
@@ -29,12 +29,14 @@ var DistroPackageInfo_nas = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:nas"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"nas"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

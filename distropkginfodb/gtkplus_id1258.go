@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.gnome.org",
+	HomePage:    "https://sourceforge.net/projects/xfce",
 
 	TarballFileNameParser: "std",
 	TarballName:           "gtk+",
@@ -29,13 +29,15 @@ var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:xfce", "gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"xfce"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

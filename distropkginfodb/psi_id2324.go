@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_psi = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.sourceforge.net/",
+	HomePage:    "https://sourceforge.net/projects/psi",
 
 	TarballFileNameParser: "std",
 	TarballName:           "psi",
@@ -29,12 +29,14 @@ var DistroPackageInfo_psi = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:psi"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"psi"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

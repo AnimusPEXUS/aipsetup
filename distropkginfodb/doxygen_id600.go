@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_doxygen = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://None",
+	HomePage:    "https://sourceforge.net/projects/doxygen",
 
 	TarballFileNameParser: "std",
 	TarballName:           "doxygen",
@@ -29,12 +29,14 @@ var DistroPackageInfo_doxygen = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:doxygen"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"doxygen"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

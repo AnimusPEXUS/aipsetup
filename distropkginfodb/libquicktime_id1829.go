@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libquicktime = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://sf.net/",
+	HomePage:    "https://sourceforge.net/projects/libquicktime",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libquicktime",
@@ -29,12 +29,14 @@ var DistroPackageInfo_libquicktime = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:libquicktime"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"libquicktime"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

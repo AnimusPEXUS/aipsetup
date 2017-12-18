@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_patch = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.freedos.org",
+	HomePage:    "https://sourceforge.net/projects/crystal",
 
 	TarballFileNameParser: "std",
 	TarballName:           "patch",
@@ -29,12 +29,14 @@ var DistroPackageInfo_patch = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:crystal", "'sf_project:wxwindows"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"crystal"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

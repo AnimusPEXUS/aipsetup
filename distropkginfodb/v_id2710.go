@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_v = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://sourceforge.net/projects/retroshare",
 
 	TarballFileNameParser: "std",
 	TarballName:           "v",
@@ -29,12 +29,14 @@ var DistroPackageInfo_v = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:crengine", "'sf_project:retroshare"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"retroshare"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

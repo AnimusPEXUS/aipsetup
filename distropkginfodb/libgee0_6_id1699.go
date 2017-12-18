@@ -11,10 +11,10 @@ import (
 var DistroPackageInfo_libgee0_6 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.gnome.org",
+	HomePage:    "https://gnome.org/",
 
 	TarballFileNameParser: "std",
-	TarballName:           "libgee",
+	TarballName:           "libgee0.6",
 	Filters:               []string{},
 
 	BuilderName: "std",
@@ -29,13 +29,15 @@ var DistroPackageInfo_libgee0_6 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "gnome",
+	TarballProviderArguments: []string{
+		"libgee0.6"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

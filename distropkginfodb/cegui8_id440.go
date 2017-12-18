@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_cegui8 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.cegui.org.uk/",
+	HomePage:    "https://sourceforge.net/projects/crayzedsgui",
 
 	TarballFileNameParser: "std",
 	TarballName:           "cegui",
@@ -29,12 +29,14 @@ var DistroPackageInfo_cegui8 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:crayzedsgui"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"crayzedsgui"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

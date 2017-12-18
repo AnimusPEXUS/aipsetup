@@ -1,9 +1,5 @@
 package basictypes
 
-import (
-	"github.com/AnimusPEXUS/utils/tags"
-)
-
 type PackageInfo struct {
 	// Name string `json:"name"`
 
@@ -26,7 +22,7 @@ type PackageInfo struct {
 	SODeps      []string //`json:"so_deps"`
 	RunTimeDeps []string //`json:"runtime_deps"`
 
-	Tags tags.Tags //`json:"tags"`
+	Tags []string //`json:"tags"`
 
 	TarballVersionTool string //`json:"tarball_version_tool"`
 	TarballProvider    string //`json:"tarball_provider"`

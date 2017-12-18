@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libid3tag = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://sf.net",
+	HomePage:    "https://sourceforge.net/projects/mad",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libid3tag",
@@ -29,12 +29,14 @@ var DistroPackageInfo_libid3tag = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:mad"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"mad"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -13,7 +13,7 @@ var DistroPackageInfo_GConf = &basictypes.PackageInfo{
 	Description: `deprecated. use dconf and (?)GSettings
 
 can't depricate: used by ibus`,
-	HomePage: "http://www.gnome.org",
+	HomePage: "https://gnome.org/",
 
 	TarballFileNameParser: "std",
 	TarballName:           "GConf",
@@ -31,13 +31,15 @@ can't depricate: used by ibus`,
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "gnome",
+	TarballProviderArguments: []string{
+		"GConf"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

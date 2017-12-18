@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_mediatomb = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "sf.net",
+	HomePage:    "https://sourceforge.net/projects/mediatomb",
 
 	TarballFileNameParser: "std",
 	TarballName:           "mediatomb",
@@ -29,12 +29,14 @@ var DistroPackageInfo_mediatomb = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:mediatomb"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"mediatomb"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

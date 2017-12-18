@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_cups = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://cups.org",
+	HomePage:    "https://sourceforge.net/projects/cups",
 
 	TarballFileNameParser: "std",
 	TarballName:           "cups",
@@ -29,12 +29,14 @@ var DistroPackageInfo_cups = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:cups"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"cups"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

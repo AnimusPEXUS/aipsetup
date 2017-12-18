@@ -12,7 +12,7 @@ var DistroPackageInfo_libseccomp = &basictypes.PackageInfo{
 
 	Description: `The libseccomp library provides and easy to use, platform independent, interface to the Linux Kernel's syscall filtering mechanism: seccomp
 `,
-	HomePage: "http://sourceforge.net/projects/libseccomp/",
+	HomePage: "https://sourceforge.net/projects/libseccomp",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libseccomp",
@@ -30,12 +30,14 @@ var DistroPackageInfo_libseccomp = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:libseccomp"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"libseccomp"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

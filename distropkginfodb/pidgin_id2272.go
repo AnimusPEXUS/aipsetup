@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pidgin = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.sourceforge.net/",
+	HomePage:    "https://sourceforge.net/projects/pidgin",
 
 	TarballFileNameParser: "std",
 	TarballName:           "pidgin",
@@ -29,12 +29,14 @@ var DistroPackageInfo_pidgin = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:pidgin"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"pidgin"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

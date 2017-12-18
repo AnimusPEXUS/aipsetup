@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_cdrtools = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.berlios.de",
+	HomePage:    "https://sourceforge.net/projects/cdrtools",
 
 	TarballFileNameParser: "std",
 	TarballName:           "cdrtools",
@@ -29,12 +29,14 @@ var DistroPackageInfo_cdrtools = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:cdrtools"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"cdrtools"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_expect = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.sf.net/projects/expect",
+	HomePage:    "https://sourceforge.net/projects/expect",
 
 	TarballFileNameParser: "std",
 	TarballName:           "expect",
@@ -29,12 +29,14 @@ var DistroPackageInfo_expect = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:expect"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"expect"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

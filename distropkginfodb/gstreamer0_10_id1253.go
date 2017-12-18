@@ -11,10 +11,10 @@ import (
 var DistroPackageInfo_gstreamer0_10 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.freedesktop.org",
+	HomePage:    "https://gnome.org/",
 
 	TarballFileNameParser: "std",
-	TarballName:           "gstreamer",
+	TarballName:           "gstreamer0.10",
 	Filters:               []string{},
 
 	BuilderName: "std",
@@ -29,13 +29,15 @@ var DistroPackageInfo_gstreamer0_10 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "gnome",
+	TarballProviderArguments: []string{
+		"gstreamer0.10"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

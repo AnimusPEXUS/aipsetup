@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_openjpeg1 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://sourceforge.net/projects/openjpeg.mirror",
 
 	TarballFileNameParser: "std",
 	TarballName:           "openjpeg",
@@ -29,12 +29,14 @@ var DistroPackageInfo_openjpeg1 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:openjpeg.mirror"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"openjpeg.mirror"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

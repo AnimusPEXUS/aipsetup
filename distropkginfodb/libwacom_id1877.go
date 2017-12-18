@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libwacom = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://sourceforge.net/",
+	HomePage:    "https://sourceforge.net/projects/linuxwacom",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libwacom",
@@ -29,13 +29,15 @@ var DistroPackageInfo_libwacom = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:linuxwacom", "gnome_project", "group:gnome"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gnome",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"linuxwacom"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,
 }

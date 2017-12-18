@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_freeglut = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://freeglut.sourceforge.net/",
+	HomePage:    "https://sourceforge.net/projects/freeglut",
 
 	TarballFileNameParser: "std",
 	TarballName:           "freeglut",
@@ -29,12 +29,14 @@ var DistroPackageInfo_freeglut = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:freeglut"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"freeglut"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

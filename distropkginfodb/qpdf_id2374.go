@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_qpdf = &basictypes.PackageInfo{
 
 	Description: `None`,
-	HomePage:    "http://sf.net",
+	HomePage:    "https://sourceforge.net/projects/qpdf",
 
 	TarballFileNameParser: "std",
 	TarballName:           "qpdf",
@@ -29,12 +29,14 @@ var DistroPackageInfo_qpdf = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:qpdf"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"qpdf"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

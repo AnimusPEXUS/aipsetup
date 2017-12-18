@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_qemu = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://qemu.org",
+	HomePage:    "https://sourceforge.net/projects/gns-3",
 
 	TarballFileNameParser: "std",
 	TarballName:           "qemu",
@@ -29,12 +29,14 @@ var DistroPackageInfo_qemu = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:gns-3"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"gns-3"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

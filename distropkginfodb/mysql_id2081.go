@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_mysql = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.mysql.com",
+	HomePage:    "https://sourceforge.net/projects/squirrel-sql",
 
 	TarballFileNameParser: "std",
 	TarballName:           "mysql",
@@ -29,12 +29,14 @@ var DistroPackageInfo_mysql = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:squirrel-sql"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"squirrel-sql"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

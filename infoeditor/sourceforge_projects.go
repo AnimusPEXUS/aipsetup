@@ -1,6 +1,6 @@
 package infoeditor
 
-//       project name
+//       sourceforge's project name
 //              \_______         tarballs spawned by them
 //                      \                  |
 //                       ------,        ,--

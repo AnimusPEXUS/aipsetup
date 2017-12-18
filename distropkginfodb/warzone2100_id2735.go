@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_warzone2100 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.wz2100.net/",
+	HomePage:    "https://sourceforge.net/projects/warzone2100",
 
 	TarballFileNameParser: "std",
 	TarballName:           "warzone2100",
@@ -29,12 +29,14 @@ var DistroPackageInfo_warzone2100 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:warzone2100"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"warzone2100"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

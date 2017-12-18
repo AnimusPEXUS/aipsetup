@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_eris = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://worldforge.org",
+	HomePage:    "https://sourceforge.net/projects/worldforge",
 
 	TarballFileNameParser: "std",
 	TarballName:           "eris",
@@ -29,12 +29,14 @@ var DistroPackageInfo_eris = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:worldforge"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"worldforge"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

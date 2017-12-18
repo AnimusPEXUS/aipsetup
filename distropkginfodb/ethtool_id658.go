@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ethtool = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.kernel.org",
+	HomePage:    "https://sourceforge.net/projects/gkernel",
 
 	TarballFileNameParser: "std",
 	TarballName:           "ethtool",
@@ -29,12 +29,14 @@ var DistroPackageInfo_ethtool = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:gkernel"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"gkernel"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

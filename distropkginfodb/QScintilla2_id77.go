@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_QScintilla2 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "sf.net/projects/pyqt",
+	HomePage:    "https://sourceforge.net/projects/pyqt",
 
 	TarballFileNameParser: "std",
 	TarballName:           "QScintilla-gpl",
@@ -29,12 +29,14 @@ var DistroPackageInfo_QScintilla2 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:pyqt"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"pyqt"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

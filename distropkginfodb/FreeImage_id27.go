@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_FreeImage = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://sf.net/projects/freeimage",
+	HomePage:    "https://sourceforge.net/projects/freeimage",
 
 	TarballFileNameParser: "std",
 	TarballName:           "FreeImage",
@@ -29,12 +29,14 @@ var DistroPackageInfo_FreeImage = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:freeimage"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"freeimage"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

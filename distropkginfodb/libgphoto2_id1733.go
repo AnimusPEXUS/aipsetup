@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libgphoto2 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://sf.net",
+	HomePage:    "https://sourceforge.net/projects/gphoto",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libgphoto2",
@@ -29,12 +29,14 @@ var DistroPackageInfo_libgphoto2 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:gphoto"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"gphoto"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

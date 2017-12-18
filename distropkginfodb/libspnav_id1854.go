@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libspnav = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://sourceforge.net/projects/spacenav/",
+	HomePage:    "https://sourceforge.net/projects/spacenav",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libspnav",
@@ -29,12 +29,14 @@ var DistroPackageInfo_libspnav = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:spacenav"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"spacenav"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

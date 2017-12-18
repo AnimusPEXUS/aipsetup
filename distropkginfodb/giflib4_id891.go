@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_giflib4 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://sourceforge.net/projects/giflib",
+	HomePage:    "https://sourceforge.net/projects/giflib",
 
 	TarballFileNameParser: "std",
 	TarballName:           "giflib",
@@ -29,12 +29,14 @@ var DistroPackageInfo_giflib4 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:giflib"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"giflib"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

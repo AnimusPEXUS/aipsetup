@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_p7zip = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://sourceforge.net/projects/p7zip",
+	HomePage:    "https://sourceforge.net/projects/p7zip",
 
 	TarballFileNameParser: "std",
 	TarballName:           "p7zip",
@@ -29,12 +29,14 @@ var DistroPackageInfo_p7zip = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:p7zip"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"p7zip"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

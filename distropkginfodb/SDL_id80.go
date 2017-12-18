@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_SDL = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.libsdl.org",
+	HomePage:    "https://sourceforge.net/projects/warzone2100",
 
 	TarballFileNameParser: "std",
 	TarballName:           "SDL",
@@ -29,12 +29,14 @@ var DistroPackageInfo_SDL = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:warzone2100"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"warzone2100"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

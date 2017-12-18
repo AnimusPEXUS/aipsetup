@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_MesaLib = &basictypes.PackageInfo{
 
 	Description: `use 'mesa' package (renamed)`,
-	HomePage:    "http://mesa3d.org/",
+	HomePage:    "https://sourceforge.net/projects/mesa3d",
 
 	TarballFileNameParser: "std",
 	TarballName:           "MesaLib",
@@ -29,12 +29,14 @@ var DistroPackageInfo_MesaLib = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:mesa3d"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"mesa3d"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_MesaGLUT = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://sourceforge.net/projects/mesa3d",
 
 	TarballFileNameParser: "std",
 	TarballName:           "MesaGLUT",
@@ -29,12 +29,14 @@ var DistroPackageInfo_MesaGLUT = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:mesa3d"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"mesa3d"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

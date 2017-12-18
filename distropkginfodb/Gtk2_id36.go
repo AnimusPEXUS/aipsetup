@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_Gtk2 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://cpan.org/",
+	HomePage:    "https://sourceforge.net/projects/gtk2-perl",
 
 	TarballFileNameParser: "std",
 	TarballName:           "Gtk2",
@@ -29,12 +29,14 @@ var DistroPackageInfo_Gtk2 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:gtk2-perl"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"gtk2-perl"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

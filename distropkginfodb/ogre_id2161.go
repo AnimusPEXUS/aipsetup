@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ogre = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://ogre3d.org/",
+	HomePage:    "https://sourceforge.net/projects/ogre",
 
 	TarballFileNameParser: "std",
 	TarballName:           "ogre_src_v",
@@ -29,12 +29,14 @@ var DistroPackageInfo_ogre = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:ogre"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"ogre"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

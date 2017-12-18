@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_lcms2 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.littlecms.com",
+	HomePage:    "https://sourceforge.net/projects/lcms",
 
 	TarballFileNameParser: "std",
 	TarballName:           "lcms2",
@@ -29,12 +29,14 @@ var DistroPackageInfo_lcms2 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:lcms"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"lcms"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

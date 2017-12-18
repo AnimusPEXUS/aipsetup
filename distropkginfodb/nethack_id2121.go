@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_nethack = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://sf.net/",
+	HomePage:    "https://sourceforge.net/projects/nethack",
 
 	TarballFileNameParser: "std",
 	TarballName:           "nethack",
@@ -29,12 +29,14 @@ var DistroPackageInfo_nethack = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:nethack"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"nethack"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

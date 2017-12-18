@@ -1,7 +1,8 @@
 package distropkginfodb
 
 // WARNING: This file is not generated automatically.
-//          Keep it safe when copying files jenerated by "info-db code" command.
+//          Keep it safe when copying files generated with "info-db code"
+//          command.
 
 import (
 	"errors"

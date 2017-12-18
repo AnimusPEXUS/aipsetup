@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libass = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://sf.net",
+	HomePage:    "https://sourceforge.net/projects/libass",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libass",
@@ -29,12 +29,14 @@ var DistroPackageInfo_libass = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:libass"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"libass"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

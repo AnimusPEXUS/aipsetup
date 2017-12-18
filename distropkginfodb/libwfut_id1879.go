@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libwfut = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://worldforge.org/",
+	HomePage:    "https://sourceforge.net/projects/worldforge",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libwfut",
@@ -29,12 +29,14 @@ var DistroPackageInfo_libwfut = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:worldforge"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"worldforge"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

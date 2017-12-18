@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_fontforge = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://sf.net",
+	HomePage:    "https://sourceforge.net/projects/fontforge",
 
 	TarballFileNameParser: "std",
 	TarballName:           "fontforge_full",
@@ -29,12 +29,14 @@ var DistroPackageInfo_fontforge = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:fontforge"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"fontforge"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

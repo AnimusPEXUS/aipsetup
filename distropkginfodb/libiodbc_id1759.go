@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libiodbc = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://sf.net/",
+	HomePage:    "https://sourceforge.net/projects/iodbc",
 
 	TarballFileNameParser: "std",
 	TarballName:           "libiodbc",
@@ -29,12 +29,14 @@ var DistroPackageInfo_libiodbc = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"'sf_project:iodbc"},
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider: "sf",
+	TarballProviderArguments: []string{
+		"iodbc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,
