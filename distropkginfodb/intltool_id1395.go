@@ -30,7 +30,7 @@ var DistroPackageInfo_intltool = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project", "group:core0"},
 
 	TarballVersionTool: "gnome",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_smartmontools = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:smartmontools"},
+		"group:core1", "sf_project:smartmontools"},
 
 	TarballVersionTool: "std",
 

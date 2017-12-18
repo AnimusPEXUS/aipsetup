@@ -30,7 +30,7 @@ var DistroPackageInfo_freeciv = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:freeciv"},
+		"sf_project:freeciv"},
 
 	TarballVersionTool: "std",
 

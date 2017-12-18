@@ -30,7 +30,7 @@ var DistroPackageInfo_meanwhile = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:meanwhile"},
+		"sf_project:meanwhile"},
 
 	TarballVersionTool: "std",
 

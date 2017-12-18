@@ -30,7 +30,7 @@ var DistroPackageInfo_pptp = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:pptpclient"},
+		"sf_project:pptpclient"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_tk = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:tcl"},
+		"group:core0", "sf_project:tcl"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnome_media_profiles = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

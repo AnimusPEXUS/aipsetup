@@ -30,7 +30,7 @@ var DistroPackageInfo_fontforge = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:fontforge"},
+		"sf_project:fontforge"},
 
 	TarballVersionTool: "std",
 

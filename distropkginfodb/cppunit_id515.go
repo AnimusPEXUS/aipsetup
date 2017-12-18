@@ -30,7 +30,7 @@ var DistroPackageInfo_cppunit = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:cppunit"},
+		"group:core1", "sf_project:cppunit"},
 
 	TarballVersionTool: "std",
 

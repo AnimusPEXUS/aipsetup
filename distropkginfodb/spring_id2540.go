@@ -30,7 +30,7 @@ var DistroPackageInfo_spring = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:springrts"},
+		"sf_project:springrts"},
 
 	TarballVersionTool: "std",
 

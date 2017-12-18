@@ -30,7 +30,7 @@ var DistroPackageInfo_nfs_utils = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:nfs"},
+		"sf_project:nfs"},
 
 	TarballVersionTool: "std",
 

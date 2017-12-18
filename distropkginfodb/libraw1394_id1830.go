@@ -30,7 +30,7 @@ var DistroPackageInfo_libraw1394 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libraw1394"},
+		"sf_project:libraw1394"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_csound = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:csound"},
+		"sf_project:csound"},
 
 	TarballVersionTool: "std",
 

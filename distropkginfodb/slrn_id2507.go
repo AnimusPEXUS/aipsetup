@@ -30,7 +30,7 @@ var DistroPackageInfo_slrn = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:slrn"},
+		"sf_project:slrn"},
 
 	TarballVersionTool: "std",
 

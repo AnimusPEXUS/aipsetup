@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_icon_theme_extras = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

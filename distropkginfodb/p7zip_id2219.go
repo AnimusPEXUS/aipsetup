@@ -30,7 +30,7 @@ var DistroPackageInfo_p7zip = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:p7zip"},
+		"group:core1", "sf_project:p7zip"},
 
 	TarballVersionTool: "std",
 

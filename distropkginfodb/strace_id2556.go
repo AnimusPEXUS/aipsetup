@@ -30,7 +30,7 @@ var DistroPackageInfo_strace = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:strace"},
+		"sf_project:strace"},
 
 	TarballVersionTool: "std",
 

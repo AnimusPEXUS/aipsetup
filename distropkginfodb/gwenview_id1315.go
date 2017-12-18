@@ -30,7 +30,7 @@ var DistroPackageInfo_gwenview = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gwenview"},
+		"sf_project:gwenview"},
 
 	TarballVersionTool: "std",
 

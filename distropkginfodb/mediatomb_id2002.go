@@ -30,7 +30,7 @@ var DistroPackageInfo_mediatomb = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:mediatomb"},
+		"sf_project:mediatomb"},
 
 	TarballVersionTool: "std",
 

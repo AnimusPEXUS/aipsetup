@@ -30,7 +30,7 @@ var DistroPackageInfo_iogrind = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

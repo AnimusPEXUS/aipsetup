@@ -30,7 +30,7 @@ var DistroPackageInfo_cracklib = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:cracklib"},
+		"group:core1", "sf_project:cracklib"},
 
 	TarballVersionTool: "std",
 

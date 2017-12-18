@@ -30,7 +30,7 @@ var DistroPackageInfo_xvidcap = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:xvidcap"},
+		"sf_project:xvidcap"},
 
 	TarballVersionTool: "std",
 

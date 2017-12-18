@@ -30,7 +30,7 @@ var DistroPackageInfo_boost = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:boost"},
+		"group:core1", "sf_project:boost"},
 
 	TarballVersionTool: "std",
 

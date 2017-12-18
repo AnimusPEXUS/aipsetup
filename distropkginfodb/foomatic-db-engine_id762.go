@@ -29,7 +29,8 @@ var DistroPackageInfo_foomatic_db_engine = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"group:core1"},
 
 	TarballVersionTool: "std",
 

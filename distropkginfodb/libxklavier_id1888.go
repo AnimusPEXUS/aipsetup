@@ -30,7 +30,7 @@ var DistroPackageInfo_libxklavier = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gswitchit", "gnome_project", "group:gnome"},
+		"gnome_project", "sf_project:gswitchit"},
 
 	TarballVersionTool: "gnome",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnuplot = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gnuplot"},
+		"sf_project:gnuplot"},
 
 	TarballVersionTool: "std",
 

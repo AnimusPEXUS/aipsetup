@@ -30,7 +30,7 @@ var DistroPackageInfo_avidemux = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:avidemux"},
+		"sf_project:avidemux"},
 
 	TarballVersionTool: "std",
 

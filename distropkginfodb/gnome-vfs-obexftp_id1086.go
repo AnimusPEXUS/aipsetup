@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_vfs_obexftp = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

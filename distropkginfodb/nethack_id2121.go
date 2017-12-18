@@ -30,7 +30,7 @@ var DistroPackageInfo_nethack = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:nethack"},
+		"sf_project:nethack"},
 
 	TarballVersionTool: "std",
 

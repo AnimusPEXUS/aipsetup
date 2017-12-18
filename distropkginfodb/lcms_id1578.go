@@ -30,7 +30,7 @@ var DistroPackageInfo_lcms = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:lcms"},
+		"sf_project:lcms"},
 
 	TarballVersionTool: "std",
 

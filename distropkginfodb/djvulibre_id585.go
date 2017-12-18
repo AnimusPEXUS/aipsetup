@@ -30,7 +30,7 @@ var DistroPackageInfo_djvulibre = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:djvu"},
+		"sf_project:djvu"},
 
 	TarballVersionTool: "std",
 

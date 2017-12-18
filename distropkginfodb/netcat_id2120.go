@@ -30,7 +30,7 @@ var DistroPackageInfo_netcat = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:netcat"},
+		"sf_project:netcat"},
 
 	TarballVersionTool: "std",
 

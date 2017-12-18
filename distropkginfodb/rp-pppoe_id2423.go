@@ -29,7 +29,8 @@ var DistroPackageInfo_rp_pppoe = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"group:core1"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_ams = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:alsamodular"},
+		"sf_project:alsamodular"},
 
 	TarballVersionTool: "std",
 

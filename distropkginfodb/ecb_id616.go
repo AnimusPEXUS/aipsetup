@@ -30,7 +30,7 @@ var DistroPackageInfo_ecb = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:ecb"},
+		"sf_project:ecb"},
 
 	TarballVersionTool: "std",
 

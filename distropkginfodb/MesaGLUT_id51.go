@@ -30,7 +30,7 @@ var DistroPackageInfo_MesaGLUT = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:mesa3d"},
+		"sf_project:mesa3d"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_FreeImage = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:freeimage"},
+		"sf_project:freeimage"},
 
 	TarballVersionTool: "std",
 

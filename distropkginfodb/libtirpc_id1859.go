@@ -30,7 +30,7 @@ var DistroPackageInfo_libtirpc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libtirpc"},
+		"group:core1", "sf_project:libtirpc"},
 
 	TarballVersionTool: "std",
 

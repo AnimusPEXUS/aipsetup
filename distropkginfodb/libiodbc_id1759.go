@@ -30,7 +30,7 @@ var DistroPackageInfo_libiodbc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:iodbc"},
+		"sf_project:iodbc"},
 
 	TarballVersionTool: "std",
 

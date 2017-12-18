@@ -30,7 +30,7 @@ var DistroPackageInfo_podofo = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:podofo"},
+		"sf_project:podofo"},
 
 	TarballVersionTool: "std",
 

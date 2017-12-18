@@ -30,7 +30,7 @@ var DistroPackageInfo_tightvnc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:vnc-tight"},
+		"sf_project:vnc-tight"},
 
 	TarballVersionTool: "std",
 

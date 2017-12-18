@@ -30,7 +30,7 @@ var DistroPackageInfo_libdv = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libdv"},
+		"sf_project:libdv"},
 
 	TarballVersionTool: "std",
 

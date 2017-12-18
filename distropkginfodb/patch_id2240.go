@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_patch = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/crystal",
+	HomePage:    "https://sourceforge.net/projects/wxwindows",
 
 	TarballFileNameParser: "std",
 	TarballName:           "patch",
@@ -30,13 +30,13 @@ var DistroPackageInfo_patch = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:crystal", "'sf_project:wxwindows"},
+		"group:core0", "sf_project:crystal", "sf_project:wxwindows"},
 
 	TarballVersionTool: "std",
 
 	TarballProvider: "sf",
 	TarballProviderArguments: []string{
-		"crystal"},
+		"wxwindows"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

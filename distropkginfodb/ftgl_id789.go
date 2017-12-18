@@ -30,7 +30,7 @@ var DistroPackageInfo_ftgl = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:ftgl"},
+		"sf_project:ftgl"},
 
 	TarballVersionTool: "std",
 

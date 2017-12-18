@@ -30,7 +30,7 @@ var DistroPackageInfo_libmng = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libmng"},
+		"sf_project:libmng"},
 
 	TarballVersionTool: "std",
 

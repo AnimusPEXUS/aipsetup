@@ -30,7 +30,7 @@ var DistroPackageInfo_nas = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:nas"},
+		"sf_project:nas"},
 
 	TarballVersionTool: "std",
 

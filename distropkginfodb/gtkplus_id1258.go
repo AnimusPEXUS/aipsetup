@@ -30,7 +30,7 @@ var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:xfce", "gnome_project", "group:gnome"},
+		"gnome_project", "sf_project:xfce"},
 
 	TarballVersionTool: "gnome",
 

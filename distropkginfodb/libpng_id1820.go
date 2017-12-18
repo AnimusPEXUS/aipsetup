@@ -30,7 +30,7 @@ var DistroPackageInfo_libpng = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libpng"},
+		"sf_project:libpng"},
 
 	TarballVersionTool: "std",
 

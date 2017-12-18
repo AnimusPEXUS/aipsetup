@@ -30,7 +30,7 @@ var DistroPackageInfo_swig = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:swig"},
+		"sf_project:swig"},
 
 	TarballVersionTool: "std",
 

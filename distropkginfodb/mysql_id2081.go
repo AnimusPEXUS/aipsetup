@@ -30,7 +30,7 @@ var DistroPackageInfo_mysql = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:squirrel-sql"},
+		"sf_project:squirrel-sql"},
 
 	TarballVersionTool: "std",
 

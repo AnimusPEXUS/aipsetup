@@ -30,7 +30,7 @@ var DistroPackageInfo_irrlicht = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:irrlicht"},
+		"sf_project:irrlicht"},
 
 	TarballVersionTool: "std",
 

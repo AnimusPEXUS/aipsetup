@@ -30,7 +30,7 @@ var DistroPackageInfo_net_tools = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:net-tools"},
+		"sf_project:net-tools"},
 
 	TarballVersionTool: "std",
 

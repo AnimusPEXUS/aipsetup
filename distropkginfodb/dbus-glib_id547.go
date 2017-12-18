@@ -32,7 +32,8 @@ but some applications still using it (NetworkManager)`,
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"group:core0"},
 
 	TarballVersionTool: "std",
 

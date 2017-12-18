@@ -30,7 +30,7 @@ var DistroPackageInfo_cel = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:cel"},
+		"sf_project:cel"},
 
 	TarballVersionTool: "std",
 

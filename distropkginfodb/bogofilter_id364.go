@@ -30,7 +30,7 @@ var DistroPackageInfo_bogofilter = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:bogofilter"},
+		"sf_project:bogofilter"},
 
 	TarballVersionTool: "std",
 

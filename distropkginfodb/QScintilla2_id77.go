@@ -30,7 +30,7 @@ var DistroPackageInfo_QScintilla2 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:pyqt"},
+		"sf_project:pyqt"},
 
 	TarballVersionTool: "std",
 

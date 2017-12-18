@@ -30,7 +30,7 @@ var DistroPackageInfo_squashfs = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:squashfs"},
+		"group:core1", "sf_project:squashfs"},
 
 	TarballVersionTool: "std",
 

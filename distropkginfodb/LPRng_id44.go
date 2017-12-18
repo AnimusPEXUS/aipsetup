@@ -30,7 +30,7 @@ var DistroPackageInfo_LPRng = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:lprng"},
+		"sf_project:lprng"},
 
 	TarballVersionTool: "std",
 

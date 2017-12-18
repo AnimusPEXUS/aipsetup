@@ -30,7 +30,7 @@ var DistroPackageInfo_unzip = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:infozip"},
+		"group:core0", "sf_project:infozip"},
 
 	TarballVersionTool: "std",
 

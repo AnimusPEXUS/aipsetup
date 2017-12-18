@@ -30,7 +30,7 @@ var DistroPackageInfo_libusb = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libusb"},
+		"group:core1", "sf_project:libusb"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_jpegsrc_v = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libjpeg"},
+		"sf_project:libjpeg"},
 
 	TarballVersionTool: "std",
 

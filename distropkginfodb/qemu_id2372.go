@@ -30,7 +30,7 @@ var DistroPackageInfo_qemu = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gns-3"},
+		"group:core1", "sf_project:gns-3"},
 
 	TarballVersionTool: "std",
 

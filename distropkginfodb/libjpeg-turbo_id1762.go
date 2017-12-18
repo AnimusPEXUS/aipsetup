@@ -30,7 +30,7 @@ var DistroPackageInfo_libjpeg_turbo = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libjpeg-turbo"},
+		"sf_project:libjpeg-turbo"},
 
 	TarballVersionTool: "std",
 

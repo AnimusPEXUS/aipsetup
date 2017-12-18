@@ -30,7 +30,7 @@ var DistroPackageInfo_hplip = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:hplip"},
+		"sf_project:hplip"},
 
 	TarballVersionTool: "std",
 

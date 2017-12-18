@@ -30,7 +30,7 @@ var DistroPackageInfo_rygel_gst_0_10_fullscreen_renderer = &basictypes.PackageIn
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

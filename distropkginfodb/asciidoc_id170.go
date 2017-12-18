@@ -30,7 +30,7 @@ var DistroPackageInfo_asciidoc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:asciidoc"},
+		"group:core1", "sf_project:asciidoc"},
 
 	TarballVersionTool: "std",
 

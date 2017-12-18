@@ -30,7 +30,7 @@ var DistroPackageInfo_mlt = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:mlt"},
+		"sf_project:mlt"},
 
 	TarballVersionTool: "std",
 

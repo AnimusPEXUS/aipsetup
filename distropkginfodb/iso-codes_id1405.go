@@ -29,7 +29,8 @@ var DistroPackageInfo_iso_codes = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"group:core1"},
 
 	TarballVersionTool: "std",
 

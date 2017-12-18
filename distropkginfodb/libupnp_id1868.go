@@ -30,7 +30,7 @@ var DistroPackageInfo_libupnp = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:pupnp"},
+		"sf_project:pupnp"},
 
 	TarballVersionTool: "std",
 

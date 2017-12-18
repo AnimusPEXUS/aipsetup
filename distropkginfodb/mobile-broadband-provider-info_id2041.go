@@ -30,7 +30,7 @@ var DistroPackageInfo_mobile_broadband_provider_info = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

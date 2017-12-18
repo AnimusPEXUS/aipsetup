@@ -30,7 +30,7 @@ var DistroPackageInfo_librevenge = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libwpd"},
+		"sf_project:libwpd"},
 
 	TarballVersionTool: "std",
 

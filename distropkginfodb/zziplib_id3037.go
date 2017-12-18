@@ -30,7 +30,7 @@ var DistroPackageInfo_zziplib = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:zziplib"},
+		"sf_project:zziplib"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_libungif = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:giflib"},
+		"sf_project:giflib"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_pygtkglext = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gtkglext", "gnome_project", "group:gnome"},
+		"gnome_project", "sf_project:gtkglext"},
 
 	TarballVersionTool: "gnome",
 

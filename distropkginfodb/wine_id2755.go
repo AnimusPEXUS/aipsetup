@@ -30,7 +30,7 @@ var DistroPackageInfo_wine = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:wine"},
+		"sf_project:wine"},
 
 	TarballVersionTool: "std",
 

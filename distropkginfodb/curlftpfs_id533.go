@@ -30,7 +30,7 @@ var DistroPackageInfo_curlftpfs = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:curlftpfs"},
+		"sf_project:curlftpfs"},
 
 	TarballVersionTool: "std",
 

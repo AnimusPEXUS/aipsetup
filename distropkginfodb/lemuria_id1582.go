@@ -30,7 +30,7 @@ var DistroPackageInfo_lemuria = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gmerlin"},
+		"sf_project:gmerlin"},
 
 	TarballVersionTool: "std",
 

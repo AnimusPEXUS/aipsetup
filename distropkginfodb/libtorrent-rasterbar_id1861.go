@@ -30,7 +30,7 @@ var DistroPackageInfo_libtorrent_rasterbar = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libtorrent"},
+		"sf_project:libtorrent"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_allegro = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:alleg"},
+		"sf_project:alleg"},
 
 	TarballVersionTool: "std",
 

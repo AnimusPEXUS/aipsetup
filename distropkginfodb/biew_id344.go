@@ -30,7 +30,7 @@ var DistroPackageInfo_biew = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:beye"},
+		"sf_project:beye"},
 
 	TarballVersionTool: "std",
 

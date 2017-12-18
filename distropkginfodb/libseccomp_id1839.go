@@ -31,7 +31,7 @@ var DistroPackageInfo_libseccomp = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libseccomp"},
+		"group:core1", "sf_project:libseccomp"},
 
 	TarballVersionTool: "std",
 

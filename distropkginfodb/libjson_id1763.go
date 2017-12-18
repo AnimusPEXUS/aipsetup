@@ -30,7 +30,7 @@ var DistroPackageInfo_libjson = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libjson"},
+		"sf_project:libjson"},
 
 	TarballVersionTool: "std",
 

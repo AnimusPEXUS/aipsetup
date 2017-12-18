@@ -30,7 +30,7 @@ var DistroPackageInfo_DevIL = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:openil"},
+		"sf_project:openil"},
 
 	TarballVersionTool: "std",
 

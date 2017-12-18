@@ -29,7 +29,8 @@ var DistroPackageInfo_npth = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"group:core1", "group:crypt"},
 
 	TarballVersionTool: "std",
 

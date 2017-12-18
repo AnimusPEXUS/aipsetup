@@ -37,7 +37,7 @@ deprecated! use --disable-orbit for GConf`,
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

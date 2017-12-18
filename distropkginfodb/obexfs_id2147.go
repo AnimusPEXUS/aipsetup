@@ -30,7 +30,7 @@ var DistroPackageInfo_obexfs = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:openobex"},
+		"sf_project:openobex"},
 
 	TarballVersionTool: "std",
 

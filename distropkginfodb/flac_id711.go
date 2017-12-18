@@ -30,7 +30,7 @@ var DistroPackageInfo_flac = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:flac"},
+		"sf_project:flac"},
 
 	TarballVersionTool: "std",
 

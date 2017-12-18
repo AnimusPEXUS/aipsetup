@@ -30,7 +30,7 @@ var DistroPackageInfo_clamav = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:clamav"},
+		"sf_project:clamav"},
 
 	TarballVersionTool: "std",
 

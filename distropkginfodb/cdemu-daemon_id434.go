@@ -30,7 +30,7 @@ var DistroPackageInfo_cdemu_daemon = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:cdemu"},
+		"sf_project:cdemu"},
 
 	TarballVersionTool: "std",
 

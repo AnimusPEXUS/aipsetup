@@ -30,7 +30,7 @@ var DistroPackageInfo_jpeg = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:wxwindows"},
+		"sf_project:wxwindows"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_iperf = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:iperf", "'sf_project:iperf2"},
+		"sf_project:iperf", "sf_project:iperf2"},
 
 	TarballVersionTool: "std",
 

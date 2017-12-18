@@ -30,7 +30,7 @@ var DistroPackageInfo_libe_book = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libebook"},
+		"sf_project:libebook"},
 
 	TarballVersionTool: "std",
 

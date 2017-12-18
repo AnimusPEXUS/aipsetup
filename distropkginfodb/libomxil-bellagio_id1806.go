@@ -30,7 +30,7 @@ var DistroPackageInfo_libomxil_bellagio = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:omxil"},
+		"sf_project:omxil"},
 
 	TarballVersionTool: "std",
 

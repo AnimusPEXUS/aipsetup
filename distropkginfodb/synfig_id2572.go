@@ -30,7 +30,7 @@ var DistroPackageInfo_synfig = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:synfig"},
+		"sf_project:synfig"},
 
 	TarballVersionTool: "std",
 

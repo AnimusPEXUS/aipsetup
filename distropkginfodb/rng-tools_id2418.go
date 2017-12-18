@@ -30,7 +30,7 @@ var DistroPackageInfo_rng_tools = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gkernel"},
+		"sf_project:gkernel"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_expat = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:expat"},
+		"group:core0", "sf_project:expat"},
 
 	TarballVersionTool: "std",
 

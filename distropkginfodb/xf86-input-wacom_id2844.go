@@ -30,7 +30,7 @@ var DistroPackageInfo_xf86_input_wacom = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:linuxwacom"},
+		"sf_project:linuxwacom"},
 
 	TarballVersionTool: "std",
 

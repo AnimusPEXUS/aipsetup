@@ -30,7 +30,7 @@ var DistroPackageInfo_libgphoto2 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gphoto"},
+		"sf_project:gphoto"},
 
 	TarballVersionTool: "std",
 

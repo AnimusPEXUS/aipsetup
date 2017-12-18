@@ -30,7 +30,7 @@ var DistroPackageInfo_pidgin = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:pidgin"},
+		"sf_project:pidgin"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_libircclient = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libircclient"},
+		"sf_project:libircclient"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_CEGUI = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:crayzedsgui"},
+		"sf_project:crayzedsgui"},
 
 	TarballVersionTool: "std",
 

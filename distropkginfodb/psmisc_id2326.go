@@ -30,7 +30,7 @@ var DistroPackageInfo_psmisc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:psmisc"},
+		"group:core0", "sf_project:psmisc"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_dosbox = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:dosbox"},
+		"sf_project:dosbox"},
 
 	TarballVersionTool: "std",
 

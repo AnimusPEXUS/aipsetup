@@ -30,7 +30,7 @@ var DistroPackageInfo_glew = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:glew"},
+		"sf_project:glew"},
 
 	TarballVersionTool: "std",
 

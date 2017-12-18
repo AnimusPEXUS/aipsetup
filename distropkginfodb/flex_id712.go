@@ -30,7 +30,7 @@ var DistroPackageInfo_flex = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:flex"},
+		"group:core0", "sf_project:flex"},
 
 	TarballVersionTool: "std",
 

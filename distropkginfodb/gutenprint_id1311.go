@@ -30,7 +30,7 @@ var DistroPackageInfo_gutenprint = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gimp-print"},
+		"sf_project:gimp-print"},
 
 	TarballVersionTool: "std",
 

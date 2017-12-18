@@ -30,7 +30,7 @@ var DistroPackageInfo_zbar = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:zbar"},
+		"group:core1", "sf_project:zbar"},
 
 	TarballVersionTool: "std",
 

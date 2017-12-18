@@ -30,7 +30,7 @@ var DistroPackageInfo_strigi = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:strigi"},
+		"sf_project:strigi"},
 
 	TarballVersionTool: "std",
 

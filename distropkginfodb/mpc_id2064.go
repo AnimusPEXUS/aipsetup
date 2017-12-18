@@ -29,7 +29,8 @@ var DistroPackageInfo_mpc = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"group:cross"},
 
 	TarballVersionTool: "std",
 

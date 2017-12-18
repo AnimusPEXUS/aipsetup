@@ -30,7 +30,7 @@ var DistroPackageInfo_sonic_visualiser = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:sv1"},
+		"sf_project:sv1"},
 
 	TarballVersionTool: "std",
 

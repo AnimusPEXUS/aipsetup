@@ -30,7 +30,7 @@ var DistroPackageInfo_Gtk2 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gtk2-perl"},
+		"sf_project:gtk2-perl"},
 
 	TarballVersionTool: "std",
 

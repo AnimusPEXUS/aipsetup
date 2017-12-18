@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_kra_ora_thumbnailer = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

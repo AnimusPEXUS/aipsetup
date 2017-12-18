@@ -30,7 +30,7 @@ var DistroPackageInfo_log4c = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:log4c"},
+		"sf_project:log4c"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_net_snmp = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:net-snmp"},
+		"group:core1", "sf_project:net-snmp"},
 
 	TarballVersionTool: "std",
 

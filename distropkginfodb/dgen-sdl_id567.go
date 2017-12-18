@@ -30,7 +30,7 @@ var DistroPackageInfo_dgen_sdl = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:dgen"},
+		"sf_project:dgen"},
 
 	TarballVersionTool: "std",
 

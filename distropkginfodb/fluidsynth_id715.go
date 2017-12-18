@@ -30,7 +30,7 @@ var DistroPackageInfo_fluidsynth = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:fluidsynth"},
+		"sf_project:fluidsynth"},
 
 	TarballVersionTool: "std",
 

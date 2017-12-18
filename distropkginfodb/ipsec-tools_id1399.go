@@ -30,7 +30,7 @@ var DistroPackageInfo_ipsec_tools = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:ipsec-tools"},
+		"sf_project:ipsec-tools"},
 
 	TarballVersionTool: "std",
 

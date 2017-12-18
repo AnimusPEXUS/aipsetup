@@ -30,7 +30,7 @@ var DistroPackageInfo_shared_desktop_ontologies = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:oscaf"},
+		"sf_project:oscaf"},
 
 	TarballVersionTool: "std",
 

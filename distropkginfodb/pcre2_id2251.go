@@ -29,7 +29,8 @@ var DistroPackageInfo_pcre2 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"group:core0"},
 
 	TarballVersionTool: "std",
 

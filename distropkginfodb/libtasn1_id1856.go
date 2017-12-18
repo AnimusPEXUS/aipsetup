@@ -29,7 +29,8 @@ var DistroPackageInfo_libtasn1 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"group:crypt"},
 
 	TarballVersionTool: "std",
 

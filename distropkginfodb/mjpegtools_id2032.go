@@ -30,7 +30,7 @@ var DistroPackageInfo_mjpegtools = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:mjpeg"},
+		"sf_project:mjpeg"},
 
 	TarballVersionTool: "std",
 

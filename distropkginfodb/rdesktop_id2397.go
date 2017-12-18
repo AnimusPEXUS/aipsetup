@@ -30,7 +30,7 @@ var DistroPackageInfo_rdesktop = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:rdesktop"},
+		"sf_project:rdesktop"},
 
 	TarballVersionTool: "std",
 

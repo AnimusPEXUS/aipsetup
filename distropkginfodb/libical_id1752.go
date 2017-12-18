@@ -30,7 +30,7 @@ var DistroPackageInfo_libical = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:freeassociation"},
+		"sf_project:freeassociation"},
 
 	TarballVersionTool: "std",
 

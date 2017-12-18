@@ -30,7 +30,7 @@ var DistroPackageInfo_pdfedit = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:pdfedit"},
+		"sf_project:pdfedit"},
 
 	TarballVersionTool: "std",
 

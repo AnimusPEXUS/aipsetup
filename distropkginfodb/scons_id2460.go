@@ -30,7 +30,7 @@ var DistroPackageInfo_scons = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:scons"},
+		"group:core1", "sf_project:scons"},
 
 	TarballVersionTool: "std",
 

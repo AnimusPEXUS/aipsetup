@@ -30,7 +30,7 @@ var DistroPackageInfo_epydoc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:epydoc"},
+		"sf_project:epydoc"},
 
 	TarballVersionTool: "std",
 

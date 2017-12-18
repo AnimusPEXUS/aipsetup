@@ -30,7 +30,7 @@ var DistroPackageInfo_hdparm = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:hdparm"},
+		"group:core1", "sf_project:hdparm"},
 
 	TarballVersionTool: "std",
 

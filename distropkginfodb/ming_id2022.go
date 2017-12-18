@@ -30,7 +30,7 @@ var DistroPackageInfo_ming = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:ming"},
+		"sf_project:ming"},
 
 	TarballVersionTool: "std",
 

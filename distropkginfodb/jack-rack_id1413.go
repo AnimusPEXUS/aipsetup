@@ -30,7 +30,7 @@ var DistroPackageInfo_jack_rack = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:jack-rack"},
+		"sf_project:jack-rack"},
 
 	TarballVersionTool: "std",
 

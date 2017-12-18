@@ -30,7 +30,7 @@ var DistroPackageInfo_ht = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:hte"},
+		"sf_project:hte"},
 
 	TarballVersionTool: "std",
 

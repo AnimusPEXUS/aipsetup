@@ -30,7 +30,7 @@ var DistroPackageInfo_rp_l2tp = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:rp-l2tp"},
+		"group:core1", "sf_project:rp-l2tp"},
 
 	TarballVersionTool: "std",
 

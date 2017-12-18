@@ -30,7 +30,7 @@ var DistroPackageInfo_openjpeg2 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:openjpeg.mirror"},
+		"sf_project:openjpeg.mirror"},
 
 	TarballVersionTool: "std",
 

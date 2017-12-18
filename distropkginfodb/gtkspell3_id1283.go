@@ -30,7 +30,7 @@ var DistroPackageInfo_gtkspell3 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:gtkspell"},
+		"sf_project:gtkspell"},
 
 	TarballVersionTool: "std",
 

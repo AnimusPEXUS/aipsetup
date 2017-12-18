@@ -30,7 +30,7 @@ var DistroPackageInfo_sox = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:sox"},
+		"sf_project:sox"},
 
 	TarballVersionTool: "std",
 

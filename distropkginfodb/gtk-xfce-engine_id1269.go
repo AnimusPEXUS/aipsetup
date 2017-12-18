@@ -30,7 +30,7 @@ var DistroPackageInfo_gtk_xfce_engine = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:xfce"},
+		"sf_project:xfce"},
 
 	TarballVersionTool: "std",
 

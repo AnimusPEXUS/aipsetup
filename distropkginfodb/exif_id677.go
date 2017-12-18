@@ -30,7 +30,7 @@ var DistroPackageInfo_exif = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libexif"},
+		"sf_project:libexif"},
 
 	TarballVersionTool: "std",
 

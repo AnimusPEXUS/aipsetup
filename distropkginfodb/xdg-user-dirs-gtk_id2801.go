@@ -30,7 +30,7 @@ var DistroPackageInfo_xdg_user_dirs_gtk = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

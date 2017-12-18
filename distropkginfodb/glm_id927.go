@@ -30,7 +30,7 @@ var DistroPackageInfo_glm = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:ogl-math"},
+		"sf_project:ogl-math"},
 
 	TarballVersionTool: "std",
 

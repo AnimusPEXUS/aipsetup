@@ -30,7 +30,7 @@ var DistroPackageInfo_tls = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:tls"},
+		"sf_project:tls"},
 
 	TarballVersionTool: "std",
 

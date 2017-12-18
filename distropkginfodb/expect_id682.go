@@ -30,7 +30,7 @@ var DistroPackageInfo_expect = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:expect"},
+		"group:core0", "sf_project:expect"},
 
 	TarballVersionTool: "std",
 

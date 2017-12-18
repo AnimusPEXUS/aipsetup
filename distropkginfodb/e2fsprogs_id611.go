@@ -30,7 +30,7 @@ var DistroPackageInfo_e2fsprogs = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:e2fsprogs"},
+		"group:core1", "sf_project:e2fsprogs"},
 
 	TarballVersionTool: "std",
 

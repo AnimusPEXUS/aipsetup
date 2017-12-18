@@ -30,7 +30,7 @@ var DistroPackageInfo_ode_python = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:opende"},
+		"sf_project:opende"},
 
 	TarballVersionTool: "std",
 

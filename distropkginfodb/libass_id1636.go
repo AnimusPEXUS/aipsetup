@@ -30,7 +30,7 @@ var DistroPackageInfo_libass = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libass"},
+		"sf_project:libass"},
 
 	TarballVersionTool: "std",
 

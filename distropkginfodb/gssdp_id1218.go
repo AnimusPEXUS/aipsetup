@@ -30,7 +30,7 @@ var DistroPackageInfo_gssdp = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project", "group:core1"},
 
 	TarballVersionTool: "gnome",
 

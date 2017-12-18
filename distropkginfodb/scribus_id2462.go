@@ -30,7 +30,7 @@ var DistroPackageInfo_scribus = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:scribus"},
+		"sf_project:scribus"},
 
 	TarballVersionTool: "std",
 

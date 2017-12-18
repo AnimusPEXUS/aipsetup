@@ -30,7 +30,7 @@ var DistroPackageInfo_qpdf = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:qpdf"},
+		"group:core1", "sf_project:qpdf"},
 
 	TarballVersionTool: "std",
 

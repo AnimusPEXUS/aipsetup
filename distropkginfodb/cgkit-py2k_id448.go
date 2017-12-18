@@ -30,7 +30,7 @@ var DistroPackageInfo_cgkit_py2k = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:cgkit"},
+		"sf_project:cgkit"},
 
 	TarballVersionTool: "std",
 

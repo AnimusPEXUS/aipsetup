@@ -30,7 +30,7 @@ var DistroPackageInfo_psi = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:psi"},
+		"sf_project:psi"},
 
 	TarballVersionTool: "std",
 

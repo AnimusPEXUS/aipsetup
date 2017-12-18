@@ -30,7 +30,7 @@ var DistroPackageInfo_espeak = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:espeak"},
+		"sf_project:espeak"},
 
 	TarballVersionTool: "std",
 

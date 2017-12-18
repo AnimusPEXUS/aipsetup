@@ -30,7 +30,7 @@ var DistroPackageInfo_mercator = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:worldforge"},
+		"sf_project:worldforge"},
 
 	TarballVersionTool: "std",
 

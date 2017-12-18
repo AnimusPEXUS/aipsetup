@@ -30,7 +30,7 @@ var DistroPackageInfo_docbook2X = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:docbook2x"},
+		"sf_project:docbook2x"},
 
 	TarballVersionTool: "std",
 

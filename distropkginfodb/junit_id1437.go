@@ -30,7 +30,7 @@ var DistroPackageInfo_junit = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:junit"},
+		"sf_project:junit"},
 
 	TarballVersionTool: "std",
 

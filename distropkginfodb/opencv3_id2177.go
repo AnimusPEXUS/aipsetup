@@ -30,7 +30,7 @@ var DistroPackageInfo_opencv3 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:opencvlibrary"},
+		"sf_project:opencvlibrary"},
 
 	TarballVersionTool: "std",
 

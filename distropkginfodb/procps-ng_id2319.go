@@ -30,7 +30,7 @@ var DistroPackageInfo_procps_ng = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:procps-ng"},
+		"group:core0", "sf_project:procps-ng"},
 
 	TarballVersionTool: "std",
 

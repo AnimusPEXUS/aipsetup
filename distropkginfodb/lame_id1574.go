@@ -30,7 +30,7 @@ var DistroPackageInfo_lame = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:lame"},
+		"sf_project:lame"},
 
 	TarballVersionTool: "std",
 

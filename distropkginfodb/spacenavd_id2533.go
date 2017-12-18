@@ -30,7 +30,7 @@ var DistroPackageInfo_spacenavd = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:spacenav"},
+		"sf_project:spacenav"},
 
 	TarballVersionTool: "std",
 

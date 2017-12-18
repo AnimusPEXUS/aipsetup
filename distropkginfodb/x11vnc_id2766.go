@@ -30,7 +30,7 @@ var DistroPackageInfo_x11vnc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libvncserver"},
+		"sf_project:libvncserver"},
 
 	TarballVersionTool: "std",
 

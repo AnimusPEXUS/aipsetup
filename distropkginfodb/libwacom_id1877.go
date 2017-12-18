@@ -30,7 +30,7 @@ var DistroPackageInfo_libwacom = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:linuxwacom", "gnome_project", "group:gnome"},
+		"gnome_project", "sf_project:linuxwacom"},
 
 	TarballVersionTool: "gnome",
 

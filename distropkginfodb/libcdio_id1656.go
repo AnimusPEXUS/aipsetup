@@ -30,7 +30,7 @@ var DistroPackageInfo_libcdio = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:xine"},
+		"sf_project:xine"},
 
 	TarballVersionTool: "std",
 

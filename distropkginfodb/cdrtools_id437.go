@@ -30,7 +30,7 @@ var DistroPackageInfo_cdrtools = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:cdrtools"},
+		"sf_project:cdrtools"},
 
 	TarballVersionTool: "std",
 

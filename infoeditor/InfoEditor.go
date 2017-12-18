@@ -213,19 +213,34 @@ func (self *InfoEditor) AsStringSlice(in []string) string {
 
 func (self *InfoEditor) Edit(index map[string]*basictypes.PackageInfo) error {
 
-	//(func(map[string]*basictypes.PackageInfo) error)
-
 	for _, i := range [](func(map[string]*basictypes.PackageInfo) error){
+		self.ApplyGroups,
+
 		self.ApplyGnome,
 		self.ApplySFNet,
 	} {
-		fmt.Println("using", i)
 		err := i(index)
 		if err != nil {
 			return err
 		}
 	}
 
+	return nil
+}
+
+func (self *InfoEditor) ApplyGroups(index map[string]*basictypes.PackageInfo) error {
+	for k1, v1 := range index {
+		t := tags.New(v1.Tags)
+		t.DeleteGroup("group")
+		for k2, v2 := range GROUPS {
+			for _, v3 := range v2 {
+				if v3 == k1 {
+					t.Add("group", k2)
+				}
+			}
+		}
+		v1.Tags = t.Values()
+	}
 	return nil
 }
 
@@ -248,9 +263,9 @@ func (self *InfoEditor) ApplyGnome(index map[string]*basictypes.PackageInfo) err
 			info.TarballVersionTool = "gnome"
 			info.TarballProviderCachePresetName = "gnome"
 			info.HomePage = "https://gnome.org/"
-			info.BuilderName = "std"
+			// info.BuilderName = "std"
 
-			t.Add("group", "gnome")
+			// t.Add("group", "gnome")
 			t.Add("", "gnome_project")
 
 			info.Tags = t.Values()
@@ -273,7 +288,7 @@ func (self *InfoEditor) ApplySFNet(index map[string]*basictypes.PackageInfo) err
 					v1.TarballProvider = "sf"
 					v1.TarballProviderArguments = []string{k2}
 
-					t.Add("'sf_project", k2)
+					t.Add("sf_project", k2)
 
 					v1.Tags = t.Values()
 				}

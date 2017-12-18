@@ -30,7 +30,7 @@ var DistroPackageInfo_check = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:check"},
+		"group:core0", "sf_project:check"},
 
 	TarballVersionTool: "std",
 

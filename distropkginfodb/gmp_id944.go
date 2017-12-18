@@ -29,7 +29,8 @@ var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"group:cross"},
 
 	TarballVersionTool: "std",
 

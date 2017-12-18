@@ -30,7 +30,7 @@ var DistroPackageInfo_quesoglc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:quesoglc", "'sf_project:warzone2100"},
+		"sf_project:quesoglc", "sf_project:warzone2100"},
 
 	TarballVersionTool: "std",
 

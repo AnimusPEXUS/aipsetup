@@ -30,7 +30,7 @@ var DistroPackageInfo_wxPython = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:wxpython"},
+		"sf_project:wxpython"},
 
 	TarballVersionTool: "std",
 

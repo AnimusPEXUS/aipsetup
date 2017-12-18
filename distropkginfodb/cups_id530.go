@@ -30,7 +30,7 @@ var DistroPackageInfo_cups = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:cups"},
+		"group:core1", "sf_project:cups"},
 
 	TarballVersionTool: "std",
 

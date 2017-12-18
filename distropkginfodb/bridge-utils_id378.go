@@ -30,7 +30,7 @@ var DistroPackageInfo_bridge_utils = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:bridge"},
+		"group:core1", "sf_project:bridge"},
 
 	TarballVersionTool: "std",
 

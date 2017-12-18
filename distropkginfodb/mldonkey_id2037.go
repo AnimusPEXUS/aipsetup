@@ -30,7 +30,7 @@ var DistroPackageInfo_mldonkey = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:mldonkey"},
+		"sf_project:mldonkey"},
 
 	TarballVersionTool: "std",
 

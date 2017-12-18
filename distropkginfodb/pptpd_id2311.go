@@ -30,7 +30,7 @@ var DistroPackageInfo_pptpd = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:poptop"},
+		"group:core1", "sf_project:poptop"},
 
 	TarballVersionTool: "std",
 

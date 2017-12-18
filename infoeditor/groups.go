@@ -6,10 +6,11 @@ var GROUPS = map[string]([]string){
 	"core1": CORE1, // operating system sufficient for user
 	"crypt": CRYPT,
 
-	"fd": FD,
-
-	"fi":  FI,
-	"fib": FIB,
+	// NOTE: let's concentrate on 4 abowe first.
+	// "fd": FD,
+	//
+	// "fi":  FI,
+	// "fib": FIB,
 }
 
 var CORE0 = []string{

@@ -30,7 +30,7 @@ var DistroPackageInfo_libquicktime = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libquicktime"},
+		"sf_project:libquicktime"},
 
 	TarballVersionTool: "std",
 

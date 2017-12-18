@@ -30,7 +30,7 @@ var DistroPackageInfo_v = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:crengine", "'sf_project:retroshare"},
+		"sf_project:crengine", "sf_project:retroshare"},
 
 	TarballVersionTool: "std",
 

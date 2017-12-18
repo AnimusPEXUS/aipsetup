@@ -30,7 +30,7 @@ var DistroPackageInfo_fpc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:freepascal", "'sf_project:lazarus"},
+		"sf_project:freepascal", "sf_project:lazarus"},
 
 	TarballVersionTool: "std",
 

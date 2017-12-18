@@ -30,7 +30,7 @@ var DistroPackageInfo_libavc1394 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libavc1394"},
+		"sf_project:libavc1394"},
 
 	TarballVersionTool: "std",
 

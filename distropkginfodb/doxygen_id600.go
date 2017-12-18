@@ -30,7 +30,7 @@ var DistroPackageInfo_doxygen = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:doxygen"},
+		"group:core1", "sf_project:doxygen"},
 
 	TarballVersionTool: "std",
 

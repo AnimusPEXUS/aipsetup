@@ -30,7 +30,7 @@ var DistroPackageInfo_warzone2100 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:warzone2100"},
+		"sf_project:warzone2100"},
 
 	TarballVersionTool: "std",
 

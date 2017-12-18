@@ -30,7 +30,7 @@ var DistroPackageInfo_xmpppy = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:xmpppy"},
+		"sf_project:xmpppy"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_freeglut = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:freeglut"},
+		"sf_project:freeglut"},
 
 	TarballVersionTool: "std",
 

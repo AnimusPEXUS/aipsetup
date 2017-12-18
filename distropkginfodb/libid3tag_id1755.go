@@ -30,7 +30,7 @@ var DistroPackageInfo_libid3tag = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:mad"},
+		"sf_project:mad"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_astyle = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:astyle"},
+		"sf_project:astyle"},
 
 	TarballVersionTool: "std",
 

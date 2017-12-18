@@ -30,7 +30,7 @@ var DistroPackageInfo_fakeroot_ng = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:fakerootng"},
+		"sf_project:fakerootng"},
 
 	TarballVersionTool: "std",
 

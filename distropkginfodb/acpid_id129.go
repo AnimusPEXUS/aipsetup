@@ -30,7 +30,7 @@ var DistroPackageInfo_acpid = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:acpid"},
+		"sf_project:acpid"},
 
 	TarballVersionTool: "std",
 

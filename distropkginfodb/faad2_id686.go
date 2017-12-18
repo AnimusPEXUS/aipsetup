@@ -30,7 +30,7 @@ var DistroPackageInfo_faad2 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:faac"},
+		"sf_project:faac"},
 
 	TarballVersionTool: "std",
 

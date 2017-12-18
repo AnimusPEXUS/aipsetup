@@ -30,7 +30,7 @@ var DistroPackageInfo_libclc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:libclc"},
+		"sf_project:libclc"},
 
 	TarballVersionTool: "std",
 

@@ -30,7 +30,7 @@ var DistroPackageInfo_liboauth = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:liboauth"},
+		"sf_project:liboauth"},
 
 	TarballVersionTool: "std",
 

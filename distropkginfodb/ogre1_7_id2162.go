@@ -30,7 +30,7 @@ var DistroPackageInfo_ogre1_7 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:ogre"},
+		"sf_project:ogre"},
 
 	TarballVersionTool: "std",
 

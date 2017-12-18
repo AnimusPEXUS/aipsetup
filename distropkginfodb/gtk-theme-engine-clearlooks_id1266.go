@@ -30,7 +30,7 @@ var DistroPackageInfo_gtk_theme_engine_clearlooks = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:gnome"},
+		"gnome_project"},
 
 	TarballVersionTool: "gnome",
 

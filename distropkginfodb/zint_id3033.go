@@ -30,7 +30,7 @@ var DistroPackageInfo_zint = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:zint"},
+		"group:core1", "sf_project:zint"},
 
 	TarballVersionTool: "std",
 

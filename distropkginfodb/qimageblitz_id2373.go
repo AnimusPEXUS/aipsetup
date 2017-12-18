@@ -30,7 +30,7 @@ var DistroPackageInfo_qimageblitz = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"'sf_project:qimageblitz"},
+		"sf_project:qimageblitz"},
 
 	TarballVersionTool: "std",
 
