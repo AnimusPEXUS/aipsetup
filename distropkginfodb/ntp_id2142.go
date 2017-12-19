@@ -13,10 +13,6 @@ var DistroPackageInfo_ntp = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.ntp.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ntp",
-	Filters:               []string{},
-
 	BuilderName: "ntp",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_ntp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ntp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

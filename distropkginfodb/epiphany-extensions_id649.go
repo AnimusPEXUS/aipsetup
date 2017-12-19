@@ -13,10 +13,6 @@ var DistroPackageInfo_epiphany_extensions = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "epiphany-extensions",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_epiphany_extensions = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "epiphany-extensions",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"epiphany-extensions"},
 	TarballProviderUseCache:         false,

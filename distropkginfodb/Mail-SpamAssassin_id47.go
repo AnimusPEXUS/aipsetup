@@ -13,10 +13,6 @@ var DistroPackageInfo_Mail_SpamAssassin = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.cpan.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Mail-SpamAssassin",
-	Filters:               []string{},
-
 	BuilderName: "perl_mod",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Mail_SpamAssassin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Mail-SpamAssassin",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

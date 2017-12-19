@@ -13,10 +13,6 @@ var DistroPackageInfo_alsa_tools = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "alsa-tools",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_alsa_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "alsa-tools",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

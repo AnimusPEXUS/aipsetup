@@ -13,10 +13,6 @@ var DistroPackageInfo_gswitchit_plugins = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gswitchit-plugins",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gswitchit_plugins = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gswitchit-plugins",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gswitchit-plugins"},
 	TarballProviderUseCache:         false,

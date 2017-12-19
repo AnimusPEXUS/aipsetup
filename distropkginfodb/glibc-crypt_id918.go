@@ -13,10 +13,6 @@ var DistroPackageInfo_glibc_crypt = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "glibc-crypt",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_glibc_crypt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "glibc-crypt",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

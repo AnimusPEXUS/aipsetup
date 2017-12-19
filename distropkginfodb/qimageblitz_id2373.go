@@ -13,10 +13,6 @@ var DistroPackageInfo_qimageblitz = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/qimageblitz",
 
-	TarballFileNameParser: "std",
-	TarballName:           "qimageblitz",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_qimageblitz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "qimageblitz",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"qimageblitz"},
 	TarballProviderUseCache:         false,

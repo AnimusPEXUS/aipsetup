@@ -13,10 +13,6 @@ var DistroPackageInfo_eggdbus = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "eggdbus",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_eggdbus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "eggdbus",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

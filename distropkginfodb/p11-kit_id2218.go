@@ -13,10 +13,6 @@ var DistroPackageInfo_p11_kit = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://p11-glue.freedesktop.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "p11-kit",
-	Filters:               []string{},
-
 	BuilderName: "p11_kit",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_p11_kit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "p11-kit",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

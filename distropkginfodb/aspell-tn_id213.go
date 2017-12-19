@@ -13,10 +13,6 @@ var DistroPackageInfo_aspell_tn = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "aspell-tn",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_aspell_tn = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "aspell-tn",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

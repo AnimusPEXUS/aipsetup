@@ -13,10 +13,6 @@ var DistroPackageInfo_util_macros = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.x.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "util-macros",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_util_macros = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "util-macros",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

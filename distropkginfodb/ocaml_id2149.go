@@ -13,10 +13,6 @@ var DistroPackageInfo_ocaml = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.infra.fr",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ocaml",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ocaml = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ocaml",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

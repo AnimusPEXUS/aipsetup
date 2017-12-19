@@ -13,10 +13,6 @@ var DistroPackageInfo_sather = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sather",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_sather = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sather",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

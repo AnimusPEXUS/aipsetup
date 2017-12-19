@@ -13,10 +13,6 @@ var DistroPackageInfo_f_spot = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "f-spot",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_f_spot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "f-spot",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"f-spot"},
 	TarballProviderUseCache:         false,

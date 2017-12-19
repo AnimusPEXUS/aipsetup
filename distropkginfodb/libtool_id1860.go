@@ -13,10 +13,6 @@ var DistroPackageInfo_libtool = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libtool",
-	Filters:               []string{},
-
 	BuilderName: "libtool",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libtool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libtool",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

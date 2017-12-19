@@ -13,10 +13,6 @@ var DistroPackageInfo_gnome_games = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnome-games",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gnome_games = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gnome-games",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gnome-games"},
 	TarballProviderUseCache:         false,

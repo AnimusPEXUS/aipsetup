@@ -13,10 +13,6 @@ var DistroPackageInfo_showfont = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.x.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "showfont",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_showfont = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "showfont",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

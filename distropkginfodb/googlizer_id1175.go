@@ -13,10 +13,6 @@ var DistroPackageInfo_googlizer = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "googlizer",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_googlizer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "googlizer",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"googlizer"},
 	TarballProviderUseCache:         false,

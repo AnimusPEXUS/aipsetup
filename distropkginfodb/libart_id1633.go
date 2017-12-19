@@ -13,10 +13,6 @@ var DistroPackageInfo_libart = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libart",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libart = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libart",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

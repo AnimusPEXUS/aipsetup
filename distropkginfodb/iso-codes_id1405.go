@@ -13,10 +13,6 @@ var DistroPackageInfo_iso_codes = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnome.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "iso-codes",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_iso_codes = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "iso-codes",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

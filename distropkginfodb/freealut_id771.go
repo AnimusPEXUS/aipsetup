@@ -13,10 +13,6 @@ var DistroPackageInfo_freealut = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://connect.creativelabs.com/openal/Downloads",
 
-	TarballFileNameParser: "std",
-	TarballName:           "freealut",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_freealut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "freealut",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

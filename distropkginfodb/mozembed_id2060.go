@@ -13,10 +13,6 @@ var DistroPackageInfo_mozembed = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mozembed",
-	Filters:               []string{},
-
 	BuilderName: "mozembed",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mozembed = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mozembed",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_rygel_gst_0_10_media_engine = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rygel-gst-0-10-media-engine",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_rygel_gst_0_10_media_engine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "rygel-gst-0-10-media-engine",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"rygel-gst-0-10-media-engine"},
 	TarballProviderUseCache:         false,

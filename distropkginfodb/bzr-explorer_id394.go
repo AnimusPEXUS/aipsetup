@@ -13,10 +13,6 @@ var DistroPackageInfo_bzr_explorer = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.launchpad.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bzr-explorer",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_bzr_explorer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bzr-explorer",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

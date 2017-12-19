@@ -13,10 +13,6 @@ var DistroPackageInfo_yasm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.tortall.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "yasm",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_yasm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "yasm",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_sqlite_autoconf = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://sqlite.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sqlite-autoconf",
-	Filters:               []string{},
-
 	BuilderName: "sqliteautoconf",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_sqlite_autoconf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sqlite-autoconf",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_libpwquality = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://fedorahosted.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libpwquality",
-	Filters:               []string{},
-
 	BuilderName: "libpwquality",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libpwquality = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libpwquality",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_py2cairo = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "py2cairo",
-	Filters:               []string{},
-
 	BuilderName: "py2cairo",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_py2cairo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "py2cairo",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

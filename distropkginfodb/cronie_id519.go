@@ -13,10 +13,6 @@ var DistroPackageInfo_cronie = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.fedorahosted.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cronie",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_cronie = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "cronie",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

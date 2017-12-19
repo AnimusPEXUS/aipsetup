@@ -13,10 +13,6 @@ var DistroPackageInfo_clutter_gtk = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "clutter-gtk",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_clutter_gtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "clutter-gtk",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"clutter-gtk"},
 	TarballProviderUseCache:         false,

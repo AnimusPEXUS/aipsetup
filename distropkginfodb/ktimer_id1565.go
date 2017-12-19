@@ -13,10 +13,6 @@ var DistroPackageInfo_ktimer = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kde.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ktimer",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ktimer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ktimer",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

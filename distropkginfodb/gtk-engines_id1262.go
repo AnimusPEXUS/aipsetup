@@ -13,10 +13,6 @@ var DistroPackageInfo_gtk_engines = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gtk-engines",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gtk_engines = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gtk-engines",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gtk-engines"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_opencv2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/opencvlibrary",
 
-	TarballFileNameParser: "std",
-	TarballName:           "opencv",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_opencv2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "opencv",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"opencvlibrary"},
 	TarballProviderUseCache:         false,

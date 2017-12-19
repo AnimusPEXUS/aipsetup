@@ -13,10 +13,6 @@ var DistroPackageInfo_slang = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.s-lang.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "slang",
-	Filters:               []string{},
-
 	BuilderName: "slang",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_slang = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "slang",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

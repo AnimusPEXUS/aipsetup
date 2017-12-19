@@ -13,10 +13,6 @@ var DistroPackageInfo_Genshi = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.edgewall.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Genshi",
-	Filters:               []string{},
-
 	BuilderName: "None",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Genshi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Genshi",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

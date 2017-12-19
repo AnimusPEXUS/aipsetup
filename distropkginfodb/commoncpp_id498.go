@@ -13,10 +13,6 @@ var DistroPackageInfo_commoncpp = &basictypes.PackageInfo{
 	Description: `see commoncpp2`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "commoncpp",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_commoncpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "commoncpp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

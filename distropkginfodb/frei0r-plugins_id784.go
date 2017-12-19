@@ -13,10 +13,6 @@ var DistroPackageInfo_frei0r_plugins = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "frei0r-plugins",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_frei0r_plugins = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "frei0r-plugins",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

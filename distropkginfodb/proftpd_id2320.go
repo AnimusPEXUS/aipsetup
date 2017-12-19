@@ -13,10 +13,6 @@ var DistroPackageInfo_proftpd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.proftpd.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "proftpd",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_proftpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "proftpd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

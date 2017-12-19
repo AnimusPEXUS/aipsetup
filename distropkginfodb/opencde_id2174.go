@@ -13,10 +13,6 @@ var DistroPackageInfo_opencde = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "opencde",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_opencde = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "opencde",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

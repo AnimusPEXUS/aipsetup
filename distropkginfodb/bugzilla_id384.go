@@ -13,10 +13,6 @@ var DistroPackageInfo_bugzilla = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bugzilla",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_bugzilla = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bugzilla",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

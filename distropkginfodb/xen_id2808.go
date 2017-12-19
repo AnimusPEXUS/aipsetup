@@ -13,10 +13,6 @@ var DistroPackageInfo_xen = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xen",
-	Filters:               []string{},
-
 	BuilderName: "xen",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_xen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xen",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_libxkbui = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.x.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libxkbui",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libxkbui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libxkbui",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

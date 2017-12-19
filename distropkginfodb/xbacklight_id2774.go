@@ -13,10 +13,6 @@ var DistroPackageInfo_xbacklight = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.x.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xbacklight",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_xbacklight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xbacklight",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

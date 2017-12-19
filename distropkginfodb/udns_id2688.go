@@ -13,10 +13,6 @@ var DistroPackageInfo_udns = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "udns",
-	Filters:               []string{},
-
 	BuilderName: "udns",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_udns = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "udns",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

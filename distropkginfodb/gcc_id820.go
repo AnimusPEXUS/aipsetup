@@ -13,10 +13,6 @@ var DistroPackageInfo_gcc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gcc",
-	Filters:               []string{},
-
 	BuilderName: "gcc",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_gcc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gcc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

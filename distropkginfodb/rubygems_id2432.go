@@ -13,10 +13,6 @@ var DistroPackageInfo_rubygems = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.rubyforge.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rubygems",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_rubygems = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "rubygems",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

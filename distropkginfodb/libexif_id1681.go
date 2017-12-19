@@ -13,10 +13,6 @@ var DistroPackageInfo_libexif = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/libexif",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libexif",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libexif = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libexif",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libexif"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_httpd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.apache.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "httpd",
-	Filters:               []string{},
-
 	BuilderName: "httpd",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_httpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "httpd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

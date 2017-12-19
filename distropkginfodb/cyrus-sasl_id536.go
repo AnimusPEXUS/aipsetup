@@ -13,10 +13,6 @@ var DistroPackageInfo_cyrus_sasl = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.cmu.edu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cyrus-sasl",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_cyrus_sasl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "cyrus-sasl",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

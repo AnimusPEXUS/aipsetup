@@ -13,10 +13,6 @@ var DistroPackageInfo_libtirpc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/libtirpc",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libtirpc",
-	Filters:               []string{},
-
 	BuilderName: "libtirpc",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libtirpc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libtirpc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libtirpc"},
 	TarballProviderUseCache:         false,

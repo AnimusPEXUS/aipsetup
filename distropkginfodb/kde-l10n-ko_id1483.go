@@ -13,10 +13,6 @@ var DistroPackageInfo_kde_l10n_ko = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "kde-l10n-ko",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_kde_l10n_ko = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "kde-l10n-ko",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

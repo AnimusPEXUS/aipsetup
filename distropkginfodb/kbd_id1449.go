@@ -13,10 +13,6 @@ var DistroPackageInfo_kbd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.altlinux.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "kbd",
-	Filters:               []string{},
-
 	BuilderName: "kbd",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_kbd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "kbd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

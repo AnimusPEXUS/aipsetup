@@ -13,10 +13,6 @@ var DistroPackageInfo_Net_DNS = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.cpan.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Net-DNS",
-	Filters:               []string{},
-
 	BuilderName: "perl_mod",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Net_DNS = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Net-DNS",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_garcon = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xfce.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "garcon",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_garcon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "garcon",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

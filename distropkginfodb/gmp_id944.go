@@ -13,10 +13,6 @@ var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gmp",
-	Filters:               []string{},
-
 	BuilderName: "gmp",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gmp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

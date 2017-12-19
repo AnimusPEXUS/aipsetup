@@ -13,10 +13,6 @@ var DistroPackageInfo_bridge_utils = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/bridge",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bridge-utils",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_bridge_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "bridge-utils",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"bridge"},
 	TarballProviderUseCache:         false,

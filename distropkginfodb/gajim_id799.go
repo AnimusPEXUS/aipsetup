@@ -18,10 +18,6 @@ python2.7 is required
 `,
 	HomePage: "http://gajim.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gajim",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -38,6 +34,9 @@ python2.7 is required
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gajim",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_synfigstudio = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/synfig",
 
-	TarballFileNameParser: "std",
-	TarballName:           "synfigstudio",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_synfigstudio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "synfigstudio",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"synfig"},
 	TarballProviderUseCache:         false,

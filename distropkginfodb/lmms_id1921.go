@@ -13,10 +13,6 @@ var DistroPackageInfo_lmms = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://lmms.io/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "lmms",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_lmms = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "lmms",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

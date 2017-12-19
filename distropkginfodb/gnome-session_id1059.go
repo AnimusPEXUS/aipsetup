@@ -13,10 +13,6 @@ var DistroPackageInfo_gnome_session = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnome-session",
-	Filters:               []string{},
-
 	BuilderName: "gnomesession",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gnome_session = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gnome-session",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gnome-session"},
 	TarballProviderUseCache:         false,

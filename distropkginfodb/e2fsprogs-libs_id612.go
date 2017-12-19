@@ -13,10 +13,6 @@ var DistroPackageInfo_e2fsprogs_libs = &basictypes.PackageInfo{
 	Description: `subset of e2fsprogs package`,
 	HomePage:    "https://sourceforge.net/projects/e2fsprogs",
 
-	TarballFileNameParser: "std",
-	TarballName:           "e2fsprogs-libs",
-	Filters:               []string{},
-
 	BuilderName: "e2fsprogs",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_e2fsprogs_libs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "e2fsprogs-libs",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"e2fsprogs"},
 	TarballProviderUseCache:         false,

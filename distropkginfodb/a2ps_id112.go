@@ -13,10 +13,6 @@ var DistroPackageInfo_a2ps = &basictypes.PackageInfo{
 	Description: `None`,
 	HomePage:    "http://gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "a2ps",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_a2ps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "a2ps",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

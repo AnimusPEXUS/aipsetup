@@ -13,10 +13,6 @@ var DistroPackageInfo_kismet = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kismetwireless.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "kismet",
-	Filters:               []string{},
-
 	BuilderName: "kismet",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_kismet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "kismet",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

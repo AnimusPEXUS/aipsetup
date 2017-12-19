@@ -13,10 +13,6 @@ var DistroPackageInfo_tdb = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://samba.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tdb",
-	Filters:               []string{},
-
 	BuilderName: "std_waf",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_tdb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "tdb",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

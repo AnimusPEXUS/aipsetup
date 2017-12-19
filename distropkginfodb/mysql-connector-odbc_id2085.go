@@ -13,10 +13,6 @@ var DistroPackageInfo_mysql_connector_odbc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.mysql.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mysql-connector-odbc",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mysql_connector_odbc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mysql-connector-odbc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

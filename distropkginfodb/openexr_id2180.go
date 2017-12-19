@@ -13,10 +13,6 @@ var DistroPackageInfo_openexr = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.openexr.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "openexr",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_openexr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "openexr",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

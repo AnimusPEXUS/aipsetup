@@ -13,10 +13,6 @@ var DistroPackageInfo_gvfs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gvfs",
-	Filters:               []string{},
-
 	BuilderName: "gvfs",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gvfs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gvfs",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gvfs"},
 	TarballProviderUseCache:         false,

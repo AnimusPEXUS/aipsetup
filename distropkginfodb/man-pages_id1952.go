@@ -13,10 +13,6 @@ var DistroPackageInfo_man_pages = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "man-pages",
-	Filters:               []string{},
-
 	BuilderName: "man_pages",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_man_pages = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "man-pages",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

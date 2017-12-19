@@ -13,10 +13,6 @@ var DistroPackageInfo_libvpx = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libvpx",
-	Filters:               []string{},
-
 	BuilderName: "libvpx",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libvpx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libvpx",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_kde_baseapps = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kde.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "kde-baseapps",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_kde_baseapps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "kde-baseapps",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

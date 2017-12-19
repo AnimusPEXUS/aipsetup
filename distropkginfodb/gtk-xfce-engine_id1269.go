@@ -13,10 +13,6 @@ var DistroPackageInfo_gtk_xfce_engine = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/xfce",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gtk-xfce-engine",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gtk_xfce_engine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "gtk-xfce-engine",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"xfce"},
 	TarballProviderUseCache:         false,

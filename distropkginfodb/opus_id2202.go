@@ -13,10 +13,6 @@ var DistroPackageInfo_opus = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xiph.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "opus",
-	Filters:               []string{},
-
 	BuilderName: "opus",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_opus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "opus",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

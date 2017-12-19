@@ -13,10 +13,6 @@ var DistroPackageInfo_libmirage = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/cdemu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libmirage",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libmirage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libmirage",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"cdemu"},
 	TarballProviderUseCache:         false,

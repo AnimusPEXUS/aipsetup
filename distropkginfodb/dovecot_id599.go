@@ -13,10 +13,6 @@ var DistroPackageInfo_dovecot = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.dovecot.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dovecot",
-	Filters:               []string{},
-
 	BuilderName: "dovecot",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_dovecot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "dovecot",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

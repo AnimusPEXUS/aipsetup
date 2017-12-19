@@ -13,10 +13,6 @@ var DistroPackageInfo_kaccessible = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kde.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "kaccessible",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_kaccessible = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "kaccessible",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

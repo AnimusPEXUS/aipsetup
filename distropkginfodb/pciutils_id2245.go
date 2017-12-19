@@ -13,10 +13,6 @@ var DistroPackageInfo_pciutils = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pciutils",
-	Filters:               []string{},
-
 	BuilderName: "pciutils",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_pciutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pciutils",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

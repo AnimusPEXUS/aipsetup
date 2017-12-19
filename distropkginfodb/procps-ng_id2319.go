@@ -13,10 +13,6 @@ var DistroPackageInfo_procps_ng = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/procps-ng",
 
-	TarballFileNameParser: "std",
-	TarballName:           "procps-ng",
-	Filters:               []string{},
-
 	BuilderName: "procps_ng",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_procps_ng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "procps-ng",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"procps-ng"},
 	TarballProviderUseCache:         false,

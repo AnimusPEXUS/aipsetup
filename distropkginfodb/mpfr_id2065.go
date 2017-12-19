@@ -13,10 +13,6 @@ var DistroPackageInfo_mpfr = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.mpfr.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mpfr",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          false,
@@ -34,6 +30,9 @@ var DistroPackageInfo_mpfr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mpfr",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

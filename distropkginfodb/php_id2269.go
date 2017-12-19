@@ -13,10 +13,6 @@ var DistroPackageInfo_php = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.php.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "php",
-	Filters:               []string{},
-
 	BuilderName: "php",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_php = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "php",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

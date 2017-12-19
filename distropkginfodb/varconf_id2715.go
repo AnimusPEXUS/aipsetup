@@ -13,10 +13,6 @@ var DistroPackageInfo_varconf = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/worldforge",
 
-	TarballFileNameParser: "std",
-	TarballName:           "varconf",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_varconf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "varconf",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"worldforge"},
 	TarballProviderUseCache:         false,

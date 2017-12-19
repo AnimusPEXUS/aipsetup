@@ -13,10 +13,6 @@ var DistroPackageInfo_tdb1_2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tdb",
-	Filters:               []string{},
-
 	BuilderName: "std_waf",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_tdb1_2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "tdb",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

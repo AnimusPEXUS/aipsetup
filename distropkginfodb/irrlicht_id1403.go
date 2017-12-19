@@ -13,10 +13,6 @@ var DistroPackageInfo_irrlicht = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/irrlicht",
 
-	TarballFileNameParser: "std",
-	TarballName:           "irrlicht",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_irrlicht = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "irrlicht",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"irrlicht"},
 	TarballProviderUseCache:         false,

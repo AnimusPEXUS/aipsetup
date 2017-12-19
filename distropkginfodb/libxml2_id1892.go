@@ -13,10 +13,6 @@ var DistroPackageInfo_libxml2 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libxml2",
-	Filters:               []string{},
-
 	BuilderName: "libxml2",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libxml2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "libxml2",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"libxml2"},
 	TarballProviderUseCache:         false,

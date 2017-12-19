@@ -13,10 +13,6 @@ var DistroPackageInfo_mgm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xiph.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mgm",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mgm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mgm",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

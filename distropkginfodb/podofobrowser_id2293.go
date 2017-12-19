@@ -13,10 +13,6 @@ var DistroPackageInfo_podofobrowser = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/podofo",
 
-	TarballFileNameParser: "std",
-	TarballName:           "podofobrowser",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_podofobrowser = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "podofobrowser",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"podofo"},
 	TarballProviderUseCache:         false,

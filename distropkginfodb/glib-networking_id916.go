@@ -13,10 +13,6 @@ var DistroPackageInfo_glib_networking = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "glib-networking",
-	Filters:               []string{},
-
 	BuilderName: "glib_networking",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_glib_networking = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "glib-networking",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"glib-networking"},
 	TarballProviderUseCache:         false,

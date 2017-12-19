@@ -13,10 +13,6 @@ var DistroPackageInfo_ibus = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://ibus.googlecode.com/files/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ibus",
-	Filters:               []string{},
-
 	BuilderName: "ibus",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ibus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ibus",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

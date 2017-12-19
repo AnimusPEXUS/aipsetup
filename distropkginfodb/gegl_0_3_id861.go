@@ -13,10 +13,6 @@ var DistroPackageInfo_gegl_0_3 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gegl",
-	Filters:               []string{},
-
 	BuilderName: "gegl",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gegl_0_3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gegl",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

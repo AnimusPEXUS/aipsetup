@@ -13,10 +13,6 @@ var DistroPackageInfo_bullet = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bullet",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_bullet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bullet",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

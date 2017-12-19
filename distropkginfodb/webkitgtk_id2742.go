@@ -13,10 +13,6 @@ var DistroPackageInfo_webkitgtk = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.webkitgtk.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "webkitgtk",
-	Filters:               []string{},
-
 	BuilderName: "webkitgtk_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_webkitgtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "webkitgtk",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

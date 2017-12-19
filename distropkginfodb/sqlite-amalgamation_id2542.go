@@ -13,10 +13,6 @@ var DistroPackageInfo_sqlite_amalgamation = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://sqlite.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sqlite-amalgamation",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_sqlite_amalgamation = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sqlite-amalgamation",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_libiec61883 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/libraw1394",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libiec61883",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libiec61883 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libiec61883",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libraw1394"},
 	TarballProviderUseCache:         false,

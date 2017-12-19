@@ -13,10 +13,6 @@ var DistroPackageInfo_virtualbox = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "VirtualBox",
-	Filters:               []string{},
-
 	BuilderName: "vbox",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_virtualbox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "VirtualBox",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

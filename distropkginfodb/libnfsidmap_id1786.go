@@ -13,10 +13,6 @@ var DistroPackageInfo_libnfsidmap = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.citi.umich.edu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libnfsidmap",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libnfsidmap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libnfsidmap",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

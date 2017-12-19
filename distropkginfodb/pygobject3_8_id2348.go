@@ -13,10 +13,6 @@ var DistroPackageInfo_pygobject3_8 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pygobject3.8",
-	Filters:               []string{},
-
 	BuilderName: "pygobject",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_pygobject3_8 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "pygobject3.8",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"pygobject3.8"},
 	TarballProviderUseCache:         false,

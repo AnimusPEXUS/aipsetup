@@ -13,10 +13,6 @@ var DistroPackageInfo_Cg = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://developer.nvidia.com/cg-toolkit-download",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Cg",
-	Filters:               []string{},
-
 	BuilderName: "Cg",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Cg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Cg",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_telepathy_idle = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.freedesktop.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "telepathy-idle",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_telepathy_idle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "telepathy-idle",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

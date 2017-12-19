@@ -13,10 +13,6 @@ var DistroPackageInfo_libevent = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://libevent.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libevent",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libevent = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libevent",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

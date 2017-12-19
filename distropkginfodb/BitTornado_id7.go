@@ -13,10 +13,6 @@ var DistroPackageInfo_BitTornado = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.bittornado.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "BitTornado",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_BitTornado = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "BitTornado",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

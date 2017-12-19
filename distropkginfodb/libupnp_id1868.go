@@ -13,10 +13,6 @@ var DistroPackageInfo_libupnp = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/pupnp",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libupnp",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libupnp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libupnp",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"pupnp"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_librpcsecgss = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.citi.umich.edu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "librpcsecgss",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_librpcsecgss = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "librpcsecgss",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

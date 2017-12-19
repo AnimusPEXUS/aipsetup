@@ -13,10 +13,6 @@ var DistroPackageInfo_unittest_cpp = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "unittest-cpp",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_unittest_cpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "unittest-cpp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

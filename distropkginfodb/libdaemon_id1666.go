@@ -13,10 +13,6 @@ var DistroPackageInfo_libdaemon = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.0pointer.de",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libdaemon",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libdaemon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libdaemon",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

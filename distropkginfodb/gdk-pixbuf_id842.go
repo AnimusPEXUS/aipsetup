@@ -13,10 +13,6 @@ var DistroPackageInfo_gdk_pixbuf = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gdk-pixbuf",
-	Filters:               []string{},
-
 	BuilderName: "gdk_pixbuf",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gdk_pixbuf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gdk-pixbuf",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gdk-pixbuf"},
 	TarballProviderUseCache:         false,

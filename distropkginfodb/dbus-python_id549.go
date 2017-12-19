@@ -13,10 +13,6 @@ var DistroPackageInfo_dbus_python = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dbus-python",
-	Filters:               []string{},
-
 	BuilderName: "std_py23",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_dbus_python = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "dbus-python",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

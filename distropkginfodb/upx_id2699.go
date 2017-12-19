@@ -13,10 +13,6 @@ var DistroPackageInfo_upx = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.mozilla.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "upx",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_upx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "upx",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

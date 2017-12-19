@@ -13,10 +13,6 @@ var DistroPackageInfo_xfsprogs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://oss.sgi.com/projects/xfs/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xfsprogs",
-	Filters:               []string{},
-
 	BuilderName: "xfs",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_xfsprogs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xfsprogs",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

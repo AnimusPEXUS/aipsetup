@@ -15,10 +15,6 @@ var %s = &basictypes.PackageInfo{
   Description: %s,
   HomePage   : %s,
 
-  TarballFileNameParser : %s,
-  TarballName           : %s,
-  Filters               : %s,
-
   BuilderName  : %s,
 
   Removable           : %t,
@@ -35,6 +31,9 @@ var %s = &basictypes.PackageInfo{
 
   TarballVersionTool : %s,
 
+  Filters                         : %s,
+  TarballName                     : %s,
+  TarballFileNameParser           : %s,
   TarballProvider                 : %s,
   TarballProviderArguments        : %s,
   TarballProviderUseCache         : %t,

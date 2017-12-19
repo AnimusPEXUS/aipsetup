@@ -13,10 +13,6 @@ var DistroPackageInfo_less = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "less",
-	Filters:               []string{},
-
 	BuilderName: "less",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_less = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "less",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

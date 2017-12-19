@@ -13,10 +13,6 @@ var DistroPackageInfo_libusb_compat = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/libusb",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libusb-compat",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libusb_compat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libusb-compat",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libusb"},
 	TarballProviderUseCache:         false,

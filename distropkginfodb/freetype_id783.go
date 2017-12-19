@@ -13,10 +13,6 @@ var DistroPackageInfo_freetype = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/freetype",
 
-	TarballFileNameParser: "std",
-	TarballName:           "freetype",
-	Filters:               []string{},
-
 	BuilderName: "freetype",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_freetype = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "freetype",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"freetype"},
 	TarballProviderUseCache:         false,

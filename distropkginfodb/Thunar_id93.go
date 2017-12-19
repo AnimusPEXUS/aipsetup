@@ -13,10 +13,6 @@ var DistroPackageInfo_Thunar = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xfce.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Thunar",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Thunar = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Thunar",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

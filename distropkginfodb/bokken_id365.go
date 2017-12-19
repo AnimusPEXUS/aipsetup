@@ -13,10 +13,6 @@ var DistroPackageInfo_bokken = &basictypes.PackageInfo{
 	Description: `None`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bokken",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_bokken = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bokken",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

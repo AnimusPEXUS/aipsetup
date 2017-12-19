@@ -13,10 +13,6 @@ var DistroPackageInfo_libzrtpcpp = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://gnu.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libzrtpcpp",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libzrtpcpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libzrtpcpp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

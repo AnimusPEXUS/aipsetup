@@ -13,10 +13,6 @@ var DistroPackageInfo_iat = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.berlios.de",
 
-	TarballFileNameParser: "std",
-	TarballName:           "iat",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_iat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "iat",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

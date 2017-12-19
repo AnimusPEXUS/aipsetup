@@ -13,10 +13,6 @@ var DistroPackageInfo_bitlbee = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.bitlbee.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bitlbee",
-	Filters:               []string{},
-
 	BuilderName: "bitlbee",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_bitlbee = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bitlbee",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

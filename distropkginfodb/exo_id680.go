@@ -13,10 +13,6 @@ var DistroPackageInfo_exo = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xfce.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "exo",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_exo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "exo",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

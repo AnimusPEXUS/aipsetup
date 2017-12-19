@@ -13,10 +13,6 @@ var DistroPackageInfo_image_analyzer = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/cdemu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "image-analyzer",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_image_analyzer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "image-analyzer",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"cdemu"},
 	TarballProviderUseCache:         false,

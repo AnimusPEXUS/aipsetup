@@ -16,10 +16,6 @@ Since version 2.26, GLib's accompanying GIO library provides a high-level API fo
 but some applications still using it (NetworkManager)`,
 	HomePage: "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dbus-glib",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -37,6 +33,9 @@ but some applications still using it (NetworkManager)`,
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "dbus-glib",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_acpica_unix = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.acpica.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "acpica-unix",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_acpica_unix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "acpica-unix",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

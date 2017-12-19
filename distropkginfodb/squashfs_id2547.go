@@ -13,10 +13,6 @@ var DistroPackageInfo_squashfs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/squashfs",
 
-	TarballFileNameParser: "std",
-	TarballName:           "squashfs",
-	Filters:               []string{},
-
 	BuilderName: "squashfs",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_squashfs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "squashfs",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"squashfs"},
 	TarballProviderUseCache:         false,

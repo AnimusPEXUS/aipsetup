@@ -13,10 +13,6 @@ var DistroPackageInfo_allegro = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/alleg",
 
-	TarballFileNameParser: "std",
-	TarballName:           "allegro",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_allegro = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "allegro",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"alleg"},
 	TarballProviderUseCache:         false,

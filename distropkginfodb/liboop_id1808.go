@@ -13,10 +13,6 @@ var DistroPackageInfo_liboop = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.lysator.liu.se/liboop/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "liboop",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_liboop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "liboop",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_smartmontools = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/smartmontools",
 
-	TarballFileNameParser: "std",
-	TarballName:           "smartmontools",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_smartmontools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "smartmontools",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"smartmontools"},
 	TarballProviderUseCache:         false,

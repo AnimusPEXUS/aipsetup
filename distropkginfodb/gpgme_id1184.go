@@ -13,10 +13,6 @@ var DistroPackageInfo_gpgme = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnupg.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gpgme",
-	Filters:               []string{},
-
 	BuilderName: "gpgme",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_gpgme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gpgme",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

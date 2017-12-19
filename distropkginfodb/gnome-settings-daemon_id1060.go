@@ -13,10 +13,6 @@ var DistroPackageInfo_gnome_settings_daemon = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnome-settings-daemon",
-	Filters:               []string{},
-
 	BuilderName: "gnome_settings_daemon",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gnome_settings_daemon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gnome-settings-daemon",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gnome-settings-daemon"},
 	TarballProviderUseCache:         false,

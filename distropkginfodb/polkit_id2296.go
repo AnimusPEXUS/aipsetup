@@ -13,10 +13,6 @@ var DistroPackageInfo_polkit = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "polkit",
-	Filters:               []string{},
-
 	BuilderName: "polkit",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_polkit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "polkit",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

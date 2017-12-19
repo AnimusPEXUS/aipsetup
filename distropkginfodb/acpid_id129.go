@@ -13,10 +13,6 @@ var DistroPackageInfo_acpid = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/acpid",
 
-	TarballFileNameParser: "std",
-	TarballName:           "acpid",
-	Filters:               []string{},
-
 	BuilderName: "acpid",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_acpid = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "acpid",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"acpid"},
 	TarballProviderUseCache:         false,

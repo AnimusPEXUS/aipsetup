@@ -13,10 +13,6 @@ var DistroPackageInfo_cherokee = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cherokee",
-	Filters:               []string{},
-
 	BuilderName: "cherokee",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_cherokee = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "cherokee",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

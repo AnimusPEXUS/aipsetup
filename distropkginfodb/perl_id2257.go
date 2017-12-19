@@ -13,10 +13,6 @@ var DistroPackageInfo_perl = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.cpan.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "perl",
-	Filters:               []string{},
-
 	BuilderName: "perl",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_perl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "perl",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

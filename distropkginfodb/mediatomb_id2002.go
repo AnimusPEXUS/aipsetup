@@ -13,10 +13,6 @@ var DistroPackageInfo_mediatomb = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/mediatomb",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mediatomb",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_mediatomb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "mediatomb",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"mediatomb"},
 	TarballProviderUseCache:         false,

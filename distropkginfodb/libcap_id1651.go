@@ -13,10 +13,6 @@ var DistroPackageInfo_libcap = &basictypes.PackageInfo{
 	Description: `deprecated. use libcap2`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libcap",
-	Filters:               []string{},
-
 	BuilderName: "libcap",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libcap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libcap",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_sshfs_fuse = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sourceforge.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sshfs-fuse",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_sshfs_fuse = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sshfs-fuse",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

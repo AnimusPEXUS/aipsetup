@@ -13,10 +13,6 @@ var DistroPackageInfo_gst_rtsp = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gst-rtsp",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gst_rtsp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gst-rtsp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_apache_ant = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.apache.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "apache-ant",
-	Filters:               []string{},
-
 	BuilderName: "apache_ant",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_apache_ant = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "apache-ant",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

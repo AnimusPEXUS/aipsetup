@@ -13,10 +13,6 @@ var DistroPackageInfo_gimp = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gimp",
-	Filters:               []string{},
-
 	BuilderName: "gimp",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gimp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gimp",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gimp"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_telepathy_logger = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.freedesktop.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "telepathy-logger",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_telepathy_logger = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "telepathy-logger",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

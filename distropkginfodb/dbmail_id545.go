@@ -13,10 +13,6 @@ var DistroPackageInfo_dbmail = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.dbmail.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dbmail",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_dbmail = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "dbmail",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

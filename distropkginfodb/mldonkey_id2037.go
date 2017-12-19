@@ -13,10 +13,6 @@ var DistroPackageInfo_mldonkey = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/mldonkey",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mldonkey",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_mldonkey = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "mldonkey",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"mldonkey"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_bitcoin = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bitcoin",
-	Filters:               []string{},
-
 	BuilderName: "bitcoin",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_bitcoin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bitcoin",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

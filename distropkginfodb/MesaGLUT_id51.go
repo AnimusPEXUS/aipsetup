@@ -13,10 +13,6 @@ var DistroPackageInfo_MesaGLUT = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/mesa3d",
 
-	TarballFileNameParser: "std",
-	TarballName:           "MesaGLUT",
-	Filters:               []string{},
-
 	BuilderName: "mesaglut",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_MesaGLUT = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "MesaGLUT",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"mesa3d"},
 	TarballProviderUseCache:         false,

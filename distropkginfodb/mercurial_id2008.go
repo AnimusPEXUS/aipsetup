@@ -13,10 +13,6 @@ var DistroPackageInfo_mercurial = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.selenic.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mercurial",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mercurial = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mercurial",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

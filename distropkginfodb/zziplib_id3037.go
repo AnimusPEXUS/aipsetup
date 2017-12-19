@@ -13,10 +13,6 @@ var DistroPackageInfo_zziplib = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/zziplib",
 
-	TarballFileNameParser: "std",
-	TarballName:           "zziplib",
-	Filters:               []string{},
-
 	BuilderName: "zziplib",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_zziplib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "zziplib",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"zziplib"},
 	TarballProviderUseCache:         false,

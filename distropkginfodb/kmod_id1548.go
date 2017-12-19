@@ -13,10 +13,6 @@ var DistroPackageInfo_kmod = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "kmod",
-	Filters:               []string{},
-
 	BuilderName: "kmod",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_kmod = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "kmod",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_openssh = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.openssh.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "openssh",
-	Filters:               []string{},
-
 	BuilderName: "openssh",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_openssh = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "openssh",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

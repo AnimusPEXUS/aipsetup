@@ -13,10 +13,6 @@ var DistroPackageInfo_firefox = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://mozilla.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "firefox",
-	Filters:               []string{},
-
 	BuilderName: "firefox",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_firefox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "firefox",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_gmerlin_effectv = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/gmerlin",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gmerlin-effectv",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gmerlin_effectv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "gmerlin-effectv",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gmerlin"},
 	TarballProviderUseCache:         false,

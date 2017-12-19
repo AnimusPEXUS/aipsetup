@@ -13,10 +13,6 @@ var DistroPackageInfo_bluez = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bluez",
-	Filters:               []string{},
-
 	BuilderName: "bluez",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_bluez = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bluez",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

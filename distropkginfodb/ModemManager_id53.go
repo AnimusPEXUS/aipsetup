@@ -13,10 +13,6 @@ var DistroPackageInfo_ModemManager = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ModemManager",
-	Filters:               []string{},
-
 	BuilderName: "ModemManager",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_ModemManager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "ModemManager",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"ModemManager"},
 	TarballProviderUseCache:         false,

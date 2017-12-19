@@ -13,10 +13,6 @@ var DistroPackageInfo_warzone2100 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/warzone2100",
 
-	TarballFileNameParser: "std",
-	TarballName:           "warzone2100",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_warzone2100 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "warzone2100",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"warzone2100"},
 	TarballProviderUseCache:         false,

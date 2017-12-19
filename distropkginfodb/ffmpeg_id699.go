@@ -13,10 +13,6 @@ var DistroPackageInfo_ffmpeg = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ffmpeg",
-	Filters:               []string{},
-
 	BuilderName: "ffmpeg",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ffmpeg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ffmpeg",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

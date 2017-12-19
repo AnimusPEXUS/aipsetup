@@ -13,10 +13,6 @@ var DistroPackageInfo_xulrunner = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://mozilla.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xulrunner",
-	Filters:               []string{},
-
 	BuilderName: "xulrunner",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_xulrunner = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xulrunner",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

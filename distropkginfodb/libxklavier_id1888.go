@@ -13,10 +13,6 @@ var DistroPackageInfo_libxklavier = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/gswitchit",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libxklavier",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libxklavier = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libxklavier",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gswitchit"},
 	TarballProviderUseCache:         false,

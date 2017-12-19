@@ -13,10 +13,6 @@ var DistroPackageInfo_libomxil_bellagio = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/omxil",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libomxil-bellagio",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libomxil_bellagio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libomxil-bellagio",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"omxil"},
 	TarballProviderUseCache:         false,

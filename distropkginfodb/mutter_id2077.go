@@ -13,10 +13,6 @@ var DistroPackageInfo_mutter = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mutter",
-	Filters:               []string{},
-
 	BuilderName: "mutter",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_mutter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "mutter",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"mutter"},
 	TarballProviderUseCache:         false,

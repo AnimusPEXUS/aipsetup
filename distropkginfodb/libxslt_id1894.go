@@ -13,10 +13,6 @@ var DistroPackageInfo_libxslt = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libxslt",
-	Filters:               []string{},
-
 	BuilderName: "libxslt",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libxslt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "libxslt",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"libxslt"},
 	TarballProviderUseCache:         false,

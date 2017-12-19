@@ -13,10 +13,6 @@ var DistroPackageInfo_schroedinger = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.diracvideo.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "schroedinger",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_schroedinger = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "schroedinger",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

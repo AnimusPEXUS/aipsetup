@@ -13,10 +13,6 @@ var DistroPackageInfo_libraw1394 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/libraw1394",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libraw1394",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libraw1394 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libraw1394",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libraw1394"},
 	TarballProviderUseCache:         false,

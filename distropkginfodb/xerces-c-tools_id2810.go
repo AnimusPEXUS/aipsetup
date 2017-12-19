@@ -13,10 +13,6 @@ var DistroPackageInfo_xerces_c_tools = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.apache.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xerces-c-tools",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_xerces_c_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xerces-c-tools",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

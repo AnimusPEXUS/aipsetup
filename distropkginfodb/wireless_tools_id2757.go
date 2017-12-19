@@ -13,10 +13,6 @@ var DistroPackageInfo_wireless_tools = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.hp.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "wireless_tools",
-	Filters:               []string{},
-
 	BuilderName: "wireless_tools",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_wireless_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "wireless_tools",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

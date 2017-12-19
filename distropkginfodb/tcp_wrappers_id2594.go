@@ -13,10 +13,6 @@ var DistroPackageInfo_tcp_wrappers = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tcp_wrappers",
-	Filters:               []string{},
-
 	BuilderName: "tcp_wrappers",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_tcp_wrappers = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "tcp_wrappers",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

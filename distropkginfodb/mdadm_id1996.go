@@ -13,10 +13,6 @@ var DistroPackageInfo_mdadm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mdadm",
-	Filters:               []string{},
-
 	BuilderName: "mdadm",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_mdadm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mdadm",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

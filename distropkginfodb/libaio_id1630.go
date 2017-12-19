@@ -13,10 +13,6 @@ var DistroPackageInfo_libaio = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libaio",
-	Filters:               []string{},
-
 	BuilderName: "libaio",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libaio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libaio",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

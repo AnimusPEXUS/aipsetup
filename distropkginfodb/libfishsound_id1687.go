@@ -13,10 +13,6 @@ var DistroPackageInfo_libfishsound = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xiph.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libfishsound",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libfishsound = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libfishsound",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

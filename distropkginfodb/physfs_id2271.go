@@ -13,10 +13,6 @@ var DistroPackageInfo_physfs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.icculus.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "physfs",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_physfs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "physfs",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

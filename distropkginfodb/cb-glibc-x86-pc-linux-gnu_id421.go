@@ -13,10 +13,6 @@ var DistroPackageInfo_cb_glibc_x86_pc_linux_gnu = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "",
-	Filters:               []string{},
-
 	BuilderName: "glibc",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_cb_glibc_x86_pc_linux_gnu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

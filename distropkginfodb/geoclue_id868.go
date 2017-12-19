@@ -13,10 +13,6 @@ var DistroPackageInfo_geoclue = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "geoclue",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_geoclue = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "geoclue",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_lynx = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.isc.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "lynx",
-	Filters:               []string{},
-
 	BuilderName: "lynx",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_lynx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "lynx",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

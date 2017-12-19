@@ -13,10 +13,6 @@ var DistroPackageInfo_docbook_sgml4 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "docbook",
-	Filters:               []string{},
-
 	BuilderName: "docbook_sgml4",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_docbook_sgml4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "docbook",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

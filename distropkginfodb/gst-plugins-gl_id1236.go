@@ -13,10 +13,6 @@ var DistroPackageInfo_gst_plugins_gl = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gst-plugins-gl",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gst_plugins_gl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gst-plugins-gl",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

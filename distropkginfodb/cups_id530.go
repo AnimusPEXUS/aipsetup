@@ -13,10 +13,6 @@ var DistroPackageInfo_cups = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/cups",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cups",
-	Filters:               []string{},
-
 	BuilderName: "cups",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_cups = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "cups",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"cups"},
 	TarballProviderUseCache:         false,

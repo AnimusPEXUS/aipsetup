@@ -13,10 +13,6 @@ var DistroPackageInfo_clisp_2_28_i686_unknown_cygwin_me_4_90 = &basictypes.Packa
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "clisp-2.28-i686-unknown-cygwin_me-4.90",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_clisp_2_28_i686_unknown_cygwin_me_4_90 = &basictypes.Packa
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "clisp-2.28-i686-unknown-cygwin_me-4.90",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

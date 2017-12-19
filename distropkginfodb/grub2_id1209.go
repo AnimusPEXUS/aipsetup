@@ -13,10 +13,6 @@ var DistroPackageInfo_grub2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://www.gnu.org/software/grub/index.html",
 
-	TarballFileNameParser: "std",
-	TarballName:           "grub",
-	Filters:               []string{},
-
 	BuilderName: "grub2",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_grub2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "grub",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

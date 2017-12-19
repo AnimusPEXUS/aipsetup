@@ -13,10 +13,6 @@ var DistroPackageInfo_whois = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.debian.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "whois",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_whois = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "whois",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

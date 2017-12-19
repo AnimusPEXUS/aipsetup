@@ -13,10 +13,6 @@ var DistroPackageInfo_Parallel_ForkManager = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.cpan.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Parallel-ForkManager",
-	Filters:               []string{},
-
 	BuilderName: "perl_mod",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Parallel_ForkManager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Parallel-ForkManager",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

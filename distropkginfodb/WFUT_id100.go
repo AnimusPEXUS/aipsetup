@@ -13,10 +13,6 @@ var DistroPackageInfo_WFUT = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/worldforge",
 
-	TarballFileNameParser: "std",
-	TarballName:           "WFUT",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_WFUT = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "WFUT",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"worldforge"},
 	TarballProviderUseCache:         false,

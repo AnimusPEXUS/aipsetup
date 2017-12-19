@@ -13,10 +13,6 @@ var DistroPackageInfo_gtkspell3 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/gtkspell",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gtkspell3",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gtkspell3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "gtkspell3",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gtkspell"},
 	TarballProviderUseCache:         false,

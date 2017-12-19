@@ -13,10 +13,6 @@ var DistroPackageInfo_jpegsrc_v = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/libjpeg",
 
-	TarballFileNameParser: "std",
-	TarballName:           "jpegsrc.v",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_jpegsrc_v = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "jpegsrc.v",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libjpeg"},
 	TarballProviderUseCache:         false,

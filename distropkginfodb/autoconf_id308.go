@@ -13,11 +13,6 @@ var DistroPackageInfo_autoconf = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "autoconf",
-	Filters: []string{
-		"- version-== 2.13"},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -35,6 +30,10 @@ var DistroPackageInfo_autoconf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters: []string{
+		"- version-== 2.13"},
+	TarballName:                     "autoconf",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

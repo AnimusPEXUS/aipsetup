@@ -15,10 +15,6 @@ var DistroPackageInfo_libxmlplusplus = &basictypes.PackageInfo{
 as libxml++-2.36.0.tar.xz is too complicated for parsing, it need to be renamed to libxmlplusplus-2.36.0.tar.xz in order to properly work with aipsetup`,
 	HomePage: "http://www.gnome.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libxmlplusplus",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -35,6 +31,9 @@ as libxml++-2.36.0.tar.xz is too complicated for parsing, it need to be renamed 
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libxmlplusplus",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

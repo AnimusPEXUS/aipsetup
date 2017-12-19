@@ -13,10 +13,6 @@ var DistroPackageInfo_libzeitgeist = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://launchpat.net/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libzeitgeist",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libzeitgeist = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libzeitgeist",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

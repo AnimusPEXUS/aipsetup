@@ -13,10 +13,6 @@ var DistroPackageInfo_glibc_ports = &basictypes.PackageInfo{
 	Description: `This is glibc plugin. optional in glibc build time.`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "glibc-ports",
-	Filters:               []string{},
-
 	BuilderName: "glibc",
 
 	Removable:          false,
@@ -33,6 +29,9 @@ var DistroPackageInfo_glibc_ports = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "glibc-ports",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

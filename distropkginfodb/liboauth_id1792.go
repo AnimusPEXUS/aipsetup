@@ -13,10 +13,6 @@ var DistroPackageInfo_liboauth = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/liboauth",
 
-	TarballFileNameParser: "std",
-	TarballName:           "liboauth",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_liboauth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "liboauth",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"liboauth"},
 	TarballProviderUseCache:         false,

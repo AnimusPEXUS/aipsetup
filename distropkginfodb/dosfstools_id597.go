@@ -13,10 +13,6 @@ var DistroPackageInfo_dosfstools = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://daniel-baumann.ch/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dosfstools",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_dosfstools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "dosfstools",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

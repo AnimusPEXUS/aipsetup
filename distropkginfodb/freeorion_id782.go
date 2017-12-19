@@ -13,10 +13,6 @@ var DistroPackageInfo_freeorion = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "freeorion-code",
-	Filters:               []string{},
-
 	BuilderName: "freeorion",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_freeorion = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "freeorion-code",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

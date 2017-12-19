@@ -13,10 +13,6 @@ var DistroPackageInfo_uhttpmock = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://gitorious.org/uhttpmock",
 
-	TarballFileNameParser: "std",
-	TarballName:           "uhttpmock",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_uhttpmock = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "uhttpmock",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

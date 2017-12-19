@@ -13,10 +13,6 @@ var DistroPackageInfo_curlftpfs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/curlftpfs",
 
-	TarballFileNameParser: "std",
-	TarballName:           "curlftpfs",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_curlftpfs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "curlftpfs",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"curlftpfs"},
 	TarballProviderUseCache:         false,

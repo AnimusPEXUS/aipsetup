@@ -13,10 +13,6 @@ var DistroPackageInfo_openssl = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.openssl.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "openssl",
-	Filters:               []string{},
-
 	BuilderName: "openssl",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_openssl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "openssl",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

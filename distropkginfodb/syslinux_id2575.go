@@ -13,10 +13,6 @@ var DistroPackageInfo_syslinux = &basictypes.PackageInfo{
 	Description: `linux kernel boot loader used in this distribution`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "syslinux",
-	Filters:               []string{},
-
 	BuilderName: "syslinux",
 
 	Removable:          false,
@@ -34,6 +30,9 @@ var DistroPackageInfo_syslinux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "syslinux",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_cfe = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://llvm.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cfe",
-	Filters:               []string{},
-
 	BuilderName: "llvm_components",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_cfe = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "cfe",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

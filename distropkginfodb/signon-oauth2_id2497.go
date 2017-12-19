@@ -13,10 +13,6 @@ var DistroPackageInfo_signon_oauth2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "signon-oauth2",
-	Filters:               []string{},
-
 	BuilderName: "std_qmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_signon_oauth2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "signon-oauth2",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_libcanberra = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.0pointer.de",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libcanberra",
-	Filters:               []string{},
-
 	BuilderName: "libcanberra",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libcanberra = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libcanberra",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

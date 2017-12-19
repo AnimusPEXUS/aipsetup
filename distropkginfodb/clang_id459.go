@@ -13,10 +13,6 @@ var DistroPackageInfo_clang = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "clang",
-	Filters:               []string{},
-
 	BuilderName: "llvm_components",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_clang = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "clang",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

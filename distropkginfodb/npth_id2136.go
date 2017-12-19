@@ -13,10 +13,6 @@ var DistroPackageInfo_npth = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnupg.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "npth",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_npth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "npth",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

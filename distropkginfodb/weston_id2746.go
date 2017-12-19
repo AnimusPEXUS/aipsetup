@@ -13,10 +13,6 @@ var DistroPackageInfo_weston = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "weston",
-	Filters:               []string{},
-
 	BuilderName: "weston",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_weston = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "weston",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

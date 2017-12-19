@@ -13,10 +13,6 @@ var DistroPackageInfo_guile = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "guile",
-	Filters:               []string{},
-
 	BuilderName: "guile",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_guile = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "guile",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

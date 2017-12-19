@@ -13,10 +13,6 @@ var DistroPackageInfo_libgphoto2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/gphoto",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libgphoto2",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libgphoto2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libgphoto2",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gphoto"},
 	TarballProviderUseCache:         false,

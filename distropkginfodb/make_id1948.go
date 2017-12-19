@@ -13,10 +13,6 @@ var DistroPackageInfo_make = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "make",
-	Filters:               []string{},
-
 	BuilderName: "make",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_make = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "https",
+	Filters:               []string{},
+	TarballName:           "make",
+	TarballFileNameParser: "std",
+	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		"https://ftp.gnu.org/gnu/make"},
 	TarballProviderUseCache:         true,

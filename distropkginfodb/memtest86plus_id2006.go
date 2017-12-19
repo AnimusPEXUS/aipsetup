@@ -13,10 +13,6 @@ var DistroPackageInfo_memtest86plus = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.memtest.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "memtest86+",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_memtest86plus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "memtest86+",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

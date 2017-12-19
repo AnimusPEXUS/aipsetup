@@ -13,10 +13,6 @@ var DistroPackageInfo_icedtea = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://icedtea.classpath.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "icedtea",
-	Filters:               []string{},
-
 	BuilderName: "icedtea",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_icedtea = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "icedtea",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

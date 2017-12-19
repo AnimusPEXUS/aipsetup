@@ -13,10 +13,6 @@ var DistroPackageInfo_portaudio = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.portaudio.com/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pa_stable_v",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_portaudio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pa_stable_v",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

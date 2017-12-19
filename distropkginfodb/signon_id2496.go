@@ -13,10 +13,6 @@ var DistroPackageInfo_signon = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "signon",
-	Filters:               []string{},
-
 	BuilderName: "std_qmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_signon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "signon",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

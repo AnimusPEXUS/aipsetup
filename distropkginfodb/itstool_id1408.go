@@ -13,10 +13,6 @@ var DistroPackageInfo_itstool = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.itstool.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "itstool",
-	Filters:               []string{},
-
 	BuilderName: "itstool",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_itstool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "itstool",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

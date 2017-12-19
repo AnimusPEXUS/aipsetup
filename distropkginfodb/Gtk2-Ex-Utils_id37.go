@@ -13,10 +13,6 @@ var DistroPackageInfo_Gtk2_Ex_Utils = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://cpan.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Gtk2-Ex-Utils",
-	Filters:               []string{},
-
 	BuilderName: "perl_mod",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Gtk2_Ex_Utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Gtk2-Ex-Utils",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

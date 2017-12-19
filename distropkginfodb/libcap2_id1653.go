@@ -13,10 +13,6 @@ var DistroPackageInfo_libcap2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sites.google.com/site/fullycapable/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libcap",
-	Filters:               []string{},
-
 	BuilderName: "libcap2",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libcap2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libcap",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_qpdf = &basictypes.PackageInfo{
 	Description: `None`,
 	HomePage:    "https://sourceforge.net/projects/qpdf",
 
-	TarballFileNameParser: "std",
-	TarballName:           "qpdf",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_qpdf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "qpdf",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"qpdf"},
 	TarballProviderUseCache:         false,

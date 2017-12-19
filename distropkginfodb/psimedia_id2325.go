@@ -13,10 +13,6 @@ var DistroPackageInfo_psimedia = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://delta.affinix.com/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "psimedia",
-	Filters:               []string{},
-
 	BuilderName: "psimedia",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_psimedia = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "psimedia",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

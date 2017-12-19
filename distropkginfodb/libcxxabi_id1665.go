@@ -13,10 +13,6 @@ var DistroPackageInfo_libcxxabi = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libcxxabi",
-	Filters:               []string{},
-
 	BuilderName: "llvm_components",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libcxxabi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libcxxabi",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

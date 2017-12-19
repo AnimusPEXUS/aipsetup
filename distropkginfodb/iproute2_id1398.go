@@ -13,10 +13,6 @@ var DistroPackageInfo_iproute2 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "iproute2",
-	Filters:               []string{},
-
 	BuilderName: "iproute2",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_iproute2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "iproute2",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

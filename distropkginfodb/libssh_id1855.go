@@ -13,10 +13,6 @@ var DistroPackageInfo_libssh = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libssh",
-	Filters:               []string{},
-
 	BuilderName: "libssh",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libssh = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libssh",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

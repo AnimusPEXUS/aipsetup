@@ -13,10 +13,6 @@ var DistroPackageInfo_OpenSP = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/openjade",
 
-	TarballFileNameParser: "std",
-	TarballName:           "OpenSP",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_OpenSP = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "OpenSP",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"openjade"},
 	TarballProviderUseCache:         false,

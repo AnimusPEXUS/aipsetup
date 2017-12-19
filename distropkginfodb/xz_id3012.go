@@ -13,10 +13,6 @@ var DistroPackageInfo_xz = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.tukaani.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xz",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          false,
@@ -34,6 +30,9 @@ var DistroPackageInfo_xz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xz",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

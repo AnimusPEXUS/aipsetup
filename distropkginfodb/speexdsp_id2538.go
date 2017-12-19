@@ -13,10 +13,6 @@ var DistroPackageInfo_speexdsp = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xiph.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "speexdsp",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_speexdsp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "speexdsp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

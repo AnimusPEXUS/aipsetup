@@ -13,10 +13,6 @@ var DistroPackageInfo_gnustep_gui = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnustep.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnustep-gui",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gnustep_gui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gnustep-gui",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

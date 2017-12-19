@@ -13,10 +13,6 @@ var DistroPackageInfo_meanwhile = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/meanwhile",
 
-	TarballFileNameParser: "std",
-	TarballName:           "meanwhile",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_meanwhile = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "meanwhile",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"meanwhile"},
 	TarballProviderUseCache:         false,

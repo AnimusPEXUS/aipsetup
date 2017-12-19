@@ -13,10 +13,6 @@ var DistroPackageInfo_gnutls = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnupg.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnutls",
-	Filters:               []string{},
-
 	BuilderName: "gnutls",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_gnutls = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gnutls",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_astyle = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/astyle",
 
-	TarballFileNameParser: "std",
-	TarballName:           "astyle",
-	Filters:               []string{},
-
 	BuilderName: "astyle",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_astyle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "astyle",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"astyle"},
 	TarballProviderUseCache:         false,

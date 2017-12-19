@@ -13,10 +13,6 @@ var DistroPackageInfo_bochs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sourceforge.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bochs",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_bochs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bochs",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

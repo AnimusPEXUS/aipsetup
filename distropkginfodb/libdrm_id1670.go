@@ -13,10 +13,6 @@ var DistroPackageInfo_libdrm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libdrm",
-	Filters:               []string{},
-
 	BuilderName: "libdrm",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libdrm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libdrm",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

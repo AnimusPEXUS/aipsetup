@@ -13,10 +13,6 @@ var DistroPackageInfo_shared_desktop_ontologies = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/oscaf",
 
-	TarballFileNameParser: "std",
-	TarballName:           "shared-desktop-ontologies",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_shared_desktop_ontologies = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "shared-desktop-ontologies",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"oscaf"},
 	TarballProviderUseCache:         false,

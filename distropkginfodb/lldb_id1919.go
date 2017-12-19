@@ -13,10 +13,6 @@ var DistroPackageInfo_lldb = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "lldb",
-	Filters:               []string{},
-
 	BuilderName: "llvm_components",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_lldb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "lldb",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

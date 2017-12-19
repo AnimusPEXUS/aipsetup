@@ -13,10 +13,6 @@ var DistroPackageInfo_folks = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "folks",
-	Filters:               []string{},
-
 	BuilderName: "folks",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_folks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "folks",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"folks"},
 	TarballProviderUseCache:         false,

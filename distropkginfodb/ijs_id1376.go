@@ -13,10 +13,6 @@ var DistroPackageInfo_ijs = &basictypes.PackageInfo{
 	Description: `None`,
 	HomePage:    "http://www.openprinting.org/download/ijs/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ijs",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_ijs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ijs",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

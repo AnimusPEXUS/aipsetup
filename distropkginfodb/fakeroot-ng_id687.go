@@ -13,10 +13,6 @@ var DistroPackageInfo_fakeroot_ng = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/fakerootng",
 
-	TarballFileNameParser: "std",
-	TarballName:           "fakeroot-ng",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_fakeroot_ng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "fakeroot-ng",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"fakerootng"},
 	TarballProviderUseCache:         false,

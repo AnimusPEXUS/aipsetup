@@ -13,10 +13,6 @@ var DistroPackageInfo_openvpn = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.openvpn.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "openvpn",
-	Filters:               []string{},
-
 	BuilderName: "openvpn",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_openvpn = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "openvpn",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

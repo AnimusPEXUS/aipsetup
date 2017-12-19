@@ -13,10 +13,6 @@ var DistroPackageInfo_pdftk = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pdftk",
-	Filters:               []string{},
-
 	BuilderName: "pdftk",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_pdftk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pdftk",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

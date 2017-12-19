@@ -13,10 +13,6 @@ var DistroPackageInfo_nettle2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.gnupg.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "nettle",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_nettle2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "nettle",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

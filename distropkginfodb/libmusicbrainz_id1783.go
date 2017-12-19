@@ -13,10 +13,6 @@ var DistroPackageInfo_libmusicbrainz = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.musicbrainz.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libmusicbrainz",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libmusicbrainz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libmusicbrainz",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_libiodbc = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/iodbc",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libiodbc",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libiodbc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libiodbc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"iodbc"},
 	TarballProviderUseCache:         false,

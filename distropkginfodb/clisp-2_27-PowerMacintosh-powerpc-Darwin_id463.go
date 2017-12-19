@@ -13,10 +13,6 @@ var DistroPackageInfo_clisp_2_27_PowerMacintosh_powerpc_Darwin = &basictypes.Pac
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "clisp-2.27-PowerMacintosh-powerpc-Darwin",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_clisp_2_27_PowerMacintosh_powerpc_Darwin = &basictypes.Pac
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "clisp-2.27-PowerMacintosh-powerpc-Darwin",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

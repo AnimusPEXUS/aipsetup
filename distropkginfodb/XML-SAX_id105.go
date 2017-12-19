@@ -13,10 +13,6 @@ var DistroPackageInfo_XML_SAX = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.cpan.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "XML-SAX",
-	Filters:               []string{},
-
 	BuilderName: "perl_mod",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_XML_SAX = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "XML-SAX",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

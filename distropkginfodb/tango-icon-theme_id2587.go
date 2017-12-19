@@ -13,10 +13,6 @@ var DistroPackageInfo_tango_icon_theme = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tango-icon-theme",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_tango_icon_theme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "tango-icon-theme",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

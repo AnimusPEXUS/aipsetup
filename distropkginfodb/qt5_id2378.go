@@ -13,10 +13,6 @@ var DistroPackageInfo_qt5 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.qt-project.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "qt-everywhere-opensource-src",
-	Filters:               []string{},
-
 	BuilderName: "qt",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_qt5 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "qt-everywhere-opensource-src",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

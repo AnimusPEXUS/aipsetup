@@ -13,10 +13,6 @@ var DistroPackageInfo_libgpg_error = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnupg.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libgpg-error",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libgpg_error = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libgpg-error",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

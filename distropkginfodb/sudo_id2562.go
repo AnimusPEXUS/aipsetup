@@ -13,10 +13,6 @@ var DistroPackageInfo_sudo = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sudo.ws",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sudo",
-	Filters:               []string{},
-
 	BuilderName: "sudo",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_sudo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sudo",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

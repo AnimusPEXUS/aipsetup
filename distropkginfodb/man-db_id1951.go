@@ -13,10 +13,6 @@ var DistroPackageInfo_man_db = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://savannah.nongnu.org/projects/man-db",
 
-	TarballFileNameParser: "std",
-	TarballName:           "man-db",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_man_db = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "man-db",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

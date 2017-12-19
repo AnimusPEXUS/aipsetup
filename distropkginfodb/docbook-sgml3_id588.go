@@ -13,10 +13,6 @@ var DistroPackageInfo_docbook_sgml3 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "docbk",
-	Filters:               []string{},
-
 	BuilderName: "docbook_sgml3",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_docbook_sgml3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "docbk",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

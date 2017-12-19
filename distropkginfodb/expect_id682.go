@@ -13,10 +13,6 @@ var DistroPackageInfo_expect = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/expect",
 
-	TarballFileNameParser: "std",
-	TarballName:           "expect",
-	Filters:               []string{},
-
 	BuilderName: "expect",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_expect = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "expect",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"expect"},
 	TarballProviderUseCache:         false,

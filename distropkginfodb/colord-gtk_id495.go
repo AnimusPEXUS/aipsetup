@@ -13,10 +13,6 @@ var DistroPackageInfo_colord_gtk = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://freedesktop.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "colord-gtk",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_colord_gtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "colord-gtk",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

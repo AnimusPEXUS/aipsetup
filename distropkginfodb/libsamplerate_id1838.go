@@ -13,10 +13,6 @@ var DistroPackageInfo_libsamplerate = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.mega-nerd.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libsamplerate",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libsamplerate = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libsamplerate",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

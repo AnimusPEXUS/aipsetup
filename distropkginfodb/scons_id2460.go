@@ -13,10 +13,6 @@ var DistroPackageInfo_scons = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/scons",
 
-	TarballFileNameParser: "std",
-	TarballName:           "scons-src",
-	Filters:               []string{},
-
 	BuilderName: "scons",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_scons = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "scons-src",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"scons"},
 	TarballProviderUseCache:         false,

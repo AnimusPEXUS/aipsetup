@@ -13,10 +13,6 @@ var DistroPackageInfo_xf86_input_wacom = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/linuxwacom",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xf86-input-wacom",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_xf86_input_wacom = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "xf86-input-wacom",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"linuxwacom"},
 	TarballProviderUseCache:         false,

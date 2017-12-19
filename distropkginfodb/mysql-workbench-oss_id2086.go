@@ -13,10 +13,6 @@ var DistroPackageInfo_mysql_workbench_oss = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.mysql.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mysql-workbench-oss",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mysql_workbench_oss = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mysql-workbench-oss",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

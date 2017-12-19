@@ -13,10 +13,6 @@ var DistroPackageInfo_pidgin = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/pidgin",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pidgin",
-	Filters:               []string{},
-
 	BuilderName: "pidgin",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_pidgin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "pidgin",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"pidgin"},
 	TarballProviderUseCache:         false,

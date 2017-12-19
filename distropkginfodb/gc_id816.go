@@ -13,10 +13,6 @@ var DistroPackageInfo_gc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.hp.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gc",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_gc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

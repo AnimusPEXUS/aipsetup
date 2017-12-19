@@ -13,10 +13,6 @@ var DistroPackageInfo_gnunet = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnunet.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnunet",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gnunet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gnunet",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

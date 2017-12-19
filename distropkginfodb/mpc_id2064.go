@@ -13,10 +13,6 @@ var DistroPackageInfo_mpc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.multiprecision.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mpc",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          false,
@@ -34,6 +30,9 @@ var DistroPackageInfo_mpc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mpc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

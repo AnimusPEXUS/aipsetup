@@ -13,10 +13,6 @@ var DistroPackageInfo_Python2 = &basictypes.PackageInfo{
 	Description: `None`,
 	HomePage:    "http://python.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Python",
-	Filters:               []string{},
-
 	BuilderName: "python",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_Python2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Python",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

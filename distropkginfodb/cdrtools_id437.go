@@ -13,10 +13,6 @@ var DistroPackageInfo_cdrtools = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/cdrtools",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cdrtools",
-	Filters:               []string{},
-
 	BuilderName: "cdrtools",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_cdrtools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "cdrtools",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"cdrtools"},
 	TarballProviderUseCache:         false,

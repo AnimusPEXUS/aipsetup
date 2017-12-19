@@ -13,10 +13,6 @@ var DistroPackageInfo_rpcnis_headers = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rpcnis-headers",
-	Filters:               []string{},
-
 	BuilderName: "rpcnis_headers",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_rpcnis_headers = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "rpcnis-headers",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_xvidcore = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xvid.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xvidcore",
-	Filters:               []string{},
-
 	BuilderName: "xvidcore",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_xvidcore = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xvidcore",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

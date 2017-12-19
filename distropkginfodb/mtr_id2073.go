@@ -13,10 +13,6 @@ var DistroPackageInfo_mtr = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.bitwizard.nl",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mtr",
-	Filters:               []string{},
-
 	BuilderName: "mtr",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mtr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mtr",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

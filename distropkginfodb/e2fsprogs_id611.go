@@ -13,10 +13,6 @@ var DistroPackageInfo_e2fsprogs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/e2fsprogs",
 
-	TarballFileNameParser: "std",
-	TarballName:           "e2fsprogs",
-	Filters:               []string{},
-
 	BuilderName: "e2fsprogs",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_e2fsprogs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "e2fsprogs",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"e2fsprogs"},
 	TarballProviderUseCache:         false,

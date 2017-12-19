@@ -13,10 +13,6 @@ var DistroPackageInfo_lvm2 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://redhat.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "LVM",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_lvm2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "LVM",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

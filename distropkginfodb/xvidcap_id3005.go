@@ -13,10 +13,6 @@ var DistroPackageInfo_xvidcap = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/xvidcap",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xvidcap",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_xvidcap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "xvidcap",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"xvidcap"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_nut = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.networkupstools.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "nut",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_nut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "nut",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

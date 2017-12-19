@@ -13,10 +13,6 @@ var DistroPackageInfo_sox = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/sox",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sox",
-	Filters:               []string{},
-
 	BuilderName: "sox",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_sox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "sox",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"sox"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_ilmbase = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.openexr.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ilmbase",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_ilmbase = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ilmbase",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

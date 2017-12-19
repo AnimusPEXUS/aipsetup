@@ -13,10 +13,6 @@ var DistroPackageInfo_psi = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/psi",
 
-	TarballFileNameParser: "std",
-	TarballName:           "psi",
-	Filters:               []string{},
-
 	BuilderName: "psi",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_psi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "psi",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"psi"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_openal_soft = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://connect.creativelabs.com/openal/Downloads/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "openal-soft",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_openal_soft = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "openal-soft",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

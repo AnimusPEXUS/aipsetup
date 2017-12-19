@@ -13,10 +13,6 @@ var DistroPackageInfo_fossil = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "fossil-src",
-	Filters:               []string{},
-
 	BuilderName: "fossil",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_fossil = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "fossil-src",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_telepathy_gabble = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.freedesktop.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "telepathy-gabble",
-	Filters:               []string{},
-
 	BuilderName: "telepathy_gabble",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_telepathy_gabble = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "telepathy-gabble",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

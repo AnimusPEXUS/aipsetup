@@ -13,10 +13,6 @@ var DistroPackageInfo_gsm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.asterisk.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gsm",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gsm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gsm",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_nspr = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "nspr",
-	Filters:               []string{},
-
 	BuilderName: "nspr",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_nspr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "nspr",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_tree = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tree",
-	Filters:               []string{},
-
 	BuilderName: "tree",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_tree = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "tree",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

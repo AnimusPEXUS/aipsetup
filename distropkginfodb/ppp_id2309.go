@@ -13,10 +13,6 @@ var DistroPackageInfo_ppp = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://ppp.samba.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ppp",
-	Filters:               []string{},
-
 	BuilderName: "ppp",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_ppp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ppp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

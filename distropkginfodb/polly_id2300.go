@@ -13,10 +13,6 @@ var DistroPackageInfo_polly = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "polly",
-	Filters:               []string{},
-
 	BuilderName: "llvm_components",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_polly = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "polly",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

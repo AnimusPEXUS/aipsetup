@@ -13,10 +13,6 @@ var DistroPackageInfo_vhba_module = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/cdemu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "vhba-module",
-	Filters:               []string{},
-
 	BuilderName: "vhbamodule",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_vhba_module = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "vhba-module",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"cdemu"},
 	TarballProviderUseCache:         false,

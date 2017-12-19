@@ -13,10 +13,6 @@ var DistroPackageInfo_MesaLib = &basictypes.PackageInfo{
 	Description: `use 'mesa' package (renamed)`,
 	HomePage:    "https://sourceforge.net/projects/mesa3d",
 
-	TarballFileNameParser: "std",
-	TarballName:           "MesaLib",
-	Filters:               []string{},
-
 	BuilderName: "mesalib",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_MesaLib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "MesaLib",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"mesa3d"},
 	TarballProviderUseCache:         false,

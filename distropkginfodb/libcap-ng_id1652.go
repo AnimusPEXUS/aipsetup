@@ -13,10 +13,6 @@ var DistroPackageInfo_libcap_ng = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://people.redhat.com/sgrubb/libcap-ng/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libcap-ng",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libcap_ng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libcap-ng",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

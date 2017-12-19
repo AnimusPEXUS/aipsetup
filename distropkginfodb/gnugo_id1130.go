@@ -13,10 +13,6 @@ var DistroPackageInfo_gnugo = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://gnu.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnugo",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gnugo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gnugo",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

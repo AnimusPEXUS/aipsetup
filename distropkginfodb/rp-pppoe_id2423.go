@@ -13,10 +13,6 @@ var DistroPackageInfo_rp_pppoe = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rp-pppoe",
-	Filters:               []string{},
-
 	BuilderName: "rp_pppoe",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_rp_pppoe = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "rp-pppoe",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

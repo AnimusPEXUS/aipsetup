@@ -13,10 +13,6 @@ var DistroPackageInfo_inkscape = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sourceforge.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "inkscape",
-	Filters:               []string{},
-
 	BuilderName: "inkscape",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_inkscape = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "inkscape",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

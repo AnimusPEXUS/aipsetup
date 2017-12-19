@@ -13,10 +13,6 @@ var DistroPackageInfo_glib = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "glib",
-	Filters:               []string{},
-
 	BuilderName: "glib",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "glib",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"glib"},
 	TarballProviderUseCache:         false,

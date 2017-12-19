@@ -13,10 +13,6 @@ var DistroPackageInfo_tcpdump = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.tcpdump.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tcpdump",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_tcpdump = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "tcpdump",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

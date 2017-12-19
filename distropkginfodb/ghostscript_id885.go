@@ -13,10 +13,6 @@ var DistroPackageInfo_ghostscript = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sourceforge.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ghostscript",
-	Filters:               []string{},
-
 	BuilderName: "ghostscript",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ghostscript = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ghostscript",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

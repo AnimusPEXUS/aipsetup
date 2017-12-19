@@ -13,10 +13,6 @@ var DistroPackageInfo_pyxdg = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://freedesktop.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pyxdg",
-	Filters:               []string{},
-
 	BuilderName: "std_pythons",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_pyxdg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pyxdg",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

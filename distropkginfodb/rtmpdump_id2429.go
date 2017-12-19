@@ -13,10 +13,6 @@ var DistroPackageInfo_rtmpdump = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://rtmpdump.mplayerhq.hu/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rtmpdump",
-	Filters:               []string{},
-
 	BuilderName: "rtmpdump",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_rtmpdump = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "rtmpdump",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

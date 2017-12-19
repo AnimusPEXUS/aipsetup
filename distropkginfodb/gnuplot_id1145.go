@@ -13,10 +13,6 @@ var DistroPackageInfo_gnuplot = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/gnuplot",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnuplot",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gnuplot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "gnuplot",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gnuplot"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_radare2 = &basictypes.PackageInfo{
 	Description: `disassembler`,
 	HomePage:    "http://radare.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "radare2",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_radare2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "radare2",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

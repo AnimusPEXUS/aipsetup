@@ -13,10 +13,6 @@ var DistroPackageInfo_geany = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.geany.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "geany",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_geany = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "geany",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_cups_filters = &basictypes.PackageInfo{
 	Description: `None`,
 	HomePage:    "http://www.openprinting.org/download/cups-filters/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cups-filters",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_cups_filters = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "cups-filters",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

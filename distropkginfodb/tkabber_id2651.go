@@ -13,10 +13,6 @@ var DistroPackageInfo_tkabber = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://tkabber.jabber.ru/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tkabber",
-	Filters:               []string{},
-
 	BuilderName: "tkabber",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_tkabber = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "tkabber",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

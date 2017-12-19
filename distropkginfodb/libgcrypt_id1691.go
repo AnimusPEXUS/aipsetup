@@ -13,10 +13,6 @@ var DistroPackageInfo_libgcrypt = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnupg.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libgcrypt",
-	Filters:               []string{},
-
 	BuilderName: "libgcrypt",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libgcrypt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libgcrypt",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

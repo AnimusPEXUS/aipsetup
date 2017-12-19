@@ -13,10 +13,6 @@ var DistroPackageInfo_lsh = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.lysator.liu.se/~nisse/lsh/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "lsh",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_lsh = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "lsh",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

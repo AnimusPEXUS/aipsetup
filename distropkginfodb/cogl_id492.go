@@ -13,10 +13,6 @@ var DistroPackageInfo_cogl = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cogl",
-	Filters:               []string{},
-
 	BuilderName: "cogl",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_cogl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "cogl",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"cogl"},
 	TarballProviderUseCache:         false,

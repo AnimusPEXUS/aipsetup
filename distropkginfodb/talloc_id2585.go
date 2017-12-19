@@ -13,10 +13,6 @@ var DistroPackageInfo_talloc = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://samba.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "talloc",
-	Filters:               []string{},
-
 	BuilderName: "std_waf",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_talloc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "talloc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

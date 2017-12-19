@@ -13,10 +13,6 @@ var DistroPackageInfo_sgml_common = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sgml-common",
-	Filters:               []string{},
-
 	BuilderName: "sgml_common",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_sgml_common = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sgml-common",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

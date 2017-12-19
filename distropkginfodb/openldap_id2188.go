@@ -13,10 +13,6 @@ var DistroPackageInfo_openldap = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.openldap.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "openldap",
-	Filters:               []string{},
-
 	BuilderName: "openldap",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_openldap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "openldap",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

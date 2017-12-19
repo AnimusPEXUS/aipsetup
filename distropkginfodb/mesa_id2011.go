@@ -13,10 +13,6 @@ var DistroPackageInfo_mesa = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mesa",
-	Filters:               []string{},
-
 	BuilderName: "mesalib",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mesa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mesa",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

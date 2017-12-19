@@ -13,10 +13,6 @@ var DistroPackageInfo_glu = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://mesa3d.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "glu",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_glu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "glu",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

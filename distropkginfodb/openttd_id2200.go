@@ -13,10 +13,6 @@ var DistroPackageInfo_openttd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.openttd.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "openttd",
-	Filters:               []string{},
-
 	BuilderName: "openttd",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_openttd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "openttd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

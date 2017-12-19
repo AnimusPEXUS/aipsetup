@@ -13,10 +13,6 @@ var DistroPackageInfo_djvulibre = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/djvu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "djvulibre",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_djvulibre = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "djvulibre",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"djvu"},
 	TarballProviderUseCache:         false,

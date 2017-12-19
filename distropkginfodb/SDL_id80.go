@@ -13,10 +13,6 @@ var DistroPackageInfo_SDL = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/warzone2100",
 
-	TarballFileNameParser: "std",
-	TarballName:           "SDL",
-	Filters:               []string{},
-
 	BuilderName: "SDL",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_SDL = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "SDL",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"warzone2100"},
 	TarballProviderUseCache:         false,

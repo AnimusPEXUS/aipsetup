@@ -13,10 +13,6 @@ var DistroPackageInfo_gtkglextmm = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/gtkglext",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gtkglextmm",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gtkglextmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "gtkglextmm",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gtkglext"},
 	TarballProviderUseCache:         false,

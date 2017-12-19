@@ -13,10 +13,6 @@ var DistroPackageInfo_dstat = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.wieers.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dstat",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_dstat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "dstat",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

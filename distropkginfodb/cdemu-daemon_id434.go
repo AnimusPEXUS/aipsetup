@@ -13,10 +13,6 @@ var DistroPackageInfo_cdemu_daemon = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/cdemu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cdemu-daemon",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_cdemu_daemon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "cdemu-daemon",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"cdemu"},
 	TarballProviderUseCache:         false,

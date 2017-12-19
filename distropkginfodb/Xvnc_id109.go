@@ -13,10 +13,6 @@ var DistroPackageInfo_Xvnc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sourceforge.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Xvnc",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Xvnc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Xvnc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

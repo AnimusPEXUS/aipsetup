@@ -13,10 +13,6 @@ var DistroPackageInfo_libdvdnav = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://dvdnav.mplayerhq.hu/releases/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libdvdnav",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libdvdnav = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libdvdnav",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_nasm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.nasm.us",
 
-	TarballFileNameParser: "std",
-	TarballName:           "nasm",
-	Filters:               []string{},
-
 	BuilderName: "nasm",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_nasm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "nasm",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

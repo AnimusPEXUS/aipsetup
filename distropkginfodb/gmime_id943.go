@@ -13,10 +13,6 @@ var DistroPackageInfo_gmime = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gmime",
-	Filters:               []string{},
-
 	BuilderName: "gmime",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gmime = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gmime",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gmime"},
 	TarballProviderUseCache:         false,

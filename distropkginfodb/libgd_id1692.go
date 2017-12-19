@@ -13,10 +13,6 @@ var DistroPackageInfo_libgd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://libgd.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libgd",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libgd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libgd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

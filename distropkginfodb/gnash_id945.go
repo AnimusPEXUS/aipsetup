@@ -13,10 +13,6 @@ var DistroPackageInfo_gnash = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnash",
-	Filters:               []string{},
-
 	BuilderName: "gnash",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gnash = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gnash",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

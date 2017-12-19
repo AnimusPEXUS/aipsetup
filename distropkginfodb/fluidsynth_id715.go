@@ -13,10 +13,6 @@ var DistroPackageInfo_fluidsynth = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/fluidsynth",
 
-	TarballFileNameParser: "std",
-	TarballName:           "fluidsynth",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_fluidsynth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "fluidsynth",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"fluidsynth"},
 	TarballProviderUseCache:         false,

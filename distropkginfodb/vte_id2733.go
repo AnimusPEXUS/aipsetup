@@ -13,10 +13,6 @@ var DistroPackageInfo_vte = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "vte",
-	Filters:               []string{},
-
 	BuilderName: "vte",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_vte = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "vte",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"vte"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_bash = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bash",
-	Filters:               []string{},
-
 	BuilderName: "bash",
 
 	Removable:          false,
@@ -34,6 +30,9 @@ var DistroPackageInfo_bash = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bash",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

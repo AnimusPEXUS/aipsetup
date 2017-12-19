@@ -13,10 +13,6 @@ var DistroPackageInfo_pptpd = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/poptop",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pptpd",
-	Filters:               []string{},
-
 	BuilderName: "pptpd",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_pptpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "pptpd",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"poptop"},
 	TarballProviderUseCache:         false,

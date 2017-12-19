@@ -13,10 +13,6 @@ var DistroPackageInfo_vlc = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://www.videolan.org/vlc/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "vlc",
-	Filters:               []string{},
-
 	BuilderName: "vlc",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_vlc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "vlc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

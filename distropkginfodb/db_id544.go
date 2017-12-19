@@ -13,10 +13,6 @@ var DistroPackageInfo_db = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.oracle.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "db",
-	Filters:               []string{},
-
 	BuilderName: "db",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_db = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "db",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_docbook_xsl = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/docbook",
 
-	TarballFileNameParser: "std",
-	TarballName:           "docbook-xsl",
-	Filters:               []string{},
-
 	BuilderName: "docbook_xsl",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_docbook_xsl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "docbook-xsl",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"docbook"},
 	TarballProviderUseCache:         false,

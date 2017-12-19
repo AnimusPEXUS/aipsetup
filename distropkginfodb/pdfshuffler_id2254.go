@@ -11,11 +11,7 @@ import (
 var DistroPackageInfo_pdfshuffler = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/sf-xpaint",
-
-	TarballFileNameParser: "std",
-	TarballName:           "pdfshuffler",
-	Filters:               []string{},
+	HomePage:    "https://sourceforge.net/projects/pdfshuffler",
 
 	BuilderName: "",
 
@@ -34,9 +30,12 @@ var DistroPackageInfo_pdfshuffler = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "pdfshuffler",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"sf-xpaint"},
+		"pdfshuffler"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

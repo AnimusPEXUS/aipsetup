@@ -13,10 +13,6 @@ var DistroPackageInfo_rdesktop = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/rdesktop",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rdesktop",
-	Filters:               []string{},
-
 	BuilderName: "rdesktop",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_rdesktop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "rdesktop",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"rdesktop"},
 	TarballProviderUseCache:         false,

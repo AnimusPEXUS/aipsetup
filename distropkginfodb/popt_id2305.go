@@ -13,10 +13,6 @@ var DistroPackageInfo_popt = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.rpm5.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "popt",
-	Filters:               []string{},
-
 	BuilderName: "popt",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_popt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "popt",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

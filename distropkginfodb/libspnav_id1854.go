@@ -13,10 +13,6 @@ var DistroPackageInfo_libspnav = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/spacenav",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libspnav",
-	Filters:               []string{},
-
 	BuilderName: "libspnav",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libspnav = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libspnav",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"spacenav"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_libjpeg_turbo = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/libjpeg-turbo",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libjpeg-turbo",
-	Filters:               []string{},
-
 	BuilderName: "libjpeg_turbo",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libjpeg_turbo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libjpeg-turbo",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libjpeg-turbo"},
 	TarballProviderUseCache:         false,

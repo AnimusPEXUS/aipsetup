@@ -13,10 +13,6 @@ var DistroPackageInfo_emacs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "emacs",
-	Filters:               []string{},
-
 	BuilderName: "emacs",
 
 	Removable:          false,
@@ -34,6 +30,9 @@ var DistroPackageInfo_emacs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "emacs",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

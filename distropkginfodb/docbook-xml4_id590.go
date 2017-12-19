@@ -13,10 +13,6 @@ var DistroPackageInfo_docbook_xml4 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "docbook-xml",
-	Filters:               []string{},
-
 	BuilderName: "docbook_xml4",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_docbook_xml4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "docbook-xml",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_json_c = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.metaparadigm.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "json-c",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_json_c = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "json-c",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

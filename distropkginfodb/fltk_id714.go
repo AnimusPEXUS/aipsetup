@@ -13,10 +13,6 @@ var DistroPackageInfo_fltk = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.fltk.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "fltk",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_fltk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "fltk",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

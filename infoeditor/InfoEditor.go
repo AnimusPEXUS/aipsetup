@@ -165,9 +165,6 @@ func (self *InfoEditor) RenderInfoFileText(
 		self.MakeVariableName(pkgname),
 		self.AsMultiline(info.Description),
 		self.AsSingleline(info.HomePage),
-		self.AsSingleline(info.TarballFileNameParser),
-		self.AsSingleline(info.TarballName),
-		self.AsStringSlice(info.Filters),
 
 		self.AsSingleline(info.BuilderName),
 
@@ -185,6 +182,9 @@ func (self *InfoEditor) RenderInfoFileText(
 
 		self.AsSingleline(info.TarballVersionTool),
 
+		self.AsStringSlice(info.Filters),
+		self.AsSingleline(info.TarballName),
+		self.AsSingleline(info.TarballFileNameParser),
 		self.AsSingleline(info.TarballProvider),
 		self.AsStringSlice(info.TarballProviderArguments),
 		info.TarballProviderUseCache,

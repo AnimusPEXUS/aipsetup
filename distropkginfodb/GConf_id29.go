@@ -15,10 +15,6 @@ var DistroPackageInfo_GConf = &basictypes.PackageInfo{
 can't depricate: used by ibus`,
 	HomePage: "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "GConf",
-	Filters:               []string{},
-
 	BuilderName: "gconf",
 
 	Removable:          true,
@@ -36,7 +32,10 @@ can't depricate: used by ibus`,
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "GConf",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"GConf"},
 	TarballProviderUseCache:         false,

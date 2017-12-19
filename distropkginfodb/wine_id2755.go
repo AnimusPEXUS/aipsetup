@@ -13,10 +13,6 @@ var DistroPackageInfo_wine = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/wine",
 
-	TarballFileNameParser: "std",
-	TarballName:           "wine",
-	Filters:               []string{},
-
 	BuilderName: "wine",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_wine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "wine",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"wine"},
 	TarballProviderUseCache:         false,

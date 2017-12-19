@@ -13,10 +13,6 @@ var DistroPackageInfo_ftgl = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/ftgl",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ftgl",
-	Filters:               []string{},
-
 	BuilderName: "ftgl",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_ftgl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "ftgl",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"ftgl"},
 	TarballProviderUseCache:         false,

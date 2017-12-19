@@ -13,10 +13,6 @@ var DistroPackageInfo_sysvinit = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.cistron.nl",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sysvinit",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_sysvinit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sysvinit",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

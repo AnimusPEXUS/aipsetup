@@ -13,10 +13,6 @@ var DistroPackageInfo_pdfedit = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/pdfedit",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pdfedit",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_pdfedit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "pdfedit",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"pdfedit"},
 	TarballProviderUseCache:         false,

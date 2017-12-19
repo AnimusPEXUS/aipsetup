@@ -13,10 +13,6 @@ var DistroPackageInfo_lua = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.lua.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "lua",
-	Filters:               []string{},
-
 	BuilderName: "lua",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_lua = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "lua",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

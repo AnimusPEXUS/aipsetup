@@ -13,10 +13,6 @@ var DistroPackageInfo_exim = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.exim.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "exim",
-	Filters:               []string{},
-
 	BuilderName: "exim",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_exim = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "exim",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

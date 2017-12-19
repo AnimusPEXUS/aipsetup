@@ -13,10 +13,6 @@ var DistroPackageInfo_js185 = &basictypes.PackageInfo{
 	Description: `deprecated. for polkit-112 use mozjs17`,
 	HomePage:    "http://mozilla.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "js185",
-	Filters:               []string{},
-
 	BuilderName: "js185",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_js185 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "js185",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_waf = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "waf",
-	Filters:               []string{},
-
 	BuilderName: "waf",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_waf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "waf",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

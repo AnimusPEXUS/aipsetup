@@ -13,10 +13,6 @@ var DistroPackageInfo_apache_couchdb = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "apache-couchdb",
-	Filters:               []string{},
-
 	BuilderName: "couchdb",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_apache_couchdb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "apache-couchdb",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

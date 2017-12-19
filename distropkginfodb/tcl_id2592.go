@@ -13,10 +13,6 @@ var DistroPackageInfo_tcl = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/tcl",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tcl",
-	Filters:               []string{},
-
 	BuilderName: "tcltk",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_tcl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "tcl",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"tcl"},
 	TarballProviderUseCache:         false,

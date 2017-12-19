@@ -13,10 +13,6 @@ var DistroPackageInfo_audacity = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://http://audacityteam.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "audacity-minsrc",
-	Filters:               []string{},
-
 	BuilderName: "audacity",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_audacity = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "audacity-minsrc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_aria2 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "aria2",
-	Filters:               []string{},
-
 	BuilderName: "aria2",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_aria2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "aria2",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

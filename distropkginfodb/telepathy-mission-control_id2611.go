@@ -13,10 +13,6 @@ var DistroPackageInfo_telepathy_mission_control = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.freedesktop.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "telepathy-mission-control",
-	Filters:               []string{},
-
 	BuilderName: "telepathy_mission_control",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_telepathy_mission_control = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "telepathy-mission-control",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

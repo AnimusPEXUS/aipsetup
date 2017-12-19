@@ -14,10 +14,6 @@ var DistroPackageInfo_cryptsetup = &basictypes.PackageInfo{
 `,
 	HomePage: "https://code.google.com/p/cryptsetup/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cryptsetup",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -35,6 +31,9 @@ var DistroPackageInfo_cryptsetup = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "cryptsetup",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

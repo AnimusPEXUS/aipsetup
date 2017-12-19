@@ -13,10 +13,6 @@ var DistroPackageInfo_autogen = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "autogen",
-	Filters:               []string{},
-
 	BuilderName: "autogen",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_autogen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "autogen",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

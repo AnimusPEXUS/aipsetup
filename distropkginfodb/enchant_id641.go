@@ -13,10 +13,6 @@ var DistroPackageInfo_enchant = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.abisource.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "enchant",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_enchant = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "enchant",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

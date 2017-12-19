@@ -13,10 +13,6 @@ var DistroPackageInfo_colord = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://freedesktop.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "colord",
-	Filters:               []string{},
-
 	BuilderName: "colord",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_colord = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "colord",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

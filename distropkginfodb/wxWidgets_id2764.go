@@ -13,10 +13,6 @@ var DistroPackageInfo_wxWidgets = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/wxwindows",
 
-	TarballFileNameParser: "std",
-	TarballName:           "wxWidgets",
-	Filters:               []string{},
-
 	BuilderName: "wxwidgets",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_wxWidgets = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "wxWidgets",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"wxwindows"},
 	TarballProviderUseCache:         false,

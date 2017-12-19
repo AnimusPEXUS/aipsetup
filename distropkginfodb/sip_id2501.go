@@ -13,10 +13,6 @@ var DistroPackageInfo_sip = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/pyqt",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sip",
-	Filters:               []string{},
-
 	BuilderName: "sip",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_sip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "sip",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"pyqt"},
 	TarballProviderUseCache:         false,

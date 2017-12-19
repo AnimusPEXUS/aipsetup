@@ -13,10 +13,6 @@ var DistroPackageInfo_pyqt5 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/pyqt",
 
-	TarballFileNameParser: "std",
-	TarballName:           "PyQt-gpl",
-	Filters:               []string{},
-
 	BuilderName: "pyqt",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_pyqt5 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "PyQt-gpl",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"pyqt"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_jack_rack = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/jack-rack",
 
-	TarballFileNameParser: "std",
-	TarballName:           "jack-rack",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_jack_rack = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "jack-rack",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"jack-rack"},
 	TarballProviderUseCache:         false,

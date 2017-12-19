@@ -13,10 +13,6 @@ var DistroPackageInfo_libnfnetlink = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.netfilter.org/projects/libnfnetlink/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libnfnetlink",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libnfnetlink = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libnfnetlink",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

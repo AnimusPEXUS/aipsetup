@@ -13,10 +13,6 @@ var DistroPackageInfo_bogofilter = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/bogofilter",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bogofilter",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_bogofilter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "bogofilter",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"bogofilter"},
 	TarballProviderUseCache:         false,

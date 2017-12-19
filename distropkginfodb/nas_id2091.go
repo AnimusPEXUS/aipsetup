@@ -13,10 +13,6 @@ var DistroPackageInfo_nas = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/nas",
 
-	TarballFileNameParser: "std",
-	TarballName:           "nas",
-	Filters:               []string{},
-
 	BuilderName: "nas",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_nas = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "nas",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"nas"},
 	TarballProviderUseCache:         false,

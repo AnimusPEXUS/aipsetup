@@ -13,10 +13,6 @@ var DistroPackageInfo_libpcap = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.tcpdump.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libpcap",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libpcap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libpcap",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

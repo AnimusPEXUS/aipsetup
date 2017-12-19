@@ -13,10 +13,6 @@ var DistroPackageInfo_Botan = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Botan",
-	Filters:               []string{},
-
 	BuilderName: "botan",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Botan = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Botan",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

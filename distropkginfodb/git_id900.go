@@ -13,10 +13,6 @@ var DistroPackageInfo_git = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://git-scm.com/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "git",
-	Filters:               []string{},
-
 	BuilderName: "git",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_git = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "git",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

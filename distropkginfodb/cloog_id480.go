@@ -13,10 +13,6 @@ var DistroPackageInfo_cloog = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cloog",
-	Filters:               []string{},
-
 	BuilderName: "cloog",
 
 	Removable:          false,
@@ -34,10 +30,13 @@ var DistroPackageInfo_cloog = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "https",
+	Filters:               []string{},
+	TarballName:           "cloog",
+	TarballFileNameParser: "std",
+	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		"https://www.bastoul.net/cloog/pages/download/"},
 	TarballProviderUseCache:         true,
-	TarballProviderCachePresetName:  "bastoul.net",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

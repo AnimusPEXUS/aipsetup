@@ -13,10 +13,6 @@ var DistroPackageInfo_epiphany = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "epiphany",
-	Filters:               []string{},
-
 	BuilderName: "epiphany",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_epiphany = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "epiphany",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"epiphany"},
 	TarballProviderUseCache:         false,

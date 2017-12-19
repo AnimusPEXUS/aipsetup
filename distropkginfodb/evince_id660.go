@@ -13,10 +13,6 @@ var DistroPackageInfo_evince = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "evince",
-	Filters:               []string{},
-
 	BuilderName: "evince",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_evince = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "evince",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"evince"},
 	TarballProviderUseCache:         false,

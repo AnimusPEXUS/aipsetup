@@ -13,10 +13,6 @@ var DistroPackageInfo_turbovnc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sourceforge.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "turbovnc",
-	Filters:               []string{},
-
 	BuilderName: "turbovnc",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_turbovnc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "turbovnc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_Atlas_Cplusplus = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://worldforge.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Atlas-C",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Atlas_Cplusplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Atlas-C",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

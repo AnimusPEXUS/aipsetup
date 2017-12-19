@@ -13,10 +13,6 @@ var DistroPackageInfo_systemd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "systemd",
-	Filters:               []string{},
-
 	BuilderName: "systemd",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_systemd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "systemd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

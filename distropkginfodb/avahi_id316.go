@@ -13,10 +13,6 @@ var DistroPackageInfo_avahi = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://avahi.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "avahi",
-	Filters:               []string{},
-
 	BuilderName: "avahi",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_avahi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "avahi",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

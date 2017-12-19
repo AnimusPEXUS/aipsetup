@@ -13,10 +13,6 @@ var DistroPackageInfo_xsane = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sane-project.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xsane",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_xsane = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xsane",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

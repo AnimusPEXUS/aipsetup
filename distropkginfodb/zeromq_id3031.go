@@ -13,10 +13,6 @@ var DistroPackageInfo_zeromq = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.zeromq.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "zeromq",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_zeromq = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "zeromq",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

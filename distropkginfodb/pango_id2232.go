@@ -13,10 +13,6 @@ var DistroPackageInfo_pango = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pango",
-	Filters:               []string{},
-
 	BuilderName: "pango",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_pango = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "pango",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"pango"},
 	TarballProviderUseCache:         false,

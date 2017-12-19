@@ -13,10 +13,6 @@ var DistroPackageInfo_fcron = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.free.fr",
 
-	TarballFileNameParser: "std",
-	TarballName:           "fcron",
-	Filters:               []string{},
-
 	BuilderName: "fcron",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_fcron = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "fcron",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

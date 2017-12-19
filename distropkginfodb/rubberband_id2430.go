@@ -13,10 +13,6 @@ var DistroPackageInfo_rubberband = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.breakfastquay.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rubberband",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_rubberband = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "rubberband",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

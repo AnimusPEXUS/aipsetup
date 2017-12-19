@@ -13,10 +13,6 @@ var DistroPackageInfo_libnl = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    " http://www.infradead.org/~tgr/libnl/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libnl",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libnl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libnl",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_libgssglue = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.citi.umich.edu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libgssglue",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libgssglue = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libgssglue",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

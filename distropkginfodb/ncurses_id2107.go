@@ -13,10 +13,6 @@ var DistroPackageInfo_ncurses = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.invisible-island.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ncurses",
-	Filters:               []string{},
-
 	BuilderName: "ncurses",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_ncurses = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ncurses",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

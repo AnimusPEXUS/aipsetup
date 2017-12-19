@@ -13,10 +13,6 @@ var DistroPackageInfo_hamcrest_java = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "hamcrest-java",
-	Filters:               []string{},
-
 	BuilderName: "hamcrest_java",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_hamcrest_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "hamcrest-java",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

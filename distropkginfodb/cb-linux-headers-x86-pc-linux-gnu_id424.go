@@ -13,10 +13,6 @@ var DistroPackageInfo_cb_linux_headers_x86_pc_linux_gnu = &basictypes.PackageInf
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "",
-	Filters:               []string{},
-
 	BuilderName: "linux",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_cb_linux_headers_x86_pc_linux_gnu = &basictypes.PackageInf
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

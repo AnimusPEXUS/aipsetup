@@ -13,10 +13,6 @@ var DistroPackageInfo_miniupnpd = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "miniupnpd",
-	Filters:               []string{},
-
 	BuilderName: "miniupnpd",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_miniupnpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "miniupnpd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

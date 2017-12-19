@@ -13,10 +13,6 @@ var DistroPackageInfo_wvdial = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://alumnit.ca",
 
-	TarballFileNameParser: "std",
-	TarballName:           "wvdial",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_wvdial = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "wvdial",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

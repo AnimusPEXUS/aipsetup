@@ -13,10 +13,6 @@ var DistroPackageInfo_fftw = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.fftw.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "fftw",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_fftw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "fftw",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

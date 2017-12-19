@@ -13,10 +13,6 @@ var DistroPackageInfo_file = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.astron.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "file",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_file = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "file",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

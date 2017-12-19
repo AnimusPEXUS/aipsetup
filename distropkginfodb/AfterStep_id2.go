@@ -14,10 +14,6 @@ var DistroPackageInfo_AfterStep = &basictypes.PackageInfo{
 `,
 	HomePage: "http://www.afterstep.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "AfterStep",
-	Filters:               []string{},
-
 	BuilderName: "None",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_AfterStep = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "AfterStep",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

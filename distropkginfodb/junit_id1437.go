@@ -13,10 +13,6 @@ var DistroPackageInfo_junit = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/junit",
 
-	TarballFileNameParser: "std",
-	TarballName:           "junit",
-	Filters:               []string{},
-
 	BuilderName: "junit",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_junit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "junit",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"junit"},
 	TarballProviderUseCache:         false,

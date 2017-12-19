@@ -13,10 +13,6 @@ var DistroPackageInfo_Gtk2 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/gtk2-perl",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Gtk2",
-	Filters:               []string{},
-
 	BuilderName: "perl_mod",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_Gtk2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "Gtk2",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gtk2-perl"},
 	TarballProviderUseCache:         false,

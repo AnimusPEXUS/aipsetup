@@ -13,10 +13,6 @@ var DistroPackageInfo_iptraf = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.seul.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "iptraf",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_iptraf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "iptraf",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

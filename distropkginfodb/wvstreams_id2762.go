@@ -13,10 +13,6 @@ var DistroPackageInfo_wvstreams = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://alumnit.ca",
 
-	TarballFileNameParser: "std",
-	TarballName:           "wvstreams",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_wvstreams = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "wvstreams",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

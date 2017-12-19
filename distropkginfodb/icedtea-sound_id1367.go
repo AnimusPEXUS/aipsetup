@@ -13,10 +13,6 @@ var DistroPackageInfo_icedtea_sound = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "icedtea-sound",
-	Filters:               []string{},
-
 	BuilderName: "icedtea_sound",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_icedtea_sound = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "icedtea-sound",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_redmine = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.rubyforge.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "redmine",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_redmine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "redmine",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

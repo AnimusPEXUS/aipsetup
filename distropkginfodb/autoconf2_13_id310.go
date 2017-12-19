@@ -13,11 +13,6 @@ var DistroPackageInfo_autoconf2_13 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "autoconf",
-	Filters: []string{
-		"- version-!= 2.13"},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +29,10 @@ var DistroPackageInfo_autoconf2_13 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters: []string{
+		"- version-!= 2.13"},
+	TarballName:                     "autoconf",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

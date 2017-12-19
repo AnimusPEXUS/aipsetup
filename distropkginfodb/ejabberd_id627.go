@@ -13,10 +13,6 @@ var DistroPackageInfo_ejabberd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.ejabberd.im",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ejabberd",
-	Filters:               []string{},
-
 	BuilderName: "ejabberd",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ejabberd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ejabberd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_seamonkey = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.mozilla.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "seamonkey",
-	Filters:               []string{},
-
 	BuilderName: "seamonkey",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_seamonkey = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "seamonkey",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

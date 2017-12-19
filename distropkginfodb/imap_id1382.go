@@ -13,10 +13,6 @@ var DistroPackageInfo_imap = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.cmu.edu",
 
-	TarballFileNameParser: "std",
-	TarballName:           "imap",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_imap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "imap",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

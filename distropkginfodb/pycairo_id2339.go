@@ -13,10 +13,6 @@ var DistroPackageInfo_pycairo = &basictypes.PackageInfo{
 	Description: `required by pygobject`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pycairo",
-	Filters:               []string{},
-
 	BuilderName: "pycairo",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_pycairo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pycairo",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

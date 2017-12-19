@@ -13,10 +13,6 @@ var DistroPackageInfo_SoQt = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.coin3d.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "SoQt",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_SoQt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "SoQt",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

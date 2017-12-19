@@ -13,10 +13,6 @@ var DistroPackageInfo_man = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.ximian.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "man",
-	Filters:               []string{},
-
 	BuilderName: "man",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_man = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "man",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

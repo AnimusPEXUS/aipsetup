@@ -13,10 +13,6 @@ var DistroPackageInfo_qbzr = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.launchpad.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "qbzr",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_qbzr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "qbzr",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

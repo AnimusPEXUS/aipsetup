@@ -13,10 +13,6 @@ var DistroPackageInfo_mysql_connector_java = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.mysql.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mysql-connector-java",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mysql_connector_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mysql-connector-java",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

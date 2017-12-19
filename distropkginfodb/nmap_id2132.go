@@ -13,10 +13,6 @@ var DistroPackageInfo_nmap = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.nmap.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "nmap",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_nmap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "nmap",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

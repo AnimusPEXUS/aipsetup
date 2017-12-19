@@ -13,10 +13,6 @@ var DistroPackageInfo_pptp = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/pptpclient",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pptp",
-	Filters:               []string{},
-
 	BuilderName: "pptp",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_pptp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "pptp",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"pptpclient"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_jpeg = &basictypes.PackageInfo{
 	Description: `use openjpeg1 openjpeg2 and libjpeg-turbo`,
 	HomePage:    "https://sourceforge.net/projects/wxwindows",
 
-	TarballFileNameParser: "std",
-	TarballName:           "jpeg",
-	Filters:               []string{},
-
 	BuilderName: "None",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_jpeg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "jpeg",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"wxwindows"},
 	TarballProviderUseCache:         false,

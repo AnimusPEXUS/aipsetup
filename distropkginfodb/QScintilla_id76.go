@@ -13,10 +13,6 @@ var DistroPackageInfo_QScintilla = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "sf.net/projects/pyqt",
 
-	TarballFileNameParser: "std",
-	TarballName:           "QScintilla",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_QScintilla = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "QScintilla",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

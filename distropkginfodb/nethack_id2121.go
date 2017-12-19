@@ -13,10 +13,6 @@ var DistroPackageInfo_nethack = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/nethack",
 
-	TarballFileNameParser: "std",
-	TarballName:           "nethack",
-	Filters:               []string{},
-
 	BuilderName: "nethack",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_nethack = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "nethack",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"nethack"},
 	TarballProviderUseCache:         false,

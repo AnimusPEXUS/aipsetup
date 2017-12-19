@@ -13,10 +13,6 @@ var DistroPackageInfo_elfutils = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "elfutils",
-	Filters:               []string{},
-
 	BuilderName: "elfutils",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_elfutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "elfutils",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

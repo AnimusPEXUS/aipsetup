@@ -13,10 +13,6 @@ var DistroPackageInfo_rng_tools = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/gkernel",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rng-tools",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_rng_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "rng-tools",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gkernel"},
 	TarballProviderUseCache:         false,

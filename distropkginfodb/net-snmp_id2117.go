@@ -13,10 +13,6 @@ var DistroPackageInfo_net_snmp = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/net-snmp",
 
-	TarballFileNameParser: "std",
-	TarballName:           "net-snmp",
-	Filters:               []string{},
-
 	BuilderName: "net_snmp",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_net_snmp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "net-snmp",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"net-snmp"},
 	TarballProviderUseCache:         false,

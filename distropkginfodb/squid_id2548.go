@@ -13,10 +13,6 @@ var DistroPackageInfo_squid = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.squid-cache.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "squid",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_squid = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "squid",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

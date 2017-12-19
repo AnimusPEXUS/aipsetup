@@ -13,10 +13,6 @@ var DistroPackageInfo_binutils = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "binutils",
-	Filters:               []string{},
-
 	BuilderName: "binutils",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_binutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "binutils",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

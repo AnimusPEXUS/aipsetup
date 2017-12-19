@@ -13,10 +13,6 @@ var DistroPackageInfo_ruby = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.ruby-lang.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ruby",
-	Filters:               []string{},
-
 	BuilderName: "ruby",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ruby = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ruby",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

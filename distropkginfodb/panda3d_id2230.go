@@ -13,10 +13,6 @@ var DistroPackageInfo_panda3d = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "panda3d",
-	Filters:               []string{},
-
 	BuilderName: "panda3d",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_panda3d = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "panda3d",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

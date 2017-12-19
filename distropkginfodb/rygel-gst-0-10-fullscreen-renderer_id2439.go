@@ -13,10 +13,6 @@ var DistroPackageInfo_rygel_gst_0_10_fullscreen_renderer = &basictypes.PackageIn
 	Description: ``,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rygel-gst-0-10-fullscreen-renderer",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_rygel_gst_0_10_fullscreen_renderer = &basictypes.PackageIn
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "rygel-gst-0-10-fullscreen-renderer",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"rygel-gst-0-10-fullscreen-renderer"},
 	TarballProviderUseCache:         false,

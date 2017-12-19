@@ -13,10 +13,6 @@ var DistroPackageInfo_x11vnc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/libvncserver",
 
-	TarballFileNameParser: "std",
-	TarballName:           "x11vnc",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_x11vnc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "x11vnc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libvncserver"},
 	TarballProviderUseCache:         false,

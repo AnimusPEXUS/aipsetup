@@ -13,10 +13,6 @@ var DistroPackageInfo_xinetd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xinetd.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xinetd",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_xinetd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xinetd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

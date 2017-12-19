@@ -13,10 +13,6 @@ var DistroPackageInfo_mod_wsgi = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.google.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mod_wsgi",
-	Filters:               []string{},
-
 	BuilderName: "mod_wsgi",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mod_wsgi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mod_wsgi",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

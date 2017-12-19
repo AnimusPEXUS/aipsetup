@@ -13,10 +13,6 @@ var DistroPackageInfo_fop = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://xmlgraphics.apache.org/fop/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "fop",
-	Filters:               []string{},
-
 	BuilderName: "fop",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_fop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "fop",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

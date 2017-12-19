@@ -13,10 +13,6 @@ var DistroPackageInfo_pipelight = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pipelight",
-	Filters:               []string{},
-
 	BuilderName: "pipelight",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_pipelight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pipelight",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

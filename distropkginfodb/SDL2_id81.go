@@ -13,10 +13,6 @@ var DistroPackageInfo_SDL2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "SDL2",
-	Filters:               []string{},
-
 	BuilderName: "SDL2",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_SDL2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "SDL2",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

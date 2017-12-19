@@ -13,10 +13,6 @@ var DistroPackageInfo_lame = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/lame",
 
-	TarballFileNameParser: "std",
-	TarballName:           "lame",
-	Filters:               []string{},
-
 	BuilderName: "lame",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_lame = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "lame",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"lame"},
 	TarballProviderUseCache:         false,

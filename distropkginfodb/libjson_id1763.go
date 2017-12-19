@@ -13,10 +13,6 @@ var DistroPackageInfo_libjson = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/libjson",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libjson",
-	Filters:               []string{},
-
 	BuilderName: "libjson",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libjson = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libjson",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libjson"},
 	TarballProviderUseCache:         false,

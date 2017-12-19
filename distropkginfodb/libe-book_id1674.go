@@ -13,10 +13,6 @@ var DistroPackageInfo_libe_book = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/libebook",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libe-book",
-	Filters:               []string{},
-
 	BuilderName: "libe_book",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libe_book = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libe-book",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libebook"},
 	TarballProviderUseCache:         false,

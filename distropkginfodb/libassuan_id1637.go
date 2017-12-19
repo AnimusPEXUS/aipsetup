@@ -13,10 +13,6 @@ var DistroPackageInfo_libassuan = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnupg.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libassuan",
-	Filters:               []string{},
-
 	BuilderName: "libassuan",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libassuan = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libassuan",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

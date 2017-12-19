@@ -13,10 +13,6 @@ var DistroPackageInfo_dmapi = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sgi.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dmapi",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_dmapi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "dmapi",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

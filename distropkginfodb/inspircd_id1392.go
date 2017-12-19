@@ -13,10 +13,6 @@ var DistroPackageInfo_inspircd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://github.com/legoscia/ejabberd-ircd",
 
-	TarballFileNameParser: "std",
-	TarballName:           "inspircd",
-	Filters:               []string{},
-
 	BuilderName: "inspircd",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_inspircd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "inspircd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

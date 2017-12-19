@@ -13,10 +13,6 @@ var DistroPackageInfo_dhcp = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.isc.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dhcp",
-	Filters:               []string{},
-
 	BuilderName: "dhcp",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_dhcp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "dhcp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

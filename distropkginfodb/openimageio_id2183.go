@@ -13,10 +13,6 @@ var DistroPackageInfo_openimageio = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "openimageio",
-	Filters:               []string{},
-
 	BuilderName: "openimageio",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_openimageio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "openimageio",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

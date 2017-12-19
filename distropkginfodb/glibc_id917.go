@@ -13,10 +13,6 @@ var DistroPackageInfo_glibc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "glibc",
-	Filters:               []string{},
-
 	BuilderName: "glibc",
 
 	Removable:          false,
@@ -34,6 +30,9 @@ var DistroPackageInfo_glibc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "glibc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

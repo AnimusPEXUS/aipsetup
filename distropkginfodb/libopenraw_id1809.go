@@ -13,10 +13,6 @@ var DistroPackageInfo_libopenraw = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libopenraw",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libopenraw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libopenraw",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

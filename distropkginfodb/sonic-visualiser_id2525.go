@@ -13,10 +13,6 @@ var DistroPackageInfo_sonic_visualiser = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/sv1",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sonic-visualiser",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_sonic_visualiser = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "sonic-visualiser",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"sv1"},
 	TarballProviderUseCache:         false,

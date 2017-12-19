@@ -13,10 +13,6 @@ var DistroPackageInfo_openjdk8 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sun.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "jdk",
-	Filters:               []string{},
-
 	BuilderName: "openjdk8",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_openjdk8 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "jdk",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

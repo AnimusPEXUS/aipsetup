@@ -13,10 +13,6 @@ var DistroPackageInfo_QScintilla2 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/pyqt",
 
-	TarballFileNameParser: "std",
-	TarballName:           "QScintilla-gpl",
-	Filters:               []string{},
-
 	BuilderName: "qscintilla",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_QScintilla2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "QScintilla-gpl",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"pyqt"},
 	TarballProviderUseCache:         false,

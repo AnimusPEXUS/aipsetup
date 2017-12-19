@@ -13,10 +13,6 @@ var DistroPackageInfo_eject = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.geocities.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "eject",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_eject = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "eject",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

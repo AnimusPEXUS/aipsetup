@@ -13,10 +13,6 @@ var DistroPackageInfo_subversion = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.apache.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "subversion",
-	Filters:               []string{},
-
 	BuilderName: "subversion",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_subversion = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "subversion",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

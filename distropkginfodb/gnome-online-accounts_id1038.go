@@ -13,10 +13,6 @@ var DistroPackageInfo_gnome_online_accounts = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnome-online-accounts",
-	Filters:               []string{},
-
 	BuilderName: "gnome_online_accounts",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gnome_online_accounts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gnome-online-accounts",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gnome-online-accounts"},
 	TarballProviderUseCache:         false,

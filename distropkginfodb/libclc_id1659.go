@@ -13,10 +13,6 @@ var DistroPackageInfo_libclc = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/libclc",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libclc",
-	Filters:               []string{},
-
 	BuilderName: "std_configure_py2",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libclc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libclc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libclc"},
 	TarballProviderUseCache:         false,

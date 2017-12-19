@@ -13,10 +13,6 @@ var DistroPackageInfo_tzdata = &basictypes.PackageInfo{
 	Description: `required by glibc`,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tzdata",
-	Filters:               []string{},
-
 	BuilderName: "tzdata",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_tzdata = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "tzdata",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

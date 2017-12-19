@@ -13,10 +13,6 @@ var DistroPackageInfo_asciidoc = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/asciidoc",
 
-	TarballFileNameParser: "std",
-	TarballName:           "asciidoc",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_asciidoc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "asciidoc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"asciidoc"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_nbxmpp = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://python-nbxmpp.gajim.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "nbxmpp",
-	Filters:               []string{},
-
 	BuilderName: "std_pythons",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_nbxmpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "nbxmpp",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

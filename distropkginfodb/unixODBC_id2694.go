@@ -13,10 +13,6 @@ var DistroPackageInfo_unixODBC = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://unixodbc.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "unixODBC",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_unixODBC = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "unixODBC",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

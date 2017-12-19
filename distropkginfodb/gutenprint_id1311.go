@@ -13,10 +13,6 @@ var DistroPackageInfo_gutenprint = &basictypes.PackageInfo{
 	Description: `None`,
 	HomePage:    "https://sourceforge.net/projects/gimp-print",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gutenprint",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gutenprint = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "gutenprint",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gimp-print"},
 	TarballProviderUseCache:         false,

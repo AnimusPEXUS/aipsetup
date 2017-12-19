@@ -13,10 +13,6 @@ var DistroPackageInfo_mlt = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/mlt",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mlt",
-	Filters:               []string{},
-
 	BuilderName: "mlt",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_mlt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "mlt",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"mlt"},
 	TarballProviderUseCache:         false,

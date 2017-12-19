@@ -13,10 +13,6 @@ var DistroPackageInfo_module_init_tools = &basictypes.PackageInfo{
 	Description: `use kmod`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "module-init-tools",
-	Filters:               []string{},
-
 	BuilderName: "moduleinittools",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_module_init_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "module-init-tools",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

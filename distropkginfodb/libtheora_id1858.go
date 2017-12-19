@@ -13,10 +13,6 @@ var DistroPackageInfo_libtheora = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.xiph.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libtheora",
-	Filters:               []string{},
-
 	BuilderName: "libtheora",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libtheora = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libtheora",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

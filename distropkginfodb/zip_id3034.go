@@ -13,10 +13,6 @@ var DistroPackageInfo_zip = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/infozip",
 
-	TarballFileNameParser: "std",
-	TarballName:           "zip",
-	Filters:               []string{},
-
 	BuilderName: "infozip",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_zip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "zip",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"infozip"},
 	TarballProviderUseCache:         false,

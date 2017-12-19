@@ -13,10 +13,6 @@ var DistroPackageInfo_jack0 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.jackaudio.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "jack",
-	Filters:               []string{},
-
 	BuilderName: "jack",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_jack0 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "jack",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

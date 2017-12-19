@@ -13,10 +13,6 @@ var DistroPackageInfo_hostname = &basictypes.PackageInfo{
 	Description: `use hostname from inetutils`,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "hostname",
-	Filters:               []string{},
-
 	BuilderName: "hostname",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_hostname = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "hostname",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

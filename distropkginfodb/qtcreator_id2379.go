@@ -13,10 +13,6 @@ var DistroPackageInfo_qtcreator = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "qt-creator-opensource-src",
-	Filters:               []string{},
-
 	BuilderName: "qtcreator",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_qtcreator = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "qt-creator-opensource-src",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

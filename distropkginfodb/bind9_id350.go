@@ -13,10 +13,6 @@ var DistroPackageInfo_bind9 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.isc.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bind",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_bind9 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bind",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_apr_util = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.apache.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "apr-util",
-	Filters:               []string{},
-
 	BuilderName: "apr_util",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_apr_util = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "apr-util",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_eric5 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://eric-ide.python-projects.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "eric5",
-	Filters:               []string{},
-
 	BuilderName: "eric",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_eric5 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "eric5",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

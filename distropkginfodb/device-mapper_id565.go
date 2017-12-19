@@ -13,10 +13,6 @@ var DistroPackageInfo_device_mapper = &basictypes.PackageInfo{
 	Description: `integrated with lvm2`,
 	HomePage:    "http://www.redhat.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "device-mapper",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_device_mapper = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "device-mapper",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_mongodb = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mongodb-src-r",
-	Filters:               []string{},
-
 	BuilderName: "mongodb",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mongodb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mongodb-src-r",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

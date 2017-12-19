@@ -13,10 +13,6 @@ var DistroPackageInfo_libsodium = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "libsodium.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libsodium",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libsodium = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libsodium",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

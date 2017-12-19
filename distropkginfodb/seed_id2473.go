@@ -13,10 +13,6 @@ var DistroPackageInfo_seed = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "seed",
-	Filters:               []string{},
-
 	BuilderName: "seed",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_seed = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "seed",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"seed"},
 	TarballProviderUseCache:         false,

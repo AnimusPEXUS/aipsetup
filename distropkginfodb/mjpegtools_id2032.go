@@ -13,10 +13,6 @@ var DistroPackageInfo_mjpegtools = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/mjpeg",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mjpegtools",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_mjpegtools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "mjpegtools",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"mjpeg"},
 	TarballProviderUseCache:         false,

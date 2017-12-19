@@ -13,10 +13,6 @@ var DistroPackageInfo_orc = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.entropywave.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "orc",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_orc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "orc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

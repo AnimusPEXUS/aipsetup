@@ -13,10 +13,6 @@ var DistroPackageInfo_shadow = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.debian.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "shadow",
-	Filters:               []string{},
-
 	BuilderName: "shadow",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_shadow = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "shadow",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

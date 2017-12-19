@@ -13,10 +13,6 @@ var DistroPackageInfo_Linux_PAM = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Linux-PAM",
-	Filters:               []string{},
-
 	BuilderName: "linux_pam",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_Linux_PAM = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Linux-PAM",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

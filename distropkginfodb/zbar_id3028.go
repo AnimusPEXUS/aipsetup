@@ -13,10 +13,6 @@ var DistroPackageInfo_zbar = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/zbar",
 
-	TarballFileNameParser: "std",
-	TarballName:           "zbar",
-	Filters:               []string{},
-
 	BuilderName: "zbare",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_zbar = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "zbar",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"zbar"},
 	TarballProviderUseCache:         false,

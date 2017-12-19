@@ -13,10 +13,6 @@ var DistroPackageInfo_mysql = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/squirrel-sql",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mysql",
-	Filters:               []string{},
-
 	BuilderName: "mysql",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_mysql = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "mysql",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"squirrel-sql"},
 	TarballProviderUseCache:         false,

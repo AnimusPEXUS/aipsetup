@@ -13,10 +13,6 @@ var DistroPackageInfo_gnustep_back = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnustep.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnustep-back",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gnustep_back = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gnustep-back",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

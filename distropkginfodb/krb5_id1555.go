@@ -13,10 +13,6 @@ var DistroPackageInfo_krb5 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://web.mit.edu/kerberos/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "krb5",
-	Filters:               []string{},
-
 	BuilderName: "krb5",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_krb5 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "krb5",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

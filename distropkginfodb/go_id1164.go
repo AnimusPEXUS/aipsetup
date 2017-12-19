@@ -13,10 +13,6 @@ var DistroPackageInfo_go = &basictypes.PackageInfo{
 	Description: `go is only_primary_install as it's already pretty portable`,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "go",
-	Filters:               []string{},
-
 	BuilderName: "go",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_go = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "go",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

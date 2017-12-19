@@ -13,10 +13,6 @@ var DistroPackageInfo_cal3d = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://gna.org/projects/cal3d/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cal3d",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_cal3d = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "cal3d",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

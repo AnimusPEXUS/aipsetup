@@ -13,10 +13,6 @@ var DistroPackageInfo_llvm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://llvm.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "llvm",
-	Filters:               []string{},
-
 	BuilderName: "llvm",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_llvm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "llvm",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

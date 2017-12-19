@@ -13,10 +13,6 @@ var DistroPackageInfo_lsof = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "lsof",
-	Filters:               []string{},
-
 	BuilderName: "lsof",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_lsof = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "lsof",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

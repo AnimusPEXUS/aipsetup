@@ -13,10 +13,6 @@ var DistroPackageInfo_hdparm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/hdparm",
 
-	TarballFileNameParser: "std",
-	TarballName:           "hdparm",
-	Filters:               []string{},
-
 	BuilderName: "hdparm",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_hdparm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "hdparm",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"hdparm"},
 	TarballProviderUseCache:         false,

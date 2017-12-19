@@ -13,10 +13,6 @@ var DistroPackageInfo_foomatic_filters = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.openprinting.org/download/foomatic",
 
-	TarballFileNameParser: "std",
-	TarballName:           "foomatic-filters",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_foomatic_filters = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "foomatic-filters",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/xfce",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gtk+",
-	Filters:               []string{},
-
 	BuilderName: "gtk3",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "gtk+",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"xfce"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_uwsgi = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "uwsgi",
-	Filters:               []string{},
-
 	BuilderName: "uwsgi",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_uwsgi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "uwsgi",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

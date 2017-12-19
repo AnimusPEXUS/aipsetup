@@ -13,10 +13,6 @@ var DistroPackageInfo_gjs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gjs",
-	Filters:               []string{},
-
 	BuilderName: "gjs",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gjs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gjs",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gjs"},
 	TarballProviderUseCache:         false,

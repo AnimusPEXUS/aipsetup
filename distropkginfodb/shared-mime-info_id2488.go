@@ -13,10 +13,6 @@ var DistroPackageInfo_shared_mime_info = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnome.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "shared-mime-info",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_shared_mime_info = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "shared-mime-info",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

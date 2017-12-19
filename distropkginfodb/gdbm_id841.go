@@ -13,10 +13,6 @@ var DistroPackageInfo_gdbm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gdbm",
-	Filters:               []string{},
-
 	BuilderName: "gdbm",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_gdbm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gdbm",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

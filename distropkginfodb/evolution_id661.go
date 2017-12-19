@@ -13,10 +13,6 @@ var DistroPackageInfo_evolution = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "evolution",
-	Filters:               []string{},
-
 	BuilderName: "evolution",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_evolution = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "evolution",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"evolution"},
 	TarballProviderUseCache:         false,

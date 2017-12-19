@@ -13,10 +13,6 @@ var DistroPackageInfo_pcre2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.csx.cam.ac.uk",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pcre2",
-	Filters:               []string{},
-
 	BuilderName: "pcre",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_pcre2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pcre2",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

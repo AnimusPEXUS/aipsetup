@@ -13,10 +13,6 @@ var DistroPackageInfo_bzip2 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "/www.bzip.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "bzip2",
-	Filters:               []string{},
-
 	BuilderName: "bzip2",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_bzip2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "bzip2",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

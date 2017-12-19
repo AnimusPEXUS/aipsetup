@@ -13,10 +13,6 @@ var DistroPackageInfo_texlive = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "texlive",
-	Filters:               []string{},
-
 	BuilderName: "texlive",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_texlive = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "texlive",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

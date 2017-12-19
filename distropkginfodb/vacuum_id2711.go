@@ -13,10 +13,6 @@ var DistroPackageInfo_vacuum = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.vacuum-im.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "vacuum",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_vacuum = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "vacuum",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

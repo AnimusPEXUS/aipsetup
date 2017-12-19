@@ -13,10 +13,6 @@ var DistroPackageInfo_agg = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.antigrain.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "agg",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_agg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "agg",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

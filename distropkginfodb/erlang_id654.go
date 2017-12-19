@@ -13,10 +13,6 @@ var DistroPackageInfo_erlang = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.erlang.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "otp_src",
-	Filters:               []string{},
-
 	BuilderName: "erlang",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_erlang = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "otp_src",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

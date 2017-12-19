@@ -13,10 +13,6 @@ var DistroPackageInfo_qca = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://delta.affinix.com/qca/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "qca",
-	Filters:               []string{},
-
 	BuilderName: "qca",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_qca = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "qca",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

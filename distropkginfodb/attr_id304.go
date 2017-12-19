@@ -13,10 +13,6 @@ var DistroPackageInfo_attr = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sgi.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "attr",
-	Filters:               []string{},
-
 	BuilderName: "xfs",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_attr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "attr",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

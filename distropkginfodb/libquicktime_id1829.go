@@ -13,10 +13,6 @@ var DistroPackageInfo_libquicktime = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/libquicktime",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libquicktime",
-	Filters:               []string{},
-
 	BuilderName: "libquicktime",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libquicktime = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libquicktime",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libquicktime"},
 	TarballProviderUseCache:         false,

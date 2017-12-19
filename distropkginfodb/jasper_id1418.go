@@ -13,10 +13,6 @@ var DistroPackageInfo_jasper = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.ece.uvic.ca",
 
-	TarballFileNameParser: "std",
-	TarballName:           "jasper",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_jasper = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "jasper",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

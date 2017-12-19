@@ -13,10 +13,6 @@ var DistroPackageInfo_imagemagick = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.imagemagick.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ImageMagick",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_imagemagick = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ImageMagick",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

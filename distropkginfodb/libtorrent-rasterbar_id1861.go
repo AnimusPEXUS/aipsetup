@@ -13,10 +13,6 @@ var DistroPackageInfo_libtorrent_rasterbar = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/libtorrent",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libtorrent-rasterbar",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_libtorrent_rasterbar = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libtorrent-rasterbar",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libtorrent"},
 	TarballProviderUseCache:         false,

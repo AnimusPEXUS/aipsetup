@@ -13,10 +13,6 @@ var DistroPackageInfo_inn = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "inn",
-	Filters:               []string{},
-
 	BuilderName: "inn",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_inn = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "inn",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

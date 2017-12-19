@@ -13,10 +13,6 @@ var DistroPackageInfo_m4 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://gnu.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "m4",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_m4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "m4",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

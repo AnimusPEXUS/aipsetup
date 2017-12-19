@@ -11,11 +11,7 @@ import (
 var DistroPackageInfo_fpc = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/lazarus",
-
-	TarballFileNameParser: "std",
-	TarballName:           "fpc",
-	Filters:               []string{},
+	HomePage:    "https://sourceforge.net/projects/freepascal",
 
 	BuilderName: "fpc",
 
@@ -34,9 +30,12 @@ var DistroPackageInfo_fpc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "fpc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"lazarus"},
+		"freepascal"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

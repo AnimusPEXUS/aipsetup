@@ -13,10 +13,6 @@ var DistroPackageInfo_gimp_gap = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gimp.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gimp-gap",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gimp_gap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gimp-gap",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

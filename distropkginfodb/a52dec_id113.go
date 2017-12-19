@@ -13,10 +13,6 @@ var DistroPackageInfo_a52dec = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://liba52.sourceforge.net/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "a52dec",
-	Filters:               []string{},
-
 	BuilderName: "a52dec",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_a52dec = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "a52dec",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

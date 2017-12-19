@@ -13,10 +13,6 @@ var DistroPackageInfo_wpa_supplicant = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "wpa_supplicant",
-	Filters:               []string{},
-
 	BuilderName: "wpa_supplicant",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_wpa_supplicant = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "wpa_supplicant",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

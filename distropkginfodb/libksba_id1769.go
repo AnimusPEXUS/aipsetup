@@ -13,10 +13,6 @@ var DistroPackageInfo_libksba = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnupg.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libksba",
-	Filters:               []string{},
-
 	BuilderName: "libksba",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_libksba = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libksba",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

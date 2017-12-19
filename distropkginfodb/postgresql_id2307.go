@@ -13,10 +13,6 @@ var DistroPackageInfo_postgresql = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.postgresql.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "postgresql",
-	Filters:               []string{},
-
 	BuilderName: "postgreSQL",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_postgresql = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "postgresql",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

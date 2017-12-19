@@ -13,10 +13,6 @@ var DistroPackageInfo_inetutils = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "inetutils",
-	Filters:               []string{},
-
 	BuilderName: "inetutils",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_inetutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "inetutils",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

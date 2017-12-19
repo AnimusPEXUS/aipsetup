@@ -13,10 +13,6 @@ var DistroPackageInfo_jabberd2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "jabberd",
-	Filters:               []string{},
-
 	BuilderName: "jabberd2",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_jabberd2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "jabberd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_xterm = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.invisible-island.net",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xterm",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_xterm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xterm",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_rp_l2tp = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/rp-l2tp",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rp-l2tp",
-	Filters:               []string{},
-
 	BuilderName: "rpl2tp",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_rp_l2tp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "rp-l2tp",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"rp-l2tp"},
 	TarballProviderUseCache:         false,

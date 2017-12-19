@@ -13,10 +13,6 @@ var DistroPackageInfo_pulseaudio = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pulseaudio",
-	Filters:               []string{},
-
 	BuilderName: "pulseaudio",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_pulseaudio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pulseaudio",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

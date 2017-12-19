@@ -13,10 +13,6 @@ var DistroPackageInfo_rxvt = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rxvt",
-	Filters:               []string{},
-
 	BuilderName: "rxvt",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_rxvt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "rxvt",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_docbook2X = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/docbook2x",
 
-	TarballFileNameParser: "std",
-	TarballName:           "docbook2X",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_docbook2X = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "docbook2X",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"docbook2x"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_wayland = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "wayland",
-	Filters:               []string{},
-
 	BuilderName: "wayland",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_wayland = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "wayland",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

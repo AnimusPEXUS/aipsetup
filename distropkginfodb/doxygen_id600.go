@@ -13,10 +13,6 @@ var DistroPackageInfo_doxygen = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/doxygen",
 
-	TarballFileNameParser: "std",
-	TarballName:           "doxygen",
-	Filters:               []string{},
-
 	BuilderName: "doxygen",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_doxygen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "doxygen",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"doxygen"},
 	TarballProviderUseCache:         false,

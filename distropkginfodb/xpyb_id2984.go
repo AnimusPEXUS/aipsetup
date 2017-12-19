@@ -13,10 +13,6 @@ var DistroPackageInfo_xpyb = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "xpyb",
-	Filters:               []string{},
-
 	BuilderName: "xpyb",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_xpyb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "xpyb",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

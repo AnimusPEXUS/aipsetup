@@ -13,10 +13,6 @@ var DistroPackageInfo_pcre = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/qpdf",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pcre",
-	Filters:               []string{},
-
 	BuilderName: "pcre",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_pcre = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "pcre",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"qpdf"},
 	TarballProviderUseCache:         false,

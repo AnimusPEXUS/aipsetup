@@ -13,10 +13,6 @@ var DistroPackageInfo_gaupol = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gaupol",
-	Filters:               []string{},
-
 	BuilderName: "std_pythons",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gaupol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gaupol",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_ipsec_tools = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/ipsec-tools",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ipsec-tools",
-	Filters:               []string{},
-
 	BuilderName: "ipsec_tools",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_ipsec_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "ipsec-tools",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"ipsec-tools"},
 	TarballProviderUseCache:         false,

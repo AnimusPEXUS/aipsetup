@@ -13,10 +13,6 @@ var DistroPackageInfo_exempi = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://freedesktop.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "exempi",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_exempi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "exempi",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

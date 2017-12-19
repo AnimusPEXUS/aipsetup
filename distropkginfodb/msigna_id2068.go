@@ -13,10 +13,6 @@ var DistroPackageInfo_msigna = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "msigna",
-	Filters:               []string{},
-
 	BuilderName: "std_qmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_msigna = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "msigna",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

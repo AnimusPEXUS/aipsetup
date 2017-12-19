@@ -13,10 +13,6 @@ var DistroPackageInfo_ntfs_3g_ntfsprogs = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.tuxera.com/community/ntfs-3g-download/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ntfs-3g_ntfsprogs",
-	Filters:               []string{},
-
 	BuilderName: "ntfs3gntfsprogs",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_ntfs_3g_ntfsprogs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ntfs-3g_ntfsprogs",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

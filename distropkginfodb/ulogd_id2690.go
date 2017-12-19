@@ -13,10 +13,6 @@ var DistroPackageInfo_ulogd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.netfilter.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ulogd",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ulogd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ulogd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

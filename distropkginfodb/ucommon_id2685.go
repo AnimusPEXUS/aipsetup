@@ -13,10 +13,6 @@ var DistroPackageInfo_ucommon = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://gnu.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ucommon",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ucommon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ucommon",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

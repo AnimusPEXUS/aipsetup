@@ -13,10 +13,6 @@ var DistroPackageInfo_util_linux = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.kernel.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "util-linux",
-	Filters:               []string{},
-
 	BuilderName: "utillinux",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_util_linux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "util-linux",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

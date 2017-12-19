@@ -13,10 +13,6 @@ var DistroPackageInfo_mozjs24 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mozjs",
-	Filters:               []string{},
-
 	BuilderName: "mozjs",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_mozjs24 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mozjs",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

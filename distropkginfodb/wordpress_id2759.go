@@ -13,10 +13,6 @@ var DistroPackageInfo_wordpress = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.wordpress.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "wordpress",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_wordpress = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "wordpress",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

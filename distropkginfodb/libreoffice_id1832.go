@@ -13,10 +13,6 @@ var DistroPackageInfo_libreoffice = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://libreoffice.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libreoffice",
-	Filters:               []string{},
-
 	BuilderName: "libreoffice",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libreoffice = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libreoffice",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_libproxy = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.google.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libproxy",
-	Filters:               []string{},
-
 	BuilderName: "std_cmake",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libproxy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libproxy",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

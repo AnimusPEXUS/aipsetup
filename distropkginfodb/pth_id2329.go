@@ -14,10 +14,6 @@ var DistroPackageInfo_pth = &basictypes.PackageInfo{
 `,
 	HomePage: "http://www.gnu.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pth",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_pth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pth",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

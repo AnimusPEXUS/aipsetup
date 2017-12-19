@@ -13,10 +13,6 @@ var DistroPackageInfo_blender = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.blender.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "blender",
-	Filters:               []string{},
-
 	BuilderName: "blender",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_blender = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "blender",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

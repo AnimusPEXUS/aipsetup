@@ -13,10 +13,6 @@ var DistroPackageInfo_gst_plugins_base = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gst-plugins-base",
-	Filters:               []string{},
-
 	BuilderName: "gst_plugins_base",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_gst_plugins_base = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "gst-plugins-base",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"gst-plugins-base"},
 	TarballProviderUseCache:         false,

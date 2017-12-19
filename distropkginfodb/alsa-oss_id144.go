@@ -13,10 +13,6 @@ var DistroPackageInfo_alsa_oss = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.alsa-project.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "alsa-oss",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_alsa_oss = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "alsa-oss",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

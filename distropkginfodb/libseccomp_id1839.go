@@ -14,10 +14,6 @@ var DistroPackageInfo_libseccomp = &basictypes.PackageInfo{
 `,
 	HomePage: "https://sourceforge.net/projects/libseccomp",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libseccomp",
-	Filters:               []string{},
-
 	BuilderName: "libseccomp",
 
 	Removable:          true,
@@ -35,7 +31,10 @@ var DistroPackageInfo_libseccomp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "libseccomp",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libseccomp"},
 	TarballProviderUseCache:         false,

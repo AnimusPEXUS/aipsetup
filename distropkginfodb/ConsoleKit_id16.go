@@ -13,10 +13,6 @@ var DistroPackageInfo_ConsoleKit = &basictypes.PackageInfo{
 	Description: `use systemd`,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ConsoleKit",
-	Filters:               []string{},
-
 	BuilderName: "ConsoleKit",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_ConsoleKit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "ConsoleKit",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

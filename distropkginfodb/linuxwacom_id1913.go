@@ -13,10 +13,6 @@ var DistroPackageInfo_linuxwacom = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/linuxwacom",
 
-	TarballFileNameParser: "std",
-	TarballName:           "linuxwacom",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_linuxwacom = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "linuxwacom",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"linuxwacom"},
 	TarballProviderUseCache:         false,

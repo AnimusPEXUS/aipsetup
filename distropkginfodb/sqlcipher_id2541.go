@@ -13,10 +13,6 @@ var DistroPackageInfo_sqlcipher = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sqlcipher",
-	Filters:               []string{},
-
 	BuilderName: "sqlcipher",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_sqlcipher = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sqlcipher",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

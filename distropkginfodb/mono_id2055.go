@@ -13,10 +13,6 @@ var DistroPackageInfo_mono = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.mono-project.com",
 
-	TarballFileNameParser: "std",
-	TarballName:           "mono",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_mono = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "mono",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

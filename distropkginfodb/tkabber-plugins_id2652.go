@@ -13,10 +13,6 @@ var DistroPackageInfo_tkabber_plugins = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "tkabber-plugins",
-	Filters:               []string{},
-
 	BuilderName: "tkabber",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_tkabber_plugins = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "tkabber-plugins",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_isl = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "isl",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          false,
@@ -34,6 +30,9 @@ var DistroPackageInfo_isl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "isl",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

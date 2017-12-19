@@ -13,10 +13,6 @@ var DistroPackageInfo_dev86 = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.debath.co.uk/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Dev86src",
-	Filters:               []string{},
-
 	BuilderName: "dev86",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_dev86 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Dev86src",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_dosbox = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/dosbox",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dosbox",
-	Filters:               []string{},
-
 	BuilderName: "dosbox",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_dosbox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "dosbox",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"dosbox"},
 	TarballProviderUseCache:         false,

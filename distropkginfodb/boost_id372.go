@@ -13,10 +13,6 @@ var DistroPackageInfo_boost = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/boost",
 
-	TarballFileNameParser: "std",
-	TarballName:           "boost",
-	Filters:               []string{},
-
 	BuilderName: "boost",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_boost = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "boost",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"boost"},
 	TarballProviderUseCache:         false,

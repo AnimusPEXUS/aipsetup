@@ -13,10 +13,6 @@ var DistroPackageInfo_nss = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "nss",
-	Filters:               []string{},
-
 	BuilderName: "nss",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_nss = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "nss",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

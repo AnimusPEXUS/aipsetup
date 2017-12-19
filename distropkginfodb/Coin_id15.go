@@ -13,10 +13,6 @@ var DistroPackageInfo_Coin = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.coin3d.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Coin",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_Coin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Coin",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

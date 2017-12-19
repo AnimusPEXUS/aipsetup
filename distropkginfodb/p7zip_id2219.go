@@ -13,10 +13,6 @@ var DistroPackageInfo_p7zip = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/p7zip",
 
-	TarballFileNameParser: "std",
-	TarballName:           "p7zip",
-	Filters:               []string{},
-
 	BuilderName: "p7zip",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_p7zip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "p7zip",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"p7zip"},
 	TarballProviderUseCache:         false,

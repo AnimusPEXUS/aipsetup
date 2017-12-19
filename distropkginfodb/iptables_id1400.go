@@ -13,10 +13,6 @@ var DistroPackageInfo_iptables = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.netfilter.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "iptables",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_iptables = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "iptables",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

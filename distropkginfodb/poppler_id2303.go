@@ -13,10 +13,6 @@ var DistroPackageInfo_poppler = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "poppler",
-	Filters:               []string{},
-
 	BuilderName: "poppler",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_poppler = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "poppler",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

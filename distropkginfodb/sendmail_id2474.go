@@ -13,10 +13,6 @@ var DistroPackageInfo_sendmail = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sendmail.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sendmail",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_sendmail = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sendmail",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

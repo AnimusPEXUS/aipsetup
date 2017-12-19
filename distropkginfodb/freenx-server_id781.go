@@ -13,10 +13,6 @@ var DistroPackageInfo_freenx_server = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.berlios.de",
 
-	TarballFileNameParser: "std",
-	TarballName:           "freenx-server",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_freenx_server = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "freenx-server",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_pcb = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.seul.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pcb",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_pcb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "pcb",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

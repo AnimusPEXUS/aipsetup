@@ -13,10 +13,6 @@ var DistroPackageInfo_FreeImage = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/freeimage",
 
-	TarballFileNameParser: "std",
-	TarballName:           "FreeImage",
-	Filters:               []string{},
-
 	BuilderName: "FreeImage",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_FreeImage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "FreeImage",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"freeimage"},
 	TarballProviderUseCache:         false,

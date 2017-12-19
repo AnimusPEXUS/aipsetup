@@ -13,10 +13,6 @@ var DistroPackageInfo_sane_backends = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.sane-project.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "sane-backends",
-	Filters:               []string{},
-
 	BuilderName: "sane_backends",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_sane_backends = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "sane-backends",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

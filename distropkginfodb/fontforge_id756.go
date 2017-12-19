@@ -13,10 +13,6 @@ var DistroPackageInfo_fontforge = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/fontforge",
 
-	TarballFileNameParser: "std",
-	TarballName:           "fontforge_full",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_fontforge = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "fontforge_full",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"fontforge"},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_neon = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.webdav.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "neon",
-	Filters:               []string{},
-
 	BuilderName: "neon",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_neon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "neon",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

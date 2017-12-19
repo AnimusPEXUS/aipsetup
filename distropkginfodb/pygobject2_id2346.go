@@ -13,10 +13,6 @@ var DistroPackageInfo_pygobject2 = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "pygobject2",
-	Filters:               []string{},
-
 	BuilderName: "pygobject2",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_pygobject2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "pygobject2",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"pygobject2"},
 	TarballProviderUseCache:         false,

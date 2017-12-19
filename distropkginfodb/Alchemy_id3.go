@@ -15,10 +15,6 @@ var DistroPackageInfo_Alchemy = &basictypes.PackageInfo{
 Can't remember :-(`,
 	HomePage: "http://None",
 
-	TarballFileNameParser: "std",
-	TarballName:           "Alchemy",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -35,6 +31,9 @@ Can't remember :-(`,
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "Alchemy",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

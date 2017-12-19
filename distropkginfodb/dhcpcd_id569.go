@@ -13,10 +13,6 @@ var DistroPackageInfo_dhcpcd = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://roy.marples.name",
 
-	TarballFileNameParser: "std",
-	TarballName:           "dhcpcd",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_dhcpcd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "dhcpcd",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

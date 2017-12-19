@@ -13,10 +13,6 @@ var DistroPackageInfo_zlib = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/libpng",
 
-	TarballFileNameParser: "std",
-	TarballName:           "zlib",
-	Filters:               []string{},
-
 	BuilderName: "zlib",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_zlib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "zlib",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"libpng"},
 	TarballProviderUseCache:         false,

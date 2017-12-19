@@ -13,10 +13,6 @@ var DistroPackageInfo_glew = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/glew",
 
-	TarballFileNameParser: "std",
-	TarballName:           "glew",
-	Filters:               []string{},
-
 	BuilderName: "glew",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_glew = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "glew",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"glew"},
 	TarballProviderUseCache:         false,

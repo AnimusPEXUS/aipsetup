@@ -13,10 +13,6 @@ var DistroPackageInfo_samba = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.samba.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "samba",
-	Filters:               []string{},
-
 	BuilderName: "samba",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_samba = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "samba",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_gnunet_gtk = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.gnunet.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnunet-gtk",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gnunet_gtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gnunet-gtk",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_libxfce4util = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "libxfce4util",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_libxfce4util = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "libxfce4util",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

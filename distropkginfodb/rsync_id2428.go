@@ -13,10 +13,6 @@ var DistroPackageInfo_rsync = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.samba.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rsync",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_rsync = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "rsync",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

@@ -13,10 +13,6 @@ var DistroPackageInfo_cairo = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.freedesktop.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cairo",
-	Filters:               []string{},
-
 	BuilderName: "cairo",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_cairo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "cairo",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

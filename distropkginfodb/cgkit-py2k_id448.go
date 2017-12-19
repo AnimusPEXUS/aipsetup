@@ -13,10 +13,6 @@ var DistroPackageInfo_cgkit_py2k = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://sourceforge.net/projects/cgkit",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cgkit",
-	Filters:               []string{},
-
 	BuilderName: "None",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_cgkit_py2k = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "cgkit",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"cgkit"},
 	TarballProviderUseCache:         false,

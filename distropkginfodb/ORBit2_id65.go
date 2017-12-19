@@ -20,10 +20,6 @@ required by gconf
 deprecated! use --disable-orbit for GConf`,
 	HomePage: "https://gnome.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "ORBit2",
-	Filters:               []string{},
-
 	BuilderName: "orbit2",
 
 	Removable:          true,
@@ -41,7 +37,10 @@ deprecated! use --disable-orbit for GConf`,
 
 	TarballVersionTool: "gnome",
 
-	TarballProvider: "gnome",
+	Filters:               []string{},
+	TarballName:           "ORBit2",
+	TarballFileNameParser: "std",
+	TarballProvider:       "gnome",
 	TarballProviderArguments: []string{
 		"ORBit2"},
 	TarballProviderUseCache:         false,

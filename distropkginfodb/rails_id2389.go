@@ -13,10 +13,6 @@ var DistroPackageInfo_rails = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.rubyforge.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rails",
-	Filters:               []string{},
-
 	BuilderName: "",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_rails = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "rails",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

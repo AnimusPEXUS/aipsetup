@@ -13,10 +13,6 @@ var DistroPackageInfo_clisp_2_29_i686_unknown_cygwin_nt_5_0 = &basictypes.Packag
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "clisp-2.29-i686-unknown-cygwin_nt-5.0",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_clisp_2_29_i686_unknown_cygwin_nt_5_0 = &basictypes.Packag
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "clisp-2.29-i686-unknown-cygwin_nt-5.0",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

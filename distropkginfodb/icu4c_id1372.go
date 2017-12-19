@@ -13,10 +13,6 @@ var DistroPackageInfo_icu4c = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.icu-project.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "icu4c",
-	Filters:               []string{},
-
 	BuilderName: "icu4c",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_icu4c = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "icu4c",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

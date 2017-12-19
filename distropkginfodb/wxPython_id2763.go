@@ -13,10 +13,6 @@ var DistroPackageInfo_wxPython = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/wxpython",
 
-	TarballFileNameParser: "std",
-	TarballName:           "wxPython-src",
-	Filters:               []string{},
-
 	BuilderName: "None",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_wxPython = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "wxPython-src",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"wxpython"},
 	TarballProviderUseCache:         false,

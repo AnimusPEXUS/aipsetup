@@ -13,10 +13,6 @@ var DistroPackageInfo_thunderbird = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "",
 
-	TarballFileNameParser: "std",
-	TarballName:           "thunderbird",
-	Filters:               []string{},
-
 	BuilderName: "thunderbird",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_thunderbird = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "thunderbird",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

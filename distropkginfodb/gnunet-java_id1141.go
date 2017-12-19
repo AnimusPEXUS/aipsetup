@@ -13,10 +13,6 @@ var DistroPackageInfo_gnunet_java = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "http://www.gnunet.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "gnunet-java",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_gnunet_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "gnunet-java",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

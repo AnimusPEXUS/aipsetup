@@ -13,10 +13,6 @@ var DistroPackageInfo_rustc = &basictypes.PackageInfo{
 	Description: ``,
 	HomePage:    "https://www.rust-lang.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "rustc",
-	Filters:               []string{},
-
 	BuilderName: "rustc",
 
 	Removable:          true,
@@ -33,6 +29,9 @@ var DistroPackageInfo_rustc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "rustc",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

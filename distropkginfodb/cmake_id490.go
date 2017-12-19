@@ -13,10 +13,6 @@ var DistroPackageInfo_cmake = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.cmake.org",
 
-	TarballFileNameParser: "std",
-	TarballName:           "cmake",
-	Filters:               []string{},
-
 	BuilderName: "cmake",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_cmake = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "cmake",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

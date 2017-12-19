@@ -13,10 +13,6 @@ var DistroPackageInfo_qemu = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "https://sourceforge.net/projects/gns-3",
 
-	TarballFileNameParser: "std",
-	TarballName:           "qemu",
-	Filters:               []string{},
-
 	BuilderName: "qemu",
 
 	Removable:          true,
@@ -34,7 +30,10 @@ var DistroPackageInfo_qemu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider: "sf",
+	Filters:               []string{},
+	TarballName:           "qemu",
+	TarballFileNameParser: "std",
+	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		"gns-3"},
 	TarballProviderUseCache:         false,

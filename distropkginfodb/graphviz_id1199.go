@@ -13,10 +13,6 @@ var DistroPackageInfo_graphviz = &basictypes.PackageInfo{
 	Description: `write something here, please`,
 	HomePage:    "http://www.graphviz.org/",
 
-	TarballFileNameParser: "std",
-	TarballName:           "graphviz",
-	Filters:               []string{},
-
 	BuilderName: "std",
 
 	Removable:          true,
@@ -34,6 +30,9 @@ var DistroPackageInfo_graphviz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
+	Filters:                         []string{},
+	TarballName:                     "graphviz",
+	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,
