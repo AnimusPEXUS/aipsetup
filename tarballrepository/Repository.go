@@ -1,14 +1,15 @@
 package tarballrepository
 
 import (
+	"errors"
 	"io/ioutil"
+	"net/url"
 	"os"
 	"os/exec"
 	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository/cachepresets"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
@@ -41,7 +42,11 @@ func (self *Repository) GetPackageTarballsPath(name string) string {
 }
 
 func (self *Repository) GetPackageCachePath(name string) string {
-	return path.Join(self.GetCachesDir(), name)
+	return path.Join(self.GetCachesDir(), "individual", name)
+}
+
+func (self *Repository) GetDedicatedCachePath(name string) string {
+	return path.Join(self.GetCachesDir(), "dedicated", name)
 }
 
 func (self *Repository) CreateCacheObjectForPackage(name string) (
@@ -55,14 +60,35 @@ func (self *Repository) CreateCacheObjectForPackage(name string) (
 
 	var preset *cache01.Settings
 
-	if i, err :=
-		cachepresets.Get(info.TarballProviderCachePresetName); err != nil {
-		return nil, err
-	} else {
-		preset = i
+	switch info.TarballProviderCachePresetName {
+	default:
+		return nil, errors.New("unknown cache preset name")
+	case "":
+		fallthrough
+	case "personal":
+		return cache01.NewCacheDir(self.GetPackageCachePath(name), preset)
+	case "by_https_host":
+		if info.TarballProvider != "https" {
+			return nil, errors.New("TarballProvider have to be https")
+		}
+
+		if len(info.TarballProviderArguments) == 0 {
+			return nil, errors.New("invalid https provider arguments")
+		}
+
+		u, err := url.Parse(info.TarballProviderArguments[0])
+		if err != nil {
+			return nil, err
+		}
+
+		if u.Host == "" {
+			return nil, errors.New("invalid Host for https provider")
+		}
+
+		return cache01.NewCacheDir(self.GetDedicatedCachePath(u.Host), nil)
 	}
 
-	return cache01.NewCacheDir(self.GetPackageCachePath(name), preset)
+	return nil, errors.New("programming error")
 }
 
 func (self *Repository) PerformPackageTarballsUpdate(name string) error {

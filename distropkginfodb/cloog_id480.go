@@ -34,9 +34,10 @@ var DistroPackageInfo_cloog = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
-	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProvider: "https",
+	TarballProviderArguments: []string{
+		"https://www.bastoul.net/cloog/pages/download/"},
+	TarballProviderUseCache:         true,
+	TarballProviderCachePresetName:  "bastoul.net",
 	TarballProviderVersionSyncDepth: 0,
 }

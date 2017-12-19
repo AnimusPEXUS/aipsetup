@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_quesoglc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/warzone2100",
+	HomePage:    "https://sourceforge.net/projects/quesoglc",
 
 	TarballFileNameParser: "std",
 	TarballName:           "quesoglc",
@@ -36,7 +36,7 @@ var DistroPackageInfo_quesoglc = &basictypes.PackageInfo{
 
 	TarballProvider: "sf",
 	TarballProviderArguments: []string{
-		"warzone2100"},
+		"quesoglc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,
