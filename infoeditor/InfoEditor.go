@@ -214,7 +214,6 @@ func (self *InfoEditor) AsStringSlice(in []string) string {
 func (self *InfoEditor) Edit(index map[string]*basictypes.PackageInfo) error {
 
 	for _, i := range [](func(map[string]*basictypes.PackageInfo) error){
-		//		self.ApplyBuilders,
 
 		self.ApplyGroups,
 
