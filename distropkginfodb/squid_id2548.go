@@ -17,7 +17,7 @@ var DistroPackageInfo_squid = &basictypes.PackageInfo{
 	TarballName:           "squid",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_kolourpaint = &basictypes.PackageInfo{
 	TarballName:           "kolourpaint",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

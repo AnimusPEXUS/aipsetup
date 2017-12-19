@@ -17,7 +17,7 @@ var DistroPackageInfo_erlang = &basictypes.PackageInfo{
 	TarballName:           "otp_src",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "erlang",
 
 	Removable:          true,
 	Reducible:          true,

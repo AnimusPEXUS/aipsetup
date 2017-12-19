@@ -17,7 +17,7 @@ var DistroPackageInfo_loggerhead = &basictypes.PackageInfo{
 	TarballName:           "loggerhead",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

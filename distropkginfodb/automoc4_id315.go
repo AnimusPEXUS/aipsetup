@@ -17,7 +17,7 @@ var DistroPackageInfo_automoc4 = &basictypes.PackageInfo{
 	TarballName:           "automoc4",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

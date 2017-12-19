@@ -17,7 +17,7 @@ var DistroPackageInfo_nepomuktvnamer = &basictypes.PackageInfo{
 	TarballName:           "nepomuktvnamer",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

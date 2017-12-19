@@ -17,7 +17,7 @@ var DistroPackageInfo_sqlitecpp = &basictypes.PackageInfo{
 	TarballName:           "sqlitecpp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

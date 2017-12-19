@@ -17,7 +17,7 @@ var DistroPackageInfo_Cg = &basictypes.PackageInfo{
 	TarballName:           "Cg",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "Cg",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_cgkit_py3k = &basictypes.PackageInfo{
 	TarballName:           "cgkit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "cgkit_py3k",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_compiler_rt = &basictypes.PackageInfo{
 	TarballName:           "compiler-rt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm_components",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_libtool = &basictypes.PackageInfo{
 	TarballName:           "libtool",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libtool",
 
 	Removable:          true,
 	Reducible:          true,

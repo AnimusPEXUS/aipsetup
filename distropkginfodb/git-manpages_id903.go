@@ -17,7 +17,7 @@ var DistroPackageInfo_git_manpages = &basictypes.PackageInfo{
 	TarballName:           "git-manpages",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "git_manpages",
 
 	Removable:          true,
 	Reducible:          true,

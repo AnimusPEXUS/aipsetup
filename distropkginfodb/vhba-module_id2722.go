@@ -17,7 +17,7 @@ var DistroPackageInfo_vhba_module = &basictypes.PackageInfo{
 	TarballName:           "vhba-module",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "vhbamodule",
 
 	Removable:          true,
 	Reducible:          true,

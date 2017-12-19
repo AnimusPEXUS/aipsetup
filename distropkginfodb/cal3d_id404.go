@@ -17,7 +17,7 @@ var DistroPackageInfo_cal3d = &basictypes.PackageInfo{
 	TarballName:           "cal3d",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

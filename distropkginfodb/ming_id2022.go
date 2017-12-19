@@ -17,7 +17,7 @@ var DistroPackageInfo_ming = &basictypes.PackageInfo{
 	TarballName:           "ming",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

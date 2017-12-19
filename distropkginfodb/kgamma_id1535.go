@@ -17,7 +17,7 @@ var DistroPackageInfo_kgamma = &basictypes.PackageInfo{
 	TarballName:           "kgamma",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

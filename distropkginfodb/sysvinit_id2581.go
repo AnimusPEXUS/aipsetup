@@ -17,7 +17,7 @@ var DistroPackageInfo_sysvinit = &basictypes.PackageInfo{
 	TarballName:           "sysvinit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

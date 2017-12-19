@@ -17,7 +17,7 @@ var DistroPackageInfo_rhino = &basictypes.PackageInfo{
 	TarballName:           "rhino",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

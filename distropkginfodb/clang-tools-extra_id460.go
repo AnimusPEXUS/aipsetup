@@ -17,7 +17,7 @@ var DistroPackageInfo_clang_tools_extra = &basictypes.PackageInfo{
 	TarballName:           "clang-tools-extra",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm_components",
 
 	Removable:          true,
 	Reducible:          true,

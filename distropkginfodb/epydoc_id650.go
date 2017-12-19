@@ -17,7 +17,7 @@ var DistroPackageInfo_epydoc = &basictypes.PackageInfo{
 	TarballName:           "epydoc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

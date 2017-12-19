@@ -17,7 +17,7 @@ var DistroPackageInfo_jovie = &basictypes.PackageInfo{
 	TarballName:           "jovie",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

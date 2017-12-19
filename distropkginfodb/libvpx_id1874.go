@@ -17,7 +17,7 @@ var DistroPackageInfo_libvpx = &basictypes.PackageInfo{
 	TarballName:           "libvpx",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libvpx",
 
 	Removable:          true,
 	Reducible:          true,

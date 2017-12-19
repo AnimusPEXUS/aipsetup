@@ -17,7 +17,7 @@ var DistroPackageInfo_libxml2 = &basictypes.PackageInfo{
 	TarballName:           "libxml2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libxml2",
 
 	Removable:          true,
 	Reducible:          true,

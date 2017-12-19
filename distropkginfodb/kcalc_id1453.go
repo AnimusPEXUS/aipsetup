@@ -17,7 +17,7 @@ var DistroPackageInfo_kcalc = &basictypes.PackageInfo{
 	TarballName:           "kcalc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_procps_ng = &basictypes.PackageInfo{
 	TarballName:           "procps-ng",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "procps_ng",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_make = &basictypes.PackageInfo{
 	TarballName:           "make",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "make",
 
 	Removable:          true,
 	Reducible:          true,

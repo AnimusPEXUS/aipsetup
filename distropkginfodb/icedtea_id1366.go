@@ -17,7 +17,7 @@ var DistroPackageInfo_icedtea = &basictypes.PackageInfo{
 	TarballName:           "icedtea",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "icedtea",
 
 	Removable:          true,
 	Reducible:          true,

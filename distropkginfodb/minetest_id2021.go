@@ -17,7 +17,7 @@ var DistroPackageInfo_minetest = &basictypes.PackageInfo{
 	TarballName:           "minetest",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

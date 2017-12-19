@@ -17,7 +17,7 @@ var DistroPackageInfo_webkitgtk = &basictypes.PackageInfo{
 	TarballName:           "webkitgtk",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "webkitgtk_cmake",
 
 	Removable:          true,
 	Reducible:          true,

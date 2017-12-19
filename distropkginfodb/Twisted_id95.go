@@ -17,7 +17,7 @@ var DistroPackageInfo_Twisted = &basictypes.PackageInfo{
 	TarballName:           "Twisted",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

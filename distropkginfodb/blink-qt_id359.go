@@ -17,7 +17,7 @@ var DistroPackageInfo_blink_qt = &basictypes.PackageInfo{
 	TarballName:           "blink-qt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

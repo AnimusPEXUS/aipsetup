@@ -17,7 +17,7 @@ var DistroPackageInfo_toluaplusplus = &basictypes.PackageInfo{
 	TarballName:           "tolua++",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

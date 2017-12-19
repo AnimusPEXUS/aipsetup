@@ -17,7 +17,7 @@ var DistroPackageInfo_dosbox = &basictypes.PackageInfo{
 	TarballName:           "dosbox",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "dosbox",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_sox = &basictypes.PackageInfo{
 	TarballName:           "sox",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "sox",
 
 	Removable:          true,
 	Reducible:          true,

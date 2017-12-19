@@ -17,7 +17,7 @@ var DistroPackageInfo_libcanberra = &basictypes.PackageInfo{
 	TarballName:           "libcanberra",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libcanberra",
 
 	Removable:          true,
 	Reducible:          true,

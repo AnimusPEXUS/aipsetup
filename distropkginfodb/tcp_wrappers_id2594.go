@@ -17,7 +17,7 @@ var DistroPackageInfo_tcp_wrappers = &basictypes.PackageInfo{
 	TarballName:           "tcp_wrappers",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "tcp_wrappers",
 
 	Removable:          true,
 	Reducible:          true,

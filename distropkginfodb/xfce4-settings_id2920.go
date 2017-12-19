@@ -17,7 +17,7 @@ var DistroPackageInfo_xfce4_settings = &basictypes.PackageInfo{
 	TarballName:           "xfce4-settings",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

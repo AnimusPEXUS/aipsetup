@@ -17,7 +17,7 @@ var DistroPackageInfo_cmake = &basictypes.PackageInfo{
 	TarballName:           "cmake",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "cmake",
 
 	Removable:          true,
 	Reducible:          true,

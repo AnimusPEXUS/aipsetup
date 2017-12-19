@@ -17,7 +17,7 @@ var DistroPackageInfo_libtirpc = &basictypes.PackageInfo{
 	TarballName:           "libtirpc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libtirpc",
 
 	Removable:          true,
 	Reducible:          true,

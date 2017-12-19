@@ -17,7 +17,7 @@ var DistroPackageInfo_kde_l10n_ca_valencia = &basictypes.PackageInfo{
 	TarballName:           "kde-l10n-ca@valencia",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_rubberband = &basictypes.PackageInfo{
 	TarballName:           "rubberband",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_shared_desktop_ontologies = &basictypes.PackageInfo{
 	TarballName:           "shared-desktop-ontologies",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

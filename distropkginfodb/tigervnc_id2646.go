@@ -17,7 +17,7 @@ var DistroPackageInfo_tigervnc = &basictypes.PackageInfo{
 	TarballName:           "tigervnc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

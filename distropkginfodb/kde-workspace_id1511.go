@@ -17,7 +17,7 @@ var DistroPackageInfo_kde_workspace = &basictypes.PackageInfo{
 	TarballName:           "kde-workspace",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_qtruby = &basictypes.PackageInfo{
 	TarballName:           "qtruby",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

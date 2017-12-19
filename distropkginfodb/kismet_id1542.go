@@ -17,7 +17,7 @@ var DistroPackageInfo_kismet = &basictypes.PackageInfo{
 	TarballName:           "kismet",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "kismet",
 
 	Removable:          true,
 	Reducible:          true,

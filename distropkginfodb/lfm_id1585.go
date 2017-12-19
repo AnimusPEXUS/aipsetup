@@ -17,7 +17,7 @@ var DistroPackageInfo_lfm = &basictypes.PackageInfo{
 	TarballName:           "lfm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_imagick = &basictypes.PackageInfo{
 	TarballName:           "imagick",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

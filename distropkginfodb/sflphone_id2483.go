@@ -17,7 +17,7 @@ var DistroPackageInfo_sflphone = &basictypes.PackageInfo{
 	TarballName:           "sflphone",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

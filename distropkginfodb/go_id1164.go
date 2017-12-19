@@ -17,7 +17,7 @@ var DistroPackageInfo_go = &basictypes.PackageInfo{
 	TarballName:           "go",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "go",
 
 	Removable:          true,
 	Reducible:          true,

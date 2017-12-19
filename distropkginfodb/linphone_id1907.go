@@ -17,7 +17,7 @@ var DistroPackageInfo_linphone = &basictypes.PackageInfo{
 	TarballName:           "linphone",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

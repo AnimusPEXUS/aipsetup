@@ -17,7 +17,7 @@ var DistroPackageInfo_xfce4_session = &basictypes.PackageInfo{
 	TarballName:           "xfce4-session",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

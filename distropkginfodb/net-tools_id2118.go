@@ -17,7 +17,7 @@ var DistroPackageInfo_net_tools = &basictypes.PackageInfo{
 	TarballName:           "net-tools",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

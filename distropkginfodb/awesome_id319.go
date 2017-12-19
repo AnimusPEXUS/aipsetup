@@ -17,7 +17,7 @@ var DistroPackageInfo_awesome = &basictypes.PackageInfo{
 	TarballName:           "awesome",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

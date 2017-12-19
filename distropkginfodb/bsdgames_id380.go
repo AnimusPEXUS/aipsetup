@@ -17,7 +17,7 @@ var DistroPackageInfo_bsdgames = &basictypes.PackageInfo{
 	TarballName:           "bsdgames",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

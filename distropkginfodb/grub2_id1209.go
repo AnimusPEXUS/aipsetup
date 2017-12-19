@@ -17,7 +17,7 @@ var DistroPackageInfo_grub2 = &basictypes.PackageInfo{
 	TarballName:           "grub",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "grub2",
 
 	Removable:          true,
 	Reducible:          true,

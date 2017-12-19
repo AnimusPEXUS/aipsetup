@@ -17,7 +17,7 @@ var DistroPackageInfo_thunderbird = &basictypes.PackageInfo{
 	TarballName:           "thunderbird",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "thunderbird",
 
 	Removable:          true,
 	Reducible:          true,

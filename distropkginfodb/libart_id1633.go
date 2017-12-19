@@ -17,7 +17,7 @@ var DistroPackageInfo_libart = &basictypes.PackageInfo{
 	TarballName:           "libart",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

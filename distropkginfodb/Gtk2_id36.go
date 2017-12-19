@@ -17,7 +17,7 @@ var DistroPackageInfo_Gtk2 = &basictypes.PackageInfo{
 	TarballName:           "Gtk2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

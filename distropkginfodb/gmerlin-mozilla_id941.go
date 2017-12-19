@@ -17,7 +17,7 @@ var DistroPackageInfo_gmerlin_mozilla = &basictypes.PackageInfo{
 	TarballName:           "gmerlin-mozilla",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

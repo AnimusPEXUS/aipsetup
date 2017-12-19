@@ -17,7 +17,7 @@ var DistroPackageInfo_brlcad = &basictypes.PackageInfo{
 	TarballName:           "brlcad",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_rocs = &basictypes.PackageInfo{
 	TarballName:           "rocs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

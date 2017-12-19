@@ -17,7 +17,7 @@ var DistroPackageInfo_ntp = &basictypes.PackageInfo{
 	TarballName:           "ntp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ntp",
 
 	Removable:          true,
 	Reducible:          true,

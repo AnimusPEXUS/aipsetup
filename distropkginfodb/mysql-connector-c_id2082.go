@@ -17,7 +17,7 @@ var DistroPackageInfo_mysql_connector_c = &basictypes.PackageInfo{
 	TarballName:           "mysql-connector-c",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

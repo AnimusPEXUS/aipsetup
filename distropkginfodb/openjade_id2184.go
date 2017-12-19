@@ -17,7 +17,7 @@ var DistroPackageInfo_openjade = &basictypes.PackageInfo{
 	TarballName:           "openjade",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

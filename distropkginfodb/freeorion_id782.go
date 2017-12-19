@@ -17,7 +17,7 @@ var DistroPackageInfo_freeorion = &basictypes.PackageInfo{
 	TarballName:           "freeorion-code",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "freeorion",
 
 	Removable:          true,
 	Reducible:          true,

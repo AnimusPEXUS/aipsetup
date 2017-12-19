@@ -17,7 +17,7 @@ var DistroPackageInfo_openmp = &basictypes.PackageInfo{
 	TarballName:           "openmp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm_components",
 
 	Removable:          true,
 	Reducible:          true,

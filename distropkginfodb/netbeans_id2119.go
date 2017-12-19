@@ -17,7 +17,7 @@ var DistroPackageInfo_netbeans = &basictypes.PackageInfo{
 	TarballName:           "netbeans",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

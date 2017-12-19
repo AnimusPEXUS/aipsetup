@@ -17,7 +17,7 @@ var DistroPackageInfo_YafRay = &basictypes.PackageInfo{
 	TarballName:           "YafRay",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

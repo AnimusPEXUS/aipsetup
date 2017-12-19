@@ -17,7 +17,7 @@ var DistroPackageInfo_libtorrent_rasterbar = &basictypes.PackageInfo{
 	TarballName:           "libtorrent-rasterbar",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

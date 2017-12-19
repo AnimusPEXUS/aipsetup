@@ -17,7 +17,7 @@ var DistroPackageInfo_lightspark = &basictypes.PackageInfo{
 	TarballName:           "lightspark",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_tcl = &basictypes.PackageInfo{
 	TarballName:           "tcl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "tcltk",
 
 	Removable:          true,
 	Reducible:          true,

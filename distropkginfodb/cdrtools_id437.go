@@ -17,7 +17,7 @@ var DistroPackageInfo_cdrtools = &basictypes.PackageInfo{
 	TarballName:           "cdrtools",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "cdrtools",
 
 	Removable:          true,
 	Reducible:          true,

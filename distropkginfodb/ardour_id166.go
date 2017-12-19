@@ -17,7 +17,7 @@ var DistroPackageInfo_ardour = &basictypes.PackageInfo{
 	TarballName:           "ardour",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

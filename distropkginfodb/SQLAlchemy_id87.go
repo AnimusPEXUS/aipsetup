@@ -17,7 +17,7 @@ var DistroPackageInfo_SQLAlchemy = &basictypes.PackageInfo{
 	TarballName:           "SQLAlchemy",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

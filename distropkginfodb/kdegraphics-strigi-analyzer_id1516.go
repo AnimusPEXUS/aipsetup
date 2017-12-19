@@ -17,7 +17,7 @@ var DistroPackageInfo_kdegraphics_strigi_analyzer = &basictypes.PackageInfo{
 	TarballName:           "kdegraphics-strigi-analyzer",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

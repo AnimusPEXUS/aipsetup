@@ -17,7 +17,7 @@ var DistroPackageInfo_clang = &basictypes.PackageInfo{
 	TarballName:           "clang",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm_components",
 
 	Removable:          true,
 	Reducible:          true,

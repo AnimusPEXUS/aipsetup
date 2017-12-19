@@ -17,7 +17,7 @@ var DistroPackageInfo_p11_kit = &basictypes.PackageInfo{
 	TarballName:           "p11-kit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "p11_kit",
 
 	Removable:          true,
 	Reducible:          true,

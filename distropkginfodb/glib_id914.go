@@ -17,7 +17,7 @@ var DistroPackageInfo_glib = &basictypes.PackageInfo{
 	TarballName:           "glib",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "glib",
 
 	Removable:          true,
 	Reducible:          true,

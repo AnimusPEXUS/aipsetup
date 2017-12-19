@@ -17,7 +17,7 @@ var DistroPackageInfo_ksecrets = &basictypes.PackageInfo{
 	TarballName:           "ksecrets",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

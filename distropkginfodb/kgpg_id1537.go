@@ -17,7 +17,7 @@ var DistroPackageInfo_kgpg = &basictypes.PackageInfo{
 	TarballName:           "kgpg",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

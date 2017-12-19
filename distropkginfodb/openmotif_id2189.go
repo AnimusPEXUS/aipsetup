@@ -17,7 +17,7 @@ var DistroPackageInfo_openmotif = &basictypes.PackageInfo{
 	TarballName:           "openmotif",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

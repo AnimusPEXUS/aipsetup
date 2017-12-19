@@ -17,7 +17,7 @@ var DistroPackageInfo_obexfs = &basictypes.PackageInfo{
 	TarballName:           "obexfs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

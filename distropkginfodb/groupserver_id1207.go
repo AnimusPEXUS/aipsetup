@@ -17,7 +17,7 @@ var DistroPackageInfo_groupserver = &basictypes.PackageInfo{
 	TarballName:           "groupserver",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

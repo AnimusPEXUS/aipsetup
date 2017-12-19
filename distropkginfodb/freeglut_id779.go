@@ -17,7 +17,7 @@ var DistroPackageInfo_freeglut = &basictypes.PackageInfo{
 	TarballName:           "freeglut",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

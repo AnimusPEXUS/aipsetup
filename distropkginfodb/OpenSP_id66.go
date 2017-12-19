@@ -17,7 +17,7 @@ var DistroPackageInfo_OpenSP = &basictypes.PackageInfo{
 	TarballName:           "OpenSP",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

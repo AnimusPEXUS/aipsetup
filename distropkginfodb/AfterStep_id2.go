@@ -18,7 +18,7 @@ var DistroPackageInfo_AfterStep = &basictypes.PackageInfo{
 	TarballName:           "AfterStep",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "None",
 
 	Removable:          true,
 	Reducible:          true,

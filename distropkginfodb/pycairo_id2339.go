@@ -17,7 +17,7 @@ var DistroPackageInfo_pycairo = &basictypes.PackageInfo{
 	TarballName:           "pycairo",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pycairo",
 
 	Removable:          true,
 	Reducible:          true,

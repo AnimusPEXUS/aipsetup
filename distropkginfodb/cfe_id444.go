@@ -17,7 +17,7 @@ var DistroPackageInfo_cfe = &basictypes.PackageInfo{
 	TarballName:           "cfe",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm_components",
 
 	Removable:          true,
 	Reducible:          true,

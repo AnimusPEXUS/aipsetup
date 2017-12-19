@@ -17,7 +17,7 @@ var DistroPackageInfo_smplayer = &basictypes.PackageInfo{
 	TarballName:           "smplayer",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

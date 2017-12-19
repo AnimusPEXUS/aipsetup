@@ -17,7 +17,7 @@ var DistroPackageInfo_kdegraphics_thumbnailers = &basictypes.PackageInfo{
 	TarballName:           "kdegraphics-thumbnailers",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_attica = &basictypes.PackageInfo{
 	TarballName:           "attica",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

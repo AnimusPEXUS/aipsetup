@@ -17,7 +17,7 @@ var DistroPackageInfo_libtheora = &basictypes.PackageInfo{
 	TarballName:           "libtheora",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libtheora",
 
 	Removable:          true,
 	Reducible:          true,

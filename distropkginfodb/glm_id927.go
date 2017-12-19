@@ -17,7 +17,7 @@ var DistroPackageInfo_glm = &basictypes.PackageInfo{
 	TarballName:           "glm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

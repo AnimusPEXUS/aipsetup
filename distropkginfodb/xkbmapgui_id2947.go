@@ -17,7 +17,7 @@ var DistroPackageInfo_xkbmapgui = &basictypes.PackageInfo{
 	TarballName:           "xkbmapgui",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

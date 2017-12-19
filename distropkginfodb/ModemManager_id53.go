@@ -17,7 +17,7 @@ var DistroPackageInfo_ModemManager = &basictypes.PackageInfo{
 	TarballName:           "ModemManager",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ModemManager",
 
 	Removable:          true,
 	Reducible:          true,

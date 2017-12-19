@@ -17,7 +17,7 @@ var DistroPackageInfo_Linux_PAM = &basictypes.PackageInfo{
 	TarballName:           "Linux-PAM",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "linux_pam",
 
 	Removable:          true,
 	Reducible:          true,

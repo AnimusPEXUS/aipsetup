@@ -17,7 +17,7 @@ var DistroPackageInfo_subversion = &basictypes.PackageInfo{
 	TarballName:           "subversion",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "subversion",
 
 	Removable:          true,
 	Reducible:          true,

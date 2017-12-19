@@ -17,7 +17,7 @@ var DistroPackageInfo_libproxy = &basictypes.PackageInfo{
 	TarballName:           "libproxy",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

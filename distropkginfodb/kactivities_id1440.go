@@ -17,7 +17,7 @@ var DistroPackageInfo_kactivities = &basictypes.PackageInfo{
 	TarballName:           "kactivities",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

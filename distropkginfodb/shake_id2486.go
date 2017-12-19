@@ -17,7 +17,7 @@ var DistroPackageInfo_shake = &basictypes.PackageInfo{
 	TarballName:           "shake",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

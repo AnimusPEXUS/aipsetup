@@ -17,7 +17,7 @@ var DistroPackageInfo_opendias = &basictypes.PackageInfo{
 	TarballName:           "opendias",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

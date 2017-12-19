@@ -17,7 +17,7 @@ var DistroPackageInfo_konsole = &basictypes.PackageInfo{
 	TarballName:           "konsole",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

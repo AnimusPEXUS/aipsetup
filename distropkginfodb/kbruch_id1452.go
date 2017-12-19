@@ -17,7 +17,7 @@ var DistroPackageInfo_kbruch = &basictypes.PackageInfo{
 	TarballName:           "kbruch",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

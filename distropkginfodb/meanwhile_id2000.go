@@ -17,7 +17,7 @@ var DistroPackageInfo_meanwhile = &basictypes.PackageInfo{
 	TarballName:           "meanwhile",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

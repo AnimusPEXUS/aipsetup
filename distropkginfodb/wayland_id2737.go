@@ -17,7 +17,7 @@ var DistroPackageInfo_wayland = &basictypes.PackageInfo{
 	TarballName:           "wayland",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "wayland",
 
 	Removable:          true,
 	Reducible:          true,

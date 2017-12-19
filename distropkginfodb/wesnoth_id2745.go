@@ -17,7 +17,7 @@ var DistroPackageInfo_wesnoth = &basictypes.PackageInfo{
 	TarballName:           "wesnoth",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

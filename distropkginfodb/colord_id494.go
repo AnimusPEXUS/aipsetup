@@ -17,7 +17,7 @@ var DistroPackageInfo_colord = &basictypes.PackageInfo{
 	TarballName:           "colord",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "colord",
 
 	Removable:          true,
 	Reducible:          true,

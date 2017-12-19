@@ -17,7 +17,7 @@ var DistroPackageInfo_kdeadmin = &basictypes.PackageInfo{
 	TarballName:           "kdeadmin",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

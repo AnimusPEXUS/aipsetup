@@ -17,7 +17,7 @@ var DistroPackageInfo_upx = &basictypes.PackageInfo{
 	TarballName:           "upx",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

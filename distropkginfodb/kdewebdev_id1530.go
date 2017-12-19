@@ -17,7 +17,7 @@ var DistroPackageInfo_kdewebdev = &basictypes.PackageInfo{
 	TarballName:           "kdewebdev",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

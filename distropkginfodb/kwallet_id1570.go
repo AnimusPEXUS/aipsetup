@@ -17,7 +17,7 @@ var DistroPackageInfo_kwallet = &basictypes.PackageInfo{
 	TarballName:           "kwallet",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

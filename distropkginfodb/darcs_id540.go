@@ -17,7 +17,7 @@ var DistroPackageInfo_darcs = &basictypes.PackageInfo{
 	TarballName:           "darcs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_gsm = &basictypes.PackageInfo{
 	TarballName:           "gsm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

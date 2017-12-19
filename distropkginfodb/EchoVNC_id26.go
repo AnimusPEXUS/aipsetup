@@ -17,7 +17,7 @@ var DistroPackageInfo_EchoVNC = &basictypes.PackageInfo{
 	TarballName:           "EchoVNC",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

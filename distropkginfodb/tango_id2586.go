@@ -17,7 +17,7 @@ var DistroPackageInfo_tango = &basictypes.PackageInfo{
 	TarballName:           "tango",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

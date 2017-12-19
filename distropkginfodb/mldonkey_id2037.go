@@ -17,7 +17,7 @@ var DistroPackageInfo_mldonkey = &basictypes.PackageInfo{
 	TarballName:           "mldonkey",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

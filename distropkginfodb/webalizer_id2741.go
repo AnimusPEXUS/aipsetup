@@ -17,7 +17,7 @@ var DistroPackageInfo_webalizer = &basictypes.PackageInfo{
 	TarballName:           "webalizer",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

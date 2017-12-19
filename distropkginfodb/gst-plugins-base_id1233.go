@@ -17,7 +17,7 @@ var DistroPackageInfo_gst_plugins_base = &basictypes.PackageInfo{
 	TarballName:           "gst-plugins-base",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gst_plugins_base",
 
 	Removable:          true,
 	Reducible:          true,

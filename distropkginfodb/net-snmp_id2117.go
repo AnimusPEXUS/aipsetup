@@ -17,7 +17,7 @@ var DistroPackageInfo_net_snmp = &basictypes.PackageInfo{
 	TarballName:           "net-snmp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "net_snmp",
 
 	Removable:          true,
 	Reducible:          true,

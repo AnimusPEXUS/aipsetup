@@ -17,7 +17,7 @@ var DistroPackageInfo_cairo = &basictypes.PackageInfo{
 	TarballName:           "cairo",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "cairo",
 
 	Removable:          true,
 	Reducible:          true,

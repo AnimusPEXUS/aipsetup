@@ -17,7 +17,7 @@ var DistroPackageInfo_Xvnc = &basictypes.PackageInfo{
 	TarballName:           "Xvnc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

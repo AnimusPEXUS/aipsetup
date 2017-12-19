@@ -19,7 +19,7 @@ can't depricate: used by ibus`,
 	TarballName:           "GConf",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gconf",
 
 	Removable:          true,
 	Reducible:          true,

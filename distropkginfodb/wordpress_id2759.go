@@ -17,7 +17,7 @@ var DistroPackageInfo_wordpress = &basictypes.PackageInfo{
 	TarballName:           "wordpress",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

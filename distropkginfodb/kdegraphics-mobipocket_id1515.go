@@ -17,7 +17,7 @@ var DistroPackageInfo_kdegraphics_mobipocket = &basictypes.PackageInfo{
 	TarballName:           "kdegraphics-mobipocket",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

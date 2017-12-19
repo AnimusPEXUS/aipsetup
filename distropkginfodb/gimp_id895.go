@@ -17,7 +17,7 @@ var DistroPackageInfo_gimp = &basictypes.PackageInfo{
 	TarballName:           "gimp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gimp",
 
 	Removable:          true,
 	Reducible:          true,

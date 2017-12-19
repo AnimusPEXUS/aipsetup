@@ -17,7 +17,7 @@ var DistroPackageInfo_jitsi = &basictypes.PackageInfo{
 	TarballName:           "jitsi",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

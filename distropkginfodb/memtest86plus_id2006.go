@@ -17,7 +17,7 @@ var DistroPackageInfo_memtest86plus = &basictypes.PackageInfo{
 	TarballName:           "memtest86+",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

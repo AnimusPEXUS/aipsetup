@@ -17,7 +17,7 @@ var DistroPackageInfo_ntfs_3g_ntfsprogs = &basictypes.PackageInfo{
 	TarballName:           "ntfs-3g_ntfsprogs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ntfs3gntfsprogs",
 
 	Removable:          true,
 	Reducible:          true,

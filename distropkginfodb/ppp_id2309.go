@@ -17,7 +17,7 @@ var DistroPackageInfo_ppp = &basictypes.PackageInfo{
 	TarballName:           "ppp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ppp",
 
 	Removable:          true,
 	Reducible:          true,

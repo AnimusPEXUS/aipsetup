@@ -17,7 +17,7 @@ var DistroPackageInfo_gimp_gap = &basictypes.PackageInfo{
 	TarballName:           "gimp-gap",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

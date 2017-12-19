@@ -17,7 +17,7 @@ var DistroPackageInfo_generator = &basictypes.PackageInfo{
 	TarballName:           "generator",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

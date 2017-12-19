@@ -17,7 +17,7 @@ var DistroPackageInfo_vlc = &basictypes.PackageInfo{
 	TarballName:           "vlc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "vlc",
 
 	Removable:          true,
 	Reducible:          true,

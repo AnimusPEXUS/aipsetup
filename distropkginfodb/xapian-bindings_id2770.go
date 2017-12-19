@@ -17,7 +17,7 @@ var DistroPackageInfo_xapian_bindings = &basictypes.PackageInfo{
 	TarballName:           "",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

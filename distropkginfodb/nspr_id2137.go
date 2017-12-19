@@ -17,7 +17,7 @@ var DistroPackageInfo_nspr = &basictypes.PackageInfo{
 	TarballName:           "nspr",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "nspr",
 
 	Removable:          true,
 	Reducible:          true,

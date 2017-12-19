@@ -17,7 +17,7 @@ var DistroPackageInfo_pypoppler = &basictypes.PackageInfo{
 	TarballName:           "pypoppler",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

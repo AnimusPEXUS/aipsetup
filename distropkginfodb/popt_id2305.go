@@ -17,7 +17,7 @@ var DistroPackageInfo_popt = &basictypes.PackageInfo{
 	TarballName:           "popt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "popt",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_libassuan = &basictypes.PackageInfo{
 	TarballName:           "libassuan",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libassuan",
 
 	Removable:          true,
 	Reducible:          true,

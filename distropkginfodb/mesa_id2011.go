@@ -17,7 +17,7 @@ var DistroPackageInfo_mesa = &basictypes.PackageInfo{
 	TarballName:           "mesa",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mesalib",
 
 	Removable:          true,
 	Reducible:          true,

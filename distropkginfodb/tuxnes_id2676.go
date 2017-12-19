@@ -17,7 +17,7 @@ var DistroPackageInfo_tuxnes = &basictypes.PackageInfo{
 	TarballName:           "tuxnes",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

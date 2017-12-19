@@ -17,7 +17,7 @@ var DistroPackageInfo_panda3d = &basictypes.PackageInfo{
 	TarballName:           "panda3d",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "panda3d",
 
 	Removable:          true,
 	Reducible:          true,

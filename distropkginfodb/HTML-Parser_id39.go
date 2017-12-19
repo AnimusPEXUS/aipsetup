@@ -17,7 +17,7 @@ var DistroPackageInfo_HTML_Parser = &basictypes.PackageInfo{
 	TarballName:           "HTML-Parser",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_smokekde = &basictypes.PackageInfo{
 	TarballName:           "smokekde",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

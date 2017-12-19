@@ -17,7 +17,7 @@ var DistroPackageInfo_lame = &basictypes.PackageInfo{
 	TarballName:           "lame",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "lame",
 
 	Removable:          true,
 	Reducible:          true,

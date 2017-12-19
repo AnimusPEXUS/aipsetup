@@ -17,7 +17,7 @@ var DistroPackageInfo_littlecms = &basictypes.PackageInfo{
 	TarballName:           "littlecms",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

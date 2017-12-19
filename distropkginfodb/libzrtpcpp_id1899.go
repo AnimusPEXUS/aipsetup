@@ -17,7 +17,7 @@ var DistroPackageInfo_libzrtpcpp = &basictypes.PackageInfo{
 	TarballName:           "libzrtpcpp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_qt5 = &basictypes.PackageInfo{
 	TarballName:           "qt-everywhere-opensource-src",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "qt",
 
 	Removable:          true,
 	Reducible:          true,

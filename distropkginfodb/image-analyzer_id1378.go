@@ -17,7 +17,7 @@ var DistroPackageInfo_image_analyzer = &basictypes.PackageInfo{
 	TarballName:           "image-analyzer",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

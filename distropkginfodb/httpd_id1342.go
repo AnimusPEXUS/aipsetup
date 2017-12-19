@@ -17,7 +17,7 @@ var DistroPackageInfo_httpd = &basictypes.PackageInfo{
 	TarballName:           "httpd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "httpd",
 
 	Removable:          true,
 	Reducible:          true,

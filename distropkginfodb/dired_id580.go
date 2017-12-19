@@ -17,7 +17,7 @@ var DistroPackageInfo_dired = &basictypes.PackageInfo{
 	TarballName:           "dired",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_x11vnc = &basictypes.PackageInfo{
 	TarballName:           "x11vnc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

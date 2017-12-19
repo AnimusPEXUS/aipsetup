@@ -17,7 +17,7 @@ var DistroPackageInfo_bitcoins = &basictypes.PackageInfo{
 	TarballName:           "bitcoins",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

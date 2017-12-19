@@ -17,7 +17,7 @@ var DistroPackageInfo_gcdemu = &basictypes.PackageInfo{
 	TarballName:           "gcdemu",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

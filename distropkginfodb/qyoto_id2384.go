@@ -17,7 +17,7 @@ var DistroPackageInfo_qyoto = &basictypes.PackageInfo{
 	TarballName:           "qyoto",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

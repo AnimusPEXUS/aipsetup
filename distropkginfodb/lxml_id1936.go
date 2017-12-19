@@ -17,7 +17,7 @@ var DistroPackageInfo_lxml = &basictypes.PackageInfo{
 	TarballName:           "lxml",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_openldap = &basictypes.PackageInfo{
 	TarballName:           "openldap",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "openldap",
 
 	Removable:          true,
 	Reducible:          true,

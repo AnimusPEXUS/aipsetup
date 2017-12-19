@@ -17,7 +17,7 @@ var DistroPackageInfo_Pyrex = &basictypes.PackageInfo{
 	TarballName:           "Pyrex",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

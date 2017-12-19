@@ -17,7 +17,7 @@ var DistroPackageInfo_py2cairo = &basictypes.PackageInfo{
 	TarballName:           "py2cairo",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "py2cairo",
 
 	Removable:          true,
 	Reducible:          true,

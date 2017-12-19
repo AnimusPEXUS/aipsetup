@@ -17,7 +17,7 @@ var DistroPackageInfo_kwordquiz = &basictypes.PackageInfo{
 	TarballName:           "kwordquiz",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

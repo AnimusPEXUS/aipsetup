@@ -17,7 +17,7 @@ var DistroPackageInfo_pyqt5 = &basictypes.PackageInfo{
 	TarballName:           "PyQt-gpl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pyqt",
 
 	Removable:          true,
 	Reducible:          true,

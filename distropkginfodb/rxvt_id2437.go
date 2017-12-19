@@ -17,7 +17,7 @@ var DistroPackageInfo_rxvt = &basictypes.PackageInfo{
 	TarballName:           "rxvt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "rxvt",
 
 	Removable:          true,
 	Reducible:          true,

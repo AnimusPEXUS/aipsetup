@@ -17,7 +17,7 @@ var DistroPackageInfo_cb_binutils_i686_pc_linux_gnu = &basictypes.PackageInfo{
 	TarballName:           "",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "binutils",
 
 	Removable:          true,
 	Reducible:          true,

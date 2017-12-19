@@ -17,7 +17,7 @@ var DistroPackageInfo_csound = &basictypes.PackageInfo{
 	TarballName:           "csound",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

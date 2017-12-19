@@ -17,7 +17,7 @@ var DistroPackageInfo_openimageio = &basictypes.PackageInfo{
 	TarballName:           "openimageio",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "openimageio",
 
 	Removable:          true,
 	Reducible:          true,

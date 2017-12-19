@@ -17,7 +17,7 @@ var DistroPackageInfo_ksnapshot = &basictypes.PackageInfo{
 	TarballName:           "ksnapshot",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_xulrunner = &basictypes.PackageInfo{
 	TarballName:           "xulrunner",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "xulrunner",
 
 	Removable:          true,
 	Reducible:          true,

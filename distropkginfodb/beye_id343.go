@@ -17,7 +17,7 @@ var DistroPackageInfo_beye = &basictypes.PackageInfo{
 	TarballName:           "beye",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_elfutils = &basictypes.PackageInfo{
 	TarballName:           "elfutils",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "elfutils",
 
 	Removable:          true,
 	Reducible:          true,

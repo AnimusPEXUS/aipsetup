@@ -17,7 +17,7 @@ var DistroPackageInfo_parley = &basictypes.PackageInfo{
 	TarballName:           "parley",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

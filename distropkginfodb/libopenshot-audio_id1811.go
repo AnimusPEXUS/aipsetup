@@ -17,7 +17,7 @@ var DistroPackageInfo_libopenshot_audio = &basictypes.PackageInfo{
 	TarballName:           "libopenshot-audio",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

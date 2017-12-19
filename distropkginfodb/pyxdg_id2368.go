@@ -17,7 +17,7 @@ var DistroPackageInfo_pyxdg = &basictypes.PackageInfo{
 	TarballName:           "pyxdg",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_pythons",
 
 	Removable:          true,
 	Reducible:          true,

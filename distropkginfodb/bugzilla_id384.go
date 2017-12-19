@@ -17,7 +17,7 @@ var DistroPackageInfo_bugzilla = &basictypes.PackageInfo{
 	TarballName:           "bugzilla",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_openssh = &basictypes.PackageInfo{
 	TarballName:           "openssh",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "openssh",
 
 	Removable:          true,
 	Reducible:          true,

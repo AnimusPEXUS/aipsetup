@@ -17,7 +17,7 @@ var DistroPackageInfo_acpica_unix = &basictypes.PackageInfo{
 	TarballName:           "acpica-unix",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

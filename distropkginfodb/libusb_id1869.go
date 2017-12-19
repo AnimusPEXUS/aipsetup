@@ -17,7 +17,7 @@ var DistroPackageInfo_libusb = &basictypes.PackageInfo{
 	TarballName:           "libusb",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libusb",
 
 	Removable:          true,
 	Reducible:          true,

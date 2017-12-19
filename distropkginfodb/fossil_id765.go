@@ -17,7 +17,7 @@ var DistroPackageInfo_fossil = &basictypes.PackageInfo{
 	TarballName:           "fossil-src",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "fossil",
 
 	Removable:          true,
 	Reducible:          true,

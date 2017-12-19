@@ -17,7 +17,7 @@ var DistroPackageInfo_hplip = &basictypes.PackageInfo{
 	TarballName:           "hplip",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "hplip",
 
 	Removable:          true,
 	Reducible:          true,

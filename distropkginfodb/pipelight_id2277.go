@@ -17,7 +17,7 @@ var DistroPackageInfo_pipelight = &basictypes.PackageInfo{
 	TarballName:           "pipelight",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pipelight",
 
 	Removable:          true,
 	Reducible:          true,

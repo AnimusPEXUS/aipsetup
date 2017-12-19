@@ -17,7 +17,7 @@ var DistroPackageInfo_ktimer = &basictypes.PackageInfo{
 	TarballName:           "ktimer",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

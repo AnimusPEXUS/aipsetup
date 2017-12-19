@@ -17,7 +17,7 @@ var DistroPackageInfo_postgresql = &basictypes.PackageInfo{
 	TarballName:           "postgresql",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "postgreSQL",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_gnustep_make = &basictypes.PackageInfo{
 	TarballName:           "gnustep-make",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

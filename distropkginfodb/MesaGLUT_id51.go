@@ -17,7 +17,7 @@ var DistroPackageInfo_MesaGLUT = &basictypes.PackageInfo{
 	TarballName:           "MesaGLUT",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mesaglut",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_inn = &basictypes.PackageInfo{
 	TarballName:           "inn",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "inn",
 
 	Removable:          true,
 	Reducible:          true,

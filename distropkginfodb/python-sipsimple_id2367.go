@@ -17,7 +17,7 @@ var DistroPackageInfo_python_sipsimple = &basictypes.PackageInfo{
 	TarballName:           "python-sipsimple",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

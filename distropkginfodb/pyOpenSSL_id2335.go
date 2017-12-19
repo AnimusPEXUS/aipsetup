@@ -17,7 +17,7 @@ var DistroPackageInfo_pyOpenSSL = &basictypes.PackageInfo{
 	TarballName:           "pyOpenSSL",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

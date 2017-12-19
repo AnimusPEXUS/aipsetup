@@ -17,7 +17,7 @@ var DistroPackageInfo_klettres = &basictypes.PackageInfo{
 	TarballName:           "klettres",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

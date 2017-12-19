@@ -17,7 +17,7 @@ var DistroPackageInfo_kdesdk = &basictypes.PackageInfo{
 	TarballName:           "kdesdk",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

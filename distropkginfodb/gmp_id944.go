@@ -17,7 +17,7 @@ var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 	TarballName:           "gmp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gmp",
 
 	Removable:          true,
 	Reducible:          true,

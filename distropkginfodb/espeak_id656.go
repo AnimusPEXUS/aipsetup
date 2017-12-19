@@ -17,7 +17,7 @@ var DistroPackageInfo_espeak = &basictypes.PackageInfo{
 	TarballName:           "espeak",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

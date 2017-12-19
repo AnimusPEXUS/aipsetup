@@ -17,7 +17,7 @@ var DistroPackageInfo_msigna = &basictypes.PackageInfo{
 	TarballName:           "msigna",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_qmake",
 
 	Removable:          true,
 	Reducible:          true,

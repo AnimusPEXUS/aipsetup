@@ -17,7 +17,7 @@ var DistroPackageInfo_gnome_settings_daemon = &basictypes.PackageInfo{
 	TarballName:           "gnome-settings-daemon",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gnome_settings_daemon",
 
 	Removable:          true,
 	Reducible:          true,

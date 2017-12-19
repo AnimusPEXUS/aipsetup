@@ -17,7 +17,7 @@ var DistroPackageInfo_asterisk = &basictypes.PackageInfo{
 	TarballName:           "asterisk",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

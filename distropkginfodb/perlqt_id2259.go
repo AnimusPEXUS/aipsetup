@@ -17,7 +17,7 @@ var DistroPackageInfo_perlqt = &basictypes.PackageInfo{
 	TarballName:           "perlqt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

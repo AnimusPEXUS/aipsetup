@@ -17,7 +17,7 @@ var DistroPackageInfo_udns = &basictypes.PackageInfo{
 	TarballName:           "udns",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "udns",
 
 	Removable:          true,
 	Reducible:          true,

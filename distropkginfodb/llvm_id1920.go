@@ -17,7 +17,7 @@ var DistroPackageInfo_llvm = &basictypes.PackageInfo{
 	TarballName:           "llvm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm",
 
 	Removable:          true,
 	Reducible:          true,

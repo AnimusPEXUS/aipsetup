@@ -17,7 +17,7 @@ var DistroPackageInfo_telepathy_glib = &basictypes.PackageInfo{
 	TarballName:           "telepathy-glib",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "telepathy_glib",
 
 	Removable:          true,
 	Reducible:          true,

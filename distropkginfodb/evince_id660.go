@@ -17,7 +17,7 @@ var DistroPackageInfo_evince = &basictypes.PackageInfo{
 	TarballName:           "evince",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "evince",
 
 	Removable:          true,
 	Reducible:          true,

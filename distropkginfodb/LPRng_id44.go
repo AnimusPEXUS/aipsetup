@@ -17,7 +17,7 @@ var DistroPackageInfo_LPRng = &basictypes.PackageInfo{
 	TarballName:           "LPRng",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

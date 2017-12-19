@@ -17,7 +17,7 @@ var DistroPackageInfo_libgit2 = &basictypes.PackageInfo{
 	TarballName:           "libgit2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

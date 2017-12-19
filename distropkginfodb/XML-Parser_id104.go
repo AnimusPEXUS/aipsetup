@@ -17,7 +17,7 @@ var DistroPackageInfo_XML_Parser = &basictypes.PackageInfo{
 	TarballName:           "XML-Parser",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

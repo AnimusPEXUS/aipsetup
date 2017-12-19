@@ -17,7 +17,7 @@ var DistroPackageInfo_soprano = &basictypes.PackageInfo{
 	TarballName:           "soprano",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

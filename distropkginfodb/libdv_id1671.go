@@ -17,7 +17,7 @@ var DistroPackageInfo_libdv = &basictypes.PackageInfo{
 	TarballName:           "libdv",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

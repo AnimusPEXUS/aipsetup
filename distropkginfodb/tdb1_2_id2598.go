@@ -17,7 +17,7 @@ var DistroPackageInfo_tdb1_2 = &basictypes.PackageInfo{
 	TarballName:           "tdb",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_waf",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_gnat_gpl = &basictypes.PackageInfo{
 	TarballName:           "gnat-gpl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

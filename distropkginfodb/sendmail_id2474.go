@@ -17,7 +17,7 @@ var DistroPackageInfo_sendmail = &basictypes.PackageInfo{
 	TarballName:           "sendmail",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

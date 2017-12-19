@@ -17,7 +17,7 @@ var DistroPackageInfo_vegastrike_data = &basictypes.PackageInfo{
 	TarballName:           "vegastrike-data",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

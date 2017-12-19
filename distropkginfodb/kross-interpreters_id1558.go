@@ -17,7 +17,7 @@ var DistroPackageInfo_kross_interpreters = &basictypes.PackageInfo{
 	TarballName:           "kross-interpreters",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

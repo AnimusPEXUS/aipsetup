@@ -17,7 +17,7 @@ var DistroPackageInfo_kalgebra = &basictypes.PackageInfo{
 	TarballName:           "kalgebra",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

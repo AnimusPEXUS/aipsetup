@@ -17,7 +17,7 @@ var DistroPackageInfo_krb5 = &basictypes.PackageInfo{
 	TarballName:           "krb5",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "krb5",
 
 	Removable:          true,
 	Reducible:          true,

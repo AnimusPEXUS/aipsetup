@@ -17,7 +17,7 @@ var DistroPackageInfo_zziplib = &basictypes.PackageInfo{
 	TarballName:           "zziplib",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "zziplib",
 
 	Removable:          true,
 	Reducible:          true,

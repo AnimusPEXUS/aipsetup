@@ -17,7 +17,7 @@ var DistroPackageInfo_poppler_data = &basictypes.PackageInfo{
 	TarballName:           "poppler-data",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

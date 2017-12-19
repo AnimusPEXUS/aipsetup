@@ -17,7 +17,7 @@ var DistroPackageInfo_libkdcraw = &basictypes.PackageInfo{
 	TarballName:           "libkdcraw",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

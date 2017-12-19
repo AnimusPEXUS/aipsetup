@@ -17,7 +17,7 @@ var DistroPackageInfo_boost = &basictypes.PackageInfo{
 	TarballName:           "boost",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "boost",
 
 	Removable:          true,
 	Reducible:          true,

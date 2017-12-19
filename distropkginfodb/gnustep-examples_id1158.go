@@ -17,7 +17,7 @@ var DistroPackageInfo_gnustep_examples = &basictypes.PackageInfo{
 	TarballName:           "gnustep-examples",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

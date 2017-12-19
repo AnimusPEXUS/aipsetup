@@ -17,7 +17,7 @@ var DistroPackageInfo_man_pages = &basictypes.PackageInfo{
 	TarballName:           "man-pages",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "man_pages",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_freetype = &basictypes.PackageInfo{
 	TarballName:           "freetype",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "freetype",
 
 	Removable:          true,
 	Reducible:          true,

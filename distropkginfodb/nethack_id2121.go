@@ -17,7 +17,7 @@ var DistroPackageInfo_nethack = &basictypes.PackageInfo{
 	TarballName:           "nethack",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "nethack",
 
 	Removable:          true,
 	Reducible:          true,

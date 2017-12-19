@@ -17,7 +17,7 @@ var DistroPackageInfo_sqlcipher = &basictypes.PackageInfo{
 	TarballName:           "sqlcipher",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "sqlcipher",
 
 	Removable:          true,
 	Reducible:          true,

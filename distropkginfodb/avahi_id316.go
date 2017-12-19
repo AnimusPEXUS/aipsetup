@@ -17,7 +17,7 @@ var DistroPackageInfo_avahi = &basictypes.PackageInfo{
 	TarballName:           "avahi",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "avahi",
 
 	Removable:          true,
 	Reducible:          true,

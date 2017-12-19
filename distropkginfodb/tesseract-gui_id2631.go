@@ -17,7 +17,7 @@ var DistroPackageInfo_tesseract_gui = &basictypes.PackageInfo{
 	TarballName:           "tesseract-gui",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

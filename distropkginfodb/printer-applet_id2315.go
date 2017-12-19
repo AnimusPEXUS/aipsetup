@@ -17,7 +17,7 @@ var DistroPackageInfo_printer_applet = &basictypes.PackageInfo{
 	TarballName:           "printer-applet",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

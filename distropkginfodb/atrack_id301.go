@@ -17,7 +17,7 @@ var DistroPackageInfo_atrack = &basictypes.PackageInfo{
 	TarballName:           "atrack",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

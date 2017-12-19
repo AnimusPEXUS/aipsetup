@@ -17,7 +17,7 @@ var DistroPackageInfo_pciids = &basictypes.PackageInfo{
 	TarballName:           "pciids",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

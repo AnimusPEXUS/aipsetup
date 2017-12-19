@@ -17,7 +17,7 @@ var DistroPackageInfo_openerp = &basictypes.PackageInfo{
 	TarballName:           "openerp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

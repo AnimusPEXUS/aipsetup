@@ -17,7 +17,7 @@ var DistroPackageInfo_Mail_SpamAssassin = &basictypes.PackageInfo{
 	TarballName:           "Mail-SpamAssassin",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

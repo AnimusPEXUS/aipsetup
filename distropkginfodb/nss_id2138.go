@@ -17,7 +17,7 @@ var DistroPackageInfo_nss = &basictypes.PackageInfo{
 	TarballName:           "nss",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "nss",
 
 	Removable:          true,
 	Reducible:          true,

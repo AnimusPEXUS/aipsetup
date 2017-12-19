@@ -17,7 +17,7 @@ var DistroPackageInfo_glib_networking = &basictypes.PackageInfo{
 	TarballName:           "glib-networking",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "glib_networking",
 
 	Removable:          true,
 	Reducible:          true,

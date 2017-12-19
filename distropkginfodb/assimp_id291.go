@@ -17,7 +17,7 @@ var DistroPackageInfo_assimp = &basictypes.PackageInfo{
 	TarballName:           "assimp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

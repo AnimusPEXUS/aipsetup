@@ -17,7 +17,7 @@ var DistroPackageInfo_rails = &basictypes.PackageInfo{
 	TarballName:           "rails",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

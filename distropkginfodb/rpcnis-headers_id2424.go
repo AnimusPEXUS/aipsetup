@@ -17,7 +17,7 @@ var DistroPackageInfo_rpcnis_headers = &basictypes.PackageInfo{
 	TarballName:           "rpcnis-headers",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "rpcnis_headers",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_cloog = &basictypes.PackageInfo{
 	TarballName:           "cloog",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "cloog",
 
 	Removable:          false,
 	Reducible:          true,

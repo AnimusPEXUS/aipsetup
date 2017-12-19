@@ -17,7 +17,7 @@ var DistroPackageInfo_virtualbox = &basictypes.PackageInfo{
 	TarballName:           "VirtualBox",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "vbox",
 
 	Removable:          true,
 	Reducible:          true,

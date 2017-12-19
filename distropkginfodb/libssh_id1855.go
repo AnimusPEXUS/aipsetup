@@ -17,7 +17,7 @@ var DistroPackageInfo_libssh = &basictypes.PackageInfo{
 	TarballName:           "libssh",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libssh",
 
 	Removable:          true,
 	Reducible:          true,

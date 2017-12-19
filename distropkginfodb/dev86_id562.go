@@ -17,7 +17,7 @@ var DistroPackageInfo_dev86 = &basictypes.PackageInfo{
 	TarballName:           "Dev86src",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "dev86",
 
 	Removable:          true,
 	Reducible:          true,

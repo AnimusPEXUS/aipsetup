@@ -17,7 +17,7 @@ var DistroPackageInfo_imap = &basictypes.PackageInfo{
 	TarballName:           "imap",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

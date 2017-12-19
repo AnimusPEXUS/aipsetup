@@ -17,7 +17,7 @@ var DistroPackageInfo_audacity = &basictypes.PackageInfo{
 	TarballName:           "audacity-minsrc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "audacity",
 
 	Removable:          true,
 	Reducible:          true,

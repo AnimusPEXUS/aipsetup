@@ -17,7 +17,7 @@ var DistroPackageInfo_aegisub = &basictypes.PackageInfo{
 	TarballName:           "aegisub",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

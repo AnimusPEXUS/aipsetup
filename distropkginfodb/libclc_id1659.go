@@ -17,7 +17,7 @@ var DistroPackageInfo_libclc = &basictypes.PackageInfo{
 	TarballName:           "libclc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_configure_py2",
 
 	Removable:          true,
 	Reducible:          true,

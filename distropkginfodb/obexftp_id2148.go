@@ -17,7 +17,7 @@ var DistroPackageInfo_obexftp = &basictypes.PackageInfo{
 	TarballName:           "obexftp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_text_highlight = &basictypes.PackageInfo{
 	TarballName:           "text-highlight",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

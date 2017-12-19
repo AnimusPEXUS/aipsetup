@@ -17,7 +17,7 @@ var DistroPackageInfo_kanagram = &basictypes.PackageInfo{
 	TarballName:           "kanagram",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

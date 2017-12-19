@@ -17,7 +17,7 @@ var DistroPackageInfo_perlkde = &basictypes.PackageInfo{
 	TarballName:           "perlkde",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

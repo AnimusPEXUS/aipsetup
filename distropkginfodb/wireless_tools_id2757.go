@@ -17,7 +17,7 @@ var DistroPackageInfo_wireless_tools = &basictypes.PackageInfo{
 	TarballName:           "wireless_tools",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "wireless_tools",
 
 	Removable:          true,
 	Reducible:          true,

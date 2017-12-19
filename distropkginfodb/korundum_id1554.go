@@ -17,7 +17,7 @@ var DistroPackageInfo_korundum = &basictypes.PackageInfo{
 	TarballName:           "korundum",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

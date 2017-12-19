@@ -17,7 +17,7 @@ var DistroPackageInfo_xfce_utils = &basictypes.PackageInfo{
 	TarballName:           "xfce-utils",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_ncurses = &basictypes.PackageInfo{
 	TarballName:           "ncurses",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ncurses",
 
 	Removable:          true,
 	Reducible:          true,

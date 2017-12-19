@@ -17,7 +17,7 @@ var DistroPackageInfo_gnome_online_accounts = &basictypes.PackageInfo{
 	TarballName:           "gnome-online-accounts",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gnome_online_accounts",
 
 	Removable:          true,
 	Reducible:          true,

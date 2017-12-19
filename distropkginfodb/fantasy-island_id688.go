@@ -17,7 +17,7 @@ var DistroPackageInfo_fantasy_island = &basictypes.PackageInfo{
 	TarballName:           "fantasy-island",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

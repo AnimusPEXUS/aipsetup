@@ -17,7 +17,7 @@ var DistroPackageInfo_open_mpi = &basictypes.PackageInfo{
 	TarballName:           "open-mpi",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

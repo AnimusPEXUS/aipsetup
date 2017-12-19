@@ -17,7 +17,7 @@ var DistroPackageInfo_vacuum = &basictypes.PackageInfo{
 	TarballName:           "vacuum",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

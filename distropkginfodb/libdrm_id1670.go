@@ -17,7 +17,7 @@ var DistroPackageInfo_libdrm = &basictypes.PackageInfo{
 	TarballName:           "libdrm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libdrm",
 
 	Removable:          true,
 	Reducible:          true,

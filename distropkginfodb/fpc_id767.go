@@ -17,7 +17,7 @@ var DistroPackageInfo_fpc = &basictypes.PackageInfo{
 	TarballName:           "fpc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "fpc",
 
 	Removable:          true,
 	Reducible:          true,

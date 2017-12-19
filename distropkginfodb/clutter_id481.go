@@ -17,7 +17,7 @@ var DistroPackageInfo_clutter = &basictypes.PackageInfo{
 	TarballName:           "clutter",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "clutter",
 
 	Removable:          true,
 	Reducible:          true,

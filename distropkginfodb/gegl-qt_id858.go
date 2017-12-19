@@ -17,7 +17,7 @@ var DistroPackageInfo_gegl_qt = &basictypes.PackageInfo{
 	TarballName:           "gegl-qt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

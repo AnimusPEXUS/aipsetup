@@ -17,7 +17,7 @@ var DistroPackageInfo_oxygen_icons = &basictypes.PackageInfo{
 	TarballName:           "oxygen-icons",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

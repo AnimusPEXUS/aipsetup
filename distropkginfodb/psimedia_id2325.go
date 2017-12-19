@@ -17,7 +17,7 @@ var DistroPackageInfo_psimedia = &basictypes.PackageInfo{
 	TarballName:           "psimedia",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "psimedia",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_unittest_cpp = &basictypes.PackageInfo{
 	TarballName:           "unittest-cpp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

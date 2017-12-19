@@ -17,7 +17,7 @@ var DistroPackageInfo_libksba = &basictypes.PackageInfo{
 	TarballName:           "libksba",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libksba",
 
 	Removable:          true,
 	Reducible:          true,

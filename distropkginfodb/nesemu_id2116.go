@@ -17,7 +17,7 @@ var DistroPackageInfo_nesemu = &basictypes.PackageInfo{
 	TarballName:           "nesemu",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

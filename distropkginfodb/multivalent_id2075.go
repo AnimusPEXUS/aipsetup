@@ -17,7 +17,7 @@ var DistroPackageInfo_multivalent = &basictypes.PackageInfo{
 	TarballName:           "multivalent",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

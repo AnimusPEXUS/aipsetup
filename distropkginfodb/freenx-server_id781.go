@@ -17,7 +17,7 @@ var DistroPackageInfo_freenx_server = &basictypes.PackageInfo{
 	TarballName:           "freenx-server",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_analitza = &basictypes.PackageInfo{
 	TarballName:           "analitza",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

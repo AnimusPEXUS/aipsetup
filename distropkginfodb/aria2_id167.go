@@ -17,7 +17,7 @@ var DistroPackageInfo_aria2 = &basictypes.PackageInfo{
 	TarballName:           "aria2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "aria2",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_telepathy_mission_control = &basictypes.PackageInfo{
 	TarballName:           "telepathy-mission-control",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "telepathy_mission_control",
 
 	Removable:          true,
 	Reducible:          true,

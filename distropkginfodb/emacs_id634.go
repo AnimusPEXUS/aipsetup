@@ -17,7 +17,7 @@ var DistroPackageInfo_emacs = &basictypes.PackageInfo{
 	TarballName:           "emacs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "emacs",
 
 	Removable:          false,
 	Reducible:          true,

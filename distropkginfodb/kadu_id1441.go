@@ -17,7 +17,7 @@ var DistroPackageInfo_kadu = &basictypes.PackageInfo{
 	TarballName:           "kadu",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

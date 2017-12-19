@@ -17,7 +17,7 @@ var DistroPackageInfo_lmms = &basictypes.PackageInfo{
 	TarballName:           "lmms",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

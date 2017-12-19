@@ -17,7 +17,7 @@ var DistroPackageInfo_geda_gaf = &basictypes.PackageInfo{
 	TarballName:           "geda-gaf",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

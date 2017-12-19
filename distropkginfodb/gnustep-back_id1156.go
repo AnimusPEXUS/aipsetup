@@ -17,7 +17,7 @@ var DistroPackageInfo_gnustep_back = &basictypes.PackageInfo{
 	TarballName:           "gnustep-back",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

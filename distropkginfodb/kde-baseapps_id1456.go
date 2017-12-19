@@ -17,7 +17,7 @@ var DistroPackageInfo_kde_baseapps = &basictypes.PackageInfo{
 	TarballName:           "kde-baseapps",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

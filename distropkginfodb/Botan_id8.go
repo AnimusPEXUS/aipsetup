@@ -17,7 +17,7 @@ var DistroPackageInfo_Botan = &basictypes.PackageInfo{
 	TarballName:           "Botan",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "botan",
 
 	Removable:          true,
 	Reducible:          true,

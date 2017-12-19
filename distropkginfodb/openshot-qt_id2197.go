@@ -17,7 +17,7 @@ var DistroPackageInfo_openshot_qt = &basictypes.PackageInfo{
 	TarballName:           "openshot-qt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

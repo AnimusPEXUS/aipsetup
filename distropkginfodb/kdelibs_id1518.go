@@ -17,7 +17,7 @@ var DistroPackageInfo_kdelibs = &basictypes.PackageInfo{
 	TarballName:           "kdelibs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

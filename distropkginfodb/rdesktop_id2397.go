@@ -17,7 +17,7 @@ var DistroPackageInfo_rdesktop = &basictypes.PackageInfo{
 	TarballName:           "rdesktop",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "rdesktop",
 
 	Removable:          true,
 	Reducible:          true,

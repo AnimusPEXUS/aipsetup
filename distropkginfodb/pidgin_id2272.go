@@ -17,7 +17,7 @@ var DistroPackageInfo_pidgin = &basictypes.PackageInfo{
 	TarballName:           "pidgin",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pidgin",
 
 	Removable:          true,
 	Reducible:          true,

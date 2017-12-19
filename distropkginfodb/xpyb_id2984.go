@@ -17,7 +17,7 @@ var DistroPackageInfo_xpyb = &basictypes.PackageInfo{
 	TarballName:           "xpyb",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "xpyb",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_opengfx = &basictypes.PackageInfo{
 	TarballName:           "opengfx",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

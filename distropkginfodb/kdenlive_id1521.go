@@ -17,7 +17,7 @@ var DistroPackageInfo_kdenlive = &basictypes.PackageInfo{
 	TarballName:           "kdenlive",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

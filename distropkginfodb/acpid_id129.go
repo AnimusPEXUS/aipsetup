@@ -17,7 +17,7 @@ var DistroPackageInfo_acpid = &basictypes.PackageInfo{
 	TarballName:           "acpid",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "acpid",
 
 	Removable:          true,
 	Reducible:          true,

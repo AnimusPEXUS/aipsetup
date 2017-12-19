@@ -17,7 +17,7 @@ var DistroPackageInfo_mplayer = &basictypes.PackageInfo{
 	TarballName:           "MPlayer",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mplayer",
 
 	Removable:          true,
 	Reducible:          true,

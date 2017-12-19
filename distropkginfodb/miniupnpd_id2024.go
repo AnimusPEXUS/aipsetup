@@ -17,7 +17,7 @@ var DistroPackageInfo_miniupnpd = &basictypes.PackageInfo{
 	TarballName:           "miniupnpd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "miniupnpd",
 
 	Removable:          true,
 	Reducible:          true,

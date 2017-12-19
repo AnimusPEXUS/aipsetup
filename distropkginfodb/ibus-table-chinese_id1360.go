@@ -17,7 +17,7 @@ var DistroPackageInfo_ibus_table_chinese = &basictypes.PackageInfo{
 	TarballName:           "",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

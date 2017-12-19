@@ -17,7 +17,7 @@ var DistroPackageInfo_ecj = &basictypes.PackageInfo{
 	TarballName:           "ecj",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

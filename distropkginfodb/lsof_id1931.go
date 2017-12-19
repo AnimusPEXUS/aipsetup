@@ -17,7 +17,7 @@ var DistroPackageInfo_lsof = &basictypes.PackageInfo{
 	TarballName:           "lsof",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "lsof",
 
 	Removable:          true,
 	Reducible:          true,

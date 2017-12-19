@@ -17,7 +17,7 @@ var DistroPackageInfo_iptraf = &basictypes.PackageInfo{
 	TarballName:           "iptraf",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

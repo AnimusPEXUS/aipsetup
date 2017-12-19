@@ -17,7 +17,7 @@ var DistroPackageInfo_alsa_lib = &basictypes.PackageInfo{
 	TarballName:           "alsa-lib",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "alsa_lib",
 
 	Removable:          true,
 	Reducible:          true,

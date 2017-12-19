@@ -17,7 +17,7 @@ var DistroPackageInfo_signon = &basictypes.PackageInfo{
 	TarballName:           "signon",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_qmake",
 
 	Removable:          true,
 	Reducible:          true,

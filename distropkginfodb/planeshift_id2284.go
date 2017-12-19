@@ -17,7 +17,7 @@ var DistroPackageInfo_planeshift = &basictypes.PackageInfo{
 	TarballName:           "planeshift",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

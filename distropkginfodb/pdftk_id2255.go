@@ -17,7 +17,7 @@ var DistroPackageInfo_pdftk = &basictypes.PackageInfo{
 	TarballName:           "pdftk",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pdftk",
 
 	Removable:          true,
 	Reducible:          true,

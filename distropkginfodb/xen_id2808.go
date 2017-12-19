@@ -17,7 +17,7 @@ var DistroPackageInfo_xen = &basictypes.PackageInfo{
 	TarballName:           "xen",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "xen",
 
 	Removable:          true,
 	Reducible:          true,

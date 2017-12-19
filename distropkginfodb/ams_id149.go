@@ -17,7 +17,7 @@ var DistroPackageInfo_ams = &basictypes.PackageInfo{
 	TarballName:           "ams",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

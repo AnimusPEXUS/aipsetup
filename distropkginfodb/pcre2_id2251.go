@@ -17,7 +17,7 @@ var DistroPackageInfo_pcre2 = &basictypes.PackageInfo{
 	TarballName:           "pcre2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pcre",
 
 	Removable:          true,
 	Reducible:          true,

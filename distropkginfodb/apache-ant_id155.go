@@ -17,7 +17,7 @@ var DistroPackageInfo_apache_ant = &basictypes.PackageInfo{
 	TarballName:           "apache-ant",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "apache_ant",
 
 	Removable:          true,
 	Reducible:          true,

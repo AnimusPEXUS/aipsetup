@@ -17,7 +17,7 @@ var DistroPackageInfo_a52dec = &basictypes.PackageInfo{
 	TarballName:           "a52dec",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "a52dec",
 
 	Removable:          true,
 	Reducible:          true,

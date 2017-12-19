@@ -17,7 +17,7 @@ var DistroPackageInfo_boswars = &basictypes.PackageInfo{
 	TarballName:           "boswars",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

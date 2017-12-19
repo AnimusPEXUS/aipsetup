@@ -17,7 +17,7 @@ var DistroPackageInfo_gaupol = &basictypes.PackageInfo{
 	TarballName:           "gaupol",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_pythons",
 
 	Removable:          true,
 	Reducible:          true,

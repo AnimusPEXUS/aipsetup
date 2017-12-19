@@ -17,7 +17,7 @@ var DistroPackageInfo_iproute2 = &basictypes.PackageInfo{
 	TarballName:           "iproute2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "iproute2",
 
 	Removable:          true,
 	Reducible:          true,

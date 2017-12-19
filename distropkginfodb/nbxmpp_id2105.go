@@ -17,7 +17,7 @@ var DistroPackageInfo_nbxmpp = &basictypes.PackageInfo{
 	TarballName:           "nbxmpp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_pythons",
 
 	Removable:          true,
 	Reducible:          true,

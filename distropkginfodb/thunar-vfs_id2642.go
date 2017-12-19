@@ -17,7 +17,7 @@ var DistroPackageInfo_thunar_vfs = &basictypes.PackageInfo{
 	TarballName:           "thunar-vfs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

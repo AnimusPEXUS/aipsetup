@@ -17,7 +17,7 @@ var DistroPackageInfo_lldb = &basictypes.PackageInfo{
 	TarballName:           "lldb",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm_components",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_cb_glibc_x86_pc_linux_gnu = &basictypes.PackageInfo{
 	TarballName:           "",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "glibc",
 
 	Removable:          true,
 	Reducible:          true,

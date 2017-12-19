@@ -17,7 +17,7 @@ var DistroPackageInfo_turbovnc = &basictypes.PackageInfo{
 	TarballName:           "turbovnc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "turbovnc",
 
 	Removable:          true,
 	Reducible:          true,

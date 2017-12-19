@@ -17,7 +17,7 @@ var DistroPackageInfo_syslinux = &basictypes.PackageInfo{
 	TarballName:           "syslinux",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "syslinux",
 
 	Removable:          false,
 	Reducible:          true,

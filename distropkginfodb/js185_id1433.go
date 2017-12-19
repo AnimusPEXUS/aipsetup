@@ -17,7 +17,7 @@ var DistroPackageInfo_js185 = &basictypes.PackageInfo{
 	TarballName:           "js185",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "js185",
 
 	Removable:          true,
 	Reducible:          true,

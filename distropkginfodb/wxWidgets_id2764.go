@@ -17,7 +17,7 @@ var DistroPackageInfo_wxWidgets = &basictypes.PackageInfo{
 	TarballName:           "wxWidgets",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "wxwidgets",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_libxslt = &basictypes.PackageInfo{
 	TarballName:           "libxslt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libxslt",
 
 	Removable:          true,
 	Reducible:          true,

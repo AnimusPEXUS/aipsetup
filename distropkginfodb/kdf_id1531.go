@@ -17,7 +17,7 @@ var DistroPackageInfo_kdf = &basictypes.PackageInfo{
 	TarballName:           "kdf",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

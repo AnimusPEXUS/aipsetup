@@ -17,7 +17,7 @@ var DistroPackageInfo_kdetoys = &basictypes.PackageInfo{
 	TarballName:           "kdetoys",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

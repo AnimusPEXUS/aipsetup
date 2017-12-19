@@ -17,7 +17,7 @@ var DistroPackageInfo_polkit = &basictypes.PackageInfo{
 	TarballName:           "polkit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "polkit",
 
 	Removable:          true,
 	Reducible:          true,

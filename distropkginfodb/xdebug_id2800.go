@@ -17,7 +17,7 @@ var DistroPackageInfo_xdebug = &basictypes.PackageInfo{
 	TarballName:           "xdebug",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

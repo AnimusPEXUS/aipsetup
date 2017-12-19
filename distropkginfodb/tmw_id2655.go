@@ -17,7 +17,7 @@ var DistroPackageInfo_tmw = &basictypes.PackageInfo{
 	TarballName:           "tmw",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

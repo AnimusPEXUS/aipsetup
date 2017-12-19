@@ -17,7 +17,7 @@ var DistroPackageInfo_weston = &basictypes.PackageInfo{
 	TarballName:           "weston",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "weston",
 
 	Removable:          true,
 	Reducible:          true,

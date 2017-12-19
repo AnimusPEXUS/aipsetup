@@ -17,7 +17,7 @@ var DistroPackageInfo_pango = &basictypes.PackageInfo{
 	TarballName:           "pango",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pango",
 
 	Removable:          true,
 	Reducible:          true,

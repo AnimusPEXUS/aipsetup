@@ -17,7 +17,7 @@ var DistroPackageInfo_libv4l = &basictypes.PackageInfo{
 	TarballName:           "libv4l",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

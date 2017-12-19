@@ -17,7 +17,7 @@ var DistroPackageInfo_openjpeg2 = &basictypes.PackageInfo{
 	TarballName:           "openjpeg",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "openjpeg",
 
 	Removable:          true,
 	Reducible:          true,

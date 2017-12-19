@@ -17,7 +17,7 @@ var DistroPackageInfo_libjson = &basictypes.PackageInfo{
 	TarballName:           "libjson",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libjson",
 
 	Removable:          true,
 	Reducible:          true,

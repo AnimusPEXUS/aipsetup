@@ -17,7 +17,7 @@ var DistroPackageInfo_libopenshot = &basictypes.PackageInfo{
 	TarballName:           "libopenshot",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

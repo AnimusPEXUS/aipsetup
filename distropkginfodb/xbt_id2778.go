@@ -17,7 +17,7 @@ var DistroPackageInfo_xbt = &basictypes.PackageInfo{
 	TarballName:           "xbt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_netcat = &basictypes.PackageInfo{
 	TarballName:           "netcat",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

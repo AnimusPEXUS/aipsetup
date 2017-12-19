@@ -17,7 +17,7 @@ var DistroPackageInfo_freeciv = &basictypes.PackageInfo{
 	TarballName:           "freeciv",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

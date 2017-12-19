@@ -17,7 +17,7 @@ var DistroPackageInfo_openjdk8 = &basictypes.PackageInfo{
 	TarballName:           "jdk",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "openjdk8",
 
 	Removable:          true,
 	Reducible:          true,

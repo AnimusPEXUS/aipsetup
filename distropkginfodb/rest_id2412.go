@@ -17,7 +17,7 @@ var DistroPackageInfo_rest = &basictypes.PackageInfo{
 	TarballName:           "rest",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "rest",
 
 	Removable:          true,
 	Reducible:          true,

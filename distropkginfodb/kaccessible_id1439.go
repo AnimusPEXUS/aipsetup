@@ -17,7 +17,7 @@ var DistroPackageInfo_kaccessible = &basictypes.PackageInfo{
 	TarballName:           "kaccessible",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

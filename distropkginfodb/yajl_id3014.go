@@ -17,7 +17,7 @@ var DistroPackageInfo_yajl = &basictypes.PackageInfo{
 	TarballName:           "yajl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

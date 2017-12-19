@@ -17,7 +17,7 @@ var DistroPackageInfo_tzdata = &basictypes.PackageInfo{
 	TarballName:           "tzdata",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "tzdata",
 
 	Removable:          true,
 	Reducible:          true,

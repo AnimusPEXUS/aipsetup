@@ -17,7 +17,7 @@ var DistroPackageInfo_xfce4_appfinder = &basictypes.PackageInfo{
 	TarballName:           "xfce4-appfinder",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

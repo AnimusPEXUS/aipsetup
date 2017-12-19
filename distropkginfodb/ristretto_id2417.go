@@ -17,7 +17,7 @@ var DistroPackageInfo_ristretto = &basictypes.PackageInfo{
 	TarballName:           "ristretto",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

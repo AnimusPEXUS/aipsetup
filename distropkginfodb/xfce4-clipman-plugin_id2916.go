@@ -17,7 +17,7 @@ var DistroPackageInfo_xfce4_clipman_plugin = &basictypes.PackageInfo{
 	TarballName:           "xfce4-clipman-plugin",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

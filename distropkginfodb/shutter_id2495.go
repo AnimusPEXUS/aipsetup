@@ -17,7 +17,7 @@ var DistroPackageInfo_shutter = &basictypes.PackageInfo{
 	TarballName:           "shutter",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

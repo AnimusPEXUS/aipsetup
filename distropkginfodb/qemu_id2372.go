@@ -17,7 +17,7 @@ var DistroPackageInfo_qemu = &basictypes.PackageInfo{
 	TarballName:           "qemu",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "qemu",
 
 	Removable:          true,
 	Reducible:          true,

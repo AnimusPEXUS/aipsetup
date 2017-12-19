@@ -17,7 +17,7 @@ var DistroPackageInfo_exo = &basictypes.PackageInfo{
 	TarballName:           "exo",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

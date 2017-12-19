@@ -17,7 +17,7 @@ var DistroPackageInfo_dissy = &basictypes.PackageInfo{
 	TarballName:           "dissy",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

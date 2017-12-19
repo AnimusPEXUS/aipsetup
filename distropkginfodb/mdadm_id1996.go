@@ -17,7 +17,7 @@ var DistroPackageInfo_mdadm = &basictypes.PackageInfo{
 	TarballName:           "mdadm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mdadm",
 
 	Removable:          true,
 	Reducible:          true,

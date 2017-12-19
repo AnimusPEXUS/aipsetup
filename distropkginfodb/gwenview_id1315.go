@@ -17,7 +17,7 @@ var DistroPackageInfo_gwenview = &basictypes.PackageInfo{
 	TarballName:           "gwenview",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

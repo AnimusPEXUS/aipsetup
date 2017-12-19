@@ -19,7 +19,7 @@ Can't remember :-(`,
 	TarballName:           "Alchemy",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

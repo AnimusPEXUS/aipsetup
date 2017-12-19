@@ -17,7 +17,7 @@ var DistroPackageInfo_firefox = &basictypes.PackageInfo{
 	TarballName:           "firefox",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "firefox",
 
 	Removable:          true,
 	Reducible:          true,

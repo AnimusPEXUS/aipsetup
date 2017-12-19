@@ -17,7 +17,7 @@ var DistroPackageInfo_libkexiv2 = &basictypes.PackageInfo{
 	TarballName:           "libkexiv2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

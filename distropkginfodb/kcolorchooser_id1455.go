@@ -17,7 +17,7 @@ var DistroPackageInfo_kcolorchooser = &basictypes.PackageInfo{
 	TarballName:           "kcolorchooser",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

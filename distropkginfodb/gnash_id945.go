@@ -17,7 +17,7 @@ var DistroPackageInfo_gnash = &basictypes.PackageInfo{
 	TarballName:           "gnash",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gnash",
 
 	Removable:          true,
 	Reducible:          true,

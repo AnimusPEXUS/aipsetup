@@ -17,7 +17,7 @@ var DistroPackageInfo_ghostscript = &basictypes.PackageInfo{
 	TarballName:           "ghostscript",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ghostscript",
 
 	Removable:          true,
 	Reducible:          true,

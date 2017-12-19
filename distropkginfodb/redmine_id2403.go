@@ -17,7 +17,7 @@ var DistroPackageInfo_redmine = &basictypes.PackageInfo{
 	TarballName:           "redmine",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

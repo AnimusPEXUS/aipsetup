@@ -17,7 +17,7 @@ var DistroPackageInfo_naev = &basictypes.PackageInfo{
 	TarballName:           "naev",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

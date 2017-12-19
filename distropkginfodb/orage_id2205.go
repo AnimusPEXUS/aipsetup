@@ -17,7 +17,7 @@ var DistroPackageInfo_orage = &basictypes.PackageInfo{
 	TarballName:           "orage",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

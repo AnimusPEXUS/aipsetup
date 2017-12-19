@@ -17,7 +17,7 @@ var DistroPackageInfo_gvfs = &basictypes.PackageInfo{
 	TarballName:           "gvfs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gvfs",
 
 	Removable:          true,
 	Reducible:          true,

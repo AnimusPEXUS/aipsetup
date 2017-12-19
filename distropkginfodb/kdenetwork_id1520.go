@@ -17,7 +17,7 @@ var DistroPackageInfo_kdenetwork = &basictypes.PackageInfo{
 	TarballName:           "kdenetwork",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

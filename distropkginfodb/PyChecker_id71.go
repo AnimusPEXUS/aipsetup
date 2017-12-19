@@ -17,7 +17,7 @@ var DistroPackageInfo_PyChecker = &basictypes.PackageInfo{
 	TarballName:           "PyChecker",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

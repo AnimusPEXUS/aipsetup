@@ -17,7 +17,7 @@ var DistroPackageInfo_evolution = &basictypes.PackageInfo{
 	TarballName:           "evolution",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "evolution",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_mysql = &basictypes.PackageInfo{
 	TarballName:           "mysql",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mysql",
 
 	Removable:          true,
 	Reducible:          true,

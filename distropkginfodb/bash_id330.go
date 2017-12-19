@@ -17,7 +17,7 @@ var DistroPackageInfo_bash = &basictypes.PackageInfo{
 	TarballName:           "bash",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "bash",
 
 	Removable:          false,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_libreoffice = &basictypes.PackageInfo{
 	TarballName:           "libreoffice",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libreoffice",
 
 	Removable:          true,
 	Reducible:          true,

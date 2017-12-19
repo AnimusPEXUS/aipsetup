@@ -17,7 +17,7 @@ var DistroPackageInfo_man = &basictypes.PackageInfo{
 	TarballName:           "man",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "man",
 
 	Removable:          true,
 	Reducible:          true,

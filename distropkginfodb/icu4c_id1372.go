@@ -17,7 +17,7 @@ var DistroPackageInfo_icu4c = &basictypes.PackageInfo{
 	TarballName:           "icu4c",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "icu4c",
 
 	Removable:          true,
 	Reducible:          true,

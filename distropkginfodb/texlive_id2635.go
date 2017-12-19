@@ -17,7 +17,7 @@ var DistroPackageInfo_texlive = &basictypes.PackageInfo{
 	TarballName:           "texlive",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "texlive",
 
 	Removable:          true,
 	Reducible:          true,

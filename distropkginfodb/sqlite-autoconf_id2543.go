@@ -17,7 +17,7 @@ var DistroPackageInfo_sqlite_autoconf = &basictypes.PackageInfo{
 	TarballName:           "sqlite-autoconf",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "sqliteautoconf",
 
 	Removable:          true,
 	Reducible:          true,

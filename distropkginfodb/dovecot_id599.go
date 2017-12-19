@@ -17,7 +17,7 @@ var DistroPackageInfo_dovecot = &basictypes.PackageInfo{
 	TarballName:           "dovecot",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "dovecot",
 
 	Removable:          true,
 	Reducible:          true,

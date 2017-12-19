@@ -17,7 +17,7 @@ var DistroPackageInfo_Archive_Zip = &basictypes.PackageInfo{
 	TarballName:           "Archive-Zip",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_deluge = &basictypes.PackageInfo{
 	TarballName:           "deluge",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

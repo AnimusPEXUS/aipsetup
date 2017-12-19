@@ -17,7 +17,7 @@ var DistroPackageInfo_samba = &basictypes.PackageInfo{
 	TarballName:           "samba",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "samba",
 
 	Removable:          true,
 	Reducible:          true,

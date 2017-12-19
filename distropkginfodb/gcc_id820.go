@@ -17,7 +17,7 @@ var DistroPackageInfo_gcc = &basictypes.PackageInfo{
 	TarballName:           "gcc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gcc",
 
 	Removable:          true,
 	Reducible:          true,

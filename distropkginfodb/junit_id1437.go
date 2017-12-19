@@ -17,7 +17,7 @@ var DistroPackageInfo_junit = &basictypes.PackageInfo{
 	TarballName:           "junit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "junit",
 
 	Removable:          true,
 	Reducible:          true,

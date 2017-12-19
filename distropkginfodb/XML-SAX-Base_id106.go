@@ -17,7 +17,7 @@ var DistroPackageInfo_XML_SAX_Base = &basictypes.PackageInfo{
 	TarballName:           "XML-SAX-Base",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

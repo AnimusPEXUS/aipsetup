@@ -17,7 +17,7 @@ var DistroPackageInfo_mysql_connector_odbc = &basictypes.PackageInfo{
 	TarballName:           "mysql-connector-odbc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

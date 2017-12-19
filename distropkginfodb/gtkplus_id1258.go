@@ -17,7 +17,7 @@ var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 	TarballName:           "gtk+",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gtk3",
 
 	Removable:          true,
 	Reducible:          true,

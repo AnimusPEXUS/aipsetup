@@ -17,7 +17,7 @@ var DistroPackageInfo_xrdp = &basictypes.PackageInfo{
 	TarballName:           "xrdp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

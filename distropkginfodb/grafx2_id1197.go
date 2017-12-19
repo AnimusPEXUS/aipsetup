@@ -17,7 +17,7 @@ var DistroPackageInfo_grafx2 = &basictypes.PackageInfo{
 	TarballName:           "grafx2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_indri = &basictypes.PackageInfo{
 	TarballName:           "indri",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

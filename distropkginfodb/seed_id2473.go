@@ -17,7 +17,7 @@ var DistroPackageInfo_seed = &basictypes.PackageInfo{
 	TarballName:           "seed",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "seed",
 
 	Removable:          true,
 	Reducible:          true,

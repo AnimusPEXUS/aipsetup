@@ -17,7 +17,7 @@ var DistroPackageInfo_autogen = &basictypes.PackageInfo{
 	TarballName:           "autogen",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "autogen",
 
 	Removable:          true,
 	Reducible:          true,

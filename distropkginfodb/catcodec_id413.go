@@ -17,7 +17,7 @@ var DistroPackageInfo_catcodec = &basictypes.PackageInfo{
 	TarballName:           "catcodec",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

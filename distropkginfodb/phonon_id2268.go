@@ -17,7 +17,7 @@ var DistroPackageInfo_phonon = &basictypes.PackageInfo{
 	TarballName:           "phonon",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

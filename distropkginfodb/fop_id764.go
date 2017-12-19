@@ -17,7 +17,7 @@ var DistroPackageInfo_fop = &basictypes.PackageInfo{
 	TarballName:           "fop",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "fop",
 
 	Removable:          true,
 	Reducible:          true,

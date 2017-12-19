@@ -17,7 +17,7 @@ var DistroPackageInfo_xvidcore = &basictypes.PackageInfo{
 	TarballName:           "xvidcore",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "xvidcore",
 
 	Removable:          true,
 	Reducible:          true,

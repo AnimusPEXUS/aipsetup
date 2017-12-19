@@ -17,7 +17,7 @@ var DistroPackageInfo_mcabber = &basictypes.PackageInfo{
 	TarballName:           "mcabber",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

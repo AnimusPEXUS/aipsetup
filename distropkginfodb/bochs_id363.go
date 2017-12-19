@@ -17,7 +17,7 @@ var DistroPackageInfo_bochs = &basictypes.PackageInfo{
 	TarballName:           "bochs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

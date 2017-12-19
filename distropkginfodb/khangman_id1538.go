@@ -17,7 +17,7 @@ var DistroPackageInfo_khangman = &basictypes.PackageInfo{
 	TarballName:           "khangman",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

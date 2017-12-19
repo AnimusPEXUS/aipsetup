@@ -17,7 +17,7 @@ var DistroPackageInfo_xfdesktop = &basictypes.PackageInfo{
 	TarballName:           "xfdesktop",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

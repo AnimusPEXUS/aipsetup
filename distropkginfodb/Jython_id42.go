@@ -17,7 +17,7 @@ var DistroPackageInfo_Jython = &basictypes.PackageInfo{
 	TarballName:           "Jython",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

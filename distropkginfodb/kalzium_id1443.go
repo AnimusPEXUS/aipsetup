@@ -17,7 +17,7 @@ var DistroPackageInfo_kalzium = &basictypes.PackageInfo{
 	TarballName:           "kalzium",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

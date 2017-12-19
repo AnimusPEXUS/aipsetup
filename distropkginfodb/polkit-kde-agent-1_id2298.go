@@ -17,7 +17,7 @@ var DistroPackageInfo_polkit_kde_agent_1 = &basictypes.PackageInfo{
 	TarballName:           "polkit-kde-agent-1",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

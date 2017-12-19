@@ -17,7 +17,7 @@ var DistroPackageInfo_tkabber = &basictypes.PackageInfo{
 	TarballName:           "tkabber",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "tkabber",
 
 	Removable:          true,
 	Reducible:          true,

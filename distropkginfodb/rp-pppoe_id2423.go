@@ -17,7 +17,7 @@ var DistroPackageInfo_rp_pppoe = &basictypes.PackageInfo{
 	TarballName:           "rp-pppoe",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "rp_pppoe",
 
 	Removable:          true,
 	Reducible:          true,

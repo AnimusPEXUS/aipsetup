@@ -17,7 +17,7 @@ var DistroPackageInfo_slrn = &basictypes.PackageInfo{
 	TarballName:           "slrn",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

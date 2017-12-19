@@ -17,7 +17,7 @@ var DistroPackageInfo_kdemultimedia = &basictypes.PackageInfo{
 	TarballName:           "kdemultimedia",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

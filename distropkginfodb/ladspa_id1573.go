@@ -17,7 +17,7 @@ var DistroPackageInfo_ladspa = &basictypes.PackageInfo{
 	TarballName:           "ladspa",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

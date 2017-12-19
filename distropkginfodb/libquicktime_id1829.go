@@ -17,7 +17,7 @@ var DistroPackageInfo_libquicktime = &basictypes.PackageInfo{
 	TarballName:           "libquicktime",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libquicktime",
 
 	Removable:          true,
 	Reducible:          true,

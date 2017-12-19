@@ -17,7 +17,7 @@ var DistroPackageInfo_tesseract = &basictypes.PackageInfo{
 	TarballName:           "tesseract",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

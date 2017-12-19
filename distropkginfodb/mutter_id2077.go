@@ -17,7 +17,7 @@ var DistroPackageInfo_mutter = &basictypes.PackageInfo{
 	TarballName:           "mutter",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mutter",
 
 	Removable:          true,
 	Reducible:          true,

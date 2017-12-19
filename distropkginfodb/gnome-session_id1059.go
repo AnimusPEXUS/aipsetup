@@ -17,7 +17,7 @@ var DistroPackageInfo_gnome_session = &basictypes.PackageInfo{
 	TarballName:           "gnome-session",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gnomesession",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_PythonCAD = &basictypes.PackageInfo{
 	TarballName:           "PythonCAD",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_libe_book = &basictypes.PackageInfo{
 	TarballName:           "libe-book",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libe_book",
 
 	Removable:          true,
 	Reducible:          true,

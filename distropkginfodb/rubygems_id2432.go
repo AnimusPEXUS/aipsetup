@@ -17,7 +17,7 @@ var DistroPackageInfo_rubygems = &basictypes.PackageInfo{
 	TarballName:           "rubygems",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

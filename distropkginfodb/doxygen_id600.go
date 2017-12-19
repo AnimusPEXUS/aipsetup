@@ -17,7 +17,7 @@ var DistroPackageInfo_doxygen = &basictypes.PackageInfo{
 	TarballName:           "doxygen",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "doxygen",
 
 	Removable:          true,
 	Reducible:          true,

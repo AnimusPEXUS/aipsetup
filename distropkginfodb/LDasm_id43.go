@@ -17,7 +17,7 @@ var DistroPackageInfo_LDasm = &basictypes.PackageInfo{
 	TarballName:           "LDasm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

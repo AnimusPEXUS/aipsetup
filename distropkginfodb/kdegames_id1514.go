@@ -17,7 +17,7 @@ var DistroPackageInfo_kdegames = &basictypes.PackageInfo{
 	TarballName:           "kdegames",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

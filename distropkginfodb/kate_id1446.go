@@ -17,7 +17,7 @@ var DistroPackageInfo_kate = &basictypes.PackageInfo{
 	TarballName:           "kate",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

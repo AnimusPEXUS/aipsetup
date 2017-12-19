@@ -17,7 +17,7 @@ var DistroPackageInfo_fatattr = &basictypes.PackageInfo{
 	TarballName:           "fatattr",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_libmirage = &basictypes.PackageInfo{
 	TarballName:           "libmirage",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

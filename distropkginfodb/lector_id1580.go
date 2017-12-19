@@ -17,7 +17,7 @@ var DistroPackageInfo_lector = &basictypes.PackageInfo{
 	TarballName:           "lector",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

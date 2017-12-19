@@ -17,7 +17,7 @@ var DistroPackageInfo_sane_backends = &basictypes.PackageInfo{
 	TarballName:           "sane-backends",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "sane_backends",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_crystalspace = &basictypes.PackageInfo{
 	TarballName:           "crystalspace",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

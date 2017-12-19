@@ -17,7 +17,7 @@ var DistroPackageInfo_evolution_data_server = &basictypes.PackageInfo{
 	TarballName:           "evolution-data-server",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "evolution_data_server",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_openvpn = &basictypes.PackageInfo{
 	TarballName:           "openvpn",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "openvpn",
 
 	Removable:          true,
 	Reducible:          true,

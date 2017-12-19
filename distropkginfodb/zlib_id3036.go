@@ -17,7 +17,7 @@ var DistroPackageInfo_zlib = &basictypes.PackageInfo{
 	TarballName:           "zlib",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "zlib",
 
 	Removable:          true,
 	Reducible:          true,

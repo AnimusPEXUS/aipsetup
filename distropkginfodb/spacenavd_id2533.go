@@ -17,7 +17,7 @@ var DistroPackageInfo_spacenavd = &basictypes.PackageInfo{
 	TarballName:           "spacenavd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libspnav",
 
 	Removable:          true,
 	Reducible:          true,

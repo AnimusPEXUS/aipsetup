@@ -17,7 +17,7 @@ var DistroPackageInfo_kdeartwork = &basictypes.PackageInfo{
 	TarballName:           "kdeartwork",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_glob2 = &basictypes.PackageInfo{
 	TarballName:           "glob2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

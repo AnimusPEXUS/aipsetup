@@ -17,7 +17,7 @@ var DistroPackageInfo_ucb_toolset_x86_64_pc_linux_gnu = &basictypes.PackageInfo{
 	TarballName:           "",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "crossbuilder_tc",
 
 	Removable:          true,
 	Reducible:          true,

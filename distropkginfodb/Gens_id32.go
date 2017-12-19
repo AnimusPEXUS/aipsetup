@@ -17,7 +17,7 @@ var DistroPackageInfo_Gens = &basictypes.PackageInfo{
 	TarballName:           "Gens",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

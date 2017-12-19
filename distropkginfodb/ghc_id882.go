@@ -17,7 +17,7 @@ var DistroPackageInfo_ghc = &basictypes.PackageInfo{
 	TarballName:           "ghc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

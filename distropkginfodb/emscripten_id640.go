@@ -17,7 +17,7 @@ var DistroPackageInfo_emscripten = &basictypes.PackageInfo{
 	TarballName:           "emscripten",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm_components",
 
 	Removable:          true,
 	Reducible:          true,

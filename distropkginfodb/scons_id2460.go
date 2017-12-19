@@ -17,7 +17,7 @@ var DistroPackageInfo_scons = &basictypes.PackageInfo{
 	TarballName:           "scons-src",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "scons",
 
 	Removable:          true,
 	Reducible:          true,

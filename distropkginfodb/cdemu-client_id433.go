@@ -17,7 +17,7 @@ var DistroPackageInfo_cdemu_client = &basictypes.PackageInfo{
 	TarballName:           "cdemu-client",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

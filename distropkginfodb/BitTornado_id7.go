@@ -17,7 +17,7 @@ var DistroPackageInfo_BitTornado = &basictypes.PackageInfo{
 	TarballName:           "BitTornado",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

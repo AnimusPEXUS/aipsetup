@@ -17,7 +17,7 @@ var DistroPackageInfo_rtmpdump = &basictypes.PackageInfo{
 	TarballName:           "rtmpdump",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "rtmpdump",
 
 	Removable:          true,
 	Reducible:          true,

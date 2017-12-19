@@ -17,7 +17,7 @@ var DistroPackageInfo_kcharselect = &basictypes.PackageInfo{
 	TarballName:           "kcharselect",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

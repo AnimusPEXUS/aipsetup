@@ -17,7 +17,7 @@ var DistroPackageInfo_smokegen = &basictypes.PackageInfo{
 	TarballName:           "smokegen",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

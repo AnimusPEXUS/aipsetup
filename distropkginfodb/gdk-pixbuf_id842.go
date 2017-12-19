@@ -17,7 +17,7 @@ var DistroPackageInfo_gdk_pixbuf = &basictypes.PackageInfo{
 	TarballName:           "gdk-pixbuf",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gdk_pixbuf",
 
 	Removable:          true,
 	Reducible:          true,

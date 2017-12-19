@@ -17,7 +17,7 @@ var DistroPackageInfo_blinken = &basictypes.PackageInfo{
 	TarballName:           "blinken",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

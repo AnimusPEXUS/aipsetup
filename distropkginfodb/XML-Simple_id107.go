@@ -17,7 +17,7 @@ var DistroPackageInfo_XML_Simple = &basictypes.PackageInfo{
 	TarballName:           "XML-Simple",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

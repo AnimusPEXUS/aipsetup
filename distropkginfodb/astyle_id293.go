@@ -17,7 +17,7 @@ var DistroPackageInfo_astyle = &basictypes.PackageInfo{
 	TarballName:           "astyle",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "astyle",
 
 	Removable:          true,
 	Reducible:          true,

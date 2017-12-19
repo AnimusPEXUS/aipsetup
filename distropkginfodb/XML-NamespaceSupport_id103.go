@@ -17,7 +17,7 @@ var DistroPackageInfo_XML_NamespaceSupport = &basictypes.PackageInfo{
 	TarballName:           "XML-NamespaceSupport",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_mc = &basictypes.PackageInfo{
 	TarballName:           "mc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mc",
 
 	Removable:          true,
 	Reducible:          true,

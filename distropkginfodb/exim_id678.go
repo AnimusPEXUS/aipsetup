@@ -17,7 +17,7 @@ var DistroPackageInfo_exim = &basictypes.PackageInfo{
 	TarballName:           "exim",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "exim",
 
 	Removable:          true,
 	Reducible:          true,

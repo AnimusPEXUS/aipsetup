@@ -17,7 +17,7 @@ var DistroPackageInfo_garcon = &basictypes.PackageInfo{
 	TarballName:           "garcon",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

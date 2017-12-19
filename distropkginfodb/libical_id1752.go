@@ -17,7 +17,7 @@ var DistroPackageInfo_libical = &basictypes.PackageInfo{
 	TarballName:           "libical",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

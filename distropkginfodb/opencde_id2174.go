@@ -17,7 +17,7 @@ var DistroPackageInfo_opencde = &basictypes.PackageInfo{
 	TarballName:           "opencde",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

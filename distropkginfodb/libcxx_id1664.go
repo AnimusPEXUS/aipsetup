@@ -17,7 +17,7 @@ var DistroPackageInfo_libcxx = &basictypes.PackageInfo{
 	TarballName:           "libcxx",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm_components",
 
 	Removable:          true,
 	Reducible:          true,

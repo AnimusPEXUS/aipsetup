@@ -17,7 +17,7 @@ var DistroPackageInfo_gdb = &basictypes.PackageInfo{
 	TarballName:           "gdb",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gdb",
 
 	Removable:          true,
 	Reducible:          true,

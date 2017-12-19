@@ -17,7 +17,7 @@ var DistroPackageInfo_schroedinger = &basictypes.PackageInfo{
 	TarballName:           "schroedinger",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

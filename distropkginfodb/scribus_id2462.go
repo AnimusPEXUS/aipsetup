@@ -17,7 +17,7 @@ var DistroPackageInfo_scribus = &basictypes.PackageInfo{
 	TarballName:           "scribus",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

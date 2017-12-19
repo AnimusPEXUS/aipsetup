@@ -17,7 +17,7 @@ var DistroPackageInfo_jojodiff = &basictypes.PackageInfo{
 	TarballName:           "jojodiff",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

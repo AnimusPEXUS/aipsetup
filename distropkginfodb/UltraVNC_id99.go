@@ -17,7 +17,7 @@ var DistroPackageInfo_UltraVNC = &basictypes.PackageInfo{
 	TarballName:           "UltraVNC",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_rp_l2tp = &basictypes.PackageInfo{
 	TarballName:           "rp-l2tp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "rpl2tp",
 
 	Removable:          true,
 	Reducible:          true,

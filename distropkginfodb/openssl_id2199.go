@@ -17,7 +17,7 @@ var DistroPackageInfo_openssl = &basictypes.PackageInfo{
 	TarballName:           "openssl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "openssl",
 
 	Removable:          true,
 	Reducible:          true,

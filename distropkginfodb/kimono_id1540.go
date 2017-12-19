@@ -17,7 +17,7 @@ var DistroPackageInfo_kimono = &basictypes.PackageInfo{
 	TarballName:           "kimono",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

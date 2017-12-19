@@ -17,7 +17,7 @@ var DistroPackageInfo_polly = &basictypes.PackageInfo{
 	TarballName:           "polly",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "llvm_components",
 
 	Removable:          true,
 	Reducible:          true,

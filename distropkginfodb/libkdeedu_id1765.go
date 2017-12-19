@@ -17,7 +17,7 @@ var DistroPackageInfo_libkdeedu = &basictypes.PackageInfo{
 	TarballName:           "libkdeedu",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

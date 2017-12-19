@@ -17,7 +17,7 @@ var DistroPackageInfo_nepomukannotation = &basictypes.PackageInfo{
 	TarballName:           "nepomukannotation",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

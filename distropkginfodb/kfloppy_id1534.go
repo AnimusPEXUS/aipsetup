@@ -17,7 +17,7 @@ var DistroPackageInfo_kfloppy = &basictypes.PackageInfo{
 	TarballName:           "kfloppy",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

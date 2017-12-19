@@ -17,7 +17,7 @@ var DistroPackageInfo_module_init_tools = &basictypes.PackageInfo{
 	TarballName:           "module-init-tools",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "moduleinittools",
 
 	Removable:          true,
 	Reducible:          true,

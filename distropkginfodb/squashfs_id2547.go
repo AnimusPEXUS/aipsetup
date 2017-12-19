@@ -17,7 +17,7 @@ var DistroPackageInfo_squashfs = &basictypes.PackageInfo{
 	TarballName:           "squashfs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "squashfs",
 
 	Removable:          true,
 	Reducible:          true,

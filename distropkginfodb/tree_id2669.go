@@ -17,7 +17,7 @@ var DistroPackageInfo_tree = &basictypes.PackageInfo{
 	TarballName:           "tree",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "tree",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_jpeg = &basictypes.PackageInfo{
 	TarballName:           "jpeg",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "None",
 
 	Removable:          true,
 	Reducible:          true,

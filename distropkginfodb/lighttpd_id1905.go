@@ -17,7 +17,7 @@ var DistroPackageInfo_lighttpd = &basictypes.PackageInfo{
 	TarballName:           "lighttpd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_ftgl = &basictypes.PackageInfo{
 	TarballName:           "ftgl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ftgl",
 
 	Removable:          true,
 	Reducible:          true,

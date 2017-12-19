@@ -17,7 +17,7 @@ var DistroPackageInfo_pyjamas = &basictypes.PackageInfo{
 	TarballName:           "pyjamas",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

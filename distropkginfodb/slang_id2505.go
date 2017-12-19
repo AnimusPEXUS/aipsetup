@@ -17,7 +17,7 @@ var DistroPackageInfo_slang = &basictypes.PackageInfo{
 	TarballName:           "slang",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "slang",
 
 	Removable:          true,
 	Reducible:          true,

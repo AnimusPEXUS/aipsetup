@@ -17,7 +17,7 @@ var DistroPackageInfo_SoQt = &basictypes.PackageInfo{
 	TarballName:           "SoQt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

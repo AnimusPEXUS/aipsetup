@@ -17,7 +17,7 @@ var DistroPackageInfo_fcron = &basictypes.PackageInfo{
 	TarballName:           "fcron",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "fcron",
 
 	Removable:          true,
 	Reducible:          true,

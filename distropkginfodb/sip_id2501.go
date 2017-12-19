@@ -17,7 +17,7 @@ var DistroPackageInfo_sip = &basictypes.PackageInfo{
 	TarballName:           "sip",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "sip",
 
 	Removable:          true,
 	Reducible:          true,

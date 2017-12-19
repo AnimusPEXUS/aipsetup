@@ -17,7 +17,7 @@ var DistroPackageInfo_systemd = &basictypes.PackageInfo{
 	TarballName:           "systemd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "systemd",
 
 	Removable:          true,
 	Reducible:          true,

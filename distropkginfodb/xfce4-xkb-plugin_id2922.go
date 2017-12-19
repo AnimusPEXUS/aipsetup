@@ -17,7 +17,7 @@ var DistroPackageInfo_xfce4_xkb_plugin = &basictypes.PackageInfo{
 	TarballName:           "xfce4-xkb-plugin",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

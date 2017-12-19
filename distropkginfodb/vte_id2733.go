@@ -17,7 +17,7 @@ var DistroPackageInfo_vte = &basictypes.PackageInfo{
 	TarballName:           "vte",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "vte",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_bouml = &basictypes.PackageInfo{
 	TarballName:           "bouml",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

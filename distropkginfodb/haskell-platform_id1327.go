@@ -17,7 +17,7 @@ var DistroPackageInfo_haskell_platform = &basictypes.PackageInfo{
 	TarballName:           "haskell-platform",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

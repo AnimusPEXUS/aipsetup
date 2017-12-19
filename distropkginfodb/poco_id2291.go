@@ -17,7 +17,7 @@ var DistroPackageInfo_poco = &basictypes.PackageInfo{
 	TarballName:           "poco",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

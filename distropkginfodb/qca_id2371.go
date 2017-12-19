@@ -17,7 +17,7 @@ var DistroPackageInfo_qca = &basictypes.PackageInfo{
 	TarballName:           "qca",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "qca",
 
 	Removable:          true,
 	Reducible:          true,

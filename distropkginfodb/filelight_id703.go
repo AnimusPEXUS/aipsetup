@@ -17,7 +17,7 @@ var DistroPackageInfo_filelight = &basictypes.PackageInfo{
 	TarballName:           "filelight",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

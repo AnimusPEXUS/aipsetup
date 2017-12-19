@@ -24,7 +24,7 @@ deprecated! use --disable-orbit for GConf`,
 	TarballName:           "ORBit2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "orbit2",
 
 	Removable:          true,
 	Reducible:          true,

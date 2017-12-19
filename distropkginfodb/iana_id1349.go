@@ -17,7 +17,7 @@ var DistroPackageInfo_iana = &basictypes.PackageInfo{
 	TarballName:           "iana",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

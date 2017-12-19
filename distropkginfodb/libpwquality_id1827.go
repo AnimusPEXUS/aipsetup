@@ -17,7 +17,7 @@ var DistroPackageInfo_libpwquality = &basictypes.PackageInfo{
 	TarballName:           "libpwquality",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libpwquality",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_kturtle = &basictypes.PackageInfo{
 	TarballName:           "kturtle",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

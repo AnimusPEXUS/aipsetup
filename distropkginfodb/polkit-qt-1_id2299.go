@@ -17,7 +17,7 @@ var DistroPackageInfo_polkit_qt_1 = &basictypes.PackageInfo{
 	TarballName:           "polkit-qt-1",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

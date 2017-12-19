@@ -17,7 +17,7 @@ var DistroPackageInfo_xfsdump = &basictypes.PackageInfo{
 	TarballName:           "xfsdump",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "xfs",
 
 	Removable:          true,
 	Reducible:          true,

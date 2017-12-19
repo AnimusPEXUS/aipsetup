@@ -17,7 +17,7 @@ var DistroPackageInfo_opus = &basictypes.PackageInfo{
 	TarballName:           "opus",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "opus",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_attr = &basictypes.PackageInfo{
 	TarballName:           "attr",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "xfs",
 
 	Removable:          true,
 	Reducible:          true,

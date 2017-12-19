@@ -17,7 +17,7 @@ var DistroPackageInfo_simutrans = &basictypes.PackageInfo{
 	TarballName:           "simutrans",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

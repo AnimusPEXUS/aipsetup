@@ -17,7 +17,7 @@ var DistroPackageInfo_setuptools = &basictypes.PackageInfo{
 	TarballName:           "setuptools",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

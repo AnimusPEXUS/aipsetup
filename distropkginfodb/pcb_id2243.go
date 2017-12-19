@@ -17,7 +17,7 @@ var DistroPackageInfo_pcb = &basictypes.PackageInfo{
 	TarballName:           "pcb",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_cogl = &basictypes.PackageInfo{
 	TarballName:           "cogl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "cogl",
 
 	Removable:          true,
 	Reducible:          true,

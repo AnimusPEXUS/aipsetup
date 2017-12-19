@@ -17,7 +17,7 @@ var DistroPackageInfo_podofobrowser = &basictypes.PackageInfo{
 	TarballName:           "podofobrowser",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

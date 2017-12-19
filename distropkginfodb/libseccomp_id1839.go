@@ -18,7 +18,7 @@ var DistroPackageInfo_libseccomp = &basictypes.PackageInfo{
 	TarballName:           "libseccomp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libseccomp",
 
 	Removable:          true,
 	Reducible:          true,

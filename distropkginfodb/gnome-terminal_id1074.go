@@ -17,7 +17,7 @@ var DistroPackageInfo_gnome_terminal = &basictypes.PackageInfo{
 	TarballName:           "gnome-terminal",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gnome_terminal",
 
 	Removable:          true,
 	Reducible:          true,

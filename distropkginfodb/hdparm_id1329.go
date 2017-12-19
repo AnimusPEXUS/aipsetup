@@ -17,7 +17,7 @@ var DistroPackageInfo_hdparm = &basictypes.PackageInfo{
 	TarballName:           "hdparm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "hdparm",
 
 	Removable:          true,
 	Reducible:          true,

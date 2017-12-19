@@ -17,7 +17,7 @@ var DistroPackageInfo_xfce4_panel = &basictypes.PackageInfo{
 	TarballName:           "xfce4-panel",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

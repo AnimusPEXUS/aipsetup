@@ -17,7 +17,7 @@ var DistroPackageInfo_opensfx = &basictypes.PackageInfo{
 	TarballName:           "opensfx",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

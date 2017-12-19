@@ -17,7 +17,7 @@ var DistroPackageInfo_eject = &basictypes.PackageInfo{
 	TarballName:           "eject",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

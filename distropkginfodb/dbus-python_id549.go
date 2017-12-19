@@ -17,7 +17,7 @@ var DistroPackageInfo_dbus_python = &basictypes.PackageInfo{
 	TarballName:           "dbus-python",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_py23",
 
 	Removable:          true,
 	Reducible:          true,

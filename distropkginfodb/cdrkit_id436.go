@@ -17,7 +17,7 @@ var DistroPackageInfo_cdrkit = &basictypes.PackageInfo{
 	TarballName:           "cdrkit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_sgml_common = &basictypes.PackageInfo{
 	TarballName:           "sgml-common",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "sgml_common",
 
 	Removable:          true,
 	Reducible:          true,

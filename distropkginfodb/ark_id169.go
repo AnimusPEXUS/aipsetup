@@ -17,7 +17,7 @@ var DistroPackageInfo_ark = &basictypes.PackageInfo{
 	TarballName:           "ark",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_tightvnc = &basictypes.PackageInfo{
 	TarballName:           "tightvnc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_liba52 = &basictypes.PackageInfo{
 	TarballName:           "liba52",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

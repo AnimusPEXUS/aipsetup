@@ -17,7 +17,7 @@ var DistroPackageInfo_kremotecontrol = &basictypes.PackageInfo{
 	TarballName:           "kremotecontrol",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

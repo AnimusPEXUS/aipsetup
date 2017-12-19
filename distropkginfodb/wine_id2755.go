@@ -17,7 +17,7 @@ var DistroPackageInfo_wine = &basictypes.PackageInfo{
 	TarballName:           "wine",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "wine",
 
 	Removable:          true,
 	Reducible:          true,

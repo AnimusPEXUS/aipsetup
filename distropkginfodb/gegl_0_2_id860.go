@@ -17,7 +17,7 @@ var DistroPackageInfo_gegl_0_2 = &basictypes.PackageInfo{
 	TarballName:           "gegl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gegl",
 
 	Removable:          true,
 	Reducible:          true,

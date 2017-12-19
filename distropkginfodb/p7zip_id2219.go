@@ -17,7 +17,7 @@ var DistroPackageInfo_p7zip = &basictypes.PackageInfo{
 	TarballName:           "p7zip",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "p7zip",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_folks = &basictypes.PackageInfo{
 	TarballName:           "folks",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "folks",
 
 	Removable:          true,
 	Reducible:          true,

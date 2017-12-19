@@ -17,7 +17,7 @@ var DistroPackageInfo_ktouch = &basictypes.PackageInfo{
 	TarballName:           "ktouch",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

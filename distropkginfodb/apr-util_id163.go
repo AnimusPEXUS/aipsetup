@@ -17,7 +17,7 @@ var DistroPackageInfo_apr_util = &basictypes.PackageInfo{
 	TarballName:           "apr-util",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "apr_util",
 
 	Removable:          true,
 	Reducible:          true,

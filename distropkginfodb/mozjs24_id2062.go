@@ -17,7 +17,7 @@ var DistroPackageInfo_mozjs24 = &basictypes.PackageInfo{
 	TarballName:           "mozjs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mozjs",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_pygobject3_8 = &basictypes.PackageInfo{
 	TarballName:           "pygobject3.8",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pygobject",
 
 	Removable:          true,
 	Reducible:          true,

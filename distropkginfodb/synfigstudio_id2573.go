@@ -17,7 +17,7 @@ var DistroPackageInfo_synfigstudio = &basictypes.PackageInfo{
 	TarballName:           "synfigstudio",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

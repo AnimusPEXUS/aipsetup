@@ -17,7 +17,7 @@ var DistroPackageInfo_expect = &basictypes.PackageInfo{
 	TarballName:           "expect",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "expect",
 
 	Removable:          true,
 	Reducible:          true,

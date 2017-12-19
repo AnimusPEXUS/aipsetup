@@ -17,7 +17,7 @@ var DistroPackageInfo_acl = &basictypes.PackageInfo{
 	TarballName:           "acl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "xfs",
 
 	Removable:          true,
 	Reducible:          true,

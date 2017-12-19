@@ -17,7 +17,7 @@ var DistroPackageInfo_glibc_ports = &basictypes.PackageInfo{
 	TarballName:           "glibc-ports",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "glibc",
 
 	Removable:          false,
 	Reducible:          false,

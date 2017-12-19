@@ -17,7 +17,7 @@ var DistroPackageInfo_blender = &basictypes.PackageInfo{
 	TarballName:           "blender",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "blender",
 
 	Removable:          true,
 	Reducible:          true,

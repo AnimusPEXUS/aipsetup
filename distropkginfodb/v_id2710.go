@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_v = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/retroshare",
+	HomePage:    "https://sourceforge.net/projects/crengine",
 
 	TarballFileNameParser: "std",
 	TarballName:           "v",
@@ -36,7 +36,7 @@ var DistroPackageInfo_v = &basictypes.PackageInfo{
 
 	TarballProvider: "sf",
 	TarballProviderArguments: []string{
-		"retroshare"},
+		"crengine"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

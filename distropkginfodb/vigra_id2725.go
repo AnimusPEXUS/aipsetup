@@ -17,7 +17,7 @@ var DistroPackageInfo_vigra = &basictypes.PackageInfo{
 	TarballName:           "vigra",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

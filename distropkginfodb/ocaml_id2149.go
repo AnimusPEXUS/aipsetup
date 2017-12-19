@@ -17,7 +17,7 @@ var DistroPackageInfo_ocaml = &basictypes.PackageInfo{
 	TarballName:           "ocaml",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

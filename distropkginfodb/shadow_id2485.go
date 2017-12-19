@@ -17,7 +17,7 @@ var DistroPackageInfo_shadow = &basictypes.PackageInfo{
 	TarballName:           "shadow",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "shadow",
 
 	Removable:          true,
 	Reducible:          true,

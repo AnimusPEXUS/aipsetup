@@ -17,7 +17,7 @@ var DistroPackageInfo_tk = &basictypes.PackageInfo{
 	TarballName:           "tk",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "tcltk",
 
 	Removable:          true,
 	Reducible:          true,

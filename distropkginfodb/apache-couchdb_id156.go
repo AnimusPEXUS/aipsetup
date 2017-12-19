@@ -17,7 +17,7 @@ var DistroPackageInfo_apache_couchdb = &basictypes.PackageInfo{
 	TarballName:           "apache-couchdb",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "couchdb",
 
 	Removable:          true,
 	Reducible:          true,

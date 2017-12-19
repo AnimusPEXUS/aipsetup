@@ -17,7 +17,7 @@ var DistroPackageInfo_nas = &basictypes.PackageInfo{
 	TarballName:           "nas",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "nas",
 
 	Removable:          true,
 	Reducible:          true,

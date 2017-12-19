@@ -17,7 +17,7 @@ var DistroPackageInfo_chicken_export = &basictypes.PackageInfo{
 	TarballName:           "chicken_export",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

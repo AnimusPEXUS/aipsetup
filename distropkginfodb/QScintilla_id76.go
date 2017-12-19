@@ -17,7 +17,7 @@ var DistroPackageInfo_QScintilla = &basictypes.PackageInfo{
 	TarballName:           "QScintilla",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

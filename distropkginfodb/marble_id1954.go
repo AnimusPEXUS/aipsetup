@@ -17,7 +17,7 @@ var DistroPackageInfo_marble = &basictypes.PackageInfo{
 	TarballName:           "marble",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

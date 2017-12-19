@@ -17,7 +17,7 @@ var DistroPackageInfo_lua = &basictypes.PackageInfo{
 	TarballName:           "lua",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "lua",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_jabberd2 = &basictypes.PackageInfo{
 	TarballName:           "jabberd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "jabberd2",
 
 	Removable:          true,
 	Reducible:          true,

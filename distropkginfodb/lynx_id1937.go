@@ -17,7 +17,7 @@ var DistroPackageInfo_lynx = &basictypes.PackageInfo{
 	TarballName:           "lynx",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "lynx",
 
 	Removable:          true,
 	Reducible:          true,

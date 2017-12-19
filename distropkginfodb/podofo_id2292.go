@@ -17,7 +17,7 @@ var DistroPackageInfo_podofo = &basictypes.PackageInfo{
 	TarballName:           "podofo",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

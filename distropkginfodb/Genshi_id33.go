@@ -17,7 +17,7 @@ var DistroPackageInfo_Genshi = &basictypes.PackageInfo{
 	TarballName:           "Genshi",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "None",
 
 	Removable:          true,
 	Reducible:          true,

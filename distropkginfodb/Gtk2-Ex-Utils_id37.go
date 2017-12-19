@@ -17,7 +17,7 @@ var DistroPackageInfo_Gtk2_Ex_Utils = &basictypes.PackageInfo{
 	TarballName:           "Gtk2-Ex-Utils",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

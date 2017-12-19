@@ -17,7 +17,7 @@ var DistroPackageInfo_libkipi = &basictypes.PackageInfo{
 	TarballName:           "libkipi",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_Thunar = &basictypes.PackageInfo{
 	TarballName:           "Thunar",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

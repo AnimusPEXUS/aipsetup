@@ -17,7 +17,7 @@ var DistroPackageInfo_qtcreator = &basictypes.PackageInfo{
 	TarballName:           "qt-creator-opensource-src",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "qtcreator",
 
 	Removable:          true,
 	Reducible:          true,

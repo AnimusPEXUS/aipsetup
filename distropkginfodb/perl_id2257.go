@@ -17,7 +17,7 @@ var DistroPackageInfo_perl = &basictypes.PackageInfo{
 	TarballName:           "perl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_bind10 = &basictypes.PackageInfo{
 	TarballName:           "bind10",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "bind10",
 
 	Removable:          true,
 	Reducible:          true,

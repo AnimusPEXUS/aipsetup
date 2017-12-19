@@ -17,7 +17,7 @@ var DistroPackageInfo_opencdk = &basictypes.PackageInfo{
 	TarballName:           "opencdk",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

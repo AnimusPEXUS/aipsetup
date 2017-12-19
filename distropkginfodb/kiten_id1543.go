@@ -17,7 +17,7 @@ var DistroPackageInfo_kiten = &basictypes.PackageInfo{
 	TarballName:           "kiten",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

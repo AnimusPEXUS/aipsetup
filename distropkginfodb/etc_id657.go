@@ -17,7 +17,7 @@ var DistroPackageInfo_etc = &basictypes.PackageInfo{
 	TarballName:           "etc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

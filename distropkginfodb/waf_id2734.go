@@ -17,7 +17,7 @@ var DistroPackageInfo_waf = &basictypes.PackageInfo{
 	TarballName:           "waf",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "waf",
 
 	Removable:          true,
 	Reducible:          true,

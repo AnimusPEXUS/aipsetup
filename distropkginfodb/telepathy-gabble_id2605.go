@@ -17,7 +17,7 @@ var DistroPackageInfo_telepathy_gabble = &basictypes.PackageInfo{
 	TarballName:           "telepathy-gabble",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "telepathy_gabble",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_kmod = &basictypes.PackageInfo{
 	TarballName:           "kmod",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "kmod",
 
 	Removable:          true,
 	Reducible:          true,

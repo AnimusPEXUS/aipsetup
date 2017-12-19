@@ -17,7 +17,7 @@ var DistroPackageInfo_DBDesigner = &basictypes.PackageInfo{
 	TarballName:           "DBDesigner",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

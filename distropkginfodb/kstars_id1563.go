@@ -17,7 +17,7 @@ var DistroPackageInfo_kstars = &basictypes.PackageInfo{
 	TarballName:           "kstars",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_gegl_gtk = &basictypes.PackageInfo{
 	TarballName:           "gegl-gtk",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

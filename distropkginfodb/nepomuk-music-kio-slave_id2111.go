@@ -17,7 +17,7 @@ var DistroPackageInfo_nepomuk_music_kio_slave = &basictypes.PackageInfo{
 	TarballName:           "nepomuk-music-kio-slave",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

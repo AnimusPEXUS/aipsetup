@@ -17,7 +17,7 @@ var DistroPackageInfo_InstantVNC = &basictypes.PackageInfo{
 	TarballName:           "InstantVNC",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

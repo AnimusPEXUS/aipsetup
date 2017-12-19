@@ -17,7 +17,7 @@ var DistroPackageInfo_linux = &basictypes.PackageInfo{
 	TarballName:           "linux",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "linux",
 
 	Removable:          false,
 	Reducible:          false,

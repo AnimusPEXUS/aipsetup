@@ -17,7 +17,7 @@ var DistroPackageInfo_cb_gcc_x86_64_pc_linux_gnu = &basictypes.PackageInfo{
 	TarballName:           "",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gcc",
 
 	Removable:          true,
 	Reducible:          true,

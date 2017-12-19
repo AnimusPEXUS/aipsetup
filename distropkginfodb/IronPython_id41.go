@@ -17,7 +17,7 @@ var DistroPackageInfo_IronPython = &basictypes.PackageInfo{
 	TarballName:           "IronPython",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

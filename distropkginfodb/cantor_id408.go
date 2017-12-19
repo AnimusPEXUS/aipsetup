@@ -17,7 +17,7 @@ var DistroPackageInfo_cantor = &basictypes.PackageInfo{
 	TarballName:           "cantor",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

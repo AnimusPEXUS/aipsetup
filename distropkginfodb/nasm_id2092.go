@@ -17,7 +17,7 @@ var DistroPackageInfo_nasm = &basictypes.PackageInfo{
 	TarballName:           "nasm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "nasm",
 
 	Removable:          true,
 	Reducible:          true,

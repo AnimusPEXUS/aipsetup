@@ -17,7 +17,7 @@ var DistroPackageInfo_pptpd = &basictypes.PackageInfo{
 	TarballName:           "pptpd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pptpd",
 
 	Removable:          true,
 	Reducible:          true,

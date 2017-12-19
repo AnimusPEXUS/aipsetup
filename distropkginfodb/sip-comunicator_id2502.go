@@ -17,7 +17,7 @@ var DistroPackageInfo_sip_comunicator = &basictypes.PackageInfo{
 	TarballName:           "sip-comunicator",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

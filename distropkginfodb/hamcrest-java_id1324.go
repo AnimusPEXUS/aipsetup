@@ -17,7 +17,7 @@ var DistroPackageInfo_hamcrest_java = &basictypes.PackageInfo{
 	TarballName:           "hamcrest-java",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "hamcrest_java",
 
 	Removable:          true,
 	Reducible:          true,

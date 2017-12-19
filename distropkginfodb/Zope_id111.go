@@ -17,7 +17,7 @@ var DistroPackageInfo_Zope = &basictypes.PackageInfo{
 	TarballName:           "Zope",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

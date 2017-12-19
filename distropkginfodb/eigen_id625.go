@@ -17,7 +17,7 @@ var DistroPackageInfo_eigen = &basictypes.PackageInfo{
 	TarballName:           "eigen",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

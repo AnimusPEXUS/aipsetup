@@ -17,7 +17,7 @@ var DistroPackageInfo_cuneyform_linux = &basictypes.PackageInfo{
 	TarballName:           "cuneyform-linux",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

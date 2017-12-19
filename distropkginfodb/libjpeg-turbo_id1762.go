@@ -17,7 +17,7 @@ var DistroPackageInfo_libjpeg_turbo = &basictypes.PackageInfo{
 	TarballName:           "libjpeg-turbo",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libjpeg_turbo",
 
 	Removable:          true,
 	Reducible:          true,

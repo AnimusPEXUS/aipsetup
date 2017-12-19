@@ -17,7 +17,7 @@ var DistroPackageInfo_free_cad = &basictypes.PackageInfo{
 	TarballName:           "free-cad",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

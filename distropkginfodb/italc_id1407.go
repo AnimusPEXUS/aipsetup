@@ -17,7 +17,7 @@ var DistroPackageInfo_italc = &basictypes.PackageInfo{
 	TarballName:           "italc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

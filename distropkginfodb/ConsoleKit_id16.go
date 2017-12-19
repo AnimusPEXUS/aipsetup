@@ -17,7 +17,7 @@ var DistroPackageInfo_ConsoleKit = &basictypes.PackageInfo{
 	TarballName:           "ConsoleKit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ConsoleKit",
 
 	Removable:          true,
 	Reducible:          true,

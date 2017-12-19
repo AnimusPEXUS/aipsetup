@@ -17,7 +17,7 @@ var DistroPackageInfo_gnustep_base = &basictypes.PackageInfo{
 	TarballName:           "gnustep-base",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

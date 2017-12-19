@@ -17,7 +17,7 @@ var DistroPackageInfo_libav = &basictypes.PackageInfo{
 	TarballName:           "libav",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

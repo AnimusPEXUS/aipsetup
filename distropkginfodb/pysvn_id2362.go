@@ -17,7 +17,7 @@ var DistroPackageInfo_pysvn = &basictypes.PackageInfo{
 	TarballName:           "pysvn",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_wxPython = &basictypes.PackageInfo{
 	TarballName:           "wxPython-src",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "None",
 
 	Removable:          true,
 	Reducible:          true,

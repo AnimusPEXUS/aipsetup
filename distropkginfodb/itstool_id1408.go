@@ -17,7 +17,7 @@ var DistroPackageInfo_itstool = &basictypes.PackageInfo{
 	TarballName:           "itstool",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "itstool",
 
 	Removable:          true,
 	Reducible:          true,

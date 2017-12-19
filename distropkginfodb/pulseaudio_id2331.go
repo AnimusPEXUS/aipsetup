@@ -17,7 +17,7 @@ var DistroPackageInfo_pulseaudio = &basictypes.PackageInfo{
 	TarballName:           "pulseaudio",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pulseaudio",
 
 	Removable:          true,
 	Reducible:          true,

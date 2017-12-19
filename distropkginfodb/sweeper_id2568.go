@@ -17,7 +17,7 @@ var DistroPackageInfo_sweeper = &basictypes.PackageInfo{
 	TarballName:           "sweeper",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

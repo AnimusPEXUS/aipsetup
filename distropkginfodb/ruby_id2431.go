@@ -17,7 +17,7 @@ var DistroPackageInfo_ruby = &basictypes.PackageInfo{
 	TarballName:           "ruby",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ruby",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_rng_tools = &basictypes.PackageInfo{
 	TarballName:           "rng-tools",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

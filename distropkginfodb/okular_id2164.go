@@ -17,7 +17,7 @@ var DistroPackageInfo_okular = &basictypes.PackageInfo{
 	TarballName:           "okular",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

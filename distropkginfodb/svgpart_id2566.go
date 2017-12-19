@@ -17,7 +17,7 @@ var DistroPackageInfo_svgpart = &basictypes.PackageInfo{
 	TarballName:           "svgpart",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

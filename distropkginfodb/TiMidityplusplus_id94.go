@@ -17,7 +17,7 @@ var DistroPackageInfo_TiMidityplusplus = &basictypes.PackageInfo{
 	TarballName:           "TiMidity++",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

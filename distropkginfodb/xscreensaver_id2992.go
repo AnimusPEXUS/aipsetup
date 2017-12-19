@@ -17,7 +17,7 @@ var DistroPackageInfo_xscreensaver = &basictypes.PackageInfo{
 	TarballName:           "xscreensaver",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

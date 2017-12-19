@@ -17,7 +17,7 @@ var DistroPackageInfo_cegui8 = &basictypes.PackageInfo{
 	TarballName:           "cegui",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

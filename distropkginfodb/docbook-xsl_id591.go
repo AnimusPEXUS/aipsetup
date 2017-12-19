@@ -17,7 +17,7 @@ var DistroPackageInfo_docbook_xsl = &basictypes.PackageInfo{
 	TarballName:           "docbook-xsl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "docbook_xsl",
 
 	Removable:          true,
 	Reducible:          true,

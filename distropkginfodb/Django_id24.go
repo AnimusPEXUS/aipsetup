@@ -17,7 +17,7 @@ var DistroPackageInfo_Django = &basictypes.PackageInfo{
 	TarballName:           "Django",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

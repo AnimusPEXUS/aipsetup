@@ -17,7 +17,7 @@ var DistroPackageInfo_kvm = &basictypes.PackageInfo{
 	TarballName:           "kvm",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

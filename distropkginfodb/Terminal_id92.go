@@ -17,7 +17,7 @@ var DistroPackageInfo_Terminal = &basictypes.PackageInfo{
 	TarballName:           "Terminal",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_mlt = &basictypes.PackageInfo{
 	TarballName:           "mlt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mlt",
 
 	Removable:          true,
 	Reducible:          true,

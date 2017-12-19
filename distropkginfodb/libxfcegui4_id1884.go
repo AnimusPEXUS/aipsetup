@@ -17,7 +17,7 @@ var DistroPackageInfo_libxfcegui4 = &basictypes.PackageInfo{
 	TarballName:           "libxfcegui4",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

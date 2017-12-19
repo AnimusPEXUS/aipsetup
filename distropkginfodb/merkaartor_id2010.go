@@ -17,7 +17,7 @@ var DistroPackageInfo_merkaartor = &basictypes.PackageInfo{
 	TarballName:           "merkaartor",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

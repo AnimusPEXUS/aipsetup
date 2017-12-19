@@ -17,7 +17,7 @@ var DistroPackageInfo_kdepim_runtime = &basictypes.PackageInfo{
 	TarballName:           "kdepim-runtime",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

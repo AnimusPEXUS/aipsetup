@@ -17,7 +17,7 @@ var DistroPackageInfo_kamera = &basictypes.PackageInfo{
 	TarballName:           "kamera",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_step = &basictypes.PackageInfo{
 	TarballName:           "step",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

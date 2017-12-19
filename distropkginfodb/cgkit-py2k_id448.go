@@ -17,7 +17,7 @@ var DistroPackageInfo_cgkit_py2k = &basictypes.PackageInfo{
 	TarballName:           "cgkit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "None",
 
 	Removable:          true,
 	Reducible:          true,

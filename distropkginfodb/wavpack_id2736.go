@@ -17,7 +17,7 @@ var DistroPackageInfo_wavpack = &basictypes.PackageInfo{
 	TarballName:           "wavpack",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

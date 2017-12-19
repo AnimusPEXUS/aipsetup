@@ -17,7 +17,7 @@ var DistroPackageInfo_FreeRDP = &basictypes.PackageInfo{
 	TarballName:           "FreeRDP",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

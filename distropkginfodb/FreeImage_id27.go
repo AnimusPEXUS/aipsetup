@@ -17,7 +17,7 @@ var DistroPackageInfo_FreeImage = &basictypes.PackageInfo{
 	TarballName:           "FreeImage",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "FreeImage",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_ksaneplugin = &basictypes.PackageInfo{
 	TarballName:           "ksaneplugin",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

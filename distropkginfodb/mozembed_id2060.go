@@ -17,7 +17,7 @@ var DistroPackageInfo_mozembed = &basictypes.PackageInfo{
 	TarballName:           "mozembed",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mozembed",
 
 	Removable:          true,
 	Reducible:          true,

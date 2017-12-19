@@ -17,7 +17,7 @@ var DistroPackageInfo_dgen_sdl = &basictypes.PackageInfo{
 	TarballName:           "dgen-sdl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

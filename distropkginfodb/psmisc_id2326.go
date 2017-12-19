@@ -17,7 +17,7 @@ var DistroPackageInfo_psmisc = &basictypes.PackageInfo{
 	TarballName:           "psmisc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "psmisc",
 
 	Removable:          true,
 	Reducible:          true,

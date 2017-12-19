@@ -17,7 +17,7 @@ var DistroPackageInfo_tigase_server = &basictypes.PackageInfo{
 	TarballName:           "tigase-server",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

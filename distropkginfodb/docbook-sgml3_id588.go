@@ -17,7 +17,7 @@ var DistroPackageInfo_docbook_sgml3 = &basictypes.PackageInfo{
 	TarballName:           "docbk",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "docbook_sgml3",
 
 	Removable:          true,
 	Reducible:          true,

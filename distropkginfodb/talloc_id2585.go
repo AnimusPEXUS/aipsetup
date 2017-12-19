@@ -17,7 +17,7 @@ var DistroPackageInfo_talloc = &basictypes.PackageInfo{
 	TarballName:           "talloc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_waf",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_yabause = &basictypes.PackageInfo{
 	TarballName:           "yabause",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

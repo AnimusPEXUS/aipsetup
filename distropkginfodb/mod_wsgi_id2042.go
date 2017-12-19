@@ -17,7 +17,7 @@ var DistroPackageInfo_mod_wsgi = &basictypes.PackageInfo{
 	TarballName:           "mod_wsgi",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mod_wsgi",
 
 	Removable:          true,
 	Reducible:          true,

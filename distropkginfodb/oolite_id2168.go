@@ -17,7 +17,7 @@ var DistroPackageInfo_oolite = &basictypes.PackageInfo{
 	TarballName:           "oolite",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

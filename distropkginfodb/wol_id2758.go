@@ -17,7 +17,7 @@ var DistroPackageInfo_wol = &basictypes.PackageInfo{
 	TarballName:           "wol",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

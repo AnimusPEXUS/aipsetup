@@ -17,7 +17,7 @@ var DistroPackageInfo_pykde4 = &basictypes.PackageInfo{
 	TarballName:           "pykde4",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

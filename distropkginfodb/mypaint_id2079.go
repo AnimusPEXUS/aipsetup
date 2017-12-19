@@ -17,7 +17,7 @@ var DistroPackageInfo_mypaint = &basictypes.PackageInfo{
 	TarballName:           "mypaint",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

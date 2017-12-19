@@ -17,7 +17,7 @@ var DistroPackageInfo_php = &basictypes.PackageInfo{
 	TarballName:           "php",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "php",
 
 	Removable:          true,
 	Reducible:          true,

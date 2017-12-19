@@ -17,7 +17,7 @@ var DistroPackageInfo_ETL = &basictypes.PackageInfo{
 	TarballName:           "ETL",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

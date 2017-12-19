@@ -17,7 +17,7 @@ var DistroPackageInfo_Net_DNS = &basictypes.PackageInfo{
 	TarballName:           "Net-DNS",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

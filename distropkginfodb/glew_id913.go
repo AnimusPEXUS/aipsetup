@@ -17,7 +17,7 @@ var DistroPackageInfo_glew = &basictypes.PackageInfo{
 	TarballName:           "glew",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "glew",
 
 	Removable:          true,
 	Reducible:          true,

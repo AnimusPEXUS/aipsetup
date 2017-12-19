@@ -17,7 +17,7 @@ var DistroPackageInfo_bitlbee = &basictypes.PackageInfo{
 	TarballName:           "bitlbee",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "bitlbee",
 
 	Removable:          true,
 	Reducible:          true,

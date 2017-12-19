@@ -17,7 +17,7 @@ var DistroPackageInfo_tkimage = &basictypes.PackageInfo{
 	TarballName:           "tkimage",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

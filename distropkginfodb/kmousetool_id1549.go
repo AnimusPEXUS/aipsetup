@@ -17,7 +17,7 @@ var DistroPackageInfo_kmousetool = &basictypes.PackageInfo{
 	TarballName:           "kmousetool",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

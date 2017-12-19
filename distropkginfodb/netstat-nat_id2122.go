@@ -17,7 +17,7 @@ var DistroPackageInfo_netstat_nat = &basictypes.PackageInfo{
 	TarballName:           "netstat-nat",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

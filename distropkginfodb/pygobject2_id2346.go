@@ -17,7 +17,7 @@ var DistroPackageInfo_pygobject2 = &basictypes.PackageInfo{
 	TarballName:           "pygobject2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pygobject2",
 
 	Removable:          true,
 	Reducible:          true,

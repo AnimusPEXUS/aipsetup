@@ -17,7 +17,7 @@ var DistroPackageInfo_ulogd = &basictypes.PackageInfo{
 	TarballName:           "ulogd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

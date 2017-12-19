@@ -17,7 +17,7 @@ var DistroPackageInfo_openshot = &basictypes.PackageInfo{
 	TarballName:           "openshot",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_grfcodec = &basictypes.PackageInfo{
 	TarballName:           "grfcodec",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

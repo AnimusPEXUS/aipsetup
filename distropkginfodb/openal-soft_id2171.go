@@ -17,7 +17,7 @@ var DistroPackageInfo_openal_soft = &basictypes.PackageInfo{
 	TarballName:           "openal-soft",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

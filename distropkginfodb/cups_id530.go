@@ -17,7 +17,7 @@ var DistroPackageInfo_cups = &basictypes.PackageInfo{
 	TarballName:           "cups",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "cups",
 
 	Removable:          true,
 	Reducible:          true,

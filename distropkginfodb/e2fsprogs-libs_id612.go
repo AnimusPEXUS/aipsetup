@@ -17,7 +17,7 @@ var DistroPackageInfo_e2fsprogs_libs = &basictypes.PackageInfo{
 	TarballName:           "e2fsprogs-libs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "e2fsprogs",
 
 	Removable:          true,
 	Reducible:          true,

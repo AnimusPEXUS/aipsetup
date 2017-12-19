@@ -17,7 +17,7 @@ var DistroPackageInfo_avidemux = &basictypes.PackageInfo{
 	TarballName:           "avidemux",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

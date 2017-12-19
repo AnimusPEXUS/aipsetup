@@ -17,7 +17,7 @@ var DistroPackageInfo_qimageblitz = &basictypes.PackageInfo{
 	TarballName:           "qimageblitz",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

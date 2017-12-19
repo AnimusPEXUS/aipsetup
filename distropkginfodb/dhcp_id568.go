@@ -17,7 +17,7 @@ var DistroPackageInfo_dhcp = &basictypes.PackageInfo{
 	TarballName:           "dhcp",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "dhcp",
 
 	Removable:          true,
 	Reducible:          true,

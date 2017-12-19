@@ -17,7 +17,7 @@ var DistroPackageInfo_gnustep_startup = &basictypes.PackageInfo{
 	TarballName:           "gnustep-startup",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

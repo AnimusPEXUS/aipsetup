@@ -17,7 +17,7 @@ var DistroPackageInfo_whois = &basictypes.PackageInfo{
 	TarballName:           "whois",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

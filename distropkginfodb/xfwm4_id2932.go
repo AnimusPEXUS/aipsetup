@@ -17,7 +17,7 @@ var DistroPackageInfo_xfwm4 = &basictypes.PackageInfo{
 	TarballName:           "xfwm4",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_QScintilla2 = &basictypes.PackageInfo{
 	TarballName:           "QScintilla-gpl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "qscintilla",
 
 	Removable:          true,
 	Reducible:          true,

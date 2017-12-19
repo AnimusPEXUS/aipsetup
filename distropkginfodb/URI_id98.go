@@ -17,7 +17,7 @@ var DistroPackageInfo_URI = &basictypes.PackageInfo{
 	TarballName:           "URI",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

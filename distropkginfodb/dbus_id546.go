@@ -17,7 +17,7 @@ var DistroPackageInfo_dbus = &basictypes.PackageInfo{
 	TarballName:           "dbus",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "dbus",
 
 	Removable:          true,
 	Reducible:          true,

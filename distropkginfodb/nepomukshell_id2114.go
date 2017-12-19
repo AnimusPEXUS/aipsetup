@@ -17,7 +17,7 @@ var DistroPackageInfo_nepomukshell = &basictypes.PackageInfo{
 	TarballName:           "nepomukshell",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

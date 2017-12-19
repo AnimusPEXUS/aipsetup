@@ -17,7 +17,7 @@ var DistroPackageInfo_icedtea_sound = &basictypes.PackageInfo{
 	TarballName:           "icedtea-sound",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "icedtea_sound",
 
 	Removable:          true,
 	Reducible:          true,

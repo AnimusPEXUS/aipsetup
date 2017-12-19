@@ -17,7 +17,7 @@ var DistroPackageInfo_NetworkManager = &basictypes.PackageInfo{
 	TarballName:           "NetworkManager",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "NetworkManager",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_mysql_connector_java = &basictypes.PackageInfo{
 	TarballName:           "mysql-connector-java",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

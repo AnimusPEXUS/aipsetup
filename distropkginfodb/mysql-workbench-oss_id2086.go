@@ -17,7 +17,7 @@ var DistroPackageInfo_mysql_workbench_oss = &basictypes.PackageInfo{
 	TarballName:           "mysql-workbench-oss",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

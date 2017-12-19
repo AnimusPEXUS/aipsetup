@@ -17,7 +17,7 @@ var DistroPackageInfo_pygame = &basictypes.PackageInfo{
 	TarballName:           "pygame",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

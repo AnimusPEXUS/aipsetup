@@ -17,7 +17,7 @@ var DistroPackageInfo_gnutls = &basictypes.PackageInfo{
 	TarballName:           "gnutls",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gnutls",
 
 	Removable:          true,
 	Reducible:          true,

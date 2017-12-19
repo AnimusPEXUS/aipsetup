@@ -17,7 +17,7 @@ var DistroPackageInfo_hostname = &basictypes.PackageInfo{
 	TarballName:           "hostname",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "hostname",
 
 	Removable:          true,
 	Reducible:          true,

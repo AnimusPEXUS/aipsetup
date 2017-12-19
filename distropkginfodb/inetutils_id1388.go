@@ -17,7 +17,7 @@ var DistroPackageInfo_inetutils = &basictypes.PackageInfo{
 	TarballName:           "inetutils",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "inetutils",
 
 	Removable:          true,
 	Reducible:          true,

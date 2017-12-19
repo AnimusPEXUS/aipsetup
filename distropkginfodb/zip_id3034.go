@@ -17,7 +17,7 @@ var DistroPackageInfo_zip = &basictypes.PackageInfo{
 	TarballName:           "zip",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "infozip",
 
 	Removable:          true,
 	Reducible:          true,

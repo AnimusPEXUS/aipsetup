@@ -17,7 +17,7 @@ var DistroPackageInfo_neon = &basictypes.PackageInfo{
 	TarballName:           "neon",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "neon",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_opencv3 = &basictypes.PackageInfo{
 	TarballName:           "opencv",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

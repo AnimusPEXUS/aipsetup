@@ -17,7 +17,7 @@ var DistroPackageInfo_gerberv = &basictypes.PackageInfo{
 	TarballName:           "gerberv",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

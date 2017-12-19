@@ -17,7 +17,7 @@ var DistroPackageInfo_kdeplasma_addons = &basictypes.PackageInfo{
 	TarballName:           "kdeplasma-addons",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

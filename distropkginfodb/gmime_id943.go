@@ -17,7 +17,7 @@ var DistroPackageInfo_gmime = &basictypes.PackageInfo{
 	TarballName:           "gmime",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gmime",
 
 	Removable:          true,
 	Reducible:          true,

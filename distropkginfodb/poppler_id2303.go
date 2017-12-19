@@ -17,7 +17,7 @@ var DistroPackageInfo_poppler = &basictypes.PackageInfo{
 	TarballName:           "poppler",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "poppler",
 
 	Removable:          true,
 	Reducible:          true,

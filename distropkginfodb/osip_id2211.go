@@ -17,7 +17,7 @@ var DistroPackageInfo_osip = &basictypes.PackageInfo{
 	TarballName:           "osip",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

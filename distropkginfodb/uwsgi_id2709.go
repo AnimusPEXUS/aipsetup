@@ -17,7 +17,7 @@ var DistroPackageInfo_uwsgi = &basictypes.PackageInfo{
 	TarballName:           "uwsgi",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "uwsgi",
 
 	Removable:          true,
 	Reducible:          true,

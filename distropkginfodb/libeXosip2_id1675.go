@@ -17,7 +17,7 @@ var DistroPackageInfo_libeXosip2 = &basictypes.PackageInfo{
 	TarballName:           "libeXosip2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_pyqt4 = &basictypes.PackageInfo{
 	TarballName:           "PyQt-x11-gpl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pyqt",
 
 	Removable:          true,
 	Reducible:          true,

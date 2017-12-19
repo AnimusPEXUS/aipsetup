@@ -17,7 +17,7 @@ var DistroPackageInfo_kruler = &basictypes.PackageInfo{
 	TarballName:           "kruler",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

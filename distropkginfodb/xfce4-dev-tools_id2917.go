@@ -17,7 +17,7 @@ var DistroPackageInfo_xfce4_dev_tools = &basictypes.PackageInfo{
 	TarballName:           "xfce4-dev-tools",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

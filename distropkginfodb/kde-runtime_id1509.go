@@ -17,7 +17,7 @@ var DistroPackageInfo_kde_runtime = &basictypes.PackageInfo{
 	TarballName:           "kde-runtime",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

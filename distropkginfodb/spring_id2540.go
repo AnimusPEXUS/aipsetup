@@ -17,7 +17,7 @@ var DistroPackageInfo_spring = &basictypes.PackageInfo{
 	TarballName:           "spring",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

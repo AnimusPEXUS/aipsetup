@@ -17,7 +17,7 @@ var DistroPackageInfo_kde_wallpapers = &basictypes.PackageInfo{
 	TarballName:           "kde-wallpapers",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

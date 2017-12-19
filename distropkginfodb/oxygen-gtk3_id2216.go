@@ -17,7 +17,7 @@ var DistroPackageInfo_oxygen_gtk3 = &basictypes.PackageInfo{
 	TarballName:           "oxygen-gtk3",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

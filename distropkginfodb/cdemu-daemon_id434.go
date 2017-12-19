@@ -17,7 +17,7 @@ var DistroPackageInfo_cdemu_daemon = &basictypes.PackageInfo{
 	TarballName:           "cdemu-daemon",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

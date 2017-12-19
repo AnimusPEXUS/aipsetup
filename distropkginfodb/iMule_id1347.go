@@ -17,7 +17,7 @@ var DistroPackageInfo_iMule = &basictypes.PackageInfo{
 	TarballName:           "iMule",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

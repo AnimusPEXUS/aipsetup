@@ -17,7 +17,7 @@ var DistroPackageInfo_Python2 = &basictypes.PackageInfo{
 	TarballName:           "Python",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "python",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_less = &basictypes.PackageInfo{
 	TarballName:           "less",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "less",
 
 	Removable:          true,
 	Reducible:          true,

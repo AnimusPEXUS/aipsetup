@@ -17,7 +17,7 @@ var DistroPackageInfo_cinilerra = &basictypes.PackageInfo{
 	TarballName:           "cinilerra",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

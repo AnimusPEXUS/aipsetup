@@ -17,7 +17,7 @@ var DistroPackageInfo_openmsx = &basictypes.PackageInfo{
 	TarballName:           "openmsx",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

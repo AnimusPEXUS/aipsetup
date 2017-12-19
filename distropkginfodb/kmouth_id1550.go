@@ -17,7 +17,7 @@ var DistroPackageInfo_kmouth = &basictypes.PackageInfo{
 	TarballName:           "kmouth",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

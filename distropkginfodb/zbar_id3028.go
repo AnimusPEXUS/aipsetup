@@ -17,7 +17,7 @@ var DistroPackageInfo_zbar = &basictypes.PackageInfo{
 	TarballName:           "zbar",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "zbare",
 
 	Removable:          true,
 	Reducible:          true,

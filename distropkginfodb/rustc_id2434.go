@@ -17,7 +17,7 @@ var DistroPackageInfo_rustc = &basictypes.PackageInfo{
 	TarballName:           "rustc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "rustc",
 
 	Removable:          true,
 	Reducible:          true,

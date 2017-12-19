@@ -17,7 +17,7 @@ var DistroPackageInfo_epiphany = &basictypes.PackageInfo{
 	TarballName:           "epiphany",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "epiphany",
 
 	Removable:          true,
 	Reducible:          true,

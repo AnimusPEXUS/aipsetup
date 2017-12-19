@@ -17,7 +17,7 @@ var DistroPackageInfo_bluez = &basictypes.PackageInfo{
 	TarballName:           "bluez",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "bluez",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_notion = &basictypes.PackageInfo{
 	TarballName:           "notion",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

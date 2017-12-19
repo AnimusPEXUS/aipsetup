@@ -17,7 +17,7 @@ var DistroPackageInfo_pciutils = &basictypes.PackageInfo{
 	TarballName:           "pciutils",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "pciutils",
 
 	Removable:          true,
 	Reducible:          true,

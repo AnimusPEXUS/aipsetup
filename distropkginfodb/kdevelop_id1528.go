@@ -17,7 +17,7 @@ var DistroPackageInfo_kdevelop = &basictypes.PackageInfo{
 	TarballName:           "kdevelop",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

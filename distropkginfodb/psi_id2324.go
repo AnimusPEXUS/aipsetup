@@ -17,7 +17,7 @@ var DistroPackageInfo_psi = &basictypes.PackageInfo{
 	TarballName:           "psi",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "psi",
 
 	Removable:          true,
 	Reducible:          true,

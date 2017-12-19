@@ -17,7 +17,7 @@ var DistroPackageInfo_superkaramba = &basictypes.PackageInfo{
 	TarballName:           "superkaramba",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

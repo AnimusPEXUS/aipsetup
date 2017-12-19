@@ -17,7 +17,7 @@ var DistroPackageInfo_recording_level_monitor = &basictypes.PackageInfo{
 	TarballName:           "recording-level-monitor",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_qbzr = &basictypes.PackageInfo{
 	TarballName:           "qbzr",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_git = &basictypes.PackageInfo{
 	TarballName:           "git",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "git",
 
 	Removable:          true,
 	Reducible:          true,

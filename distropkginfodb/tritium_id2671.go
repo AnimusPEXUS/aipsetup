@@ -17,7 +17,7 @@ var DistroPackageInfo_tritium = &basictypes.PackageInfo{
 	TarballName:           "tritium",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

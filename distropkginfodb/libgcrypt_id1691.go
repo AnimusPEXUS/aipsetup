@@ -17,7 +17,7 @@ var DistroPackageInfo_libgcrypt = &basictypes.PackageInfo{
 	TarballName:           "libgcrypt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libgcrypt",
 
 	Removable:          true,
 	Reducible:          true,

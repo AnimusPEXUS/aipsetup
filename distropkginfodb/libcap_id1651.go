@@ -17,7 +17,7 @@ var DistroPackageInfo_libcap = &basictypes.PackageInfo{
 	TarballName:           "libcap",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libcap",
 
 	Removable:          true,
 	Reducible:          true,

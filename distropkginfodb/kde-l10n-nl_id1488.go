@@ -17,7 +17,7 @@ var DistroPackageInfo_kde_l10n_nl = &basictypes.PackageInfo{
 	TarballName:           "kde-l10n-nl",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

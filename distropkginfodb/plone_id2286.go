@@ -17,7 +17,7 @@ var DistroPackageInfo_plone = &basictypes.PackageInfo{
 	TarballName:           "plone",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

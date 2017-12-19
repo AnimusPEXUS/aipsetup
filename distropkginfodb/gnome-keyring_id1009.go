@@ -17,7 +17,7 @@ var DistroPackageInfo_gnome_keyring = &basictypes.PackageInfo{
 	TarballName:           "gnome-keyring",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gnomekeyring",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_pdfedit = &basictypes.PackageInfo{
 	TarballName:           "pdfedit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

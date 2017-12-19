@@ -17,7 +17,7 @@ var DistroPackageInfo_bandersnatch = &basictypes.PackageInfo{
 	TarballName:           "bandersnatch",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

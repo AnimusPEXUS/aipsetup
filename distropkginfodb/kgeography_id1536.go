@@ -17,7 +17,7 @@ var DistroPackageInfo_kgeography = &basictypes.PackageInfo{
 	TarballName:           "kgeography",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

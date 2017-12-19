@@ -17,7 +17,7 @@ var DistroPackageInfo_Parallel_ForkManager = &basictypes.PackageInfo{
 	TarballName:           "Parallel-ForkManager",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

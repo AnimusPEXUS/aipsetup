@@ -17,7 +17,7 @@ var DistroPackageInfo_ibus = &basictypes.PackageInfo{
 	TarballName:           "ibus",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ibus",
 
 	Removable:          true,
 	Reducible:          true,

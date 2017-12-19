@@ -17,7 +17,7 @@ var DistroPackageInfo_signon_oauth2 = &basictypes.PackageInfo{
 	TarballName:           "signon-oauth2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_qmake",
 
 	Removable:          true,
 	Reducible:          true,

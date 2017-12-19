@@ -17,7 +17,7 @@ var DistroPackageInfo_sudo = &basictypes.PackageInfo{
 	TarballName:           "sudo",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "sudo",
 
 	Removable:          true,
 	Reducible:          true,

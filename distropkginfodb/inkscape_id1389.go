@@ -17,7 +17,7 @@ var DistroPackageInfo_inkscape = &basictypes.PackageInfo{
 	TarballName:           "inkscape",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "inkscape",
 
 	Removable:          true,
 	Reducible:          true,

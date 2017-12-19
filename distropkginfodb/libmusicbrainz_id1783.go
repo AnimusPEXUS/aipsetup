@@ -17,7 +17,7 @@ var DistroPackageInfo_libmusicbrainz = &basictypes.PackageInfo{
 	TarballName:           "libmusicbrainz",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

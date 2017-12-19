@@ -17,7 +17,7 @@ var DistroPackageInfo_ecb = &basictypes.PackageInfo{
 	TarballName:           "ecb",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

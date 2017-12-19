@@ -17,7 +17,7 @@ var DistroPackageInfo_irrlicht = &basictypes.PackageInfo{
 	TarballName:           "irrlicht",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

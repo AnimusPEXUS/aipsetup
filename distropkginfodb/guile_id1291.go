@@ -17,7 +17,7 @@ var DistroPackageInfo_guile = &basictypes.PackageInfo{
 	TarballName:           "guile",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "guile",
 
 	Removable:          true,
 	Reducible:          true,

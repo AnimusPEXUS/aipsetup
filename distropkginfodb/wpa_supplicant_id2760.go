@@ -17,7 +17,7 @@ var DistroPackageInfo_wpa_supplicant = &basictypes.PackageInfo{
 	TarballName:           "wpa_supplicant",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "wpa_supplicant",
 
 	Removable:          true,
 	Reducible:          true,

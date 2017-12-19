@@ -17,7 +17,7 @@ var DistroPackageInfo_mongodb = &basictypes.PackageInfo{
 	TarballName:           "mongodb-src-r",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "mongodb",
 
 	Removable:          true,
 	Reducible:          true,

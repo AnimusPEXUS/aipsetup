@@ -17,7 +17,7 @@ var DistroPackageInfo_glibc = &basictypes.PackageInfo{
 	TarballName:           "glibc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "glibc",
 
 	Removable:          false,
 	Reducible:          true,

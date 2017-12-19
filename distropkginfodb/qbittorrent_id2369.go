@@ -17,7 +17,7 @@ var DistroPackageInfo_qbittorrent = &basictypes.PackageInfo{
 	TarballName:           "qbittorrent",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

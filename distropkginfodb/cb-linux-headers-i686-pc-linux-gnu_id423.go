@@ -17,7 +17,7 @@ var DistroPackageInfo_cb_linux_headers_i686_pc_linux_gnu = &basictypes.PackageIn
 	TarballName:           "",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "linux",
 
 	Removable:          true,
 	Reducible:          true,

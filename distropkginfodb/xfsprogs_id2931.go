@@ -17,7 +17,7 @@ var DistroPackageInfo_xfsprogs = &basictypes.PackageInfo{
 	TarballName:           "xfsprogs",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "xfs",
 
 	Removable:          true,
 	Reducible:          true,

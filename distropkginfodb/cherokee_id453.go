@@ -17,7 +17,7 @@ var DistroPackageInfo_cherokee = &basictypes.PackageInfo{
 	TarballName:           "cherokee",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "cherokee",
 
 	Removable:          true,
 	Reducible:          true,

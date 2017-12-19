@@ -17,7 +17,7 @@ var DistroPackageInfo_diffuse = &basictypes.PackageInfo{
 	TarballName:           "diffuse",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

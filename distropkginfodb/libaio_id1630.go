@@ -17,7 +17,7 @@ var DistroPackageInfo_libaio = &basictypes.PackageInfo{
 	TarballName:           "libaio",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "libaio",
 
 	Removable:          true,
 	Reducible:          true,

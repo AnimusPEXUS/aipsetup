@@ -17,7 +17,7 @@ var DistroPackageInfo_cedit = &basictypes.PackageInfo{
 	TarballName:           "cedit",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

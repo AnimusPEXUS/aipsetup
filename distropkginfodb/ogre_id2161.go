@@ -17,7 +17,7 @@ var DistroPackageInfo_ogre = &basictypes.PackageInfo{
 	TarballName:           "ogre_src_v",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "std_cmake",
 
 	Removable:          true,
 	Reducible:          true,

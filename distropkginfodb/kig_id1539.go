@@ -17,7 +17,7 @@ var DistroPackageInfo_kig = &basictypes.PackageInfo{
 	TarballName:           "kig",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

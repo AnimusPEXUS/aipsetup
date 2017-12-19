@@ -17,7 +17,7 @@ var DistroPackageInfo_jack0 = &basictypes.PackageInfo{
 	TarballName:           "jack",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "jack",
 
 	Removable:          true,
 	Reducible:          true,

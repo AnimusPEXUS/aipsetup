@@ -17,7 +17,7 @@ var DistroPackageInfo_gpgme = &basictypes.PackageInfo{
 	TarballName:           "gpgme",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "gpgme",
 
 	Removable:          true,
 	Reducible:          true,

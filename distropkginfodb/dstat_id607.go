@@ -17,7 +17,7 @@ var DistroPackageInfo_dstat = &basictypes.PackageInfo{
 	TarballName:           "dstat",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_smokeqt = &basictypes.PackageInfo{
 	TarballName:           "smokeqt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

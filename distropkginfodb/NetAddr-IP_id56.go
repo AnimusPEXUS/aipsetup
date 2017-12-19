@@ -17,7 +17,7 @@ var DistroPackageInfo_NetAddr_IP = &basictypes.PackageInfo{
 	TarballName:           "NetAddr-IP",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "perl_mod",
 
 	Removable:          true,
 	Reducible:          true,

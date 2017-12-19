@@ -17,7 +17,7 @@ var DistroPackageInfo_gpc = &basictypes.PackageInfo{
 	TarballName:           "gpc",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

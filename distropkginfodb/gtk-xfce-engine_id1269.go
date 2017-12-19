@@ -17,7 +17,7 @@ var DistroPackageInfo_gtk_xfce_engine = &basictypes.PackageInfo{
 	TarballName:           "gtk-xfce-engine",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

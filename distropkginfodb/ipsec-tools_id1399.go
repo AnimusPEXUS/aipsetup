@@ -17,7 +17,7 @@ var DistroPackageInfo_ipsec_tools = &basictypes.PackageInfo{
 	TarballName:           "ipsec-tools",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ipsec_tools",
 
 	Removable:          true,
 	Reducible:          true,

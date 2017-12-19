@@ -17,7 +17,7 @@ var DistroPackageInfo_opencascade = &basictypes.PackageInfo{
 	TarballName:           "opencascade",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

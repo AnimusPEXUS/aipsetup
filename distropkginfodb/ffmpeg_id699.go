@@ -17,7 +17,7 @@ var DistroPackageInfo_ffmpeg = &basictypes.PackageInfo{
 	TarballName:           "ffmpeg",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "ffmpeg",
 
 	Removable:          true,
 	Reducible:          true,

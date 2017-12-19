@@ -17,7 +17,7 @@ var DistroPackageInfo_binutils = &basictypes.PackageInfo{
 	TarballName:           "binutils",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "binutils",
 
 	Removable:          true,
 	Reducible:          true,

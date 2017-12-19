@@ -17,7 +17,7 @@ var DistroPackageInfo_madwifi = &basictypes.PackageInfo{
 	TarballName:           "madwifi",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

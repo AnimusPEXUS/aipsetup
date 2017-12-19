@@ -17,7 +17,7 @@ var DistroPackageInfo_bzip2 = &basictypes.PackageInfo{
 	TarballName:           "bzip2",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "bzip2",
 
 	Removable:          true,
 	Reducible:          true,

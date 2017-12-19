@@ -17,7 +17,7 @@ var DistroPackageInfo_seamonkey = &basictypes.PackageInfo{
 	TarballName:           "seamonkey",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "seamonkey",
 
 	Removable:          true,
 	Reducible:          true,

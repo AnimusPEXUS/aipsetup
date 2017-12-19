@@ -17,7 +17,7 @@ var DistroPackageInfo_kmplot = &basictypes.PackageInfo{
 	TarballName:           "kmplot",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

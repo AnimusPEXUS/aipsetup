@@ -17,7 +17,7 @@ var DistroPackageInfo_gimagereader = &basictypes.PackageInfo{
 	TarballName:           "gimagereader",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

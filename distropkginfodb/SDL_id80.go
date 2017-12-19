@@ -17,7 +17,7 @@ var DistroPackageInfo_SDL = &basictypes.PackageInfo{
 	TarballName:           "SDL",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "SDL",
 
 	Removable:          true,
 	Reducible:          true,

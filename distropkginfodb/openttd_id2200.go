@@ -17,7 +17,7 @@ var DistroPackageInfo_openttd = &basictypes.PackageInfo{
 	TarballName:           "openttd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "openttd",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_bzr_explorer = &basictypes.PackageInfo{
 	TarballName:           "bzr-explorer",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

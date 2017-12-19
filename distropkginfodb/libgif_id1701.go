@@ -17,7 +17,7 @@ var DistroPackageInfo_libgif = &basictypes.PackageInfo{
 	TarballName:           "libgif",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

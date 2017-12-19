@@ -17,7 +17,7 @@ var DistroPackageInfo_inspircd = &basictypes.PackageInfo{
 	TarballName:           "inspircd",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "inspircd",
 
 	Removable:          true,
 	Reducible:          true,

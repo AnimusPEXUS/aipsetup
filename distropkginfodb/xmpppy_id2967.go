@@ -17,7 +17,7 @@ var DistroPackageInfo_xmpppy = &basictypes.PackageInfo{
 	TarballName:           "xmpppy",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

@@ -17,7 +17,7 @@ var DistroPackageInfo_leptonica = &basictypes.PackageInfo{
 	TarballName:           "leptonica",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,

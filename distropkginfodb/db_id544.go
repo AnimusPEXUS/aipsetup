@@ -17,7 +17,7 @@ var DistroPackageInfo_db = &basictypes.PackageInfo{
 	TarballName:           "db",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "db",
 
 	Removable:          true,
 	Reducible:          true,

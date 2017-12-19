@@ -17,7 +17,7 @@ var DistroPackageInfo_libdbusmenu_qt = &basictypes.PackageInfo{
 	TarballName:           "libdbusmenu-qt",
 	Filters:               []string{},
 
-	BuilderName: "std",
+	BuilderName: "",
 
 	Removable:          true,
 	Reducible:          true,
