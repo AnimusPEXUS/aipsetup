@@ -33,7 +33,7 @@ os.makedirs(tgt_dir, exist_ok=True)
 
 
 index_file = open(os.path.join(tgt_dir, "0000000000000000.go"), "w")
-index_file.write('''package distropkginfodb
+index_file.write('''package pkginfodb
 
 import "github.com/AnimusPEXUS/aipsetup"
 
@@ -64,7 +64,7 @@ for i in sorted(list(f1_j.keys())):
             ),
         "w"
         )
-    f.write('''package distropkginfodb
+    f.write('''package pkginfodb
 
 import (
   "github.com/AnimusPEXUS/aipsetup"

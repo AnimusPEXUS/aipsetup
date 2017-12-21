@@ -8,6 +8,7 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
@@ -86,7 +87,7 @@ func CmdAipsetupBuildInitSub01(
 
 	target_tarball := main_tarball
 
-	buildinfo, err := aipsetup.DetermineTarballsBuildinfo(target_tarball)
+	buildinfo, err := pkginfodb.DetermineTarballsBuildinfo(target_tarball)
 	if err != nil {
 		return errors.New("error searching matching info record: " + err.Error())
 	}

@@ -2,6 +2,7 @@ package tarballrepository
 
 import (
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"net/url"
 	"os"
@@ -9,7 +10,7 @@ import (
 	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
@@ -53,7 +54,7 @@ func (self *Repository) CreateCacheObjectForPackage(name string) (
 	*cache01.CacheDir,
 	error,
 ) {
-	info, err := distropkginfodb.Get(name)
+	info, err := pkginfodb.Get(name)
 	if err != nil {
 		return nil, err
 	}
@@ -93,7 +94,7 @@ func (self *Repository) CreateCacheObjectForPackage(name string) (
 
 func (self *Repository) PerformPackageTarballsUpdate(name string) error {
 
-	info, err := distropkginfodb.Get(name)
+	info, err := pkginfodb.Get(name)
 	if err != nil {
 		return err
 	}
@@ -132,7 +133,7 @@ func (self *Repository) ListLocalTarballs(package_name string) ([]string, error)
 		return ret, err
 	}
 
-	info, err := distropkginfodb.Get(package_name)
+	info, err := pkginfodb.Get(package_name)
 	if err != nil {
 		return ret, err
 	}
@@ -234,4 +235,43 @@ func (self *Repository) DeleteFile(
 	filename = path.Base(filename)
 	full_path := path.Join(tarballs_dir, filename)
 	return os.Remove(full_path)
+}
+
+func (self *Repository) MoveInTarball(filename string) error {
+
+	res, err := pkginfodb.DetermineTarballsBuildinfo(filename)
+	if err != nil {
+		return err
+	}
+
+	// fmt.Println("found", len(res), "matches:")
+	// for pkgname, _ := range res {
+	// 	fmt.Println("   ", pkgname)
+	// }
+
+	if len(res) != 1 {
+		return fmt.Errorf("invalid number of recognized results: %d", len(res))
+	}
+
+	var pkgname string
+	// var info *basictypes.PackageInfo
+
+	for pkgname, _ = range res {
+		break
+	}
+
+	tarballs_dir := self.GetPackageTarballsPath(pkgname)
+	full_out_path := path.Join(tarballs_dir, path.Base(filename))
+
+	err = os.MkdirAll(tarballs_dir, 0700)
+	if err != nil {
+		return err
+	}
+
+	err = os.Rename(filename, full_out_path)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

@@ -1,6 +1,6 @@
 package infoeditor
 
-var InfoFileTemplate = `package distropkginfodb
+var InfoFileTemplate = `package pkginfodb
 
 // WARNING: Some parts of this may be generated automatically using infoeditor.
 //          Be mindfull and make automatic parts changes to infoeditor,

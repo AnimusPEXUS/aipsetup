@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/utils/tags"
 )
 
@@ -21,7 +21,7 @@ func (self *InfoEditor) Run() error {
 
 	index_copy := make(map[string]*basictypes.PackageInfo)
 
-	for k, v := range distropkginfodb.Index {
+	for k, v := range pkginfodb.Index {
 		index_copy[k] = v
 	}
 
@@ -30,7 +30,7 @@ func (self *InfoEditor) Run() error {
 		return err
 	}
 
-	outdir, err := filepath.Abs("distropkginfodb_new")
+	outdir, err := filepath.Abs("pkginfodb_new")
 	if err != nil {
 		return err
 	}
@@ -38,7 +38,7 @@ func (self *InfoEditor) Run() error {
 	os.MkdirAll(outdir, 0700)
 
 	index_t := `
-		package distropkginfodb
+		package pkginfodb
 
 		// WARNING: Generated using infoeditor.
 		//          Edit items, compile and use "info-db code" cmd for regenerating.
@@ -219,6 +219,9 @@ func (self *InfoEditor) Edit(index map[string]*basictypes.PackageInfo) error {
 
 		self.ApplyGnome,
 		self.ApplySFNet,
+		self.ApplyKernelOrg, // disabled. do not enable. manual edits already present
+
+		self.ApplyCustomHttpsArgs,
 	} {
 		err := i(index)
 		if err != nil {
@@ -259,8 +262,8 @@ func (self *InfoEditor) ApplyGnome(index map[string]*basictypes.PackageInfo) err
 
 		if t.Have("", "gnome_project") || gnome_p_found {
 			info.TarballName = pkgname
-			info.TarballProvider = "gnome"
-			info.TarballProviderArguments = []string{pkgname}
+			info.TarballProvider = "https"
+			info.TarballProviderArguments = []string{"https://ftp.gnome.org/mirror/gnome.org/"}
 			info.TarballVersionTool = "gnome"
 			info.TarballProviderCachePresetName = "gnome"
 			info.HomePage = "https://gnome.org/"
@@ -281,20 +284,62 @@ func (self *InfoEditor) ApplySFNet(index map[string]*basictypes.PackageInfo) err
 		for k2, v2 := range SOURCEFORGE_PROJECTS {
 			for _, v3 := range v2 {
 
-				if v3 == v1.TarballName {
+				t := tags.New(v1.Tags)
 
-					t := tags.New(v1.Tags)
+				if v3 == v1.TarballName || t.HaveGroup("sf_hosted") {
 
 					v1.HomePage = "https://sourceforge.net/projects/" + k2
 					v1.TarballProvider = "sf"
 					v1.TarballProviderArguments = []string{k2}
 
-					t.Add("sf_project", k2)
+					t.Add("sf_hosted", k2)
 
 					v1.Tags = t.Values()
 				}
 			}
 		}
 	}
+	return nil
+}
+
+func (self *InfoEditor) ApplyKernelOrg(index map[string]*basictypes.PackageInfo) error {
+	//https://cdn.kernel.org/pub/linux/
+
+	for pkgname, info := range index {
+		t := tags.New(info.Tags)
+
+		found := false
+
+		for _, i := range KERNELORG_HOSTED {
+			if i == pkgname {
+				found = true
+				break
+			}
+		}
+
+		if t.HaveValue("kernelorg_hosted") || found {
+			t.AddValue("kernelorg_hosted")
+
+			info.TarballProvider = "https"
+			info.TarballProviderArguments = []string{"https://cdn.kernel.org/pub/"}
+			info.TarballProviderCachePresetName = "by_https_host"
+
+			info.Tags = t.Values()
+		}
+
+	}
+	return nil
+}
+
+func (self *InfoEditor) ApplyCustomHttpsArgs(index map[string]*basictypes.PackageInfo) error {
+
+	for k, v := range CUSTOM_HTTPS_ARGS {
+		if index[k].TarballProviderCachePresetName != "by_https_host" {
+			continue
+		}
+		index[k].TarballProviderArguments = v
+		index[k].TarballProvider = "https"
+	}
+
 	return nil
 }

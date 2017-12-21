@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/AnimusPEXUS/aipsetup/distropkginfodb"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/infoeditor"
 	"github.com/AnimusPEXUS/utils/cliapp"
 )
@@ -26,7 +26,7 @@ func SectionAipsetupInfoDB() *cliapp.AppCmdNode {
 
 			&cliapp.AppCmdNode{
 				Name:             "code",
-				ShortDescription: "Generate new distropkginfodb editing it with InfoEditor.go",
+				ShortDescription: "Generate new pkginfodb editing it with InfoEditor.go",
 				Callable:         CmdAipsetupInfoCode,
 				CheckArgs:        true,
 				MinArgs:          0,
@@ -51,7 +51,7 @@ func CmdAipsetupInfoWrite(
 
 	defer f.Close()
 
-	j_result, err := json.Marshal(distropkginfodb.Index)
+	j_result, err := json.Marshal(pkginfodb.Index)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    11,
