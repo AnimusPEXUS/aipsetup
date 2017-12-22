@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gtkglextmm = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/tkimg",
+	HomePage:    "https://gnome.org/",
 
 	BuilderName: "std",
 
@@ -33,10 +33,10 @@ var DistroPackageInfo_gtkglextmm = &basictypes.PackageInfo{
 	Filters:               []string{},
 	TarballName:           "gtkglextmm",
 	TarballFileNameParser: "std",
-	TarballProvider:       "sf",
+	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"tkimg"},
+		"https://ftp.gnome.org/mirror/gnome.org/"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "gnome",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

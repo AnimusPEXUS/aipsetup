@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_bc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.gnu.org",
+	HomePage:    "https://www.gnu.org/software/bc",
 
 	BuilderName: "bc",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_bc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core1"},
+		"gnu_project", "group:core1"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "bc",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "bc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "https",
+	TarballProviderArguments: []string{
+		"https://ftp.gnu.org/gnu/bc"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

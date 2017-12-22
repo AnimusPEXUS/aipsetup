@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_sed = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.gnu.org",
+	HomePage:    "https://www.gnu.org/software/sed",
 
 	BuilderName: "std",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_sed = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core0"},
+		"gnu_project", "group:core0"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "sed",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "sed",
+	TarballFileNameParser: "std",
+	TarballProvider:       "https",
+	TarballProviderArguments: []string{
+		"https://ftp.gnu.org/gnu/sed"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

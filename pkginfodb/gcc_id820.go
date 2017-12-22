@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gcc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.gnu.org",
+	HomePage:    "https://www.gnu.org/software/gcc",
 
 	BuilderName: "gcc",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_gcc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:cross"},
+		"gnu_project", "group:cross"},
 
-	TarballVersionTool: "std",
+	TarballVersionTool: "gcc",
 
-	Filters:                         []string{},
-	TarballName:                     "gcc",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "gcc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "https",
+	TarballProviderArguments: []string{
+		"https://ftp.gnu.org/gnu/gcc"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

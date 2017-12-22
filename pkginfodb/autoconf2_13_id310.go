@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_autoconf2_13 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://www.gnu.org/software/autoconf",
 
 	BuilderName: "std",
 
@@ -25,17 +25,19 @@ var DistroPackageInfo_autoconf2_13 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"gnu_project"},
 
 	TarballVersionTool: "std",
 
 	Filters: []string{
 		"- version-!= 2.13"},
-	TarballName:                     "autoconf",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballName:           "autoconf",
+	TarballFileNameParser: "std",
+	TarballProvider:       "https",
+	TarballProviderArguments: []string{
+		"https://ftp.gnu.org/gnu/autoconf"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

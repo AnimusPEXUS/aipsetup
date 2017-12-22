@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_make = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.gnu.org",
+	HomePage:    "https://www.gnu.org/software/make",
 
 	BuilderName: "make",
 
@@ -26,7 +26,7 @@ var DistroPackageInfo_make = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core0"},
+		"gnu_project", "group:core0"},
 
 	TarballVersionTool: "std",
 
@@ -37,6 +37,6 @@ var DistroPackageInfo_make = &basictypes.PackageInfo{
 	TarballProviderArguments: []string{
 		"https://ftp.gnu.org/gnu/make"},
 	TarballProviderUseCache:         true,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

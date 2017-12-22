@@ -304,7 +304,7 @@ func (self *InfoEditor) ApplyGNU(index map[string]*basictypes.PackageInfo) error
 				info.TarballVersionTool = "gcc"
 			}
 			info.TarballProviderCachePresetName = "by_https_host"
-			info.HomePage = "https://ftp.gnu.org/gnu/"
+			info.HomePage = "https://www.gnu.org/software/" + info.TarballName
 			// info.BuilderName = "std"
 
 			// t.Add("group", "gnome")

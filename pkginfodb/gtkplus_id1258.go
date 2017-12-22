@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/x3270",
+	HomePage:    "https://gnome.org/",
 
 	BuilderName: "gtk3",
 
@@ -33,10 +33,10 @@ var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 	Filters:               []string{},
 	TarballName:           "gtk+",
 	TarballFileNameParser: "std",
-	TarballProvider:       "sf",
+	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"x3270"},
+		"https://ftp.gnome.org/mirror/gnome.org/"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "gnome",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

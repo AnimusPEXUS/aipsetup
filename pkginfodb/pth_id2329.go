@@ -12,7 +12,7 @@ var DistroPackageInfo_pth = &basictypes.PackageInfo{
 
 	Description: `not deprecated! still needed by gnupg
 `,
-	HomePage: "http://www.gnu.org",
+	HomePage: "https://www.gnu.org/software/pth",
 
 	BuilderName: "std",
 
@@ -26,16 +26,18 @@ var DistroPackageInfo_pth = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"gnu_project"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "pth",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "pth",
+	TarballFileNameParser: "std",
+	TarballProvider:       "https",
+	TarballProviderArguments: []string{
+		"https://ftp.gnu.org/gnu/pth"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

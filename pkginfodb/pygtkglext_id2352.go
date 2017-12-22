@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pygtkglext = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/djvu",
+	HomePage:    "https://gnome.org/",
 
 	BuilderName: "std",
 
@@ -33,10 +33,10 @@ var DistroPackageInfo_pygtkglext = &basictypes.PackageInfo{
 	Filters:               []string{},
 	TarballName:           "pygtkglext",
 	TarballFileNameParser: "std",
-	TarballProvider:       "sf",
+	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"djvu"},
+		"https://ftp.gnome.org/mirror/gnome.org/"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "gnome",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

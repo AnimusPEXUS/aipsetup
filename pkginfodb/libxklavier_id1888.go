@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libxklavier = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/jack-rack",
+	HomePage:    "https://gnome.org/",
 
 	BuilderName: "std",
 
@@ -33,10 +33,10 @@ var DistroPackageInfo_libxklavier = &basictypes.PackageInfo{
 	Filters:               []string{},
 	TarballName:           "libxklavier",
 	TarballFileNameParser: "std",
-	TarballProvider:       "sf",
+	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"jack-rack"},
+		"https://ftp.gnome.org/mirror/gnome.org/"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "gnome",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

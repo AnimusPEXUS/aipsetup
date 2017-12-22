@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gtkglext = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/psmisc",
+	HomePage:    "https://gnome.org/",
 
 	BuilderName: "std",
 
@@ -33,10 +33,10 @@ var DistroPackageInfo_gtkglext = &basictypes.PackageInfo{
 	Filters:               []string{},
 	TarballName:           "gtkglext",
 	TarballFileNameParser: "std",
-	TarballProvider:       "sf",
+	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"psmisc"},
+		"https://ftp.gnome.org/mirror/gnome.org/"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "gnome",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

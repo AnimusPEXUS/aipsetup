@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_mc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://gnome.org/",
+	HomePage:    "https://www.gnu.org/software/mc",
 
 	BuilderName: "mc",
 
@@ -26,17 +26,17 @@ var DistroPackageInfo_mc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "group:core0"},
+		"gnome_project", "gnu_project", "group:core0"},
 
-	TarballVersionTool: "gnome",
+	TarballVersionTool: "std",
 
 	Filters:               []string{},
 	TarballName:           "mc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnome.org/mirror/gnome.org/"},
+		"https://ftp.gnu.org/gnu/mc"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "gnome",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

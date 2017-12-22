@@ -37,6 +37,6 @@ var DistroPackageInfo_pygtk = &basictypes.PackageInfo{
 	TarballProviderArguments: []string{
 		"https://ftp.gnome.org/mirror/gnome.org/"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "gnome",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

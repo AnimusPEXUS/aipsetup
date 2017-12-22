@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_grub2 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://www.gnu.org/software/grub/index.html",
+	HomePage:    "https://www.gnu.org/software/grub",
 
 	BuilderName: "grub2",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_grub2 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core0"},
+		"gnu_project", "group:core0"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "grub",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "grub",
+	TarballFileNameParser: "std",
+	TarballProvider:       "https",
+	TarballProviderArguments: []string{
+		"https://ftp.gnu.org/gnu/grub"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }
