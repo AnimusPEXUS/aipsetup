@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libmirage = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/curlftpfs",
+	HomePage:    "https://sourceforge.net/projects/ol2mbox",
 
 	BuilderName: "std_cmake",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libmirage = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"curlftpfs"},
+		"ol2mbox"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

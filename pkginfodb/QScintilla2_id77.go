@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_QScintilla2 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/mediatomb",
+	HomePage:    "https://sourceforge.net/projects/nas",
 
 	BuilderName: "qscintilla",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_QScintilla2 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"mediatomb"},
+		"nas"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_wxWidgets = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/gsoc-impos",
+	HomePage:    "https://sourceforge.net/projects/freetype",
 
 	BuilderName: "wxwidgets",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_wxWidgets = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"gsoc-impos"},
+		"freetype"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

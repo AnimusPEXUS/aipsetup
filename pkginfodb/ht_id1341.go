@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ht = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/net-snmp",
+	HomePage:    "https://sourceforge.net/projects/crayzedsgui",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_ht = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"net-snmp"},
+		"crayzedsgui"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

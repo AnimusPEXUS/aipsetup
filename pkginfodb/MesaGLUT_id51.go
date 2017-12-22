@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_MesaGLUT = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/stereograph",
+	HomePage:    "https://sourceforge.net/projects/virtualgl",
 
 	BuilderName: "mesaglut",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_MesaGLUT = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"stereograph"},
+		"virtualgl"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

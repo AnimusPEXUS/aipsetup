@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_qimageblitz = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/liboauth",
+	HomePage:    "https://sourceforge.net/projects/subcomposer",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_qimageblitz = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"liboauth"},
+		"subcomposer"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

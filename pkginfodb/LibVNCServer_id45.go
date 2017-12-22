@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_LibVNCServer = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/pupnp",
+	HomePage:    "https://sourceforge.net/projects/xfce",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_LibVNCServer = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"pupnp"},
+		"xfce"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

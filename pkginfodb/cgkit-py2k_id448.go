@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_cgkit_py2k = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/poopmup",
+	HomePage:    "https://sourceforge.net/projects/strace",
 
 	BuilderName: "None",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_cgkit_py2k = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"poopmup"},
+		"strace"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

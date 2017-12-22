@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_bwidget = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/palomino-sim",
+	HomePage:    "https://sourceforge.net/projects/virtualgl",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_bwidget = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"palomino-sim"},
+		"virtualgl"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

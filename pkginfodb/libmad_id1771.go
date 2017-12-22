@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libmad = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/xmpppy",
+	HomePage:    "https://sourceforge.net/projects/mpg123",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libmad = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xmpppy"},
+		"mpg123"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

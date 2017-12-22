@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_cppunit = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/tintin",
+	HomePage:    "https://sourceforge.net/projects/boost",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_cppunit = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tintin"},
+		"boost"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

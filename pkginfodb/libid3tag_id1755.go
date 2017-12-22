@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libid3tag = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/xdvi",
+	HomePage:    "https://sourceforge.net/projects/mantisbt",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libid3tag = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xdvi"},
+		"mantisbt"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

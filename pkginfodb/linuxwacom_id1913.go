@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_linuxwacom = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/linux-usb",
+	HomePage:    "https://sourceforge.net/projects/sf-xpaint",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_linuxwacom = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"linux-usb"},
+		"sf-xpaint"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

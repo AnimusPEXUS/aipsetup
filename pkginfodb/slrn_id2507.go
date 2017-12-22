@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_slrn = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/dom4j",
+	HomePage:    "https://sourceforge.net/projects/pupnp",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_slrn = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"dom4j"},
+		"pupnp"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

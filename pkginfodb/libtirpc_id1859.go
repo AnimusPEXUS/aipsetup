@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libtirpc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/djvu",
+	HomePage:    "https://sourceforge.net/projects/liboauth",
 
 	BuilderName: "libtirpc",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libtirpc = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"djvu"},
+		"liboauth"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libxklavier = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/rhash",
+	HomePage:    "https://sourceforge.net/projects/jack-rack",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libxklavier = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"rhash"},
+		"jack-rack"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,

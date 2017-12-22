@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libtorrent_rasterbar = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/xfce",
+	HomePage:    "https://sourceforge.net/projects/rhash",
 
 	BuilderName: "std_cmake",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libtorrent_rasterbar = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xfce"},
+		"rhash"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

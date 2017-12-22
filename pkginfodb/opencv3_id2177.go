@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_opencv3 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/avidemux",
+	HomePage:    "https://sourceforge.net/projects/qimageblitz",
 
 	BuilderName: "std_cmake",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_opencv3 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"avidemux"},
+		"qimageblitz"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

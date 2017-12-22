@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_zziplib = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/freetype",
+	HomePage:    "https://sourceforge.net/projects/dgen",
 
 	BuilderName: "zziplib",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_zziplib = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"freetype"},
+		"dgen"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

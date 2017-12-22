@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_soprano = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/virtualgl",
+	HomePage:    "https://sourceforge.net/projects/gwenview",
 
 	BuilderName: "std_cmake",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_soprano = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"virtualgl"},
+		"gwenview"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

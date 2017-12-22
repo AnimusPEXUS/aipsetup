@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libdv = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/meanwhile",
+	HomePage:    "https://sourceforge.net/projects/gtkspell",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libdv = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"meanwhile"},
+		"gtkspell"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

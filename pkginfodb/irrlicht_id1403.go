@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_irrlicht = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/libjpeg-turbo",
+	HomePage:    "https://sourceforge.net/projects/stereograph",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_irrlicht = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libjpeg-turbo"},
+		"stereograph"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

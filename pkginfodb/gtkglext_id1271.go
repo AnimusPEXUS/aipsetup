@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gtkglext = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/pywebsvcs",
+	HomePage:    "https://sourceforge.net/projects/psmisc",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_gtkglext = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"pywebsvcs"},
+		"psmisc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_quesoglc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/swig",
+	HomePage:    "https://sourceforge.net/projects/tls",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_quesoglc = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"swig"},
+		"tls"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

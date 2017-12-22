@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_glm = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/glew",
+	HomePage:    "https://sourceforge.net/projects/psmisc",
 
 	BuilderName: "std_cmake",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_glm = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"glew"},
+		"psmisc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ipsec_tools = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/pyqt",
+	HomePage:    "https://sourceforge.net/projects/espeak",
 
 	BuilderName: "ipsec_tools",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_ipsec_tools = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"pyqt"},
+		"espeak"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

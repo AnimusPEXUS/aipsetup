@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_mlt = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/synfig",
+	HomePage:    "https://sourceforge.net/projects/tcllib",
 
 	BuilderName: "mlt",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_mlt = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"synfig"},
+		"tcllib"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

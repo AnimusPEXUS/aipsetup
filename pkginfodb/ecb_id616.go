@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ecb = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/tcl",
+	HomePage:    "https://sourceforge.net/projects/rhash",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_ecb = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tcl"},
+		"rhash"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

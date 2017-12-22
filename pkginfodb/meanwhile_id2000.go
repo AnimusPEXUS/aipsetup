@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_meanwhile = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/nethack",
+	HomePage:    "https://sourceforge.net/projects/nfs",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_meanwhile = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"nethack"},
+		"nfs"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

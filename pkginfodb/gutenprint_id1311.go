@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gutenprint = &basictypes.PackageInfo{
 
 	Description: `None`,
-	HomePage:    "https://sourceforge.net/projects/mantisbt",
+	HomePage:    "https://sourceforge.net/projects/nrappkit",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_gutenprint = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"mantisbt"},
+		"nrappkit"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

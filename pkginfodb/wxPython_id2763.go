@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_wxPython = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/nfs",
+	HomePage:    "https://sourceforge.net/projects/pyopengl",
 
 	BuilderName: "None",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_wxPython = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"nfs"},
+		"pyopengl"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

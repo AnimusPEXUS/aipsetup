@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pyqt4 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/pdfshuffler",
+	HomePage:    "https://sourceforge.net/projects/armagetronad",
 
 	BuilderName: "pyqt",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_pyqt4 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"pdfshuffler"},
+		"armagetronad"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

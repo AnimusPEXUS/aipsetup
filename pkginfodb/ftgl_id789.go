@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ftgl = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/xdvi",
+	HomePage:    "https://sourceforge.net/projects/openobex",
 
 	BuilderName: "ftgl",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_ftgl = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xdvi"},
+		"openobex"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

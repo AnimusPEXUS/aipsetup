@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_synfigstudio = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/guichan",
+	HomePage:    "https://sourceforge.net/projects/bastard",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_synfigstudio = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"guichan"},
+		"bastard"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

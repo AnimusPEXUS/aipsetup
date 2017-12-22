@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_openjpeg1 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/poptop",
+	HomePage:    "https://sourceforge.net/projects/pidgin",
 
 	BuilderName: "openjpeg",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_openjpeg1 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"poptop"},
+		"pidgin"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

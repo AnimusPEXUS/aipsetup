@@ -12,7 +12,7 @@ var DistroPackageInfo_libseccomp = &basictypes.PackageInfo{
 
 	Description: `The libseccomp library provides and easy to use, platform independent, interface to the Linux Kernel's syscall filtering mechanism: seccomp
 `,
-	HomePage: "https://sourceforge.net/projects/xfce",
+	HomePage: "https://sourceforge.net/projects/zint",
 
 	BuilderName: "libseccomp",
 
@@ -36,7 +36,7 @@ var DistroPackageInfo_libseccomp = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xfce"},
+		"zint"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

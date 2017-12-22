@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gtk_xfce_engine = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/sox",
+	HomePage:    "https://sourceforge.net/projects/virtualgl",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_gtk_xfce_engine = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"sox"},
+		"virtualgl"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

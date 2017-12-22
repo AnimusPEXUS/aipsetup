@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_nethack = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/ol2mbox",
+	HomePage:    "https://sourceforge.net/projects/warzone2100",
 
 	BuilderName: "nethack",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_nethack = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"ol2mbox"},
+		"warzone2100"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_mysql = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/poptop",
+	HomePage:    "https://sourceforge.net/projects/gmerlin",
 
 	BuilderName: "mysql",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_mysql = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"poptop"},
+		"gmerlin"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

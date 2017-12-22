@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_boost = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/jagoclient",
+	HomePage:    "https://sourceforge.net/projects/oscaf",
 
 	BuilderName: "boost",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_boost = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"jagoclient"},
+		"oscaf"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

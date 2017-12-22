@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_dosbox = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/aa-project",
+	HomePage:    "https://sourceforge.net/projects/ms-sys",
 
 	BuilderName: "dosbox",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_dosbox = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"aa-project"},
+		"ms-sys"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

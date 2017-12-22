@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ETL = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/cedet",
+	HomePage:    "https://sourceforge.net/projects/jagoclient",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_ETL = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"cedet"},
+		"jagoclient"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

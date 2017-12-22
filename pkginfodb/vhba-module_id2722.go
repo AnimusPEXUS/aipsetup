@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_vhba_module = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/tintin",
+	HomePage:    "https://sourceforge.net/projects/tkgate",
 
 	BuilderName: "vhbamodule",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_vhba_module = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tintin"},
+		"tkgate"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

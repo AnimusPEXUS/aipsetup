@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_hdparm = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/ftgl",
+	HomePage:    "https://sourceforge.net/projects/meanwhile",
 
 	BuilderName: "hdparm",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_hdparm = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"ftgl"},
+		"meanwhile"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

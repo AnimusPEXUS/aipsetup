@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ethtool = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/zbar",
+	HomePage:    "https://sourceforge.net/projects/giflib",
 
 	BuilderName: "std",
 

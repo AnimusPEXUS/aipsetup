@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_sip = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/xmpppy",
+	HomePage:    "https://sourceforge.net/projects/paps",
 
 	BuilderName: "sip",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_sip = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xmpppy"},
+		"paps"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

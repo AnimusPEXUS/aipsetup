@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_hplip = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/libebook",
+	HomePage:    "https://sourceforge.net/projects/quesoglc",
 
 	BuilderName: "hplip",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_hplip = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libebook"},
+		"quesoglc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

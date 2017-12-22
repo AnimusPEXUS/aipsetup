@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_SDL = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/x3270",
+	HomePage:    "https://sourceforge.net/projects/azureus",
 
 	BuilderName: "SDL",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_SDL = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"x3270"},
+		"azureus"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

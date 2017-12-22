@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_dgen_sdl = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/libraw1394",
+	HomePage:    "https://sourceforge.net/projects/mantisbt",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_dgen_sdl = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libraw1394"},
+		"mantisbt"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_p7zip = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/scons",
+	HomePage:    "https://sourceforge.net/projects/synfig",
 
 	BuilderName: "p7zip",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_p7zip = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"scons"},
+		"synfig"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

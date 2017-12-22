@@ -48,3 +48,5 @@ Calling 'info-db code' will save new pkginfodb with according changes.
 'gnome_project' - simmilar to gtk_project
 
 'perl_module' - treats package info as Perl's module
+
+'gnu_project'

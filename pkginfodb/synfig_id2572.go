@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_synfig = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/sonik",
+	HomePage:    "https://sourceforge.net/projects/libvncserver",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_synfig = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"sonik"},
+		"libvncserver"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

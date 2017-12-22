@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ming = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/cups",
+	HomePage:    "https://sourceforge.net/projects/wvware",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_ming = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"cups"},
+		"wvware"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libquicktime = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/pcmcia-cs",
+	HomePage:    "https://sourceforge.net/projects/mediatomb",
 
 	BuilderName: "libquicktime",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libquicktime = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"pcmcia-cs"},
+		"mediatomb"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

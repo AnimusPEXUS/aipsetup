@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libclc = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/bogofilter",
+	HomePage:    "https://sourceforge.net/projects/wgois",
 
 	BuilderName: "std_configure_py2",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libclc = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"bogofilter"},
+		"wgois"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ams = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/wvware",
+	HomePage:    "https://sourceforge.net/projects/spacenav",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_ams = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"wvware"},
+		"spacenav"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

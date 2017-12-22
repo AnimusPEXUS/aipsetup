@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_varconf = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/libjpeg-turbo",
+	HomePage:    "https://sourceforge.net/projects/meanwhile",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_varconf = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libjpeg-turbo"},
+		"meanwhile"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_csound = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/clamav",
+	HomePage:    "https://sourceforge.net/projects/pdfedit",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_csound = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"clamav"},
+		"pdfedit"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

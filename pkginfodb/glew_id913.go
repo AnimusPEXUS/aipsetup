@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_glew = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/cups",
+	HomePage:    "https://sourceforge.net/projects/pyqt",
 
 	BuilderName: "glew",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_glew = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"cups"},
+		"pyqt"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

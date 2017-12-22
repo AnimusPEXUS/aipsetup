@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libomxil_bellagio = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/x3270",
+	HomePage:    "https://sourceforge.net/projects/gmerlin",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libomxil_bellagio = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"x3270"},
+		"gmerlin"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

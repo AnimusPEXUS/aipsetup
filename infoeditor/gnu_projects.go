@@ -3,10 +3,6 @@ package infoeditor
 var GNU_PROJECTS = []string{
 	"3dldf",
 	"8sync",
-	"GNUinfo",
-	"MailingListArchives",
-	"MicrosPorts",
-	"ProgramIndex",
 	"a2ps",
 	"acct",
 	"acm",

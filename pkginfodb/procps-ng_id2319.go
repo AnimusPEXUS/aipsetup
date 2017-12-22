@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_procps_ng = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/tcl",
+	HomePage:    "https://sourceforge.net/projects/psmisc",
 
 	BuilderName: "procps_ng",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_procps_ng = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tcl"},
+		"psmisc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

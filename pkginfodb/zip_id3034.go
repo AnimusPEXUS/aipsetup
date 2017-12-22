@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_zip = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/hylafax",
+	HomePage:    "https://sourceforge.net/projects/guichan",
 
 	BuilderName: "infozip",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_zip = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"hylafax"},
+		"guichan"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_MesaLib = &basictypes.PackageInfo{
 
 	Description: `use 'mesa' package (renamed)`,
-	HomePage:    "https://sourceforge.net/projects/cppunit",
+	HomePage:    "https://sourceforge.net/projects/virtualgl",
 
 	BuilderName: "mesalib",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_MesaLib = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"cppunit"},
+		"virtualgl"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

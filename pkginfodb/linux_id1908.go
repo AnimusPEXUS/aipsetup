@@ -35,7 +35,7 @@ var DistroPackageInfo_linux = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://cdn.kernel.org/pub/"},
+		"https://cdn.kernel.org/pub/linux/kernel/"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

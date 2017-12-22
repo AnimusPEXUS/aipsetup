@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_e2fsprogs = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/xdvi",
+	HomePage:    "https://sourceforge.net/projects/virtualgl",
 
 	BuilderName: "e2fsprogs",
 

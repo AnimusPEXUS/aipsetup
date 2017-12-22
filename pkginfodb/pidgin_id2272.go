@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pidgin = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/omxil",
+	HomePage:    "https://sourceforge.net/projects/netcat",
 
 	BuilderName: "pidgin",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_pidgin = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"omxil"},
+		"netcat"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

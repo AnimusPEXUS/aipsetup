@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_sox = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/retroshare",
+	HomePage:    "https://sourceforge.net/projects/aqsis",
 
 	BuilderName: "sox",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_sox = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"retroshare"},
+		"aqsis"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_e2fsprogs_libs = &basictypes.PackageInfo{
 
 	Description: `subset of e2fsprogs package`,
-	HomePage:    "https://sourceforge.net/projects/synfig",
+	HomePage:    "https://sourceforge.net/projects/pyode",
 
 	BuilderName: "e2fsprogs",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_e2fsprogs_libs = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"synfig"},
+		"pyode"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

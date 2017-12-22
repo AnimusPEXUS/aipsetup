@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_x11vnc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/scons",
+	HomePage:    "https://sourceforge.net/projects/pdftohtml",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_x11vnc = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"scons"},
+		"pdftohtml"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

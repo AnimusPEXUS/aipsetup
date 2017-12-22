@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_acpid = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/tintin",
+	HomePage:    "https://sourceforge.net/projects/wgois",
 
 	BuilderName: "acpid",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_acpid = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tintin"},
+		"wgois"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libwacom = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/libircclient",
+	HomePage:    "https://sourceforge.net/projects/armagetronad",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libwacom = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libircclient"},
+		"armagetronad"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,

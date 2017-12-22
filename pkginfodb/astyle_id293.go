@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_astyle = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/winetools",
+	HomePage:    "https://sourceforge.net/projects/wine",
 
 	BuilderName: "astyle",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_astyle = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"winetools"},
+		"wine"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_docbook_xsl = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/xmpppy",
+	HomePage:    "https://sourceforge.net/projects/libtirpc",
 
 	BuilderName: "docbook_xsl",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_docbook_xsl = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xmpppy"},
+		"libtirpc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

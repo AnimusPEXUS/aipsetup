@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_rng_tools = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/audacity",
+	HomePage:    "https://sourceforge.net/projects/rhash",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_rng_tools = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"audacity"},
+		"rhash"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pygtkglext = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/gtk2-perl",
+	HomePage:    "https://sourceforge.net/projects/djvu",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_pygtkglext = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"gtk2-perl"},
+		"djvu"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,

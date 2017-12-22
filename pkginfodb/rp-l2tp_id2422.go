@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_rp_l2tp = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/multivalent",
+	HomePage:    "https://sourceforge.net/projects/openil",
 
 	BuilderName: "rpl2tp",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_rp_l2tp = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"multivalent"},
+		"openil"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

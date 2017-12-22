@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gtkglextmm = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/paps",
+	HomePage:    "https://sourceforge.net/projects/tkimg",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_gtkglextmm = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"paps"},
+		"tkimg"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,

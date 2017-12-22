@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_zlib = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/poopmup",
+	HomePage:    "https://sourceforge.net/projects/nfs",
 
 	BuilderName: "zlib",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_zlib = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"poopmup"},
+		"nfs"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

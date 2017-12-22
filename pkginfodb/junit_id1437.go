@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_junit = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/freetype",
+	HomePage:    "https://sourceforge.net/projects/phpdocu",
 
 	BuilderName: "junit",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_junit = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"freetype"},
+		"phpdocu"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

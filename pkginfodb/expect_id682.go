@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_expect = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/recordmydesktop",
+	HomePage:    "https://sourceforge.net/projects/ms-sys",
 
 	BuilderName: "expect",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_expect = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"recordmydesktop"},
+		"ms-sys"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

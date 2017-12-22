@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pptp = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/atari800",
+	HomePage:    "https://sourceforge.net/projects/aqsis",
 
 	BuilderName: "pptp",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_pptp = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"atari800"},
+		"aqsis"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

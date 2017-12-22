@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_cups = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/warzone2100",
+	HomePage:    "https://sourceforge.net/projects/xmpppy",
 
 	BuilderName: "cups",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_cups = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"warzone2100"},
+		"xmpppy"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

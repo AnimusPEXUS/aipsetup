@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gmerlin_avdecoder = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/pcmcia-cs",
+	HomePage:    "https://sourceforge.net/projects/wxwindows",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_gmerlin_avdecoder = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"pcmcia-cs"},
+		"wxwindows"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

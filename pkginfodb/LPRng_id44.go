@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_LPRng = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/xfce",
+	HomePage:    "https://sourceforge.net/projects/clamav",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_LPRng = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xfce"},
+		"clamav"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

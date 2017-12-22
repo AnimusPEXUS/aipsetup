@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_netcat = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/libtirpc",
+	HomePage:    "https://sourceforge.net/projects/winetools",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_netcat = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libtirpc"},
+		"winetools"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_qpdf = &basictypes.PackageInfo{
 
 	Description: `None`,
-	HomePage:    "https://sourceforge.net/projects/warzone2100",
+	HomePage:    "https://sourceforge.net/projects/mednafen",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_qpdf = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"warzone2100"},
+		"mednafen"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

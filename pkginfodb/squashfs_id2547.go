@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_squashfs = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/ogl-math",
+	HomePage:    "https://sourceforge.net/projects/mednafen",
 
 	BuilderName: "squashfs",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_squashfs = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"ogl-math"},
+		"mednafen"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

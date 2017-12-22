@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_cgkit_py3k = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/soprano",
+	HomePage:    "https://sourceforge.net/projects/xine",
 
 	BuilderName: "cgkit_py3k",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_cgkit_py3k = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"soprano"},
+		"xine"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

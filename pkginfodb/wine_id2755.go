@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_wine = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/expat",
+	HomePage:    "https://sourceforge.net/projects/netcat",
 
 	BuilderName: "wine",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_wine = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"expat"},
+		"netcat"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

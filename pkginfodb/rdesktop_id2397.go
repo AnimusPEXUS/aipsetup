@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_rdesktop = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/xdvi",
+	HomePage:    "https://sourceforge.net/projects/squirrel-sql",
 
 	BuilderName: "rdesktop",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_rdesktop = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xdvi"},
+		"squirrel-sql"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

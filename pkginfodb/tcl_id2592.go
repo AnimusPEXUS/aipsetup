@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_tcl = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/synfig",
+	HomePage:    "https://sourceforge.net/projects/openobex",
 
 	BuilderName: "tcltk",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_tcl = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"synfig"},
+		"openobex"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

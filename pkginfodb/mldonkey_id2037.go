@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_mldonkey = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/cups",
+	HomePage:    "https://sourceforge.net/projects/cel",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_mldonkey = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"cups"},
+		"cel"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

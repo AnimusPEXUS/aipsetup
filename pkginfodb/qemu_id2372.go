@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_qemu = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/bridge",
+	HomePage:    "https://sourceforge.net/projects/pyopengl",
 
 	BuilderName: "qemu",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_qemu = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"bridge"},
+		"pyopengl"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

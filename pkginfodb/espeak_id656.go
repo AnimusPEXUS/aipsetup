@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_espeak = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/tcllib",
+	HomePage:    "https://sourceforge.net/projects/scons",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_espeak = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tcllib"},
+		"scons"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

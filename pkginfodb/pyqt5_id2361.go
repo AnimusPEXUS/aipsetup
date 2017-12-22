@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pyqt5 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/gsoc-impos",
+	HomePage:    "https://sourceforge.net/projects/ipsec-tools",
 
 	BuilderName: "pyqt",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_pyqt5 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"gsoc-impos"},
+		"ipsec-tools"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

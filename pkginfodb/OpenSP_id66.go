@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_OpenSP = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/hylafax",
+	HomePage:    "https://sourceforge.net/projects/meshlab",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_OpenSP = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"hylafax"},
+		"meshlab"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

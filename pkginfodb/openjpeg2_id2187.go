@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_openjpeg2 = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/zint",
+	HomePage:    "https://sourceforge.net/projects/zziplib",
 
 	BuilderName: "openjpeg",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_openjpeg2 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"zint"},
+		"zziplib"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

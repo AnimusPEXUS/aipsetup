@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pptpd = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/fileschanged",
+	HomePage:    "https://sourceforge.net/projects/sf-xpaint",
 
 	BuilderName: "pptpd",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_pptpd = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"fileschanged"},
+		"sf-xpaint"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

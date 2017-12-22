@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_spring = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/plib",
+	HomePage:    "https://sourceforge.net/projects/libvncserver",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_spring = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"plib"},
+		"libvncserver"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

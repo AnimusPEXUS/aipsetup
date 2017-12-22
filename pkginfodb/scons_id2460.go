@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_scons = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/sox",
+	HomePage:    "https://sourceforge.net/projects/mediatomb",
 
 	BuilderName: "scons",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_scons = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"sox"},
+		"mediatomb"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

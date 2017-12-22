@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libjpeg_turbo = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/liboauth",
+	HomePage:    "https://sourceforge.net/projects/sv1",
 
 	BuilderName: "libjpeg_turbo",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libjpeg_turbo = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"liboauth"},
+		"sv1"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

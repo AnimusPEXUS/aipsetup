@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libspnav = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/acpid",
+	HomePage:    "https://sourceforge.net/projects/tkgate",
 
 	BuilderName: "libspnav",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libspnav = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"acpid"},
+		"tkgate"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

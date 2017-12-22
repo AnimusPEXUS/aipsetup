@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libjson = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/warzone2100",
+	HomePage:    "https://sourceforge.net/projects/palomino-sim",
 
 	BuilderName: "libjson",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libjson = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"warzone2100"},
+		"palomino-sim"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

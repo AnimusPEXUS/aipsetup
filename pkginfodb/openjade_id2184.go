@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_openjade = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/recordmydesktop",
+	HomePage:    "https://sourceforge.net/projects/wvware",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_openjade = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"recordmydesktop"},
+		"wvware"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

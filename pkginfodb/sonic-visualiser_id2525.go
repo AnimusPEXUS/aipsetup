@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_sonic_visualiser = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/linux-usb",
+	HomePage:    "https://sourceforge.net/projects/quesoglc",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_sonic_visualiser = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"linux-usb"},
+		"quesoglc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

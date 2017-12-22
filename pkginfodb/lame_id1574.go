@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_lame = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/xdvi",
+	HomePage:    "https://sourceforge.net/projects/wgois",
 
 	BuilderName: "lame",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_lame = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"xdvi"},
+		"wgois"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

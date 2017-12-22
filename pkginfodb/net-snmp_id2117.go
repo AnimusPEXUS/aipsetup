@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_net_snmp = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/tls",
+	HomePage:    "https://sourceforge.net/projects/psmisc",
 
 	BuilderName: "net_snmp",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_net_snmp = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tls"},
+		"psmisc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

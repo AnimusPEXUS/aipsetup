@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_Gtk2 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/guichan",
+	HomePage:    "https://sourceforge.net/projects/trn",
 
 	BuilderName: "perl_mod",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_Gtk2 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"guichan"},
+		"trn"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

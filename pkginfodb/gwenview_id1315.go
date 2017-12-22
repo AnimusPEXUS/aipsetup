@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gwenview = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/tuxracer",
+	HomePage:    "https://sourceforge.net/projects/tcl",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_gwenview = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tuxracer"},
+		"tcl"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

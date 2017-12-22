@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_podofobrowser = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/gtk2-perl",
+	HomePage:    "https://sourceforge.net/projects/meshlab",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_podofobrowser = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"gtk2-perl"},
+		"meshlab"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

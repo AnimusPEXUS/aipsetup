@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pdfedit = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/tkgate",
+	HomePage:    "https://sourceforge.net/projects/flac",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_pdfedit = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tkgate"},
+		"flac"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

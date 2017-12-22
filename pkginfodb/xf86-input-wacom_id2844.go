@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_xf86_input_wacom = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/vamp",
+	HomePage:    "https://sourceforge.net/projects/e2fsprogs",
 
 	BuilderName: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_xf86_input_wacom = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"vamp"},
+		"e2fsprogs"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libkipi = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/heroines",
+	HomePage:    "https://sourceforge.net/projects/nfs",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libkipi = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"heroines"},
+		"nfs"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

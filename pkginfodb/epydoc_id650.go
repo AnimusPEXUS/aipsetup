@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_epydoc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/warzone2100",
+	HomePage:    "https://sourceforge.net/projects/mhash",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_epydoc = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"warzone2100"},
+		"mhash"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

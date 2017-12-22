@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_obexftp = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/net-snmp",
+	HomePage:    "https://sourceforge.net/projects/sf-xpaint",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_obexftp = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"net-snmp"},
+		"sf-xpaint"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

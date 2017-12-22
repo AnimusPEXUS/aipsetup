@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_shared_desktop_ontologies = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/pyqt",
+	HomePage:    "https://sourceforge.net/projects/tuxracer",
 
 	BuilderName: "std_cmake",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_shared_desktop_ontologies = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"pyqt"},
+		"tuxracer"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

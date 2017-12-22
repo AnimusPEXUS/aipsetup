@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libusb = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/synfig",
+	HomePage:    "https://sourceforge.net/projects/oscaf",
 
 	BuilderName: "libusb",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libusb = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"synfig"},
+		"oscaf"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

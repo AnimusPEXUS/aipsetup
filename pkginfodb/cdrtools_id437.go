@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_cdrtools = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/scintilla",
+	HomePage:    "https://sourceforge.net/projects/warzone2100",
 
 	BuilderName: "cdrtools",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_cdrtools = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"scintilla"},
+		"warzone2100"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

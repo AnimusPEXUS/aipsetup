@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_psmisc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/sox",
+	HomePage:    "https://sourceforge.net/projects/xindy",
 
 	BuilderName: "psmisc",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_psmisc = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"sox"},
+		"xindy"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

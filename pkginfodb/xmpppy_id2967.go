@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_xmpppy = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/webcamstudio",
+	HomePage:    "https://sourceforge.net/projects/vnc-tight",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_xmpppy = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"webcamstudio"},
+		"vnc-tight"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

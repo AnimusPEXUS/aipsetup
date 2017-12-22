@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_tightvnc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/tcl",
+	HomePage:    "https://sourceforge.net/projects/wine",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_tightvnc = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tcl"},
+		"wine"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

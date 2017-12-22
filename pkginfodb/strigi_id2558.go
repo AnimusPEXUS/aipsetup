@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_strigi = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/libavc1394",
+	HomePage:    "https://sourceforge.net/projects/cdrdao",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_strigi = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libavc1394"},
+		"cdrdao"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

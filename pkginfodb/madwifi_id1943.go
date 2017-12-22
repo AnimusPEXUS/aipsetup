@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_madwifi = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/libjson",
+	HomePage:    "https://sourceforge.net/projects/csound",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_madwifi = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libjson"},
+		"csound"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_FreeImage = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/springrts",
+	HomePage:    "https://sourceforge.net/projects/faac",
 
 	BuilderName: "FreeImage",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_FreeImage = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"springrts"},
+		"faac"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

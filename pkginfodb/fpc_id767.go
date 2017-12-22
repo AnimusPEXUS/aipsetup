@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_fpc = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/scintilla",
+	HomePage:    "https://sourceforge.net/projects/xindy",
 
 	BuilderName: "fpc",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_fpc = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"scintilla"},
+		"xindy"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_unzip = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/freetype",
+	HomePage:    "https://sourceforge.net/projects/ming",
 
 	BuilderName: "infozip",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_unzip = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"freetype"},
+		"ming"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

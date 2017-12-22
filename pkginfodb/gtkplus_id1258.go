@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/eric-ide",
+	HomePage:    "https://sourceforge.net/projects/x3270",
 
 	BuilderName: "gtk3",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"eric-ide"},
+		"x3270"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "gnome",
 	TarballProviderVersionSyncDepth: 0,

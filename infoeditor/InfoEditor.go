@@ -218,8 +218,13 @@ func (self *InfoEditor) Edit(index map[string]*basictypes.PackageInfo) error {
 		self.ApplyGroups,
 
 		self.ApplyGnome,
-		self.ApplySFNet,
-		self.ApplyKernelOrg, // disabled. do not enable. manual edits already present
+
+		// commented out. while there is no specific tarball provider, farver
+		// usage of this editor is meaningless
+		// self.ApplySFNet,
+
+		self.ApplyKernelOrg,
+		self.ApplyGNU,
 
 		self.ApplyCustomHttpsArgs,
 	} {
@@ -249,7 +254,7 @@ func (self *InfoEditor) ApplyGroups(index map[string]*basictypes.PackageInfo) er
 }
 
 func (self *InfoEditor) ApplyGnome(index map[string]*basictypes.PackageInfo) error {
-	for pkgname, info := range index {
+	for _, info := range index {
 		t := tags.New(info.Tags)
 		gnome_p_found := false
 
@@ -261,16 +266,49 @@ func (self *InfoEditor) ApplyGnome(index map[string]*basictypes.PackageInfo) err
 		}
 
 		if t.Have("", "gnome_project") || gnome_p_found {
-			info.TarballName = pkgname
 			info.TarballProvider = "https"
 			info.TarballProviderArguments = []string{"https://ftp.gnome.org/mirror/gnome.org/"}
 			info.TarballVersionTool = "gnome"
-			info.TarballProviderCachePresetName = "gnome"
+			info.TarballProviderCachePresetName = "by_https_host"
 			info.HomePage = "https://gnome.org/"
 			// info.BuilderName = "std"
 
 			// t.Add("group", "gnome")
 			t.Add("", "gnome_project")
+
+			info.Tags = t.Values()
+		}
+	}
+	return nil
+}
+
+func (self *InfoEditor) ApplyGNU(index map[string]*basictypes.PackageInfo) error {
+	for _, info := range index {
+		t := tags.New(info.Tags)
+
+		found := false
+		for _, i := range GNU_PROJECTS {
+			if i == info.TarballName {
+				found = true
+				break
+			}
+		}
+
+		if t.HaveValue("gnu_project") || found {
+			info.TarballProvider = "https"
+			info.TarballProviderArguments = []string{"https://ftp.gnu.org/gnu/" + info.TarballName}
+			switch info.TarballName {
+			default:
+				info.TarballVersionTool = "std"
+			case "gcc":
+				info.TarballVersionTool = "gcc"
+			}
+			info.TarballProviderCachePresetName = "by_https_host"
+			info.HomePage = "https://ftp.gnu.org/gnu/"
+			// info.BuilderName = "std"
+
+			// t.Add("group", "gnome")
+			t.AddValue("gnu_project")
 
 			info.Tags = t.Values()
 		}
@@ -318,12 +356,12 @@ func (self *InfoEditor) ApplyKernelOrg(index map[string]*basictypes.PackageInfo)
 		}
 
 		if t.HaveValue("kernelorg_hosted") || found {
-			t.AddValue("kernelorg_hosted")
 
 			info.TarballProvider = "https"
 			info.TarballProviderArguments = []string{"https://cdn.kernel.org/pub/"}
 			info.TarballProviderCachePresetName = "by_https_host"
 
+			t.AddValue("kernelorg_hosted")
 			info.Tags = t.Values()
 		}
 

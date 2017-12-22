@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_nas = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/glew",
+	HomePage:    "https://sourceforge.net/projects/sf-xpaint",
 
 	BuilderName: "nas",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_nas = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"glew"},
+		"sf-xpaint"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

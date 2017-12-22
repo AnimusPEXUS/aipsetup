@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_psi = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/gnuplot",
+	HomePage:    "https://sourceforge.net/projects/xfce",
 
 	BuilderName: "psi",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_psi = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"gnuplot"},
+		"xfce"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

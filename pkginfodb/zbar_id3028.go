@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_zbar = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/swig",
+	HomePage:    "https://sourceforge.net/projects/hplip",
 
 	BuilderName: "zbare",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_zbar = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"swig"},
+		"hplip"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

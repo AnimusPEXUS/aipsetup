@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_pcre = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/expat",
+	HomePage:    "https://sourceforge.net/projects/pupnp",
 
 	BuilderName: "pcre",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_pcre = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"expat"},
+		"pupnp"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

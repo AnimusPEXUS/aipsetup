@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_doxygen = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/gmerlin",
+	HomePage:    "https://sourceforge.net/projects/pdfshuffler",
 
 	BuilderName: "doxygen",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_doxygen = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"gmerlin"},
+		"pdfshuffler"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

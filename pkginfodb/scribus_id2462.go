@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_scribus = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/pidgin",
+	HomePage:    "https://sourceforge.net/projects/iodbc",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_scribus = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"pidgin"},
+		"iodbc"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

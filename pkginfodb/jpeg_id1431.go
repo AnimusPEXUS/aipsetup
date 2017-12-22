@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_jpeg = &basictypes.PackageInfo{
 
 	Description: `use openjpeg1 openjpeg2 and libjpeg-turbo`,
-	HomePage:    "https://sourceforge.net/projects/tcllib",
+	HomePage:    "https://sourceforge.net/projects/openil",
 
 	BuilderName: "None",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_jpeg = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tcllib"},
+		"openil"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

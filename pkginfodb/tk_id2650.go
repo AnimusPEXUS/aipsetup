@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_tk = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/libjson",
+	HomePage:    "https://sourceforge.net/projects/acpitool",
 
 	BuilderName: "tcltk",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_tk = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libjson"},
+		"acpitool"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

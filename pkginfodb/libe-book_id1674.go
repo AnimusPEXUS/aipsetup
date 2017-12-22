@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libe_book = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/sox",
+	HomePage:    "https://sourceforge.net/projects/wgois",
 
 	BuilderName: "libe_book",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libe_book = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"sox"},
+		"wgois"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

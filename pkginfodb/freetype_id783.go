@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_freetype = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/pupnp",
+	HomePage:    "https://sourceforge.net/projects/sf-xpaint",
 
 	BuilderName: "freetype",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_freetype = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"pupnp"},
+		"sf-xpaint"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

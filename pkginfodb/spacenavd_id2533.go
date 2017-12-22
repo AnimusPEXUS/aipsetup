@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_spacenavd = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://sourceforge.net/projects/synfig",
+	HomePage:    "https://sourceforge.net/projects/omxil",
 
 	BuilderName: "libspnav",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_spacenavd = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"synfig"},
+		"omxil"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

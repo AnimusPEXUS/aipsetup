@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_freeciv = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/swig",
+	HomePage:    "https://sourceforge.net/projects/meanwhile",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_freeciv = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"swig"},
+		"meanwhile"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

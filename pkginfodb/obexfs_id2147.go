@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_obexfs = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/cdrtools",
+	HomePage:    "https://sourceforge.net/projects/zbar",
 
 	BuilderName: "",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_obexfs = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"cdrtools"},
+		"zbar"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,
