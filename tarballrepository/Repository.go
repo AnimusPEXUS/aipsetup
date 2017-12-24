@@ -13,6 +13,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
 	"github.com/AnimusPEXUS/utils/cache01"
+	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 )
 
@@ -36,6 +37,10 @@ func (self *Repository) GetCachesDir() string {
 
 func (self *Repository) GetPackagePath(name string) string {
 	return path.Join(self.GetRepositoryPath(), "packages", name)
+}
+
+func (self *Repository) GetPackageSRSPath(name string) string {
+	return path.Join(self.GetPackagePath(name), "srs")
 }
 
 func (self *Repository) GetPackageTarballsPath(name string) string {
@@ -104,6 +109,9 @@ func (self *Repository) PerformPackageTarballsUpdate(name string) error {
 		return err
 	}
 
+	log := logger.New()
+	log.AddOutput(os.Stdout)
+
 	prov, err := providers.Get(
 		info.TarballProvider,
 		self,
@@ -112,6 +120,7 @@ func (self *Repository) PerformPackageTarballsUpdate(name string) error {
 		self.sys,
 		self.GetPackageTarballsPath(name),
 		cache,
+		log,
 	)
 	if err != nil {
 		return err

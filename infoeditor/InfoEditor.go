@@ -3,6 +3,7 @@ package infoeditor
 import (
 	"fmt"
 	"go/format"
+	"net/url"
 	"os"
 	"path"
 	"path/filepath"
@@ -225,6 +226,7 @@ func (self *InfoEditor) Edit(index map[string]*basictypes.PackageInfo) error {
 
 		self.ApplyKernelOrg,
 		self.ApplyGNU,
+		self.ApplyGithubHosted,
 
 		self.ApplyCustomHttpsArgs,
 	} {
@@ -366,6 +368,65 @@ func (self *InfoEditor) ApplyKernelOrg(index map[string]*basictypes.PackageInfo)
 		}
 
 	}
+	return nil
+}
+
+func (self *InfoEditor) ApplyGithubHosted(index map[string]*basictypes.PackageInfo) error {
+
+	for k1, v1 := range GITHUB_HOSTED {
+		for k2, v2 := range v1 {
+			for _, v3 := range v2 {
+
+				tbn := v3.TarballName
+
+				for k4, v4 := range index {
+					if v4.TarballName == tbn {
+						args := make([]string, 0)
+
+						args = append(args, "git")
+
+						args = append(args, k4)
+
+						targs := tags.New([]string{})
+						if v3.WholeTagRegExp != STANDARD_GITHUB_TAG_REGEXP {
+							targs.Add("WholeTagRegExp", v3.WholeTagRegExp)
+						}
+
+						if v3.TagPrefixRegExp != "v" {
+							targs.Add("TagPrefixRegExp", v3.TagPrefixRegExp)
+						}
+
+						if v3.TagSuffixRegExp != "^$" {
+							targs.Add("TagSuffixRegExp", v3.TagSuffixRegExp)
+						}
+
+						if v3.TarballFormat != "tar.xz" {
+							targs.Add("TarballFormat", v3.TarballFormat)
+						}
+
+						args = append(args, targs.Values()...)
+
+						v4.HomePage = (&url.URL{
+							Scheme: "https",
+							Host:   "github.com",
+							Path:   path.Join(k1, k2),
+						}).String()
+
+						t := tags.New(v4.Tags)
+						t.AddValue("github_hosted")
+						v4.Tags = t.Values()
+
+						v4.TarballFileNameParser = "std"
+						v4.TarballProvider = "srs"
+						v4.TarballProviderArguments = args
+						v4.TarballProviderCachePresetName = "personal"
+						v4.TarballProviderVersionSyncDepth = 3
+					}
+				}
+			}
+		}
+	}
+
 	return nil
 }
 

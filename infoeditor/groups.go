@@ -4,13 +4,17 @@ var GROUPS = map[string]([]string){
 	"cross": CROSS, // this should allways be built first!
 	"core0": CORE0, // fundamental technical core
 	"core1": CORE1, // operating system sufficient for user
-	"crypt": CRYPT,
 
-	// NOTE: let's concentrate on 4 abowe first.
+	// NOTE: let's concentrate on 3 abowe first.
+	// "crypt": CRYPT,
 	// "fd": FD,
 	//
 	// "fi":  FI,
 	// "fib": FIB,
+}
+
+var CROSS = []string{
+	"cloog", "isl", "gmp", "mpc", "mpfr", "glibc", "linux", "binutils", "gcc",
 }
 
 var CORE0 = []string{
@@ -240,10 +244,6 @@ var CORE1 = []string{
 	"iw",
 	"policycoreutils",
 	"poco",
-}
-
-var CROSS = []string{
-	"cloog", "isl", "gmp", "mpc", "mpfr", "glibc", "linux", "binutils", "gcc",
 }
 
 var CRYPT = []string{

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://www.gnu.org/software/gmp",
+	HomePage:    "https://gmplib.org/download/gmp/",
 
 	BuilderName: "gmp",
 
@@ -25,8 +25,7 @@ var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{
-		"gnu_project", "group:cross"},
+	Tags: []string{"group:cross"},
 
 	TarballVersionTool: "std",
 
@@ -35,7 +34,7 @@ var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/gmp"},
+		"https://gmplib.org/download/gmp/"},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

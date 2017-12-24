@@ -3,7 +3,8 @@ package types
 type ProviderI interface {
 	// can be accessed by user?
 	// Enabled() bool
-	// commented out. to disable - comment in providers/00000_index.go
+	// commented out. to disable provider - comment out it
+	//                in providers/00000_index.go
 
 	// SetArgs([]string) error
 

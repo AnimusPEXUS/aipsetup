@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_isl = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "http://isl.gforge.inria.fr/",
 
 	BuilderName: "std",
 
@@ -33,9 +33,9 @@ var DistroPackageInfo_isl = &basictypes.PackageInfo{
 	Filters:                         []string{},
 	TarballName:                     "isl",
 	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	TarballProvider:                 "https",
+	TarballProviderArguments:        []string{"http://isl.gforge.inria.fr/"},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
+	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,
 }

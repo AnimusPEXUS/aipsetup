@@ -106,7 +106,6 @@ var GNU_PROJECTS = []string{
 	"glibc",
 	"global",
 	"glpk",
-	"gmp",
 	"gnash",
 	"gnats",
 	"gnatsweb",

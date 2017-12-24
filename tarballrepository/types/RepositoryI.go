@@ -3,7 +3,13 @@ package types
 import "github.com/AnimusPEXUS/utils/cache01"
 
 type RepositoryI interface {
+	// TODO: probably all Get.* Repository struct's function should be displayed
+	//			 here
+
 	// GetPackageTarballsPath(name string) string
+	GetPackageSRSPath(name string) string
+	GetPackageTarballsPath(name string) string
+
 	PerformPackageTarballsUpdate(name string) error
 	CreateCacheObjectForPackage(name string) (
 		*cache01.CacheDir,

@@ -12,6 +12,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/htmlwalk"
+	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/textlist"
@@ -34,6 +35,8 @@ type ProviderHttps struct {
 	scheme string
 	host   string
 	path   string
+
+	log *logger.Logger
 }
 
 func NewProviderHttps(
@@ -43,6 +46,7 @@ func NewProviderHttps(
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
 	cache *cache01.CacheDir,
+	log *logger.Logger,
 ) (*ProviderHttps, error) {
 
 	ret := new(ProviderHttps)
@@ -52,6 +56,8 @@ func NewProviderHttps(
 	ret.sys = sys
 	ret.tarballs_output_dir = tarballs_output_dir
 	ret.cache = cache
+
+	ret.log = log
 
 	ret.args = pkg_info.TarballProviderArguments
 
@@ -103,6 +109,7 @@ func (self *ProviderHttps) _GetHTW() (*htmlwalk.HTMLWalk, error) {
 			self.scheme,
 			self.host,
 			self.cache,
+			self.log,
 		)
 		if err != nil {
 			return nil, err
@@ -166,8 +173,9 @@ func (self *ProviderHttps) PerformUpdate() error {
 		filtered_keys = append(filtered_keys, i)
 	}
 
+	self.log.Info("tarball list gotten from site")
 	for _, i := range filtered_keys {
-		fmt.Println("  ", i)
+		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
 	version_tree, err := version.NewVersionTree(
@@ -189,11 +197,12 @@ func (self *ProviderHttps) PerformUpdate() error {
 
 	version_tree.TruncateByVersionDepth(nil, depth)
 
-	fmt.Println("-----------------")
+	self.log.Info("-----------------")
+	self.log.Info("tarball versioned truncation result")
 
 	res := version_tree.Basenames(tarballname.ACCEPTABLE_TARBALL_EXTENSIONS)
 	for _, i := range res {
-		fmt.Println("  ", i)
+		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
 	err = version.SortByVersion(res, parser)
@@ -201,10 +210,11 @@ func (self *ProviderHttps) PerformUpdate() error {
 		return err
 	}
 
-	fmt.Println("-----------------")
+	self.log.Info("-----------------")
+	self.log.Info("sorted by version")
 
 	for _, i := range res {
-		fmt.Println("  ", i)
+		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
 	{
@@ -216,10 +226,11 @@ func (self *ProviderHttps) PerformUpdate() error {
 		res = t
 	}
 
-	fmt.Println("-----------------")
+	self.log.Info("-----------------")
+	self.log.Info("to download")
 
 	for _, i := range res {
-		fmt.Println("  ", i)
+		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
 	downloading_errors := 0
@@ -239,10 +250,14 @@ func (self *ProviderHttps) PerformUpdate() error {
 		return errors.New("some files hasn't been downloaded successfully")
 	}
 
+	// WARNING: do not move existing tarballs deletion before download!
+	//          deletions should be done only if all downloads done successfully!
 	lst, err := self.repo.ListLocalTarballs(self.pkg_name)
 	if err != nil {
 		return err
 	}
+
+	to_delete := make([]string, 0)
 
 	for _, i := range lst {
 		found := false
@@ -253,10 +268,21 @@ func (self *ProviderHttps) PerformUpdate() error {
 			}
 		}
 		if !found {
-			err = self.repo.DeleteFile(self.pkg_name, i)
-			if err != nil {
-				return err
-			}
+			to_delete = append(to_delete, i)
+		}
+	}
+
+	self.log.Info("-----------------")
+	self.log.Info("to delete")
+
+	for _, i := range to_delete {
+		self.log.Info(fmt.Sprintf("  %s", i))
+	}
+
+	for _, i := range to_delete {
+		err = self.repo.DeleteFile(self.pkg_name, i)
+		if err != nil {
+			return err
 		}
 	}
 
