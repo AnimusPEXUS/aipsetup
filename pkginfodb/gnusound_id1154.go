@@ -35,7 +35,7 @@ var DistroPackageInfo_gnusound = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/gnusound"},
+		`https://ftp.gnu.org/gnu/gnusound`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

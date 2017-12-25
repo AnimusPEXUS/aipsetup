@@ -35,7 +35,7 @@ var DistroPackageInfo_asciidoc = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libquicktime"},
+		`libquicktime`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

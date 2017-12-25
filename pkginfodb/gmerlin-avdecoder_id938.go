@@ -35,7 +35,7 @@ var DistroPackageInfo_gmerlin_avdecoder = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"wxwindows"},
+		`wxwindows`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

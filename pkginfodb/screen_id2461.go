@@ -35,7 +35,7 @@ var DistroPackageInfo_screen = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/screen"},
+		`https://ftp.gnu.org/gnu/screen`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

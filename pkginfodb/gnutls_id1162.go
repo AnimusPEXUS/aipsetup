@@ -26,7 +26,7 @@ var DistroPackageInfo_gnutls = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnu_project", "group:crypt"},
+		"gnu_project"},
 
 	TarballVersionTool: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_gnutls = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/gnutls"},
+		`https://ftp.gnu.org/gnu/gnutls`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

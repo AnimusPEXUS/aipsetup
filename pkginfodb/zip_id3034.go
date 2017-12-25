@@ -35,7 +35,7 @@ var DistroPackageInfo_zip = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"guichan"},
+		`guichan`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

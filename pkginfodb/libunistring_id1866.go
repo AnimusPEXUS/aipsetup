@@ -35,7 +35,7 @@ var DistroPackageInfo_libunistring = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/libunistring"},
+		`https://ftp.gnu.org/gnu/libunistring`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

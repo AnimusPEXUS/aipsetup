@@ -35,7 +35,7 @@ var DistroPackageInfo_libid3tag = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"mantisbt"},
+		`mantisbt`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

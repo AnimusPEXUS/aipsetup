@@ -35,7 +35,7 @@ var DistroPackageInfo_loudmouth_ruby = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnome.org/mirror/gnome.org/"},
+		`https://ftp.gnome.org/mirror/gnome.org/`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

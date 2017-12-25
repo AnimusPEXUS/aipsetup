@@ -35,7 +35,7 @@ var DistroPackageInfo_mercator = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"strace"},
+		`strace`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

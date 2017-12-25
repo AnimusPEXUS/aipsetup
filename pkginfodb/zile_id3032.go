@@ -35,7 +35,7 @@ var DistroPackageInfo_zile = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/zile"},
+		`https://ftp.gnu.org/gnu/zile`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

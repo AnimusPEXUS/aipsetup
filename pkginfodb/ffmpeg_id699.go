@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ffmpeg = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.gnu.org",
+	HomePage:    "https://github.com/FFmpeg/FFmpeg",
 
 	BuilderName: "ffmpeg",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_ffmpeg = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "ffmpeg",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "ffmpeg",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/FFmpeg/FFmpeg.git`, `ffmpeg`, `TagPrefixRegExp:n`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

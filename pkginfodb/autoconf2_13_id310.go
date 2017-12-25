@@ -31,12 +31,12 @@ var DistroPackageInfo_autoconf2_13 = &basictypes.PackageInfo{
 	TarballVersionTool: "std",
 
 	Filters: []string{
-		"- version-!= 2.13"},
+		`- version-!= 2.13`},
 	TarballName:           "autoconf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/autoconf"},
+		`https://ftp.gnu.org/gnu/autoconf`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

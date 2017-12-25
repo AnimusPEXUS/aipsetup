@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_qbittorrent = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://github.com/qbittorrent/qBittorrent",
 
 	BuilderName: "std_cmake",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_qbittorrent = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "qbittorrent",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "qbittorrent",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/qbittorrent/qBittorrent.git`, `qbittorrent`, `TagPrefixRegExp:^release$`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

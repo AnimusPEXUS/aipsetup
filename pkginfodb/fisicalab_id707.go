@@ -35,7 +35,7 @@ var DistroPackageInfo_fisicalab = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/fisicalab"},
+		`https://ftp.gnu.org/gnu/fisicalab`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

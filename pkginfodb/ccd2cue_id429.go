@@ -35,7 +35,7 @@ var DistroPackageInfo_ccd2cue = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/ccd2cue"},
+		`https://ftp.gnu.org/gnu/ccd2cue`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

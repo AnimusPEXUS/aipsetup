@@ -35,7 +35,7 @@ var DistroPackageInfo_httptunnel = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/httptunnel"},
+		`https://ftp.gnu.org/gnu/httptunnel`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

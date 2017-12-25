@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_emscripten = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://github.com/kripken/emscripten",
 
 	BuilderName: "llvm_components",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_emscripten = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "emscripten",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "emscripten",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/kripken/emscripten.git`, `emscripten`, `TagPrefixRegExp:^$`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

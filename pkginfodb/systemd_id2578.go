@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_systemd = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://None",
+	HomePage:    "https://github.com/systemd/systemd",
 
 	BuilderName: "systemd",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_systemd = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core0"},
+		"github_hosted", "group:core0"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "systemd",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "systemd",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/systemd/systemd.git`, `systemd`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

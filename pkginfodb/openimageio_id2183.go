@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_openimageio = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://github.com/OpenImageIO/oiio",
 
 	BuilderName: "openimageio",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_openimageio = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "openimageio",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "openimageio",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/OpenImageIO/oiio.git`, `openimageio`, `TagPrefixRegExp:Release`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libsemanage = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://github.com/SELinuxProject/selinux",
 
 	BuilderName: "std",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_libsemanage = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "libsemanage",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "libsemanage",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/SELinuxProject/selinux.git`, `checkpolicy`, `TagPrefixRegExp:libsemanage`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

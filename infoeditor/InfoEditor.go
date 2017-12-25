@@ -175,19 +175,19 @@ func (self *InfoEditor) RenderInfoFileText(
 		info.Deprecated,
 		info.PrimaryInstallOnly,
 
-		self.AsStringSlice(info.BuildDeps),
-		self.AsStringSlice(info.SODeps),
-		self.AsStringSlice(info.RunTimeDeps),
+		self.AsStringSlice(info.BuildDeps, false),
+		self.AsStringSlice(info.SODeps, false),
+		self.AsStringSlice(info.RunTimeDeps, false),
 
-		self.AsStringSlice(info.Tags),
+		self.AsStringSlice(info.Tags, false),
 
 		self.AsSingleline(info.TarballVersionTool),
 
-		self.AsStringSlice(info.Filters),
+		self.AsStringSlice(info.Filters, true),
 		self.AsSingleline(info.TarballName),
 		self.AsSingleline(info.TarballFileNameParser),
 		self.AsSingleline(info.TarballProvider),
-		self.AsStringSlice(info.TarballProviderArguments),
+		self.AsStringSlice(info.TarballProviderArguments, true),
 		info.TarballProviderUseCache,
 		self.AsSingleline(info.TarballProviderCachePresetName),
 		info.TarballProviderVersionSyncDepth,
@@ -203,10 +203,14 @@ func (self *InfoEditor) AsSingleline(in string) string {
 	return fmt.Sprintf("\"%s\"", in)
 }
 
-func (self *InfoEditor) AsStringSlice(in []string) string {
+func (self *InfoEditor) AsStringSlice(in []string, use_multiline bool) string {
 	ret := "[]string{\n"
 	for _, i := range in {
-		ret += fmt.Sprintf("  %s,", self.AsSingleline(i))
+		if use_multiline {
+			ret += fmt.Sprintf("  %s,", self.AsMultiline(i))
+		} else {
+			ret += fmt.Sprintf("  %s,", self.AsSingleline(i))
+		}
 	}
 	ret += "}"
 	return ret
@@ -373,8 +377,28 @@ func (self *InfoEditor) ApplyKernelOrg(index map[string]*basictypes.PackageInfo)
 
 func (self *InfoEditor) ApplyGithubHosted(index map[string]*basictypes.PackageInfo) error {
 
-	for k1, v1 := range GITHUB_HOSTED {
-		for k2, v2 := range v1 {
+	k1s := make([]string, 0)
+	for k1, _ := range GITHUB_HOSTED {
+		k1s = append(k1s, k1)
+	}
+
+	sort.Strings(k1s)
+
+	for _, k1 := range k1s {
+
+		v1 := GITHUB_HOSTED[k1]
+
+		k2s := make([]string, 0)
+		for k2, _ := range v1 {
+			k2s = append(k2s, k2)
+		}
+
+		for _, k2 := range k2s {
+
+			v2 := v1[k2]
+
+			shared_repo_name := ""
+
 			for _, v3 := range v2 {
 
 				tbn := v3.TarballName
@@ -385,22 +409,34 @@ func (self *InfoEditor) ApplyGithubHosted(index map[string]*basictypes.PackageIn
 
 						args = append(args, "git")
 
-						args = append(args, k4)
+						if shared_repo_name == "" {
+							shared_repo_name = k4
+						}
+
+						args = append(
+							args,
+							(&url.URL{
+								Scheme: "https",
+								Host:   "github.com",
+								Path:   path.Join(k1, k2+".git"),
+							}).String(),
+						)
+						args = append(args, shared_repo_name)
 
 						targs := tags.New([]string{})
-						if v3.WholeTagRegExp != STANDARD_GITHUB_TAG_REGEXP {
+						if v3.WholeTagRegExp != GithubDefaultWholeTagRegExp {
 							targs.Add("WholeTagRegExp", v3.WholeTagRegExp)
 						}
 
-						if v3.TagPrefixRegExp != "v" {
+						if v3.TagPrefixRegExp != GithubDefaultTagPrefixRegExp {
 							targs.Add("TagPrefixRegExp", v3.TagPrefixRegExp)
 						}
 
-						if v3.TagSuffixRegExp != "^$" {
+						if v3.TagSuffixRegExp != GithubDefaultTagSuffixRegExp {
 							targs.Add("TagSuffixRegExp", v3.TagSuffixRegExp)
 						}
 
-						if v3.TarballFormat != "tar.xz" {
+						if v3.TarballFormat != GithubDefaultTarballFormat {
 							targs.Add("TarballFormat", v3.TarballFormat)
 						}
 

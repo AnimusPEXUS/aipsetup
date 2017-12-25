@@ -35,7 +35,7 @@ var DistroPackageInfo_cloog = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://www.bastoul.net/cloog/pages/download/"},
+		`https://www.bastoul.net/cloog/pages/download/`},
 	TarballProviderUseCache:         true,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

@@ -35,7 +35,7 @@ var DistroPackageInfo_guile_sdl = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/guile-sdl"},
+		`https://ftp.gnu.org/gnu/guile-sdl`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

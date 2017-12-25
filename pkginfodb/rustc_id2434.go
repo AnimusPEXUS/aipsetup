@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_rustc = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://www.rust-lang.org/",
+	HomePage:    "https://github.com/rust-lang/rust",
 
 	BuilderName: "rustc",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_rustc = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "rustc",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "rustc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/rust-lang/rust.git`, `rustc`, `TagPrefixRegExp:^$`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

@@ -35,7 +35,7 @@ var DistroPackageInfo_hyperbole = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/hyperbole"},
+		`https://ftp.gnu.org/gnu/hyperbole`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

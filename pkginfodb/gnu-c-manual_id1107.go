@@ -35,7 +35,7 @@ var DistroPackageInfo_gnu_c_manual = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/gnu-c-manual"},
+		`https://ftp.gnu.org/gnu/gnu-c-manual`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

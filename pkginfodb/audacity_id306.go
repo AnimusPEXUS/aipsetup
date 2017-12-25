@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_audacity = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://http://audacityteam.org/",
+	HomePage:    "https://github.com/audacity/audacity",
 
 	BuilderName: "audacity",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_audacity = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "audacity-minsrc",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "audacity-minsrc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/audacity/audacity.git`, `audacity`, `TagPrefixRegExp:Audacity`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

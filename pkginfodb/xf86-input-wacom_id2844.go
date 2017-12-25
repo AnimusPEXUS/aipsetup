@@ -35,7 +35,7 @@ var DistroPackageInfo_xf86_input_wacom = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"e2fsprogs"},
+		`e2fsprogs`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

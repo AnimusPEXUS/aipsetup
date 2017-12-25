@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libproxy = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.google.com",
+	HomePage:    "https://github.com/libproxy/libproxy",
 
 	BuilderName: "std_cmake",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_libproxy = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "libproxy",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "libproxy",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/libproxy/libproxy.git`, `libproxy`, `TagPrefixRegExp:^$`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

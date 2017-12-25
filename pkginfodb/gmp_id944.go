@@ -25,7 +25,8 @@ var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{"group:cross"},
+	Tags: []string{
+		"group:cross"},
 
 	TarballVersionTool: "std",
 
@@ -34,7 +35,7 @@ var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://gmplib.org/download/gmp/"},
+		`https://gmplib.org/download/gmp/`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

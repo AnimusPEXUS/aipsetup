@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libnl = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    " http://www.infradead.org/~tgr/libnl/",
+	HomePage:    "https://github.com/tgraf/libnl",
 
 	BuilderName: "std",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_libnl = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core1"},
+		"github_hosted", "group:core1"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "libnl",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "libnl",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/tgraf/libnl.git`, `libnl`, `TagPrefixRegExp:libnl`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

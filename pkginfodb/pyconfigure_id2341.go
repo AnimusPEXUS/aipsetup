@@ -35,7 +35,7 @@ var DistroPackageInfo_pyconfigure = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/pyconfigure"},
+		`https://ftp.gnu.org/gnu/pyconfigure`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

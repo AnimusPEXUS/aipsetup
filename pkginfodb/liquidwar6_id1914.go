@@ -35,7 +35,7 @@ var DistroPackageInfo_liquidwar6 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/liquidwar6"},
+		`https://ftp.gnu.org/gnu/liquidwar6`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

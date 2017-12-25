@@ -35,7 +35,7 @@ var DistroPackageInfo_xlogmaster = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/xlogmaster"},
+		`https://ftp.gnu.org/gnu/xlogmaster`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

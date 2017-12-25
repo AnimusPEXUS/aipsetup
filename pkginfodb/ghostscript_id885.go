@@ -35,7 +35,7 @@ var DistroPackageInfo_ghostscript = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/ghostscript"},
+		`https://ftp.gnu.org/gnu/ghostscript`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

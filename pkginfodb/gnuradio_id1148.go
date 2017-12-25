@@ -35,7 +35,7 @@ var DistroPackageInfo_gnuradio = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/gnuradio"},
+		`https://ftp.gnu.org/gnu/gnuradio`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_lmms = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://lmms.io/",
+	HomePage:    "https://github.com/LMMS/lmms",
 
 	BuilderName: "std_cmake",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_lmms = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "lmms",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "lmms",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/LMMS/lmms.git`, `lmms`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

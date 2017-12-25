@@ -35,7 +35,7 @@ var DistroPackageInfo_linuxwacom = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"sf-xpaint"},
+		`sf-xpaint`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

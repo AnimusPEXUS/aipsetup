@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_freealut = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://connect.creativelabs.com/openal/Downloads",
+	HomePage:    "https://github.com/vancegroup/freealut",
 
 	BuilderName: "std",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_freealut = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "freealut",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "freealut",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/vancegroup/freealut.git`, `freealut`, `TagPrefixRegExp:freealut`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

@@ -35,7 +35,7 @@ var DistroPackageInfo_libmicrohttpd = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/libmicrohttpd"},
+		`https://ftp.gnu.org/gnu/libmicrohttpd`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

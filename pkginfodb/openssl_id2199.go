@@ -26,7 +26,7 @@ var DistroPackageInfo_openssl = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core0", "group:crypt"},
+		"group:core0"},
 
 	TarballVersionTool: "std",
 

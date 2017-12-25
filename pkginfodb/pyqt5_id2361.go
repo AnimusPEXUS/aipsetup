@@ -35,7 +35,7 @@ var DistroPackageInfo_pyqt5 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"ipsec-tools"},
+		`ipsec-tools`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

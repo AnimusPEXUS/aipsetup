@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_ibus = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "http://ibus.googlecode.com/files/",
+	HomePage:    "https://github.com/ibus/ibus",
 
 	BuilderName: "ibus",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_ibus = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "ibus",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "ibus",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/ibus/ibus.git`, `ibus`, `TagPrefixRegExp:^$`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

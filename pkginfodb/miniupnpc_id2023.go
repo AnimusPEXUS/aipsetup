@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_miniupnpc = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "",
+	HomePage:    "https://github.com/miniupnp/miniupnp",
 
 	BuilderName: "miniupnpc",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_miniupnpc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core1"},
+		"github_hosted", "group:core1"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "miniupnpc",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "miniupnpc",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/miniupnp/miniupnp.git`, `miniupnpc`, `TagPrefixRegExp:miniupnpc`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

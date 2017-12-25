@@ -25,8 +25,7 @@ var DistroPackageInfo_gnupg1 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{
-		"group:crypt"},
+	Tags: []string{},
 
 	TarballVersionTool: "std",
 

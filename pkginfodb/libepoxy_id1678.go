@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_libepoxy = &basictypes.PackageInfo{
 
 	Description: ``,
-	HomePage:    "https://gnome.org/",
+	HomePage:    "https://github.com/anholt/libepoxy",
 
 	BuilderName: "std",
 
@@ -26,17 +26,17 @@ var DistroPackageInfo_libepoxy = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project"},
+		"github_hosted", "gnome_project"},
 
 	TarballVersionTool: "gnome",
 
 	Filters:               []string{},
 	TarballName:           "libepoxy",
 	TarballFileNameParser: "std",
-	TarballProvider:       "https",
+	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		"https://ftp.gnome.org/mirror/gnome.org/"},
+		`git`, `https://github.com/anholt/libepoxy.git`, `libepoxy`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "by_https_host",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

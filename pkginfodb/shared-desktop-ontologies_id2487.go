@@ -35,7 +35,7 @@ var DistroPackageInfo_shared_desktop_ontologies = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"tuxracer"},
+		`tuxracer`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

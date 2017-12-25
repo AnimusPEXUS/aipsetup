@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_sshfs_fuse = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.sourceforge.net",
+	HomePage:    "https://github.com/libfuse/sshfs",
 
 	BuilderName: "std",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_sshfs_fuse = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core0"},
+		"github_hosted", "group:core0"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "sshfs-fuse",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "sshfs-fuse",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/libfuse/sshfs.git`, `sshfs-fuse`, `TagPrefixRegExp:sshfs`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

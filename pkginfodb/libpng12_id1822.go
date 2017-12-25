@@ -35,7 +35,7 @@ var DistroPackageInfo_libpng12 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"libjpeg-turbo"},
+		`libjpeg-turbo`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

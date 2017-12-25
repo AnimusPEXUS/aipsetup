@@ -35,7 +35,7 @@ var DistroPackageInfo_gnatsweb = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/gnatsweb"},
+		`https://ftp.gnu.org/gnu/gnatsweb`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

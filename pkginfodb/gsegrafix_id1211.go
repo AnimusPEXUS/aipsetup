@@ -35,7 +35,7 @@ var DistroPackageInfo_gsegrafix = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/gsegrafix"},
+		`https://ftp.gnu.org/gnu/gsegrafix`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

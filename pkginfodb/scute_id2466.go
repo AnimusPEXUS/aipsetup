@@ -25,8 +25,7 @@ var DistroPackageInfo_scute = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{
-		"group:crypt"},
+	Tags: []string{},
 
 	TarballVersionTool: "std",
 

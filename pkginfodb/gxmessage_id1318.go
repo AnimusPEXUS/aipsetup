@@ -35,7 +35,7 @@ var DistroPackageInfo_gxmessage = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/gxmessage"},
+		`https://ftp.gnu.org/gnu/gxmessage`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

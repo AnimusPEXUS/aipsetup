@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_mc = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://www.gnu.org/software/mc",
+	HomePage:    "https://github.com/MidnightCommander/mc",
 
 	BuilderName: "mc",
 
@@ -26,17 +26,17 @@ var DistroPackageInfo_mc = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnome_project", "gnu_project", "group:core0"},
+		"github_hosted", "gnome_project", "gnu_project", "group:core0"},
 
 	TarballVersionTool: "std",
 
 	Filters:               []string{},
 	TarballName:           "mc",
 	TarballFileNameParser: "std",
-	TarballProvider:       "https",
+	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/mc"},
+		`git`, `https://github.com/MidnightCommander/mc.git`, `mc`, `TagPrefixRegExp:^$`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "by_https_host",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

@@ -35,7 +35,7 @@ var DistroPackageInfo_gnu_crypto = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/gnu-crypto"},
+		`https://ftp.gnu.org/gnu/gnu-crypto`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

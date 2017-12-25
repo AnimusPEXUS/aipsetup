@@ -35,7 +35,7 @@ var DistroPackageInfo_sipwitch = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/sipwitch"},
+		`https://ftp.gnu.org/gnu/sipwitch`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

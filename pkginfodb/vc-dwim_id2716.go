@@ -35,7 +35,7 @@ var DistroPackageInfo_vc_dwim = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/vc-dwim"},
+		`https://ftp.gnu.org/gnu/vc-dwim`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

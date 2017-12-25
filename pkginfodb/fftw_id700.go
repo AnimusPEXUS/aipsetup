@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_fftw = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.fftw.org",
+	HomePage:    "https://github.com/FFTW/fftw3",
 
 	BuilderName: "std",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_fftw = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "fftw",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "fftw",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/FFTW/fftw3.git`, `fftw`, `TagPrefixRegExp:fftw`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

@@ -25,8 +25,7 @@ var DistroPackageInfo_libgpg_error = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{
-		"group:crypt"},
+	Tags: []string{},
 
 	TarballVersionTool: "std",
 

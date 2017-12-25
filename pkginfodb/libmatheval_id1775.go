@@ -35,7 +35,7 @@ var DistroPackageInfo_libmatheval = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/libmatheval"},
+		`https://ftp.gnu.org/gnu/libmatheval`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

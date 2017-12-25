@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_dosfstools = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://daniel-baumann.ch/",
+	HomePage:    "https://github.com/dosfstools/dosfstools",
 
 	BuilderName: "std",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_dosfstools = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core1"},
+		"github_hosted", "group:core1"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "dosfstools",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "dosfstools",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/dosfstools/dosfstools.git`, `dosfstools`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

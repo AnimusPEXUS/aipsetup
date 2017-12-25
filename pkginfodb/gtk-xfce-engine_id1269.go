@@ -35,7 +35,7 @@ var DistroPackageInfo_gtk_xfce_engine = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		"virtualgl"},
+		`virtualgl`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

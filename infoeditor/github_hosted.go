@@ -12,7 +12,7 @@ const GithubDefaultTarballName = "v"
 const GithubDefaultWholeTagRegExp = STANDARD_GITHUB_TAG_REGEXP
 const GithubDefaultTagPrefixRegExp = "v"
 const GithubDefaultTagSuffixRegExp = `^$`
-const GithubDefaultTarballFormat = ".tar.xz"
+const GithubDefaultTarballFormat = "tar.xz"
 
 const STANDARD_GITHUB_TAG_REGEXP = `` +
 	`^` +

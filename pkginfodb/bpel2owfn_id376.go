@@ -35,7 +35,7 @@ var DistroPackageInfo_bpel2owfn = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/bpel2owfn"},
+		`https://ftp.gnu.org/gnu/bpel2owfn`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

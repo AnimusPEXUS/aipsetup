@@ -35,7 +35,7 @@ var DistroPackageInfo_mdadm = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://cdn.kernel.org/pub/"},
+		`https://cdn.kernel.org/pub/`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

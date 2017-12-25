@@ -35,7 +35,7 @@ var DistroPackageInfo_ddrescue = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/ddrescue"},
+		`https://ftp.gnu.org/gnu/ddrescue`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

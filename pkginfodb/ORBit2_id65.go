@@ -42,7 +42,7 @@ deprecated! use --disable-orbit for GConf`,
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnome.org/mirror/gnome.org/"},
+		`https://ftp.gnome.org/mirror/gnome.org/`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

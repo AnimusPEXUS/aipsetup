@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_jack2 = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.jackaudio.org/",
+	HomePage:    "https://github.com/jackaudio/jack2",
 
 	BuilderName: "jack",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_jack2 = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "jack",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "jack",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/jackaudio/jack2.git`, `jack0`, `TagPrefixRegExp:^v$`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

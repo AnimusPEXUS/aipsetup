@@ -25,8 +25,7 @@ var DistroPackageInfo_p11_kit = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{
-		"group:crypt"},
+	Tags: []string{},
 
 	TarballVersionTool: "std",
 

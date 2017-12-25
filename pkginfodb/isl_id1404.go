@@ -30,11 +30,12 @@ var DistroPackageInfo_isl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "isl",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "https",
-	TarballProviderArguments:        []string{"http://isl.gforge.inria.fr/"},
+	Filters:               []string{},
+	TarballName:           "isl",
+	TarballFileNameParser: "std",
+	TarballProvider:       "https",
+	TarballProviderArguments: []string{
+		`http://isl.gforge.inria.fr/`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

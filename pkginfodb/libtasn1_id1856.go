@@ -26,7 +26,7 @@ var DistroPackageInfo_libtasn1 = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"gnu_project", "group:crypt"},
+		"gnu_project"},
 
 	TarballVersionTool: "std",
 
@@ -35,7 +35,7 @@ var DistroPackageInfo_libtasn1 = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/libtasn1"},
+		`https://ftp.gnu.org/gnu/libtasn1`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

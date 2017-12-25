@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_protobuf = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://None",
+	HomePage:    "https://github.com/google/protobuf",
 
 	BuilderName: "std",
 
@@ -25,16 +25,18 @@ var DistroPackageInfo_protobuf = &basictypes.PackageInfo{
 	SODeps:      []string{},
 	RunTimeDeps: []string{},
 
-	Tags: []string{},
+	Tags: []string{
+		"github_hosted"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "protobuf",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "protobuf",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/google/protobuf.git`, `protobuf`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

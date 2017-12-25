@@ -35,7 +35,7 @@ var DistroPackageInfo_remotecontrol = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/remotecontrol"},
+		`https://ftp.gnu.org/gnu/remotecontrol`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

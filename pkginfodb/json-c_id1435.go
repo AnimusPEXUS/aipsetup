@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_json_c = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "http://www.metaparadigm.com",
+	HomePage:    "https://github.com/json-c/json-c",
 
 	BuilderName: "std",
 
@@ -26,16 +26,17 @@ var DistroPackageInfo_json_c = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core1"},
+		"github_hosted", "group:core1"},
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
-	TarballName:                     "json-c",
-	TarballFileNameParser:           "std",
-	TarballProvider:                 "",
-	TarballProviderArguments:        []string{},
+	Filters:               []string{},
+	TarballName:           "json-c",
+	TarballFileNameParser: "std",
+	TarballProvider:       "srs",
+	TarballProviderArguments: []string{
+		`git`, `https://github.com/json-c/json-c.git`, `json-c`, `TagPrefixRegExp:json-c`, `TagSuffixRegExp:^\d{8}$`},
 	TarballProviderUseCache:         false,
-	TarballProviderCachePresetName:  "",
-	TarballProviderVersionSyncDepth: 0,
+	TarballProviderCachePresetName:  "personal",
+	TarballProviderVersionSyncDepth: 3,
 }

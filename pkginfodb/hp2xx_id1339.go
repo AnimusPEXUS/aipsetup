@@ -35,7 +35,7 @@ var DistroPackageInfo_hp2xx = &basictypes.PackageInfo{
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
-		"https://ftp.gnu.org/gnu/hp2xx"},
+		`https://ftp.gnu.org/gnu/hp2xx`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "by_https_host",
 	TarballProviderVersionSyncDepth: 0,

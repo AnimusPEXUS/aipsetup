@@ -26,7 +26,7 @@ var DistroPackageInfo_libgcrypt = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"group:core1", "group:crypt"},
+		"group:core1"},
 
 	TarballVersionTool: "std",
 
