@@ -226,7 +226,7 @@ func (self *InfoEditor) Edit(index map[string]*basictypes.PackageInfo) error {
 
 		// commented out. while there is no specific tarball provider, farver
 		// usage of this editor is meaningless
-		// self.ApplySFNet,
+		self.ApplySFNet,
 
 		self.ApplyKernelOrg,
 		self.ApplyGNU,
@@ -328,15 +328,14 @@ func (self *InfoEditor) ApplySFNet(index map[string]*basictypes.PackageInfo) err
 		for k2, v2 := range SOURCEFORGE_PROJECTS {
 			for _, v3 := range v2 {
 
-				t := tags.New(v1.Tags)
-
-				if v3 == v1.TarballName || t.HaveGroup("sf_hosted") {
+				if v3 == v1.TarballName { // || t.HaveGroup("sf_hosted")
+					t := tags.New(v1.Tags)
 
 					v1.HomePage = "https://sourceforge.net/projects/" + k2
 					v1.TarballProvider = "sf"
 					v1.TarballProviderArguments = []string{k2}
 
-					t.Add("sf_hosted", k2)
+					t.SetSingle("sf_hosted", k2)
 
 					v1.Tags = t.Values()
 				}
