@@ -29,7 +29,7 @@ var DistroPackageInfo_gstreamer_sharp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gstreamer-sharp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

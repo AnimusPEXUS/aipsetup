@@ -30,7 +30,7 @@ var DistroPackageInfo_gforth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gforth",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xfindproxy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfindproxy",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

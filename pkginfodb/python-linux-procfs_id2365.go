@@ -29,7 +29,7 @@ var DistroPackageInfo_python_linux_procfs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "python-linux-procfs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

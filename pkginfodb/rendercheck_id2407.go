@@ -29,7 +29,7 @@ var DistroPackageInfo_rendercheck = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rendercheck",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_go = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-go",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

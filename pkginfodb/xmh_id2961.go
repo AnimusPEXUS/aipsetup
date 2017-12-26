@@ -29,7 +29,7 @@ var DistroPackageInfo_xmh = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xmh",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

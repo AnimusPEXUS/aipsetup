@@ -29,7 +29,7 @@ var DistroPackageInfo_XML_Simple = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "XML-Simple",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

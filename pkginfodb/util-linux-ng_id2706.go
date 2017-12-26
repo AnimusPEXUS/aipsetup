@@ -29,7 +29,7 @@ var DistroPackageInfo_util_linux_ng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "util-linux-ng",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

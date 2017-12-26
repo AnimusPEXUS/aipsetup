@@ -29,7 +29,7 @@ var DistroPackageInfo_gnome_device_manager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnome-device-manager",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

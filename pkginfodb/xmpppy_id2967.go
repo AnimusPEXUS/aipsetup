@@ -30,7 +30,7 @@ var DistroPackageInfo_xmpppy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xmpppy",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

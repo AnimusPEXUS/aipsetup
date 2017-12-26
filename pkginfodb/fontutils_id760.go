@@ -30,7 +30,7 @@ var DistroPackageInfo_fontutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fontutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

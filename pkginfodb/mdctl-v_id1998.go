@@ -29,7 +29,7 @@ var DistroPackageInfo_mdctl_v = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mdctl-v",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_dtc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dtc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

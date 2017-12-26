@@ -30,7 +30,7 @@ var DistroPackageInfo_libgssglue = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libgssglue",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

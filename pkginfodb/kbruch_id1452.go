@@ -29,7 +29,7 @@ var DistroPackageInfo_kbruch = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kbruch",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

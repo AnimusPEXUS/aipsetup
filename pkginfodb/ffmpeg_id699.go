@@ -30,7 +30,7 @@ var DistroPackageInfo_ffmpeg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ffmpeg",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

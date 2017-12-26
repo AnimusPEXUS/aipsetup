@@ -30,7 +30,7 @@ var DistroPackageInfo_pyorbit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pyorbit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libjingle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libjingle",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

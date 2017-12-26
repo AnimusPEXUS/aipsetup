@@ -29,7 +29,7 @@ var DistroPackageInfo_kate = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kate",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mozo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mozo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

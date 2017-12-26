@@ -30,7 +30,7 @@ var DistroPackageInfo_libmatheval = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libmatheval",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

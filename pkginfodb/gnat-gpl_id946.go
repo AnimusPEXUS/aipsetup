@@ -29,7 +29,7 @@ var DistroPackageInfo_gnat_gpl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnat-gpl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

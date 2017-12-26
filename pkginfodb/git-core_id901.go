@@ -29,7 +29,7 @@ var DistroPackageInfo_git_core = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "git-core",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

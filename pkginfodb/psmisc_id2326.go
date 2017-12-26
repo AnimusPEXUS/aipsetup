@@ -30,7 +30,7 @@ var DistroPackageInfo_psmisc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "psmisc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

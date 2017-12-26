@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnomecanvasmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnomecanvasmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mkfontscale = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mkfontscale",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

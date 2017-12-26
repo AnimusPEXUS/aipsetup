@@ -30,7 +30,7 @@ var DistroPackageInfo_libe_book = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libe-book",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

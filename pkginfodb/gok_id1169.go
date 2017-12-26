@@ -30,7 +30,7 @@ var DistroPackageInfo_gok = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gok",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

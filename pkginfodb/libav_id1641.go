@@ -29,7 +29,7 @@ var DistroPackageInfo_libav = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libav",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

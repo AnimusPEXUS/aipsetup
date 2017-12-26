@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_session = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-session",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

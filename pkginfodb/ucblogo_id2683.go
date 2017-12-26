@@ -29,7 +29,7 @@ var DistroPackageInfo_ucblogo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ucblogo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

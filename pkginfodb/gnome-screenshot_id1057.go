@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_screenshot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-screenshot",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

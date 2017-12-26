@@ -30,7 +30,7 @@ var DistroPackageInfo_rpge = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rpge",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

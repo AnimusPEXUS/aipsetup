@@ -30,7 +30,7 @@ var DistroPackageInfo_gDesklets = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gDesklets",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

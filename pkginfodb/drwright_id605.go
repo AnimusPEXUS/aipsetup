@@ -30,7 +30,7 @@ var DistroPackageInfo_drwright = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "drwright",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

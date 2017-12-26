@@ -30,7 +30,7 @@ var DistroPackageInfo_libmirage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libmirage",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

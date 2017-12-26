@@ -29,7 +29,7 @@ var DistroPackageInfo_xdriinfo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xdriinfo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

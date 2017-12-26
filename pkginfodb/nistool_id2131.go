@@ -29,7 +29,7 @@ var DistroPackageInfo_nistool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nistool",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

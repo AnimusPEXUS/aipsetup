@@ -30,7 +30,7 @@ var DistroPackageInfo_libjson = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libjson",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

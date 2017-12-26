@@ -31,7 +31,7 @@ var DistroPackageInfo_libseccomp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libseccomp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

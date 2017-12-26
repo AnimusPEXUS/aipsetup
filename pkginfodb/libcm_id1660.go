@@ -30,7 +30,7 @@ var DistroPackageInfo_libcm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libcm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_liblbxutil = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "liblbxutil",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_bsdgames = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bsdgames",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

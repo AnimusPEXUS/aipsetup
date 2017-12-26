@@ -29,7 +29,7 @@ var DistroPackageInfo_minotaur = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "minotaur",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

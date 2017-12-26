@@ -29,7 +29,7 @@ var DistroPackageInfo_libao = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libao",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

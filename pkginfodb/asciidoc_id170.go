@@ -30,7 +30,7 @@ var DistroPackageInfo_asciidoc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "asciidoc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

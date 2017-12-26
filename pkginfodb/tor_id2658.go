@@ -30,7 +30,7 @@ var DistroPackageInfo_tor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

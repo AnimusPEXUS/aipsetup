@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_themes_gtk3_12 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-themes-gtk3.12",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

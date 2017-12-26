@@ -30,7 +30,7 @@ var DistroPackageInfo_dogtail = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dogtail",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

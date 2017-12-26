@@ -29,7 +29,7 @@ var DistroPackageInfo_xdebug = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xdebug",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

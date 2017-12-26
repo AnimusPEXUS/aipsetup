@@ -30,7 +30,7 @@ var DistroPackageInfo_libcdio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libcdio",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

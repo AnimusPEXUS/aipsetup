@@ -32,7 +32,7 @@ can't depricate: used by ibus`,
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "GConf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

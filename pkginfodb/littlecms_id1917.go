@@ -29,7 +29,7 @@ var DistroPackageInfo_littlecms = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "littlecms",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

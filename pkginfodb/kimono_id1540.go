@@ -29,7 +29,7 @@ var DistroPackageInfo_kimono = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kimono",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

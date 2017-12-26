@@ -29,7 +29,7 @@ var DistroPackageInfo_connman = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "connman",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

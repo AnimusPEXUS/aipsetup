@@ -30,7 +30,7 @@ var DistroPackageInfo_qrencode = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "qrencode",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

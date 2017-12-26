@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_player = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-player",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

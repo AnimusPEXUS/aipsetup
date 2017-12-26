@@ -29,7 +29,7 @@ var DistroPackageInfo_libSM = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libSM",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

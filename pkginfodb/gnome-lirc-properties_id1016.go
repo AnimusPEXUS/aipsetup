@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_lirc_properties = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-lirc-properties",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

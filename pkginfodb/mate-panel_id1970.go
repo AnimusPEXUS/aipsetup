@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_panel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-panel",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

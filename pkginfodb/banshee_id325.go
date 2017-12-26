@@ -30,7 +30,7 @@ var DistroPackageInfo_banshee = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "banshee",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

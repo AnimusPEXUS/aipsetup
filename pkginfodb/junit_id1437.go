@@ -30,7 +30,7 @@ var DistroPackageInfo_junit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "junit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

@@ -30,7 +30,7 @@ var DistroPackageInfo_mpc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mpc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

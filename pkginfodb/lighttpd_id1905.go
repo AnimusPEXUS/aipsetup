@@ -29,7 +29,7 @@ var DistroPackageInfo_lighttpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lighttpd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

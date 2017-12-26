@@ -30,7 +30,7 @@ var DistroPackageInfo_radioactive = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "radioactive",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

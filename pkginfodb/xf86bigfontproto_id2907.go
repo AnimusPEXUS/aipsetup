@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86bigfontproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86bigfontproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

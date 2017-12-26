@@ -30,7 +30,7 @@ var DistroPackageInfo_discident_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "discident-glib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

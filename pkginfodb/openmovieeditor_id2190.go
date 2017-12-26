@@ -29,7 +29,7 @@ var DistroPackageInfo_openmovieeditor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openmovieeditor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

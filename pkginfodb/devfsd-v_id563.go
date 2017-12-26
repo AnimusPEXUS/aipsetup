@@ -29,7 +29,7 @@ var DistroPackageInfo_devfsd_v = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "devfsd-v",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

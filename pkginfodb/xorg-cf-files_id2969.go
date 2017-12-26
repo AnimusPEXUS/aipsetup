@@ -29,7 +29,7 @@ var DistroPackageInfo_xorg_cf_files = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xorg-cf-files",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

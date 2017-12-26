@@ -30,7 +30,7 @@ var DistroPackageInfo_orbitcpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "orbitcpp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

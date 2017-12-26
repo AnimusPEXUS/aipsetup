@@ -29,7 +29,7 @@ var DistroPackageInfo_squid = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "squid",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

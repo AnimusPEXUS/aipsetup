@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell_fo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell-fo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

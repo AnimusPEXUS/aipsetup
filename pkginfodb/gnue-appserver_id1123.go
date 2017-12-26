@@ -29,7 +29,7 @@ var DistroPackageInfo_gnue_appserver = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnue-appserver",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

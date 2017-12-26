@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_lokkit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-lokkit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

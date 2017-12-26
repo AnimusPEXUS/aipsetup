@@ -29,7 +29,7 @@ var DistroPackageInfo_SQLAlchemy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "SQLAlchemy",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

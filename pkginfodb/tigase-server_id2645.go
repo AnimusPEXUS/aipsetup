@@ -29,7 +29,7 @@ var DistroPackageInfo_tigase_server = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tigase-server",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

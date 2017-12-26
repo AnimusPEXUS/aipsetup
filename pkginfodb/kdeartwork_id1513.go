@@ -29,7 +29,7 @@ var DistroPackageInfo_kdeartwork = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdeartwork",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

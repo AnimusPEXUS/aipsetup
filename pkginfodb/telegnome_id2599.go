@@ -30,7 +30,7 @@ var DistroPackageInfo_telegnome = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "telegnome",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_bwidget = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bwidget",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

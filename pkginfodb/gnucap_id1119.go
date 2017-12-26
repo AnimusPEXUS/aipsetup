@@ -30,7 +30,7 @@ var DistroPackageInfo_gnucap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnucap",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

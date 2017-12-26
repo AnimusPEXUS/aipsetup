@@ -29,7 +29,7 @@ var DistroPackageInfo_kaccessible = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kaccessible",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

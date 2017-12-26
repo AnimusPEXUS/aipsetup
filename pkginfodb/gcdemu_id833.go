@@ -30,7 +30,7 @@ var DistroPackageInfo_gcdemu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gcdemu",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

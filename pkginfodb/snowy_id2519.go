@@ -30,7 +30,7 @@ var DistroPackageInfo_snowy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "snowy",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

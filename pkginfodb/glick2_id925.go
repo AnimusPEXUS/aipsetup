@@ -30,7 +30,7 @@ var DistroPackageInfo_glick2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glick2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

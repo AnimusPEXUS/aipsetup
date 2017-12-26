@@ -29,7 +29,7 @@ var DistroPackageInfo_font_sony_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-sony-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

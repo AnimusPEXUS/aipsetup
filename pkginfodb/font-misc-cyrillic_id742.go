@@ -29,7 +29,7 @@ var DistroPackageInfo_font_misc_cyrillic = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-misc-cyrillic",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

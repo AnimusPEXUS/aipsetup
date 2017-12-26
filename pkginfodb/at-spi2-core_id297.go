@@ -30,7 +30,7 @@ var DistroPackageInfo_at_spi2_core = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "at-spi2-core",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

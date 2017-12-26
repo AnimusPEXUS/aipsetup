@@ -30,7 +30,7 @@ var DistroPackageInfo_gmdns = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gmdns",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

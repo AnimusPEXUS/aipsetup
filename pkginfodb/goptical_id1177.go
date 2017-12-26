@@ -30,7 +30,7 @@ var DistroPackageInfo_goptical = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "goptical",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

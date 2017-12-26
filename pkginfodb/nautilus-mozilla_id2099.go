@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_mozilla = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-mozilla",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

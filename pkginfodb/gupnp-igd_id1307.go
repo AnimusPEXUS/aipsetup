@@ -30,7 +30,7 @@ var DistroPackageInfo_gupnp_igd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gupnp-igd",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

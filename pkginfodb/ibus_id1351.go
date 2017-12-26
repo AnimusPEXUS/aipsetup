@@ -30,7 +30,7 @@ var DistroPackageInfo_ibus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ibus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

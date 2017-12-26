@@ -30,7 +30,7 @@ var DistroPackageInfo_seahorse_plugins = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "seahorse-plugins",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

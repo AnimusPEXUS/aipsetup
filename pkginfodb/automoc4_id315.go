@@ -29,7 +29,7 @@ var DistroPackageInfo_automoc4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "automoc4",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

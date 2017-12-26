@@ -29,7 +29,7 @@ var DistroPackageInfo_freefont_sfd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "freefont-sfd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

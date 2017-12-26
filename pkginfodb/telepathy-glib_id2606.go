@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-glib",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

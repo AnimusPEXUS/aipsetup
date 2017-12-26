@@ -30,7 +30,7 @@ var DistroPackageInfo_mutter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mutter",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

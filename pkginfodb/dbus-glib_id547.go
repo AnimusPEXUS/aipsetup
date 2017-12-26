@@ -33,7 +33,7 @@ but some applications still using it (NetworkManager)`,
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dbus-glib",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

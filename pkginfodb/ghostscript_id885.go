@@ -30,7 +30,7 @@ var DistroPackageInfo_ghostscript = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ghostscript",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

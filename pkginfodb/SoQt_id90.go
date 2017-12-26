@@ -29,7 +29,7 @@ var DistroPackageInfo_SoQt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "SoQt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

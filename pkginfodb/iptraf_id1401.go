@@ -29,7 +29,7 @@ var DistroPackageInfo_iptraf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "iptraf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

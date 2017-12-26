@@ -30,7 +30,7 @@ var DistroPackageInfo_libomxil_bellagio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libomxil-bellagio",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

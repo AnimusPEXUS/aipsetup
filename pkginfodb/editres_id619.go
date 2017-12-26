@@ -29,7 +29,7 @@ var DistroPackageInfo_editres = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "editres",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

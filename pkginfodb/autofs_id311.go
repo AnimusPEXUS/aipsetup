@@ -29,7 +29,7 @@ var DistroPackageInfo_autofs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "autofs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

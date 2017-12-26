@@ -30,7 +30,7 @@ var DistroPackageInfo_rustfmt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rustfmt",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

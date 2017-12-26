@@ -29,7 +29,7 @@ var DistroPackageInfo_uwsgi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "uwsgi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

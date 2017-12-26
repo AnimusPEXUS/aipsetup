@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_settings_daemon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-settings-daemon",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnomeui2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnomeui2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

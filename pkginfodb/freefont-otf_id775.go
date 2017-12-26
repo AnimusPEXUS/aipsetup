@@ -29,7 +29,7 @@ var DistroPackageInfo_freefont_otf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "freefont-otf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

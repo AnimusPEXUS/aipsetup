@@ -29,7 +29,7 @@ var DistroPackageInfo_libFS = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libFS",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

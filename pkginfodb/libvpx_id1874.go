@@ -30,7 +30,7 @@ var DistroPackageInfo_libvpx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libvpx",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

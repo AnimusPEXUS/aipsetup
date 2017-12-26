@@ -30,7 +30,7 @@ var DistroPackageInfo_pygi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pygi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

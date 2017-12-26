@@ -30,7 +30,7 @@ var DistroPackageInfo_pyphany = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pyphany",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

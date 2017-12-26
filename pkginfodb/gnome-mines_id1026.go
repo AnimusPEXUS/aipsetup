@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_mines = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-mines",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

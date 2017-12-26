@@ -29,7 +29,7 @@ var DistroPackageInfo_garnet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "garnet",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

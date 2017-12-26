@@ -30,7 +30,7 @@ var DistroPackageInfo_icu4c = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "icu4c",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

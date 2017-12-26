@@ -30,7 +30,7 @@ var DistroPackageInfo_libgcrypt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libgcrypt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

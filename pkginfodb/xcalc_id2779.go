@@ -29,7 +29,7 @@ var DistroPackageInfo_xcalc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcalc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

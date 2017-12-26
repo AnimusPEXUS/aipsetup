@@ -30,7 +30,7 @@ var DistroPackageInfo_allegro = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "allegro",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

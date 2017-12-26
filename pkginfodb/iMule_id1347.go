@@ -29,7 +29,7 @@ var DistroPackageInfo_iMule = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "iMule",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

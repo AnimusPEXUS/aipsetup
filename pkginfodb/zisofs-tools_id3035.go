@@ -29,7 +29,7 @@ var DistroPackageInfo_zisofs_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "zisofs-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

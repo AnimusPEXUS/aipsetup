@@ -29,7 +29,7 @@ var DistroPackageInfo_python_schedutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "python-schedutils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

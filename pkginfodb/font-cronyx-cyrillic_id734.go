@@ -29,7 +29,7 @@ var DistroPackageInfo_font_cronyx_cyrillic = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-cronyx-cyrillic",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

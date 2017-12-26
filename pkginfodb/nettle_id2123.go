@@ -30,7 +30,7 @@ var DistroPackageInfo_nettle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nettle",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

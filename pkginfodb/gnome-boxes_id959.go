@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_boxes = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-boxes",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

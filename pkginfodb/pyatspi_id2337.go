@@ -30,7 +30,7 @@ var DistroPackageInfo_pyatspi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pyatspi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

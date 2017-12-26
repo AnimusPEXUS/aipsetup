@@ -29,7 +29,7 @@ var DistroPackageInfo_ghostscript_fonts_std = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ghostscript-fonts-std",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

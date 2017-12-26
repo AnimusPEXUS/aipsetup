@@ -30,7 +30,7 @@ var DistroPackageInfo_straw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "straw",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_rails = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rails",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

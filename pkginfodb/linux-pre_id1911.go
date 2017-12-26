@@ -29,7 +29,7 @@ var DistroPackageInfo_linux_pre = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "linux-pre",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

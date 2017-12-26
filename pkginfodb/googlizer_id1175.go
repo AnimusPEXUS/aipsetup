@@ -30,7 +30,7 @@ var DistroPackageInfo_googlizer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "googlizer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

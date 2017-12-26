@@ -30,7 +30,7 @@ var DistroPackageInfo_openmpi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "openmpi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

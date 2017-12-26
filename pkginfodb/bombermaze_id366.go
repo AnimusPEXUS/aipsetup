@@ -30,7 +30,7 @@ var DistroPackageInfo_bombermaze = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bombermaze",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

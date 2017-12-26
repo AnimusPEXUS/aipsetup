@@ -29,7 +29,7 @@ var DistroPackageInfo_texlive = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "texlive",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

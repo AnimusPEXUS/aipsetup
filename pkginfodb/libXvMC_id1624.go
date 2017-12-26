@@ -29,7 +29,7 @@ var DistroPackageInfo_libXvMC = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXvMC",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

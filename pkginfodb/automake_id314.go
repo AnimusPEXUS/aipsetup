@@ -30,7 +30,7 @@ var DistroPackageInfo_automake = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "automake",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

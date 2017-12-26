@@ -30,7 +30,7 @@ var DistroPackageInfo_man_db = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "man-db",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

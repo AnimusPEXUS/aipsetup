@@ -30,7 +30,7 @@ var DistroPackageInfo_geocode_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "geocode-glib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

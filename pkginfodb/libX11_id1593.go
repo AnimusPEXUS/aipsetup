@@ -29,7 +29,7 @@ var DistroPackageInfo_libX11 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libX11",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

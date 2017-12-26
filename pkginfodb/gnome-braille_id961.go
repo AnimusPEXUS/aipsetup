@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_braille = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-braille",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

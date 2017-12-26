@@ -29,7 +29,7 @@ var DistroPackageInfo_libsignon_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libsignon-glib",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

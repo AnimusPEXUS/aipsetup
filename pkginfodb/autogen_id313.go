@@ -30,7 +30,7 @@ var DistroPackageInfo_autogen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "autogen",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

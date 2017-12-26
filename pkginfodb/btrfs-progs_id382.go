@@ -29,7 +29,7 @@ var DistroPackageInfo_btrfs_progs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "btrfs-progs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libunwind = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libunwind",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

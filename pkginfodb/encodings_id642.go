@@ -29,7 +29,7 @@ var DistroPackageInfo_encodings = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "encodings",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_rpm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-rpm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libexif = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libexif",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

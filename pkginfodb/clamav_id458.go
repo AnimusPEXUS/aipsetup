@@ -30,7 +30,7 @@ var DistroPackageInfo_clamav = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "clamav",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

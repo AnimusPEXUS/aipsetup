@@ -29,7 +29,7 @@ var DistroPackageInfo_PPSkit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "PPSkit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

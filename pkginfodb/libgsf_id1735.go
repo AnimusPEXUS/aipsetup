@@ -30,7 +30,7 @@ var DistroPackageInfo_libgsf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgsf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

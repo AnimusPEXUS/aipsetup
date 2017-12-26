@@ -30,7 +30,7 @@ var DistroPackageInfo_zbar = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "zbar",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_fping = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fping",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

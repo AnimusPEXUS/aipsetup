@@ -29,7 +29,7 @@ var DistroPackageInfo_font_bh_100dpi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-bh-100dpi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

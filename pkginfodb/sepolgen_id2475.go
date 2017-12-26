@@ -30,7 +30,7 @@ var DistroPackageInfo_sepolgen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sepolgen",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

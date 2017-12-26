@@ -30,7 +30,7 @@ var DistroPackageInfo_proxyknife = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "proxyknife",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

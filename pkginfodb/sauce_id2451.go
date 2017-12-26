@@ -30,7 +30,7 @@ var DistroPackageInfo_sauce = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sauce",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

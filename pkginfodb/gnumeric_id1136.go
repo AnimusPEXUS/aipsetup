@@ -30,7 +30,7 @@ var DistroPackageInfo_gnumeric = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnumeric",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

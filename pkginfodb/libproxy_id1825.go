@@ -30,7 +30,7 @@ var DistroPackageInfo_libproxy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libproxy",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

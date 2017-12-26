@@ -31,7 +31,7 @@ Can't remember :-(`,
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Alchemy",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_unifont = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "unifont",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

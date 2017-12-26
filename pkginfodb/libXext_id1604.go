@@ -29,7 +29,7 @@ var DistroPackageInfo_libXext = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXext",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

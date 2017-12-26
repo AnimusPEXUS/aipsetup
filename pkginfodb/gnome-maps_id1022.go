@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_maps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-maps",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

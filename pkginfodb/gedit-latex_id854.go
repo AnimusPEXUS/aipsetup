@@ -30,7 +30,7 @@ var DistroPackageInfo_gedit_latex = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gedit-latex",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

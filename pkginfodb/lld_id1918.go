@@ -29,7 +29,7 @@ var DistroPackageInfo_lld = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lld",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

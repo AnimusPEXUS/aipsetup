@@ -30,7 +30,7 @@ var DistroPackageInfo_libusb_compat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libusb-compat",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

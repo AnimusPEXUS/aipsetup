@@ -29,7 +29,7 @@ var DistroPackageInfo_libextractor_python = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libextractor-python",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

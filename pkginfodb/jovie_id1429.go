@@ -29,7 +29,7 @@ var DistroPackageInfo_jovie = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "jovie",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

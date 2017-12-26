@@ -29,7 +29,7 @@ var DistroPackageInfo_pam_login_alert = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pam_login_alert",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_HTML_Parser = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "HTML-Parser",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

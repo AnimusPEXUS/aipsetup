@@ -29,7 +29,7 @@ var DistroPackageInfo_libxfce4util = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libxfce4util",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

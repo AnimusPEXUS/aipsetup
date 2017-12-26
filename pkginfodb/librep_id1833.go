@@ -30,7 +30,7 @@ var DistroPackageInfo_librep = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "librep",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_fixesproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fixesproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

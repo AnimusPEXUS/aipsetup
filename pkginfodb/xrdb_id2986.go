@@ -29,7 +29,7 @@ var DistroPackageInfo_xrdb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xrdb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

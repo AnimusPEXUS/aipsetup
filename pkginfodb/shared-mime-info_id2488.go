@@ -29,7 +29,7 @@ var DistroPackageInfo_shared_mime_info = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "shared-mime-info",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_wfmath = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "wfmath",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

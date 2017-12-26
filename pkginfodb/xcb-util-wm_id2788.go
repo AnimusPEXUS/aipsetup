@@ -29,7 +29,7 @@ var DistroPackageInfo_xcb_util_wm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcb-util-wm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libfontenc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libfontenc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

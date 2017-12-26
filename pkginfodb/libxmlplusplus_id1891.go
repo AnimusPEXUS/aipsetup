@@ -31,7 +31,7 @@ as libxml++-2.36.0.tar.xz is too complicated for parsing, it need to be renamed 
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libxmlplusplus",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

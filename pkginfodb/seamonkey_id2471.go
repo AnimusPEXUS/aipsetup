@@ -29,7 +29,7 @@ var DistroPackageInfo_seamonkey = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "seamonkey",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

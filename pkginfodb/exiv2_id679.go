@@ -29,7 +29,7 @@ var DistroPackageInfo_exiv2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "exiv2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

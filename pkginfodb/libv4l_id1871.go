@@ -29,7 +29,7 @@ var DistroPackageInfo_libv4l = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libv4l",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gegl_vala = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gegl-vala",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

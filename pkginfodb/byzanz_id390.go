@@ -30,7 +30,7 @@ var DistroPackageInfo_byzanz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "byzanz",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_e2fsprogs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "e2fsprogs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

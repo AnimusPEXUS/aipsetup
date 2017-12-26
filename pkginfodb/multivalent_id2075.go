@@ -29,7 +29,7 @@ var DistroPackageInfo_multivalent = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "multivalent",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

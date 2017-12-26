@@ -29,7 +29,7 @@ var DistroPackageInfo_nclx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nclx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

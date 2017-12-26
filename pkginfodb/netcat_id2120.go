@@ -30,7 +30,7 @@ var DistroPackageInfo_netcat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "netcat",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

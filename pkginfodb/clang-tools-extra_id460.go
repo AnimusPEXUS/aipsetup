@@ -29,7 +29,7 @@ var DistroPackageInfo_clang_tools_extra = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clang-tools-extra",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

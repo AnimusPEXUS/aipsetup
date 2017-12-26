@@ -30,7 +30,7 @@ var DistroPackageInfo_dosfstools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dosfstools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

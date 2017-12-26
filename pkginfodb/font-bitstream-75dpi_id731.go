@@ -29,7 +29,7 @@ var DistroPackageInfo_font_bitstream_75dpi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-bitstream-75dpi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

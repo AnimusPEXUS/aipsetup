@@ -29,7 +29,7 @@ var DistroPackageInfo_vdpauinfo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "vdpauinfo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

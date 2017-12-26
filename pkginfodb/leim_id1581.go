@@ -29,7 +29,7 @@ var DistroPackageInfo_leim = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "leim",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

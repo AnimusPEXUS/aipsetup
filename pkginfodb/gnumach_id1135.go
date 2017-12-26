@@ -30,7 +30,7 @@ var DistroPackageInfo_gnumach = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnumach",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

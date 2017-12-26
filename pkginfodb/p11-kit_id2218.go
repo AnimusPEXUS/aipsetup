@@ -29,7 +29,7 @@ var DistroPackageInfo_p11_kit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "p11-kit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

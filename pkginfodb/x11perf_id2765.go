@@ -29,7 +29,7 @@ var DistroPackageInfo_x11perf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "x11perf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

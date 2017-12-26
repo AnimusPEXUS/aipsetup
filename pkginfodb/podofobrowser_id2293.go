@@ -30,7 +30,7 @@ var DistroPackageInfo_podofobrowser = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "podofobrowser",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

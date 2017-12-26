@@ -30,7 +30,7 @@ var DistroPackageInfo_libpipeline = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libpipeline",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

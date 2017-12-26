@@ -29,7 +29,7 @@ var DistroPackageInfo_ccache = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ccache",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

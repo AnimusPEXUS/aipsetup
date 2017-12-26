@@ -30,7 +30,7 @@ var DistroPackageInfo_radius = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "radius",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

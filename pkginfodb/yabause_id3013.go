@@ -29,7 +29,7 @@ var DistroPackageInfo_yabause = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "yabause",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

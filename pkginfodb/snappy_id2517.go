@@ -30,7 +30,7 @@ var DistroPackageInfo_snappy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "snappy",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

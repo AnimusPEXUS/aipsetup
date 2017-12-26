@@ -30,7 +30,7 @@ var DistroPackageInfo_gdk_pixbuf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gdk-pixbuf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

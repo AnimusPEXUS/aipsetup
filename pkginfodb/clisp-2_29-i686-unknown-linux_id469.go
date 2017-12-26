@@ -29,7 +29,7 @@ var DistroPackageInfo_clisp_2_29_i686_unknown_linux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clisp-2.29-i686-unknown-linux",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

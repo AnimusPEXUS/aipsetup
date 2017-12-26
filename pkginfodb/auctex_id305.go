@@ -30,7 +30,7 @@ var DistroPackageInfo_auctex = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "auctex",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

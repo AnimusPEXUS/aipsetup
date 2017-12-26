@@ -30,7 +30,7 @@ var DistroPackageInfo_pidgin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pidgin",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

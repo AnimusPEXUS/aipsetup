@@ -29,7 +29,7 @@ var DistroPackageInfo_firefox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "firefox",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

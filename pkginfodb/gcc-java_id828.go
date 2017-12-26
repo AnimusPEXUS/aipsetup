@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-java",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

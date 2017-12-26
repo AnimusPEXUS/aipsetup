@@ -29,7 +29,7 @@ var DistroPackageInfo_libdvdread = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libdvdread",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

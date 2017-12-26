@@ -30,7 +30,7 @@ var DistroPackageInfo_mdadm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mdadm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

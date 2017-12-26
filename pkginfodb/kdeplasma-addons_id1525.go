@@ -29,7 +29,7 @@ var DistroPackageInfo_kdeplasma_addons = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdeplasma-addons",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

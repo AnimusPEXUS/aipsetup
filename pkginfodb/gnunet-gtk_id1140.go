@@ -29,7 +29,7 @@ var DistroPackageInfo_gnunet_gtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnunet-gtk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

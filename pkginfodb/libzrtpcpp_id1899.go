@@ -29,7 +29,7 @@ var DistroPackageInfo_libzrtpcpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libzrtpcpp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

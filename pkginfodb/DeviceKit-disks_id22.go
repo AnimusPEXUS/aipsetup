@@ -29,7 +29,7 @@ var DistroPackageInfo_DeviceKit_disks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "DeviceKit-disks",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

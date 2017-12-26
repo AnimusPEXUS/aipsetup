@@ -30,7 +30,7 @@ var DistroPackageInfo_four_in_a_row = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "four-in-a-row",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

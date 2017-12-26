@@ -30,7 +30,7 @@ var DistroPackageInfo_jel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "jel",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

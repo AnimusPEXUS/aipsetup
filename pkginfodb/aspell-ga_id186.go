@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell_ga = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell-ga",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

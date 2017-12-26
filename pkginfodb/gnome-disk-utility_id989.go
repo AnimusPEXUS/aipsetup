@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_disk_utility = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-disk-utility",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

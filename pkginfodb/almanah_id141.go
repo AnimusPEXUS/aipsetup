@@ -30,7 +30,7 @@ var DistroPackageInfo_almanah = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "almanah",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

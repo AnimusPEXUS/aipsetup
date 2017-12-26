@@ -29,7 +29,7 @@ var DistroPackageInfo_ostree_embeddeps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ostree-embeddeps",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

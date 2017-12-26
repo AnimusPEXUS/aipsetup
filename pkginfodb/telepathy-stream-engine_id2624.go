@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_stream_engine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-stream-engine",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

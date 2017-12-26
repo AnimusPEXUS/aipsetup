@@ -29,7 +29,7 @@ var DistroPackageInfo_panda3d = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "panda3d",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

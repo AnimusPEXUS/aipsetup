@@ -30,7 +30,7 @@ var DistroPackageInfo_flac = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "flac",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

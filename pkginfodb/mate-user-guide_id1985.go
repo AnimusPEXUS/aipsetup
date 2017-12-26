@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_user_guide = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-user-guide",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

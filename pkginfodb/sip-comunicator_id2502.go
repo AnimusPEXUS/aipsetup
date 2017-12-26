@@ -29,7 +29,7 @@ var DistroPackageInfo_sip_comunicator = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sip-comunicator",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

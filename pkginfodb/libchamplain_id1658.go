@@ -30,7 +30,7 @@ var DistroPackageInfo_libchamplain = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libchamplain",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

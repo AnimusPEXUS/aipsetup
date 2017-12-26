@@ -29,7 +29,7 @@ var DistroPackageInfo_eom = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "eom",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

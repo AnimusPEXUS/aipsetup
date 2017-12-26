@@ -30,7 +30,7 @@ var DistroPackageInfo_ggradebook = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ggradebook",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

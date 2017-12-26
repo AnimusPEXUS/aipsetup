@@ -29,7 +29,7 @@ var DistroPackageInfo_Botan = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Botan",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

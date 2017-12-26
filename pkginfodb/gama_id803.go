@@ -30,7 +30,7 @@ var DistroPackageInfo_gama = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gama",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

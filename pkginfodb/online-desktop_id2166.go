@@ -30,7 +30,7 @@ var DistroPackageInfo_online_desktop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "online-desktop",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

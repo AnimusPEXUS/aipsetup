@@ -29,7 +29,7 @@ var DistroPackageInfo_tango_icon_theme_extras = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tango-icon-theme-extras",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

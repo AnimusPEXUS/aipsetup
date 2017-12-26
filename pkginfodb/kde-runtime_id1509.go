@@ -29,7 +29,7 @@ var DistroPackageInfo_kde_runtime = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kde-runtime",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

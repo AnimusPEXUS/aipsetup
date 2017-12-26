@@ -30,7 +30,7 @@ var DistroPackageInfo_libzvt2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libzvt2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

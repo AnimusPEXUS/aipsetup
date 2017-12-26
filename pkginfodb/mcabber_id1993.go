@@ -29,7 +29,7 @@ var DistroPackageInfo_mcabber = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mcabber",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

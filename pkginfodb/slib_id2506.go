@@ -30,7 +30,7 @@ var DistroPackageInfo_slib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "slib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

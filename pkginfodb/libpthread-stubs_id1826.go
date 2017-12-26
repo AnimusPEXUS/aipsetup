@@ -30,7 +30,7 @@ var DistroPackageInfo_libpthread_stubs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libpthread-stubs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

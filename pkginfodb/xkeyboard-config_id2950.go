@@ -29,7 +29,7 @@ var DistroPackageInfo_xkeyboard_config = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xkeyboard-config",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_font_bh_75dpi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-bh-75dpi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_deluge = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "deluge",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

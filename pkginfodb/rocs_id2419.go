@@ -29,7 +29,7 @@ var DistroPackageInfo_rocs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rocs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

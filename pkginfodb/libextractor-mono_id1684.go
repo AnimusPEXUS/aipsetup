@@ -29,7 +29,7 @@ var DistroPackageInfo_libextractor_mono = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libextractor-mono",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

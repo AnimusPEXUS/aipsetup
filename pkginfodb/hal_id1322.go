@@ -29,7 +29,7 @@ var DistroPackageInfo_hal = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "hal",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

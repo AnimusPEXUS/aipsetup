@@ -30,7 +30,7 @@ var DistroPackageInfo_gupnp_vala = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gupnp-vala",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

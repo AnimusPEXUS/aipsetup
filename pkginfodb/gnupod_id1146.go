@@ -30,7 +30,7 @@ var DistroPackageInfo_gnupod = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnupod",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_wireless_regdb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wireless-regdb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

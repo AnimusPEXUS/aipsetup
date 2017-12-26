@@ -30,7 +30,7 @@ var DistroPackageInfo_libiconv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libiconv",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

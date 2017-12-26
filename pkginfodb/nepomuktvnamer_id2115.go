@@ -29,7 +29,7 @@ var DistroPackageInfo_nepomuktvnamer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nepomuktvnamer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

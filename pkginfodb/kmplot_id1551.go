@@ -29,7 +29,7 @@ var DistroPackageInfo_kmplot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kmplot",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

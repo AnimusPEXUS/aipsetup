@@ -30,7 +30,7 @@ var DistroPackageInfo_sawfish = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sawfish",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

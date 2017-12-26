@@ -29,7 +29,7 @@ var DistroPackageInfo_gplusplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "g++",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

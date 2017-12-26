@@ -30,7 +30,7 @@ var DistroPackageInfo_cflow = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cflow",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

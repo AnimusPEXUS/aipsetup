@@ -30,7 +30,7 @@ var DistroPackageInfo_dgen_sdl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dgen-sdl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

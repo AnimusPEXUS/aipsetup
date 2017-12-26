@@ -29,7 +29,7 @@ var DistroPackageInfo_xcb_util_renderutil = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcb-util-renderutil",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

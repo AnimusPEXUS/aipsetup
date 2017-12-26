@@ -30,7 +30,7 @@ var DistroPackageInfo_dionysus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dionysus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

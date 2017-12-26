@@ -30,7 +30,7 @@ var DistroPackageInfo_liboauth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "liboauth",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

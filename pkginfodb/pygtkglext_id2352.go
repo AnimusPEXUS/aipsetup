@@ -30,7 +30,7 @@ var DistroPackageInfo_pygtkglext = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pygtkglext",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_bzflag = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bzflag",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

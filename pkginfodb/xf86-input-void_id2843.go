@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_input_void = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-input-void",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

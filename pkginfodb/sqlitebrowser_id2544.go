@@ -29,7 +29,7 @@ var DistroPackageInfo_sqlitebrowser = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sqlitebrowser",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

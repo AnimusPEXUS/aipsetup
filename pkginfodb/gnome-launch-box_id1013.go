@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_launch_box = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-launch-box",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

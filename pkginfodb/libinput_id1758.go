@@ -29,7 +29,7 @@ var DistroPackageInfo_libinput = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libinput",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

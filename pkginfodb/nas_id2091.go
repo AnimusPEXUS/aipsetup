@@ -30,7 +30,7 @@ var DistroPackageInfo_nas = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nas",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

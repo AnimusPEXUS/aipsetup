@@ -29,7 +29,7 @@ var DistroPackageInfo_yppasswd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "yppasswd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

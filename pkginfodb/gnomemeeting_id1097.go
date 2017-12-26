@@ -30,7 +30,7 @@ var DistroPackageInfo_gnomemeeting = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnomemeeting",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

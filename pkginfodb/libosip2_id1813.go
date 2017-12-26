@@ -29,7 +29,7 @@ var DistroPackageInfo_libosip2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libosip2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

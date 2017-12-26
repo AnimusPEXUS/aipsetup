@@ -29,7 +29,7 @@ var DistroPackageInfo_php = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "php",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

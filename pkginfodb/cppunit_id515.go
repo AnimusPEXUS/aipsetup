@@ -30,7 +30,7 @@ var DistroPackageInfo_cppunit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cppunit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

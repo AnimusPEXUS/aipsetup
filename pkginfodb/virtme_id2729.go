@@ -29,7 +29,7 @@ var DistroPackageInfo_virtme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "virtme",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

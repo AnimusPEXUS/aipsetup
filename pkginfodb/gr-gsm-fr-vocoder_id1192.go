@@ -29,7 +29,7 @@ var DistroPackageInfo_gr_gsm_fr_vocoder = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gr-gsm-fr-vocoder",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

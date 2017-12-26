@@ -29,7 +29,7 @@ var DistroPackageInfo_inspircd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "inspircd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

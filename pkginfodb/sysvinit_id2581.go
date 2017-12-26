@@ -29,7 +29,7 @@ var DistroPackageInfo_sysvinit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sysvinit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

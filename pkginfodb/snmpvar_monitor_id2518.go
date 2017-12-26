@@ -29,7 +29,7 @@ var DistroPackageInfo_snmpvar_monitor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "snmpvar.monitor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

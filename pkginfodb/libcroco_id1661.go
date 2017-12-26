@@ -30,7 +30,7 @@ var DistroPackageInfo_libcroco = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libcroco",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

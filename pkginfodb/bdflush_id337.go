@@ -29,7 +29,7 @@ var DistroPackageInfo_bdflush = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bdflush",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

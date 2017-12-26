@@ -29,7 +29,7 @@ var DistroPackageInfo_caja = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "caja",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

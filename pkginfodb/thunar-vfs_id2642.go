@@ -29,7 +29,7 @@ var DistroPackageInfo_thunar_vfs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "thunar-vfs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

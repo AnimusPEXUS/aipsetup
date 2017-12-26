@@ -29,7 +29,7 @@ var DistroPackageInfo_gstreamer_editing_services = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gstreamer-editing-services",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

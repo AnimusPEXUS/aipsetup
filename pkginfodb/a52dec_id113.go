@@ -29,7 +29,7 @@ var DistroPackageInfo_a52dec = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "a52dec",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

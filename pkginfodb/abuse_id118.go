@@ -29,7 +29,7 @@ var DistroPackageInfo_abuse = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "abuse",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

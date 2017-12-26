@@ -30,7 +30,7 @@ var DistroPackageInfo_pong = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pong",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

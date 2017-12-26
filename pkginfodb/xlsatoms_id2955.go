@@ -29,7 +29,7 @@ var DistroPackageInfo_xlsatoms = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xlsatoms",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

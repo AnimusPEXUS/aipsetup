@@ -30,7 +30,7 @@ var DistroPackageInfo_net_snmp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "net-snmp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

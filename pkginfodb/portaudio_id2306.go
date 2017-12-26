@@ -29,7 +29,7 @@ var DistroPackageInfo_portaudio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pa_stable_v",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_muine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "muine",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

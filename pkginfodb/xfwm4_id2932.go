@@ -29,7 +29,7 @@ var DistroPackageInfo_xfwm4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfwm4",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

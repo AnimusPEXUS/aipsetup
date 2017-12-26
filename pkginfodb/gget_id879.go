@@ -30,7 +30,7 @@ var DistroPackageInfo_gget = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gget",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

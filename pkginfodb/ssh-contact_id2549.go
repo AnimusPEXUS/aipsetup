@@ -29,7 +29,7 @@ var DistroPackageInfo_ssh_contact = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ssh-contact",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_kross_interpreters = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kross-interpreters",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

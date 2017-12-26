@@ -30,7 +30,7 @@ var DistroPackageInfo_djvulibre = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "djvulibre",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

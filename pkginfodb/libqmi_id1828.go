@@ -30,7 +30,7 @@ var DistroPackageInfo_libqmi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libqmi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

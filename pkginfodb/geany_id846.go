@@ -29,7 +29,7 @@ var DistroPackageInfo_geany = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "geany",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

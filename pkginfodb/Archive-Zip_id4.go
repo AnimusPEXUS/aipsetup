@@ -29,7 +29,7 @@ var DistroPackageInfo_Archive_Zip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Archive-Zip",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_jojodiff = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "jojodiff",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

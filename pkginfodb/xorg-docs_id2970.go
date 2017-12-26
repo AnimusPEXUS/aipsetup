@@ -29,7 +29,7 @@ var DistroPackageInfo_xorg_docs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xorg-docs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

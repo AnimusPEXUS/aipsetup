@@ -30,7 +30,7 @@ var DistroPackageInfo_audiofile = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "audiofile",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

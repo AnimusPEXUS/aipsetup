@@ -30,7 +30,7 @@ var DistroPackageInfo_ogre = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ogre_src_v",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

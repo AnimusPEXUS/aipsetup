@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_fargo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-fargo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

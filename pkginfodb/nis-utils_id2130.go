@@ -29,7 +29,7 @@ var DistroPackageInfo_nis_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nis-utils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

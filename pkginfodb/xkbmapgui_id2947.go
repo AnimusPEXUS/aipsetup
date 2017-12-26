@@ -29,7 +29,7 @@ var DistroPackageInfo_xkbmapgui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xkbmapgui",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

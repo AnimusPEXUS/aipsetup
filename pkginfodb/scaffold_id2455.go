@@ -30,7 +30,7 @@ var DistroPackageInfo_scaffold = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "scaffold",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

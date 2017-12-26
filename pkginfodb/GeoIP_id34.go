@@ -29,7 +29,7 @@ var DistroPackageInfo_GeoIP = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "GeoIP",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

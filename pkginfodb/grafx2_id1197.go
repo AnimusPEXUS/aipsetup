@@ -29,7 +29,7 @@ var DistroPackageInfo_grafx2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "grafx2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

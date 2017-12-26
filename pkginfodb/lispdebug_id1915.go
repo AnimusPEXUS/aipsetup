@@ -29,7 +29,7 @@ var DistroPackageInfo_lispdebug = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lispdebug",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

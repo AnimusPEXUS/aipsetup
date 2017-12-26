@@ -29,7 +29,7 @@ var DistroPackageInfo_mino = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mino",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

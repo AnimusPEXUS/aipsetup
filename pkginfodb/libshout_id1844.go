@@ -29,7 +29,7 @@ var DistroPackageInfo_libshout = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libshout",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

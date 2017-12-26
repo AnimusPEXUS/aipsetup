@@ -29,7 +29,7 @@ var DistroPackageInfo_dragonegg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dragonegg",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

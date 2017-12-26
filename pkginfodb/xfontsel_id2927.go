@@ -29,7 +29,7 @@ var DistroPackageInfo_xfontsel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfontsel",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

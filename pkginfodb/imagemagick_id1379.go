@@ -30,7 +30,7 @@ var DistroPackageInfo_imagemagick = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ImageMagick",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

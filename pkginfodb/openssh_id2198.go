@@ -30,7 +30,7 @@ var DistroPackageInfo_openssh = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openssh",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

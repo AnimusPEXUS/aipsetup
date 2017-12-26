@@ -29,7 +29,7 @@ var DistroPackageInfo_compositeproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "compositeproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

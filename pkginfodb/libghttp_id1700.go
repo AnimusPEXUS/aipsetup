@@ -30,7 +30,7 @@ var DistroPackageInfo_libghttp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libghttp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

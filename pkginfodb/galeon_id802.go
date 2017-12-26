@@ -30,7 +30,7 @@ var DistroPackageInfo_galeon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "galeon",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

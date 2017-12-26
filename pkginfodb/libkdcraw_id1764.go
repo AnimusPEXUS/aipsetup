@@ -29,7 +29,7 @@ var DistroPackageInfo_libkdcraw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libkdcraw",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

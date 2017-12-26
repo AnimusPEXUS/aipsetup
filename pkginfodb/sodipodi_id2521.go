@@ -30,7 +30,7 @@ var DistroPackageInfo_sodipodi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sodipodi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

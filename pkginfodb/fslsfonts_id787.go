@@ -29,7 +29,7 @@ var DistroPackageInfo_fslsfonts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fslsfonts",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgssapi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libgssapi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

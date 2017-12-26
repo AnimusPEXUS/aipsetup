@@ -30,7 +30,7 @@ var DistroPackageInfo_ams = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ams",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

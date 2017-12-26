@@ -30,7 +30,7 @@ var DistroPackageInfo_intltool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "intltool",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gtk_theme_engine_clearlooks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtk-theme-engine-clearlooks",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

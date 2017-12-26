@@ -29,7 +29,7 @@ var DistroPackageInfo_odb_examples = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "odb-examples",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

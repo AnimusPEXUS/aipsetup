@@ -30,7 +30,7 @@ var DistroPackageInfo_libxklavier = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libxklavier",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

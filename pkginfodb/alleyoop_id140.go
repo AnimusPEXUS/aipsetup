@@ -30,7 +30,7 @@ var DistroPackageInfo_alleyoop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "alleyoop",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

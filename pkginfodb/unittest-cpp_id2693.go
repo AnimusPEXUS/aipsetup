@@ -30,7 +30,7 @@ var DistroPackageInfo_unittest_cpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "unittest-cpp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

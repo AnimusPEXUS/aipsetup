@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnomedbmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnomedbmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libdmx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libdmx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

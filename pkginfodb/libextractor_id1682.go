@@ -30,7 +30,7 @@ var DistroPackageInfo_libextractor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libextractor",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

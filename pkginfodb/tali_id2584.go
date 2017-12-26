@@ -30,7 +30,7 @@ var DistroPackageInfo_tali = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "tali",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

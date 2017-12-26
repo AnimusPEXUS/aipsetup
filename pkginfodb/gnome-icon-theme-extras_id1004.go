@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_icon_theme_extras = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-icon-theme-extras",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

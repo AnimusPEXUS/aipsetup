@@ -29,7 +29,7 @@ var DistroPackageInfo_vlc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "vlc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

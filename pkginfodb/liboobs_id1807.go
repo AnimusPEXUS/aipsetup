@@ -30,7 +30,7 @@ var DistroPackageInfo_liboobs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "liboobs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libXcursor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXcursor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

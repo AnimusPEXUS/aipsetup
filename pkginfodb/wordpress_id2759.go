@@ -29,7 +29,7 @@ var DistroPackageInfo_wordpress = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wordpress",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

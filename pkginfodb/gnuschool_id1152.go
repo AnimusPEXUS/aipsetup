@@ -30,7 +30,7 @@ var DistroPackageInfo_gnuschool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnuschool",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

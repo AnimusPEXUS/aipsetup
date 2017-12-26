@@ -30,7 +30,7 @@ var DistroPackageInfo_java_access_bridge = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "java-access-bridge",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

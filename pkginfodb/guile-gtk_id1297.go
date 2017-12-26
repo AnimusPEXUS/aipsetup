@@ -30,7 +30,7 @@ var DistroPackageInfo_guile_gtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "guile-gtk",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

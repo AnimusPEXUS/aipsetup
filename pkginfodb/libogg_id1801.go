@@ -29,7 +29,7 @@ var DistroPackageInfo_libogg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libogg",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

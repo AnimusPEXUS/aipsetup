@@ -30,7 +30,7 @@ var DistroPackageInfo_GConf_dbus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "GConf-dbus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

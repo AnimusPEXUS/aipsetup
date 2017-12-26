@@ -29,7 +29,7 @@ var DistroPackageInfo_libgpg_error = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libgpg-error",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

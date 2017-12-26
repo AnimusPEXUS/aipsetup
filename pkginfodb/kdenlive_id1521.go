@@ -29,7 +29,7 @@ var DistroPackageInfo_kdenlive = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdenlive",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

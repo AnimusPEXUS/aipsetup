@@ -30,7 +30,7 @@ var DistroPackageInfo_protobuf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "protobuf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

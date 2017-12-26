@@ -29,7 +29,7 @@ var DistroPackageInfo_turbovnc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "turbovnc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

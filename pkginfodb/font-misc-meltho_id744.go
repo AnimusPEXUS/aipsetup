@@ -29,7 +29,7 @@ var DistroPackageInfo_font_misc_meltho = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-misc-meltho",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

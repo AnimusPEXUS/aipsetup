@@ -29,7 +29,7 @@ var DistroPackageInfo_jsdoc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "jsdoc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

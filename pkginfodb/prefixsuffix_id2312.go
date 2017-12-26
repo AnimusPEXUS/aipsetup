@@ -30,7 +30,7 @@ var DistroPackageInfo_prefixsuffix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "prefixsuffix",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

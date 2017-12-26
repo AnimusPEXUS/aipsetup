@@ -29,7 +29,7 @@ var DistroPackageInfo_gr_wxgui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gr-wxgui",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

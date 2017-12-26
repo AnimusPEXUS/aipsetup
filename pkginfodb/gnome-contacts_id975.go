@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_contacts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-contacts",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

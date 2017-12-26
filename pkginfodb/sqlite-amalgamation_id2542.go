@@ -29,7 +29,7 @@ var DistroPackageInfo_sqlite_amalgamation = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sqlite-amalgamation",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

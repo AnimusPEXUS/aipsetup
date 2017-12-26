@@ -29,7 +29,7 @@ var DistroPackageInfo_libcxx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libcxx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

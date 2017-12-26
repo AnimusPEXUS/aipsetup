@@ -30,7 +30,7 @@ var DistroPackageInfo_xaos = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xaos",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

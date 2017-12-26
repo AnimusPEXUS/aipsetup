@@ -30,7 +30,7 @@ var DistroPackageInfo_nethack = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nethack",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

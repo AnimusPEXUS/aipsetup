@@ -29,7 +29,7 @@ var DistroPackageInfo_cpufrequtils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cpufrequtils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

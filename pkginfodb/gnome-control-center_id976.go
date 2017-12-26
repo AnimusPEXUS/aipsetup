@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_control_center = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-control-center",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xfce4_appfinder = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfce4-appfinder",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

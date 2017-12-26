@@ -29,7 +29,7 @@ var DistroPackageInfo_font_adobe_utopia_75dpi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-adobe-utopia-75dpi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

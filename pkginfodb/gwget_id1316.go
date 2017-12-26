@@ -30,7 +30,7 @@ var DistroPackageInfo_gwget = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gwget",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

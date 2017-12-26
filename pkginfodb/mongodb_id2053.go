@@ -29,7 +29,7 @@ var DistroPackageInfo_mongodb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mongodb-src-r",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

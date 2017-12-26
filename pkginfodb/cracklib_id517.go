@@ -30,7 +30,7 @@ var DistroPackageInfo_cracklib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cracklib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_oxygen_icons = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "oxygen-icons",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

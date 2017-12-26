@@ -30,7 +30,7 @@ var DistroPackageInfo_sharutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sharutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

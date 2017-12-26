@@ -30,7 +30,7 @@ var DistroPackageInfo_gjs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gjs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

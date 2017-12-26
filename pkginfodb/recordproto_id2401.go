@@ -29,7 +29,7 @@ var DistroPackageInfo_recordproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "recordproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mon_cgi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mon.cgi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

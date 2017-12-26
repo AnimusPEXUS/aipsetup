@@ -29,7 +29,7 @@ var DistroPackageInfo_pam_chroot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pam_chroot",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

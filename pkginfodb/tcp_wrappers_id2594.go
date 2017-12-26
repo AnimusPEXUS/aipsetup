@@ -29,7 +29,7 @@ var DistroPackageInfo_tcp_wrappers = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tcp_wrappers",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

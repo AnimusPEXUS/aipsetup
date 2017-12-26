@@ -29,7 +29,7 @@ var DistroPackageInfo_videoproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "videoproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

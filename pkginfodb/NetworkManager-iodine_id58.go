@@ -30,7 +30,7 @@ var DistroPackageInfo_NetworkManager_iodine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "NetworkManager-iodine",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

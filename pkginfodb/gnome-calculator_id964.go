@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_calculator = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-calculator",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gwt_glom = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gwt-glom",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

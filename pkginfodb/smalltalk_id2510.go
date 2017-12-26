@@ -30,7 +30,7 @@ var DistroPackageInfo_smalltalk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "smalltalk",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

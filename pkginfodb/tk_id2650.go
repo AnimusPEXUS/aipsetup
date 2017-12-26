@@ -30,7 +30,7 @@ var DistroPackageInfo_tk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "tk",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

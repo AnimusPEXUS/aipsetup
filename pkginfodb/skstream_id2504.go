@@ -30,7 +30,7 @@ var DistroPackageInfo_skstream = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "skstream",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

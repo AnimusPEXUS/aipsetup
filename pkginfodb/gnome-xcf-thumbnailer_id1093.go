@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_xcf_thumbnailer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-xcf-thumbnailer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

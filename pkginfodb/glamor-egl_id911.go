@@ -29,7 +29,7 @@ var DistroPackageInfo_glamor_egl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glamor-egl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

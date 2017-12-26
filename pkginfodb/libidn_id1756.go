@@ -30,7 +30,7 @@ var DistroPackageInfo_libidn = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libidn",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

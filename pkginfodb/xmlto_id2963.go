@@ -30,7 +30,7 @@ var DistroPackageInfo_xmlto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xmlto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

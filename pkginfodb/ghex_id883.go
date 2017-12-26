@@ -30,7 +30,7 @@ var DistroPackageInfo_ghex = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ghex",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

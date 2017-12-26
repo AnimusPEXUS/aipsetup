@@ -29,7 +29,7 @@ var DistroPackageInfo_garcon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "garcon",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

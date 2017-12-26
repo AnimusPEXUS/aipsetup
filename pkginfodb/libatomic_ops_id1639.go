@@ -30,7 +30,7 @@ var DistroPackageInfo_libatomic_ops = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libatomic_ops",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

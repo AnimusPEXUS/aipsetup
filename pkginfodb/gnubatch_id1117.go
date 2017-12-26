@@ -30,7 +30,7 @@ var DistroPackageInfo_gnubatch = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnubatch",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

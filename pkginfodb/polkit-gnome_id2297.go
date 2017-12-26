@@ -30,7 +30,7 @@ var DistroPackageInfo_polkit_gnome = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "polkit-gnome",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

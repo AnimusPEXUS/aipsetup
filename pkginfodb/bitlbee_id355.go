@@ -29,7 +29,7 @@ var DistroPackageInfo_bitlbee = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bitlbee",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

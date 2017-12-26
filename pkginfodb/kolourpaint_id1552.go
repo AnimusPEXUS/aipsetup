@@ -29,7 +29,7 @@ var DistroPackageInfo_kolourpaint = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kolourpaint",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

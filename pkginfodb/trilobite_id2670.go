@@ -30,7 +30,7 @@ var DistroPackageInfo_trilobite = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "trilobite",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

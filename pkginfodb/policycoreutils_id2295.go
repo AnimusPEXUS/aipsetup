@@ -30,7 +30,7 @@ var DistroPackageInfo_policycoreutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "policycoreutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

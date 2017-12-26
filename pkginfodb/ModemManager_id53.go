@@ -30,7 +30,7 @@ var DistroPackageInfo_ModemManager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ModemManager",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

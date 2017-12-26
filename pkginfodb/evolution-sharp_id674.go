@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_sharp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-sharp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

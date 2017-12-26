@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_color_manager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-color-manager",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

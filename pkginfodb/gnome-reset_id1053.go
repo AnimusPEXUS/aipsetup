@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_reset = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-reset",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

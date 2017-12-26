@@ -30,7 +30,7 @@ var DistroPackageInfo_mousetrap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mousetrap",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

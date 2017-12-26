@@ -30,7 +30,7 @@ var DistroPackageInfo_nasm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nasm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

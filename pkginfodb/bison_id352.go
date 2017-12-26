@@ -30,7 +30,7 @@ var DistroPackageInfo_bison = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bison",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

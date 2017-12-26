@@ -29,7 +29,7 @@ var DistroPackageInfo_marble = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "marble",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

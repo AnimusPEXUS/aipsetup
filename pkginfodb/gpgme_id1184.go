@@ -29,7 +29,7 @@ var DistroPackageInfo_gpgme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gpgme",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

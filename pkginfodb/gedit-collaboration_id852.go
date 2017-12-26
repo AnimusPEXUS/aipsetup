@@ -30,7 +30,7 @@ var DistroPackageInfo_gedit_collaboration = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gedit-collaboration",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_efilinux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "efilinux",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

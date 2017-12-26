@@ -30,7 +30,7 @@ var DistroPackageInfo_remotecontrol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "remotecontrol",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

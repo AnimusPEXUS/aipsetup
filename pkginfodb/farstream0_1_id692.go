@@ -29,7 +29,7 @@ var DistroPackageInfo_farstream0_1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "farstream",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

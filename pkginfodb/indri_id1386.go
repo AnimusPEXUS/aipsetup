@@ -29,7 +29,7 @@ var DistroPackageInfo_indri = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "indri",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

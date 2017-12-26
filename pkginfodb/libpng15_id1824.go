@@ -30,7 +30,7 @@ var DistroPackageInfo_libpng15 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libpng",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

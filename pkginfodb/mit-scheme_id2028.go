@@ -30,7 +30,7 @@ var DistroPackageInfo_mit_scheme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mit-scheme",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

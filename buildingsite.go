@@ -16,6 +16,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildercollection"
 	"github.com/AnimusPEXUS/utils/logger"
+	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
 )
@@ -350,14 +351,19 @@ maintarball_found:
 			parser = parser_c()
 		}
 
+		err := tarballname.IsPossibleTarballNameErr(filelist[0])
+		if err != nil {
+			return err
+		}
+
 		parsed, err := parser.ParseName(filelist[0])
 		if err != nil {
 			return err
 		}
 
-		info.PackageVersion = parsed.VersionString()
+		info.PackageVersion = parsed.Version.Str
 		if parsed.HaveStatus {
-			info.PackageStatus = parsed.Status.String()
+			info.PackageStatus = parsed.Status.Str
 		}
 
 	}

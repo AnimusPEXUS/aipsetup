@@ -30,7 +30,7 @@ var DistroPackageInfo_guile_ncurses = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "guile-ncurses",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

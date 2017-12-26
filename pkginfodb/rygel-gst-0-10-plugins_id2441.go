@@ -30,7 +30,7 @@ var DistroPackageInfo_rygel_gst_0_10_plugins = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rygel-gst-0-10-plugins",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

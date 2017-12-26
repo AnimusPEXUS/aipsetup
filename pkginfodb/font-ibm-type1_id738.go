@@ -29,7 +29,7 @@ var DistroPackageInfo_font_ibm_type1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-ibm-type1",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

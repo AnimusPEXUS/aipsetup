@@ -29,7 +29,7 @@ var DistroPackageInfo_gnuedma = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnuedma",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

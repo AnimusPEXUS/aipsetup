@@ -29,7 +29,7 @@ var DistroPackageInfo_gnu_cobol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnu-cobol",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

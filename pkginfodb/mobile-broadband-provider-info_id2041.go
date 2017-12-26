@@ -30,7 +30,7 @@ var DistroPackageInfo_mobile_broadband_provider_info = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mobile-broadband-provider-info",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

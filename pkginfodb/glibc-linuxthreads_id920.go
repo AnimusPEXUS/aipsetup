@@ -29,7 +29,7 @@ var DistroPackageInfo_glibc_linuxthreads = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glibc-linuxthreads",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

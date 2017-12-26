@@ -29,7 +29,7 @@ var DistroPackageInfo_accounts_qt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

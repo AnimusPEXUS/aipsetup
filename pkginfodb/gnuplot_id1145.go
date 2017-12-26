@@ -30,7 +30,7 @@ var DistroPackageInfo_gnuplot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnuplot",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_bash_doc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bash-doc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_alsa_firmware = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "alsa-firmware",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gtkspell3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtkspell3",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

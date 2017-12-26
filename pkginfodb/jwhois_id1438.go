@@ -30,7 +30,7 @@ var DistroPackageInfo_jwhois = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "jwhois",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

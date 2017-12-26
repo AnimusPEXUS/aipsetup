@@ -29,7 +29,7 @@ var DistroPackageInfo_filelight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "filelight",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

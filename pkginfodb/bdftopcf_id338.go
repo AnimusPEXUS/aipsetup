@@ -29,7 +29,7 @@ var DistroPackageInfo_bdftopcf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bdftopcf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

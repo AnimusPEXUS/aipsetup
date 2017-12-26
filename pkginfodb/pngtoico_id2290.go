@@ -29,7 +29,7 @@ var DistroPackageInfo_pngtoico = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pngtoico",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

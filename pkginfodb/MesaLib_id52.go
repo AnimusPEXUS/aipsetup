@@ -30,7 +30,7 @@ var DistroPackageInfo_MesaLib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "MesaLib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

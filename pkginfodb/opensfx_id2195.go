@@ -29,7 +29,7 @@ var DistroPackageInfo_opensfx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "opensfx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

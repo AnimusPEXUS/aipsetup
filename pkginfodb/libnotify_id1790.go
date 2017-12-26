@@ -30,7 +30,7 @@ var DistroPackageInfo_libnotify = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libnotify",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_modutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "modutils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

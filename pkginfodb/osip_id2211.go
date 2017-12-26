@@ -30,7 +30,7 @@ var DistroPackageInfo_osip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "osip",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

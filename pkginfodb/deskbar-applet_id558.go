@@ -30,7 +30,7 @@ var DistroPackageInfo_deskbar_applet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "deskbar-applet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

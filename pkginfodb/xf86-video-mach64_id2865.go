@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_video_mach64 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-video-mach64",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

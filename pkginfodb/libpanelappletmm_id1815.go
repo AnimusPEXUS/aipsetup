@@ -30,7 +30,7 @@ var DistroPackageInfo_libpanelappletmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libpanelappletmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

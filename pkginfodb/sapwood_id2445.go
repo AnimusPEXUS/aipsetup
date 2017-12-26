@@ -30,7 +30,7 @@ var DistroPackageInfo_sapwood = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sapwood",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

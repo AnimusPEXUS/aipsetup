@@ -30,7 +30,7 @@ var DistroPackageInfo_ximian_setup_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ximian-setup-tools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

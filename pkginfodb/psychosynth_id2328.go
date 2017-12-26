@@ -30,7 +30,7 @@ var DistroPackageInfo_psychosynth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "psychosynth",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

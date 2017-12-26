@@ -30,7 +30,7 @@ var DistroPackageInfo_npth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "npth",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

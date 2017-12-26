@@ -29,7 +29,7 @@ var DistroPackageInfo_wayland = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wayland",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

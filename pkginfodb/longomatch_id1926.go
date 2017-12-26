@@ -30,7 +30,7 @@ var DistroPackageInfo_longomatch = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "longomatch",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

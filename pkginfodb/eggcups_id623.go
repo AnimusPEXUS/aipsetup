@@ -30,7 +30,7 @@ var DistroPackageInfo_eggcups = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "eggcups",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

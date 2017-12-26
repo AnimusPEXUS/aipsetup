@@ -30,7 +30,7 @@ var DistroPackageInfo_macchanger = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "macchanger",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

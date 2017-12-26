@@ -29,7 +29,7 @@ var DistroPackageInfo_kgamma = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kgamma",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

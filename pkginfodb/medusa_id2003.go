@@ -30,7 +30,7 @@ var DistroPackageInfo_medusa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "medusa",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

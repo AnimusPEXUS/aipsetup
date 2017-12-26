@@ -29,7 +29,7 @@ var DistroPackageInfo_libodb_oracle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libodb-oracle",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

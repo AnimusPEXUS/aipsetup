@@ -29,7 +29,7 @@ var DistroPackageInfo_gnu_gs_fonts_std = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnu-gs-fonts-std",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

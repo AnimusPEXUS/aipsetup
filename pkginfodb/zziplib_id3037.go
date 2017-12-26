@@ -30,7 +30,7 @@ var DistroPackageInfo_zziplib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "zziplib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

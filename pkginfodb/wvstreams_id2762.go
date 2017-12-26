@@ -29,7 +29,7 @@ var DistroPackageInfo_wvstreams = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wvstreams",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

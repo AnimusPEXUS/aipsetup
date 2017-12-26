@@ -30,7 +30,7 @@ var DistroPackageInfo_DevIL = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "DevIL",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

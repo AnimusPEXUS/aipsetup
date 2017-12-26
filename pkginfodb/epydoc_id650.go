@@ -30,7 +30,7 @@ var DistroPackageInfo_epydoc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "epydoc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

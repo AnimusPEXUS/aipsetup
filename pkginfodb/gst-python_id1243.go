@@ -30,7 +30,7 @@ var DistroPackageInfo_gst_python = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gst-python",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

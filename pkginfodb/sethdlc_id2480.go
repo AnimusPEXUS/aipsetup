@@ -29,7 +29,7 @@ var DistroPackageInfo_sethdlc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sethdlc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

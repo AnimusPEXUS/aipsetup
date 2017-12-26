@@ -29,7 +29,7 @@ var DistroPackageInfo_cal3d = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cal3d",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

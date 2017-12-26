@@ -29,7 +29,7 @@ var DistroPackageInfo_awesome = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "awesome",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

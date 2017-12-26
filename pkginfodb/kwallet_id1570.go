@@ -29,7 +29,7 @@ var DistroPackageInfo_kwallet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kwallet",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

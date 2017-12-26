@@ -29,7 +29,7 @@ var DistroPackageInfo_chicken_export = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "chicken_export",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_Authen_PAM = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Authen-PAM",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

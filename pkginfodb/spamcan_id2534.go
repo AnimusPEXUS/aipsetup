@@ -29,7 +29,7 @@ var DistroPackageInfo_spamcan = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "spamcan",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

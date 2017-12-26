@@ -43,10 +43,12 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/infoeditor"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tags"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 )
 
 var _ types.ProviderI = &ProviderSRS{}
@@ -238,7 +240,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 		truncate_versions = 3
 	}
 
-	// acceptable_tags := make([]string, 0)
+	acceptable_tags := make([]string, 0)
 
 	{
 		b := &bytes.Buffer{}
@@ -252,9 +254,46 @@ func (self *ProviderSRS) MakeTarballsGit(
 
 		tags := strings.Split(b.String(), "\n")
 
-		for ii, i := range tags {
-			fmt.Println(ii, i)
+		// for ii, i := range tags {
+		// 	fmt.Println(ii, i)
+		// }
+
+		parser, err := tarballnameparsers.Get(info.TarballFileNameParser)
+		if err != nil {
+			return err
 		}
+
+		for _, i := range tags {
+			parse_res, err := parser.ParseName(i)
+			if err != nil {
+				// fmt.Println("tag parsing error:", err.Error())
+				continue
+			}
+
+			if parse_res.Name != info.TarballName {
+				continue
+			}
+
+			// if parse_res.Name != basename {
+			// 	fmt.Println(parse_res.Name, "!=", basename)
+			// 	continue
+			// }
+
+			fres, err := pkginfodb.ApplyInfoFilter(info, []string{i})
+			if err != nil {
+				return err
+			}
+
+			if len(fres) != 1 {
+				continue
+			}
+
+			acceptable_tags = append(acceptable_tags, i)
+		}
+	}
+
+	for ii, i := range acceptable_tags {
+		fmt.Println(ii, i)
 	}
 
 	return nil

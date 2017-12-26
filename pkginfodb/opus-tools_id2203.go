@@ -29,7 +29,7 @@ var DistroPackageInfo_opus_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "opus-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

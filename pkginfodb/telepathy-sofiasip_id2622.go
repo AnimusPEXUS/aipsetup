@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_sofiasip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-sofiasip",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

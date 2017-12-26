@@ -29,7 +29,7 @@ var DistroPackageInfo_webkitgtk2_4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "webkitgtk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_sip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sip",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

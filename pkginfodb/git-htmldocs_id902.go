@@ -29,7 +29,7 @@ var DistroPackageInfo_git_htmldocs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "git-htmldocs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

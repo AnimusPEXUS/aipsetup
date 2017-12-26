@@ -30,7 +30,7 @@ var DistroPackageInfo_jacal = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "jacal",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

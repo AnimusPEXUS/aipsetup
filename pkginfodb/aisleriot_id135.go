@@ -30,7 +30,7 @@ var DistroPackageInfo_aisleriot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "aisleriot",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

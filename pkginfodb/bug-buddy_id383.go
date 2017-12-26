@@ -30,7 +30,7 @@ var DistroPackageInfo_bug_buddy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bug-buddy",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

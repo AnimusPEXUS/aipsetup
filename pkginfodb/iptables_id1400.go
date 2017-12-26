@@ -30,7 +30,7 @@ var DistroPackageInfo_iptables = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "iptables",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

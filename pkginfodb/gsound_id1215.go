@@ -30,7 +30,7 @@ var DistroPackageInfo_gsound = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gsound",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

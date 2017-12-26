@@ -29,7 +29,7 @@ var DistroPackageInfo_caja_dropbox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "caja-dropbox",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

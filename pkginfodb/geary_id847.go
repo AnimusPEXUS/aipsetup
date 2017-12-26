@@ -30,7 +30,7 @@ var DistroPackageInfo_geary = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "geary",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

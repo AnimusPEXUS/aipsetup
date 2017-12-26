@@ -29,7 +29,7 @@ var DistroPackageInfo_xhost = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xhost",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

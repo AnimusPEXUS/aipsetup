@@ -30,7 +30,7 @@ var DistroPackageInfo_emerillon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "emerillon",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

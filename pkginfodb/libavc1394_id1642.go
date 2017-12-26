@@ -30,7 +30,7 @@ var DistroPackageInfo_libavc1394 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libavc1394",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

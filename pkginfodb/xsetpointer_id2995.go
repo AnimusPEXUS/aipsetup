@@ -29,7 +29,7 @@ var DistroPackageInfo_xsetpointer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xsetpointer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

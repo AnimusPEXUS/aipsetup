@@ -30,7 +30,7 @@ var DistroPackageInfo_cantarell_fonts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cantarell-fonts",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

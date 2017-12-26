@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_online_accounts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-online-accounts",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

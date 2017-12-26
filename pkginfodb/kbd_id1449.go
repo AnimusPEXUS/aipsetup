@@ -30,7 +30,7 @@ var DistroPackageInfo_kbd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kbd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

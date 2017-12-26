@@ -29,7 +29,7 @@ var DistroPackageInfo_clisp_hppa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clisp-hppa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

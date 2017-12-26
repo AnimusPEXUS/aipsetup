@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_system_monitor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-system-monitor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_sqltutor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sqltutor",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

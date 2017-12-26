@@ -29,7 +29,7 @@ var DistroPackageInfo_kdepimlibs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdepimlibs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

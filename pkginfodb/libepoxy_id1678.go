@@ -30,7 +30,7 @@ var DistroPackageInfo_libepoxy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libepoxy",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

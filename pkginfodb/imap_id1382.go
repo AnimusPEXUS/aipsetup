@@ -29,7 +29,7 @@ var DistroPackageInfo_imap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "imap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

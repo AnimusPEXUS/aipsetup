@@ -29,7 +29,7 @@ var DistroPackageInfo_bokken = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bokken",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

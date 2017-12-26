@@ -30,7 +30,7 @@ var DistroPackageInfo_siobhan = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "siobhan",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

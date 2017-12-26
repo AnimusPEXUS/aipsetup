@@ -30,7 +30,7 @@ var DistroPackageInfo_docbook_xsl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "docbook-xsl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

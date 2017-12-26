@@ -30,7 +30,7 @@ var DistroPackageInfo_libcryptui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libcryptui",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

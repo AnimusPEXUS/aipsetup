@@ -29,7 +29,7 @@ var DistroPackageInfo_kdf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

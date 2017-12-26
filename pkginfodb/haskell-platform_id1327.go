@@ -29,7 +29,7 @@ var DistroPackageInfo_haskell_platform = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "haskell-platform",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

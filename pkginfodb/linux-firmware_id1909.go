@@ -29,7 +29,7 @@ var DistroPackageInfo_linux_firmware = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "linux-firmware",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

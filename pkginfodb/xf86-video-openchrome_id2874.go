@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_video_openchrome = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-video-openchrome",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

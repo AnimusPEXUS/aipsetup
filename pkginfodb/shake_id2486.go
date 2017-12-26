@@ -29,7 +29,7 @@ var DistroPackageInfo_shake = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "shake",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

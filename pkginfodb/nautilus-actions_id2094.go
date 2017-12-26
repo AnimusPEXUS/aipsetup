@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_actions = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-actions",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

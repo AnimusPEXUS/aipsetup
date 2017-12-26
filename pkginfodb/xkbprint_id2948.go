@@ -29,7 +29,7 @@ var DistroPackageInfo_xkbprint = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xkbprint",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

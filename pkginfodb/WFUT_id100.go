@@ -30,7 +30,7 @@ var DistroPackageInfo_WFUT = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "WFUT",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

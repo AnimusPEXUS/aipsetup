@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_power_manager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-power-manager",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

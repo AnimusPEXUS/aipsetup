@@ -29,7 +29,7 @@ var DistroPackageInfo_cryptsetup_luks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cryptsetup-luks",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libWindowsWM = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libWindowsWM",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

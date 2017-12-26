@@ -30,7 +30,7 @@ var DistroPackageInfo_hamcrest_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hamcrest-java",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

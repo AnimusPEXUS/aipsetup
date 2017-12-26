@@ -30,7 +30,7 @@ var DistroPackageInfo_oaf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "oaf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

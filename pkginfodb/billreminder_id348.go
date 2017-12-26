@@ -30,7 +30,7 @@ var DistroPackageInfo_billreminder = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "billreminder",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

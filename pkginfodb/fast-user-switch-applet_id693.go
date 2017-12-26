@@ -30,7 +30,7 @@ var DistroPackageInfo_fast_user_switch_applet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fast-user-switch-applet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

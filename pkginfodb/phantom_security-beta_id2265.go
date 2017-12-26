@@ -29,7 +29,7 @@ var DistroPackageInfo_phantom_security_beta = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "phantom_security-beta",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

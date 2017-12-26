@@ -30,7 +30,7 @@ var DistroPackageInfo_abi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "abi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

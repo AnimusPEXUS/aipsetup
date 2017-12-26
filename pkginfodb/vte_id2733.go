@@ -30,7 +30,7 @@ var DistroPackageInfo_vte = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "vte",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

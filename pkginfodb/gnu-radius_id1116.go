@@ -29,7 +29,7 @@ var DistroPackageInfo_gnu_radius = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnu-radius",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

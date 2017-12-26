@@ -30,7 +30,7 @@ var DistroPackageInfo_madplay = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "madplay",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

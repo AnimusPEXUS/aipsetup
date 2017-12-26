@@ -29,7 +29,7 @@ var DistroPackageInfo_PyChecker = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "PyChecker",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

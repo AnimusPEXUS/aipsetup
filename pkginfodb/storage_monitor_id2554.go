@@ -29,7 +29,7 @@ var DistroPackageInfo_storage_monitor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "storage.monitor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

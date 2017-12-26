@@ -30,7 +30,7 @@ var DistroPackageInfo_clutter_gtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "clutter-gtk",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

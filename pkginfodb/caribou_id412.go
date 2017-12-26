@@ -30,7 +30,7 @@ var DistroPackageInfo_caribou = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "caribou",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

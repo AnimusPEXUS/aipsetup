@@ -30,7 +30,7 @@ var DistroPackageInfo_openimageio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "openimageio",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

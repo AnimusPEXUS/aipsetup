@@ -29,7 +29,7 @@ var DistroPackageInfo_udisks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "udisks",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

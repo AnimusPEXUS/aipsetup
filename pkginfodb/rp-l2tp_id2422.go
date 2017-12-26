@@ -30,7 +30,7 @@ var DistroPackageInfo_rp_l2tp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rp-l2tp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

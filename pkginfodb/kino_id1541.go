@@ -29,7 +29,7 @@ var DistroPackageInfo_kino = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kino",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

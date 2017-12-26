@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_clocks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-clocks",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

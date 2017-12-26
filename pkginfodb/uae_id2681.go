@@ -29,7 +29,7 @@ var DistroPackageInfo_uae = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "uae",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_dbus_python = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dbus-python",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

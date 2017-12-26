@@ -30,7 +30,7 @@ var DistroPackageInfo_kismet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kismet",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

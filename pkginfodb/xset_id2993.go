@@ -29,7 +29,7 @@ var DistroPackageInfo_xset = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xset",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_httpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "httpd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

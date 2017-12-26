@@ -29,7 +29,7 @@ var DistroPackageInfo_xshogi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xshogi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

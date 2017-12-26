@@ -30,7 +30,7 @@ var DistroPackageInfo_SDL = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "SDL",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

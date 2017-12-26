@@ -29,7 +29,7 @@ var DistroPackageInfo_icon_naming_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "icon-naming-utils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

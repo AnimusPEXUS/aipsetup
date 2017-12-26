@@ -30,7 +30,7 @@ var DistroPackageInfo_gturing = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gturing",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

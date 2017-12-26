@@ -29,7 +29,7 @@ var DistroPackageInfo_TiMidityplusplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "TiMidity++",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

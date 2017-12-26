@@ -29,7 +29,7 @@ var DistroPackageInfo_kdeadmin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdeadmin",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

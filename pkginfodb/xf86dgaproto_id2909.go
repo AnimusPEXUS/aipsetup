@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86dgaproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86dgaproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

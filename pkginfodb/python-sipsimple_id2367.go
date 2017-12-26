@@ -29,7 +29,7 @@ var DistroPackageInfo_python_sipsimple = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "python-sipsimple",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

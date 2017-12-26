@@ -29,7 +29,7 @@ var DistroPackageInfo_proxymngr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "proxymngr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

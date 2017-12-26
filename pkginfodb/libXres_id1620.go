@@ -29,7 +29,7 @@ var DistroPackageInfo_libXres = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXres",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

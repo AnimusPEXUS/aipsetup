@@ -29,7 +29,7 @@ var DistroPackageInfo_kdetoys = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdetoys",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_psimedia = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "psimedia",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

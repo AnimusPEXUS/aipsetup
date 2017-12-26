@@ -30,7 +30,7 @@ var DistroPackageInfo_mergeant = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mergeant",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

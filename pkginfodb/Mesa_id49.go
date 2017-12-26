@@ -29,7 +29,7 @@ var DistroPackageInfo_Mesa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Mesa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

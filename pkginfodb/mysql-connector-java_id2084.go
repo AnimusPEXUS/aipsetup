@@ -29,7 +29,7 @@ var DistroPackageInfo_mysql_connector_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mysql-connector-java",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

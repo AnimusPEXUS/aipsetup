@@ -29,7 +29,7 @@ var DistroPackageInfo_monitoring_plugins = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "monitoring-plugins",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

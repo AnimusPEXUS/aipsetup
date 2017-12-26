@@ -29,7 +29,7 @@ var DistroPackageInfo_libsndfile = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libsndfile",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_wine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "wine",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_SimplePAMApps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "SimplePAMApps",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

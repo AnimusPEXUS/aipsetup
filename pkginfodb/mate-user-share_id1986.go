@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_user_share = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-user-share",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

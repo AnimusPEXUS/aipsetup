@@ -29,7 +29,7 @@ var DistroPackageInfo_physfs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "physfs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

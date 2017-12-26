@@ -30,7 +30,7 @@ var DistroPackageInfo_synfig = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "synfig",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

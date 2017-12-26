@@ -30,7 +30,7 @@ var DistroPackageInfo_bpel2owfn = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bpel2owfn",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

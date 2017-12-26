@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_polkit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-polkit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

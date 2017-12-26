@@ -30,7 +30,7 @@ var DistroPackageInfo_totem_pl_parser = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "totem-pl-parser",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

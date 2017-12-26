@@ -30,7 +30,7 @@ var DistroPackageInfo_zip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "zip",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

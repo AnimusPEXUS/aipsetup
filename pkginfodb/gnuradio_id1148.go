@@ -30,7 +30,7 @@ var DistroPackageInfo_gnuradio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnuradio",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

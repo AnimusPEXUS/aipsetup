@@ -29,7 +29,7 @@ var DistroPackageInfo_pipelight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pipelight",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgtkmusic = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgtkmusic",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_ois = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wgois-code",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

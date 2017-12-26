@@ -29,7 +29,7 @@ var DistroPackageInfo_Twisted = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Twisted",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_superopt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "superopt",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_opal = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "opal",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

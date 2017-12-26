@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnome_media_profiles = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnome-media-profiles",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

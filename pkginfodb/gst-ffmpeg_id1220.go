@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_ffmpeg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-ffmpeg",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

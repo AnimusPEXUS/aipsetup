@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_ews = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-ews",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

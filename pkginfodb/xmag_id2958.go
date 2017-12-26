@@ -29,7 +29,7 @@ var DistroPackageInfo_xmag = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xmag",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

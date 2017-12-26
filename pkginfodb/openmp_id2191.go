@@ -29,7 +29,7 @@ var DistroPackageInfo_openmp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openmp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

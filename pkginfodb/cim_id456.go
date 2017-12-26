@@ -30,7 +30,7 @@ var DistroPackageInfo_cim = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cim",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_webalizer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "webalizer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

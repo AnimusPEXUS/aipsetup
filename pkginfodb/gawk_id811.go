@@ -30,7 +30,7 @@ var DistroPackageInfo_gawk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gawk",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

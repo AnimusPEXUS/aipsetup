@@ -29,7 +29,7 @@ var DistroPackageInfo_asterisk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "asterisk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

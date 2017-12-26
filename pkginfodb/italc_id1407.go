@@ -29,7 +29,7 @@ var DistroPackageInfo_italc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "italc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

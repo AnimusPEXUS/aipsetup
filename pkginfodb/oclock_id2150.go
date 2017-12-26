@@ -29,7 +29,7 @@ var DistroPackageInfo_oclock = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "oclock",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xerces_c_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xerces-c-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

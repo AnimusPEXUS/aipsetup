@@ -30,7 +30,7 @@ var DistroPackageInfo_raw_thumbnailer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "raw-thumbnailer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

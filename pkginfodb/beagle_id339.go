@@ -30,7 +30,7 @@ var DistroPackageInfo_beagle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "beagle",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

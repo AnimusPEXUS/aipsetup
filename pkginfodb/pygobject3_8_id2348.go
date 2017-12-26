@@ -30,7 +30,7 @@ var DistroPackageInfo_pygobject3_8 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pygobject3.8",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

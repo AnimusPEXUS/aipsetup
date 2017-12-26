@@ -29,7 +29,7 @@ var DistroPackageInfo_xmonad = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xmonad",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

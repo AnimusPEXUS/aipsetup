@@ -29,7 +29,7 @@ var DistroPackageInfo_intel_gpu_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "intel-gpu-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

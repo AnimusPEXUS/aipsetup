@@ -29,7 +29,7 @@ var DistroPackageInfo_simutrans = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "simutrans",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

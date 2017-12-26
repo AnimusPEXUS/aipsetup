@@ -30,7 +30,7 @@ var DistroPackageInfo_dosbox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dosbox",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

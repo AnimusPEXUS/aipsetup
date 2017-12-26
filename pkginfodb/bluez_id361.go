@@ -30,7 +30,7 @@ var DistroPackageInfo_bluez = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bluez",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

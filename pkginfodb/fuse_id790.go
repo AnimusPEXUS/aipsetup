@@ -30,7 +30,7 @@ var DistroPackageInfo_fuse = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fuse",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

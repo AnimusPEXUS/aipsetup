@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell_sv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell-sv",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

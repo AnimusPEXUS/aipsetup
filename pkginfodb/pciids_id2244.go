@@ -29,7 +29,7 @@ var DistroPackageInfo_pciids = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pciids",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

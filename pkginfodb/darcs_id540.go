@@ -29,7 +29,7 @@ var DistroPackageInfo_darcs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "darcs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

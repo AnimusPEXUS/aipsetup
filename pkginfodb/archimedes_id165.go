@@ -30,7 +30,7 @@ var DistroPackageInfo_archimedes = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "archimedes",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

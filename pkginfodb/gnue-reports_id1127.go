@@ -29,7 +29,7 @@ var DistroPackageInfo_gnue_reports = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnue-reports",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

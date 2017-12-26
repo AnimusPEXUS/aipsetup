@@ -29,7 +29,7 @@ var DistroPackageInfo_gnue_forms = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnue-forms",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

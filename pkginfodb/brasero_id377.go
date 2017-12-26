@@ -30,7 +30,7 @@ var DistroPackageInfo_brasero = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "brasero",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

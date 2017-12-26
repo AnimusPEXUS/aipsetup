@@ -30,7 +30,7 @@ var DistroPackageInfo_unzip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "unzip",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

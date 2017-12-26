@@ -30,7 +30,7 @@ var DistroPackageInfo_themus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "themus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

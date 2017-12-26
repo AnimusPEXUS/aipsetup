@@ -30,7 +30,7 @@ var DistroPackageInfo_dominion = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dominion",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

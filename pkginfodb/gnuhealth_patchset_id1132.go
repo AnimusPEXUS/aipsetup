@@ -29,7 +29,7 @@ var DistroPackageInfo_gnuhealth_patchset = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnuhealth_patchset",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_fisicalab_mac = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fisicalab-mac",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

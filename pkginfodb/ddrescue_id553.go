@@ -30,7 +30,7 @@ var DistroPackageInfo_ddrescue = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ddrescue",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

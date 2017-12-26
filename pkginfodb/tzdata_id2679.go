@@ -30,7 +30,7 @@ var DistroPackageInfo_tzdata = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tzdata",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

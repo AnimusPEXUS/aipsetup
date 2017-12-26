@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_plugins_ugly0_10 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-plugins-ugly",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

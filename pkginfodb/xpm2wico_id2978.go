@@ -29,7 +29,7 @@ var DistroPackageInfo_xpm2wico = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xpm2wico",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

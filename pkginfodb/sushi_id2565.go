@@ -30,7 +30,7 @@ var DistroPackageInfo_sushi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sushi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

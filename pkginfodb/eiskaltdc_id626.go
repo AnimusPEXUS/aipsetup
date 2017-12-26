@@ -29,7 +29,7 @@ var DistroPackageInfo_eiskaltdc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "eiskaltdc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

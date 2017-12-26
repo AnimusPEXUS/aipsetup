@@ -30,7 +30,7 @@ var DistroPackageInfo_g_wrap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "g-wrap",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

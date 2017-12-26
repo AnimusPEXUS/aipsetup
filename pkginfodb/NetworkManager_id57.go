@@ -30,7 +30,7 @@ var DistroPackageInfo_NetworkManager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "NetworkManager",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

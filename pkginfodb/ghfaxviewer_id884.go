@@ -29,7 +29,7 @@ var DistroPackageInfo_ghfaxviewer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ghfaxviewer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

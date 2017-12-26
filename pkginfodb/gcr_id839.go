@@ -30,7 +30,7 @@ var DistroPackageInfo_gcr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gcr",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

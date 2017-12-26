@@ -29,7 +29,7 @@ var DistroPackageInfo_Thunar = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Thunar",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

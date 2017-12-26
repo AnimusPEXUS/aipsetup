@@ -30,7 +30,7 @@ var DistroPackageInfo_mifluz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mifluz",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

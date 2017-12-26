@@ -29,7 +29,7 @@ var DistroPackageInfo_gnu_ghostscript = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnu-ghostscript",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

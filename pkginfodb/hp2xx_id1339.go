@@ -30,7 +30,7 @@ var DistroPackageInfo_hp2xx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hp2xx",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

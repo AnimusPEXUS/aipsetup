@@ -29,7 +29,7 @@ var DistroPackageInfo_xfce_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfce-utils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

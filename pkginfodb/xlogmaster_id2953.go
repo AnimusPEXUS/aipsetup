@@ -30,7 +30,7 @@ var DistroPackageInfo_xlogmaster = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xlogmaster",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

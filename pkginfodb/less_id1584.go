@@ -30,7 +30,7 @@ var DistroPackageInfo_less = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "less",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

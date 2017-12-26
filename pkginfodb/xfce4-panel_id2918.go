@@ -29,7 +29,7 @@ var DistroPackageInfo_xfce4_panel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfce4-panel",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

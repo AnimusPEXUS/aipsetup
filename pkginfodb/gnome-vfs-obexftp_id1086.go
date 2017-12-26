@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_vfs_obexftp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-vfs-obexftp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

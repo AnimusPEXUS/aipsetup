@@ -30,7 +30,7 @@ var DistroPackageInfo_libgda = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgda",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

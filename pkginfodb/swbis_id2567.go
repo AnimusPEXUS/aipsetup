@@ -30,7 +30,7 @@ var DistroPackageInfo_swbis = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "swbis",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

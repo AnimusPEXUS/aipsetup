@@ -29,7 +29,7 @@ var DistroPackageInfo_kanagram = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kanagram",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_analitza = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "analitza",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

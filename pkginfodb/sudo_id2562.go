@@ -30,7 +30,7 @@ var DistroPackageInfo_sudo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sudo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gupnp_ui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gupnp-ui",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

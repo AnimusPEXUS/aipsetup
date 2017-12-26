@@ -29,7 +29,7 @@ var DistroPackageInfo_xlsclients = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xlsclients",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

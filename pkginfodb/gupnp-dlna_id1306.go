@@ -30,7 +30,7 @@ var DistroPackageInfo_gupnp_dlna = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gupnp-dlna",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

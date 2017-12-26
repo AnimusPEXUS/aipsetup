@@ -29,7 +29,7 @@ var DistroPackageInfo_libarchive = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libarchive",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

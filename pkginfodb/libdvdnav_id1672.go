@@ -29,7 +29,7 @@ var DistroPackageInfo_libdvdnav = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libdvdnav",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_hamster_applet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hamster-applet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

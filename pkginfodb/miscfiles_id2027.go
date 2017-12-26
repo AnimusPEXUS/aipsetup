@@ -30,7 +30,7 @@ var DistroPackageInfo_miscfiles = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "miscfiles",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

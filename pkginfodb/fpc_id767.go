@@ -30,7 +30,7 @@ var DistroPackageInfo_fpc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fpc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

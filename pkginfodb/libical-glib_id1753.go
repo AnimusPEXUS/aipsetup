@@ -30,7 +30,7 @@ var DistroPackageInfo_libical_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libical-glib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

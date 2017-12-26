@@ -10,6 +10,7 @@ import (
 	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnamefilterfunctions"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/textlist"
 	"github.com/AnimusPEXUS/utils/version/versionfilterfunctions"
@@ -23,7 +24,7 @@ func Get(name string) (*basictypes.PackageInfo, error) {
 	}
 }
 
-func DetermineTarballsBuildinfo(filename string) (
+func DetermineTarballsBuildInfo(filename string) (
 	map[string]*basictypes.PackageInfo,
 	error,
 ) {
@@ -57,11 +58,7 @@ searching:
 
 		if parse_result.Name == value.TarballName {
 
-			fres, err := textlist.FilterList(
-				filename_s_base_list,
-				textlist.ParseFilterTextLinesMust(value.Filters),
-				versionfilterfunctions.StdVersionFilterFunctions,
-			)
+			fres, err := ApplyInfoFilter(value, filename_s_base_list)
 			if err != nil {
 				return nil, err
 			}
@@ -86,4 +83,36 @@ searching:
 	default:
 		return ret, errors.New("too many matches")
 	}
+}
+
+func ApplyInfoFilter(
+	info *basictypes.PackageInfo,
+	data []string,
+) ([]string, error) {
+
+	filter_functions := make(textlist.FilterFunctions)
+
+	for _, v1 := range []textlist.FilterFunctions{
+		versionfilterfunctions.VersionFilterFunctions,
+		tarballnamefilterfunctions.TarballNameFilterFunctions,
+	} {
+		for k, v := range v1 {
+			filter_functions[k] = v
+		}
+	}
+
+	additional_data := make(map[string]interface{})
+	additional_data["pkg_info"] = info
+
+	ret, err := textlist.FilterList(
+		data,
+		textlist.ParseFilterTextLinesMust(info.TarballFilters),
+		filter_functions,
+		additional_data,
+	)
+	if err != nil {
+		return []string{}, err
+	}
+
+	return ret, nil
 }

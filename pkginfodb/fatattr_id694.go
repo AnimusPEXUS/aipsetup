@@ -29,7 +29,7 @@ var DistroPackageInfo_fatattr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fatattr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

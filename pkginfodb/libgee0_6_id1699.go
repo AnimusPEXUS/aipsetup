@@ -30,7 +30,7 @@ var DistroPackageInfo_libgee0_6 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgee0.6",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

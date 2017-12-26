@@ -30,7 +30,7 @@ var DistroPackageInfo_gcide = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gcide",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

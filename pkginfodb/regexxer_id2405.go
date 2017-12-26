@@ -30,7 +30,7 @@ var DistroPackageInfo_regexxer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "regexxer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

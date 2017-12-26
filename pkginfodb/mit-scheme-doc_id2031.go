@@ -29,7 +29,7 @@ var DistroPackageInfo_mit_scheme_doc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mit-scheme-doc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

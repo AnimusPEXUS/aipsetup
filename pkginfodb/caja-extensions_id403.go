@@ -29,7 +29,7 @@ var DistroPackageInfo_caja_extensions = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "caja-extensions",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

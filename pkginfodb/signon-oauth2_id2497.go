@@ -29,7 +29,7 @@ var DistroPackageInfo_signon_oauth2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "signon-oauth2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

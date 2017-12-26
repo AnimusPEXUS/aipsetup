@@ -30,7 +30,7 @@ var DistroPackageInfo_gcc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gcc",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gcc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

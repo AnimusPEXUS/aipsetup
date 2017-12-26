@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnomecompat2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnomecompat2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

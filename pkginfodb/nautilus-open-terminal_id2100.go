@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_open_terminal = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-open-terminal",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

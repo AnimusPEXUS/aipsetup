@@ -29,7 +29,7 @@ var DistroPackageInfo_kdegraphics_strigi_analyzer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdegraphics-strigi-analyzer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

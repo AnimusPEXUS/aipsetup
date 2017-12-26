@@ -29,7 +29,7 @@ var DistroPackageInfo_js185 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "js185",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

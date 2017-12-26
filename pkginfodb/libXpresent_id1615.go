@@ -29,7 +29,7 @@ var DistroPackageInfo_libXpresent = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXpresent",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

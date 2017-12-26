@@ -30,7 +30,7 @@ var DistroPackageInfo_mlt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mlt",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

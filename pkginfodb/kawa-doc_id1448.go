@@ -29,7 +29,7 @@ var DistroPackageInfo_kawa_doc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kawa-doc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

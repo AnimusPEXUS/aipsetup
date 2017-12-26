@@ -29,7 +29,7 @@ var DistroPackageInfo_oxygen_gtk3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "oxygen-gtk3",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

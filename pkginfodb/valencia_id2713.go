@@ -30,7 +30,7 @@ var DistroPackageInfo_valencia = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "valencia",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mod_wsgi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mod_wsgi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_eel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "eel",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

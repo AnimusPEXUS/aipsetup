@@ -29,7 +29,7 @@ var DistroPackageInfo_font_adobe_utopia_type1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-adobe-utopia-type1",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

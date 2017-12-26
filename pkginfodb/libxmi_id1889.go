@@ -30,7 +30,7 @@ var DistroPackageInfo_libxmi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libxmi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_ark = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ark",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

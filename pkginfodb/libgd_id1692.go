@@ -29,7 +29,7 @@ var DistroPackageInfo_libgd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libgd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

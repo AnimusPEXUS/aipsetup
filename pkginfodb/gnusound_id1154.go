@@ -30,7 +30,7 @@ var DistroPackageInfo_gnusound = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnusound",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

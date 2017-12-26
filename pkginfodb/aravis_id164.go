@@ -30,7 +30,7 @@ var DistroPackageInfo_aravis = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "aravis",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xcompmgr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcompmgr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

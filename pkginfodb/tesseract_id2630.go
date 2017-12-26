@@ -29,7 +29,7 @@ var DistroPackageInfo_tesseract = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tesseract",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

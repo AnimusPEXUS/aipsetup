@@ -30,7 +30,7 @@ var DistroPackageInfo_OpenSP = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "OpenSP",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

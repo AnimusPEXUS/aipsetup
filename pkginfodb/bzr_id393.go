@@ -29,7 +29,7 @@ var DistroPackageInfo_bzr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bzr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

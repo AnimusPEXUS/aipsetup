@@ -30,7 +30,7 @@ var DistroPackageInfo_idutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "idutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

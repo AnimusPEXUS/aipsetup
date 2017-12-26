@@ -30,7 +30,7 @@ var DistroPackageInfo_hplip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hplip",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

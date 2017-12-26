@@ -29,7 +29,7 @@ var DistroPackageInfo_eggdbus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "eggdbus",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

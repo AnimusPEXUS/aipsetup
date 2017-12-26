@@ -30,7 +30,7 @@ var DistroPackageInfo_git = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "git",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

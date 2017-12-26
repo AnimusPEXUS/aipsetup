@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_online_miners = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-online-miners",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

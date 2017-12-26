@@ -29,7 +29,7 @@ var DistroPackageInfo_pam_nw_auth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pam_nw_auth",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

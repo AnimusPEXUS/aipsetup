@@ -30,7 +30,7 @@ var DistroPackageInfo_shared_desktop_ontologies = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "shared-desktop-ontologies",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

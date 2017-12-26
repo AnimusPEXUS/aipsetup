@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell6_grc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell6-grc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

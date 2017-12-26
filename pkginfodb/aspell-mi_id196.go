@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell_mi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell-mi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

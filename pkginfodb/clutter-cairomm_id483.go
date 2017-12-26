@@ -30,7 +30,7 @@ var DistroPackageInfo_clutter_cairomm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "clutter-cairomm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

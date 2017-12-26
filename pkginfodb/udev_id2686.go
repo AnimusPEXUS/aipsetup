@@ -29,7 +29,7 @@ var DistroPackageInfo_udev = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "udev",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

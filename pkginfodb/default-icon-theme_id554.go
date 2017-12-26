@@ -29,7 +29,7 @@ var DistroPackageInfo_default_icon_theme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "default-icon-theme",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

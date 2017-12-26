@@ -29,7 +29,7 @@ var DistroPackageInfo_gnufdisk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnufdisk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

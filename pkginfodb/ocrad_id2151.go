@@ -30,7 +30,7 @@ var DistroPackageInfo_ocrad = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ocrad",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

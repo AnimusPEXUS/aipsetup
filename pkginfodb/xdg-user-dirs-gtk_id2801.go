@@ -30,7 +30,7 @@ var DistroPackageInfo_xdg_user_dirs_gtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xdg-user-dirs-gtk",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

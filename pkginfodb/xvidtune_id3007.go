@@ -29,7 +29,7 @@ var DistroPackageInfo_xvidtune = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xvidtune",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

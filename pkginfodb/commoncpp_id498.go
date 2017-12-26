@@ -30,7 +30,7 @@ var DistroPackageInfo_commoncpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "commoncpp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

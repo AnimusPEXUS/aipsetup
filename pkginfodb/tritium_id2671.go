@@ -29,7 +29,7 @@ var DistroPackageInfo_tritium = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tritium",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

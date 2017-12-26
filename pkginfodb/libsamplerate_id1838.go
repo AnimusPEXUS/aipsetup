@@ -29,7 +29,7 @@ var DistroPackageInfo_libsamplerate = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libsamplerate",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

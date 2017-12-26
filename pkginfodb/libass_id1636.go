@@ -30,7 +30,7 @@ var DistroPackageInfo_libass = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libass",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mesa_demos = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mesa-demos",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_menus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-menus",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

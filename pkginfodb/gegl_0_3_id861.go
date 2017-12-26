@@ -29,7 +29,7 @@ var DistroPackageInfo_gegl_0_3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gegl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

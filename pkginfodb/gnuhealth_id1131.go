@@ -29,7 +29,7 @@ var DistroPackageInfo_gnuhealth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnuhealth",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

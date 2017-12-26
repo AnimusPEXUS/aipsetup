@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_farsight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-farsight",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

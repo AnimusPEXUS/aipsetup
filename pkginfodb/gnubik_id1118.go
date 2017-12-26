@@ -30,7 +30,7 @@ var DistroPackageInfo_gnubik = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnubik",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

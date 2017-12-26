@@ -29,7 +29,7 @@ var DistroPackageInfo_pycdio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pycdio",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

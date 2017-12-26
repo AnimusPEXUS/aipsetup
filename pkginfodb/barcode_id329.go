@@ -30,7 +30,7 @@ var DistroPackageInfo_barcode = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "barcode",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

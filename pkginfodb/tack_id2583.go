@@ -29,7 +29,7 @@ var DistroPackageInfo_tack = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tack",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

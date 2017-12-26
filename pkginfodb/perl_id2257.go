@@ -30,7 +30,7 @@ var DistroPackageInfo_perl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "perl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

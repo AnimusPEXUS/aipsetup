@@ -30,7 +30,7 @@ var DistroPackageInfo_simple_scan = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "simple-scan",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

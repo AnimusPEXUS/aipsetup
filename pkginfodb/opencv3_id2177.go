@@ -30,7 +30,7 @@ var DistroPackageInfo_opencv3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "opencv",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

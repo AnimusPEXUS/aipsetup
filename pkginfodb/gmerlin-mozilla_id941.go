@@ -29,7 +29,7 @@ var DistroPackageInfo_gmerlin_mozilla = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gmerlin-mozilla",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

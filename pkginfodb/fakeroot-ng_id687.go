@@ -30,7 +30,7 @@ var DistroPackageInfo_fakeroot_ng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fakeroot-ng",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

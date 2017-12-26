@@ -30,7 +30,7 @@ var DistroPackageInfo_ppp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ppp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

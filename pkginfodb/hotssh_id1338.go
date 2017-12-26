@@ -30,7 +30,7 @@ var DistroPackageInfo_hotssh = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hotssh",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

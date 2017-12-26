@@ -30,7 +30,7 @@ var DistroPackageInfo_ming = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ming",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

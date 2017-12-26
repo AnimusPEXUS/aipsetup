@@ -30,7 +30,7 @@ var DistroPackageInfo_mcron = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mcron",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

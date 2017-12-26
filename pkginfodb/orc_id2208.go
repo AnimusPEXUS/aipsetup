@@ -29,7 +29,7 @@ var DistroPackageInfo_orc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "orc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

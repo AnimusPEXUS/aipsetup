@@ -30,7 +30,7 @@ var DistroPackageInfo_seahorse_nautilus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "seahorse-nautilus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

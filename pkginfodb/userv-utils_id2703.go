@@ -29,7 +29,7 @@ var DistroPackageInfo_userv_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "userv-utils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

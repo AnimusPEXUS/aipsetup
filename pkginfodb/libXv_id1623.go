@@ -29,7 +29,7 @@ var DistroPackageInfo_libXv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXv",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

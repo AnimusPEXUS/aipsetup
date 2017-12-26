@@ -30,7 +30,7 @@ var DistroPackageInfo_orca = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "orca",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

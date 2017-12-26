@@ -29,7 +29,7 @@ var DistroPackageInfo_gimp_gap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gimp-gap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_taquin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-taquin",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

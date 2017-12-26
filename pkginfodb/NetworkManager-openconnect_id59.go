@@ -30,7 +30,7 @@ var DistroPackageInfo_NetworkManager_openconnect = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "NetworkManager-openconnect",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

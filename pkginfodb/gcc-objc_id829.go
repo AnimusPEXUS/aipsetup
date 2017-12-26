@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_objc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-objc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_cdrkit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cdrkit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

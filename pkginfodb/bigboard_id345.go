@@ -30,7 +30,7 @@ var DistroPackageInfo_bigboard = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bigboard",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

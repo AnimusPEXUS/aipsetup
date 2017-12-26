@@ -30,7 +30,7 @@ var DistroPackageInfo_libeds_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libeds-java",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

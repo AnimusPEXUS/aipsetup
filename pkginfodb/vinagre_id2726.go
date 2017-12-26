@@ -30,7 +30,7 @@ var DistroPackageInfo_vinagre = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "vinagre",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libdv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libdv",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_gnome_canvose = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnome-canvose",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

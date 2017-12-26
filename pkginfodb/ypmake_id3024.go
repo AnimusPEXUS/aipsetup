@@ -29,7 +29,7 @@ var DistroPackageInfo_ypmake = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ypmake",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

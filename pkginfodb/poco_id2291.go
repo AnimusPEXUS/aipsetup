@@ -30,7 +30,7 @@ var DistroPackageInfo_poco = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "poco",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

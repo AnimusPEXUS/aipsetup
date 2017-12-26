@@ -30,7 +30,7 @@ var DistroPackageInfo_boost = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "boost",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_vfs_monikers = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-vfs-monikers",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

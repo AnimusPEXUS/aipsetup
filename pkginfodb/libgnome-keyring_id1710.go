@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnome_keyring = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnome-keyring",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

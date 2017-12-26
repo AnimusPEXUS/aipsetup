@@ -30,7 +30,7 @@ var DistroPackageInfo_rhythmbox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rhythmbox",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

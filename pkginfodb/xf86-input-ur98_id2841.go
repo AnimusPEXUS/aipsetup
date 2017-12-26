@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_input_ur98 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-input-ur98",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

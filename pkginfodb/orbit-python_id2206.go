@@ -30,7 +30,7 @@ var DistroPackageInfo_orbit_python = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "orbit-python",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

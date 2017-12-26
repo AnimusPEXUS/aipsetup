@@ -30,7 +30,7 @@ var DistroPackageInfo_emacs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "emacs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

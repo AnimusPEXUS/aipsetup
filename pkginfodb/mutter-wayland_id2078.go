@@ -30,7 +30,7 @@ var DistroPackageInfo_mutter_wayland = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mutter-wayland",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

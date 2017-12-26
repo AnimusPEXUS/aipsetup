@@ -30,7 +30,7 @@ var DistroPackageInfo_solang = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "solang",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

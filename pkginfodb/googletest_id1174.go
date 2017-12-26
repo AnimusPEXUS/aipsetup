@@ -30,7 +30,7 @@ var DistroPackageInfo_googletest = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "googletest",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

@@ -29,7 +29,7 @@ var DistroPackageInfo_groupserver = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "groupserver",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

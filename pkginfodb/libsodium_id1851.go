@@ -29,7 +29,7 @@ var DistroPackageInfo_libsodium = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libsodium",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_initial_setup = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-initial-setup",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

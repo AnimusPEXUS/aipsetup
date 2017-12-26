@@ -29,7 +29,7 @@ var DistroPackageInfo_cederqvist = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cederqvist",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

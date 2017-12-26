@@ -30,7 +30,7 @@ var DistroPackageInfo_startup_notification = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "startup-notification",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

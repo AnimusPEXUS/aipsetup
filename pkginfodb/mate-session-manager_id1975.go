@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_session_manager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-session-manager",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

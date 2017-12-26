@@ -30,7 +30,7 @@ var DistroPackageInfo_ccrtp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ccrtp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_proftpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "proftpd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gal2_0 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gal2-0",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

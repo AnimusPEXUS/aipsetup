@@ -30,7 +30,7 @@ var DistroPackageInfo_eog_plugins = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "eog-plugins",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

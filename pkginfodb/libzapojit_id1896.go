@@ -30,7 +30,7 @@ var DistroPackageInfo_libzapojit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libzapojit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_video_s3virge = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-video-s3virge",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

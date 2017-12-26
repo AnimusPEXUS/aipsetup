@@ -30,7 +30,7 @@ var DistroPackageInfo_gtkglarea = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtkglarea",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

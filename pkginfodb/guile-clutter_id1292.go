@@ -29,7 +29,7 @@ var DistroPackageInfo_guile_clutter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "guile-clutter",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

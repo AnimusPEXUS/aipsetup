@@ -29,7 +29,7 @@ var DistroPackageInfo_gnustep_gui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnustep-gui",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

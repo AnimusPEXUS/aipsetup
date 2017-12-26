@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell_wa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell-wa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

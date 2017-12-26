@@ -29,7 +29,7 @@ var DistroPackageInfo_mysql_connector_c = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mysql-connector-c",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

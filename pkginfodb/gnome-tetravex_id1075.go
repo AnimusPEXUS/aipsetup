@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_tetravex = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-tetravex",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

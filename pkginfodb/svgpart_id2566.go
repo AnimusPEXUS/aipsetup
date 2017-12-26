@@ -29,7 +29,7 @@ var DistroPackageInfo_svgpart = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "svgpart",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

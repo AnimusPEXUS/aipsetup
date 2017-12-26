@@ -29,7 +29,7 @@ var DistroPackageInfo_servletapi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "servletapi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_scripts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "scripts",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

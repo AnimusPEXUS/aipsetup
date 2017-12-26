@@ -30,7 +30,7 @@ var DistroPackageInfo_ecb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ecb",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

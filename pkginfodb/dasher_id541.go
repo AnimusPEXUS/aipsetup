@@ -30,7 +30,7 @@ var DistroPackageInfo_dasher = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dasher",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

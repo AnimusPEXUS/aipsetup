@@ -30,7 +30,7 @@ var DistroPackageInfo_sonic_visualiser = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sonic-visualiser",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_pem = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pem",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

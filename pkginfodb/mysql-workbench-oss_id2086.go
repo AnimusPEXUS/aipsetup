@@ -29,7 +29,7 @@ var DistroPackageInfo_mysql_workbench_oss = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mysql-workbench-oss",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

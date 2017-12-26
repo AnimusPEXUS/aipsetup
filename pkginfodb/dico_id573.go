@@ -30,7 +30,7 @@ var DistroPackageInfo_dico = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dico",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

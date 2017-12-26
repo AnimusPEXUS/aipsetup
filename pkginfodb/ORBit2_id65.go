@@ -37,7 +37,7 @@ deprecated! use --disable-orbit for GConf`,
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ORBit2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

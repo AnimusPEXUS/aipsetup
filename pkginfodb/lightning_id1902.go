@@ -30,7 +30,7 @@ var DistroPackageInfo_lightning = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "lightning",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

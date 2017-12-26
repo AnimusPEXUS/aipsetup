@@ -30,7 +30,7 @@ var DistroPackageInfo_rcs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rcs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

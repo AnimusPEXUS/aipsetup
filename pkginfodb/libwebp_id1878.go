@@ -30,7 +30,7 @@ var DistroPackageInfo_libwebp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libwebp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

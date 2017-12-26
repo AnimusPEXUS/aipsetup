@@ -30,7 +30,7 @@ var DistroPackageInfo_acl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "acl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

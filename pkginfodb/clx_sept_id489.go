@@ -29,7 +29,7 @@ var DistroPackageInfo_clx_sept = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clx.sept",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

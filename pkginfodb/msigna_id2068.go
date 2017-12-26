@@ -29,7 +29,7 @@ var DistroPackageInfo_msigna = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "msigna",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

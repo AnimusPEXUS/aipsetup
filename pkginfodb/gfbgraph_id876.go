@@ -30,7 +30,7 @@ var DistroPackageInfo_gfbgraph = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gfbgraph",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

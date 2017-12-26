@@ -30,7 +30,7 @@ var DistroPackageInfo_goffice = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "goffice",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_xpenguins_applet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xpenguins_applet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

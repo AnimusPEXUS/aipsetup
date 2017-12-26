@@ -29,7 +29,7 @@ var DistroPackageInfo_xauth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xauth",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

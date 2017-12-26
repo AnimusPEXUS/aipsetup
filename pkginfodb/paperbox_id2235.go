@@ -30,7 +30,7 @@ var DistroPackageInfo_paperbox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "paperbox",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

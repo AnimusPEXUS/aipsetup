@@ -29,7 +29,7 @@ var DistroPackageInfo_desktop_file_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "desktop-file-utils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

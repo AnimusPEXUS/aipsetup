@@ -29,7 +29,7 @@ var DistroPackageInfo_sgml_common = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sgml-common",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

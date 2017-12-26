@@ -29,7 +29,7 @@ var DistroPackageInfo_bwbar = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bwbar",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

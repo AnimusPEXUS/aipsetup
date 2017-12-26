@@ -30,7 +30,7 @@ var DistroPackageInfo_LibVNCServer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "LibVNCServer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

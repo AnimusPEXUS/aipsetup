@@ -29,7 +29,7 @@ var DistroPackageInfo_libXpm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXpm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

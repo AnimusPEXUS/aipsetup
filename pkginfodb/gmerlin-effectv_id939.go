@@ -30,7 +30,7 @@ var DistroPackageInfo_gmerlin_effectv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gmerlin-effectv",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

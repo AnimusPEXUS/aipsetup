@@ -30,7 +30,7 @@ var DistroPackageInfo_gtk_sharp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtk-sharp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libid3tag = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libid3tag",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

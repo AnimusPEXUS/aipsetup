@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_testsuite = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-testsuite",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

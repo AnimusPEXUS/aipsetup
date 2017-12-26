@@ -30,7 +30,7 @@ var DistroPackageInfo_bayonne = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bayonne",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

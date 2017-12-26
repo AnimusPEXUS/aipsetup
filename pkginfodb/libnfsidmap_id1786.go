@@ -30,7 +30,7 @@ var DistroPackageInfo_libnfsidmap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libnfsidmap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

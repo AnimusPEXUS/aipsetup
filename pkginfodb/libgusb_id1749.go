@@ -29,7 +29,7 @@ var DistroPackageInfo_libgusb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libgusb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

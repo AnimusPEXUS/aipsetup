@@ -29,7 +29,7 @@ var DistroPackageInfo_doschk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "doschk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

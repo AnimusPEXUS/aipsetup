@@ -29,7 +29,7 @@ var DistroPackageInfo_gen_hosts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gen-hosts",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

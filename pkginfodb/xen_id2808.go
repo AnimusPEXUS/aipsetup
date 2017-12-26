@@ -29,7 +29,7 @@ var DistroPackageInfo_xen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xen",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

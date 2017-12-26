@@ -30,7 +30,7 @@ var DistroPackageInfo_notification_daemon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "notification-daemon",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

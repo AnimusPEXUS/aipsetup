@@ -30,7 +30,7 @@ var DistroPackageInfo_libgsystem = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgsystem",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

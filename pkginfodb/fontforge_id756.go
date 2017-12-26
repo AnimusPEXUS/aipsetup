@@ -30,7 +30,7 @@ var DistroPackageInfo_fontforge = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fontforge_full",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_mtdev = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mtdev",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

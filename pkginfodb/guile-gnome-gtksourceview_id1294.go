@@ -29,7 +29,7 @@ var DistroPackageInfo_guile_gnome_gtksourceview = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "guile-gnome-gtksourceview",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

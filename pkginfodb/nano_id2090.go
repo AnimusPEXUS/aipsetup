@@ -30,7 +30,7 @@ var DistroPackageInfo_nano = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nano",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

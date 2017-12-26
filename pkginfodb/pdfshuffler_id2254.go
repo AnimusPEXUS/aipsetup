@@ -30,7 +30,7 @@ var DistroPackageInfo_pdfshuffler = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pdfshuffler",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

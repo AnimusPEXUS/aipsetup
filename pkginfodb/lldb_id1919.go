@@ -29,7 +29,7 @@ var DistroPackageInfo_lldb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lldb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

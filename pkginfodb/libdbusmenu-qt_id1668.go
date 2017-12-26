@@ -29,7 +29,7 @@ var DistroPackageInfo_libdbusmenu_qt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libdbusmenu-qt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

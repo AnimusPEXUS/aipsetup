@@ -29,7 +29,7 @@ var DistroPackageInfo_libksane = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libksane",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

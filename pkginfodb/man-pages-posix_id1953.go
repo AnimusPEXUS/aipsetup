@@ -29,7 +29,7 @@ var DistroPackageInfo_man_pages_posix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "man-pages-posix",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

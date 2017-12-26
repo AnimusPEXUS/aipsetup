@@ -29,7 +29,7 @@ var DistroPackageInfo_whoisserver = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "whoisserver",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

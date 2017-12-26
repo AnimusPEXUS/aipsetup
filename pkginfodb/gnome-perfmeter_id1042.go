@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_perfmeter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-perfmeter",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

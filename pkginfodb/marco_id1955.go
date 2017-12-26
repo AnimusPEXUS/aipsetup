@@ -29,7 +29,7 @@ var DistroPackageInfo_marco = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "marco",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

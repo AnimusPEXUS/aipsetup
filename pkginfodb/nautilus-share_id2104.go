@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_share = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-share",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

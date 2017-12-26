@@ -30,7 +30,7 @@ var DistroPackageInfo_f_spot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "f-spot",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_qca = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "qca",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

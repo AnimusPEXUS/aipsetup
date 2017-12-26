@@ -29,7 +29,7 @@ var DistroPackageInfo_RCSplusSimplePAMApps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "RCS+SimplePAMApps",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

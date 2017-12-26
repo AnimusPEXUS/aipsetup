@@ -30,7 +30,7 @@ var DistroPackageInfo_rustc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rustc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

@@ -29,7 +29,7 @@ var DistroPackageInfo_eric5 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "eric5",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

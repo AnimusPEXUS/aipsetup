@@ -30,7 +30,7 @@ var DistroPackageInfo_libupnp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libupnp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

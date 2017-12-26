@@ -29,7 +29,7 @@ var DistroPackageInfo_colord_gtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "colord-gtk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

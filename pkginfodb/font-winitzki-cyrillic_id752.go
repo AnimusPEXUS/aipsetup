@@ -29,7 +29,7 @@ var DistroPackageInfo_font_winitzki_cyrillic = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-winitzki-cyrillic",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

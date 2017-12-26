@@ -29,7 +29,7 @@ var DistroPackageInfo_gerberv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gerberv",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

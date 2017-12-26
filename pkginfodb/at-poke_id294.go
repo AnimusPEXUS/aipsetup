@@ -30,7 +30,7 @@ var DistroPackageInfo_at_poke = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "at-poke",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

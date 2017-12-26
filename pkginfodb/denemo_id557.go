@@ -30,7 +30,7 @@ var DistroPackageInfo_denemo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "denemo",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

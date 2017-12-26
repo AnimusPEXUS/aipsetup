@@ -29,7 +29,7 @@ var DistroPackageInfo_ccscript3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ccscript3",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

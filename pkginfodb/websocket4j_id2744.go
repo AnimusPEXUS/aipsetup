@@ -30,7 +30,7 @@ var DistroPackageInfo_websocket4j = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "websocket4j",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_tramp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "tramp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

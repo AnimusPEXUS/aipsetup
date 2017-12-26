@@ -29,7 +29,7 @@ var DistroPackageInfo_kup = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kup",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

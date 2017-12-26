@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_mission_control = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-mission-control",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

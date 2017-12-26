@@ -29,7 +29,7 @@ var DistroPackageInfo_opencde = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "opencde",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

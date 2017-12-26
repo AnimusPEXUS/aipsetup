@@ -30,7 +30,7 @@ var DistroPackageInfo_spring = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "spring",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

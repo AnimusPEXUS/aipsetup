@@ -30,7 +30,7 @@ var DistroPackageInfo_libsepol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libsepol",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

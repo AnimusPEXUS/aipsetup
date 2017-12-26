@@ -29,7 +29,7 @@ var DistroPackageInfo_clisp_ia = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clisp-ia",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

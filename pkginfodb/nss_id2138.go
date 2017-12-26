@@ -29,7 +29,7 @@ var DistroPackageInfo_nss = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nss",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

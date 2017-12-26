@@ -29,7 +29,7 @@ var DistroPackageInfo_apparmor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "apparmor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

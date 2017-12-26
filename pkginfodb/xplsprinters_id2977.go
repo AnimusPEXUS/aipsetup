@@ -29,7 +29,7 @@ var DistroPackageInfo_xplsprinters = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xplsprinters",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

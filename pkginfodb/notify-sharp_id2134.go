@@ -30,7 +30,7 @@ var DistroPackageInfo_notify_sharp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "notify-sharp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

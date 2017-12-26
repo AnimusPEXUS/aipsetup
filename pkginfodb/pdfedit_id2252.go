@@ -30,7 +30,7 @@ var DistroPackageInfo_pdfedit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pdfedit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xvinfo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xvinfo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

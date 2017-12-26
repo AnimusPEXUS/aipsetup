@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_gplusplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-g++",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

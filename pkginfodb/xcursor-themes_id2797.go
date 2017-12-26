@@ -29,7 +29,7 @@ var DistroPackageInfo_xcursor_themes = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcursor-themes",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

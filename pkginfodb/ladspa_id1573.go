@@ -29,7 +29,7 @@ var DistroPackageInfo_ladspa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ladspa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

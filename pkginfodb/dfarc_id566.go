@@ -29,7 +29,7 @@ var DistroPackageInfo_dfarc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dfarc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

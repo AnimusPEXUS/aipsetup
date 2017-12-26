@@ -29,7 +29,7 @@ var DistroPackageInfo_WindowMaker = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "WindowMaker",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

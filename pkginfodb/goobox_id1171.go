@@ -30,7 +30,7 @@ var DistroPackageInfo_goobox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "goobox",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

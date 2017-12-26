@@ -29,7 +29,7 @@ var DistroPackageInfo_cb_glibc_x86_pc_linux_gnu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

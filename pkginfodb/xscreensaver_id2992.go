@@ -29,7 +29,7 @@ var DistroPackageInfo_xscreensaver = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xscreensaver",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_clutter_box2dmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "clutter-box2dmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

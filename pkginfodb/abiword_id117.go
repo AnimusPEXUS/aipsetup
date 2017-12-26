@@ -30,7 +30,7 @@ var DistroPackageInfo_abiword = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "abiword",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

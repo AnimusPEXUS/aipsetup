@@ -29,7 +29,7 @@ var DistroPackageInfo_Django = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Django",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

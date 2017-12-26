@@ -29,7 +29,7 @@ var DistroPackageInfo_font_micro_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-micro-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

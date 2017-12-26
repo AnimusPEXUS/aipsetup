@@ -29,7 +29,7 @@ var DistroPackageInfo_util_macros = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "util-macros",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_oleo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "oleo",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_hyperbole = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hyperbole",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_p7zip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "p7zip",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

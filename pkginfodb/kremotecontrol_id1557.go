@@ -29,7 +29,7 @@ var DistroPackageInfo_kremotecontrol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kremotecontrol",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

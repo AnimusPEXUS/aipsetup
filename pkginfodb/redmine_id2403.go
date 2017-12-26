@@ -29,7 +29,7 @@ var DistroPackageInfo_redmine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "redmine",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

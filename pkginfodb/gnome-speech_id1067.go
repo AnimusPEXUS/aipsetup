@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_speech = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-speech",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

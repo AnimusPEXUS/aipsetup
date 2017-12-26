@@ -30,7 +30,7 @@ var DistroPackageInfo_libselinux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:        []string{"- !tarball-status-re ^$"},
 	TarballName:           "libselinux",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

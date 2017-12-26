@@ -30,7 +30,7 @@ var DistroPackageInfo_gconf_editor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gconf-editor",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

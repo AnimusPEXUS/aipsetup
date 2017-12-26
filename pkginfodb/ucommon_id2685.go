@@ -29,7 +29,7 @@ var DistroPackageInfo_ucommon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ucommon",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

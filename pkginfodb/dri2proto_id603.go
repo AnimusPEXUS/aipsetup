@@ -29,7 +29,7 @@ var DistroPackageInfo_dri2proto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dri2proto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

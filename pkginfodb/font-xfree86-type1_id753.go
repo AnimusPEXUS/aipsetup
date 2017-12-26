@@ -29,7 +29,7 @@ var DistroPackageInfo_font_xfree86_type1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-xfree86-type1",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_cb_linux_headers_x86_pc_linux_gnu = &basictypes.PackageInf
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

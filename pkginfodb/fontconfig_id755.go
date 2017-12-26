@@ -29,7 +29,7 @@ var DistroPackageInfo_fontconfig = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fontconfig",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

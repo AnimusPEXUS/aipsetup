@@ -29,7 +29,7 @@ var DistroPackageInfo_openal_soft = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openal-soft",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

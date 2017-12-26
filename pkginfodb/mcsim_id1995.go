@@ -30,7 +30,7 @@ var DistroPackageInfo_mcsim = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mcsim",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

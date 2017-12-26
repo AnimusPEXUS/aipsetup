@@ -30,7 +30,7 @@ var DistroPackageInfo_pygtksourceview = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pygtksourceview",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

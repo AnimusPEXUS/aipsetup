@@ -30,7 +30,7 @@ var DistroPackageInfo_openjdk8 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "jdk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

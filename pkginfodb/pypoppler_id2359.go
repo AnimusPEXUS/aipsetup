@@ -29,7 +29,7 @@ var DistroPackageInfo_pypoppler = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pypoppler",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

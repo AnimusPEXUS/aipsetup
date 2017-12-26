@@ -30,7 +30,7 @@ var DistroPackageInfo_libnl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libnl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

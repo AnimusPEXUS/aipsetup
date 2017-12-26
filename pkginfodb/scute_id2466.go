@@ -29,7 +29,7 @@ var DistroPackageInfo_scute = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "scute",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_kcolorchooser = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kcolorchooser",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

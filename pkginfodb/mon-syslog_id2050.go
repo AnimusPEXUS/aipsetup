@@ -29,7 +29,7 @@ var DistroPackageInfo_mon_syslog = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mon-syslog",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

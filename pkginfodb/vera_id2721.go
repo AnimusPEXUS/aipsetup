@@ -30,7 +30,7 @@ var DistroPackageInfo_vera = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "vera",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libXdmcp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXdmcp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

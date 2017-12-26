@@ -29,7 +29,7 @@ var DistroPackageInfo_clisp_rs6000_ibm_aix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clisp-rs6000-ibm-aix",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

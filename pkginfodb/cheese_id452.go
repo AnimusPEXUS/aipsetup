@@ -30,7 +30,7 @@ var DistroPackageInfo_cheese = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cheese",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

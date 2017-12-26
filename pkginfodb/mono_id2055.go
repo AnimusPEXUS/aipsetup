@@ -30,7 +30,7 @@ var DistroPackageInfo_mono = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mono",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

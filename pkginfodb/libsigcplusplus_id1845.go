@@ -30,7 +30,7 @@ var DistroPackageInfo_libsigcplusplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libsigc++",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

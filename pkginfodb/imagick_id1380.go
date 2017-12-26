@@ -29,7 +29,7 @@ var DistroPackageInfo_imagick = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "imagick",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

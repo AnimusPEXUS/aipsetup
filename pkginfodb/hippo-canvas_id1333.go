@@ -30,7 +30,7 @@ var DistroPackageInfo_hippo_canvas = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hippo-canvas",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

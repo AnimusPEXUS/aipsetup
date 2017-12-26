@@ -29,7 +29,7 @@ var DistroPackageInfo_xineramaproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xineramaproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

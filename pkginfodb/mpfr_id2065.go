@@ -30,7 +30,7 @@ var DistroPackageInfo_mpfr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mpfr",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

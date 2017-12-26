@@ -30,7 +30,7 @@ var DistroPackageInfo_abispell = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "abispell",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

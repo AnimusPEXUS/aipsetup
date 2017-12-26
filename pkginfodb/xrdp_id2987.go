@@ -29,7 +29,7 @@ var DistroPackageInfo_xrdp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xrdp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

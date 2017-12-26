@@ -30,7 +30,7 @@ var DistroPackageInfo_gail = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gail",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

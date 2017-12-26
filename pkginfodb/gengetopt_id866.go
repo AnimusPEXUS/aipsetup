@@ -30,7 +30,7 @@ var DistroPackageInfo_gengetopt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gengetopt",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

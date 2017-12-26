@@ -30,7 +30,7 @@ var DistroPackageInfo_help2man = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "help2man",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

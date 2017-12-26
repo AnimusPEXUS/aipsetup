@@ -29,7 +29,7 @@ var DistroPackageInfo_opencdk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "opencdk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

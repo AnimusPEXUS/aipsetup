@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_code_assistance = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-code-assistance",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

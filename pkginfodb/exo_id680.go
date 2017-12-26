@@ -29,7 +29,7 @@ var DistroPackageInfo_exo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "exo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

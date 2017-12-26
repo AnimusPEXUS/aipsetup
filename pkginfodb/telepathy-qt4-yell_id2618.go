@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_qt4_yell = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-qt4-yell",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

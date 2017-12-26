@@ -29,7 +29,7 @@ var DistroPackageInfo_xwud = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xwud",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

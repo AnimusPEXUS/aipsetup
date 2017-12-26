@@ -29,7 +29,7 @@ var DistroPackageInfo_guile_oops = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "guile-oops",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

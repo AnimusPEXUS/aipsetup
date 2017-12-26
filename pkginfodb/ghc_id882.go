@@ -29,7 +29,7 @@ var DistroPackageInfo_ghc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ghc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

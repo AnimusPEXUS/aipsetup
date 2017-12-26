@@ -29,7 +29,7 @@ var DistroPackageInfo_gr_mc4020 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gr-mc4020",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

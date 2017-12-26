@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_media = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-media",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

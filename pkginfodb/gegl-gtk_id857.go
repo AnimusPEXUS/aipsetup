@@ -29,7 +29,7 @@ var DistroPackageInfo_gegl_gtk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gegl-gtk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

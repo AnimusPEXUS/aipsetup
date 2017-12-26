@@ -30,7 +30,7 @@ var DistroPackageInfo_time = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "time",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

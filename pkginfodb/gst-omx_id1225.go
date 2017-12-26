@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_omx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-omx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

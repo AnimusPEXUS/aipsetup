@@ -29,7 +29,7 @@ var DistroPackageInfo_atril = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "atril",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

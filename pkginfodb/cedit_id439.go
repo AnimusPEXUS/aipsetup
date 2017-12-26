@@ -29,7 +29,7 @@ var DistroPackageInfo_cedit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cedit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

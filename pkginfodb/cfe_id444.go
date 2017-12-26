@@ -29,7 +29,7 @@ var DistroPackageInfo_cfe = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cfe",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

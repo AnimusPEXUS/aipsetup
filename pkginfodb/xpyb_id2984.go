@@ -29,7 +29,7 @@ var DistroPackageInfo_xpyb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xpyb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

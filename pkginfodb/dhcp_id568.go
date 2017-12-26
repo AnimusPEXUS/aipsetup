@@ -30,7 +30,7 @@ var DistroPackageInfo_dhcp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dhcp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

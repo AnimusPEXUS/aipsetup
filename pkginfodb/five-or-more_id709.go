@@ -30,7 +30,7 @@ var DistroPackageInfo_five_or_more = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "five-or-more",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

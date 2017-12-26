@@ -29,7 +29,7 @@ var DistroPackageInfo_phantom_security = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "phantom_security",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

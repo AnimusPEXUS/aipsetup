@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_input_elo2300 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-input-elo2300",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

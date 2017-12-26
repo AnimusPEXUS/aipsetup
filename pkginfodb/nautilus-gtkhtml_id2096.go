@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_gtkhtml = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-gtkhtml",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

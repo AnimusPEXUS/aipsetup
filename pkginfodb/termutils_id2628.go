@@ -30,7 +30,7 @@ var DistroPackageInfo_termutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "termutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

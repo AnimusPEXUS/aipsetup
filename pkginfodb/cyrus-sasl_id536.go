@@ -30,7 +30,7 @@ var DistroPackageInfo_cyrus_sasl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cyrus-sasl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

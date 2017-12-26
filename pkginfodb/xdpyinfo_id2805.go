@@ -29,7 +29,7 @@ var DistroPackageInfo_xdpyinfo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xdpyinfo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

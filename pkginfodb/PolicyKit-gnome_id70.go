@@ -29,7 +29,7 @@ var DistroPackageInfo_PolicyKit_gnome = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "PolicyKit-gnome",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

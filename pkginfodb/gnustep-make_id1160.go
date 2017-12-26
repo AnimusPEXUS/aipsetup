@@ -29,7 +29,7 @@ var DistroPackageInfo_gnustep_make = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnustep-make",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

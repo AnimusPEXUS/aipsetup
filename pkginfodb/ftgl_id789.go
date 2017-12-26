@@ -30,7 +30,7 @@ var DistroPackageInfo_ftgl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ftgl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

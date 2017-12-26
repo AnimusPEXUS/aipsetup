@@ -29,7 +29,7 @@ var DistroPackageInfo_khangman = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "khangman",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_FreeImage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "FreeImage",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

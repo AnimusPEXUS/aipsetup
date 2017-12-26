@@ -30,7 +30,7 @@ var DistroPackageInfo_maverik = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "maverik",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

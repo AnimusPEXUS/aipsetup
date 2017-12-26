@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_g77 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-g77",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

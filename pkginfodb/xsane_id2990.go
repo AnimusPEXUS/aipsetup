@@ -29,7 +29,7 @@ var DistroPackageInfo_xsane = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xsane",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

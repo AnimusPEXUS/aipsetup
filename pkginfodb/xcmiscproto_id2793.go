@@ -29,7 +29,7 @@ var DistroPackageInfo_xcmiscproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcmiscproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

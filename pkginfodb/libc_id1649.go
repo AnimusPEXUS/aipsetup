@@ -29,7 +29,7 @@ var DistroPackageInfo_libc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

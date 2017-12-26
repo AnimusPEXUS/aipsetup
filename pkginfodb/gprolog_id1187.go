@@ -30,7 +30,7 @@ var DistroPackageInfo_gprolog = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gprolog",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

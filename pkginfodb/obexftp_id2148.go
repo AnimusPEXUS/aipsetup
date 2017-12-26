@@ -30,7 +30,7 @@ var DistroPackageInfo_obexftp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "obexftp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

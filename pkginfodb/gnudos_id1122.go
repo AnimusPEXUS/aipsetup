@@ -30,7 +30,7 @@ var DistroPackageInfo_gnudos = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnudos",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

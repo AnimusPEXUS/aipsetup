@@ -30,7 +30,7 @@ var DistroPackageInfo_file_roller = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "file-roller",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_pygame = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pygame",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

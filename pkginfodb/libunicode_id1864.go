@@ -30,7 +30,7 @@ var DistroPackageInfo_libunicode = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libunicode",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

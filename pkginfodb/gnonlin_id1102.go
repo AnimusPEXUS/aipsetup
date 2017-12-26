@@ -29,7 +29,7 @@ var DistroPackageInfo_gnonlin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnonlin",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

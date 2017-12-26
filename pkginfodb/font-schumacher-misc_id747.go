@@ -29,7 +29,7 @@ var DistroPackageInfo_font_schumacher_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-schumacher-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

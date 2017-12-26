@@ -30,7 +30,7 @@ var DistroPackageInfo_gtk_engines = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtk-engines",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

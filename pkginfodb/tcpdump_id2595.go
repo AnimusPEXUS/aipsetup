@@ -30,7 +30,7 @@ var DistroPackageInfo_tcpdump = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tcpdump",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

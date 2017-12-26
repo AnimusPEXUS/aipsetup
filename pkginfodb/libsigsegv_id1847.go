@@ -30,7 +30,7 @@ var DistroPackageInfo_libsigsegv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libsigsegv",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

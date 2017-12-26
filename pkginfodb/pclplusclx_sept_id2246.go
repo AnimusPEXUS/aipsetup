@@ -29,7 +29,7 @@ var DistroPackageInfo_pclplusclx_sept = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pcl+clx.sept",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

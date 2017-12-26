@@ -29,7 +29,7 @@ var DistroPackageInfo_kde_workspace = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kde-workspace",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

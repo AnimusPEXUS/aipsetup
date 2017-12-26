@@ -29,7 +29,7 @@ var DistroPackageInfo_liba52 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "liba52",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

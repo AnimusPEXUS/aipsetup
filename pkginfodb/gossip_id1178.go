@@ -30,7 +30,7 @@ var DistroPackageInfo_gossip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gossip",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libkdeedu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libkdeedu",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_Python3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Python",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

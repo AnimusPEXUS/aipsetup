@@ -30,7 +30,7 @@ var DistroPackageInfo_autoconf_archive = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "autoconf-archive",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

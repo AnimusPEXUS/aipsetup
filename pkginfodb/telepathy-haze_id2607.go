@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_haze = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-haze",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

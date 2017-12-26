@@ -29,7 +29,7 @@ var DistroPackageInfo_glob2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glob2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

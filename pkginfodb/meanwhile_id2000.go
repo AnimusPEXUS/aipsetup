@@ -30,7 +30,7 @@ var DistroPackageInfo_meanwhile = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "meanwhile",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

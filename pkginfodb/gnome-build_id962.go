@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_build = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-build",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

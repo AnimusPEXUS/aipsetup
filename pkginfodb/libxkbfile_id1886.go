@@ -29,7 +29,7 @@ var DistroPackageInfo_libxkbfile = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libxkbfile",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

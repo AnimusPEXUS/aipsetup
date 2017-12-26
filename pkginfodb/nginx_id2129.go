@@ -29,7 +29,7 @@ var DistroPackageInfo_nginx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nginx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

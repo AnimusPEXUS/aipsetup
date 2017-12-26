@@ -30,7 +30,7 @@ var DistroPackageInfo_pexec = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pexec",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

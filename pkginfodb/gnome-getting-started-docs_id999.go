@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_getting_started_docs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-getting-started-docs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

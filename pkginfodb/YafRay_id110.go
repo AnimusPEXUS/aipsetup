@@ -29,7 +29,7 @@ var DistroPackageInfo_YafRay = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "YafRay",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

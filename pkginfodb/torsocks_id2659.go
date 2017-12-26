@@ -30,7 +30,7 @@ var DistroPackageInfo_torsocks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "torsocks",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

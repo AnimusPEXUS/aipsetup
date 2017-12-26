@@ -30,7 +30,7 @@ var DistroPackageInfo_log4c = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "log4c",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

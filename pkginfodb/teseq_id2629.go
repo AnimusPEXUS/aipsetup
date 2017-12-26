@@ -30,7 +30,7 @@ var DistroPackageInfo_teseq = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "teseq",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

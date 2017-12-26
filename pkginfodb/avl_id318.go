@@ -30,7 +30,7 @@ var DistroPackageInfo_avl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "avl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

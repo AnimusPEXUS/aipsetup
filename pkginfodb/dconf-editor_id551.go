@@ -30,7 +30,7 @@ var DistroPackageInfo_dconf_editor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dconf-editor",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

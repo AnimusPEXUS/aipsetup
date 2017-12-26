@@ -30,7 +30,7 @@ var DistroPackageInfo_fluidsynth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fluidsynth",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

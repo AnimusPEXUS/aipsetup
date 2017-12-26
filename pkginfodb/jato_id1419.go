@@ -29,7 +29,7 @@ var DistroPackageInfo_jato = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "jato",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

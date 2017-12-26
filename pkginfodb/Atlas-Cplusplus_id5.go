@@ -29,7 +29,7 @@ var DistroPackageInfo_Atlas_Cplusplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Atlas-C",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

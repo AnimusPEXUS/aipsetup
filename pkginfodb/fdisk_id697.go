@@ -30,7 +30,7 @@ var DistroPackageInfo_fdisk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fdisk",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

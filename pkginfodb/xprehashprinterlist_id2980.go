@@ -29,7 +29,7 @@ var DistroPackageInfo_xprehashprinterlist = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xprehashprinterlist",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

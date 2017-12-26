@@ -30,7 +30,7 @@ var DistroPackageInfo_libgxps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgxps",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

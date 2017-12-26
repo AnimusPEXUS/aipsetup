@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_notification_daemon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-notification-daemon",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

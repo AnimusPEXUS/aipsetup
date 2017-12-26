@@ -30,7 +30,7 @@ var DistroPackageInfo_dates = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dates",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

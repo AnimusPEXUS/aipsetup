@@ -29,7 +29,7 @@ var DistroPackageInfo_libvorbis = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libvorbis",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

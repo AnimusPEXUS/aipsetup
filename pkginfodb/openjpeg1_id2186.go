@@ -30,7 +30,7 @@ var DistroPackageInfo_openjpeg1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "openjpeg",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

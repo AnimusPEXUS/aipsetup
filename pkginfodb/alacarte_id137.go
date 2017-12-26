@@ -30,7 +30,7 @@ var DistroPackageInfo_alacarte = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "alacarte",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

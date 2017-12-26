@@ -29,7 +29,7 @@ var DistroPackageInfo_Zope = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Zope",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

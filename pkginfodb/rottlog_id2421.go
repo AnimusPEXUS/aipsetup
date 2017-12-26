@@ -30,7 +30,7 @@ var DistroPackageInfo_rottlog = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rottlog",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

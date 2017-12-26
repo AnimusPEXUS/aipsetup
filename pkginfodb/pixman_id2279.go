@@ -29,7 +29,7 @@ var DistroPackageInfo_pixman = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pixman",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

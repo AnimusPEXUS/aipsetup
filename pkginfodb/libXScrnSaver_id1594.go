@@ -29,7 +29,7 @@ var DistroPackageInfo_libXScrnSaver = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXScrnSaver",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

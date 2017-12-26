@@ -29,7 +29,7 @@ var DistroPackageInfo_kgpg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kgpg",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

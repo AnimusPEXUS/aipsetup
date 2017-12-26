@@ -29,7 +29,7 @@ var DistroPackageInfo_gnomebaker = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnomebaker",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

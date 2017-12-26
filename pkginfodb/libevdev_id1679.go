@@ -29,7 +29,7 @@ var DistroPackageInfo_libevdev = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libevdev",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

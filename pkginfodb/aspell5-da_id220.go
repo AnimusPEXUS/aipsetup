@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell5_da = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell5-da",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

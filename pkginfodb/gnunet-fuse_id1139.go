@@ -29,7 +29,7 @@ var DistroPackageInfo_gnunet_fuse = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnunet-fuse",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

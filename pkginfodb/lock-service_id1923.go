@@ -30,7 +30,7 @@ var DistroPackageInfo_lock_service = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "lock-service",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

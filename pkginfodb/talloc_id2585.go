@@ -30,7 +30,7 @@ var DistroPackageInfo_talloc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "talloc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

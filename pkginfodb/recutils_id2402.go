@@ -30,7 +30,7 @@ var DistroPackageInfo_recutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "recutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

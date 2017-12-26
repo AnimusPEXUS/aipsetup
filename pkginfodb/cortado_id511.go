@@ -29,7 +29,7 @@ var DistroPackageInfo_cortado = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cortado",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

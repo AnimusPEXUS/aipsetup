@@ -30,7 +30,7 @@ var DistroPackageInfo_goocanvasmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "goocanvasmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_cmake = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cmake",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

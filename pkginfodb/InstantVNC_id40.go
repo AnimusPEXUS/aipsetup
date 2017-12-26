@@ -29,7 +29,7 @@ var DistroPackageInfo_InstantVNC = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "InstantVNC",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

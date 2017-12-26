@@ -30,7 +30,7 @@ var DistroPackageInfo_avahi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "avahi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_rpcnis_headers = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rpcnis-headers",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

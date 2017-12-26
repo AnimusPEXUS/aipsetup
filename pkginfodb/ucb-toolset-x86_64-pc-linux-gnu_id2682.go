@@ -29,7 +29,7 @@ var DistroPackageInfo_ucb_toolset_x86_64_pc_linux_gnu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_beforelight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "beforelight",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

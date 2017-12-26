@@ -29,7 +29,7 @@ var DistroPackageInfo_grokmirror = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "grokmirror",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

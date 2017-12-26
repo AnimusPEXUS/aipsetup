@@ -30,7 +30,7 @@ var DistroPackageInfo_libbeagle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libbeagle",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

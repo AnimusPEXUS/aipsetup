@@ -29,7 +29,7 @@ var DistroPackageInfo_kmag = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kmag",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

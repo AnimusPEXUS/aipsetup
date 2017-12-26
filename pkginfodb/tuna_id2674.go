@@ -29,7 +29,7 @@ var DistroPackageInfo_tuna = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tuna",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

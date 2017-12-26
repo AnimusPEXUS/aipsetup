@@ -30,7 +30,7 @@ var DistroPackageInfo_gleem = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gleem",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

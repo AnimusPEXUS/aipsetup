@@ -30,7 +30,7 @@ var DistroPackageInfo_csound = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "csound",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

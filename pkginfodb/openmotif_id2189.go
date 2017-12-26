@@ -29,7 +29,7 @@ var DistroPackageInfo_openmotif = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openmotif",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

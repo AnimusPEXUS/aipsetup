@@ -29,7 +29,7 @@ var DistroPackageInfo_libodb_mssql = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libodb-mssql",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

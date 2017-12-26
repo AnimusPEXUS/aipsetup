@@ -29,7 +29,7 @@ var DistroPackageInfo_printer_applet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "printer-applet",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

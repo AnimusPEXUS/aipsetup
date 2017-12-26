@@ -30,7 +30,7 @@ var DistroPackageInfo_groff = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "groff",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

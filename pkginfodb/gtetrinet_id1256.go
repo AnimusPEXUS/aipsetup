@@ -30,7 +30,7 @@ var DistroPackageInfo_gtetrinet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtetrinet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gtop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtop",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

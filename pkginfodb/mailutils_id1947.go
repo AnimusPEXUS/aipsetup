@@ -30,7 +30,7 @@ var DistroPackageInfo_mailutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mailutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

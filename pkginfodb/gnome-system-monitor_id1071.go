@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_system_monitor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-system-monitor",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

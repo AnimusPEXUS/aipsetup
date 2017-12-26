@@ -30,7 +30,7 @@ var DistroPackageInfo_scons = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "scons-src",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

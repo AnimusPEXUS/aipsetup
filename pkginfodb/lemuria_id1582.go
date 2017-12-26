@@ -30,7 +30,7 @@ var DistroPackageInfo_lemuria = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "lemuria",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

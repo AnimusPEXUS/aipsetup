@@ -29,7 +29,7 @@ var DistroPackageInfo_loggerhead = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "loggerhead",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

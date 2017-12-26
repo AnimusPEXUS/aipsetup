@@ -29,7 +29,7 @@ var DistroPackageInfo_XML_Namespace = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "XML-Namespace",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

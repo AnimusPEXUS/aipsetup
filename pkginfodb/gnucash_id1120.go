@@ -30,7 +30,7 @@ var DistroPackageInfo_gnucash = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnucash",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_DBDesigner = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "DBDesigner",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

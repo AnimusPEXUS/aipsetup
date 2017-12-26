@@ -30,7 +30,7 @@ var DistroPackageInfo_gnuspool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnuspool",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

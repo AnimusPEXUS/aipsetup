@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_documents = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-documents",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

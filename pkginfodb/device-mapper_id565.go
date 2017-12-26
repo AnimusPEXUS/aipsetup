@@ -29,7 +29,7 @@ var DistroPackageInfo_device_mapper = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "device-mapper",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

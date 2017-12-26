@@ -29,7 +29,7 @@ var DistroPackageInfo_libreoffice = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libreoffice",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

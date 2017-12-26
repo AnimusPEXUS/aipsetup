@@ -30,7 +30,7 @@ var DistroPackageInfo_gperf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gperf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

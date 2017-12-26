@@ -30,7 +30,7 @@ var DistroPackageInfo_xalf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xalf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

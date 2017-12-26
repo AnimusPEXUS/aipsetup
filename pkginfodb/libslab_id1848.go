@@ -30,7 +30,7 @@ var DistroPackageInfo_libslab = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libslab",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

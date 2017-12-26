@@ -30,7 +30,7 @@ var DistroPackageInfo_libunistring = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libunistring",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

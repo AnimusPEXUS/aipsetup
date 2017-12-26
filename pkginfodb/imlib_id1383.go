@@ -30,7 +30,7 @@ var DistroPackageInfo_imlib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "imlib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

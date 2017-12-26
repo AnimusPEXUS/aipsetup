@@ -29,7 +29,7 @@ var DistroPackageInfo_gnunet_qt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnunet-qt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

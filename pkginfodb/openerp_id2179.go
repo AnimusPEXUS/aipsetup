@@ -29,7 +29,7 @@ var DistroPackageInfo_openerp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openerp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

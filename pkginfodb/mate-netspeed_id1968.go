@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_netspeed = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-netspeed",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

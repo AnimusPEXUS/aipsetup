@@ -30,7 +30,7 @@ var DistroPackageInfo_orgadoc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "orgadoc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

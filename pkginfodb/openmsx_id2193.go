@@ -29,7 +29,7 @@ var DistroPackageInfo_openmsx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openmsx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

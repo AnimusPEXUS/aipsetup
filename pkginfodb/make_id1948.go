@@ -30,7 +30,7 @@ var DistroPackageInfo_make = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "make",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

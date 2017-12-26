@@ -29,7 +29,7 @@ var DistroPackageInfo_compiz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "compiz",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

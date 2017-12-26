@@ -29,7 +29,7 @@ var DistroPackageInfo_openshot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openshot",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

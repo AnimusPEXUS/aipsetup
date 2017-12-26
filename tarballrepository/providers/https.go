@@ -9,15 +9,14 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/htmlwalk"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
-	"github.com/AnimusPEXUS/utils/textlist"
 	"github.com/AnimusPEXUS/utils/version"
-	"github.com/AnimusPEXUS/utils/version/versionfilterfunctions"
 )
 
 type ProviderHttps struct {
@@ -148,6 +147,12 @@ func (self *ProviderHttps) PerformUpdate() error {
 		if strings.HasSuffix(i, "/") {
 			continue
 		}
+
+		err := tarballname.IsPossibleTarballNameErr(i)
+		if err != nil {
+			continue
+		}
+
 		parse_res, err := parser.ParseName(i)
 		if err != nil {
 			continue
@@ -157,11 +162,7 @@ func (self *ProviderHttps) PerformUpdate() error {
 			continue
 		}
 
-		fres, err := textlist.FilterList(
-			[]string{i},
-			textlist.ParseFilterTextLinesMust(self.pkg_info.Filters),
-			versionfilterfunctions.StdVersionFilterFunctions,
-		)
+		fres, err := pkginfodb.ApplyInfoFilter(self.pkg_info, []string{i})
 		if err != nil {
 			return err
 		}

@@ -30,7 +30,7 @@ var DistroPackageInfo_couchdb_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "couchdb-glib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_mailman = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mailman",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

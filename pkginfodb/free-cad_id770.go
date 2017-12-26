@@ -29,7 +29,7 @@ var DistroPackageInfo_free_cad = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "free-cad",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

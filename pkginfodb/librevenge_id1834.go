@@ -30,7 +30,7 @@ var DistroPackageInfo_librevenge = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "librevenge",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

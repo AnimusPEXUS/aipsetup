@@ -29,7 +29,7 @@ var DistroPackageInfo_xcb_util_keysyms = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcb-util-keysyms",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

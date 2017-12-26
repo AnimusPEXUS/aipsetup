@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_sudoku = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-sudoku",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

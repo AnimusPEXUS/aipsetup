@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_user_share = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-user-share",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

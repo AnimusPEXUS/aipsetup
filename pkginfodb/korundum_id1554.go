@@ -29,7 +29,7 @@ var DistroPackageInfo_korundum = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "korundum",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

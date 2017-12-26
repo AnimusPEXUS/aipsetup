@@ -29,7 +29,7 @@ var DistroPackageInfo_openshot_qt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openshot-qt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gxmessage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gxmessage",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

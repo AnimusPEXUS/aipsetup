@@ -30,7 +30,7 @@ var DistroPackageInfo_mess_desktop_entries = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mess-desktop-entries",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

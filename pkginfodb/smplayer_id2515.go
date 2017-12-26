@@ -29,7 +29,7 @@ var DistroPackageInfo_smplayer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "smplayer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

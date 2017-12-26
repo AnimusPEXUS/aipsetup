@@ -30,7 +30,7 @@ var DistroPackageInfo_freeglut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "freeglut",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

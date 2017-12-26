@@ -30,7 +30,7 @@ var DistroPackageInfo_Guppi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "Guppi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

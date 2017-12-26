@@ -31,7 +31,7 @@ var DistroPackageInfo_pth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pth",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

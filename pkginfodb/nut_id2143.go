@@ -30,7 +30,7 @@ var DistroPackageInfo_nut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nut",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

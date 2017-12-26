@@ -30,7 +30,7 @@ var DistroPackageInfo_libsemanage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libsemanage",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

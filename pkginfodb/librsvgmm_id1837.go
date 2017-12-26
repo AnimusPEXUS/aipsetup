@@ -30,7 +30,7 @@ var DistroPackageInfo_librsvgmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "librsvgmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_keyring_manager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-keyring-manager",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

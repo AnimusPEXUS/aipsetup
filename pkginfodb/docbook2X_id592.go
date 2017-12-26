@@ -30,7 +30,7 @@ var DistroPackageInfo_docbook2X = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "docbook2X",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

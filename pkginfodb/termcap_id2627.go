@@ -30,7 +30,7 @@ var DistroPackageInfo_termcap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "termcap",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

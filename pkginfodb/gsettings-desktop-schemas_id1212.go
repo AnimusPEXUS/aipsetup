@@ -30,7 +30,7 @@ var DistroPackageInfo_gsettings_desktop_schemas = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gsettings-desktop-schemas",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

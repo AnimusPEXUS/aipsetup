@@ -29,7 +29,7 @@ var DistroPackageInfo_kiten = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kiten",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

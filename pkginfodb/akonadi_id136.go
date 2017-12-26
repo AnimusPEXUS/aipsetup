@@ -29,7 +29,7 @@ var DistroPackageInfo_akonadi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "akonadi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

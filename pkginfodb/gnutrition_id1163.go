@@ -30,7 +30,7 @@ var DistroPackageInfo_gnutrition = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnutrition",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

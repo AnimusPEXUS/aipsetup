@@ -30,7 +30,7 @@ var DistroPackageInfo_wireless_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wireless_tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

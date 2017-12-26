@@ -30,7 +30,7 @@ var DistroPackageInfo_liquidwar6 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "liquidwar6",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_marst = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "marst",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

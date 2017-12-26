@@ -29,7 +29,7 @@ var DistroPackageInfo_cairo_5c = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cairo-5c",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

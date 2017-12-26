@@ -30,7 +30,7 @@ var DistroPackageInfo_libglademm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libglademm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

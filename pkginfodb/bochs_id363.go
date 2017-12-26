@@ -29,7 +29,7 @@ var DistroPackageInfo_bochs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bochs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

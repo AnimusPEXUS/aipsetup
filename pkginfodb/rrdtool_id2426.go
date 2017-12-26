@@ -29,7 +29,7 @@ var DistroPackageInfo_rrdtool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rrdtool",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

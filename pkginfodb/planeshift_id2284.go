@@ -29,7 +29,7 @@ var DistroPackageInfo_planeshift = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "planeshift",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

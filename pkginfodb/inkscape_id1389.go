@@ -29,7 +29,7 @@ var DistroPackageInfo_inkscape = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "inkscape",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

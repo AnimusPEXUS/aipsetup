@@ -29,7 +29,7 @@ var DistroPackageInfo_libXxf86vm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXxf86vm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

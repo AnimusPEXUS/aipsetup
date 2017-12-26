@@ -29,7 +29,7 @@ var DistroPackageInfo_gnustep_startup = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnustep-startup",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

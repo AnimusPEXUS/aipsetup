@@ -30,7 +30,7 @@ var DistroPackageInfo_guile_gobject = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "guile-gobject",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

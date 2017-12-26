@@ -30,7 +30,7 @@ var DistroPackageInfo_libiodbc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libiodbc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

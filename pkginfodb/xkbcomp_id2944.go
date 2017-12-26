@@ -29,7 +29,7 @@ var DistroPackageInfo_xkbcomp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xkbcomp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

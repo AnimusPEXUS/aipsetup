@@ -30,7 +30,7 @@ var DistroPackageInfo_glabels = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glabels",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

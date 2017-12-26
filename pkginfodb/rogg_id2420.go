@@ -29,7 +29,7 @@ var DistroPackageInfo_rogg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rogg",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

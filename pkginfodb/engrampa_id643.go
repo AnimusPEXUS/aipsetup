@@ -29,7 +29,7 @@ var DistroPackageInfo_engrampa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "engrampa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

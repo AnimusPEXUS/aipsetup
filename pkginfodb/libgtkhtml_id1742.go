@@ -30,7 +30,7 @@ var DistroPackageInfo_libgtkhtml = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgtkhtml",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

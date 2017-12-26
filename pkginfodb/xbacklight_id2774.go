@@ -29,7 +29,7 @@ var DistroPackageInfo_xbacklight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xbacklight",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

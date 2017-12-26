@@ -29,7 +29,7 @@ var DistroPackageInfo_fribidi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fribidi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_indent = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "indent",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xorg_server = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xorg-server",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

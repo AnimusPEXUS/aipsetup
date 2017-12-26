@@ -29,7 +29,7 @@ var DistroPackageInfo_xload = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xload",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

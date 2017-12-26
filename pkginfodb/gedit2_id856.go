@@ -30,7 +30,7 @@ var DistroPackageInfo_gedit2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gedit2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

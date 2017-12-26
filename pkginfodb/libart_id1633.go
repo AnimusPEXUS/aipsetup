@@ -29,7 +29,7 @@ var DistroPackageInfo_libart = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libart",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

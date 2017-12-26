@@ -30,7 +30,7 @@ var DistroPackageInfo_guile = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "guile",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

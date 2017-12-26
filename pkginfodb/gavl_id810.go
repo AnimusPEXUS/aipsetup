@@ -30,7 +30,7 @@ var DistroPackageInfo_gavl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gavl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

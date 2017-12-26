@@ -30,7 +30,7 @@ var DistroPackageInfo_kawa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "kawa",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

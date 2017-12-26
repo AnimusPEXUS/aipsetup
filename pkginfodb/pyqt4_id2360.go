@@ -30,7 +30,7 @@ var DistroPackageInfo_pyqt4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "PyQt-x11-gpl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libtheora = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libtheora",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

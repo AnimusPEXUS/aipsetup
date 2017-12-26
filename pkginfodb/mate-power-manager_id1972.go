@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_power_manager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-power-manager",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

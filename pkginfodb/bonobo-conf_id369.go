@@ -30,7 +30,7 @@ var DistroPackageInfo_bonobo_conf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bonobo-conf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

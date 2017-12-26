@@ -30,7 +30,7 @@ var DistroPackageInfo_ontv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ontv",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

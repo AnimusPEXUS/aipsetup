@@ -29,7 +29,7 @@ var DistroPackageInfo_sflphone = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sflphone",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

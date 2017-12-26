@@ -30,7 +30,7 @@ var DistroPackageInfo_iagno = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "iagno",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

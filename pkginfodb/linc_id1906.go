@@ -30,7 +30,7 @@ var DistroPackageInfo_linc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "linc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

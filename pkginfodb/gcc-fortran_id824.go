@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_fortran = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-fortran",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

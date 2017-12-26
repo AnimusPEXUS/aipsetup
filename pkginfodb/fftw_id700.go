@@ -30,7 +30,7 @@ var DistroPackageInfo_fftw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fftw",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

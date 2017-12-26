@@ -29,7 +29,7 @@ var DistroPackageInfo_rtmpdump = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rtmpdump",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

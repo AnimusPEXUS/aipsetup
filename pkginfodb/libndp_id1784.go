@@ -30,7 +30,7 @@ var DistroPackageInfo_libndp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libndp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

@@ -30,7 +30,7 @@ var DistroPackageInfo_wpa_supplicant = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wpa_supplicant",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

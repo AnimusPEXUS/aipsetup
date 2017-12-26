@@ -29,7 +29,7 @@ var DistroPackageInfo_pam_cap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pam_cap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

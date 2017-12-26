@@ -29,7 +29,7 @@ var DistroPackageInfo_kdewebdev = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdewebdev",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

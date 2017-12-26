@@ -29,7 +29,7 @@ var DistroPackageInfo_qt_gstreamer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "qt-gstreamer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

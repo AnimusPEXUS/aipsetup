@@ -29,7 +29,7 @@ var DistroPackageInfo_fantasy_island = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fantasy-island",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

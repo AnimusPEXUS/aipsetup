@@ -14,6 +14,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/logger"
+	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 )
 
@@ -153,6 +154,11 @@ func (self *Repository) ListLocalTarballs(package_name string) ([]string, error)
 	}
 
 	for _, i := range res {
+		err := tarballname.IsPossibleTarballNameErr(i)
+		if err != nil {
+			continue
+		}
+
 		if parse_res, err := parser.ParseName(i); err != nil {
 			continue
 		} else {
@@ -161,7 +167,7 @@ func (self *Repository) ListLocalTarballs(package_name string) ([]string, error)
 			}
 		}
 		full_out_path_done := self.GetTarballDoneFilePath(package_name, i)
-		_, err := os.Stat(full_out_path_done)
+		_, err = os.Stat(full_out_path_done)
 		if err != nil {
 			continue
 		}
@@ -248,7 +254,7 @@ func (self *Repository) DeleteFile(
 
 func (self *Repository) MoveInTarball(filename string) error {
 
-	res, err := pkginfodb.DetermineTarballsBuildinfo(filename)
+	res, err := pkginfodb.DetermineTarballsBuildInfo(filename)
 	if err != nil {
 		return err
 	}

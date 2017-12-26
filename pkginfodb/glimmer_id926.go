@@ -30,7 +30,7 @@ var DistroPackageInfo_glimmer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glimmer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

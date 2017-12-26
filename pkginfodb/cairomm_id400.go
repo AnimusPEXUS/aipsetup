@@ -30,7 +30,7 @@ var DistroPackageInfo_cairomm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cairomm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

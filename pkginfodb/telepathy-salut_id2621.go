@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_salut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-salut",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

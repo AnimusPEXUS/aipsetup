@@ -30,7 +30,7 @@ var DistroPackageInfo_ETL = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ETL",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

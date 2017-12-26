@@ -29,7 +29,7 @@ var DistroPackageInfo_poppler_data = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "poppler-data",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

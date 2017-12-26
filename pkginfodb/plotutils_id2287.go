@@ -30,7 +30,7 @@ var DistroPackageInfo_plotutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "plotutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

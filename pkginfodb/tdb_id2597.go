@@ -30,7 +30,7 @@ var DistroPackageInfo_tdb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tdb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xlsfonts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xlsfonts",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

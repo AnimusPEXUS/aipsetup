@@ -30,7 +30,7 @@ var DistroPackageInfo_bonobo_activation = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bonobo-activation",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

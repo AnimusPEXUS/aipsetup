@@ -30,7 +30,7 @@ var DistroPackageInfo_madwifi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "madwifi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

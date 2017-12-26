@@ -29,7 +29,7 @@ var DistroPackageInfo_virglrenderer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "virglrenderer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_trueprint = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "trueprint",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

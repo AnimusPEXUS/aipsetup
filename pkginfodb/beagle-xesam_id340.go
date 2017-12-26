@@ -30,7 +30,7 @@ var DistroPackageInfo_beagle_xesam = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "beagle-xesam",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gcompris = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gcompris",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

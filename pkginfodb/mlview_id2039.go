@@ -30,7 +30,7 @@ var DistroPackageInfo_mlview = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mlview",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_mjpegtools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mjpegtools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

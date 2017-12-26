@@ -29,7 +29,7 @@ var DistroPackageInfo_pam_opie = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pam_opie",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_bandersnatch = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bandersnatch",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

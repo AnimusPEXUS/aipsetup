@@ -29,7 +29,7 @@ var DistroPackageInfo_gr_audio_jack = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gr-audio-jack",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_cfengine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cfengine",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

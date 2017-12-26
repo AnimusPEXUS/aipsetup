@@ -30,7 +30,7 @@ var DistroPackageInfo_adns = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "adns",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_themes_standard = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-themes-standard",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

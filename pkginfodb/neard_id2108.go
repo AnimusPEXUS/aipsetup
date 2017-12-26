@@ -29,7 +29,7 @@ var DistroPackageInfo_neard = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "neard",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_rarian = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rarian",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

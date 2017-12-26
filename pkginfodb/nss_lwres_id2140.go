@@ -29,7 +29,7 @@ var DistroPackageInfo_nss_lwres = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nss_lwres",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

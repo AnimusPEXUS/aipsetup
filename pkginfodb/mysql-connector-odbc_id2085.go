@@ -29,7 +29,7 @@ var DistroPackageInfo_mysql_connector_odbc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mysql-connector-odbc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

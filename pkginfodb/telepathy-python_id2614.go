@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_python = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-python",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

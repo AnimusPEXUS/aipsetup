@@ -30,7 +30,7 @@ var DistroPackageInfo_gsrc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gsrc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

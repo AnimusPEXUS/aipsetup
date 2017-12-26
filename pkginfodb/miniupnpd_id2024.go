@@ -30,7 +30,7 @@ var DistroPackageInfo_miniupnpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "miniupnpd",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

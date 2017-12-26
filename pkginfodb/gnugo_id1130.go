@@ -30,7 +30,7 @@ var DistroPackageInfo_gnugo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnugo",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

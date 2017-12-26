@@ -29,7 +29,7 @@ var DistroPackageInfo_emacs_lisp_intro = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "emacs-lisp-intro",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gedit_cossa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gedit-cossa",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

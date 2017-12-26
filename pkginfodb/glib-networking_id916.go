@@ -30,7 +30,7 @@ var DistroPackageInfo_glib_networking = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glib-networking",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

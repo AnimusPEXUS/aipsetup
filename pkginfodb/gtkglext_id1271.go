@@ -30,7 +30,7 @@ var DistroPackageInfo_gtkglext = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtkglext",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

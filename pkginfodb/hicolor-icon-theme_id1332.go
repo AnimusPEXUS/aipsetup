@@ -29,7 +29,7 @@ var DistroPackageInfo_hicolor_icon_theme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "hicolor-icon-theme",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

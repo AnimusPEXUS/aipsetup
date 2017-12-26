@@ -29,7 +29,7 @@ var DistroPackageInfo_Cython = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Cython",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

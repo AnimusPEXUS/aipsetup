@@ -30,7 +30,7 @@ var DistroPackageInfo_fisicalab = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fisicalab",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

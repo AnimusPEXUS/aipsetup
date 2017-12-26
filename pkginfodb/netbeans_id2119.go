@@ -29,7 +29,7 @@ var DistroPackageInfo_netbeans = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "netbeans",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

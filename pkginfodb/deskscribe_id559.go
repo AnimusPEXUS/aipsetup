@@ -30,7 +30,7 @@ var DistroPackageInfo_deskscribe = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "deskscribe",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_freealut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "freealut",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

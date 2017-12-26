@@ -30,7 +30,7 @@ var DistroPackageInfo_gnushogi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnushogi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

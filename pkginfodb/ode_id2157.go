@@ -30,7 +30,7 @@ var DistroPackageInfo_ode = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ode",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

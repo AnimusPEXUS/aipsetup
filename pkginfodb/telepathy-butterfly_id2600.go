@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_butterfly = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-butterfly",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

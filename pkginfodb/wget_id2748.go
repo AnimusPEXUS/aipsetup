@@ -30,7 +30,7 @@ var DistroPackageInfo_wget = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "wget",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

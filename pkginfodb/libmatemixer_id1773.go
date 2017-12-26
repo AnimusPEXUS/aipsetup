@@ -29,7 +29,7 @@ var DistroPackageInfo_libmatemixer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libmatemixer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

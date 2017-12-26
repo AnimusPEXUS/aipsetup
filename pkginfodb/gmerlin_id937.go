@@ -30,7 +30,7 @@ var DistroPackageInfo_gmerlin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gmerlin",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_toluaplusplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tolua++",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_source_highlight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "source-highlight",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

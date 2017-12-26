@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_sunshine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-sunshine",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_pam_biomouseplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pam_biomouseplus",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

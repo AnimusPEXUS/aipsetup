@@ -29,7 +29,7 @@ var DistroPackageInfo_sather_tutorial = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sather-tutorial",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

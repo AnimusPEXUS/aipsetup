@@ -29,7 +29,7 @@ var DistroPackageInfo_opengfx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "opengfx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

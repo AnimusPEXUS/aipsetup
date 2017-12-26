@@ -30,7 +30,7 @@ var DistroPackageInfo_libwnck = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libwnck",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

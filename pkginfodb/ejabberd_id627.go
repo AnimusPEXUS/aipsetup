@@ -29,7 +29,7 @@ var DistroPackageInfo_ejabberd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ejabberd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

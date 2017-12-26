@@ -29,7 +29,7 @@ var DistroPackageInfo_kbproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kbproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

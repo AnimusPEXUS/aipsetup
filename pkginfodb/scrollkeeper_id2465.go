@@ -30,7 +30,7 @@ var DistroPackageInfo_scrollkeeper = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "scrollkeeper",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

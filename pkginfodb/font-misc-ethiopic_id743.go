@@ -29,7 +29,7 @@ var DistroPackageInfo_font_misc_ethiopic = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-misc-ethiopic",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

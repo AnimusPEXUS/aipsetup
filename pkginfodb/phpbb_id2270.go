@@ -29,7 +29,7 @@ var DistroPackageInfo_phpbb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "phpbb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

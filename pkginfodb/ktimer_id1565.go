@@ -29,7 +29,7 @@ var DistroPackageInfo_ktimer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ktimer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

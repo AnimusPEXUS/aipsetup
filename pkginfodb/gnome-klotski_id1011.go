@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_klotski = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-klotski",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

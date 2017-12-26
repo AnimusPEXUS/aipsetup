@@ -29,7 +29,7 @@ var DistroPackageInfo_pil = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pil",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_common = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-common",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

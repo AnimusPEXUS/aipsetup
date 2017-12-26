@@ -29,7 +29,7 @@ var DistroPackageInfo_kig = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kig",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnun = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnun",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

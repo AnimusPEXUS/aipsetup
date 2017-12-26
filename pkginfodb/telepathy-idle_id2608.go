@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_idle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-idle",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

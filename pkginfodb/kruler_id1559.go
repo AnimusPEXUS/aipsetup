@@ -29,7 +29,7 @@ var DistroPackageInfo_kruler = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kruler",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

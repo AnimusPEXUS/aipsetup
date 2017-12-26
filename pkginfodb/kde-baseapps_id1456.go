@@ -29,7 +29,7 @@ var DistroPackageInfo_kde_baseapps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kde-baseapps",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgtkhtml_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgtkhtml-java",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

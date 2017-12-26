@@ -30,7 +30,7 @@ var DistroPackageInfo_gsegrafix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gsegrafix",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

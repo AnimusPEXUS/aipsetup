@@ -30,7 +30,7 @@ var DistroPackageInfo_balsa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "balsa",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

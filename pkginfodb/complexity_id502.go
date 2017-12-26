@@ -30,7 +30,7 @@ var DistroPackageInfo_complexity = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "complexity",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

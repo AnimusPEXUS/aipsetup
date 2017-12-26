@@ -30,7 +30,7 @@ var DistroPackageInfo_update_manager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "update-manager",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

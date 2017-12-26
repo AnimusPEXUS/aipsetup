@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_cd_burner = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-cd-burner",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

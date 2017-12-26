@@ -29,7 +29,7 @@ var DistroPackageInfo_xclock = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xclock",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_rep_gtk_gnome2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rep-gtk-gnome2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

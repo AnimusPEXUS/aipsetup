@@ -29,7 +29,7 @@ var DistroPackageInfo_kdegraphics_mobipocket = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdegraphics-mobipocket",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

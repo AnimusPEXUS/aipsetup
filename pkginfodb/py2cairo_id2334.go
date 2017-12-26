@@ -29,7 +29,7 @@ var DistroPackageInfo_py2cairo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "py2cairo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

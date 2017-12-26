@@ -30,7 +30,7 @@ var DistroPackageInfo_acme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "acme",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gtkmm2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtkmm2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

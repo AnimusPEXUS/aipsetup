@@ -30,7 +30,7 @@ var DistroPackageInfo_gtk_mac_integration = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtk-mac-integration",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

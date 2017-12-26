@@ -29,7 +29,7 @@ var DistroPackageInfo_libcap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libcap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_enscript = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "enscript",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

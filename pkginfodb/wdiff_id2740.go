@@ -30,7 +30,7 @@ var DistroPackageInfo_wdiff = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "wdiff",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_ammonite = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ammonite",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mon_talk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mon-talk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

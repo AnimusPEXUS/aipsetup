@@ -30,7 +30,7 @@ var DistroPackageInfo_libgtksourceviewmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgtksourceviewmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

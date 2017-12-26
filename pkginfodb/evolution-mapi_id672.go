@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_mapi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-mapi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

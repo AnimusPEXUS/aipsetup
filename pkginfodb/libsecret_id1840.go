@@ -30,7 +30,7 @@ var DistroPackageInfo_libsecret = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libsecret",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_input_dmc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-input-dmc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

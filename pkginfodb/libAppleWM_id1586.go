@@ -29,7 +29,7 @@ var DistroPackageInfo_libAppleWM = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libAppleWM",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

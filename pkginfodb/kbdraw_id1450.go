@@ -30,7 +30,7 @@ var DistroPackageInfo_kbdraw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "kbdraw",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

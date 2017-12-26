@@ -30,7 +30,7 @@ var DistroPackageInfo_d_feet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "d-feet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_randrproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "randrproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

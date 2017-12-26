@@ -30,7 +30,7 @@ var DistroPackageInfo_eris = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "eris",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

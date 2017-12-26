@@ -29,7 +29,7 @@ var DistroPackageInfo_pluma = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pluma",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

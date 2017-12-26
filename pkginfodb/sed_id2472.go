@@ -30,7 +30,7 @@ var DistroPackageInfo_sed = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sed",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

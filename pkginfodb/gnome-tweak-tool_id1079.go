@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_tweak_tool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-tweak-tool",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

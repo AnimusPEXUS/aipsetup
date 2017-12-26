@@ -30,7 +30,7 @@ var DistroPackageInfo_inetutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "inetutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

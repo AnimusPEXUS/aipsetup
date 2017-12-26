@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_system_log = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-system-log",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_kactivities = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kactivities",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

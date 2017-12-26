@@ -29,7 +29,7 @@ var DistroPackageInfo_bzr_explorer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bzr-explorer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

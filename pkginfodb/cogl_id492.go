@@ -30,7 +30,7 @@ var DistroPackageInfo_cogl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cogl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

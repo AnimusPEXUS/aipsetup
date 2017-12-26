@@ -30,7 +30,7 @@ var DistroPackageInfo_ORBit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ORBit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_photos = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-photos",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_crda = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "crda",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

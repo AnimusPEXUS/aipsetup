@@ -29,7 +29,7 @@ var DistroPackageInfo_msr_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "msr-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

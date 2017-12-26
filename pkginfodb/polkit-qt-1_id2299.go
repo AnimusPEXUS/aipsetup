@@ -29,7 +29,7 @@ var DistroPackageInfo_polkit_qt_1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "polkit-qt-1",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

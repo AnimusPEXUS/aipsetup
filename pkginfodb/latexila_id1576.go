@@ -30,7 +30,7 @@ var DistroPackageInfo_latexila = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "latexila",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

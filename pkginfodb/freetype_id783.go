@@ -30,7 +30,7 @@ var DistroPackageInfo_freetype = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "freetype",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

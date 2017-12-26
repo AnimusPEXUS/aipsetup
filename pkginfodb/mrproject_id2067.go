@@ -30,7 +30,7 @@ var DistroPackageInfo_mrproject = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mrproject",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

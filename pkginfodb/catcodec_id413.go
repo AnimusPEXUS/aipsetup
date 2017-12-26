@@ -29,7 +29,7 @@ var DistroPackageInfo_catcodec = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "catcodec",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

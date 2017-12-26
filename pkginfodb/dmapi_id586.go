@@ -29,7 +29,7 @@ var DistroPackageInfo_dmapi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dmapi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

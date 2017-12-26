@@ -29,7 +29,7 @@ var DistroPackageInfo_xstdcmap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xstdcmap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

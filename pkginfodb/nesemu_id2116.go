@@ -29,7 +29,7 @@ var DistroPackageInfo_nesemu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nesemu",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

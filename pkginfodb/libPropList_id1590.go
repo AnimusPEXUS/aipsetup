@@ -30,7 +30,7 @@ var DistroPackageInfo_libPropList = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libPropList",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

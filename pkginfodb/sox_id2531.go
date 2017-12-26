@@ -30,7 +30,7 @@ var DistroPackageInfo_sox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sox",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_plone = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "plone",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

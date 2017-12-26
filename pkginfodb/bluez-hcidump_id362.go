@@ -29,7 +29,7 @@ var DistroPackageInfo_bluez_hcidump = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bluez-hcidump",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_bitmap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bitmap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

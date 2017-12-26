@@ -29,7 +29,7 @@ var DistroPackageInfo_clisp_i386_solaris = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clisp-i386-solaris",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

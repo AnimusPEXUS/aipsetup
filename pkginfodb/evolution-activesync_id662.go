@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_activesync = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-activesync",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

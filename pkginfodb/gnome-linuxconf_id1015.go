@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_linuxconf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-linuxconf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

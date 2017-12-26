@@ -29,7 +29,7 @@ var DistroPackageInfo_clisp_powerpc_unknown_linuxlibc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clisp-powerpc-unknown-linuxlibc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

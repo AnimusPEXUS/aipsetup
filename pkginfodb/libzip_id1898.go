@@ -29,7 +29,7 @@ var DistroPackageInfo_libzip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libzip",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

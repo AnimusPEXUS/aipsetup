@@ -29,7 +29,7 @@ var DistroPackageInfo_Terminal = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Terminal",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

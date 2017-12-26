@@ -30,7 +30,7 @@ var DistroPackageInfo_crux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "crux",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

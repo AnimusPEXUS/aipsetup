@@ -29,7 +29,7 @@ var DistroPackageInfo_perlqt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "perlqt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

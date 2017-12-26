@@ -29,7 +29,7 @@ var DistroPackageInfo_bayonne2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bayonne2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

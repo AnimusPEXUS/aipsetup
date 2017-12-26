@@ -30,7 +30,7 @@ var DistroPackageInfo_ballandpaddle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ballandpaddle",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_desktop_data_model = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "desktop-data-model",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

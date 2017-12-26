@@ -30,7 +30,7 @@ var DistroPackageInfo_bakery = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bakery",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

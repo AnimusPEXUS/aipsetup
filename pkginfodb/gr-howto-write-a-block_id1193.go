@@ -29,7 +29,7 @@ var DistroPackageInfo_gr_howto_write_a_block = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gr-howto-write-a-block",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

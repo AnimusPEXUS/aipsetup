@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_video_arcade = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-video-arcade",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

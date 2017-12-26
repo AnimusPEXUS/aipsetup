@@ -30,7 +30,7 @@ var DistroPackageInfo_sshfs_fuse = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sshfs-fuse",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

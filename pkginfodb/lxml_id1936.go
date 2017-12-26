@@ -29,7 +29,7 @@ var DistroPackageInfo_lxml = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lxml",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

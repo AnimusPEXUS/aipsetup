@@ -30,7 +30,7 @@ var DistroPackageInfo_ember = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ember",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

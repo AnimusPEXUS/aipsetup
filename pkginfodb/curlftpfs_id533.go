@@ -30,7 +30,7 @@ var DistroPackageInfo_curlftpfs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "curlftpfs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

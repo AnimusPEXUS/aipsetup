@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell6_de_alt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell6-de-alt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

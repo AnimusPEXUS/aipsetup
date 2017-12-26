@@ -30,7 +30,7 @@ var DistroPackageInfo_ccaudio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ccaudio",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libXinerama = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXinerama",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

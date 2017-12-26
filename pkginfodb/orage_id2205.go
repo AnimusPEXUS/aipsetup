@@ -29,7 +29,7 @@ var DistroPackageInfo_orage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "orage",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

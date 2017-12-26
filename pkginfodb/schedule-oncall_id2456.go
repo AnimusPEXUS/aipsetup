@@ -29,7 +29,7 @@ var DistroPackageInfo_schedule_oncall = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "schedule-oncall",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_isl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "isl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

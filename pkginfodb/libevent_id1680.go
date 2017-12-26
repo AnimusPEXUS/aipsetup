@@ -30,7 +30,7 @@ var DistroPackageInfo_libevent = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libevent",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

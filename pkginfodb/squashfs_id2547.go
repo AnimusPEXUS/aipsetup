@@ -30,7 +30,7 @@ var DistroPackageInfo_squashfs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "squashfs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

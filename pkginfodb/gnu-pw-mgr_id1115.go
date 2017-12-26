@@ -30,7 +30,7 @@ var DistroPackageInfo_gnu_pw_mgr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnu-pw-mgr",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

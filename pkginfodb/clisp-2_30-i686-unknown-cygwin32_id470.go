@@ -29,7 +29,7 @@ var DistroPackageInfo_clisp_2_30_i686_unknown_cygwin32 = &basictypes.PackageInfo
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clisp-2.30-i686-unknown-cygwin32",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

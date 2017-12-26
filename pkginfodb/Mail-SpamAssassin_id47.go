@@ -29,7 +29,7 @@ var DistroPackageInfo_Mail_SpamAssassin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Mail-SpamAssassin",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

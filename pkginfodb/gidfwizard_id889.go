@@ -29,7 +29,7 @@ var DistroPackageInfo_gidfwizard = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gidfwizard",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

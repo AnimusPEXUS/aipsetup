@@ -30,7 +30,7 @@ var DistroPackageInfo_libsocialweb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libsocialweb",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

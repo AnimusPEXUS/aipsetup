@@ -30,7 +30,7 @@ var DistroPackageInfo_clisp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "clisp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_phone_manager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-phone-manager",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_ease = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ease",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

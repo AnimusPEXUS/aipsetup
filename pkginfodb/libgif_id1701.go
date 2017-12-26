@@ -29,7 +29,7 @@ var DistroPackageInfo_libgif = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libgif",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_icedtea_sound = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "icedtea-sound",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

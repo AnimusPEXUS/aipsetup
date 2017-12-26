@@ -30,7 +30,7 @@ var DistroPackageInfo_pessulus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pessulus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

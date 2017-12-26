@@ -30,7 +30,7 @@ var DistroPackageInfo_cdemu_client = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cdemu-client",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_systemd_ui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "systemd-ui",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

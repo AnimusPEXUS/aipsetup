@@ -29,7 +29,7 @@ var DistroPackageInfo_A3Com = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "A3Com",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

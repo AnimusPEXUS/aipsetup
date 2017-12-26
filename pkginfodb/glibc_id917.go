@@ -30,7 +30,7 @@ var DistroPackageInfo_glibc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glibc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

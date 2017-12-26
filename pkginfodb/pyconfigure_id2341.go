@@ -30,7 +30,7 @@ var DistroPackageInfo_pyconfigure = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pyconfigure",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_imake = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "imake",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

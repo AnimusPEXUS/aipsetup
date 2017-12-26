@@ -30,7 +30,7 @@ var DistroPackageInfo_libgssh = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgssh",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_games_extra_data = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-games-extra-data",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

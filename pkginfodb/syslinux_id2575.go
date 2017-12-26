@@ -30,7 +30,7 @@ var DistroPackageInfo_syslinux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "syslinux",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

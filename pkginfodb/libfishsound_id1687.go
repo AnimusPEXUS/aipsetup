@@ -29,7 +29,7 @@ var DistroPackageInfo_libfishsound = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libfishsound",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

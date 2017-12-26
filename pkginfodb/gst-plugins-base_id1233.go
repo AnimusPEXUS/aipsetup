@@ -30,7 +30,7 @@ var DistroPackageInfo_gst_plugins_base = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gst-plugins-base",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_URI = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "URI",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

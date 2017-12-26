@@ -29,7 +29,7 @@ var DistroPackageInfo_xfwp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfwp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

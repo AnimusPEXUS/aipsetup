@@ -30,7 +30,7 @@ var DistroPackageInfo_go = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "go",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

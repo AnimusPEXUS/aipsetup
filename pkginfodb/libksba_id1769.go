@@ -29,7 +29,7 @@ var DistroPackageInfo_libksba = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libksba",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgtcpsocket = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgtcpsocket",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

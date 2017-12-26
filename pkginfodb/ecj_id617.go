@@ -29,7 +29,7 @@ var DistroPackageInfo_ecj = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ecj",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

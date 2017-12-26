@@ -30,7 +30,7 @@ var DistroPackageInfo_bash_completion = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bash-completion",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_scrnsaverproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "scrnsaverproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

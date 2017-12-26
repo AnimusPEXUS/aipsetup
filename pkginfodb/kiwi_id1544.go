@@ -30,7 +30,7 @@ var DistroPackageInfo_kiwi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "kiwi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

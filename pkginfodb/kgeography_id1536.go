@@ -29,7 +29,7 @@ var DistroPackageInfo_kgeography = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kgeography",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

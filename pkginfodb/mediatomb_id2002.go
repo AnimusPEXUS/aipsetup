@@ -30,7 +30,7 @@ var DistroPackageInfo_mediatomb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mediatomb",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

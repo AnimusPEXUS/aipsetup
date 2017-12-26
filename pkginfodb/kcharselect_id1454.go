@@ -29,7 +29,7 @@ var DistroPackageInfo_kcharselect = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kcharselect",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

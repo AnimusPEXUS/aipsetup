@@ -29,7 +29,7 @@ var DistroPackageInfo_sbc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sbc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

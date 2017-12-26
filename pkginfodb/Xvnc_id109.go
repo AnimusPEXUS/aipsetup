@@ -29,7 +29,7 @@ var DistroPackageInfo_Xvnc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Xvnc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

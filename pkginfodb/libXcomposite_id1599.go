@@ -29,7 +29,7 @@ var DistroPackageInfo_libXcomposite = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXcomposite",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

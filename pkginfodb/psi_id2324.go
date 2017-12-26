@@ -30,7 +30,7 @@ var DistroPackageInfo_psi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "psi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

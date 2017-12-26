@@ -30,7 +30,7 @@ var DistroPackageInfo_cpio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cpio",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

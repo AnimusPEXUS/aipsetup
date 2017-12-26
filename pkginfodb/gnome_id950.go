@@ -29,7 +29,7 @@ var DistroPackageInfo_gnome = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnome",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

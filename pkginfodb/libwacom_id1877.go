@@ -30,7 +30,7 @@ var DistroPackageInfo_libwacom = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libwacom",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

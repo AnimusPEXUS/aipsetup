@@ -30,7 +30,7 @@ var DistroPackageInfo_toutdoux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "toutdoux",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

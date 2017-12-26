@@ -29,7 +29,7 @@ var DistroPackageInfo_lua = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lua",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

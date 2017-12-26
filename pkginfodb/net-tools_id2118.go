@@ -30,7 +30,7 @@ var DistroPackageInfo_net_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "net-tools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

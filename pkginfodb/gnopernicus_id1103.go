@@ -30,7 +30,7 @@ var DistroPackageInfo_gnopernicus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnopernicus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

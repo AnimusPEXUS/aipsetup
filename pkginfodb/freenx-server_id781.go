@@ -29,7 +29,7 @@ var DistroPackageInfo_freenx_server = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "freenx-server",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

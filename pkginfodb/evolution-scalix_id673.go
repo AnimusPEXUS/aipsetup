@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_scalix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-scalix",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

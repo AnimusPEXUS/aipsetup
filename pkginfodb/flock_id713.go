@@ -29,7 +29,7 @@ var DistroPackageInfo_flock = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "flock",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

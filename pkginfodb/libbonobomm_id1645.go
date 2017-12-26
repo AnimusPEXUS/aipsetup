@@ -30,7 +30,7 @@ var DistroPackageInfo_libbonobomm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libbonobomm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

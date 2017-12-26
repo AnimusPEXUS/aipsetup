@@ -30,7 +30,7 @@ var DistroPackageInfo_xz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xz",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

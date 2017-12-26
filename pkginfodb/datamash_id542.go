@@ -30,7 +30,7 @@ var DistroPackageInfo_datamash = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "datamash",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

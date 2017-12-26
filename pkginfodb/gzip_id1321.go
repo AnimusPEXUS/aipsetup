@@ -30,7 +30,7 @@ var DistroPackageInfo_gzip = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gzip",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

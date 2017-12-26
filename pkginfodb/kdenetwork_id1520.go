@@ -29,7 +29,7 @@ var DistroPackageInfo_kdenetwork = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdenetwork",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

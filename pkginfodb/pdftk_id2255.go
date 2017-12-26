@@ -29,7 +29,7 @@ var DistroPackageInfo_pdftk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pdftk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

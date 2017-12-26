@@ -29,7 +29,7 @@ var DistroPackageInfo_guake = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "guake",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

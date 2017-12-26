@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_music = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-music",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

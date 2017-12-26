@@ -29,7 +29,7 @@ var DistroPackageInfo_xscope = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xscope",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

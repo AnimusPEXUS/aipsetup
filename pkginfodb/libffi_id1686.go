@@ -30,7 +30,7 @@ var DistroPackageInfo_libffi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libffi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

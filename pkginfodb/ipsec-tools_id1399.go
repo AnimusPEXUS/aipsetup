@@ -30,7 +30,7 @@ var DistroPackageInfo_ipsec_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ipsec-tools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

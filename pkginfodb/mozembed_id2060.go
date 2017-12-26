@@ -29,7 +29,7 @@ var DistroPackageInfo_mozembed = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mozembed",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

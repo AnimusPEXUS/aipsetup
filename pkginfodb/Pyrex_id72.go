@@ -29,7 +29,7 @@ var DistroPackageInfo_Pyrex = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Pyrex",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

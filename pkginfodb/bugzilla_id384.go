@@ -29,7 +29,7 @@ var DistroPackageInfo_bugzilla = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bugzilla",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

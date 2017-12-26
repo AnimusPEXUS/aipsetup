@@ -30,7 +30,7 @@ var DistroPackageInfo_quadrapassel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "quadrapassel",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

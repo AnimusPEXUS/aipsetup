@@ -30,7 +30,7 @@ var DistroPackageInfo_mercator = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mercator",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

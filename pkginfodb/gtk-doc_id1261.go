@@ -30,7 +30,7 @@ var DistroPackageInfo_gtk_doc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtk-doc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

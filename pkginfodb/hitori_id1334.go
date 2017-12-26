@@ -30,7 +30,7 @@ var DistroPackageInfo_hitori = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hitori",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_docbook_sgml4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "docbook",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

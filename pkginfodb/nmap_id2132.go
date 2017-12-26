@@ -29,7 +29,7 @@ var DistroPackageInfo_nmap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nmap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

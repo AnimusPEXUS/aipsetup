@@ -30,7 +30,7 @@ var DistroPackageInfo_qbittorrent = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "qbittorrent",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

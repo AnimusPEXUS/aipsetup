@@ -30,7 +30,7 @@ var DistroPackageInfo_dbus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dbus",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

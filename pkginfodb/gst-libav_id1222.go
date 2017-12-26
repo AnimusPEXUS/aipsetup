@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_libav = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-libav",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

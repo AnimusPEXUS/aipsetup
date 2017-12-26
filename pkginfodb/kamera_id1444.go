@@ -29,7 +29,7 @@ var DistroPackageInfo_kamera = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kamera",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

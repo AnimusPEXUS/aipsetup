@@ -30,7 +30,7 @@ var DistroPackageInfo_libglade = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libglade",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

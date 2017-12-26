@@ -30,7 +30,7 @@ var DistroPackageInfo_accerciser = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "accerciser",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

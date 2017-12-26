@@ -29,7 +29,7 @@ var DistroPackageInfo_SDL_mixer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "SDL_mixer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

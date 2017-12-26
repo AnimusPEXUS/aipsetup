@@ -30,7 +30,7 @@ var DistroPackageInfo_pangox_compat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pangox-compat",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

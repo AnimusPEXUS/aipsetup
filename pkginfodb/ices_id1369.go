@@ -29,7 +29,7 @@ var DistroPackageInfo_ices = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ices",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

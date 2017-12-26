@@ -30,7 +30,7 @@ var DistroPackageInfo_libgconf_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgconf-java",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

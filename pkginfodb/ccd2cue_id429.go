@@ -30,7 +30,7 @@ var DistroPackageInfo_ccd2cue = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ccd2cue",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

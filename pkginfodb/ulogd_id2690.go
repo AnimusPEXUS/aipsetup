@@ -29,7 +29,7 @@ var DistroPackageInfo_ulogd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ulogd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

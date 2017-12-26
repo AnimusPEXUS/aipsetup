@@ -30,7 +30,7 @@ var DistroPackageInfo_libyaml = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libyaml",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

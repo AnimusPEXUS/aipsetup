@@ -29,7 +29,7 @@ var DistroPackageInfo_sather_extra = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sather-extra",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

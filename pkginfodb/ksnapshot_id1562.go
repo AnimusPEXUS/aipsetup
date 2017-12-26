@@ -29,7 +29,7 @@ var DistroPackageInfo_ksnapshot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ksnapshot",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

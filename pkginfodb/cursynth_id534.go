@@ -30,7 +30,7 @@ var DistroPackageInfo_cursynth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cursynth",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libodb_qt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libodb-qt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

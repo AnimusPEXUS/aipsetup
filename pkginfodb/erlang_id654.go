@@ -29,7 +29,7 @@ var DistroPackageInfo_erlang = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "otp_src",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

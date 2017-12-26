@@ -29,7 +29,7 @@ var DistroPackageInfo_jasper = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "jasper",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

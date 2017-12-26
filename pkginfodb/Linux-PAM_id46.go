@@ -30,7 +30,7 @@ var DistroPackageInfo_Linux_PAM = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "Linux-PAM",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

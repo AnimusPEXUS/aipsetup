@@ -29,7 +29,7 @@ var DistroPackageInfo_DeviceKit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "DeviceKit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

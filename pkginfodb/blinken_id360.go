@@ -29,7 +29,7 @@ var DistroPackageInfo_blinken = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "blinken",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

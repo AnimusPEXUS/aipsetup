@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_openmax = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-openmax",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

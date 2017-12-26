@@ -30,7 +30,7 @@ var DistroPackageInfo_msitools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "msitools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

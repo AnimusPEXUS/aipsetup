@@ -29,7 +29,7 @@ var DistroPackageInfo_tct = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tct",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

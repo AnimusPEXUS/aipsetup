@@ -29,7 +29,7 @@ var DistroPackageInfo_sessreg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sessreg",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

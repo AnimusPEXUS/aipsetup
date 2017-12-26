@@ -29,7 +29,7 @@ var DistroPackageInfo_naev = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "naev",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

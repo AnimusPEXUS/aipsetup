@@ -29,7 +29,7 @@ var DistroPackageInfo_gnupg1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnupg",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

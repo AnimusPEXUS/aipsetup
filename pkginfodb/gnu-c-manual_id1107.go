@@ -30,7 +30,7 @@ var DistroPackageInfo_gnu_c_manual = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnu-c-manual",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

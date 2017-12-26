@@ -30,7 +30,7 @@ var DistroPackageInfo_git_manpages = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "git-manpages",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_celt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "celt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

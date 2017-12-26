@@ -30,7 +30,7 @@ var DistroPackageInfo_girl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "girl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

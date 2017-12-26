@@ -29,7 +29,7 @@ var DistroPackageInfo_xfce4_session = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfce4-session",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

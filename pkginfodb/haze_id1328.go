@@ -29,7 +29,7 @@ var DistroPackageInfo_haze = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "haze",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

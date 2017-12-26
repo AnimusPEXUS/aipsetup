@@ -29,7 +29,7 @@ var DistroPackageInfo_linphone = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "linphone",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

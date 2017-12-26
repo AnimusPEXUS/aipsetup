@@ -30,7 +30,7 @@ var DistroPackageInfo_elfutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "elfutils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

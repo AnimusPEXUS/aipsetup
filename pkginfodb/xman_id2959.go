@@ -29,7 +29,7 @@ var DistroPackageInfo_xman = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xman",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

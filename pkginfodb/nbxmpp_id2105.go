@@ -29,7 +29,7 @@ var DistroPackageInfo_nbxmpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nbxmpp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

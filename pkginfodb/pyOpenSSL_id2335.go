@@ -29,7 +29,7 @@ var DistroPackageInfo_pyOpenSSL = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pyOpenSSL",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_image_analyzer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "image-analyzer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

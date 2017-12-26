@@ -30,7 +30,7 @@ var DistroPackageInfo_libole2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libole2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_grilo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "grilo",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_hdparm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hdparm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

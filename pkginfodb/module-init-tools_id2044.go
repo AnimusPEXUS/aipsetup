@@ -29,7 +29,7 @@ var DistroPackageInfo_module_init_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "module-init-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

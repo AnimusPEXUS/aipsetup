@@ -29,7 +29,7 @@ var DistroPackageInfo_ofono = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ofono",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_plugins_bad = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-plugins-bad",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

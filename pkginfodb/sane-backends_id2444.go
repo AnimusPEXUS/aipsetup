@@ -29,7 +29,7 @@ var DistroPackageInfo_sane_backends = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sane-backends",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell6_pa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell6-pa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

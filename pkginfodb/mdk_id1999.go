@@ -30,7 +30,7 @@ var DistroPackageInfo_mdk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mdk",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

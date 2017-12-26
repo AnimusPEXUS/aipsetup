@@ -30,7 +30,7 @@ var DistroPackageInfo_qemu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "qemu",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

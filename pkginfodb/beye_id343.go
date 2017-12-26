@@ -29,7 +29,7 @@ var DistroPackageInfo_beye = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "beye",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

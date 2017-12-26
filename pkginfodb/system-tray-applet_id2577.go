@@ -30,7 +30,7 @@ var DistroPackageInfo_system_tray_applet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "system-tray-applet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

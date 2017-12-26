@@ -30,7 +30,7 @@ var DistroPackageInfo_cgkit_py3k = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cgkit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

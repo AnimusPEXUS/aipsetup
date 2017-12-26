@@ -29,7 +29,7 @@ var DistroPackageInfo_glibc_localedata = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glibc-localedata",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

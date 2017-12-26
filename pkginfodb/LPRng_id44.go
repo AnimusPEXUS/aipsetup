@@ -30,7 +30,7 @@ var DistroPackageInfo_LPRng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "LPRng",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

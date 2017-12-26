@@ -29,7 +29,7 @@ var DistroPackageInfo_dhcpcd_dbus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dhcpcd-dbus",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

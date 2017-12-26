@@ -30,7 +30,7 @@ var DistroPackageInfo_ptlib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ptlib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

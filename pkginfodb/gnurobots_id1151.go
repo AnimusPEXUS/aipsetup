@@ -30,7 +30,7 @@ var DistroPackageInfo_gnurobots = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnurobots",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

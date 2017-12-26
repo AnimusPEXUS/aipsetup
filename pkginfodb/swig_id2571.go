@@ -30,7 +30,7 @@ var DistroPackageInfo_swig = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "swig",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

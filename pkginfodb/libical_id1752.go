@@ -30,7 +30,7 @@ var DistroPackageInfo_libical = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libical",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

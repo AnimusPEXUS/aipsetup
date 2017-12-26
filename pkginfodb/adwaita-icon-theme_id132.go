@@ -30,7 +30,7 @@ var DistroPackageInfo_adwaita_icon_theme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "adwaita-icon-theme",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

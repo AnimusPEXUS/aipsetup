@@ -29,7 +29,7 @@ var DistroPackageInfo_mkcfm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mkcfm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

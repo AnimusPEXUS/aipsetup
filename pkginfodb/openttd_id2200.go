@@ -29,7 +29,7 @@ var DistroPackageInfo_openttd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openttd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

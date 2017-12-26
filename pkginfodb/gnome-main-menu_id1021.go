@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_main_menu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-main-menu",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

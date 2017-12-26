@@ -29,7 +29,7 @@ var DistroPackageInfo_libXau = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXau",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

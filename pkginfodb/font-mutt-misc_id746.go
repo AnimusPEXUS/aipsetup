@@ -29,7 +29,7 @@ var DistroPackageInfo_font_mutt_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-mutt-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

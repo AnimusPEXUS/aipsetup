@@ -29,7 +29,7 @@ var DistroPackageInfo_IronPython = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "IronPython",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

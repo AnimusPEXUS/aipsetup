@@ -30,7 +30,7 @@ var DistroPackageInfo_spacenavd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "spacenavd",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

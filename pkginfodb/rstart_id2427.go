@@ -29,7 +29,7 @@ var DistroPackageInfo_rstart = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rstart",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

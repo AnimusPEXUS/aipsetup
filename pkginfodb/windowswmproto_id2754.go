@@ -29,7 +29,7 @@ var DistroPackageInfo_windowswmproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "windowswmproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

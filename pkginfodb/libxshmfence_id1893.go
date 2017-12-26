@@ -29,7 +29,7 @@ var DistroPackageInfo_libxshmfence = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libxshmfence",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgtkmozembed_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgtkmozembed-java",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

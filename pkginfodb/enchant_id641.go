@@ -29,7 +29,7 @@ var DistroPackageInfo_enchant = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "enchant",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libxfcegui4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libxfcegui4",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

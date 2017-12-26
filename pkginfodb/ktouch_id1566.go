@@ -29,7 +29,7 @@ var DistroPackageInfo_ktouch = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ktouch",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

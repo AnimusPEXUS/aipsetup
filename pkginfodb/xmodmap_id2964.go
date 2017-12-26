@@ -29,7 +29,7 @@ var DistroPackageInfo_xmodmap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xmodmap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

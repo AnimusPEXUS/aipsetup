@@ -30,7 +30,7 @@ var DistroPackageInfo_clutter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "clutter",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

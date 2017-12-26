@@ -30,7 +30,7 @@ var DistroPackageInfo_gthumb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gthumb",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

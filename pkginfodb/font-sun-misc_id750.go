@@ -29,7 +29,7 @@ var DistroPackageInfo_font_sun_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-sun-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

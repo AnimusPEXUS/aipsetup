@@ -29,7 +29,7 @@ var DistroPackageInfo_applewmproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "applewmproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

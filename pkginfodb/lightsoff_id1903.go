@@ -30,7 +30,7 @@ var DistroPackageInfo_lightsoff = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "lightsoff",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

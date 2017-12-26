@@ -29,7 +29,7 @@ var DistroPackageInfo_Device_Cdio_v = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Device-Cdio-v",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

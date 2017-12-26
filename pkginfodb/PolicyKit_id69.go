@@ -29,7 +29,7 @@ var DistroPackageInfo_PolicyKit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "PolicyKit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

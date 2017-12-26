@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome2_user_docs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome2-user-docs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

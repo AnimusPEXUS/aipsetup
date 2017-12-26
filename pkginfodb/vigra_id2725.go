@@ -30,7 +30,7 @@ var DistroPackageInfo_vigra = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "vigra",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

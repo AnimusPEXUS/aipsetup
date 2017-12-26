@@ -30,7 +30,7 @@ var DistroPackageInfo_bridge_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bridge-utils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

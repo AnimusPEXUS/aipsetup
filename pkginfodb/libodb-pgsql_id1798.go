@@ -29,7 +29,7 @@ var DistroPackageInfo_libodb_pgsql = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libodb-pgsql",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

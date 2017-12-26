@@ -29,7 +29,7 @@ var DistroPackageInfo_openbox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openbox",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

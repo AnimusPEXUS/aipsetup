@@ -30,7 +30,7 @@ var DistroPackageInfo_gtk_xfce_engine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtk-xfce-engine",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_pptpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pptpd",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

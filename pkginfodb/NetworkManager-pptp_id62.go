@@ -30,7 +30,7 @@ var DistroPackageInfo_NetworkManager_pptp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "NetworkManager-pptp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

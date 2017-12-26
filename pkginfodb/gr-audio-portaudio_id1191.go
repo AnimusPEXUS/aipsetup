@@ -29,7 +29,7 @@ var DistroPackageInfo_gr_audio_portaudio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gr-audio-portaudio",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

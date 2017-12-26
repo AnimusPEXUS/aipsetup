@@ -30,7 +30,7 @@ var DistroPackageInfo_freeciv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "freeciv",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

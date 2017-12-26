@@ -30,7 +30,7 @@ var DistroPackageInfo_hurd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hurd",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_kernel_headers = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kernel-headers",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libepc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libepc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

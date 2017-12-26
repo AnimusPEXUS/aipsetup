@@ -30,7 +30,7 @@ var DistroPackageInfo_glade_3 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glade-3",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

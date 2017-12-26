@@ -30,7 +30,7 @@ var DistroPackageInfo_opengl_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "opengl-glib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

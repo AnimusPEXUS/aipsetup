@@ -30,7 +30,7 @@ var DistroPackageInfo_serveez = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "serveez",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libbtctl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libbtctl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

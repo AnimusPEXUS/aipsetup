@@ -30,7 +30,7 @@ var DistroPackageInfo_banter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "banter",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

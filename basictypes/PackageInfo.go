@@ -6,10 +6,6 @@ type PackageInfo struct {
 	Description string //`json:"description"`
 	HomePage    string //`json:"homepage"`
 
-	TarballFileNameParser string //`json:"tarball_filename_parser"`
-	TarballName           string //`json:"tarball_name"`
-	Filters               []string
-
 	BuilderName string //`json:"builder_name"`
 
 	Removable          bool //`json:"removable"`
@@ -24,9 +20,10 @@ type PackageInfo struct {
 
 	Tags []string //`json:"tags"`
 
-	TarballVersionTool string //`json:"tarball_version_tool"`
-	TarballProvider    string //`json:"tarball_provider"`
-
+	TarballName           string //`json:"tarball_name"`
+	TarballFileNameParser string //`json:"tarball_filename_parser"`
+	TarballFilters        []string
+	TarballProvider       string //`json:"tarball_provider"`
 	// NOTE: some providers, like sf.net, requires to know additional data to
 	//       work with. for instance sf.net needs a project name, as one may
 	//       spawn multiple tarball names. so, for such additional data, this
@@ -37,4 +34,5 @@ type PackageInfo struct {
 	TarballProviderUseCache         bool
 	TarballProviderCachePresetName  string
 	TarballProviderVersionSyncDepth int
+	TarballVersionTool              string //`json:"tarball_version_tool"`
 }

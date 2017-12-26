@@ -30,7 +30,7 @@ var DistroPackageInfo_valgrind = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "valgrind",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

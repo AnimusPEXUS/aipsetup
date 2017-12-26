@@ -29,7 +29,7 @@ var DistroPackageInfo_brlcad = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "brlcad",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

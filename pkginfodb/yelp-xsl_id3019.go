@@ -30,7 +30,7 @@ var DistroPackageInfo_yelp_xsl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "yelp-xsl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

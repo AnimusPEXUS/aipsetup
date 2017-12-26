@@ -30,7 +30,7 @@ var DistroPackageInfo_libxslt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libxslt",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

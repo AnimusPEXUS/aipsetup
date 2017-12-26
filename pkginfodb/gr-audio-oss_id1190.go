@@ -29,7 +29,7 @@ var DistroPackageInfo_gr_audio_oss = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gr-audio-oss",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

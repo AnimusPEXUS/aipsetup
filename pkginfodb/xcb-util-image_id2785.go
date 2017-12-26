@@ -29,7 +29,7 @@ var DistroPackageInfo_xcb_util_image = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcb-util-image",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

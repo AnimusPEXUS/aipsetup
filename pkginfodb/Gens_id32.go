@@ -30,7 +30,7 @@ var DistroPackageInfo_Gens = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "Gens",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

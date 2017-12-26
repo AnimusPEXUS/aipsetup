@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_desktop_sharp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-desktop-sharp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

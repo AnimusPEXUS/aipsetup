@@ -29,7 +29,7 @@ var DistroPackageInfo_libXp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

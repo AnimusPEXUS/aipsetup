@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_nibbles = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-nibbles",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

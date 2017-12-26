@@ -30,7 +30,7 @@ var DistroPackageInfo_libpeas = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libpeas",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnomeuimm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnomeuimm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

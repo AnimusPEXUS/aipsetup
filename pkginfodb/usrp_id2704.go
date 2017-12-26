@@ -29,7 +29,7 @@ var DistroPackageInfo_usrp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "usrp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

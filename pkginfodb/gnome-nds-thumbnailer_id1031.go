@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_nds_thumbnailer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-nds-thumbnailer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

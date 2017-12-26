@@ -29,7 +29,7 @@ var DistroPackageInfo_mplayer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "MPlayer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

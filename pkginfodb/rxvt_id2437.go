@@ -29,7 +29,7 @@ var DistroPackageInfo_rxvt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rxvt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

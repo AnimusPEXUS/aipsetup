@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_couchdb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-couchdb",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

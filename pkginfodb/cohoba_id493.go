@@ -29,7 +29,7 @@ var DistroPackageInfo_cohoba = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cohoba",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

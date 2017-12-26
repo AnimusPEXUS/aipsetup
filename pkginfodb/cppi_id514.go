@@ -30,7 +30,7 @@ var DistroPackageInfo_cppi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cppi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

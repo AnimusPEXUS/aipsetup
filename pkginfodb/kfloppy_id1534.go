@@ -29,7 +29,7 @@ var DistroPackageInfo_kfloppy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kfloppy",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

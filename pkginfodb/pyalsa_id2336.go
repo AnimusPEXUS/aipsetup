@@ -29,7 +29,7 @@ var DistroPackageInfo_pyalsa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pyalsa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

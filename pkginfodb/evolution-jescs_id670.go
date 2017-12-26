@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_jescs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-jescs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

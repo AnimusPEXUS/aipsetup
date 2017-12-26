@@ -30,7 +30,7 @@ var DistroPackageInfo_gnu_crypto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnu-crypto",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

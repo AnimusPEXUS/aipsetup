@@ -30,7 +30,7 @@ var DistroPackageInfo_gswitchit_plugins = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gswitchit-plugins",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

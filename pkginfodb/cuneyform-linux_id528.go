@@ -29,7 +29,7 @@ var DistroPackageInfo_cuneyform_linux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cuneyform-linux",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

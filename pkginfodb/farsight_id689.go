@@ -29,7 +29,7 @@ var DistroPackageInfo_farsight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "farsight",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

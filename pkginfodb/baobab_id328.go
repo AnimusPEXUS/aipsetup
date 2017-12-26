@@ -30,7 +30,7 @@ var DistroPackageInfo_baobab = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "baobab",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

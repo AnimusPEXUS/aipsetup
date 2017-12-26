@@ -30,7 +30,7 @@ var DistroPackageInfo_iw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "iw",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

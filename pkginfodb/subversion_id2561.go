@@ -30,7 +30,7 @@ var DistroPackageInfo_subversion = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "subversion",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

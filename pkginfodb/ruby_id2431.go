@@ -29,7 +29,7 @@ var DistroPackageInfo_ruby = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ruby",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

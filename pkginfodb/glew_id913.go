@@ -30,7 +30,7 @@ var DistroPackageInfo_glew = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glew",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

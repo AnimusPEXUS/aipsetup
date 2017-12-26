@@ -30,7 +30,7 @@ var DistroPackageInfo_espeak = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "espeak",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

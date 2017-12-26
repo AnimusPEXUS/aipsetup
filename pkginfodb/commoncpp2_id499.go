@@ -29,7 +29,7 @@ var DistroPackageInfo_commoncpp2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "commoncpp2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

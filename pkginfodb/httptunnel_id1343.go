@@ -30,7 +30,7 @@ var DistroPackageInfo_httptunnel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "httptunnel",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_frogr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "frogr",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_listres = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "listres",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

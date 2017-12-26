@@ -29,7 +29,7 @@ var DistroPackageInfo_gnue_navigator = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnue-navigator",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_desktop_testing = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-desktop-testing",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

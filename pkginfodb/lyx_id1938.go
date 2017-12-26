@@ -29,7 +29,7 @@ var DistroPackageInfo_lyx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lyx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

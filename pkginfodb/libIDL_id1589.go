@@ -30,7 +30,7 @@ var DistroPackageInfo_libIDL = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libIDL",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

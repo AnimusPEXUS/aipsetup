@@ -30,7 +30,7 @@ var DistroPackageInfo_zint = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "zint",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

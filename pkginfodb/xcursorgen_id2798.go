@@ -29,7 +29,7 @@ var DistroPackageInfo_xcursorgen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcursorgen",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

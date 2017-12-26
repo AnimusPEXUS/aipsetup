@@ -29,7 +29,7 @@ var DistroPackageInfo_Net_DNS = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Net-DNS",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

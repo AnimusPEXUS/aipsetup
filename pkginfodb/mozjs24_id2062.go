@@ -29,7 +29,7 @@ var DistroPackageInfo_mozjs24 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mozjs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

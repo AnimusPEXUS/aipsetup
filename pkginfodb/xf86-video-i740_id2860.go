@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_video_i740 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-video-i740",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_liboil = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "liboil",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

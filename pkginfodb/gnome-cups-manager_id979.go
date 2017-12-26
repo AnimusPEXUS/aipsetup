@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_cups_manager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-cups-manager",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

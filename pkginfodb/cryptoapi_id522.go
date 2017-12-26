@@ -29,7 +29,7 @@ var DistroPackageInfo_cryptoapi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cryptoapi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gphoto2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gphoto2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

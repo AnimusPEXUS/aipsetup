@@ -30,7 +30,7 @@ var DistroPackageInfo_grub2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "grub",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

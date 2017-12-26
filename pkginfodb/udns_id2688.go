@@ -29,7 +29,7 @@ var DistroPackageInfo_udns = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "udns",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libiec61883 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libiec61883",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_nepomuk_music_kio_slave = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nepomuk-music-kio-slave",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_slang = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "slang",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

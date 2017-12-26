@@ -29,7 +29,7 @@ var DistroPackageInfo_blink_qt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "blink-qt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

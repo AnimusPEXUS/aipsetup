@@ -29,7 +29,7 @@ var DistroPackageInfo_libXTrap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXTrap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

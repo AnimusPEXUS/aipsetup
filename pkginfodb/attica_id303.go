@@ -29,7 +29,7 @@ var DistroPackageInfo_attica = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "attica",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

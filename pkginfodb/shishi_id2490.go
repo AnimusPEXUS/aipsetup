@@ -30,7 +30,7 @@ var DistroPackageInfo_shishi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "shishi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

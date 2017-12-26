@@ -30,7 +30,7 @@ var DistroPackageInfo_gvpe = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gvpe",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

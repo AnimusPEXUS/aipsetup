@@ -30,7 +30,7 @@ var DistroPackageInfo_rygel_gst_0_10_media_engine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rygel-gst-0-10-media-engine",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

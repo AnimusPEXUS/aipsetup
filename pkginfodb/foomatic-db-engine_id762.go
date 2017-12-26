@@ -30,7 +30,7 @@ var DistroPackageInfo_foomatic_db_engine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "foomatic-db-engine",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

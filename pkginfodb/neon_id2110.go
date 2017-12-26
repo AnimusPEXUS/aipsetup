@@ -30,7 +30,7 @@ var DistroPackageInfo_neon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "neon",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

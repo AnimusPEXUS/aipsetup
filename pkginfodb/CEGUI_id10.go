@@ -30,7 +30,7 @@ var DistroPackageInfo_CEGUI = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "CEGUI",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

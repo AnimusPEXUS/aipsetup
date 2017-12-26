@@ -29,7 +29,7 @@ var DistroPackageInfo_zeromq = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "zeromq",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

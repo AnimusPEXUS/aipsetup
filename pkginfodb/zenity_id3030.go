@@ -30,7 +30,7 @@ var DistroPackageInfo_zenity = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "zenity",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

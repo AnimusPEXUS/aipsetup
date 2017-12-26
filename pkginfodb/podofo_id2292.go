@@ -30,7 +30,7 @@ var DistroPackageInfo_podofo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "podofo",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

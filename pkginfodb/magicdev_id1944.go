@@ -30,7 +30,7 @@ var DistroPackageInfo_magicdev = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "magicdev",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

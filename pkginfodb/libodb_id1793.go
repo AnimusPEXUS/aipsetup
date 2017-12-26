@@ -29,7 +29,7 @@ var DistroPackageInfo_libodb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libodb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

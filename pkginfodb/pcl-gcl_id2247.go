@@ -29,7 +29,7 @@ var DistroPackageInfo_pcl_gcl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pcl-gcl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

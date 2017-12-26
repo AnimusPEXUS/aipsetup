@@ -30,7 +30,7 @@ var DistroPackageInfo_anubis = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "anubis",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

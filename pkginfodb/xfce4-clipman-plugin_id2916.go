@@ -29,7 +29,7 @@ var DistroPackageInfo_xfce4_clipman_plugin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfce4-clipman-plugin",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

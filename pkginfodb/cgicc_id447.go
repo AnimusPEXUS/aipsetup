@@ -30,7 +30,7 @@ var DistroPackageInfo_cgicc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cgicc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

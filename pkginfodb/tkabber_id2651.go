@@ -29,7 +29,7 @@ var DistroPackageInfo_tkabber = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tkabber",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

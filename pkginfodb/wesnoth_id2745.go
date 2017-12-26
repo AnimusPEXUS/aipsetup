@@ -29,7 +29,7 @@ var DistroPackageInfo_wesnoth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wesnoth",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

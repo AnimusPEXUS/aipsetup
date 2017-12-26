@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_input_evdev = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-input-evdev",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

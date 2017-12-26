@@ -29,7 +29,7 @@ var DistroPackageInfo_vorbis_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "vorbis-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

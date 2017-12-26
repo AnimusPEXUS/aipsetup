@@ -29,7 +29,7 @@ var DistroPackageInfo_libopenraw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libopenraw",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

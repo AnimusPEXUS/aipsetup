@@ -29,7 +29,7 @@ var DistroPackageInfo_fltk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fltk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

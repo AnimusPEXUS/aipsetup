@@ -30,7 +30,7 @@ var DistroPackageInfo_pygda = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pygda",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

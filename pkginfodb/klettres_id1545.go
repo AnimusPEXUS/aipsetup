@@ -29,7 +29,7 @@ var DistroPackageInfo_klettres = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "klettres",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

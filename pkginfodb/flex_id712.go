@@ -30,7 +30,7 @@ var DistroPackageInfo_flex = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "flex",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

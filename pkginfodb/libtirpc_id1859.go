@@ -30,7 +30,7 @@ var DistroPackageInfo_libtirpc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libtirpc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_CSSC = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "CSSC",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

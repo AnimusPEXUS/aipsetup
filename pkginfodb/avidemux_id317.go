@@ -30,7 +30,7 @@ var DistroPackageInfo_avidemux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "avidemux",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

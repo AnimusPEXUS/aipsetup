@@ -29,7 +29,7 @@ var DistroPackageInfo_xulrunner = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xulrunner",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

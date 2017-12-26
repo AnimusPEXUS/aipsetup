@@ -29,7 +29,7 @@ var DistroPackageInfo_damageproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "damageproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

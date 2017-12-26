@@ -30,7 +30,7 @@ var DistroPackageInfo_acpica_unix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "acpica-unix",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

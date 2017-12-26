@@ -30,7 +30,7 @@ var DistroPackageInfo_nemiver = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nemiver",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gyrus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gyrus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

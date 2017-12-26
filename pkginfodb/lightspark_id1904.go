@@ -29,7 +29,7 @@ var DistroPackageInfo_lightspark = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lightspark",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

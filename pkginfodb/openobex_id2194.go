@@ -30,7 +30,7 @@ var DistroPackageInfo_openobex = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "openobex",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

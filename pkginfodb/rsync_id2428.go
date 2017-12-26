@@ -30,7 +30,7 @@ var DistroPackageInfo_rsync = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rsync",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

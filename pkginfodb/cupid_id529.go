@@ -29,7 +29,7 @@ var DistroPackageInfo_cupid = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cupid",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

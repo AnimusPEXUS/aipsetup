@@ -30,7 +30,7 @@ var DistroPackageInfo_parted = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "parted",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

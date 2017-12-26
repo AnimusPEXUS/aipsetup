@@ -29,7 +29,7 @@ var DistroPackageInfo_harfbuzz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "harfbuzz",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

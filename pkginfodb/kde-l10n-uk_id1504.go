@@ -29,7 +29,7 @@ var DistroPackageInfo_kde_l10n_uk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kde-l10n-uk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

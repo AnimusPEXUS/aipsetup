@@ -30,7 +30,7 @@ var DistroPackageInfo_qpdf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "qpdf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

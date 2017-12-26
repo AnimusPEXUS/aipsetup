@@ -30,7 +30,7 @@ var DistroPackageInfo_conduit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "conduit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

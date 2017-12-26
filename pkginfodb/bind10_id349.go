@@ -29,7 +29,7 @@ var DistroPackageInfo_bind10 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bind10",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

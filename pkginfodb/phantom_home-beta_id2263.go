@@ -29,7 +29,7 @@ var DistroPackageInfo_phantom_home_beta = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "phantom_home-beta",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

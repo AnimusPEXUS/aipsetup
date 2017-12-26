@@ -29,7 +29,7 @@ var DistroPackageInfo_libcanberra = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libcanberra",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_image_converter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-image-converter",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

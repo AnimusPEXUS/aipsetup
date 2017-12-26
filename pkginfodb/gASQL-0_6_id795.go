@@ -29,7 +29,7 @@ var DistroPackageInfo_gASQL_0_6 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gASQL-0.6",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

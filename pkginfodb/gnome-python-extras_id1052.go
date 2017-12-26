@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_python_extras = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-python-extras",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libtorrent_rasterbar = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libtorrent-rasterbar",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

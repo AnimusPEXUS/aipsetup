@@ -29,7 +29,7 @@ var DistroPackageInfo_readline_doc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "readline-doc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

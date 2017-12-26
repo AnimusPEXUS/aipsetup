@@ -29,7 +29,7 @@ var DistroPackageInfo_python_inet_diag = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "python-inet_diag",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

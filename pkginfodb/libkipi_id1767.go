@@ -30,7 +30,7 @@ var DistroPackageInfo_libkipi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libkipi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_glm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

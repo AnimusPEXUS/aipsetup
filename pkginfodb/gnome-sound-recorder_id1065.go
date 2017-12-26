@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_sound_recorder = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-sound-recorder",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

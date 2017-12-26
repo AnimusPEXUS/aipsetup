@@ -29,7 +29,7 @@ var DistroPackageInfo_xedit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xedit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

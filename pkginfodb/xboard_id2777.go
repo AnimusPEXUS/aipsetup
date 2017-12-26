@@ -30,7 +30,7 @@ var DistroPackageInfo_xboard = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xboard",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

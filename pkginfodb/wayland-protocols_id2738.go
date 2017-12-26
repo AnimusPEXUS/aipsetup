@@ -29,7 +29,7 @@ var DistroPackageInfo_wayland_protocols = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wayland-protocols",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

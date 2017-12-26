@@ -29,7 +29,7 @@ var DistroPackageInfo_font_screen_cyrillic = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-screen-cyrillic",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

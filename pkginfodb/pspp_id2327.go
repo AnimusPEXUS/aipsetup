@@ -30,7 +30,7 @@ var DistroPackageInfo_pspp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pspp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

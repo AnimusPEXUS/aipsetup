@@ -29,7 +29,7 @@ var DistroPackageInfo_xlogo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xlogo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

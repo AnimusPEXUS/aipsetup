@@ -30,7 +30,7 @@ var DistroPackageInfo_hyena = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "hyena",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_linux_libc_headers = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "linux-libc-headers",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

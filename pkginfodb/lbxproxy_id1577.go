@@ -29,7 +29,7 @@ var DistroPackageInfo_lbxproxy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lbxproxy",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_sendmail = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sendmail",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

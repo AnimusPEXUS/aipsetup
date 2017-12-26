@@ -29,7 +29,7 @@ var DistroPackageInfo_xfce4_terminal = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfce4-terminal",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_crosstool_ng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "crosstool-ng",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

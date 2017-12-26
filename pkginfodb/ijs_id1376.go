@@ -30,7 +30,7 @@ var DistroPackageInfo_ijs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ijs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

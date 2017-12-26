@@ -30,7 +30,7 @@ var DistroPackageInfo_shadow = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "shadow",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

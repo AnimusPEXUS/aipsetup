@@ -29,7 +29,7 @@ var DistroPackageInfo_banshee_1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "banshee-1",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_x264 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "x264",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

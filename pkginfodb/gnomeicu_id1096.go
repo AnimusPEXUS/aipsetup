@@ -30,7 +30,7 @@ var DistroPackageInfo_gnomeicu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnomeicu",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

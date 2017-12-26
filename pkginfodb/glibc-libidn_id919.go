@@ -29,7 +29,7 @@ var DistroPackageInfo_glibc_libidn = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glibc-libidn",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

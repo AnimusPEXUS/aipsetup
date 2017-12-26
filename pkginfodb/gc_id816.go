@@ -30,7 +30,7 @@ var DistroPackageInfo_gc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

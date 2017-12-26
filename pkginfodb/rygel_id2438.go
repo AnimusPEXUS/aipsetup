@@ -30,7 +30,7 @@ var DistroPackageInfo_rygel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rygel",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

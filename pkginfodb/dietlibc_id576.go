@@ -29,7 +29,7 @@ var DistroPackageInfo_dietlibc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dietlibc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

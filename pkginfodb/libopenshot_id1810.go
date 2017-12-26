@@ -29,7 +29,7 @@ var DistroPackageInfo_libopenshot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libopenshot",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

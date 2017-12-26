@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_video_amd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-video-amd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

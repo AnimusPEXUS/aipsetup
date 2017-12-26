@@ -29,7 +29,7 @@ var DistroPackageInfo_xinput = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xinput",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

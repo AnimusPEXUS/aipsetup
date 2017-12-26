@@ -30,7 +30,7 @@ var DistroPackageInfo_giggle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "giggle",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

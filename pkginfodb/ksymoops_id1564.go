@@ -29,7 +29,7 @@ var DistroPackageInfo_ksymoops = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ksymoops",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

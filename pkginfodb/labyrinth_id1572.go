@@ -30,7 +30,7 @@ var DistroPackageInfo_labyrinth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "labyrinth",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

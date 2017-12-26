@@ -29,7 +29,7 @@ var DistroPackageInfo_UltraVNC = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "UltraVNC",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

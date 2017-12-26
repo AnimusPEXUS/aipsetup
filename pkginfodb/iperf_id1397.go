@@ -30,7 +30,7 @@ var DistroPackageInfo_iperf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "iperf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

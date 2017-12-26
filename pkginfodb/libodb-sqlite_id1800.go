@@ -29,7 +29,7 @@ var DistroPackageInfo_libodb_sqlite = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libodb-sqlite",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

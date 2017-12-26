@@ -29,7 +29,7 @@ var DistroPackageInfo_xts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xts",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

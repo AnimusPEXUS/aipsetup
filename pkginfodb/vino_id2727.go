@@ -30,7 +30,7 @@ var DistroPackageInfo_vino = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "vino",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

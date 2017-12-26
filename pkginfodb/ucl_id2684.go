@@ -29,7 +29,7 @@ var DistroPackageInfo_ucl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ucl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

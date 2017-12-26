@@ -29,7 +29,7 @@ var DistroPackageInfo_font_dec_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-dec-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

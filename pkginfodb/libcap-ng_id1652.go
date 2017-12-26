@@ -30,7 +30,7 @@ var DistroPackageInfo_libcap_ng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libcap-ng",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

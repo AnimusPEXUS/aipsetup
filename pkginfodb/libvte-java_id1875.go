@@ -30,7 +30,7 @@ var DistroPackageInfo_libvte_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libvte-java",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

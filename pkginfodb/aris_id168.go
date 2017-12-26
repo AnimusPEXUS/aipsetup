@@ -30,7 +30,7 @@ var DistroPackageInfo_aris = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "aris",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_notion = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "notion",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

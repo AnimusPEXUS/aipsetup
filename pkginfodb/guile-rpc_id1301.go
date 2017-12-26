@@ -30,7 +30,7 @@ var DistroPackageInfo_guile_rpc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "guile-rpc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

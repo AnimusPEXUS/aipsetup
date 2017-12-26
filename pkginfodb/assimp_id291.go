@@ -30,7 +30,7 @@ var DistroPackageInfo_assimp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "assimp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

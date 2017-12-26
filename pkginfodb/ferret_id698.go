@@ -30,7 +30,7 @@ var DistroPackageInfo_ferret = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ferret",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

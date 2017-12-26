@@ -29,7 +29,7 @@ var DistroPackageInfo_font_bitstream_type1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-bitstream-type1",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

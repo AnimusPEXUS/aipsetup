@@ -30,7 +30,7 @@ var DistroPackageInfo_systemd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "systemd",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

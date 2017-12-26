@@ -29,7 +29,7 @@ var DistroPackageInfo_uClibc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "uClibc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

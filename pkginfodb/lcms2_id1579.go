@@ -30,7 +30,7 @@ var DistroPackageInfo_lcms2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "lcms2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

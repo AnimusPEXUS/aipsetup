@@ -29,7 +29,7 @@ var DistroPackageInfo_perlkde = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "perlkde",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

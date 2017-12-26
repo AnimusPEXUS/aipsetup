@@ -30,7 +30,7 @@ var DistroPackageInfo_xfsdump = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfsdump",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

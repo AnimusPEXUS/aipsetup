@@ -30,7 +30,7 @@ var DistroPackageInfo_libmad = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libmad",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

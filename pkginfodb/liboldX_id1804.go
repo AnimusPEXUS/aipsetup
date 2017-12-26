@@ -29,7 +29,7 @@ var DistroPackageInfo_liboldX = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "liboldX",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

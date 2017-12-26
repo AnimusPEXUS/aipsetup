@@ -29,7 +29,7 @@ var DistroPackageInfo_python_caja = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "python-caja",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

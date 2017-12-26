@@ -29,7 +29,7 @@ var DistroPackageInfo_polkit_kde_agent_1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "polkit-kde-agent-1",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

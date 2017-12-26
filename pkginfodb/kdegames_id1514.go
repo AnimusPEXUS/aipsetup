@@ -29,7 +29,7 @@ var DistroPackageInfo_kdegames = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdegames",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

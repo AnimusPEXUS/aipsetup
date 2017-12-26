@@ -29,7 +29,7 @@ var DistroPackageInfo_accountsservice = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "accountsservice",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_pulseaudio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pulseaudio",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_gaupol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gaupol",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

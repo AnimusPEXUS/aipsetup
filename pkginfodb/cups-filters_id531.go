@@ -30,7 +30,7 @@ var DistroPackageInfo_cups_filters = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cups-filters",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

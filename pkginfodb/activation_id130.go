@@ -29,7 +29,7 @@ var DistroPackageInfo_activation = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "activation",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

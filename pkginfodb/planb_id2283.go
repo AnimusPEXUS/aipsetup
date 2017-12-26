@@ -29,7 +29,7 @@ var DistroPackageInfo_planb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "planb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

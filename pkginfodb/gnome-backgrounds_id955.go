@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_backgrounds = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-backgrounds",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_m4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "m4",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

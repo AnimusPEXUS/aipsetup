@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_ada = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-ada",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_zeitgeist = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "zeitgeist",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

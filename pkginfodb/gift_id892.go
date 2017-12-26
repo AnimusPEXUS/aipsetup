@@ -30,7 +30,7 @@ var DistroPackageInfo_gift = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gift",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

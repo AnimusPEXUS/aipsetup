@@ -30,7 +30,7 @@ var DistroPackageInfo_memprof = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "memprof",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

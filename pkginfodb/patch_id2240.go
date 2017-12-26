@@ -30,7 +30,7 @@ var DistroPackageInfo_patch = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "patch",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libgdiplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libgdiplus",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

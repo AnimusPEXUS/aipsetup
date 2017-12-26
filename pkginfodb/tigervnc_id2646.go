@@ -29,7 +29,7 @@ var DistroPackageInfo_tigervnc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tigervnc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

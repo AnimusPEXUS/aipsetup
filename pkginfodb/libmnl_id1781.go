@@ -30,7 +30,7 @@ var DistroPackageInfo_libmnl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libmnl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

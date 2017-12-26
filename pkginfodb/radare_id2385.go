@@ -29,7 +29,7 @@ var DistroPackageInfo_radare = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "radare",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

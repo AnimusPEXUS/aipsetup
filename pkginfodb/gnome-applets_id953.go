@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_applets = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-applets",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_netstat_nat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "netstat-nat",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

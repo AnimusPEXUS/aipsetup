@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnomeprintui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnomeprintui",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

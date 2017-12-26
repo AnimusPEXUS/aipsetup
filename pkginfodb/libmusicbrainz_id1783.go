@@ -29,7 +29,7 @@ var DistroPackageInfo_libmusicbrainz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libmusicbrainz",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

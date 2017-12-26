@@ -30,7 +30,7 @@ var DistroPackageInfo_gnomemm_hello = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnomemm_hello",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

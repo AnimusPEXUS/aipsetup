@@ -30,7 +30,7 @@ var DistroPackageInfo_guile_opengl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "guile-opengl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

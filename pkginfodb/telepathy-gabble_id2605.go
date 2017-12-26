@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_gabble = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-gabble",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

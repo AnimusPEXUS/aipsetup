@@ -29,7 +29,7 @@ var DistroPackageInfo_diffuse = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "diffuse",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

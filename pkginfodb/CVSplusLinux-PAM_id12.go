@@ -29,7 +29,7 @@ var DistroPackageInfo_CVSplusLinux_PAM = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "CVS+Linux-PAM",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xkbevd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xkbevd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

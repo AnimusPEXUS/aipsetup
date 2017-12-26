@@ -30,7 +30,7 @@ var DistroPackageInfo_gnutls = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnutls",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

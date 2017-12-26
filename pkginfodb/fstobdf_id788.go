@@ -29,7 +29,7 @@ var DistroPackageInfo_fstobdf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fstobdf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

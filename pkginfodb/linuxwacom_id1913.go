@@ -30,7 +30,7 @@ var DistroPackageInfo_linuxwacom = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "linuxwacom",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_apr_util = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "apr-util",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

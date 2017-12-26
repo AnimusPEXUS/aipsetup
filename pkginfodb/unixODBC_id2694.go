@@ -29,7 +29,7 @@ var DistroPackageInfo_unixODBC = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "unixODBC",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

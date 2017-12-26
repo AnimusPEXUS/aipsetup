@@ -29,7 +29,7 @@ var DistroPackageInfo_xrefresh = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xrefresh",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

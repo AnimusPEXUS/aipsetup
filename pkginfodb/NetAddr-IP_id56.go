@@ -29,7 +29,7 @@ var DistroPackageInfo_NetAddr_IP = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "NetAddr-IP",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

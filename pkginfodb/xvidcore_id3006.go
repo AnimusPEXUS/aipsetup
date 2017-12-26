@@ -29,7 +29,7 @@ var DistroPackageInfo_xvidcore = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xvidcore",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

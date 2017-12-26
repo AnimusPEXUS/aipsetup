@@ -30,7 +30,7 @@ var DistroPackageInfo_libwfut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libwfut",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

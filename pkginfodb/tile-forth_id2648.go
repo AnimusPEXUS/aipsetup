@@ -29,7 +29,7 @@ var DistroPackageInfo_tile_forth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tile-forth",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

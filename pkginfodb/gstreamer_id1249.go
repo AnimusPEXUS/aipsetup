@@ -30,7 +30,7 @@ var DistroPackageInfo_gstreamer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gstreamer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_lasem = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "lasem",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

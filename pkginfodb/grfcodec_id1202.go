@@ -29,7 +29,7 @@ var DistroPackageInfo_grfcodec = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "grfcodec",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

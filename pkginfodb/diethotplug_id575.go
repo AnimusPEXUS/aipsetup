@@ -29,7 +29,7 @@ var DistroPackageInfo_diethotplug = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "diethotplug",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

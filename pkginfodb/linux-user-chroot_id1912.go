@@ -30,7 +30,7 @@ var DistroPackageInfo_linux_user_chroot = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "linux-user-chroot",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

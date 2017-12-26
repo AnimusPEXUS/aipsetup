@@ -29,7 +29,7 @@ var DistroPackageInfo_socat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "socat",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

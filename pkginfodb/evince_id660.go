@@ -30,7 +30,7 @@ var DistroPackageInfo_evince = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evince",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_thales = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "thales",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

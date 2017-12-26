@@ -30,7 +30,7 @@ var DistroPackageInfo_reftex = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "reftex",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

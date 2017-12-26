@@ -29,7 +29,7 @@ var DistroPackageInfo_open_mpi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "open-mpi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

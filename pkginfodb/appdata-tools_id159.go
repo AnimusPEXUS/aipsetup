@@ -29,7 +29,7 @@ var DistroPackageInfo_appdata_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "appdata-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

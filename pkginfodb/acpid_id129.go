@@ -30,7 +30,7 @@ var DistroPackageInfo_acpid = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "acpid",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

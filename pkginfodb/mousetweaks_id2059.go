@@ -30,7 +30,7 @@ var DistroPackageInfo_mousetweaks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mousetweaks",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

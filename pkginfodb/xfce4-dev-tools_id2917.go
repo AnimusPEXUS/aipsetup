@@ -29,7 +29,7 @@ var DistroPackageInfo_xfce4_dev_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfce4-dev-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

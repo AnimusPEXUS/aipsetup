@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_crash = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-crash",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

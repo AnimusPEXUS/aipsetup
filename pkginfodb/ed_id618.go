@@ -30,7 +30,7 @@ var DistroPackageInfo_ed = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ed",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

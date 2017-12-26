@@ -29,7 +29,7 @@ var DistroPackageInfo_agg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "agg",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

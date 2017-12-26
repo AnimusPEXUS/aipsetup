@@ -30,7 +30,7 @@ var DistroPackageInfo_direvent = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "direvent",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

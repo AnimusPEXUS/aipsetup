@@ -30,7 +30,7 @@ var DistroPackageInfo_libgda_uimm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgda-uimm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_Parallel_ForkManager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Parallel-ForkManager",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

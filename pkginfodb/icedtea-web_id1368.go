@@ -29,7 +29,7 @@ var DistroPackageInfo_icedtea_web = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "icedtea-web",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_cb_gcc_i686_pc_linux_gnu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

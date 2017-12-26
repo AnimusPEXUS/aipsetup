@@ -29,7 +29,7 @@ var DistroPackageInfo_ispell = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ispell",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

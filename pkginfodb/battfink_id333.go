@@ -30,7 +30,7 @@ var DistroPackageInfo_battfink = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "battfink",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

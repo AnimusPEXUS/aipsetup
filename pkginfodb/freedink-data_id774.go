@@ -29,7 +29,7 @@ var DistroPackageInfo_freedink_data = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "freedink-data",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

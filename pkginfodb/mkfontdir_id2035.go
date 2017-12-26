@@ -29,7 +29,7 @@ var DistroPackageInfo_mkfontdir = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mkfontdir",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

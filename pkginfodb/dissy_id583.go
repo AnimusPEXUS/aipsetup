@@ -29,7 +29,7 @@ var DistroPackageInfo_dissy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dissy",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

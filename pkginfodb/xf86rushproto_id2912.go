@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86rushproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86rushproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

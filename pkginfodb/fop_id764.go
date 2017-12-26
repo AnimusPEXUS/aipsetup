@@ -29,7 +29,7 @@ var DistroPackageInfo_fop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fop",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

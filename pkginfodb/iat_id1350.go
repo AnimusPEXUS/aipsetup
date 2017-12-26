@@ -29,7 +29,7 @@ var DistroPackageInfo_iat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "iat",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

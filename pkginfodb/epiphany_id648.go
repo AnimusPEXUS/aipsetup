@@ -30,7 +30,7 @@ var DistroPackageInfo_epiphany = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "epiphany",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

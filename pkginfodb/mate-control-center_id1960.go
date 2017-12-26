@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_control_center = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-control-center",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

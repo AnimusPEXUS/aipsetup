@@ -30,7 +30,7 @@ var DistroPackageInfo_java_atk_wrapper = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "java-atk-wrapper",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

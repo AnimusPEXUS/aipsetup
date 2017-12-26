@@ -30,7 +30,7 @@ var DistroPackageInfo_xml_i18n_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xml-i18n-tools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

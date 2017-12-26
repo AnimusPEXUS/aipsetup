@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_editor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-editor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

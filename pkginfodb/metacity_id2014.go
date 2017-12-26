@@ -30,7 +30,7 @@ var DistroPackageInfo_metacity = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "metacity",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_iso_codes = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "iso-codes",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

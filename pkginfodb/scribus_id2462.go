@@ -30,7 +30,7 @@ var DistroPackageInfo_scribus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "scribus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

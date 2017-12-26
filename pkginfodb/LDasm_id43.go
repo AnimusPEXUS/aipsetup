@@ -29,7 +29,7 @@ var DistroPackageInfo_LDasm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "LDasm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

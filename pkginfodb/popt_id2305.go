@@ -29,7 +29,7 @@ var DistroPackageInfo_popt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "popt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

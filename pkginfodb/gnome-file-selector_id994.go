@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_file_selector = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-file-selector",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

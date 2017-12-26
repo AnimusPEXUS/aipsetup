@@ -30,7 +30,7 @@ var DistroPackageInfo_pinpoint = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pinpoint",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

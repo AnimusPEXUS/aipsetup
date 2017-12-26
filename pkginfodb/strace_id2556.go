@@ -30,7 +30,7 @@ var DistroPackageInfo_strace = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "strace",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_alsa_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "alsa-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

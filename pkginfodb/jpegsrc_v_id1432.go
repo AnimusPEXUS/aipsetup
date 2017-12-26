@@ -30,7 +30,7 @@ var DistroPackageInfo_jpegsrc_v = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "jpegsrc.v",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_rp_pppoe = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rp-pppoe",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

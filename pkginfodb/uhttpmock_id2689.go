@@ -29,7 +29,7 @@ var DistroPackageInfo_uhttpmock = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "uhttpmock",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

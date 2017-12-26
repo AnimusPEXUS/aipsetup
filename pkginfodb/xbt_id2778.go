@@ -29,7 +29,7 @@ var DistroPackageInfo_xbt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xbt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

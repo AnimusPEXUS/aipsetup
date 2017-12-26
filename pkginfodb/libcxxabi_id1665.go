@@ -29,7 +29,7 @@ var DistroPackageInfo_libcxxabi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libcxxabi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

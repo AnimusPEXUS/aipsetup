@@ -30,7 +30,7 @@ var DistroPackageInfo_gnorpm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnorpm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

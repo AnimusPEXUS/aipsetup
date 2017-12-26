@@ -29,7 +29,7 @@ var DistroPackageInfo_aegisub = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aegisub",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

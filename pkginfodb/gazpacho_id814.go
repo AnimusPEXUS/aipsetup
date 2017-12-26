@@ -30,7 +30,7 @@ var DistroPackageInfo_gazpacho = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gazpacho",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

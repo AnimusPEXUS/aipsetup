@@ -30,7 +30,7 @@ var DistroPackageInfo_teximpatient = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "teximpatient",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

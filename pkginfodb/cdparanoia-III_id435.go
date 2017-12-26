@@ -29,7 +29,7 @@ var DistroPackageInfo_cdparanoia_III = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cdparanoia-III",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

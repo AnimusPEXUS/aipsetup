@@ -30,7 +30,7 @@ var DistroPackageInfo_cloog = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cloog",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

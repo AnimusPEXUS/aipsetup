@@ -30,7 +30,7 @@ var DistroPackageInfo_json_c = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "json-c",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

@@ -29,7 +29,7 @@ var DistroPackageInfo_fossil = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fossil-src",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

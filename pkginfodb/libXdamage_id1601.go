@@ -29,7 +29,7 @@ var DistroPackageInfo_libXdamage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXdamage",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

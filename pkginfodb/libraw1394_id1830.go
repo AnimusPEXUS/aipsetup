@@ -30,7 +30,7 @@ var DistroPackageInfo_libraw1394 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libraw1394",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

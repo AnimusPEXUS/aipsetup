@@ -29,7 +29,7 @@ var DistroPackageInfo_gnuprolog_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnuprolog-java",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

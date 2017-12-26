@@ -29,7 +29,7 @@ var DistroPackageInfo_font_arabic_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-arabic-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_quesoglc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "quesoglc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

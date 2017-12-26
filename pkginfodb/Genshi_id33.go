@@ -29,7 +29,7 @@ var DistroPackageInfo_Genshi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Genshi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

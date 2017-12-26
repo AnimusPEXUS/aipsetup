@@ -29,7 +29,7 @@ var DistroPackageInfo_ristretto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ristretto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

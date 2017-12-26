@@ -30,7 +30,7 @@ var DistroPackageInfo_libart_lgpl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libart_lgpl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

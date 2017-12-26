@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_menus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-menus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

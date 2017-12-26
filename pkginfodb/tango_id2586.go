@@ -29,7 +29,7 @@ var DistroPackageInfo_tango = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tango",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgail_gnome = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgail-gnome",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

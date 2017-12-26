@@ -29,7 +29,7 @@ var DistroPackageInfo_hotplug_ng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "hotplug-ng",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

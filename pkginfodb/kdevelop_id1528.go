@@ -29,7 +29,7 @@ var DistroPackageInfo_kdevelop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdevelop",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

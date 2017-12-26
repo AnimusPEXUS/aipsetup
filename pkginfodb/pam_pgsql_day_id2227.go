@@ -29,7 +29,7 @@ var DistroPackageInfo_pam_pgsql_day = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pam_pgsql_day",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

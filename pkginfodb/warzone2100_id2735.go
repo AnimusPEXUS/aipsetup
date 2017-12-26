@@ -30,7 +30,7 @@ var DistroPackageInfo_warzone2100 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "warzone2100",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

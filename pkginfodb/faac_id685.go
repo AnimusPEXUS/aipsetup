@@ -30,7 +30,7 @@ var DistroPackageInfo_faac = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "faac",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

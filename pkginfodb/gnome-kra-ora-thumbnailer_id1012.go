@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_kra_ora_thumbnailer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-kra-ora-thumbnailer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

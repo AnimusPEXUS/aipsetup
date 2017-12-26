@@ -29,7 +29,7 @@ var DistroPackageInfo_eject = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "eject",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

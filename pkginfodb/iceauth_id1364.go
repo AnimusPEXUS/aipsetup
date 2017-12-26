@@ -29,7 +29,7 @@ var DistroPackageInfo_iceauth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "iceauth",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

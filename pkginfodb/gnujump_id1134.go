@@ -30,7 +30,7 @@ var DistroPackageInfo_gnujump = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnujump",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

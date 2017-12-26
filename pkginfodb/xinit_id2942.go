@@ -29,7 +29,7 @@ var DistroPackageInfo_xinit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xinit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

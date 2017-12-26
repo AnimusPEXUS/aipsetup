@@ -29,7 +29,7 @@ var DistroPackageInfo_virtualbox = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "VirtualBox",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

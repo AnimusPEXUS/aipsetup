@@ -30,7 +30,7 @@ var DistroPackageInfo_solfege = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "solfege",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

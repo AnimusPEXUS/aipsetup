@@ -29,7 +29,7 @@ var DistroPackageInfo_sysutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sysutils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

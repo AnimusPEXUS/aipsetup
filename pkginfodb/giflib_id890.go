@@ -30,7 +30,7 @@ var DistroPackageInfo_giflib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "giflib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

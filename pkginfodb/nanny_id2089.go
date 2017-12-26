@@ -30,7 +30,7 @@ var DistroPackageInfo_nanny = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nanny",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

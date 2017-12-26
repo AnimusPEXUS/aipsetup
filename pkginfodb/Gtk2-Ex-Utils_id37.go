@@ -29,7 +29,7 @@ var DistroPackageInfo_Gtk2_Ex_Utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Gtk2-Ex-Utils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

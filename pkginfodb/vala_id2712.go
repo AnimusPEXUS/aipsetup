@@ -30,7 +30,7 @@ var DistroPackageInfo_vala = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "vala",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

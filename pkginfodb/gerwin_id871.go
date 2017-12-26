@@ -29,7 +29,7 @@ var DistroPackageInfo_gerwin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gerwin",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

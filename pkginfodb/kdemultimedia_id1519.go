@@ -29,7 +29,7 @@ var DistroPackageInfo_kdemultimedia = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdemultimedia",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

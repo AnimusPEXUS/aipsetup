@@ -29,7 +29,7 @@ var DistroPackageInfo_cf2html = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cf2html",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

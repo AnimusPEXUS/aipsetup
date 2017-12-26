@@ -29,7 +29,7 @@ var DistroPackageInfo_pcb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pcb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

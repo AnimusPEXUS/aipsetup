@@ -29,7 +29,7 @@ var DistroPackageInfo_xcmsdb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcmsdb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

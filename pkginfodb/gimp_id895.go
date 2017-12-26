@@ -30,7 +30,7 @@ var DistroPackageInfo_gimp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gimp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xgc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xgc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

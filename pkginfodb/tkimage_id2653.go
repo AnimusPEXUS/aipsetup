@@ -29,7 +29,7 @@ var DistroPackageInfo_tkimage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tkimage",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

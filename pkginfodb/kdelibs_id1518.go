@@ -29,7 +29,7 @@ var DistroPackageInfo_kdelibs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdelibs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

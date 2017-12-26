@@ -30,7 +30,7 @@ var DistroPackageInfo_parallel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "parallel",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

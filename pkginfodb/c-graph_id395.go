@@ -30,7 +30,7 @@ var DistroPackageInfo_c_graph = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "c-graph",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

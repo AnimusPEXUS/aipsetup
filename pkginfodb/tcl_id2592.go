@@ -30,7 +30,7 @@ var DistroPackageInfo_tcl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "tcl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

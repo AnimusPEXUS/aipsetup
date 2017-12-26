@@ -29,7 +29,7 @@ var DistroPackageInfo_libmateweather = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libmateweather",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

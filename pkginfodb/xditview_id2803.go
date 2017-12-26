@@ -29,7 +29,7 @@ var DistroPackageInfo_xditview = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xditview",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

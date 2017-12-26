@@ -30,7 +30,7 @@ var DistroPackageInfo_libtasn1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libtasn1",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

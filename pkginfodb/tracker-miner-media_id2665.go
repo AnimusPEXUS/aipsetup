@@ -30,7 +30,7 @@ var DistroPackageInfo_tracker_miner_media = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "tracker-miner-media",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

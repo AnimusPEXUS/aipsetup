@@ -30,7 +30,7 @@ var DistroPackageInfo_libmediaart = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libmediaart",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

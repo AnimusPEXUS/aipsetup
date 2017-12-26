@@ -29,7 +29,7 @@ var DistroPackageInfo_grandr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "grandr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

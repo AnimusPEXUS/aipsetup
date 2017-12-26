@@ -30,7 +30,7 @@ var DistroPackageInfo_soprano = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "soprano",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

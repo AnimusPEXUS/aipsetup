@@ -29,7 +29,7 @@ var DistroPackageInfo_text_highlight = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "text-highlight",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

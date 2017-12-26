@@ -29,7 +29,7 @@ var DistroPackageInfo_libcdio_paranoia = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libcdio-paranoia",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xcb_demo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xcb-demo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

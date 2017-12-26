@@ -29,7 +29,7 @@ var DistroPackageInfo_xmore = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xmore",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

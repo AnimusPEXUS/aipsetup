@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnome_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnome-java",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

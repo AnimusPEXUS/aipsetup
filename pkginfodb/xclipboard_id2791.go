@@ -29,7 +29,7 @@ var DistroPackageInfo_xclipboard = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xclipboard",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

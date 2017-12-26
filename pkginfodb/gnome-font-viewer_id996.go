@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_font_viewer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-font-viewer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

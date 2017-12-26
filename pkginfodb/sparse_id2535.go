@@ -29,7 +29,7 @@ var DistroPackageInfo_sparse = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sparse",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

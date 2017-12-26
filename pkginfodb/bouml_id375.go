@@ -29,7 +29,7 @@ var DistroPackageInfo_bouml = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bouml",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

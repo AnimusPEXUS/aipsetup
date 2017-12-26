@@ -29,7 +29,7 @@ var DistroPackageInfo_libspectre = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libspectre",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

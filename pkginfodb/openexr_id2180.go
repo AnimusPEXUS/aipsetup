@@ -30,7 +30,7 @@ var DistroPackageInfo_openexr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openexr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

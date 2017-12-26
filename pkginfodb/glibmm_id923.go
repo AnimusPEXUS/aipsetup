@@ -30,7 +30,7 @@ var DistroPackageInfo_glibmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glibmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

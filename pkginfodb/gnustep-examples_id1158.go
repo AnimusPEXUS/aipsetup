@@ -29,7 +29,7 @@ var DistroPackageInfo_gnustep_examples = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnustep-examples",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

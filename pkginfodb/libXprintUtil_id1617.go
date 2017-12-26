@@ -29,7 +29,7 @@ var DistroPackageInfo_libXprintUtil = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXprintUtil",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

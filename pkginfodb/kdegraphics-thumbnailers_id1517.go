@@ -29,7 +29,7 @@ var DistroPackageInfo_kdegraphics_thumbnailers = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdegraphics-thumbnailers",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

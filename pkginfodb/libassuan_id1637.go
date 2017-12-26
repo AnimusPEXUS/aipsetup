@@ -29,7 +29,7 @@ var DistroPackageInfo_libassuan = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libassuan",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

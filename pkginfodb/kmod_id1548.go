@@ -30,7 +30,7 @@ var DistroPackageInfo_kmod = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "kmod",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_cdrtools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cdrtools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

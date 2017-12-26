@@ -30,7 +30,7 @@ var DistroPackageInfo_quick_lounge_applet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "quick-lounge-applet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_gecb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gecb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

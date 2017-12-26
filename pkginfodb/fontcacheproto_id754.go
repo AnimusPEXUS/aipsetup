@@ -29,7 +29,7 @@ var DistroPackageInfo_fontcacheproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fontcacheproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_gnuradio_core = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnuradio-core",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

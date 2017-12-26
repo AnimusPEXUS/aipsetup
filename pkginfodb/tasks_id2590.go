@@ -30,7 +30,7 @@ var DistroPackageInfo_tasks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "tasks",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

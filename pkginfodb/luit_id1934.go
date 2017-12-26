@@ -29,7 +29,7 @@ var DistroPackageInfo_luit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "luit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

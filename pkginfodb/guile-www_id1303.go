@@ -29,7 +29,7 @@ var DistroPackageInfo_guile_www = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "guile-www",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_xnee = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xnee",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_iana = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "iana",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

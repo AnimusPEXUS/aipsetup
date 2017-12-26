@@ -29,7 +29,7 @@ var DistroPackageInfo_wol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wol",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

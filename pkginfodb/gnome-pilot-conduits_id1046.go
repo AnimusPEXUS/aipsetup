@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_pilot_conduits = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-pilot-conduits",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

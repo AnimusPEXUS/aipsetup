@@ -29,7 +29,7 @@ var DistroPackageInfo_sweeper = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sweeper",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

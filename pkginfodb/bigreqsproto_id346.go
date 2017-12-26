@@ -29,7 +29,7 @@ var DistroPackageInfo_bigreqsproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bigreqsproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

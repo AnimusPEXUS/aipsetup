@@ -29,7 +29,7 @@ var DistroPackageInfo_nepomukshell = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nepomukshell",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

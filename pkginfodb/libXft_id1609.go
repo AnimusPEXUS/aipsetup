@@ -29,7 +29,7 @@ var DistroPackageInfo_libXft = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXft",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

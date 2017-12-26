@@ -29,7 +29,7 @@ var DistroPackageInfo_maxima = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "maxima",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

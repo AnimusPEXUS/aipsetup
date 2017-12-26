@@ -29,7 +29,7 @@ var DistroPackageInfo_merkaartor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "merkaartor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

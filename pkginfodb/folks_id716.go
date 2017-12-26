@@ -30,7 +30,7 @@ var DistroPackageInfo_folks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "folks",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

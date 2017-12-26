@@ -29,7 +29,7 @@ var DistroPackageInfo_smokegen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "smokegen",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

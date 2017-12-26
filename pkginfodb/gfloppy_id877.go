@@ -30,7 +30,7 @@ var DistroPackageInfo_gfloppy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gfloppy",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_pjproject = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pjproject",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

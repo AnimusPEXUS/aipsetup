@@ -30,7 +30,7 @@ var DistroPackageInfo_combine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "combine",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

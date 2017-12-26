@@ -30,7 +30,7 @@ var DistroPackageInfo_shotwell = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "shotwell",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

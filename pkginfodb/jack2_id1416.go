@@ -30,7 +30,7 @@ var DistroPackageInfo_jack2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "jack",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

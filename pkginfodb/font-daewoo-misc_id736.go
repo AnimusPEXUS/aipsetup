@@ -29,7 +29,7 @@ var DistroPackageInfo_font_daewoo_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-daewoo-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

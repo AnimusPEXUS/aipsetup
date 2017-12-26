@@ -30,7 +30,7 @@ var DistroPackageInfo_glom_postgresql_setup = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glom-postgresql-setup",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

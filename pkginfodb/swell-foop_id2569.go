@@ -30,7 +30,7 @@ var DistroPackageInfo_swell_foop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "swell-foop",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

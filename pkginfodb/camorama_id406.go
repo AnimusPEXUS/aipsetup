@@ -30,7 +30,7 @@ var DistroPackageInfo_camorama = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "camorama",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_mime_data = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-mime-data",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

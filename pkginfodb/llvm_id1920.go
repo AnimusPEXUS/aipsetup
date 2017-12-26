@@ -29,7 +29,7 @@ var DistroPackageInfo_llvm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "llvm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

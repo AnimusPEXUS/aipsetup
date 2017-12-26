@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_vfs_extras = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-vfs-extras",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

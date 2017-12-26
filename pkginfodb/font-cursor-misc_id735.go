@@ -29,7 +29,7 @@ var DistroPackageInfo_font_cursor_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-cursor-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

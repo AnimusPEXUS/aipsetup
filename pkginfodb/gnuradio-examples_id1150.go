@@ -29,7 +29,7 @@ var DistroPackageInfo_gnuradio_examples = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnuradio-examples",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

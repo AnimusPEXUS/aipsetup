@@ -29,7 +29,7 @@ var DistroPackageInfo_libpciaccess = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libpciaccess",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

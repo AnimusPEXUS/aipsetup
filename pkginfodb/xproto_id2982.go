@@ -29,7 +29,7 @@ var DistroPackageInfo_xproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

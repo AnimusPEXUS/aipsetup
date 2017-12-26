@@ -29,7 +29,7 @@ var DistroPackageInfo_bitcoin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bitcoin",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

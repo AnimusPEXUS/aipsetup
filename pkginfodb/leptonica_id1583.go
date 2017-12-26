@@ -29,7 +29,7 @@ var DistroPackageInfo_leptonica = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "leptonica",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_smartmontools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "smartmontools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libmicrohttpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libmicrohttpd",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

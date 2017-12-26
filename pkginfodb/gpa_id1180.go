@@ -29,7 +29,7 @@ var DistroPackageInfo_gpa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gpa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

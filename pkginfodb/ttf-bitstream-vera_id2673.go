@@ -30,7 +30,7 @@ var DistroPackageInfo_ttf_bitstream_vera = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ttf-bitstream-vera",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

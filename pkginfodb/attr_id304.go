@@ -30,7 +30,7 @@ var DistroPackageInfo_attr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "attr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

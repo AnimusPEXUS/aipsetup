@@ -30,7 +30,7 @@ var DistroPackageInfo_gnatsweb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnatsweb",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

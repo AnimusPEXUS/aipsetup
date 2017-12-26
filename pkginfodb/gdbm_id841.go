@@ -30,7 +30,7 @@ var DistroPackageInfo_gdbm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gdbm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

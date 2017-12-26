@@ -30,7 +30,7 @@ var DistroPackageInfo_loudmouth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "loudmouth",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

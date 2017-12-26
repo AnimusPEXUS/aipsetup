@@ -29,7 +29,7 @@ var DistroPackageInfo_glproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

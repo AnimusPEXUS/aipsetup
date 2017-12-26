@@ -30,7 +30,7 @@ var DistroPackageInfo_libbonoboui = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libbonoboui",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

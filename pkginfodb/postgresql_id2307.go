@@ -29,7 +29,7 @@ var DistroPackageInfo_postgresql = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "postgresql",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_ypbind_bsd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ypbind-bsd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

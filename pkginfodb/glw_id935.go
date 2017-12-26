@@ -29,7 +29,7 @@ var DistroPackageInfo_glw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glw",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

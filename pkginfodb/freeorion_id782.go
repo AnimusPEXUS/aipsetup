@@ -29,7 +29,7 @@ var DistroPackageInfo_freeorion = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "freeorion-code",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_ranpwd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ranpwd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

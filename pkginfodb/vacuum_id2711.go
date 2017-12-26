@@ -29,7 +29,7 @@ var DistroPackageInfo_vacuum = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "vacuum",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

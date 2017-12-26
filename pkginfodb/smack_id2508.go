@@ -29,7 +29,7 @@ var DistroPackageInfo_smack = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "smack",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

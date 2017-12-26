@@ -29,7 +29,7 @@ var DistroPackageInfo_codeblocks = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "codeblocks",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

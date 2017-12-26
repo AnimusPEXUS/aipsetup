@@ -30,7 +30,7 @@ var DistroPackageInfo_meld = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "meld",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

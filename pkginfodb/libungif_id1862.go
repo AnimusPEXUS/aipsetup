@@ -30,7 +30,7 @@ var DistroPackageInfo_libungif = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libungif",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

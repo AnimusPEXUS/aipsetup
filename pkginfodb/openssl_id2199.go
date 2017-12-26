@@ -30,7 +30,7 @@ var DistroPackageInfo_openssl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openssl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

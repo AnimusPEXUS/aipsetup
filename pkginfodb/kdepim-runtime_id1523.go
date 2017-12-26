@@ -29,7 +29,7 @@ var DistroPackageInfo_kdepim_runtime = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kdepim-runtime",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

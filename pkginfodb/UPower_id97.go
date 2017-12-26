@@ -29,7 +29,7 @@ var DistroPackageInfo_UPower = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "UPower",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

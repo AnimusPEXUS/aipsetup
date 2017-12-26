@@ -30,7 +30,7 @@ var DistroPackageInfo_gpdf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gpdf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

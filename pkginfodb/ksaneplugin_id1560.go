@@ -29,7 +29,7 @@ var DistroPackageInfo_ksaneplugin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ksaneplugin",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

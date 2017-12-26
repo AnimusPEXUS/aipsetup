@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_input_hyperpen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-input-hyperpen",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

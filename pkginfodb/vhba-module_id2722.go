@@ -30,7 +30,7 @@ var DistroPackageInfo_vhba_module = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "vhba-module",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

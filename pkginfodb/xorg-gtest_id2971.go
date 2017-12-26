@@ -29,7 +29,7 @@ var DistroPackageInfo_xorg_gtest = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xorg-gtest",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_recording_level_monitor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "recording-level-monitor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

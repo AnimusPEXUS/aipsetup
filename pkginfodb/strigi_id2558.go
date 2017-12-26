@@ -30,7 +30,7 @@ var DistroPackageInfo_strigi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "strigi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

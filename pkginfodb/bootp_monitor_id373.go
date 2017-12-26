@@ -29,7 +29,7 @@ var DistroPackageInfo_bootp_monitor = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "bootp.monitor",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_octave = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "octave",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

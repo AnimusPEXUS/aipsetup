@@ -29,7 +29,7 @@ var DistroPackageInfo_cherokee = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cherokee",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_libnfnetlink = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libnfnetlink",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

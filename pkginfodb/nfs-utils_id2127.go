@@ -30,7 +30,7 @@ var DistroPackageInfo_nfs_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nfs-utils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

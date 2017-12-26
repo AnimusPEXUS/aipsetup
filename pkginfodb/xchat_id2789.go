@@ -30,7 +30,7 @@ var DistroPackageInfo_xchat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xchat",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

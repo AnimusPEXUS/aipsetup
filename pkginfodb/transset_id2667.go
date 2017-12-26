@@ -29,7 +29,7 @@ var DistroPackageInfo_transset = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "transset",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

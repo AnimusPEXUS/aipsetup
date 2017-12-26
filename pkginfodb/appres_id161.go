@@ -29,7 +29,7 @@ var DistroPackageInfo_appres = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "appres",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_upx = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "upx",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gio_standalone = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gio-standalone",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

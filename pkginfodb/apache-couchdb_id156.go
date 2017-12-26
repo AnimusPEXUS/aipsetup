@@ -29,7 +29,7 @@ var DistroPackageInfo_apache_couchdb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "apache-couchdb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_icon_theme = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-icon-theme",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

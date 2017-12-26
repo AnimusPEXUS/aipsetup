@@ -30,7 +30,7 @@ var DistroPackageInfo_gitg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gitg",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

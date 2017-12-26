@@ -30,7 +30,7 @@ var DistroPackageInfo_curl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "curl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libmrproject = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libmrproject",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

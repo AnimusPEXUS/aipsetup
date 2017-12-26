@@ -29,7 +29,7 @@ var DistroPackageInfo_ConsoleKit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ConsoleKit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

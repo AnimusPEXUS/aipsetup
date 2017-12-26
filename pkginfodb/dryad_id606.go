@@ -30,7 +30,7 @@ var DistroPackageInfo_dryad = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dryad",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

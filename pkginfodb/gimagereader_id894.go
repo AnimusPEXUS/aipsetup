@@ -29,7 +29,7 @@ var DistroPackageInfo_gimagereader = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gimagereader",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

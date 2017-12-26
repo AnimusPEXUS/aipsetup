@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell_cy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell-cy",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

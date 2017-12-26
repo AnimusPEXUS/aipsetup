@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_plugins_gl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-plugins-gl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

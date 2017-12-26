@@ -29,7 +29,7 @@ var DistroPackageInfo_libaudit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libaudit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

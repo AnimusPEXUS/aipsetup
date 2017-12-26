@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_logger = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-logger",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

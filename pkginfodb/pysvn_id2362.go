@@ -29,7 +29,7 @@ var DistroPackageInfo_pysvn = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pysvn",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

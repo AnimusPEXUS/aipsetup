@@ -29,7 +29,7 @@ var DistroPackageInfo_libdrm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libdrm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

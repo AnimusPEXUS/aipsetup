@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_vms = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-vms",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

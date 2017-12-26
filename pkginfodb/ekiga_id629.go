@@ -30,7 +30,7 @@ var DistroPackageInfo_ekiga = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ekiga",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

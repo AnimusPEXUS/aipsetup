@@ -30,7 +30,7 @@ var DistroPackageInfo_lsh = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "lsh",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_sovix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sovix",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

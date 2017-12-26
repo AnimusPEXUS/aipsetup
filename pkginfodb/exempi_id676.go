@@ -29,7 +29,7 @@ var DistroPackageInfo_exempi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "exempi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

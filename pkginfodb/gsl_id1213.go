@@ -30,7 +30,7 @@ var DistroPackageInfo_gsl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gsl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

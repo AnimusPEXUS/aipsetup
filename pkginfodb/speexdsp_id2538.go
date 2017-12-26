@@ -29,7 +29,7 @@ var DistroPackageInfo_speexdsp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "speexdsp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

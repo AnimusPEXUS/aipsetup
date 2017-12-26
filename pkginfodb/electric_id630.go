@@ -30,7 +30,7 @@ var DistroPackageInfo_electric = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "electric",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

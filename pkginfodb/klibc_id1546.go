@@ -29,7 +29,7 @@ var DistroPackageInfo_klibc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "klibc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

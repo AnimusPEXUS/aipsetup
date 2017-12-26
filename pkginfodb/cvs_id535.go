@@ -29,7 +29,7 @@ var DistroPackageInfo_cvs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cvs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

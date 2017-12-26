@@ -29,7 +29,7 @@ var DistroPackageInfo_jitsi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "jitsi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

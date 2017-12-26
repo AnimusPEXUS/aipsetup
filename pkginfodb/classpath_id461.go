@@ -30,7 +30,7 @@ var DistroPackageInfo_classpath = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "classpath",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

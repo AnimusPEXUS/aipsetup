@@ -30,7 +30,7 @@ var DistroPackageInfo_djview = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "djview",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

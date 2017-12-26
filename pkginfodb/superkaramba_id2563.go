@@ -29,7 +29,7 @@ var DistroPackageInfo_superkaramba = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "superkaramba",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

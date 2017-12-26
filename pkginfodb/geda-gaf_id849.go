@@ -29,7 +29,7 @@ var DistroPackageInfo_geda_gaf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "geda-gaf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

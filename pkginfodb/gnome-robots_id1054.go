@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_robots = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-robots",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

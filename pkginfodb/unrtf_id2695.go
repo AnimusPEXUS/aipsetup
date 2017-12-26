@@ -30,7 +30,7 @@ var DistroPackageInfo_unrtf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "unrtf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_soup = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "soup",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

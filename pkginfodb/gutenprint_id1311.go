@@ -30,7 +30,7 @@ var DistroPackageInfo_gutenprint = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gutenprint",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

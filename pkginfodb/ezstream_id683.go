@@ -29,7 +29,7 @@ var DistroPackageInfo_ezstream = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ezstream",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

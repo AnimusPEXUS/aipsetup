@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_data_server_dbus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-data-server-dbus",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

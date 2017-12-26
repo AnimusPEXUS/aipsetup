@@ -29,7 +29,7 @@ var DistroPackageInfo_libunicap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libunicap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_caldav = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-caldav",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

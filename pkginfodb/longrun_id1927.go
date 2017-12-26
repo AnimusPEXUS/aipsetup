@@ -29,7 +29,7 @@ var DistroPackageInfo_longrun = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "longrun",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

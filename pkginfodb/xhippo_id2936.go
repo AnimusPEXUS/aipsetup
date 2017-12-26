@@ -30,7 +30,7 @@ var DistroPackageInfo_xhippo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xhippo",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

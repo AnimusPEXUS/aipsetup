@@ -30,7 +30,7 @@ var DistroPackageInfo_acm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "acm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

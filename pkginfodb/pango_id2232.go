@@ -30,7 +30,7 @@ var DistroPackageInfo_pango = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pango",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_x11vnc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "x11vnc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

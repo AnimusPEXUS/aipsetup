@@ -163,7 +163,9 @@ func (self *InfoEditor) RenderInfoFileText(
 ) string {
 	ret := fmt.Sprintf(
 		InfoFileTemplate,
+
 		self.MakeVariableName(pkgname),
+
 		self.AsMultiline(info.Description),
 		self.AsSingleline(info.HomePage),
 
@@ -183,9 +185,9 @@ func (self *InfoEditor) RenderInfoFileText(
 
 		self.AsSingleline(info.TarballVersionTool),
 
-		self.AsStringSlice(info.Filters, true),
 		self.AsSingleline(info.TarballName),
 		self.AsSingleline(info.TarballFileNameParser),
+		self.AsStringSlice(info.TarballFilters, true),
 		self.AsSingleline(info.TarballProvider),
 		self.AsStringSlice(info.TarballProviderArguments, true),
 		info.TarballProviderUseCache,

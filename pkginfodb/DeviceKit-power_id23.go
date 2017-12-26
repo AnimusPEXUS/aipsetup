@@ -29,7 +29,7 @@ var DistroPackageInfo_DeviceKit_power = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "DeviceKit-power",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_procps_ng = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "procps-ng",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

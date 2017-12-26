@@ -29,7 +29,7 @@ var DistroPackageInfo_schedule_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "schedule-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

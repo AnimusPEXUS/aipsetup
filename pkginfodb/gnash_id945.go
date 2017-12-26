@@ -30,7 +30,7 @@ var DistroPackageInfo_gnash = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnash",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

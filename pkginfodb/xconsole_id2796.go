@@ -29,7 +29,7 @@ var DistroPackageInfo_xconsole = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xconsole",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_libgovirt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgovirt",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

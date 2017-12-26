@@ -30,7 +30,7 @@ var DistroPackageInfo_gamin = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gamin",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

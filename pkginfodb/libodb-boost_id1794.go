@@ -29,7 +29,7 @@ var DistroPackageInfo_libodb_boost = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libodb-boost",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

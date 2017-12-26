@@ -30,7 +30,7 @@ var DistroPackageInfo_pciutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pciutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_zile = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "zile",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_mag = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-mag",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

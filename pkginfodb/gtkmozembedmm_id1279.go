@@ -30,7 +30,7 @@ var DistroPackageInfo_gtkmozembedmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtkmozembedmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

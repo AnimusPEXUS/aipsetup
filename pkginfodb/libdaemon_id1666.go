@@ -29,7 +29,7 @@ var DistroPackageInfo_libdaemon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libdaemon",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

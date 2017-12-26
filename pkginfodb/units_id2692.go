@@ -30,7 +30,7 @@ var DistroPackageInfo_units = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "units",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

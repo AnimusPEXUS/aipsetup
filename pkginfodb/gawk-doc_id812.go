@@ -29,7 +29,7 @@ var DistroPackageInfo_gawk_doc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gawk-doc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

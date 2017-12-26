@@ -29,7 +29,7 @@ var DistroPackageInfo_mc4020 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mc4020",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

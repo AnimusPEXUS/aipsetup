@@ -29,7 +29,7 @@ var DistroPackageInfo_makedepend = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "makedepend",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

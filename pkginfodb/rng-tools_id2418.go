@@ -30,7 +30,7 @@ var DistroPackageInfo_rng_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rng-tools",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_chess = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-chess",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

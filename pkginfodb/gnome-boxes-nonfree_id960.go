@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_boxes_nonfree = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-boxes-nonfree",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

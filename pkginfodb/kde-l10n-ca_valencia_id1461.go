@@ -29,7 +29,7 @@ var DistroPackageInfo_kde_l10n_ca_valencia = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kde-l10n-ca@valencia",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

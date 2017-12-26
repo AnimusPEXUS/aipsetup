@@ -30,7 +30,7 @@ var DistroPackageInfo_libvtemm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libvtemm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

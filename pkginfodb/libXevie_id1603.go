@@ -29,7 +29,7 @@ var DistroPackageInfo_libXevie = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXevie",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

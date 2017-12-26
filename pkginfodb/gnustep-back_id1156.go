@@ -29,7 +29,7 @@ var DistroPackageInfo_gnustep_back = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnustep-back",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

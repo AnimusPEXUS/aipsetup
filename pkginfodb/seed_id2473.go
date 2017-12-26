@@ -30,7 +30,7 @@ var DistroPackageInfo_seed = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "seed",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

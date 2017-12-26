@@ -30,7 +30,7 @@ var DistroPackageInfo_libgudev = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgudev",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

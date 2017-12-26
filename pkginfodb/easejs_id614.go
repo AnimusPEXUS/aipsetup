@@ -30,7 +30,7 @@ var DistroPackageInfo_easejs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "easejs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

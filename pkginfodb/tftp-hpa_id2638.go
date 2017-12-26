@@ -29,7 +29,7 @@ var DistroPackageInfo_tftp_hpa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "tftp-hpa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

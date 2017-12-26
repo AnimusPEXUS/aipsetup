@@ -29,7 +29,7 @@ var DistroPackageInfo_libaccounts_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libaccounts-glib",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

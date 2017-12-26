@@ -30,7 +30,7 @@ var DistroPackageInfo_QScintilla2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "QScintilla-gpl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

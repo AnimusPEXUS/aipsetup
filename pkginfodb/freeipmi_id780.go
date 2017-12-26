@@ -30,7 +30,7 @@ var DistroPackageInfo_freeipmi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "freeipmi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

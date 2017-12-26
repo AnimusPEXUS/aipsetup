@@ -29,7 +29,7 @@ var DistroPackageInfo_3DLDF = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "3DLDF",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

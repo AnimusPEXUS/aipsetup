@@ -30,7 +30,7 @@ var DistroPackageInfo_libtool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libtool",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

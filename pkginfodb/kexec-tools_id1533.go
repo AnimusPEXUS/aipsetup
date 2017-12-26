@@ -29,7 +29,7 @@ var DistroPackageInfo_kexec_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kexec-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

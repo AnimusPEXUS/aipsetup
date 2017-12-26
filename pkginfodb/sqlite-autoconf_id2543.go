@@ -30,7 +30,7 @@ var DistroPackageInfo_sqlite_autoconf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "sqlite-autoconf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

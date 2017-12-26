@@ -30,7 +30,7 @@ var DistroPackageInfo_ccscript = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ccscript",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_clisp_2_29_i386_netbsd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clisp-2.29-i386-netbsd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

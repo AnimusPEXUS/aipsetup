@@ -29,7 +29,7 @@ var DistroPackageInfo_libnice = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libnice",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_pybliographer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pybliographer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

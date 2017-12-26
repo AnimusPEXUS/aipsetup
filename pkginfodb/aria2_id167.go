@@ -29,7 +29,7 @@ var DistroPackageInfo_aria2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aria2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

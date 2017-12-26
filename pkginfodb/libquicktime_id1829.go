@@ -30,7 +30,7 @@ var DistroPackageInfo_libquicktime = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libquicktime",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

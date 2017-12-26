@@ -29,7 +29,7 @@ var DistroPackageInfo_wavpack = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wavpack",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

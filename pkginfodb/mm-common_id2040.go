@@ -30,7 +30,7 @@ var DistroPackageInfo_mm_common = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mm-common",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

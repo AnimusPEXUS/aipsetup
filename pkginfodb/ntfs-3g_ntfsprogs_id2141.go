@@ -30,7 +30,7 @@ var DistroPackageInfo_ntfs_3g_ntfsprogs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ntfs-3g_ntfsprogs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

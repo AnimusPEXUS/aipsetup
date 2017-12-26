@@ -30,7 +30,7 @@ var DistroPackageInfo_gir_repository = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gir-repository",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

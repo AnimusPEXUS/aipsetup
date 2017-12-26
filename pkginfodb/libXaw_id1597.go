@@ -29,7 +29,7 @@ var DistroPackageInfo_libXaw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXaw",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_weston = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "weston",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

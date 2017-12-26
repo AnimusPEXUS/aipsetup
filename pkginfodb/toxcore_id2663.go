@@ -29,7 +29,7 @@ var DistroPackageInfo_toxcore = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "toxcore",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

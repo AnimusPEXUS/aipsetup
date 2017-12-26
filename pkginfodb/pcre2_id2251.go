@@ -30,7 +30,7 @@ var DistroPackageInfo_pcre2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pcre2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

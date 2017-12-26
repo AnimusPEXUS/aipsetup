@@ -29,7 +29,7 @@ var DistroPackageInfo_kwordquiz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kwordquiz",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

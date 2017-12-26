@@ -30,7 +30,7 @@ var DistroPackageInfo_california = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "california",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

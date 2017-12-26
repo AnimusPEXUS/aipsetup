@@ -29,7 +29,7 @@ var DistroPackageInfo_obexd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "obexd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

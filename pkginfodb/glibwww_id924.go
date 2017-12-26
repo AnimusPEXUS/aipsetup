@@ -30,7 +30,7 @@ var DistroPackageInfo_glibwww = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glibwww",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

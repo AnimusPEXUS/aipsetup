@@ -31,7 +31,7 @@ var DistroPackageInfo_cryptsetup = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cryptsetup",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

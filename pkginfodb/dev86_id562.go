@@ -30,7 +30,7 @@ var DistroPackageInfo_dev86 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "Dev86src",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

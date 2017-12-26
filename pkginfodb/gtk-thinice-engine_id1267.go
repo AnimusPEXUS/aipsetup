@@ -30,7 +30,7 @@ var DistroPackageInfo_gtk_thinice_engine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtk-thinice-engine",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

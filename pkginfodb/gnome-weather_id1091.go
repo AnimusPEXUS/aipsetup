@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_weather = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-weather",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

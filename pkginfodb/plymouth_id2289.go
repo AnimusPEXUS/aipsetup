@@ -29,7 +29,7 @@ var DistroPackageInfo_plymouth = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "plymouth",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

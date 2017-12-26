@@ -30,7 +30,7 @@ var DistroPackageInfo_openvpn = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openvpn",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_parley = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "parley",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

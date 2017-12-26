@@ -29,7 +29,7 @@ var DistroPackageInfo_pwdutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pwdutils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

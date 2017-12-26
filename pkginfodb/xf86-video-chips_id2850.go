@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_video_chips = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-video-chips",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

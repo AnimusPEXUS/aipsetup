@@ -29,7 +29,7 @@ var DistroPackageInfo_elisp_manual_21 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "elisp-manual-21",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

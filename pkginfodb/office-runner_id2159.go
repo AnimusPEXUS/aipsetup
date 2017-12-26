@@ -30,7 +30,7 @@ var DistroPackageInfo_office_runner = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "office-runner",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

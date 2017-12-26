@@ -29,7 +29,7 @@ var DistroPackageInfo_xtrans = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xtrans",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

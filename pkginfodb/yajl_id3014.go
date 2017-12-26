@@ -30,7 +30,7 @@ var DistroPackageInfo_yajl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "yajl",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

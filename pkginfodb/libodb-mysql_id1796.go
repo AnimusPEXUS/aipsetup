@@ -29,7 +29,7 @@ var DistroPackageInfo_libodb_mysql = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libodb-mysql",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_biew = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "biew",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

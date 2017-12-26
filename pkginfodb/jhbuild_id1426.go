@@ -30,7 +30,7 @@ var DistroPackageInfo_jhbuild = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "jhbuild",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

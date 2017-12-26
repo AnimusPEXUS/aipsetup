@@ -30,7 +30,7 @@ var DistroPackageInfo_varconf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "varconf",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_yell = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-yell",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

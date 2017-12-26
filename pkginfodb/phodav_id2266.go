@@ -30,7 +30,7 @@ var DistroPackageInfo_phodav = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "phodav",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_obconf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "obconf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

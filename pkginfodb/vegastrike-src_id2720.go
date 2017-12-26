@@ -29,7 +29,7 @@ var DistroPackageInfo_vegastrike_src = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "vegastrike-src",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

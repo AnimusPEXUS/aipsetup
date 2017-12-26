@@ -29,7 +29,7 @@ var DistroPackageInfo_rgb = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rgb",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

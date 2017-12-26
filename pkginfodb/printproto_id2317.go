@@ -29,7 +29,7 @@ var DistroPackageInfo_printproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "printproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

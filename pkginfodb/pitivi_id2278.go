@@ -30,7 +30,7 @@ var DistroPackageInfo_pitivi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pitivi",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

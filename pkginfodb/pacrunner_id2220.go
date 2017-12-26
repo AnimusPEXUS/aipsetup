@@ -29,7 +29,7 @@ var DistroPackageInfo_pacrunner = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pacrunner",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

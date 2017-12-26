@@ -30,7 +30,7 @@ var DistroPackageInfo_libccc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libccc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

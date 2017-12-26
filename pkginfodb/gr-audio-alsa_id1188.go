@@ -29,7 +29,7 @@ var DistroPackageInfo_gr_audio_alsa = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gr-audio-alsa",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

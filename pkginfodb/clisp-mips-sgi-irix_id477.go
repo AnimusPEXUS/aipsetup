@@ -29,7 +29,7 @@ var DistroPackageInfo_clisp_mips_sgi_irix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "clisp-mips-sgi-irix",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

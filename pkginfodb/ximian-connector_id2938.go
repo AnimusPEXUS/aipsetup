@@ -30,7 +30,7 @@ var DistroPackageInfo_ximian_connector = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ximian-connector",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

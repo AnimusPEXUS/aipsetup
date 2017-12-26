@@ -29,7 +29,7 @@ var DistroPackageInfo_boswars = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "boswars",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

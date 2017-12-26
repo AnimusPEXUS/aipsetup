@@ -30,7 +30,7 @@ var DistroPackageInfo_gwenview = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gwenview",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

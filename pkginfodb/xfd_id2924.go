@@ -29,7 +29,7 @@ var DistroPackageInfo_xfd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

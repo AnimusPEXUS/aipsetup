@@ -30,7 +30,7 @@ var DistroPackageInfo_patchelf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "patchelf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_emscripten = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "emscripten",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

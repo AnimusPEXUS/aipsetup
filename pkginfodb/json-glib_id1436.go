@@ -30,7 +30,7 @@ var DistroPackageInfo_json_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "json-glib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

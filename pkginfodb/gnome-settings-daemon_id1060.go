@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_settings_daemon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-settings-daemon",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

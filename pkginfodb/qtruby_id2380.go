@@ -29,7 +29,7 @@ var DistroPackageInfo_qtruby = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "qtruby",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

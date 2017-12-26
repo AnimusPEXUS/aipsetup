@@ -30,7 +30,7 @@ var DistroPackageInfo_vcdimager = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "vcdimager",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

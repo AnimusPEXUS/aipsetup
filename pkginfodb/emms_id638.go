@@ -30,7 +30,7 @@ var DistroPackageInfo_emms = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "emms",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

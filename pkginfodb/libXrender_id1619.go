@@ -29,7 +29,7 @@ var DistroPackageInfo_libXrender = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXrender",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xfconf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xfconf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

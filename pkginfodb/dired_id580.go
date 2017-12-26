@@ -29,7 +29,7 @@ var DistroPackageInfo_dired = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dired",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

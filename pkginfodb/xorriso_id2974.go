@@ -30,7 +30,7 @@ var DistroPackageInfo_xorriso = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xorriso",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

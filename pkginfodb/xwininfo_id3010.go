@@ -29,7 +29,7 @@ var DistroPackageInfo_xwininfo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xwininfo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

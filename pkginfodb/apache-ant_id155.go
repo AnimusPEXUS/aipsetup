@@ -30,7 +30,7 @@ var DistroPackageInfo_apache_ant = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "apache-ant",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

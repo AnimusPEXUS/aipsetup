@@ -29,7 +29,7 @@ var DistroPackageInfo_CAPA = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "CAPA",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

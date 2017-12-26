@@ -29,7 +29,7 @@ var DistroPackageInfo_kvm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kvm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

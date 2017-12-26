@@ -29,7 +29,7 @@ var DistroPackageInfo_phonon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "phonon",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

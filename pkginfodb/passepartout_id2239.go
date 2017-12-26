@@ -30,7 +30,7 @@ var DistroPackageInfo_passepartout = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "passepartout",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

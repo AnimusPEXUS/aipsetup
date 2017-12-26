@@ -29,7 +29,7 @@ var DistroPackageInfo_ipvsadm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ipvsadm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

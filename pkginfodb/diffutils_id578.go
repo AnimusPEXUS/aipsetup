@@ -30,7 +30,7 @@ var DistroPackageInfo_diffutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "diffutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

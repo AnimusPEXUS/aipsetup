@@ -30,7 +30,7 @@ var DistroPackageInfo_librejs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "librejs",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

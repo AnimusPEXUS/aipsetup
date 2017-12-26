@@ -29,7 +29,7 @@ var DistroPackageInfo_libopts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libopts",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

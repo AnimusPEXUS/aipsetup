@@ -30,7 +30,7 @@ var DistroPackageInfo_binutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "binutils",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

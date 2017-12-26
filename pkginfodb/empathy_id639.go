@@ -30,7 +30,7 @@ var DistroPackageInfo_empathy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "empathy",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

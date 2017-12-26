@@ -30,7 +30,7 @@ var DistroPackageInfo_xvidcap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "xvidcap",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

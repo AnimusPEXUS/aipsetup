@@ -30,7 +30,7 @@ var DistroPackageInfo_ignuit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ignuit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_mkcomposecache = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mkcomposecache",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_media_player_info = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "media-player-info",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

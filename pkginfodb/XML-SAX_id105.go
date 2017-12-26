@@ -29,7 +29,7 @@ var DistroPackageInfo_XML_SAX = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "XML-SAX",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

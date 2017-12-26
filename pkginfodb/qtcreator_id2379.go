@@ -29,7 +29,7 @@ var DistroPackageInfo_qtcreator = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "qt-creator-opensource-src",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

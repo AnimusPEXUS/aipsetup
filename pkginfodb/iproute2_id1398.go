@@ -30,7 +30,7 @@ var DistroPackageInfo_iproute2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "iproute2",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

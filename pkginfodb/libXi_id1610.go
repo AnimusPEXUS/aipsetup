@@ -29,7 +29,7 @@ var DistroPackageInfo_libXi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

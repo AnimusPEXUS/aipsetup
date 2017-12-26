@@ -29,7 +29,7 @@ var DistroPackageInfo_libcutl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libcutl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

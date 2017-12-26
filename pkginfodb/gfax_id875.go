@@ -30,7 +30,7 @@ var DistroPackageInfo_gfax = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gfax",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

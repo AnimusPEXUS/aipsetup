@@ -30,7 +30,7 @@ var DistroPackageInfo_krb5_auth_dialog = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "krb5-auth-dialog",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

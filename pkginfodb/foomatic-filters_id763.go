@@ -30,7 +30,7 @@ var DistroPackageInfo_foomatic_filters = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "foomatic-filters",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

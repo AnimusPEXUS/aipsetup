@@ -29,7 +29,7 @@ var DistroPackageInfo_FreeRDP = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "FreeRDP",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

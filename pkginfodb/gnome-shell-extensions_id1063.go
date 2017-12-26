@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_shell_extensions = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-shell-extensions",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

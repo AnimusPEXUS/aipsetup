@@ -29,7 +29,7 @@ var DistroPackageInfo_dbus_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "dbus-java",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

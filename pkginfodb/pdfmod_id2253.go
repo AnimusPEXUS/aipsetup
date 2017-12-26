@@ -30,7 +30,7 @@ var DistroPackageInfo_pdfmod = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pdfmod",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

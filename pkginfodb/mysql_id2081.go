@@ -30,7 +30,7 @@ var DistroPackageInfo_mysql = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mysql",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_input_joystick = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-input-joystick",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

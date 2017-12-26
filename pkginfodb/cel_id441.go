@@ -30,7 +30,7 @@ var DistroPackageInfo_cel = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cel",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

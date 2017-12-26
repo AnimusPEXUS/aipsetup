@@ -29,7 +29,7 @@ var DistroPackageInfo_font_bh_ttf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-bh-ttf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

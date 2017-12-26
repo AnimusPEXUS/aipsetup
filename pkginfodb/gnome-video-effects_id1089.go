@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_video_effects = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-video-effects",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

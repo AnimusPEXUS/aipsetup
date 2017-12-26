@@ -29,7 +29,7 @@ var DistroPackageInfo_gnu_objc_issues = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnu-objc-issues",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

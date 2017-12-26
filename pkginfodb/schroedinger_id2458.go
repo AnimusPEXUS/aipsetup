@@ -29,7 +29,7 @@ var DistroPackageInfo_schroedinger = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "schroedinger",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

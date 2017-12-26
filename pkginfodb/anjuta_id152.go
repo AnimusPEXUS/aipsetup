@@ -30,7 +30,7 @@ var DistroPackageInfo_anjuta = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "anjuta",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

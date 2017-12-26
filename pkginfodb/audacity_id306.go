@@ -30,7 +30,7 @@ var DistroPackageInfo_audacity = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "audacity-minsrc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

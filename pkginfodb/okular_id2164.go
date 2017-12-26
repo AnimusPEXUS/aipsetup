@@ -29,7 +29,7 @@ var DistroPackageInfo_okular = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "okular",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

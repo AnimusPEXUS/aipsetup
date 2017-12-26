@@ -29,7 +29,7 @@ var DistroPackageInfo_ksecrets = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ksecrets",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

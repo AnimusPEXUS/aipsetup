@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_chill = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-chill",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

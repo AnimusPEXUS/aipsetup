@@ -29,7 +29,7 @@ var DistroPackageInfo_CVSplusSimplePAMApps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "CVS+SimplePAMApps",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

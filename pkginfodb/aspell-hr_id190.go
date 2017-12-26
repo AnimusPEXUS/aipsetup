@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell_hr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell-hr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

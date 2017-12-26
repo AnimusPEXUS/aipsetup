@@ -29,7 +29,7 @@ var DistroPackageInfo_MaverikDemos = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "MaverikDemos",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

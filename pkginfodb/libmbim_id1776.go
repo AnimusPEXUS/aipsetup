@@ -29,7 +29,7 @@ var DistroPackageInfo_libmbim = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libmbim",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_rush = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rush",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

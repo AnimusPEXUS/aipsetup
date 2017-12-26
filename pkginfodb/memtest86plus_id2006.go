@@ -29,7 +29,7 @@ var DistroPackageInfo_memtest86plus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "memtest86+",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_cinilerra = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "cinilerra",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

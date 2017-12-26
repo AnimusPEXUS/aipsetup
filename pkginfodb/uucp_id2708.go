@@ -30,7 +30,7 @@ var DistroPackageInfo_uucp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "uucp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

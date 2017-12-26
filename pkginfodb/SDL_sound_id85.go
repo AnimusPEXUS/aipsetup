@@ -29,7 +29,7 @@ var DistroPackageInfo_SDL_sound = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "SDL_sound",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

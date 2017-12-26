@@ -30,7 +30,7 @@ var DistroPackageInfo_motti = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "motti",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

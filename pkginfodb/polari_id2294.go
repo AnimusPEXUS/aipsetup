@@ -30,7 +30,7 @@ var DistroPackageInfo_polari = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "polari",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

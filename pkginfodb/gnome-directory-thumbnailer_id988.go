@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_directory_thumbnailer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-directory-thumbnailer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

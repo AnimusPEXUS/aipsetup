@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_battery_bench = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-battery-bench",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

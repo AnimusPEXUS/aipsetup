@@ -30,7 +30,7 @@ var DistroPackageInfo_gcab = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gcab",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

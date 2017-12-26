@@ -29,7 +29,7 @@ var DistroPackageInfo_rfkill = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rfkill",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

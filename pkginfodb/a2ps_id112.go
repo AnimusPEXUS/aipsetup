@@ -30,7 +30,7 @@ var DistroPackageInfo_a2ps = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "a2ps",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

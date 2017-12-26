@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_pinocchio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-pinocchio",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

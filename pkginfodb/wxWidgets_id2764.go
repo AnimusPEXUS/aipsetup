@@ -30,7 +30,7 @@ var DistroPackageInfo_wxWidgets = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "wxWidgets",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

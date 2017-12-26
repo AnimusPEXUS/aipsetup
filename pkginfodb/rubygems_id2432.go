@@ -29,7 +29,7 @@ var DistroPackageInfo_rubygems = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rubygems",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

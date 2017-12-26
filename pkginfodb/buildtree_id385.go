@@ -29,7 +29,7 @@ var DistroPackageInfo_buildtree = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "buildtree",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_qt5 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "qt-everywhere-opensource-src",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

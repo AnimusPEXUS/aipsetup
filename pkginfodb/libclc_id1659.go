@@ -30,7 +30,7 @@ var DistroPackageInfo_libclc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libclc",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

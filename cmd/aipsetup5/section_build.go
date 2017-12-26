@@ -10,6 +10,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/utils/cliapp"
+	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
 )
@@ -87,7 +88,7 @@ func CmdAipsetupBuildInitSub01(
 
 	target_tarball := main_tarball
 
-	buildinfo, err := pkginfodb.DetermineTarballsBuildinfo(target_tarball)
+	buildinfo, err := pkginfodb.DetermineTarballsBuildInfo(target_tarball)
 	if err != nil {
 		return errors.New("error searching matching info record: " + err.Error())
 	}
@@ -117,12 +118,17 @@ func CmdAipsetupBuildInitSub01(
 			parser = parser_c()
 		}
 
+		err := tarballname.IsPossibleTarballNameErr(target_tarball)
+		if err != nil {
+			return err
+		}
+
 		parsed, err := parser.ParseName(target_tarball)
 		if err != nil {
 			return err
 		}
 
-		version = parsed.VersionString()
+		version = parsed.Version.Str
 
 	}
 

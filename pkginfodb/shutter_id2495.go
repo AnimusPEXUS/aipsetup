@@ -29,7 +29,7 @@ var DistroPackageInfo_shutter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "shutter",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

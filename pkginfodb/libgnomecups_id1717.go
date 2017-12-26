@@ -30,7 +30,7 @@ var DistroPackageInfo_libgnomecups = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgnomecups",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

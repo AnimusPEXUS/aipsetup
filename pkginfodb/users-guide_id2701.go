@@ -30,7 +30,7 @@ var DistroPackageInfo_users_guide = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "users-guide",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

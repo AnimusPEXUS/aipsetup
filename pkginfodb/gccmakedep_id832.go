@@ -29,7 +29,7 @@ var DistroPackageInfo_gccmakedep = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gccmakedep",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

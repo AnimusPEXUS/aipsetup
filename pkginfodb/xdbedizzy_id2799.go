@@ -29,7 +29,7 @@ var DistroPackageInfo_xdbedizzy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xdbedizzy",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

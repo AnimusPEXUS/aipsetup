@@ -29,7 +29,7 @@ var DistroPackageInfo_gnome_mount = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnome-mount",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

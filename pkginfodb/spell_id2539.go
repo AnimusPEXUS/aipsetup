@@ -30,7 +30,7 @@ var DistroPackageInfo_spell = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "spell",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

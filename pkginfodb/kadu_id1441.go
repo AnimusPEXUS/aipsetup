@@ -29,7 +29,7 @@ var DistroPackageInfo_kadu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kadu",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

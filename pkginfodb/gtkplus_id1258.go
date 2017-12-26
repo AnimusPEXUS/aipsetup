@@ -30,7 +30,7 @@ var DistroPackageInfo_gtkplus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtk+",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

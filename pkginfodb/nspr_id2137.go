@@ -29,7 +29,7 @@ var DistroPackageInfo_nspr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nspr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_pam_skey = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pam_skey",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

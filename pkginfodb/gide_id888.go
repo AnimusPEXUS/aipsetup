@@ -30,7 +30,7 @@ var DistroPackageInfo_gide = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gide",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

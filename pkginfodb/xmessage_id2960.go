@@ -29,7 +29,7 @@ var DistroPackageInfo_xmessage = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xmessage",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

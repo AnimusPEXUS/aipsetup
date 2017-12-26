@@ -30,7 +30,7 @@ var DistroPackageInfo_garpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "garpd",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

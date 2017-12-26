@@ -30,7 +30,7 @@ var DistroPackageInfo_sipwitch = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sipwitch",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

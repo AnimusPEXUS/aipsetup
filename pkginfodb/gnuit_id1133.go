@@ -30,7 +30,7 @@ var DistroPackageInfo_gnuit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnuit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

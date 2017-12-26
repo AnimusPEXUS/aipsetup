@@ -30,7 +30,7 @@ var DistroPackageInfo_acct = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "acct",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

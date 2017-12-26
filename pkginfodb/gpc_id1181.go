@@ -29,7 +29,7 @@ var DistroPackageInfo_gpc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gpc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

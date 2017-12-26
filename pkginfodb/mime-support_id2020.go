@@ -29,7 +29,7 @@ var DistroPackageInfo_mime_support = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mime-support",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

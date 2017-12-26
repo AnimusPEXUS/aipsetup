@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_games = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-games",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

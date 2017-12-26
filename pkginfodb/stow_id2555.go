@@ -30,7 +30,7 @@ var DistroPackageInfo_stow = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "stow",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

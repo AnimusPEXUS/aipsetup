@@ -30,7 +30,7 @@ var DistroPackageInfo_libspnav = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libspnav",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

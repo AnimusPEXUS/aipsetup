@@ -29,7 +29,7 @@ var DistroPackageInfo_telepathy_qt4_prototype = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "telepathy-qt4-prototype",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

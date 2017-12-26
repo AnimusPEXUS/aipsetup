@@ -29,7 +29,7 @@ var DistroPackageInfo_nepomukannotation = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nepomukannotation",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_man = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "man",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_yaml = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "yaml",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

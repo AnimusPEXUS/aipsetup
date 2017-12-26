@@ -30,7 +30,7 @@ var DistroPackageInfo_ostree = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ostree",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

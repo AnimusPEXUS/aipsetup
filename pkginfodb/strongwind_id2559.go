@@ -30,7 +30,7 @@ var DistroPackageInfo_strongwind = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "strongwind",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

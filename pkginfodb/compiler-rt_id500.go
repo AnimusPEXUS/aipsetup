@@ -29,7 +29,7 @@ var DistroPackageInfo_compiler_rt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "compiler-rt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

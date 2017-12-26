@@ -29,7 +29,7 @@ var DistroPackageInfo_xdg_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xdg-utils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

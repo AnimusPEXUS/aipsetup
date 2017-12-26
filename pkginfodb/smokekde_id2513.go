@@ -29,7 +29,7 @@ var DistroPackageInfo_smokekde = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "smokekde",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

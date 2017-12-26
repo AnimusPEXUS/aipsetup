@@ -29,7 +29,7 @@ var DistroPackageInfo_rhino = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rhino",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

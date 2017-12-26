@@ -29,7 +29,7 @@ var DistroPackageInfo_serf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "serf",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

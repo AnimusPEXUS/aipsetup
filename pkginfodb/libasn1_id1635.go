@@ -29,7 +29,7 @@ var DistroPackageInfo_libasn1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libasn1",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

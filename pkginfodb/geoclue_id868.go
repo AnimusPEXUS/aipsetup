@@ -29,7 +29,7 @@ var DistroPackageInfo_geoclue = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "geoclue",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

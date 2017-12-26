@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_video_cirrus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-video-cirrus",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

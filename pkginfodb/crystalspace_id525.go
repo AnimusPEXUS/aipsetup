@@ -29,7 +29,7 @@ var DistroPackageInfo_crystalspace = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "crystalspace",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

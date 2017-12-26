@@ -30,7 +30,7 @@ var DistroPackageInfo_murrine = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "murrine",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

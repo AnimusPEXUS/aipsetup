@@ -30,7 +30,7 @@ var DistroPackageInfo_tomboy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "tomboy",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

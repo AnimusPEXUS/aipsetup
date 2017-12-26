@@ -30,7 +30,7 @@ var DistroPackageInfo_libgit2_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libgit2-glib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

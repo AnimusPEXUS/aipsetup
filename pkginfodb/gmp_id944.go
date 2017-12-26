@@ -30,7 +30,7 @@ var DistroPackageInfo_gmp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gmp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

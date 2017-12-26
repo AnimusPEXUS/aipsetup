@@ -30,7 +30,7 @@ var DistroPackageInfo_fpm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "fpm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

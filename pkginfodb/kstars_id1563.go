@@ -29,7 +29,7 @@ var DistroPackageInfo_kstars = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kstars",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

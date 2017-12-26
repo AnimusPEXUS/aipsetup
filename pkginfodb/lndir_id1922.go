@@ -29,7 +29,7 @@ var DistroPackageInfo_lndir = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lndir",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

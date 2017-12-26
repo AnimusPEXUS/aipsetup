@@ -30,7 +30,7 @@ var DistroPackageInfo_gnomoku = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnomoku",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

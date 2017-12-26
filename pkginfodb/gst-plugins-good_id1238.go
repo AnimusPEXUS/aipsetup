@@ -30,7 +30,7 @@ var DistroPackageInfo_gst_plugins_good = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gst-plugins-good",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

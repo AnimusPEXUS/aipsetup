@@ -30,7 +30,7 @@ var DistroPackageInfo_java_libglom = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "java-libglom",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

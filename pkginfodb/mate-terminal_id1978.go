@@ -29,7 +29,7 @@ var DistroPackageInfo_mate_terminal = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mate-terminal",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

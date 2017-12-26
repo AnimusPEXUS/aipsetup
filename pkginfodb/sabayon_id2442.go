@@ -30,7 +30,7 @@ var DistroPackageInfo_sabayon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sabayon",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

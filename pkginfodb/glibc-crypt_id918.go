@@ -29,7 +29,7 @@ var DistroPackageInfo_glibc_crypt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glibc-crypt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

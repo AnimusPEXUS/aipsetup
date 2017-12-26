@@ -30,7 +30,7 @@ var DistroPackageInfo_evolution_webcal = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "evolution-webcal",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

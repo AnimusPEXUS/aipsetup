@@ -30,7 +30,7 @@ var DistroPackageInfo_autoconf2_13 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters: []string{
+	TarballFilters: []string{
 		`- version-!= 2.13`},
 	TarballName:           "autoconf",
 	TarballFileNameParser: "std",

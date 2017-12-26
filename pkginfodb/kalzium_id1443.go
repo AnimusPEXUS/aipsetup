@@ -29,7 +29,7 @@ var DistroPackageInfo_kalzium = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kalzium",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_iogrind = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "iogrind",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

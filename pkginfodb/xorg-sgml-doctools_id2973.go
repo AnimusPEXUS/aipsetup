@@ -29,7 +29,7 @@ var DistroPackageInfo_xorg_sgml_doctools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xorg-sgml-doctools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

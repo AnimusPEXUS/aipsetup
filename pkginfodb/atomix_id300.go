@@ -30,7 +30,7 @@ var DistroPackageInfo_atomix = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "atomix",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

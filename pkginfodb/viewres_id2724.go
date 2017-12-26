@@ -29,7 +29,7 @@ var DistroPackageInfo_viewres = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "viewres",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

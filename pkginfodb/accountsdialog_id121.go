@@ -30,7 +30,7 @@ var DistroPackageInfo_accountsdialog = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "accountsdialog",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

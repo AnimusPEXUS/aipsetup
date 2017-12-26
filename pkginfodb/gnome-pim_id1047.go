@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_pim = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-pim",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_lsof = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "lsof",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

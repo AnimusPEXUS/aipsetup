@@ -29,7 +29,7 @@ var DistroPackageInfo_font_isas_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-isas-misc",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

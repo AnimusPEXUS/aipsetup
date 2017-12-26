@@ -30,7 +30,7 @@ var DistroPackageInfo_system_tools_backends = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "system-tools-backends",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

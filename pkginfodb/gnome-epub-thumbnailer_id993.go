@@ -30,7 +30,7 @@ var DistroPackageInfo_gnome_epub_thumbnailer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnome-epub-thumbnailer",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

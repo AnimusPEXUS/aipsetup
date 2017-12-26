@@ -30,7 +30,7 @@ var DistroPackageInfo_exim = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "exim",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

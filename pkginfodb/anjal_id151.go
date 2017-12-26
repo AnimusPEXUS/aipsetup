@@ -30,7 +30,7 @@ var DistroPackageInfo_anjal = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "anjal",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

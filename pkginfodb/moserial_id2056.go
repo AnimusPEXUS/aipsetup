@@ -30,7 +30,7 @@ var DistroPackageInfo_moserial = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "moserial",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

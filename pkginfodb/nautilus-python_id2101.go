@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_python = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-python",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -29,7 +29,7 @@ var DistroPackageInfo_rubberband = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "rubberband",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

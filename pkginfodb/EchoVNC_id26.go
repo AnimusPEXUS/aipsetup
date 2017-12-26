@@ -29,7 +29,7 @@ var DistroPackageInfo_EchoVNC = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "EchoVNC",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

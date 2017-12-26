@@ -29,7 +29,7 @@ var DistroPackageInfo_pavucontrol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pavucontrol",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

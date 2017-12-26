@@ -29,7 +29,7 @@ var DistroPackageInfo_gst_rtsp0_10 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gst-rtsp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

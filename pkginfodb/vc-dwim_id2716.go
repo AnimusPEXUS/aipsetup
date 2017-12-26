@@ -30,7 +30,7 @@ var DistroPackageInfo_vc_dwim = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "vc-dwim",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

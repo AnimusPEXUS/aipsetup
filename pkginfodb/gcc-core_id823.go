@@ -29,7 +29,7 @@ var DistroPackageInfo_gcc_core = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gcc-core",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

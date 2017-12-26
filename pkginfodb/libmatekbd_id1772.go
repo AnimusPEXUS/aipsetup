@@ -29,7 +29,7 @@ var DistroPackageInfo_libmatekbd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libmatekbd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

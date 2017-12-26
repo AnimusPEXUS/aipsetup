@@ -30,7 +30,7 @@ var DistroPackageInfo_genius = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "genius",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

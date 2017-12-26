@@ -29,7 +29,7 @@ var DistroPackageInfo_gnu_gs = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnu-gs",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xinetd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xinetd",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

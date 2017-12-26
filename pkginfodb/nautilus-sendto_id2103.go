@@ -30,7 +30,7 @@ var DistroPackageInfo_nautilus_sendto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "nautilus-sendto",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

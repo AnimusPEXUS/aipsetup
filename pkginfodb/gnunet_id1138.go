@@ -30,7 +30,7 @@ var DistroPackageInfo_gnunet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gnunet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_capuchin_glib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "capuchin-glib",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

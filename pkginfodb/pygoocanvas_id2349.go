@@ -30,7 +30,7 @@ var DistroPackageInfo_pygoocanvas = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pygoocanvas",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

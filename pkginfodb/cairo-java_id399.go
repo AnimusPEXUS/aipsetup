@@ -30,7 +30,7 @@ var DistroPackageInfo_cairo_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "cairo-java",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

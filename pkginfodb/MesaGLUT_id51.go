@@ -30,7 +30,7 @@ var DistroPackageInfo_MesaGLUT = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "MesaGLUT",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

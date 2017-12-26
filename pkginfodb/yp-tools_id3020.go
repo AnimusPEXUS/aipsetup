@@ -29,7 +29,7 @@ var DistroPackageInfo_yp_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "yp-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

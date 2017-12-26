@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell_mk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell-mk",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

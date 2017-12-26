@@ -29,7 +29,7 @@ var DistroPackageInfo_gegl_qt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gegl-qt",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

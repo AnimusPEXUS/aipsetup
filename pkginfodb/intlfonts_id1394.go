@@ -30,7 +30,7 @@ var DistroPackageInfo_intlfonts = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "intlfonts",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

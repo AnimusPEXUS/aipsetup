@@ -29,7 +29,7 @@ var DistroPackageInfo_wvdial = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "wvdial",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -34,7 +34,7 @@ python2.7 is required
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gajim",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

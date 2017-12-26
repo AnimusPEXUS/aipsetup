@@ -30,7 +30,7 @@ var DistroPackageInfo_pies = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pies",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

@@ -30,7 +30,7 @@ var DistroPackageInfo_usbutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "usbutils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

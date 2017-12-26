@@ -29,7 +29,7 @@ var DistroPackageInfo_glibc_ports = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glibc-ports",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

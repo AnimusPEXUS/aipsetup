@@ -30,7 +30,7 @@ var DistroPackageInfo_ntp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "ntp",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

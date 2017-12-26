@@ -30,7 +30,7 @@ var DistroPackageInfo_shmm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "shmm",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

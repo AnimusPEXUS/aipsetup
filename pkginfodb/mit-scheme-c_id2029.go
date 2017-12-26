@@ -29,7 +29,7 @@ var DistroPackageInfo_mit_scheme_c = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mit-scheme-c",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

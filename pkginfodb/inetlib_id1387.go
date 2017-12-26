@@ -29,7 +29,7 @@ var DistroPackageInfo_inetlib = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "inetlib",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

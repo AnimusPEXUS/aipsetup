@@ -29,7 +29,7 @@ var DistroPackageInfo_libdbus_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libdbus-java",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

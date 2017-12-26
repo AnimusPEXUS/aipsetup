@@ -30,7 +30,7 @@ var DistroPackageInfo_gtypist = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtypist",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

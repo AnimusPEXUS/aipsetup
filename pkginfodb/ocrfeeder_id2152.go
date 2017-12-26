@@ -30,7 +30,7 @@ var DistroPackageInfo_ocrfeeder = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ocrfeeder",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

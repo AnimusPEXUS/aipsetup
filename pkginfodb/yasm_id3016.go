@@ -30,7 +30,7 @@ var DistroPackageInfo_yasm = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "yasm",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

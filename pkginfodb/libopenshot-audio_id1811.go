@@ -29,7 +29,7 @@ var DistroPackageInfo_libopenshot_audio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libopenshot-audio",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

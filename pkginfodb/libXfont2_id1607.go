@@ -29,7 +29,7 @@ var DistroPackageInfo_libXfont2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXfont2",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

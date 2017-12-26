@@ -29,7 +29,7 @@ var DistroPackageInfo_glu = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "glu",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

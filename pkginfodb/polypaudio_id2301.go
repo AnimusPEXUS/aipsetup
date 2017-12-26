@@ -29,7 +29,7 @@ var DistroPackageInfo_polypaudio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "polypaudio",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

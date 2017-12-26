@@ -29,7 +29,7 @@ var DistroPackageInfo_kmousetool = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kmousetool",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

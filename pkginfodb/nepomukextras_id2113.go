@@ -29,7 +29,7 @@ var DistroPackageInfo_nepomukextras = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "nepomukextras",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_input_tek4957 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-input-tek4957",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

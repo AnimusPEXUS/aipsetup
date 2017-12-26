@@ -29,7 +29,7 @@ var DistroPackageInfo_pioneer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pioneer",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

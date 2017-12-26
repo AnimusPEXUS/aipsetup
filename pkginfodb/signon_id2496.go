@@ -29,7 +29,7 @@ var DistroPackageInfo_signon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "signon",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

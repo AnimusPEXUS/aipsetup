@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86vidmodeproto = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86vidmodeproto",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_dap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dap",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

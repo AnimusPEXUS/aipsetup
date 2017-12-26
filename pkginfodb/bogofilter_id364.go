@@ -30,7 +30,7 @@ var DistroPackageInfo_bogofilter = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bogofilter",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

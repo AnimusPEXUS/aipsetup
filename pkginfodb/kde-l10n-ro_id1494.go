@@ -29,7 +29,7 @@ var DistroPackageInfo_kde_l10n_ro = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kde-l10n-ro",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

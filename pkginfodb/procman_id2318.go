@@ -30,7 +30,7 @@ var DistroPackageInfo_procman = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "procman",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

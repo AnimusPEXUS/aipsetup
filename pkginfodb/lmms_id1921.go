@@ -30,7 +30,7 @@ var DistroPackageInfo_lmms = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "lmms",
 	TarballFileNameParser: "std",
 	TarballProvider:       "srs",

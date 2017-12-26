@@ -29,7 +29,7 @@ var DistroPackageInfo_jp2a = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "jp2a",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

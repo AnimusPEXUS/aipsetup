@@ -29,7 +29,7 @@ var DistroPackageInfo_font_bh_lucidatypewriter_100dpi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-bh-lucidatypewriter-100dpi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

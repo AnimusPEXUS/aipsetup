@@ -29,7 +29,7 @@ var DistroPackageInfo_guile_gnome_platform = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "guile-gnome-platform",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

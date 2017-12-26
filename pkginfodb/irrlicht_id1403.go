@@ -30,7 +30,7 @@ var DistroPackageInfo_irrlicht = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "irrlicht",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

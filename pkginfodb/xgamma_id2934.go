@@ -29,7 +29,7 @@ var DistroPackageInfo_xgamma = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xgamma",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

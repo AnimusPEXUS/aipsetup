@@ -29,7 +29,7 @@ var DistroPackageInfo_PythonCAD = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "PythonCAD",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

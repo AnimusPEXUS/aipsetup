@@ -31,9 +31,9 @@ var %s = &basictypes.PackageInfo{
 
   TarballVersionTool : %s,
 
-  Filters                         : %s,
   TarballName                     : %s,
   TarballFileNameParser           : %s,
+  TarballFilters                  : %s,
   TarballProvider                 : %s,
   TarballProviderArguments        : %s,
   TarballProviderUseCache         : %t,

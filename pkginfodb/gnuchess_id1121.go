@@ -29,7 +29,7 @@ var DistroPackageInfo_gnuchess = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "gnuchess",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

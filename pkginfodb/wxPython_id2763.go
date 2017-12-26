@@ -30,7 +30,7 @@ var DistroPackageInfo_wxPython = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "wxPython-src",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

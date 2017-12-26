@@ -29,7 +29,7 @@ var DistroPackageInfo_aspell_ca = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "aspell-ca",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

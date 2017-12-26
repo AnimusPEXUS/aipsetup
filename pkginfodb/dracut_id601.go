@@ -30,7 +30,7 @@ var DistroPackageInfo_dracut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "dracut",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

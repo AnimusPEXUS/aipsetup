@@ -30,7 +30,7 @@ var DistroPackageInfo_expat = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "expat",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

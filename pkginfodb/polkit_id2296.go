@@ -30,7 +30,7 @@ var DistroPackageInfo_polkit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "polkit",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

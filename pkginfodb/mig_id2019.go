@@ -30,7 +30,7 @@ var DistroPackageInfo_mig = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "mig",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

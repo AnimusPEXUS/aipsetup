@@ -29,7 +29,7 @@ var DistroPackageInfo_oolite = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "oolite",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

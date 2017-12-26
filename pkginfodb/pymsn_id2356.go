@@ -29,7 +29,7 @@ var DistroPackageInfo_pymsn = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pymsn",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

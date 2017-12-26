@@ -30,7 +30,7 @@ var DistroPackageInfo_alive = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "alive",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

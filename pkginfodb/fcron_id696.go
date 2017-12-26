@@ -29,7 +29,7 @@ var DistroPackageInfo_fcron = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "fcron",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

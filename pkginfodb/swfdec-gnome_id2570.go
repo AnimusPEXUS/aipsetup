@@ -30,7 +30,7 @@ var DistroPackageInfo_swfdec_gnome = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "swfdec-gnome",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

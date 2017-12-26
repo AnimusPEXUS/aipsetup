@@ -29,7 +29,7 @@ var DistroPackageInfo_libXrandr = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libXrandr",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

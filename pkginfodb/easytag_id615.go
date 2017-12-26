@@ -30,7 +30,7 @@ var DistroPackageInfo_easytag = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "easytag",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

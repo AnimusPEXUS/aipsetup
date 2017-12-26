@@ -30,7 +30,7 @@ var DistroPackageInfo_ggv = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "ggv",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

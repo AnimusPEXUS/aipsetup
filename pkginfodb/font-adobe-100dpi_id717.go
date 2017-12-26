@@ -29,7 +29,7 @@ var DistroPackageInfo_font_adobe_100dpi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-adobe-100dpi",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -29,7 +29,7 @@ var DistroPackageInfo_pyxdg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pyxdg",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_lame = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "lame",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

@@ -29,7 +29,7 @@ var DistroPackageInfo_frei0r_plugins = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "frei0r-plugins",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

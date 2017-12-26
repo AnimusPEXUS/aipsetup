@@ -30,7 +30,7 @@ var DistroPackageInfo_gengen = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gengen",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

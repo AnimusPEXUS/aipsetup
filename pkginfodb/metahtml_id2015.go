@@ -30,7 +30,7 @@ var DistroPackageInfo_metahtml = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "metahtml",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

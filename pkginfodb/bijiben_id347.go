@@ -30,7 +30,7 @@ var DistroPackageInfo_bijiben = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "bijiben",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

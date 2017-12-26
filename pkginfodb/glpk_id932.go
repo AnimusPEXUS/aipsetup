@@ -30,7 +30,7 @@ var DistroPackageInfo_glpk = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "glpk",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

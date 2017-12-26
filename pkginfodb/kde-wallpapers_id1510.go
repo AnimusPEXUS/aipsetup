@@ -29,7 +29,7 @@ var DistroPackageInfo_kde_wallpapers = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kde-wallpapers",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

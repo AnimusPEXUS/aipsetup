@@ -30,7 +30,7 @@ var DistroPackageInfo_gabber = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gabber",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

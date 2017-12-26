@@ -30,7 +30,7 @@ var DistroPackageInfo_krb5 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "krb5",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

@@ -30,7 +30,7 @@ var DistroPackageInfo_rdesktop = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "rdesktop",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

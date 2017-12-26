@@ -29,7 +29,7 @@ var DistroPackageInfo_pykde4 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "pykde4",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

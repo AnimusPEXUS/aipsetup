@@ -30,7 +30,7 @@ var DistroPackageInfo_graphviz = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "graphviz",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

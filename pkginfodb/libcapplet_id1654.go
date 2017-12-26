@@ -30,7 +30,7 @@ var DistroPackageInfo_libcapplet = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libcapplet",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

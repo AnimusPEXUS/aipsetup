@@ -29,7 +29,7 @@ var DistroPackageInfo_setxkbmap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "setxkbmap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

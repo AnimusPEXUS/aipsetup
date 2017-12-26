@@ -30,7 +30,7 @@ var DistroPackageInfo_libircclient = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "libircclient",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

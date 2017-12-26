@@ -30,7 +30,7 @@ var DistroPackageInfo_gtkmozedit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gtkmozedit",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

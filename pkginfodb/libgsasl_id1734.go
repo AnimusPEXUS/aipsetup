@@ -29,7 +29,7 @@ var DistroPackageInfo_libgsasl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "libgsasl",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

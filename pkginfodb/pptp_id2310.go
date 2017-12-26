@@ -30,7 +30,7 @@ var DistroPackageInfo_pptp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "pptp",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

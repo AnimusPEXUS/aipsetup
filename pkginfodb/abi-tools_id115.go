@@ -29,7 +29,7 @@ var DistroPackageInfo_abi_tools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "abi-tools",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

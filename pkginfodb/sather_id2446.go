@@ -30,7 +30,7 @@ var DistroPackageInfo_sather = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "sather",
 	TarballFileNameParser: "std",
 	TarballProvider:       "https",

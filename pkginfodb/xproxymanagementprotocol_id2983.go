@@ -29,7 +29,7 @@ var DistroPackageInfo_xproxymanagementprotocol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xproxymanagementprotocol",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

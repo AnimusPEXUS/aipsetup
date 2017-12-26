@@ -29,7 +29,7 @@ var DistroPackageInfo_id_utils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "id-utils",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

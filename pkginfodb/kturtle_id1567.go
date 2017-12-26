@@ -29,7 +29,7 @@ var DistroPackageInfo_kturtle = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "kturtle",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

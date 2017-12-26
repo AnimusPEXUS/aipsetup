@@ -30,7 +30,7 @@ var DistroPackageInfo_gmerlin_encoders = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:               []string{},
+	TarballFilters:               []string{},
 	TarballName:           "gmerlin-encoders",
 	TarballFileNameParser: "std",
 	TarballProvider:       "sf",

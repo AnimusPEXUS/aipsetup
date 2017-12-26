@@ -29,7 +29,7 @@ var DistroPackageInfo_font_bitstream_speedo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "font-bitstream-speedo",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

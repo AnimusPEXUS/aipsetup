@@ -29,7 +29,7 @@ var DistroPackageInfo_opencascade = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "opencascade",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

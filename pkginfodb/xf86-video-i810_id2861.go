@@ -29,7 +29,7 @@ var DistroPackageInfo_xf86_video_i810 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "xf86-video-i810",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

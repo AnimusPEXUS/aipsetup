@@ -30,7 +30,7 @@ var DistroPackageInfo_AfterStep = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "AfterStep",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

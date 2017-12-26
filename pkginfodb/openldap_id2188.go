@@ -30,7 +30,7 @@ var DistroPackageInfo_openldap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "openldap",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",

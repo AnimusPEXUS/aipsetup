@@ -29,7 +29,7 @@ var DistroPackageInfo_mercurial = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	Filters:                         []string{},
+	TarballFilters:                         []string{},
 	TarballName:                     "mercurial",
 	TarballFileNameParser:           "std",
 	TarballProvider:                 "",
