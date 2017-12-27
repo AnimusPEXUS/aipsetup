@@ -29,9 +29,9 @@ var DistroPackageInfo_mate_media = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:                         []string{},
 	TarballName:                     "mate-media",
 	TarballFileNameParser:           "std",
+	TarballFilters:                  []string{},
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

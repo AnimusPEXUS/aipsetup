@@ -29,9 +29,9 @@ var DistroPackageInfo_font_jis_misc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:                         []string{},
 	TarballName:                     "font-jis-misc",
 	TarballFileNameParser:           "std",
+	TarballFilters:                  []string{},
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

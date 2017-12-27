@@ -29,9 +29,9 @@ var DistroPackageInfo_xtrap = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:                         []string{},
 	TarballName:                     "xtrap",
 	TarballFileNameParser:           "std",
+	TarballFilters:                  []string{},
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

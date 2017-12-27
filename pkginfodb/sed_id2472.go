@@ -30,9 +30,9 @@ var DistroPackageInfo_sed = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "sed",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		`https://ftp.gnu.org/gnu/sed`},

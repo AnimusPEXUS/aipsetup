@@ -30,9 +30,9 @@ var DistroPackageInfo_garnome = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballFilters:               []string{},
 	TarballName:           "garnome",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		`https://ftp.gnome.org/mirror/gnome.org/`},

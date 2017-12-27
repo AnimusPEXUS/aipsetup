@@ -30,9 +30,9 @@ var DistroPackageInfo_expect = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "expect",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		`expect`},

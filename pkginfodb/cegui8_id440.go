@@ -30,9 +30,9 @@ var DistroPackageInfo_cegui8 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "cegui",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		`crayzedsgui`},

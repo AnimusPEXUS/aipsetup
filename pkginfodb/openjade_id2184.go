@@ -30,9 +30,9 @@ var DistroPackageInfo_openjade = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "openjade",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		`openjade`},

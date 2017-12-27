@@ -30,9 +30,9 @@ var DistroPackageInfo_mldonkey = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "mldonkey",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		`mldonkey`},

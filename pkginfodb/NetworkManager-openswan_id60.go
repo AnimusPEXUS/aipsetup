@@ -30,9 +30,9 @@ var DistroPackageInfo_NetworkManager_openswan = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballFilters:               []string{},
 	TarballName:           "NetworkManager-openswan",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		`https://ftp.gnome.org/mirror/gnome.org/`},

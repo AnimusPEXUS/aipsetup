@@ -30,9 +30,9 @@ var DistroPackageInfo_rush = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "rush",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		`https://ftp.gnu.org/gnu/rush`},

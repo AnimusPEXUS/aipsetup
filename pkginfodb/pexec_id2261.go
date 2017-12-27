@@ -30,9 +30,9 @@ var DistroPackageInfo_pexec = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "pexec",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		`https://ftp.gnu.org/gnu/pexec`},

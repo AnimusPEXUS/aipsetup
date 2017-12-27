@@ -30,12 +30,12 @@ var DistroPackageInfo_fftw = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "fftw",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/FFTW/fftw3.git`, `fftw`, `TagPrefixRegExp:fftw`},
+		`git`, `https://github.com/FFTW/fftw3.git`, `fftw`, `TagName:fftw`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

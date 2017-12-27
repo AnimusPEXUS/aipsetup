@@ -30,9 +30,9 @@ var DistroPackageInfo_openmpi = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "openmpi",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
 		`git`, `https://github.com/open-mpi/ompi-release.git`, `openmpi`},

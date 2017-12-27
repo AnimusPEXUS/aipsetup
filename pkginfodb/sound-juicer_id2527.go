@@ -30,9 +30,9 @@ var DistroPackageInfo_sound_juicer = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gnome",
 
-	TarballFilters:               []string{},
 	TarballName:           "sound-juicer",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		`https://ftp.gnome.org/mirror/gnome.org/`},

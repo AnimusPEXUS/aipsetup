@@ -30,9 +30,9 @@ var DistroPackageInfo_libjpeg_turbo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "libjpeg-turbo",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		`libjpeg-turbo`},

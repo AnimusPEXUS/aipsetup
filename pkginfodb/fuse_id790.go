@@ -30,12 +30,12 @@ var DistroPackageInfo_fuse = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "fuse",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/libfuse/libfuse.git`, `fuse`, `TagPrefixRegExp:fuse`},
+		`git`, `https://github.com/libfuse/libfuse.git`, `fuse`, `TagName:fuse`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

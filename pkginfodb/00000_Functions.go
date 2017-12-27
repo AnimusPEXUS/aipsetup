@@ -46,7 +46,7 @@ searching:
 			return nil, err
 		}
 
-		parse_result, err := parser.ParseName(filename_s_base)
+		parse_result, err := parser.Parse(filename_s_base)
 		if err != nil {
 			fmt.Sprintln(
 				"can't parse %s with %s parser",

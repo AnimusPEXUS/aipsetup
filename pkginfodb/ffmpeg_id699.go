@@ -30,12 +30,12 @@ var DistroPackageInfo_ffmpeg = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "ffmpeg",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/FFmpeg/FFmpeg.git`, `ffmpeg`, `TagPrefixRegExp:n`},
+		`git`, `https://github.com/FFmpeg/FFmpeg.git`, `ffmpeg`, `TagName:n`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

@@ -30,12 +30,12 @@ var DistroPackageInfo_yajl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "yajl",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/lloyd/yajl.git`, `yajl`, `TagPrefixRegExp:^$`},
+		`git`, `https://github.com/lloyd/yajl.git`, `yajl`, `TagName:^$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

@@ -30,12 +30,12 @@ var DistroPackageInfo_vigra = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "vigra",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/ukoethe/vigra.git`, `vigra`, `TagPrefixRegExp:Version`},
+		`git`, `https://github.com/ukoethe/vigra.git`, `vigra`, `TagName:Version`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

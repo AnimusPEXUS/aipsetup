@@ -30,12 +30,12 @@ var DistroPackageInfo_sshfs_fuse = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "sshfs-fuse",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/libfuse/sshfs.git`, `sshfs-fuse`, `TagPrefixRegExp:sshfs`},
+		`git`, `https://github.com/libfuse/sshfs.git`, `sshfs-fuse`, `TagName:sshfs`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

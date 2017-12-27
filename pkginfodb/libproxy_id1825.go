@@ -30,12 +30,12 @@ var DistroPackageInfo_libproxy = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "libproxy",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/libproxy/libproxy.git`, `libproxy`, `TagPrefixRegExp:^$`},
+		`git`, `https://github.com/libproxy/libproxy.git`, `libproxy`, `TagName:^$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

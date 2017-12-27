@@ -30,12 +30,13 @@ var DistroPackageInfo_libselinux = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:        []string{"- !tarball-status-re ^$"},
 	TarballName:           "libselinux",
 	TarballFileNameParser: "std",
-	TarballProvider:       "srs",
+	TarballFilters: []string{
+		`- !tarball-status-re ^$`},
+	TarballProvider: "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/SELinuxProject/selinux.git`, `checkpolicy`, `TagPrefixRegExp:libselinux`},
+		`git`, `https://github.com/SELinuxProject/selinux.git`, `checkpolicy`, `TagName:libselinux`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

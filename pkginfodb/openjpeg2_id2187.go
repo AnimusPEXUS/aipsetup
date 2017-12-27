@@ -30,12 +30,12 @@ var DistroPackageInfo_openjpeg2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "openjpeg",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/uclouvain/openjpeg.git`, `openjpeg2`, `TagPrefixRegExp:version.`},
+		`git`, `https://github.com/uclouvain/openjpeg.git`, `openjpeg2`, `TagName:version.`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

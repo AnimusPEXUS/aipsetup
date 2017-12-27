@@ -30,9 +30,9 @@ var DistroPackageInfo_shared_desktop_ontologies = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "shared-desktop-ontologies",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		`oscaf`},

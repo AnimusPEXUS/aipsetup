@@ -30,9 +30,9 @@ var DistroPackageInfo_libgit2 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "libgit2",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
 		`git`, `https://github.com/libgit2/libgit2.git`, `libgit2`},

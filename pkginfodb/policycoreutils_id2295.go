@@ -30,12 +30,12 @@ var DistroPackageInfo_policycoreutils = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "policycoreutils",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/SELinuxProject/selinux.git`, `checkpolicy`, `TagPrefixRegExp:policycoreutils`},
+		`git`, `https://github.com/SELinuxProject/selinux.git`, `checkpolicy`, `TagName:policycoreutils`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

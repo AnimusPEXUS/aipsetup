@@ -30,12 +30,12 @@ var DistroPackageInfo_libyaml = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "libyaml",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/yaml/libyaml.git`, `libyaml`, `TagPrefixRegExp:^$`},
+		`git`, `https://github.com/yaml/libyaml.git`, `libyaml`, `TagName:^$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

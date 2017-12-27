@@ -30,9 +30,9 @@ var DistroPackageInfo_nut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "nut",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
 		`git`, `https://github.com/networkupstools/nut.git`, `nut`},

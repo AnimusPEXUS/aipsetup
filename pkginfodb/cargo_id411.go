@@ -30,12 +30,12 @@ var DistroPackageInfo_cargo = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "cargo",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/rust-lang/cargo.git`, `cargo`, `TagPrefixRegExp:^$`},
+		`git`, `https://github.com/rust-lang/cargo.git`, `cargo`, `TagName:^$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

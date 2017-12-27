@@ -30,9 +30,9 @@ var DistroPackageInfo_sqlcipher = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "sqlcipher",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
 		`git`, `https://github.com/sqlcipher/sqlcipher.git`, `sqlcipher`},

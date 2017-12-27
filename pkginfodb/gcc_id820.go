@@ -30,9 +30,9 @@ var DistroPackageInfo_gcc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "gcc",
 
-	TarballFilters:               []string{},
 	TarballName:           "gcc",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		`https://ftp.gnu.org/gnu/gcc`},

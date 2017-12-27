@@ -30,12 +30,12 @@ var DistroPackageInfo_mc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "mc",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/MidnightCommander/mc.git`, `mc`, `TagPrefixRegExp:^$`},
+		`git`, `https://github.com/MidnightCommander/mc.git`, `mc`, `TagName:^$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

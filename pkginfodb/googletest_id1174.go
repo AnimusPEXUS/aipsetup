@@ -30,12 +30,12 @@ var DistroPackageInfo_googletest = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "googletest",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/google/googletest.git`, `googletest`, `TagPrefixRegExp:release`},
+		`git`, `https://github.com/google/googletest.git`, `googletest`, `TagName:release`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

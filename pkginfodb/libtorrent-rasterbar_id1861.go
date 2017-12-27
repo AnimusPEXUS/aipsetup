@@ -30,12 +30,12 @@ var DistroPackageInfo_libtorrent_rasterbar = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "libtorrent-rasterbar",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/arvidn/libtorrent.git`, `libtorrent-rasterbar`, `TagPrefixRegExp:^libtorrent$`},
+		`git`, `https://github.com/arvidn/libtorrent.git`, `libtorrent-rasterbar`, `TagName:^libtorrent$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

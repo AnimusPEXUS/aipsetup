@@ -30,9 +30,9 @@ var DistroPackageInfo_dosfstools = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "dosfstools",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
 		`git`, `https://github.com/dosfstools/dosfstools.git`, `dosfstools`},

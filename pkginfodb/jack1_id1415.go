@@ -30,12 +30,12 @@ var DistroPackageInfo_jack1 = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "jack",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/jackaudio/jack2.git`, `jack2`, `TagPrefixRegExp:^v$`},
+		`git`, `https://github.com/jackaudio/jack2.git`, `jack2`, `TagName:^v$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

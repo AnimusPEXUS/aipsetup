@@ -30,12 +30,12 @@ var DistroPackageInfo_waf = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "waf",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/waf-project/waf.git`, `waf`, `TagPrefixRegExp:waf`},
+		`git`, `https://github.com/waf-project/waf.git`, `waf`, `TagName:waf`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

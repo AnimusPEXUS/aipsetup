@@ -30,12 +30,12 @@ var DistroPackageInfo_libsepol = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "libsepol",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/SELinuxProject/selinux.git`, `checkpolicy`, `TagPrefixRegExp:libsepol`},
+		`git`, `https://github.com/SELinuxProject/selinux.git`, `checkpolicy`, `TagName:libsepol`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

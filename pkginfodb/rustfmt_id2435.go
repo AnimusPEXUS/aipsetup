@@ -30,9 +30,9 @@ var DistroPackageInfo_rustfmt = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "rustfmt",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
 		`git`, `https://github.com/rust-lang-nursery/rustfmt.git`, `rustfmt`},

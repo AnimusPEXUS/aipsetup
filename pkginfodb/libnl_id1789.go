@@ -30,12 +30,12 @@ var DistroPackageInfo_libnl = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "libnl",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/tgraf/libnl.git`, `libnl`, `TagPrefixRegExp:libnl`},
+		`git`, `https://github.com/tgraf/libnl.git`, `libnl`, `TagName:libnl`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

@@ -30,12 +30,12 @@ var DistroPackageInfo_hamcrest_java = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "hamcrest-java",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/hamcrest/JavaHamcrest.git`, `hamcrest-java`, `TagPrefixRegExp:hamcrest-java`},
+		`git`, `https://github.com/hamcrest/JavaHamcrest.git`, `hamcrest-java`, `TagName:hamcrest-java`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

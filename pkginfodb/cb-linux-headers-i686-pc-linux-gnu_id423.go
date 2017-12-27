@@ -29,9 +29,9 @@ var DistroPackageInfo_cb_linux_headers_i686_pc_linux_gnu = &basictypes.PackageIn
 
 	TarballVersionTool: "std",
 
-	TarballFilters:                         []string{},
 	TarballName:                     "",
 	TarballFileNameParser:           "std",
+	TarballFilters:                  []string{},
 	TarballProvider:                 "",
 	TarballProviderArguments:        []string{},
 	TarballProviderUseCache:         false,

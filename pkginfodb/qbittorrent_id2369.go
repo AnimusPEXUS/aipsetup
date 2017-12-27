@@ -30,12 +30,12 @@ var DistroPackageInfo_qbittorrent = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "qbittorrent",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/qbittorrent/qBittorrent.git`, `qbittorrent`, `TagPrefixRegExp:^release$`},
+		`git`, `https://github.com/qbittorrent/qBittorrent.git`, `qbittorrent`, `TagName:^release$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

@@ -30,12 +30,12 @@ var DistroPackageInfo_openimageio = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "openimageio",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/OpenImageIO/oiio.git`, `openimageio`, `TagPrefixRegExp:Release`},
+		`git`, `https://github.com/OpenImageIO/oiio.git`, `openimageio`, `TagName:Release`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

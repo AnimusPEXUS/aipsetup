@@ -30,9 +30,9 @@ var DistroPackageInfo_gmerlin_avdecoder = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "gmerlin-avdecoder",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		`gmerlin`},

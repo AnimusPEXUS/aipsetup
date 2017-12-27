@@ -11,7 +11,7 @@ import (
 var DistroPackageInfo_iperf = &basictypes.PackageInfo{
 
 	Description: `write something here, please`,
-	HomePage:    "https://sourceforge.net/projects/iperf",
+	HomePage:    "https://sourceforge.net/projects/iperf2",
 
 	BuilderName: "std",
 
@@ -26,16 +26,16 @@ var DistroPackageInfo_iperf = &basictypes.PackageInfo{
 	RunTimeDeps: []string{},
 
 	Tags: []string{
-		"sf_hosted:iperf"},
+		"sf_hosted:iperf2"},
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "iperf",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
-		`iperf`},
+		`iperf2`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "",
 	TarballProviderVersionSyncDepth: 0,

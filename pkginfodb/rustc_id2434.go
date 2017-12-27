@@ -30,12 +30,12 @@ var DistroPackageInfo_rustc = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "rustc",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/rust-lang/rust.git`, `rustc`, `TagPrefixRegExp:^$`},
+		`git`, `https://github.com/rust-lang/rust.git`, `rustc`, `TagName:^$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

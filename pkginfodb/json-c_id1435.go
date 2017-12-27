@@ -30,12 +30,12 @@ var DistroPackageInfo_json_c = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "json-c",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/json-c/json-c.git`, `json-c`, `TagPrefixRegExp:json-c`, `TagSuffixRegExp:^\d{8}$`},
+		`git`, `https://github.com/json-c/json-c.git`, `json-c`, `TagName:json-c`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

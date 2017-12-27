@@ -30,9 +30,9 @@ var DistroPackageInfo_xf86_input_wacom = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "xf86-input-wacom",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "sf",
 	TarballProviderArguments: []string{
 		`linuxwacom`},

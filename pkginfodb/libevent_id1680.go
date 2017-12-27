@@ -30,12 +30,12 @@ var DistroPackageInfo_libevent = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "libevent",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/libevent/libevent.git`, `libevent`, `TagPrefixRegExp:release`, `TagSuffixRegExp:(stable)?`},
+		`git`, `https://github.com/libevent/libevent.git`, `libevent`, `TagName:release`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

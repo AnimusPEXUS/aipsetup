@@ -30,12 +30,12 @@ var DistroPackageInfo_miniupnpd = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "miniupnpd",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/miniupnp/miniupnp.git`, `miniupnpc`, `TagPrefixRegExp:miniupnpd`},
+		`git`, `https://github.com/miniupnp/miniupnp.git`, `miniupnpc`, `TagName:miniupnpd`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

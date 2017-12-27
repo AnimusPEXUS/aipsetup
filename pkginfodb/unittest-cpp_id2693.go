@@ -30,9 +30,9 @@ var DistroPackageInfo_unittest_cpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "unittest-cpp",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
 		`git`, `https://github.com/unittest-cpp/unittest-cpp.git`, `unittest-cpp`},

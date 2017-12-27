@@ -30,9 +30,9 @@ var DistroPackageInfo_rygel_gst_0_10_fullscreen_renderer = &basictypes.PackageIn
 
 	TarballVersionTool: "gnome",
 
-	TarballFilters:               []string{},
 	TarballName:           "rygel-gst-0-10-fullscreen-renderer",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "https",
 	TarballProviderArguments: []string{
 		`https://ftp.gnome.org/mirror/gnome.org/`},

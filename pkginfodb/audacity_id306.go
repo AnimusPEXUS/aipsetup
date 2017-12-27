@@ -30,12 +30,12 @@ var DistroPackageInfo_audacity = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "audacity-minsrc",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/audacity/audacity.git`, `audacity`, `TagPrefixRegExp:Audacity`},
+		`git`, `https://github.com/audacity/audacity.git`, `audacity`, `TagName:Audacity`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

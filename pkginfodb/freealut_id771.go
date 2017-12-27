@@ -30,12 +30,12 @@ var DistroPackageInfo_freealut = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "freealut",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/vancegroup/freealut.git`, `freealut`, `TagPrefixRegExp:freealut`},
+		`git`, `https://github.com/vancegroup/freealut.git`, `freealut`, `TagName:freealut`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

@@ -30,12 +30,12 @@ var DistroPackageInfo_libxkbcommon = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "libxkbcommon",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/xkbcommon/libxkbcommon.git`, `libxkbcommon`, `TagPrefixRegExp:xkbcommon`},
+		`git`, `https://github.com/xkbcommon/libxkbcommon.git`, `libxkbcommon`, `TagName:xkbcommon`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

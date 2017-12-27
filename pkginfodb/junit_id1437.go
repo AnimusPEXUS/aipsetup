@@ -30,12 +30,12 @@ var DistroPackageInfo_junit = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "junit",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/junit-team/junit5.git`, `junit`, `TagPrefixRegExp:r`},
+		`git`, `https://github.com/junit-team/junit5.git`, `junit`, `TagName:r`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

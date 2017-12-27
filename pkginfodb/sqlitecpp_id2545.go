@@ -30,12 +30,12 @@ var DistroPackageInfo_sqlitecpp = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "sqlitecpp",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/SRombauts/SQLiteCpp.git`, `sqlitecpp`, `TagPrefixRegExp:^$`},
+		`git`, `https://github.com/SRombauts/SQLiteCpp.git`, `sqlitecpp`, `TagName:^$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

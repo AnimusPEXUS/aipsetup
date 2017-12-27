@@ -30,12 +30,12 @@ var DistroPackageInfo_emscripten = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "emscripten",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/kripken/emscripten.git`, `emscripten`, `TagPrefixRegExp:^$`},
+		`git`, `https://github.com/kripken/emscripten.git`, `emscripten`, `TagName:^$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,

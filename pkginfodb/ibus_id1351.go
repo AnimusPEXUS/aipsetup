@@ -30,12 +30,12 @@ var DistroPackageInfo_ibus = &basictypes.PackageInfo{
 
 	TarballVersionTool: "std",
 
-	TarballFilters:               []string{},
 	TarballName:           "ibus",
 	TarballFileNameParser: "std",
+	TarballFilters:        []string{},
 	TarballProvider:       "srs",
 	TarballProviderArguments: []string{
-		`git`, `https://github.com/ibus/ibus.git`, `ibus`, `TagPrefixRegExp:^$`},
+		`git`, `https://github.com/ibus/ibus.git`, `ibus`, `TagName:^$`},
 	TarballProviderUseCache:         false,
 	TarballProviderCachePresetName:  "personal",
 	TarballProviderVersionSyncDepth: 3,
