@@ -1,25 +1,15 @@
 package infoeditor
 
 type RecordK struct {
-	TarballName     string
-	WholeTagRegExp  string
-	TagPrefixRegExp string
-	TagSuffixRegExp string
-	TarballFormat   string
+	TarballName string
+	TagParser   string
+	TagName     string
+	TagStatus   string
 }
 
-const GithubDefaultTarballName = "v"
-const GithubDefaultWholeTagRegExp = STANDARD_GITHUB_TAG_REGEXP
-const GithubDefaultTagPrefixRegExp = "v"
-const GithubDefaultTagSuffixRegExp = `^$`
-const GithubDefaultTarballFormat = "tar.xz"
-
-const STANDARD_GITHUB_TAG_REGEXP = `` +
-	`^` +
-	`((?P<prefix>.*?)[\-\_]?)?` +
-	`(?P<version>\d+(?P<delim>[\_\-\.])?(\d+(?P=delim)?)*)` +
-	`([\-\_]??(?P<suffix>.*?)??)??` +
-	`$`
+const GithubDefaultTagParser = "std"
+const GithubDefaultTagName = "v"
+const GithubDefaultTagStatus = `^$`
 
 var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 
@@ -28,11 +18,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"fftw3": []*RecordK{
 
 			&RecordK{
-				TarballName:     "fftw",
-				TagPrefixRegExp: `fftw`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "fftw",
+				TagName:     `fftw`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -42,11 +31,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"FFmpeg": []*RecordK{
 
 			&RecordK{
-				TarballName:     "ffmpeg",
-				TagPrefixRegExp: `n`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "ffmpeg",
+				TagName:     `n`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -56,11 +44,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"lmms": []*RecordK{
 
 			&RecordK{
-				TarballName:     "lmms",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "lmms",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -70,11 +57,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"mc": []*RecordK{
 
 			&RecordK{
-				TarballName:     "mc",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "mc",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -84,11 +70,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"oiio": []*RecordK{
 
 			&RecordK{
-				TarballName:     "openimageio",
-				TagPrefixRegExp: `Release`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "openimageio",
+				TagName:     `Release`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -98,51 +83,45 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"selinux": []*RecordK{
 
 			&RecordK{
-				TarballName:     "checkpolicy",
-				TagPrefixRegExp: `checkpolicy`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "checkpolicy",
+				TagName:     `checkpolicy`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 
 			&RecordK{
-				TarballName:     "libselinux",
-				TagPrefixRegExp: `libselinux`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libselinux",
+				TagName:     `libselinux`,
+				TagStatus:   GithubDefaultTagStatus,
+				TagParser:   GithubDefaultTagParser,
 			},
 
 			&RecordK{
-				TarballName:     "libsemanage",
-				TagPrefixRegExp: `libsemanage`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libsemanage",
+				TagName:     `libsemanage`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 
 			&RecordK{
-				TarballName:     "libsepol",
-				TagPrefixRegExp: `libsepol`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libsepol",
+				TagName:     `libsepol`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 
 			&RecordK{
-				TarballName:     "policycoreutils",
-				TagPrefixRegExp: `policycoreutils`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "policycoreutils",
+				TagName:     `policycoreutils`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 
 			&RecordK{
-				TarballName:     "sepolgen",
-				TagPrefixRegExp: `sepolgen`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "sepolgen",
+				TagName:     `sepolgen`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -152,11 +131,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"SQLiteCpp": []*RecordK{
 
 			&RecordK{
-				TarballName:     "sqlitecpp",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "sqlitecpp",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -166,11 +144,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libepoxy": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libepoxy",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libepoxy",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -185,11 +162,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"cups": []*RecordK{
 
 			&RecordK{
-				TarballName:     "cups",
-				TagPrefixRegExp: `release`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "cups",
+				TagName:     `release`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -199,11 +175,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libtorrent": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libtorrent-rasterbar",
-				TagPrefixRegExp: `^libtorrent$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libtorrent-rasterbar",
+				TagName:     `^libtorrent$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -213,11 +188,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"audacity": []*RecordK{
 
 			&RecordK{
-				TarballName:     "audacity-minsrc",
-				TagPrefixRegExp: `Audacity`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "audacity-minsrc",
+				TagName:     `Audacity`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -227,11 +201,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"dosfstools": []*RecordK{
 
 			&RecordK{
-				TarballName:     "dosfstools",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "dosfstools",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -241,11 +214,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"mist": []*RecordK{
 
 			&RecordK{
-				TarballName:     "etherium",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "etherium",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -255,22 +227,20 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"googletest": []*RecordK{
 
 			&RecordK{
-				TarballName:     "googletest",
-				TagPrefixRegExp: `release`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "googletest",
+				TagName:     `release`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"protobuf": []*RecordK{
 
 			&RecordK{
-				TarballName:     "protobuf",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "protobuf",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -280,11 +250,9 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"JavaHamcrest": []*RecordK{
 
 			&RecordK{
-				TarballName:     "hamcrest-java",
-				TagPrefixRegExp: `hamcrest-java`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "hamcrest-java",
+				TagName:     `hamcrest-java`,
+				TagParser:   GithubDefaultTagParser,
 			},
 		},
 	},
@@ -294,77 +262,70 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"ibus": []*RecordK{
 
 			&RecordK{
-				TarballName:     "ibus",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "ibus",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"ibus-anthy": []*RecordK{
 
 			&RecordK{
-				TarballName:     "ibus-anthy",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "ibus-anthy",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"ibus-cros": []*RecordK{
 
 			&RecordK{
-				TarballName:     "ibus-cros",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "ibus-cros",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"ibus-m17n": []*RecordK{
 
 			&RecordK{
-				TarballName:     "ibus-m17n",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "ibus-m17n",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"ibus-pinyin": []*RecordK{
 
 			&RecordK{
-				TarballName:     "ibus-pinyin",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "ibus-pinyin",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"ibus-qt": []*RecordK{
 
 			&RecordK{
-				TarballName:     "ibus-qt",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "ibus-qt",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"ibus-xkb": []*RecordK{
 
 			&RecordK{
-				TarballName:     "ibus-xkb",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "ibus-xkb",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -374,22 +335,20 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"jack1": []*RecordK{
 
 			&RecordK{
-				TarballName:     "jack",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "jack",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"jack2": []*RecordK{
 
 			&RecordK{
-				TarballName:     "jack",
-				TagPrefixRegExp: `^v$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "jack",
+				TagName:     `^v$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -399,11 +358,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libndp": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libndp",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libndp",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -413,11 +371,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"json-c": []*RecordK{
 
 			&RecordK{
-				TarballName:     "json-c",
-				TagPrefixRegExp: `json-c`,
-				TagSuffixRegExp: `^\d{8}$`,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "json-c",
+				TagName:     `json-c`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -427,22 +384,20 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"junit4": []*RecordK{
 
 			&RecordK{
-				TarballName:     "junit",
-				TagPrefixRegExp: `r`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "junit",
+				TagName:     `r`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"junit5": []*RecordK{
 
 			&RecordK{
-				TarballName:     "junit",
-				TagPrefixRegExp: `r`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "junit",
+				TagName:     `r`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -452,11 +407,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"emscripten": []*RecordK{
 
 			&RecordK{
-				TarballName:     "emscripten",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "emscripten",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -466,11 +420,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libevent": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libevent",
-				TagPrefixRegExp: `release`,
-				TagSuffixRegExp: `(stable)?`,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libevent",
+				TagName:     `release`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -480,22 +433,20 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libfuse": []*RecordK{
 
 			&RecordK{
-				TarballName:     "fuse",
-				TagPrefixRegExp: `fuse`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "fuse",
+				TagName:     `fuse`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"sshfs": []*RecordK{
 
 			&RecordK{
-				TarballName:     "sshfs-fuse",
-				TagPrefixRegExp: `sshfs`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "sshfs-fuse",
+				TagName:     `sshfs`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -505,11 +456,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libgit2": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libgit2",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libgit2",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -519,11 +469,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libproxy": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libproxy",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libproxy",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -533,11 +482,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"yajl": []*RecordK{
 
 			&RecordK{
-				TarballName:     "yajl",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "yajl",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -547,19 +495,17 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"miniupnp": []*RecordK{
 
 			&RecordK{
-				TarballName:     "miniupnpc",
-				TagPrefixRegExp: `miniupnpc`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "miniupnpc",
+				TagName:     `miniupnpc`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 
 			&RecordK{
-				TarballName:     "miniupnpd",
-				TagPrefixRegExp: `miniupnpd`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "miniupnpd",
+				TagName:     `miniupnpd`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -569,11 +515,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"mongo": []*RecordK{
 
 			&RecordK{
-				TarballName:     "mongodb-src",
-				TagPrefixRegExp: `r`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "mongodb-src",
+				TagName:     `r`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -588,11 +533,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"nut": []*RecordK{
 
 			&RecordK{
-				TarballName:     "nut",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "nut",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -602,11 +546,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"ompi-release": []*RecordK{
 
 			&RecordK{
-				TarballName:     "openmpi",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "openmpi",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -616,11 +559,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"qBittorrent": []*RecordK{
 
 			&RecordK{
-				TarballName:     "qbittorrent",
-				TagPrefixRegExp: `^release$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "qbittorrent",
+				TagName:     `^release$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -630,22 +572,20 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"cargo": []*RecordK{
 
 			&RecordK{
-				TarballName:     "cargo",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "cargo",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"rust": []*RecordK{
 
 			&RecordK{
-				TarballName:     "rustc",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "rustc",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -655,11 +595,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"rustfmt": []*RecordK{
 
 			&RecordK{
-				TarballName:     "rustfmt",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "rustfmt",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -669,11 +608,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"ClanLib": []*RecordK{
 
 			&RecordK{
-				TarballName:     "ClanLib",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "ClanLib",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -683,11 +621,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"sqlcipher": []*RecordK{
 
 			&RecordK{
-				TarballName:     "sqlcipher",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "sqlcipher",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -697,11 +634,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"systemd": []*RecordK{
 
 			&RecordK{
-				TarballName:     "systemd",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "systemd",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -711,11 +647,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libnl": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libnl",
-				TagPrefixRegExp: `libnl`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libnl",
+				TagName:     `libnl`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -725,11 +660,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"transmission": []*RecordK{
 
 			&RecordK{
-				TarballName:     "transmission",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "transmission",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -739,11 +673,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"mtr": []*RecordK{
 
 			&RecordK{
-				TarballName:     "mtr",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "mtr",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -753,11 +686,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"openjpeg": []*RecordK{
 
 			&RecordK{
-				TarballName:     "openjpeg",
-				TagPrefixRegExp: `version.`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "openjpeg",
+				TagName:     `version.`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -767,11 +699,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"vigra": []*RecordK{
 
 			&RecordK{
-				TarballName:     "vigra",
-				TagPrefixRegExp: `Version`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "vigra",
+				TagName:     `Version`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -781,11 +712,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"unittest-cpp": []*RecordK{
 
 			&RecordK{
-				TarballName:     "unittest-cpp",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "unittest-cpp",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -795,11 +725,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"freealut": []*RecordK{
 
 			&RecordK{
-				TarballName:     "freealut",
-				TagPrefixRegExp: `freealut`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "freealut",
+				TagName:     `freealut`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -809,11 +738,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"waf": []*RecordK{
 
 			&RecordK{
-				TarballName:     "waf",
-				TagPrefixRegExp: `waf`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "waf",
+				TagName:     `waf`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -823,33 +751,30 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libvpx": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libvpx",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libvpx",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"libwebm": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libwebm",
-				TagPrefixRegExp: `libwebm`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libwebm",
+				TagName:     `libwebm`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 
 		"libwebp": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libwebp",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libwebp",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -859,11 +784,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libxkbcommon": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libxkbcommon",
-				TagPrefixRegExp: `xkbcommon`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libxkbcommon",
+				TagName:     `xkbcommon`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -873,11 +797,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"libyaml": []*RecordK{
 
 			&RecordK{
-				TarballName:     "libyaml",
-				TagPrefixRegExp: `^$`,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "libyaml",
+				TagName:     `^$`,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},
@@ -887,11 +810,10 @@ var GITHUB_HOSTED = map[string](map[string]([]*RecordK)){
 		"cppzmq": []*RecordK{
 
 			&RecordK{
-				TarballName:     "cppzmq",
-				TagPrefixRegExp: GithubDefaultTagPrefixRegExp,
-				TagSuffixRegExp: GithubDefaultTagSuffixRegExp,
-				WholeTagRegExp:  STANDARD_GITHUB_TAG_REGEXP,
-				TarballFormat:   GithubDefaultTarballFormat,
+				TarballName: "cppzmq",
+				TagName:     GithubDefaultTagName,
+
+				TagParser: GithubDefaultTagParser,
 			},
 		},
 	},

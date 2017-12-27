@@ -356,13 +356,13 @@ maintarball_found:
 			return err
 		}
 
-		parsed, err := parser.ParseName(filelist[0])
+		parsed, err := parser.Parse(filelist[0])
 		if err != nil {
 			return err
 		}
 
 		info.PackageVersion = parsed.Version.Str
-		if parsed.HaveStatus {
+		if parsed.Status.Str != "" {
 			info.PackageStatus = parsed.Status.Str
 		}
 

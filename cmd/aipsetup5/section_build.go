@@ -123,7 +123,7 @@ func CmdAipsetupBuildInitSub01(
 			return err
 		}
 
-		parsed, err := parser.ParseName(target_tarball)
+		parsed, err := parser.Parse(target_tarball)
 		if err != nil {
 			return err
 		}

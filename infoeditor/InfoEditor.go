@@ -425,20 +425,16 @@ func (self *InfoEditor) ApplyGithubHosted(index map[string]*basictypes.PackageIn
 						args = append(args, shared_repo_name)
 
 						targs := tags.New([]string{})
-						if v3.WholeTagRegExp != GithubDefaultWholeTagRegExp {
-							targs.Add("WholeTagRegExp", v3.WholeTagRegExp)
+						if v3.TagParser != GithubDefaultTagParser {
+							targs.Add("TagParser", v3.TagParser)
 						}
 
-						if v3.TagPrefixRegExp != GithubDefaultTagPrefixRegExp {
-							targs.Add("TagPrefixRegExp", v3.TagPrefixRegExp)
+						if v3.TagName != GithubDefaultTagName {
+							targs.Add("TagName", v3.TagName)
 						}
 
-						if v3.TagSuffixRegExp != GithubDefaultTagSuffixRegExp {
-							targs.Add("TagSuffixRegExp", v3.TagSuffixRegExp)
-						}
-
-						if v3.TarballFormat != GithubDefaultTarballFormat {
-							targs.Add("TarballFormat", v3.TarballFormat)
+						if v3.TagStatus != GithubDefaultTagStatus {
+							targs.Add("TagStatus", v3.TagStatus)
 						}
 
 						args = append(args, targs.Values()...)

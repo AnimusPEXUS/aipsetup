@@ -159,7 +159,7 @@ func (self *Repository) ListLocalTarballs(package_name string) ([]string, error)
 			continue
 		}
 
-		if parse_res, err := parser.ParseName(i); err != nil {
+		if parse_res, err := parser.Parse(i); err != nil {
 			continue
 		} else {
 			if parse_res.Name != info.TarballName {

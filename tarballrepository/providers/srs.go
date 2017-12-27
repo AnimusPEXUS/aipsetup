@@ -11,21 +11,18 @@ PackageInfo's provider attributes
 
   (! - necissery, ? - optional)
 
- !engine: for instance 'git', 'svn', etc..
- !uri: repository uri, for example "https://github.com/SELinuxProject/selinux.git"
+  !engine: for instance 'git', 'svn', etc..
+  !uri: repository uri, for example "https://github.com/SELinuxProject/selinux.git"
 
- ?shared_repo:aipsetup_package_name: for example 'shared_repo:libselinux'
+	!tag_parser:string - name of parser to retrive name
+	!tag_name:string - value thich should match 'name' result of
+					tag_parser:string work.
+
+ 	?shared_repo:aipsetup_package_name: for example 'shared_repo:libselinux'
           will use srs directory under libselinux package's directory.
           If omited, equals to current package name
 
-  needed_tag_re_prefix_is - string, regular expression, which allows to select
-          prefix part of tag string
-
-  needed_tag_re_suffix_is - same as needed_tag_re_prefix_is, but for suffix
-
-  needed_tag_re - same as needed_tag_re_prefix_is, but for entire tag string
-
-  tarball_format - extension for output tarballs string.
+  ?tarball_format - extension for output tarballs string.
           ...only ".tar.xz" is supported
 
 
@@ -39,16 +36,17 @@ import (
 	"os"
 	"os/exec"
 	"path"
+	"regexp"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/infoeditor"
-	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tags"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/version"
 )
 
 var _ types.ProviderI = &ProviderSRS{}
@@ -208,31 +206,21 @@ func (self *ProviderSRS) MakeTarballsGit(
 	info *basictypes.PackageInfo,
 ) error {
 
-	basename := info.TarballName
-	if basename == "" {
-		basename = infoeditor.GithubDefaultTarballName
-	}
-
 	t := tags.New(info.TarballProviderArguments)
 
-	needed_tag_re_prefix_is, _ := t.GetSingle("TagPrefixRegExp", true)
-	if needed_tag_re_prefix_is == "" {
-		needed_tag_re_prefix_is = infoeditor.GithubDefaultTagPrefixRegExp
+	TagParser, _ := t.GetSingle("TagParser", true)
+	if TagParser == "" {
+		TagParser = infoeditor.GithubDefaultTagParser
 	}
 
-	needed_tag_re_suffix_is, _ := t.GetSingle("TagSuffixRegExp", true)
-	if needed_tag_re_suffix_is == "" {
-		needed_tag_re_suffix_is = infoeditor.GithubDefaultTagSuffixRegExp
+	TagName, _ := t.GetSingle("TagName", true)
+	if TagName == "" {
+		TagName = infoeditor.GithubDefaultTagName
 	}
 
-	needed_tag_re, _ := t.GetSingle("WholeTagRegExp", true)
-	if needed_tag_re == "" {
-		needed_tag_re = infoeditor.GithubDefaultWholeTagRegExp
-	}
-
-	tarball_format, _ := t.GetSingle("TarballFormat", true)
-	if tarball_format == "" {
-		tarball_format = infoeditor.GithubDefaultTarballFormat
+	TagStatus, _ := t.GetSingle("TagStatus", true)
+	if TagStatus == "" {
+		TagStatus = infoeditor.GithubDefaultTagStatus
 	}
 
 	truncate_versions := info.TarballProviderVersionSyncDepth
@@ -240,56 +228,109 @@ func (self *ProviderSRS) MakeTarballsGit(
 		truncate_versions = 3
 	}
 
+	parser, err := tarballnameparsers.Get(TagParser)
+	if err != nil {
+		return err
+	}
+
 	acceptable_tags := make([]string, 0)
 
 	{
-		b := &bytes.Buffer{}
-		c := exec.Command("git", "tag")
-		c.Dir = git_dir
-		c.Stdout = b
-		err := c.Run()
-		if err != nil {
-			return err
-		}
+		var tags []string
 
-		tags := strings.Split(b.String(), "\n")
-
-		// for ii, i := range tags {
-		// 	fmt.Println(ii, i)
-		// }
-
-		parser, err := tarballnameparsers.Get(info.TarballFileNameParser)
-		if err != nil {
-			return err
+		{
+			b := &bytes.Buffer{}
+			c := exec.Command("git", "tag")
+			c.Dir = git_dir
+			c.Stdout = b
+			err := c.Run()
+			if err != nil {
+				return err
+			}
+			tags = strings.Split(b.String(), "\n")
 		}
 
 		for _, i := range tags {
-			parse_res, err := parser.ParseName(i)
+			parse_res, err := parser.Parse(i)
 			if err != nil {
-				// fmt.Println("tag parsing error:", err.Error())
 				continue
 			}
 
-			if parse_res.Name != info.TarballName {
+			if parse_res.Name != TagName {
 				continue
 			}
 
-			// if parse_res.Name != basename {
-			// 	fmt.Println(parse_res.Name, "!=", basename)
-			// 	continue
-			// }
-
-			fres, err := pkginfodb.ApplyInfoFilter(info, []string{i})
+			matched, err := regexp.MatchString(TagStatus, parse_res.Status.DirtyStr)
 			if err != nil {
 				return err
 			}
 
-			if len(fres) != 1 {
+			if !matched {
 				continue
 			}
 
 			acceptable_tags = append(acceptable_tags, i)
 		}
+	}
+
+	{
+		version_tree, err := version.NewVersionTree(
+			TagName,
+			parser,
+		)
+		if err != nil {
+			return err
+		}
+
+		for _, i := range acceptable_tags {
+			version_tree.Add(path.Base(i))
+		}
+
+		depth := self.pkg_info.TarballProviderVersionSyncDepth
+		if depth == 0 {
+			depth = 3
+		}
+
+		version_tree.TruncateByVersionDepth(nil, depth)
+
+		self.log.Info("-----------------")
+		self.log.Info("tag versioned truncation result")
+
+		res := version_tree.Basenames([]string{""})
+		for _, i := range res {
+			self.log.Info(fmt.Sprintf("  %s", i))
+		}
+
+		err = version.SortByVersion(res, parser)
+		if err != nil {
+			return err
+		}
+
+		self.log.Info("-----------------")
+		self.log.Info("sorted by version")
+
+		for _, i := range res {
+			self.log.Info(fmt.Sprintf("  %s", i))
+		}
+
+		{
+			len_res := len(res)
+			t := make([]string, len_res)
+			for i := range res {
+				t[i] = res[len_res-i-1]
+			}
+			res = t
+		}
+
+		self.log.Info("-----------------")
+		self.log.Info("to archive")
+
+		for _, i := range res {
+			self.log.Info(fmt.Sprintf("  %s", i))
+		}
+
+		acceptable_tags = res
+
 	}
 
 	for ii, i := range acceptable_tags {

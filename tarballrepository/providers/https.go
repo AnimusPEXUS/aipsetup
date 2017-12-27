@@ -148,12 +148,11 @@ func (self *ProviderHttps) PerformUpdate() error {
 			continue
 		}
 
-		err := tarballname.IsPossibleTarballNameErr(i)
-		if err != nil {
+		if !tarballname.IsPossibleTarballName(i) {
 			continue
 		}
 
-		parse_res, err := parser.ParseName(i)
+		parse_res, err := parser.Parse(i)
 		if err != nil {
 			continue
 		}
@@ -181,7 +180,7 @@ func (self *ProviderHttps) PerformUpdate() error {
 
 	version_tree, err := version.NewVersionTree(
 		self.pkg_info.TarballName,
-		self.pkg_info.TarballFileNameParser,
+		parser,
 	)
 	if err != nil {
 		return err
