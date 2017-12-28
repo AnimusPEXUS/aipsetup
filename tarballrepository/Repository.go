@@ -56,6 +56,19 @@ func (self *Repository) GetDedicatedCachePath(name string) string {
 	return path.Join(self.GetCachesDir(), "dedicated", name)
 }
 
+func (self *Repository) GetTarballDoneFilePath(
+	package_name string,
+	as_filename string,
+) string {
+	return self.GetTarballFilePath(package_name, as_filename) + ".done"
+}
+
+func (self *Repository) GetTarballFilePath(package_name, as_filename string) string {
+	as_filename = path.Base(as_filename)
+	tarballs_dir := self.GetPackageTarballsPath(package_name)
+	return path.Join(tarballs_dir, as_filename)
+}
+
 func (self *Repository) CreateCacheObjectForPackage(name string) (
 	*cache01.CacheDir,
 	error,
@@ -135,7 +148,7 @@ func (self *Repository) PerformPackageTarballsUpdate(name string) error {
 	return nil
 }
 
-func (self *Repository) ListLocalTarballs(package_name string) ([]string, error) {
+func (self *Repository) ListLocalTarballs(package_name string, done_only bool) ([]string, error) {
 	ret := make([]string, 0)
 
 	res, err := self.ListLocalFiles(package_name)
@@ -167,9 +180,11 @@ func (self *Repository) ListLocalTarballs(package_name string) ([]string, error)
 			}
 		}
 		full_out_path_done := self.GetTarballDoneFilePath(package_name, i)
-		_, err = os.Stat(full_out_path_done)
-		if err != nil {
-			continue
+		if done_only {
+			_, err = os.Stat(full_out_path_done)
+			if err != nil {
+				continue
+			}
 		}
 
 		ret = append(ret, i)
@@ -197,26 +212,14 @@ func (self *Repository) ListLocalFiles(package_name string) ([]string, error) {
 	return ret, nil
 }
 
-func (self *Repository) GetTarballDoneFilePath(
-	package_name string,
-	as_filename string,
-) string {
-	as_filename = path.Base(as_filename)
-	return path.Join(
-		self.GetPackageTarballsPath(package_name),
-		as_filename,
-	) + ".done"
-}
-
 func (self *Repository) PerformDownload(
 	package_name string,
 	as_filename string,
 	uri string,
 ) error {
 	as_filename = path.Base(as_filename)
-	tarballs_dir := self.GetPackageTarballsPath(package_name)
 
-	full_out_path := path.Join(tarballs_dir, as_filename)
+	full_out_path := self.GetTarballFilePath(package_name, as_filename)
 	full_out_path_done := self.GetTarballDoneFilePath(package_name, as_filename)
 
 	_, err := os.Stat(full_out_path_done)
@@ -242,6 +245,33 @@ func (self *Repository) PerformDownload(
 	return ret
 }
 
+func (self *Repository) PerformTarballCleanupListing(
+	package_name string,
+	files_to_keep []string,
+) ([]string, error) {
+	lst, err := self.ListLocalTarballs(package_name, false)
+	if err != nil {
+		return []string{}, err
+	}
+
+	to_delete := make([]string, 0)
+
+	for _, i := range lst {
+		found := false
+		for _, j := range files_to_keep {
+			if i == j {
+				found = true
+				break
+			}
+		}
+		if !found {
+			to_delete = append(to_delete, i)
+		}
+	}
+
+	return to_delete, nil
+}
+
 func (self *Repository) DeleteFile(
 	package_name string,
 	filename string,
@@ -250,6 +280,15 @@ func (self *Repository) DeleteFile(
 	filename = path.Base(filename)
 	full_path := path.Join(tarballs_dir, filename)
 	return os.Remove(full_path)
+}
+
+func (self *Repository) DeleteFiles(package_name string, filename []string) error {
+	for _, i := range filename {
+		if err := self.DeleteFile(package_name, i); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 func (self *Repository) MoveInTarball(filename string) error {

@@ -233,7 +233,7 @@ func (self *ProviderHttps) PerformUpdate() error {
 		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
-	downloading_errors := 0
+	downloading_errors := false
 	for _, i := range res {
 		uri, err := self.GetDownloadingURIForTarball(i)
 		if err != nil {
@@ -242,65 +242,32 @@ func (self *ProviderHttps) PerformUpdate() error {
 
 		res_err := self.repo.PerformDownload(self.pkg_name, i, uri)
 		if res_err != nil {
-			downloading_errors++
+			downloading_errors = true
 		}
 	}
 
-	if downloading_errors != 0 {
+	if downloading_errors {
 		return errors.New("some files hasn't been downloaded successfully")
 	}
 
 	// WARNING: do not move existing tarballs deletion before download!
 	//          deletions should be done only if all downloads done successfully!
-	lst, err := self.repo.ListLocalTarballs(self.pkg_name)
+	lst, err := self.repo.PerformTarballCleanupListing(self.pkg_name, res)
 	if err != nil {
 		return err
-	}
-
-	to_delete := make([]string, 0)
-
-	for _, i := range lst {
-		found := false
-		for _, j := range res {
-			if i == j {
-				found = true
-				break
-			}
-		}
-		if !found {
-			to_delete = append(to_delete, i)
-		}
 	}
 
 	self.log.Info("-----------------")
 	self.log.Info("to delete")
 
-	for _, i := range to_delete {
+	for _, i := range lst {
 		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
-	for _, i := range to_delete {
-		err = self.repo.DeleteFile(self.pkg_name, i)
-		if err != nil {
-			return err
-		}
+	err = self.repo.DeleteFiles(self.pkg_name, lst)
+	if err != nil {
+		return err
 	}
-
-	// needed_tarball_name := self.pkg_info.TarballName
-	// var tarball_name_parser tarballnameparsers.TarballNameParserI
-	// if tarball_name_parser_c, ok :=
-	// 	tarballnameparsers.Index[self.pkg_info.TarballFileNameParser]; !ok {
-	// 	return errors.New("tarball name parser not found")
-	// } else {
-	// 	tarball_name_parser = tarball_name_parser_c()
-	// }
-	//
-	// for k, v := range tree {
-	//
-	// }
-	//
-	// tarballs := make([]string, 0)
-
 	return nil
 }
 

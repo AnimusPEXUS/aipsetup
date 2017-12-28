@@ -45,6 +45,7 @@ import (
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tags"
+	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/version"
 )
@@ -333,8 +334,83 @@ func (self *ProviderSRS) MakeTarballsGit(
 
 	}
 
-	for ii, i := range acceptable_tags {
-		fmt.Println(ii, i)
+	was_errors := false
+	downloaded_files := make([]string, 0)
+
+	{
+		for _, i := range acceptable_tags {
+
+			i_parsed, err := parser.Parse(i)
+			if err != nil {
+				return err
+			}
+
+			tag_filename_noext := (&tarballname.ParsedTarballName{
+				Name:    info.TarballName,
+				Version: i_parsed.Version,
+				Status:  i_parsed.Status,
+			}).Render(false)
+
+			tag_filename := tag_filename_noext + ".tar.xz"
+
+			tag_filename_done := self.repo.GetTarballDoneFilePath(
+				self.pkg_name,
+				tag_filename,
+			)
+
+			if _, err := os.Stat(tag_filename_done); err == nil {
+				downloaded_files = append(downloaded_files, tag_filename)
+				continue
+			}
+
+			target_file := self.repo.GetTarballFilePath(self.pkg_name, tag_filename)
+
+			self.log.Info(fmt.Sprintf("archiving %s (%s)", i, tag_filename))
+
+			c := exec.Command(
+				"git",
+				"archive",
+				fmt.Sprintf("--prefix=%s/", tag_filename_noext),
+				"-o", target_file,
+				i,
+			)
+			c.Dir = git_dir
+			c.Stdout = os.Stdout
+			c.Stderr = os.Stderr
+
+			if c.Run() != nil {
+				was_errors = true
+			} else {
+				downloaded_files = append(downloaded_files, tag_filename)
+				if f, err := os.Create(tag_filename_done); err != nil {
+					return err
+				} else {
+					f.Close()
+				}
+			}
+
+		}
+	}
+
+	if was_errors {
+		return errors.New("there was errors making tarballs")
+	}
+
+	lst, err := self.repo.PerformTarballCleanupListing(self.pkg_name, downloaded_files)
+	if err != nil {
+		return err
+	}
+
+	self.log.Info("-----------------")
+	self.log.Info("to delete")
+
+	for _, i := range lst {
+		self.log.Info(fmt.Sprintf("  %s", i))
+	}
+
+	err = self.repo.DeleteFiles(self.pkg_name, lst)
+	if err != nil {
+		return err
 	}
 
 	return nil
