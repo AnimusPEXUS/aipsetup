@@ -20,9 +20,11 @@
     "gnu_project",
     "group:core0"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "fi",
+    "fib",
+    "core0"
   ],
   "TarballName": "coreutils",
   "TarballFileNameParser": "std",

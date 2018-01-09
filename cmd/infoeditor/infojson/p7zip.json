@@ -20,9 +20,9 @@
     "group:core1",
     "sf_hosted:p7zip"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "p7zip",
   "TarballFileNameParser": "std",

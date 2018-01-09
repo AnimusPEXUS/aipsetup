@@ -20,9 +20,9 @@
     "github_hosted",
     "group:core1"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "libnl",
   "TarballFileNameParser": "std",

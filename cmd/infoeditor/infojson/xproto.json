@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "x/proto",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "xproto",
   "TarballFileNameParser": "std",

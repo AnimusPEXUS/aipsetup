@@ -19,9 +19,11 @@
   "Tags": [
     "group:core1"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "crypt",
+    "fi",
+    "core1"
   ],
   "TarballName": "libgcrypt",
   "TarballFileNameParser": "std",

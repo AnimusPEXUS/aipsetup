@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:giflib"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "giflib",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "langs/perl_modules",
   "Groups": [
-    ""
+    "perlmod"
   ],
   "TarballName": "Gtk2-Ex-Utils",
   "TarballFileNameParser": "std",

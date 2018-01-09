@@ -459,7 +459,28 @@ func (self *UIMainWindow) LoadTable() error {
 			if err != nil {
 				return err
 			}
-			pi[i.Name()[0:len(i.Name())-5]] = t
+
+			name := i.Name()[0 : len(i.Name())-5]
+			pi[name] = t
+
+			// res, ok, err2 := pkginfodb.GetCategoryByPkgName(name, "")
+			// if ok && err2 == nil {
+			// 	t.Category = res
+			// }
+			//
+			// g := []string{}
+			//
+			// for k, v := range pkginfodb.GROUPS {
+			// 	for _, i := range v {
+			// 		if i == name {
+			// 			g = append(g, k)
+			// 			break
+			// 		}
+			// 	}
+			// }
+			//
+			// t.Groups = g
+
 		}
 		c := make(chan bool)
 		glib.IdleAdd(
@@ -495,56 +516,69 @@ func (self *UIMainWindow) LoadTable() error {
 		<-c
 
 	}
+	{
+		c := make(chan bool)
+		glib.IdleAdd(
+			func(
+			// pi map[string]*basictypes.PackageInfo,
+			) {
 
-	i := 0
-	for k, v := range pi {
-		iter := self.info_table_store.Append()
-		err := self.info_table_store.Set(
-			iter,
-			[]int{
-				0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-				10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-				20, 21, 22, 23,
+				i := 0
+				for k, v := range pi {
+					iter := self.info_table_store.Append()
+					err := self.info_table_store.Set(
+						iter,
+						[]int{
+							0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+							10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+							20, 21, 22, 23,
+						},
+						[]interface{}{
+							k,
+							v.Description,
+							v.HomePage,
+
+							v.BuilderName,
+
+							v.Removable,
+							v.Reducible,
+							v.NonInstallable,
+							v.Deprecated,
+							v.PrimaryInstallOnly,
+
+							strings.Join(v.BuildDeps, "\n"),
+							strings.Join(v.SODeps, "\n"),
+							strings.Join(v.RunTimeDeps, "\n"),
+
+							tags.New(v.Tags).String(),
+							v.Category,
+							strings.Join(v.Groups, "\n"),
+
+							v.TarballName,
+							v.TarballFileNameParser,
+							strings.Join(v.TarballFilters, "\n"),
+							v.TarballProvider,
+							strings.Join(v.TarballProviderArguments, "\n"),
+							v.TarballProviderUseCache,
+							v.TarballProviderCachePresetName,
+							v.TarballProviderVersionSyncDepth,
+							v.TarballVersionTool,
+						},
+					)
+					if err != nil {
+						panic(err)
+					}
+
+					i++
+					f := (0.5 / float64(len(pi)) * float64(i+1)) + 0.5
+					self.pb.SetFraction(f)
+
+				}
+				c <- true
 			},
-			[]interface{}{
-				k,
-				v.Description,
-				v.HomePage,
-
-				v.BuilderName,
-
-				v.Removable,
-				v.Reducible,
-				v.NonInstallable,
-				v.Deprecated,
-				v.PrimaryInstallOnly,
-
-				strings.Join(v.BuildDeps, "\n"),
-				strings.Join(v.SODeps, "\n"),
-				strings.Join(v.RunTimeDeps, "\n"),
-
-				tags.New(v.Tags).String(),
-				v.Category,
-				strings.Join(v.Groups, "\n"),
-
-				v.TarballName,
-				v.TarballFileNameParser,
-				strings.Join(v.TarballFilters, "\n"),
-				v.TarballProvider,
-				strings.Join(v.TarballProviderArguments, "\n"),
-				v.TarballProviderUseCache,
-				v.TarballProviderCachePresetName,
-				v.TarballProviderVersionSyncDepth,
-				v.TarballVersionTool,
-			},
+			// pi,
 		)
-		if err != nil {
-			panic(err)
-		}
-
-		i++
-		f := (0.5 / float64(len(pi)) * float64(i+1)) + 0.5
-		self.pb.SetFraction(f)
+		<-c
 	}
 	return nil
 }

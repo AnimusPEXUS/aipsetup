@@ -19,9 +19,10 @@
   "Tags": [
     "group:cross"
   ],
-  "Category": "",
+  "Category": "kernel",
   "Groups": [
-    ""
+    "fi",
+    "cross"
   ],
   "TarballName": "gmp",
   "TarballFileNameParser": "std",

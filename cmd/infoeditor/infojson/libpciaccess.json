@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "x/lib",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "libpciaccess",
   "TarballFileNameParser": "std",

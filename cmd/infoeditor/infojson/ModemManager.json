@@ -20,9 +20,9 @@
     "gnome_project",
     "group:core1"
   ],
-  "Category": "",
+  "Category": "freedesktop",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "ModemManager",
   "TarballFileNameParser": "std",

@@ -20,9 +20,11 @@
     "gnome_project",
     "group:core0"
   ],
-  "Category": "",
+  "Category": "wm_gnome",
   "Groups": [
-    ""
+    "gtk",
+    "fi",
+    "core0"
   ],
   "TarballName": "glib",
   "TarballFileNameParser": "std",

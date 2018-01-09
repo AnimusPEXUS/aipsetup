@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/harfbuzz",
   "Groups": [
-    ""
+    "gtk"
   ],
   "TarballName": "harfbuzz",
   "TarballFileNameParser": "std",

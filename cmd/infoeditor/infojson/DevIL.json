@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:openil"
   ],
-  "Category": "",
+  "Category": "media_libs",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "DevIL",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/poppler",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "poppler-data",
   "TarballFileNameParser": "std",

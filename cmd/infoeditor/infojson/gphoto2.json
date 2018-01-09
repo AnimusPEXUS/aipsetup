@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:gphoto"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "gphoto2",
   "TarballFileNameParser": "std",

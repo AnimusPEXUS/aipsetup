@@ -19,9 +19,9 @@
   "Tags": [
     "github_hosted"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "sec"
   ],
   "TarballName": "libsepol",
   "TarballFileNameParser": "std",

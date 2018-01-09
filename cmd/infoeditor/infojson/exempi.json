@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/libopenraw",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "exempi",
   "TarballFileNameParser": "std",

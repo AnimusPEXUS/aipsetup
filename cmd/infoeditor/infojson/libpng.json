@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:libpng"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "libpng",
   "TarballFileNameParser": "std",

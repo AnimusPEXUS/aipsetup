@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:gtk2-perl"
   ],
-  "Category": "",
+  "Category": "langs/perl_modules",
   "Groups": [
-    ""
+    "perlmod"
   ],
   "TarballName": "Gtk2",
   "TarballFileNameParser": "std",

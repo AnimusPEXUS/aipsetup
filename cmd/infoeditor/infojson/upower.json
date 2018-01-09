@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/upower",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "upower",
   "TarballFileNameParser": "std",

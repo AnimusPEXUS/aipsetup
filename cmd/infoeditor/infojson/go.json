@@ -19,9 +19,10 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "langs/go",
   "Groups": [
-    ""
+    "core0",
+    "langs"
   ],
   "TarballName": "go",
   "TarballFileNameParser": "std",

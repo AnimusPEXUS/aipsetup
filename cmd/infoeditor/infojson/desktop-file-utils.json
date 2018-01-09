@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/desktop-file-utils",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "desktop-file-utils",
   "TarballFileNameParser": "std",

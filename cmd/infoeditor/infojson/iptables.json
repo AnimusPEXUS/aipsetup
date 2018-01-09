@@ -19,9 +19,10 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "fi",
+    "core0"
   ],
   "TarballName": "iptables",
   "TarballFileNameParser": "std",

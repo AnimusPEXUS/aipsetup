@@ -20,9 +20,9 @@
     "group:core0",
     "sf_hosted:expat"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "expat",
   "TarballFileNameParser": "std",

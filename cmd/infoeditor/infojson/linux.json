@@ -20,9 +20,10 @@
     "group:cross",
     "kernelorg_hosted"
   ],
-  "Category": "",
+  "Category": "kernel",
   "Groups": [
-    ""
+    "fi",
+    "cross"
   ],
   "TarballName": "linux",
   "TarballFileNameParser": "std",

@@ -20,9 +20,10 @@
     "group:core1",
     "kernelorg_hosted"
   ],
-  "Category": "",
+  "Category": "kernel",
   "Groups": [
-    ""
+    "fi",
+    "core1"
   ],
   "TarballName": "pciutils",
   "TarballFileNameParser": "std",

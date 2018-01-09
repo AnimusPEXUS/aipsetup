@@ -19,9 +19,10 @@
   "Tags": [
     "gnome_project"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "gtk2",
+    "gtk"
   ],
   "TarballName": "gtk+2",
   "TarballFileNameParser": "std",

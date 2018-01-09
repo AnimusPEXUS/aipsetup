@@ -19,9 +19,10 @@
   "Tags": [
     "group:core1"
   ],
-  "Category": "",
+  "Category": "freedesktop/xcb",
   "Groups": [
-    ""
+    "core1",
+    "fd"
   ],
   "TarballName": "libpthread-stubs",
   "TarballFileNameParser": "std",

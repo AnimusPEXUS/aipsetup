@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:freeimage"
   ],
-  "Category": "",
+  "Category": "media_libs",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "FreeImage",
   "TarballFileNameParser": "std",

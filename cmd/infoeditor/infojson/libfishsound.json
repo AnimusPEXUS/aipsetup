@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "libfishsound",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     "gnome_project"
   ],
-  "Category": "",
+  "Category": "freedesktop/gstreamer",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "gstreamer",
   "TarballFileNameParser": "std",

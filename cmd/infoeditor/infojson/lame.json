@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:lame"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "lame",
   "TarballFileNameParser": "std",

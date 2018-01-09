@@ -19,9 +19,10 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "freedesktop/polkit",
   "Groups": [
-    ""
+    "core0",
+    "fd"
   ],
   "TarballName": "polkit",
   "TarballFileNameParser": "std",

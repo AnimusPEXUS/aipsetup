@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/xcb",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "xcb-util-wm",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "lang/llvm",
   "Groups": [
-    ""
+    "llvm"
   ],
   "TarballName": "libunwind",
   "TarballFileNameParser": "std",

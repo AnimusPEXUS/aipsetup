@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "media_av_codecs",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "a52dec",
   "TarballFileNameParser": "std",

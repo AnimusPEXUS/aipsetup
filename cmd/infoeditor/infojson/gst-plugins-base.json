@@ -19,9 +19,9 @@
   "Tags": [
     "gnome_project"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "gst-plugins-base",
   "TarballFileNameParser": "std",

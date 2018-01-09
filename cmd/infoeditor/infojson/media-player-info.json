@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/media-player-info",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "media-player-info",
   "TarballFileNameParser": "std",

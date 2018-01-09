@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/libspectre",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "libspectre",
   "TarballFileNameParser": "std",

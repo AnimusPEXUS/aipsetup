@@ -19,9 +19,10 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "fi",
+    "crypt"
   ],
   "TarballName": "libksba",
   "TarballFileNameParser": "std",

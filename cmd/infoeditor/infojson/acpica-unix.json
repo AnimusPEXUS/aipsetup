@@ -19,9 +19,9 @@
   "Tags": [
     "group:core1"
   ],
-  "Category": "",
+  "Category": "core",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "acpica-unix",
   "TarballFileNameParser": "std",

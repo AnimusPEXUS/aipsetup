@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/dri",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "libdrm",
   "TarballFileNameParser": "std",

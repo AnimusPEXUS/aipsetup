@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:freeglut"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "gl"
   ],
   "TarballName": "freeglut",
   "TarballFileNameParser": "std",

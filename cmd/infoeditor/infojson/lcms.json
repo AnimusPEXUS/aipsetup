@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:lcms"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "lcms",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/libevdev",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "libevdev",
   "TarballFileNameParser": "std",

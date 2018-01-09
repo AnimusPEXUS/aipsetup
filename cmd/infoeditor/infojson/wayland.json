@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/wayland",
   "Groups": [
-    ""
+    "wayland"
   ],
   "TarballName": "wayland",
   "TarballFileNameParser": "std",

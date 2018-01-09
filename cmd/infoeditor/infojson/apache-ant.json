@@ -19,9 +19,9 @@
   "Tags": [
     "group:core1"
   ],
-  "Category": "",
+  "Category": "apache",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "apache-ant",
   "TarballFileNameParser": "std",

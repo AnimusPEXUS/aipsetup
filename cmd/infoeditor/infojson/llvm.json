@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "lang/llvm",
   "Groups": [
-    ""
+    "llvm"
   ],
   "TarballName": "llvm",
   "TarballFileNameParser": "std",

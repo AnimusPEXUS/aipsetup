@@ -19,9 +19,9 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "tdb",
   "TarballFileNameParser": "std",

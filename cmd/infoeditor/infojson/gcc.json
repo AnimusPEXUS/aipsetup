@@ -20,9 +20,10 @@
     "gnu_project",
     "group:cross"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "fi",
+    "cross"
   ],
   "TarballName": "gcc",
   "TarballFileNameParser": "std",

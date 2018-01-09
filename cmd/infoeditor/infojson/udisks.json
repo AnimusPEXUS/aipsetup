@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/udisks",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "udisks",
   "TarballFileNameParser": "std",

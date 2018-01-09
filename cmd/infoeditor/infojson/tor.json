@@ -20,9 +20,10 @@
     "group:core0",
     "group:core1"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1",
+    "core0"
   ],
   "TarballName": "tor",
   "TarballFileNameParser": "std",

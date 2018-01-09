@@ -21,9 +21,9 @@
     "group:core0",
     "sf_hosted:crystal"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "patch",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:djvu"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "djvulibre",
   "TarballFileNameParser": "std",

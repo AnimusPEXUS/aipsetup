@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/telepathy",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "telepathy-salut",
   "TarballFileNameParser": "std",

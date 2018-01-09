@@ -20,9 +20,10 @@
     "group:core1",
     "sf_hosted:squashfs"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "fi",
+    "core1"
   ],
   "TarballName": "squashfs",
   "TarballFileNameParser": "std",

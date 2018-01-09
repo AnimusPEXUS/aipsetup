@@ -19,9 +19,10 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/fontconfig",
   "Groups": [
-    ""
+    "gtk",
+    "fd"
   ],
   "TarballName": "fontconfig",
   "TarballFileNameParser": "std",

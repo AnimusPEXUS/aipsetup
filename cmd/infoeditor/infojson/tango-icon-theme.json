@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/tango",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "tango-icon-theme",
   "TarballFileNameParser": "std",

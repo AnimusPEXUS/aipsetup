@@ -19,9 +19,11 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "core",
   "Groups": [
-    ""
+    "fi",
+    "fib",
+    "core0"
   ],
   "TarballName": "acl",
   "TarballFileNameParser": "std",

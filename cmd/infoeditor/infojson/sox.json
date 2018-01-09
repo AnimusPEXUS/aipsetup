@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:sox"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "sox",
   "TarballFileNameParser": "std",

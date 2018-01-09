@@ -19,9 +19,10 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "langs",
   "Groups": [
-    ""
+    "core0",
+    "fi"
   ],
   "TarballName": "Python",
   "TarballFileNameParser": "std",

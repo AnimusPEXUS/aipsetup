@@ -20,9 +20,9 @@
     "group:core0",
     "sf_hosted:infozip"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "zip",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:pptpclient"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "ppp"
   ],
   "TarballName": "pptp",
   "TarballFileNameParser": "std",

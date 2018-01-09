@@ -20,9 +20,10 @@
     "gnu_project",
     "group:core1"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "fi",
+    "core1"
   ],
   "TarballName": "groff",
   "TarballFileNameParser": "std",

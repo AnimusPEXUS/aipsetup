@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/pulseaudio",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "pulseaudio",
   "TarballFileNameParser": "std",

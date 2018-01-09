@@ -1,5 +1,50 @@
 package pkginfodb
 
+import (
+	"errors"
+	"path"
+	"strings"
+)
+
+func GetCategoryByPkgName(name string, dir string) (ret string, ok bool, err error) {
+	ret = ""
+	ok = false
+	err = nil
+
+	cat := Categories
+
+	if len(dir) != 0 {
+		dirs := strings.Split(dir, "/")
+		for _, i := range dirs {
+			if newcat, ok2 := (cat[0]).(map[string]interface{})[i]; ok2 {
+				cat = newcat.([]interface{})
+			} else {
+				err = errors.New("path not found")
+				return
+			}
+		}
+	}
+
+	for _, i := range cat[1].([]string) {
+		if i == name {
+			ret = dir
+			ok = true
+			err = nil
+			return
+		}
+	}
+
+	for k, _ := range cat[0].(map[string]interface{}) {
+		jo := path.Join(dir, k)
+		ret, ok, err = GetCategoryByPkgName(name, jo)
+		if ok || err != nil {
+			return
+		}
+	}
+
+	return
+}
+
 var Categories = []interface{}{
 	map[string]interface{}{
 		"CAD": []interface{}{

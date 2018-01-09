@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/liboil",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "liboil",
   "TarballFileNameParser": "std",

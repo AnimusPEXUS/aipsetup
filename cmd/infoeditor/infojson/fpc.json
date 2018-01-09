@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:lazarus"
   ],
-  "Category": "",
+  "Category": "langs/pascal",
   "Groups": [
-    ""
+    "langs"
   ],
   "TarballName": "fpc",
   "TarballFileNameParser": "std",

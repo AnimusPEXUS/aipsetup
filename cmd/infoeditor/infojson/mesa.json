@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/mesa",
   "Groups": [
-    ""
+    "gl"
   ],
   "TarballName": "mesa",
   "TarballFileNameParser": "std",

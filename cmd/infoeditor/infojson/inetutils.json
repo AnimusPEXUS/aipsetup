@@ -20,9 +20,10 @@
     "gnu_project",
     "group:core0"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "core0",
+    "fi"
   ],
   "TarballName": "inetutils",
   "TarballFileNameParser": "std",

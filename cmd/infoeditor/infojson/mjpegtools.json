@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:mjpeg"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "mjpegtools",
   "TarballFileNameParser": "std",

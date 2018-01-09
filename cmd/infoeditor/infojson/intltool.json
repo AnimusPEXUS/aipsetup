@@ -20,9 +20,9 @@
     "gnome_project",
     "group:core0"
   ],
-  "Category": "",
+  "Category": "wm_gnome",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "intltool",
   "TarballFileNameParser": "std",

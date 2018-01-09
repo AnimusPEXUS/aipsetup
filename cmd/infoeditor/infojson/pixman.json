@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/cairo",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "pixman",
   "TarballFileNameParser": "std",

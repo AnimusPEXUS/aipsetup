@@ -21,9 +21,9 @@
     "group:core1",
     "sf_hosted:cups"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "cups",
   "TarballFileNameParser": "std",

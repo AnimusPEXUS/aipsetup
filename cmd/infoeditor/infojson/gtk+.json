@@ -20,9 +20,9 @@
     "gnome_project",
     "sf_hosted:xfce"
   ],
-  "Category": "",
+  "Category": "wm_gnome",
   "Groups": [
-    ""
+    "gtk"
   ],
   "TarballName": "gtk+",
   "TarballFileNameParser": "std",

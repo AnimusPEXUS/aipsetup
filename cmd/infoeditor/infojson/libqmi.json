@@ -19,9 +19,9 @@
   "Tags": [
     "gnome_project"
   ],
-  "Category": "",
+  "Category": "freedesktop/libqmi",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "libqmi",
   "TarballFileNameParser": "std",

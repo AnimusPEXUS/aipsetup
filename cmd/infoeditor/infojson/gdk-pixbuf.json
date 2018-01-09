@@ -19,9 +19,9 @@
   "Tags": [
     "gnome_project"
   ],
-  "Category": "",
+  "Category": "wm_gnome",
   "Groups": [
-    ""
+    "gtk"
   ],
   "TarballName": "gdk-pixbuf",
   "TarballFileNameParser": "std",

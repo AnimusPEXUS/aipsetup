@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:ogl-math"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "gl"
   ],
   "TarballName": "glm",
   "TarballFileNameParser": "std",

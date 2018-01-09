@@ -20,9 +20,9 @@
     "github_hosted",
     "group:core0"
   ],
-  "Category": "",
+  "Category": "freedesktop/systemd",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "systemd",
   "TarballFileNameParser": "std",

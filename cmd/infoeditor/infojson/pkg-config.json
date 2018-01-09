@@ -20,9 +20,11 @@
     "gnome_project",
     "group:core0"
   ],
-  "Category": "",
+  "Category": "freedesktop/pkgconfig",
   "Groups": [
-    ""
+    "fd",
+    "core0",
+    "fi"
   ],
   "TarballName": "pkg-config",
   "TarballFileNameParser": "std",

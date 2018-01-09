@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:opencvlibrary"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "opencv",
   "TarballFileNameParser": "std",

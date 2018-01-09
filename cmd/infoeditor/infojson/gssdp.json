@@ -20,9 +20,9 @@
     "gnome_project",
     "group:core1"
   ],
-  "Category": "",
+  "Category": "wm_gnome",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "gssdp",
   "TarballFileNameParser": "std",

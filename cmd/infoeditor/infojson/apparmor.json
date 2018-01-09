@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "kernel",
   "Groups": [
-    ""
+    "sec"
   ],
   "TarballName": "apparmor",
   "TarballFileNameParser": "std",

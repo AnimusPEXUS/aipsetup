@@ -19,9 +19,9 @@
   "Tags": [
     "group:core1"
   ],
-  "Category": "",
+  "Category": "kernel",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "iw",
   "TarballFileNameParser": "std",

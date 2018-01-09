@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:mesa3d"
   ],
-  "Category": "",
+  "Category": "freedesktop/mesa",
   "Groups": [
-    ""
+    "gl"
   ],
   "TarballName": "MesaGLUT",
   "TarballFileNameParser": "std",

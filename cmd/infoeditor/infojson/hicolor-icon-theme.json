@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/icon-theme",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "hicolor-icon-theme",
   "TarballFileNameParser": "std",

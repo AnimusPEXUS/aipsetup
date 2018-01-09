@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/farstream",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "farsight2",
   "TarballFileNameParser": "std",

@@ -20,9 +20,9 @@
     "group:core1",
     "sf_hosted:bridge"
   ],
-  "Category": "",
+  "Category": "core",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "bridge-utils",
   "TarballFileNameParser": "std",

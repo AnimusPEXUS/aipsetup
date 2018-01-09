@@ -19,9 +19,9 @@
   "Tags": [
     "group:core1"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "cups-filters",
   "TarballFileNameParser": "std",

@@ -21,9 +21,11 @@
     "kernelorg_hosted",
     "sf_hosted:e2fsprogs"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "fib",
+    "fi",
+    "core1"
   ],
   "TarballName": "e2fsprogs",
   "TarballFileNameParser": "std",

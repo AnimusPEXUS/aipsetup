@@ -19,9 +19,9 @@
   "Tags": [
     "gnome_project"
   ],
-  "Category": "",
+  "Category": "freedesktop/cairo",
   "Groups": [
-    ""
+    "gtk"
   ],
   "TarballName": "cairomm",
   "TarballFileNameParser": "std",

@@ -20,9 +20,9 @@
     "gnu_project",
     "group:core0"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "gdb",
   "TarballFileNameParser": "std",

@@ -20,9 +20,10 @@
     "github_hosted",
     "group:core1"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "fi",
+    "core1"
   ],
   "TarballName": "dosfstools",
   "TarballFileNameParser": "std",

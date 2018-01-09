@@ -19,9 +19,11 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "fi",
+    "fib",
+    "core0"
   ],
   "TarballName": "libcap",
   "TarballFileNameParser": "std",

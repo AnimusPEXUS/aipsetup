@@ -19,9 +19,9 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "freedesktop/dbus",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "dbus",
   "TarballFileNameParser": "std",

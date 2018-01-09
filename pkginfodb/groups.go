@@ -5,12 +5,44 @@ var GROUPS = map[string]([]string){
 	"core0": CORE0, // fundamental technical core
 	"core1": CORE1, // operating system sufficient for user
 
-	// NOTE: let's concentrate on 3 abowe first.
-	// "crypt": CRYPT,
-	// "fd": FD,
-	//
-	// "fi":  FI,
-	// "fib": FIB,
+	"crypt": CRYPT,
+	"fd":    FD,
+
+	"fi":  FI,
+	"fib": FIB,
+
+	"gl": GL,
+
+	"gtk":  GTK,
+	"gtk2": GTK2,
+
+	"java": JAVA,
+
+	"langs": LANGS,
+
+	"libs": LIBS,
+
+	"llvm": LLVM,
+
+	"media": MEDIA,
+
+	"network": NETWORK,
+
+	"perlmod": PERLMOD,
+
+	"ppp": PPP,
+
+	"qt": QT,
+
+	"sec": SEC,
+
+	"wayland": WAYLAND,
+
+	"web": WEB,
+
+	"wx": WX,
+
+	"xml": XML,
 }
 
 var CROSS = []string{

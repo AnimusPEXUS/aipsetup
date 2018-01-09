@@ -20,9 +20,10 @@
     "github_hosted",
     "group:core1"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "sec",
+    "core1"
   ],
   "TarballName": "policycoreutils",
   "TarballFileNameParser": "std",

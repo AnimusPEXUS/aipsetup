@@ -19,9 +19,9 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "kernel",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "kbd",
   "TarballFileNameParser": "std",

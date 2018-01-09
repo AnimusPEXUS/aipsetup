@@ -19,9 +19,9 @@
   "Tags": [
     "github_hosted"
   ],
-  "Category": "",
+  "Category": "lang/llvm",
   "Groups": [
-    ""
+    "llvm"
   ],
   "TarballName": "emscripten",
   "TarballFileNameParser": "std",

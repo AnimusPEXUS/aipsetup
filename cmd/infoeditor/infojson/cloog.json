@@ -19,9 +19,10 @@
   "Tags": [
     "group:cross"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "cross",
+    "fi"
   ],
   "TarballName": "cloog",
   "TarballFileNameParser": "std",

@@ -19,9 +19,10 @@
   "Tags": [
     "gnu_project"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "fi",
+    "crypt"
   ],
   "TarballName": "gnutls",
   "TarballFileNameParser": "std",

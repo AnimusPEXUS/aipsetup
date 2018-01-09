@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/plymouth",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "plymouth",
   "TarballFileNameParser": "std",

@@ -20,9 +20,9 @@
     "gnu_project",
     "group:core1"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "cpio",
   "TarballFileNameParser": "std",

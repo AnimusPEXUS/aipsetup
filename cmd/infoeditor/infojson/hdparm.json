@@ -20,9 +20,9 @@
     "group:core1",
     "sf_hosted:hdparm"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "hdparm",
   "TarballFileNameParser": "std",

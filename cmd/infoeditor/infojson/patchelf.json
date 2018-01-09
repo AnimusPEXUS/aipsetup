@@ -19,9 +19,9 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "",
+  "Category": "core",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "patchelf",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     "gnu_project"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "ghostscript",
   "TarballFileNameParser": "std",

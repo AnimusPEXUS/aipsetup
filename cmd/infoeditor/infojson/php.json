@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "langs"
   ],
   "TarballName": "php",
   "TarballFileNameParser": "std",

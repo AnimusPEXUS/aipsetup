@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/cairo",
   "Groups": [
-    ""
+    "gtk"
   ],
   "TarballName": "py2cairo",
   "TarballFileNameParser": "std",

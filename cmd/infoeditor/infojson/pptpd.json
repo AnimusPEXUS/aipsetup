@@ -20,9 +20,10 @@
     "group:core1",
     "sf_hosted:poptop"
   ],
-  "Category": "",
+  "Category": "network",
   "Groups": [
-    ""
+    "core1",
+    "ppp"
   ],
   "TarballName": "pptpd",
   "TarballFileNameParser": "std",

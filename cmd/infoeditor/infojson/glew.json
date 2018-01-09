@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:glew"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "gl"
   ],
   "TarballName": "glew",
   "TarballFileNameParser": "std",

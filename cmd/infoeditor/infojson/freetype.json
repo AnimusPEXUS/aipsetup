@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:freetype"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "gtk"
   ],
   "TarballName": "freetype",
   "TarballFileNameParser": "std",

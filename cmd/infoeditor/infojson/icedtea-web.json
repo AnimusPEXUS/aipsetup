@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "java"
   ],
   "TarballName": "icedtea-web",
   "TarballFileNameParser": "std",

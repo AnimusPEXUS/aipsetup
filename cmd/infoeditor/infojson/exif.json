@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:libexif"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "exif",
   "TarballFileNameParser": "std",

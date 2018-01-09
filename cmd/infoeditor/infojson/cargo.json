@@ -19,9 +19,9 @@
   "Tags": [
     "github_hosted"
   ],
-  "Category": "",
+  "Category": "langs/rust",
   "Groups": [
-    ""
+    "langs"
   ],
   "TarballName": "cargo",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "farstream",
   "TarballFileNameParser": "std",

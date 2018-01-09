@@ -20,9 +20,9 @@
     "group:core1",
     "sf_hosted:cracklib"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "cracklib",
   "TarballFileNameParser": "std",

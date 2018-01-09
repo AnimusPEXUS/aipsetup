@@ -21,9 +21,9 @@
     "group:core0",
     "sf_hosted:flex"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "flex",
   "TarballFileNameParser": "std",

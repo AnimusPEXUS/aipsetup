@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/shared-mime-info-spec",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "shared-mime-info",
   "TarballFileNameParser": "std",

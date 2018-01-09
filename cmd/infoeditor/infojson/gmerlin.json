@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:gmerlin"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "gmerlin",
   "TarballFileNameParser": "std",

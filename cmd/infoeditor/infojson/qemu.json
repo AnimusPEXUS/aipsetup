@@ -20,9 +20,9 @@
     "group:core1",
     "sf_hosted:gns-3"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "qemu",
   "TarballFileNameParser": "std",

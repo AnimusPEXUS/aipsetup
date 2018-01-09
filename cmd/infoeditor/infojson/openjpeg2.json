@@ -20,9 +20,9 @@
     "github_hosted",
     "sf_hosted:openjpeg.mirror"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "openjpeg",
   "TarballFileNameParser": "std",

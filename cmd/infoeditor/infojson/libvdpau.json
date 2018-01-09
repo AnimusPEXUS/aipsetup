@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/vdpau",
   "Groups": [
-    ""
+    "gl"
   ],
   "TarballName": "libvdpau",
   "TarballFileNameParser": "std",

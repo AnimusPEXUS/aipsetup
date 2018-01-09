@@ -20,9 +20,9 @@
     "group:core1",
     "sf_hosted:net-snmp"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "net-snmp",
   "TarballFileNameParser": "std",

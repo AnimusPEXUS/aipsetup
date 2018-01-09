@@ -20,9 +20,11 @@
     "group:core0",
     "sf_hosted:libpng"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "fi",
+    "fib",
+    "core0"
   ],
   "TarballName": "zlib",
   "TarballFileNameParser": "std",

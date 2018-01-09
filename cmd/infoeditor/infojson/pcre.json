@@ -20,9 +20,10 @@
     "group:core0",
     "sf_hosted:qpdf"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "fi",
+    "core0"
   ],
   "TarballName": "pcre",
   "TarballFileNameParser": "std",

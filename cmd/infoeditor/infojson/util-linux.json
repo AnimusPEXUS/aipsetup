@@ -20,9 +20,11 @@
     "group:core0",
     "kernelorg_hosted"
   ],
-  "Category": "",
+  "Category": "kernel",
   "Groups": [
-    ""
+    "fi",
+    "fib",
+    "core0"
   ],
   "TarballName": "util-linux",
   "TarballFileNameParser": "std",

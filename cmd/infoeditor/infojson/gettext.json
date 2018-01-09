@@ -21,9 +21,9 @@
     "group:core0",
     "sf_hosted:warzone2100"
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballName": "gettext",
   "TarballFileNameParser": "std",

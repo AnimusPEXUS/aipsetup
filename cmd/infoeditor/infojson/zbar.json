@@ -20,9 +20,9 @@
     "group:core1",
     "sf_hosted:zbar"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "zbar",
   "TarballFileNameParser": "std",

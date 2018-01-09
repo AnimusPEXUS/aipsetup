@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "gnu",
   "Groups": [
-    ""
+    "gtk"
   ],
   "TarballName": "source-highlight",
   "TarballFileNameParser": "std",

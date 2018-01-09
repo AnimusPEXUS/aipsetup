@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/libmbim",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "libmbim",
   "TarballFileNameParser": "std",

@@ -20,9 +20,9 @@
     "group:core1",
     "sf_hosted:rp-l2tp"
   ],
-  "Category": "",
+  "Category": "network",
   "Groups": [
-    ""
+    "core1"
   ],
   "TarballName": "rp-l2tp",
   "TarballFileNameParser": "std",

@@ -20,9 +20,9 @@
     "github_hosted",
     "gnome_project"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "libepoxy",
   "TarballFileNameParser": "std",

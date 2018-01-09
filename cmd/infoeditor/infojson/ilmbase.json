@@ -19,9 +19,10 @@
   "Tags": [
     "group:core1"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media",
+    "core1"
   ],
   "TarballName": "ilmbase",
   "TarballFileNameParser": "std",

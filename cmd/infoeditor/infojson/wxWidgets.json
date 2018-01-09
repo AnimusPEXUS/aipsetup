@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:wxwindows"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "wx"
   ],
   "TarballName": "wxWidgets",
   "TarballFileNameParser": "std",

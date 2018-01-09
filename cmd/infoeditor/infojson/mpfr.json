@@ -20,9 +20,10 @@
     "gnu_project",
     "group:cross"
   ],
-  "Category": "",
+  "Category": "kernel",
   "Groups": [
-    ""
+    "cross",
+    "fi"
   ],
   "TarballName": "mpfr",
   "TarballFileNameParser": "std",

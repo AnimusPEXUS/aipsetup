@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "network"
   ],
   "TarballName": "monitoring-plugins",
   "TarballFileNameParser": "std",

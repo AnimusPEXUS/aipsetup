@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "lang/llvm",
   "Groups": [
-    ""
+    "llvm"
   ],
   "TarballName": "openmp",
   "TarballFileNameParser": "std",

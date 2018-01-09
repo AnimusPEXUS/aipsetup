@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "freedesktop/geoclue",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "geoclue",
   "TarballFileNameParser": "std",

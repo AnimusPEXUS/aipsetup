@@ -19,9 +19,9 @@
   "Tags": [
     "gnome_project"
   ],
-  "Category": "",
+  "Category": "freedesktop/startup-notification",
   "Groups": [
-    ""
+    "fd"
   ],
   "TarballName": "startup-notification",
   "TarballFileNameParser": "std",

@@ -19,9 +19,9 @@
   "Tags": [
     "sf_hosted:libquicktime"
   ],
-  "Category": "",
+  "Category": "non_categorized",
   "Groups": [
-    ""
+    "media"
   ],
   "TarballName": "libquicktime",
   "TarballFileNameParser": "std",

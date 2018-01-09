@@ -19,11 +19,11 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "wm_gnome",
   "Groups": [
     ""
   ],
-  "TarballName": "libxmlplusplus",
+  "TarballName": "libxml++",
   "TarballFileNameParser": "std",
   "TarballFilters": [
     ""

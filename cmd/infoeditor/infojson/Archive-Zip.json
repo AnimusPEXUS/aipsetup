@@ -19,9 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "",
+  "Category": "langs/perl_modules",
   "Groups": [
-    ""
+    "perlmod"
   ],
   "TarballName": "Archive-Zip",
   "TarballFileNameParser": "std",
