@@ -1,0 +1,39 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "sf.net/projects/pyqt",
+  "BuilderName": "",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": true,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    ""
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "QScintilla",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "",
+  "TarballProviderArguments": [
+    ""
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

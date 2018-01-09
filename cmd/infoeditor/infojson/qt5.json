@@ -1,0 +1,39 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.qt-project.org/",
+  "BuilderName": "qt",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    ""
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "qt-everywhere-opensource-src",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "",
+  "TarballProviderArguments": [
+    ""
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

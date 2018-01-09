@@ -1,0 +1,43 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://github.com/systemd/systemd",
+  "BuilderName": "systemd",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted",
+    "group:core0"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "systemd",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/systemd/systemd.git",
+    "systemd",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}

@@ -1,0 +1,39 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/mjpeg",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "sf_hosted:mjpeg"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "mjpegtools",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "mjpeg"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

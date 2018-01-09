@@ -1,0 +1,39 @@
+{
+  "Description": "use 'ucommon'",
+  "HomePage": "http://www.gnu.org",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": true,
+  "Deprecated": true,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    ""
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "commoncpp2",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "",
+  "TarballProviderArguments": [
+    ""
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

@@ -1,0 +1,43 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://github.com/jackaudio/jack2",
+  "BuilderName": "jack",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "jack",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/jackaudio/jack2.git",
+    "jack0",
+    "TagName:^v$",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}

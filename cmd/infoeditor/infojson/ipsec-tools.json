@@ -1,0 +1,39 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/ipsec-tools",
+  "BuilderName": "ipsec_tools",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "sf_hosted:ipsec-tools"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "ipsec-tools",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "ipsec-tools"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

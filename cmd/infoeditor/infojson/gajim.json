@@ -1,0 +1,39 @@
+{
+  "Description": "good pythonic xmpp client\n\nsupports voip, plugins and many other things\n\npython2.7 is required\n",
+  "HomePage": "http://gajim.org/",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    ""
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "gajim",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "",
+  "TarballProviderArguments": [
+    ""
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

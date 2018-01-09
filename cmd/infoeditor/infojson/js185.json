@@ -1,0 +1,39 @@
+{
+  "Description": "deprecated. for polkit-112 use mozjs17",
+  "HomePage": "http://mozilla.org",
+  "BuilderName": "js185",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": true,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    ""
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "js185",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "",
+  "TarballProviderArguments": [
+    ""
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

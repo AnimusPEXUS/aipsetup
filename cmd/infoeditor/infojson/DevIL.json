@@ -1,0 +1,39 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/openil",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "sf_hosted:openil"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "DevIL",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "openil"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

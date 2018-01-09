@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/smartmontools",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core1",
+    "sf_hosted:smartmontools"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "smartmontools",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "smartmontools"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

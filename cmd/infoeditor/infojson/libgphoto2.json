@@ -1,0 +1,39 @@
+{
+  "Description": "",
+  "HomePage": "https://sourceforge.net/projects/gphoto",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "sf_hosted:gphoto"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "libgphoto2",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "gphoto"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

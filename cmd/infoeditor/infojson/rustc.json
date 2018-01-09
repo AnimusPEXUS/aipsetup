@@ -1,0 +1,43 @@
+{
+  "Description": "",
+  "HomePage": "https://github.com/rust-lang/rust",
+  "BuilderName": "rustc",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": true,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "rustc",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/rust-lang/rust.git",
+    "rustc",
+    "TagName:^$",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}

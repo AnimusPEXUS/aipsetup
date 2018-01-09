@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/net-snmp",
+  "BuilderName": "net_snmp",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core1",
+    "sf_hosted:net-snmp"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "net-snmp",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "net-snmp"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

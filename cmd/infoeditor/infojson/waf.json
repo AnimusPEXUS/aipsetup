@@ -1,0 +1,43 @@
+{
+  "Description": "",
+  "HomePage": "https://github.com/waf-project/waf",
+  "BuilderName": "waf",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "waf",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/waf-project/waf.git",
+    "waf",
+    "TagName:waf",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}

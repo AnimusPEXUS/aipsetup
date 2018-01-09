@@ -1,0 +1,42 @@
+{
+  "Description": "",
+  "HomePage": "https://github.com/unittest-cpp/unittest-cpp",
+  "BuilderName": "std_cmake",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "unittest-cpp",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/unittest-cpp/unittest-cpp.git",
+    "unittest-cpp",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}

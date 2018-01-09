@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/scons",
+  "BuilderName": "scons",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core1",
+    "sf_hosted:scons"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "scons-src",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "scons"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

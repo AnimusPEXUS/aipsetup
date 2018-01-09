@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/p7zip",
+  "BuilderName": "p7zip",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core1",
+    "sf_hosted:p7zip"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "p7zip",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "p7zip"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

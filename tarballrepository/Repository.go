@@ -1,10 +1,8 @@
 package tarballrepository
 
 import (
-	"errors"
 	"fmt"
 	"io/ioutil"
-	"net/url"
 	"os"
 	"os/exec"
 	"path"
@@ -12,7 +10,6 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
-	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
@@ -69,56 +66,51 @@ func (self *Repository) GetTarballFilePath(package_name, as_filename string) str
 	return path.Join(tarballs_dir, as_filename)
 }
 
-func (self *Repository) CreateCacheObjectForPackage(name string) (
-	*cache01.CacheDir,
-	error,
-) {
-	info, err := pkginfodb.Get(name)
-	if err != nil {
-		return nil, err
-	}
-
-	var preset *cache01.Settings
-
-	switch info.TarballProviderCachePresetName {
-	default:
-		return nil, errors.New("unknown cache preset name")
-	case "":
-		fallthrough
-	case "personal":
-		return cache01.NewCacheDir(self.GetPackageCachePath(name), preset)
-	case "by_https_host":
-		if info.TarballProvider != "https" {
-			return nil, errors.New("TarballProvider have to be https")
-		}
-
-		if len(info.TarballProviderArguments) == 0 {
-			return nil, errors.New("invalid https provider arguments")
-		}
-
-		u, err := url.Parse(info.TarballProviderArguments[0])
-		if err != nil {
-			return nil, err
-		}
-
-		if u.Host == "" {
-			return nil, errors.New("invalid Host for https provider")
-		}
-
-		return cache01.NewCacheDir(self.GetDedicatedCachePath(u.Host), nil)
-	}
-
-	return nil, errors.New("programming error")
-}
+// func (self *Repository) CreateCacheObjectForPackage(name string) (
+// 	*cache01.CacheDir,
+// 	error,
+// ) {
+// 	info, err := pkginfodb.Get(name)
+// 	if err != nil {
+// 		return nil, err
+// 	}
+//
+// 	var preset *cache01.Settings
+//
+// 	switch info.TarballProviderCachePresetName {
+// 	default:
+// 		return nil, errors.New("unknown cache preset name")
+// 	case "":
+// 		fallthrough
+// 	case "personal":
+// 		return cache01.NewCacheDir(self.GetPackageCachePath(name), preset)
+// 	case "by_https_host":
+// 		if info.TarballProvider != "https" {
+// 			return nil, errors.New("TarballProvider have to be https")
+// 		}
+//
+// 		if len(info.TarballProviderArguments) == 0 {
+// 			return nil, errors.New("invalid https provider arguments")
+// 		}
+//
+// 		u, err := url.Parse(info.TarballProviderArguments[0])
+// 		if err != nil {
+// 			return nil, err
+// 		}
+//
+// 		if u.Host == "" {
+// 			return nil, errors.New("invalid Host for https provider")
+// 		}
+//
+// 		return cache01.NewCacheDir(self.GetDedicatedCachePath(u.Host), nil)
+// 	}
+//
+// 	return nil, errors.New("programming error")
+// }
 
 func (self *Repository) PerformPackageTarballsUpdate(name string) error {
 
 	info, err := pkginfodb.Get(name)
-	if err != nil {
-		return err
-	}
-
-	cache, err := self.CreateCacheObjectForPackage(name)
 	if err != nil {
 		return err
 	}
@@ -133,7 +125,6 @@ func (self *Repository) PerformPackageTarballsUpdate(name string) error {
 		info,
 		self.sys,
 		self.GetPackageTarballsPath(name),
-		cache,
 		log,
 	)
 	if err != nil {
@@ -224,14 +215,17 @@ func (self *Repository) PerformDownload(
 
 	_, err := os.Stat(full_out_path_done)
 	if err == nil {
-		return nil
+		_, err := os.Stat(full_out_path)
+		if err == nil {
+			return nil
+		}
 	}
 
 	err = os.MkdirAll(path.Dir(full_out_path), 0700)
 	if err != nil {
 		return err
 	}
-	c := exec.Command("wget", "--progress=dot", "-c", "-O", full_out_path, uri)
+	c := exec.Command("wget", "--max-redirect=100", "--progress=dot", "-c", "-O", full_out_path, uri)
 	c.Stdout = os.Stdout
 	c.Stderr = os.Stderr
 	ret := c.Run()
@@ -245,11 +239,12 @@ func (self *Repository) PerformDownload(
 	return ret
 }
 
-func (self *Repository) PerformTarballCleanupListing(
+func (self *Repository) PrepareTarballCleanupListing(
 	package_name string,
 	files_to_keep []string,
 ) ([]string, error) {
 	lst, err := self.ListLocalTarballs(package_name, false)
+	// lst, err := self.ListLocalFiles(package_name, false)
 	if err != nil {
 		return []string{}, err
 	}
@@ -266,6 +261,9 @@ func (self *Repository) PerformTarballCleanupListing(
 		}
 		if !found {
 			to_delete = append(to_delete, i)
+
+			done_file_path := self.GetTarballDoneFilePath(package_name, i)
+			to_delete = append(to_delete, done_file_path)
 		}
 	}
 

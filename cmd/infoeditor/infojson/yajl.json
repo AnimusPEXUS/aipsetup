@@ -1,0 +1,43 @@
+{
+  "Description": "",
+  "HomePage": "https://github.com/lloyd/yajl",
+  "BuilderName": "std_cmake",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "yajl",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/lloyd/yajl.git",
+    "yajl",
+    "TagName:^$",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}

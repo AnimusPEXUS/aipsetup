@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.kernel.org",
+  "BuilderName": "bluez",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core1",
+    "kernelorg_hosted"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "bluez",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://cdn.kernel.org/pub/"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "by_https_host",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

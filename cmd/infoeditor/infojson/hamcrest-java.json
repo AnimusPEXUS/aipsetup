@@ -1,0 +1,44 @@
+{
+  "Description": "",
+  "HomePage": "https://github.com/hamcrest/JavaHamcrest",
+  "BuilderName": "hamcrest_java",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted",
+    "group:core1"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "hamcrest-java",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/hamcrest/JavaHamcrest.git",
+    "hamcrest-java",
+    "TagName:hamcrest-java",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}

@@ -1,0 +1,39 @@
+{
+  "Description": "subset of e2fsprogs package",
+  "HomePage": "https://sourceforge.net/projects/e2fsprogs",
+  "BuilderName": "e2fsprogs",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": true,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "sf_hosted:e2fsprogs"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "e2fsprogs-libs",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "e2fsprogs"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/qpdf",
+  "BuilderName": "pcre",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core0",
+    "sf_hosted:qpdf"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "pcre",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "qpdf"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

@@ -19,23 +19,23 @@ import (
 	"github.com/AnimusPEXUS/utils/version"
 )
 
+var _ types.ProviderI = &ProviderHttps{}
+
 type ProviderHttps struct {
 	repo                types.RepositoryI
 	pkg_name            string
 	pkg_info            *basictypes.PackageInfo
 	sys                 basictypes.SystemI
 	tarballs_output_dir string
-	cache               *cache01.CacheDir
+	log                 *logger.Logger
 
-	args []string
+	cache *cache01.CacheDir
 
 	htw *htmlwalk.HTMLWalk
 
 	scheme string
 	host   string
 	path   string
-
-	log *logger.Logger
 }
 
 func NewProviderHttps(
@@ -44,37 +44,45 @@ func NewProviderHttps(
 	pkg_info *basictypes.PackageInfo,
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
-	cache *cache01.CacheDir,
 	log *logger.Logger,
 ) (*ProviderHttps, error) {
 
-	ret := new(ProviderHttps)
-	ret.repo = repo
-	ret.pkg_name = pkg_name
-	ret.pkg_info = pkg_info
-	ret.sys = sys
-	ret.tarballs_output_dir = tarballs_output_dir
-	ret.cache = cache
+	self := new(ProviderHttps)
+	self.repo = repo
+	self.pkg_name = pkg_name
+	self.pkg_info = pkg_info
+	self.sys = sys
+	self.tarballs_output_dir = tarballs_output_dir
+	self.log = log
 
-	ret.log = log
-
-	ret.args = pkg_info.TarballProviderArguments
-
-	switch len(ret.args) {
+	switch len(pkg_info.TarballProviderArguments) {
 	case 0:
 	case 1:
-		u, err := url.Parse(ret.args[0])
+		u, err := url.Parse(pkg_info.TarballProviderArguments[0])
 		if err != nil {
 			return nil, err
 		}
-		ret.scheme = u.Scheme
-		ret.host = u.Host
-		ret.path = u.Path
+		self.scheme = u.Scheme
+		self.host = u.Host
+		self.path = u.Path
 	default:
-		return nil, errors.New("invalid arguments number")
+		return nil, errors.New("invalid arguments count")
 	}
 
-	return ret, nil
+	if t, err := cache01.NewCacheDir(
+		path.Join(
+			self.repo.GetCachesDir(),
+			"https",
+			self.host,
+		),
+		nil,
+	); err != nil {
+		return nil, err
+	} else {
+		self.cache = t
+	}
+
+	return self, nil
 }
 
 func (self *ProviderHttps) ProviderDescription() string {
@@ -252,7 +260,7 @@ func (self *ProviderHttps) PerformUpdate() error {
 
 	// WARNING: do not move existing tarballs deletion before download!
 	//          deletions should be done only if all downloads done successfully!
-	lst, err := self.repo.PerformTarballCleanupListing(self.pkg_name, res)
+	lst, err := self.repo.PrepareTarballCleanupListing(self.pkg_name, res)
 	if err != nil {
 		return err
 	}

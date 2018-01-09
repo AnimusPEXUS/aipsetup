@@ -1,0 +1,39 @@
+{
+  "Description": "see commoncpp2",
+  "HomePage": "https://www.gnu.org/software/commoncpp",
+  "BuilderName": "",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": true,
+  "Deprecated": true,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "gnu_project"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "commoncpp",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnu.org/gnu/commoncpp"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "by_https_host",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

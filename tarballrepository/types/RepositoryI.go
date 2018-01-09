@@ -1,7 +1,5 @@
 package types
 
-import "github.com/AnimusPEXUS/utils/cache01"
-
 type RepositoryI interface {
 	GetRepositoryPath() string
 	GetCachesDir() string
@@ -14,9 +12,9 @@ type RepositoryI interface {
 	GetTarballFilePath(package_name, as_filename string) string
 
 	PerformPackageTarballsUpdate(name string) error
-	CreateCacheObjectForPackage(name string) (*cache01.CacheDir, error)
+	// CreateCacheObjectForPackage(name string) (*cache01.CacheDir, error)
 	PerformDownload(package_name string, as_filename string, uri string) error
-	PerformTarballCleanupListing(package_name string, files_to_keep []string) ([]string, error)
+	PrepareTarballCleanupListing(package_name string, files_to_keep []string) ([]string, error)
 	DeleteFile(package_name string, filename string) error
 	DeleteFiles(package_name string, filename []string) error
 	ListLocalTarballs(package_name string, done_only bool) ([]string, error)

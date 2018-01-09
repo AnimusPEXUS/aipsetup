@@ -1,0 +1,39 @@
+{
+  "Description": "",
+  "HomePage": "https://www.gnu.org/software/hello",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "gnu_project"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "hello",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnu.org/gnu/hello"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "by_https_host",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

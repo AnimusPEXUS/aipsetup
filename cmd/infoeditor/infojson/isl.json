@@ -1,0 +1,39 @@
+{
+  "Description": "",
+  "HomePage": "http://isl.gforge.inria.fr/",
+  "BuilderName": "std",
+  "Removable": false,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:cross"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "isl",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "http://isl.gforge.inria.fr/"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "by_https_host",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

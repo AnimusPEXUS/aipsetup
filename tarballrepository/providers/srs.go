@@ -42,7 +42,6 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/infoeditor"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
-	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tags"
 	"github.com/AnimusPEXUS/utils/tarballname"
@@ -58,7 +57,6 @@ type ProviderSRS struct {
 	pkg_info            *basictypes.PackageInfo
 	sys                 basictypes.SystemI
 	tarballs_output_dir string
-	cache               *cache01.CacheDir
 	log                 *logger.Logger
 }
 
@@ -68,7 +66,6 @@ func NewProviderSRS(
 	pkg_info *basictypes.PackageInfo,
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
-	cache *cache01.CacheDir,
 	log *logger.Logger,
 ) (*ProviderSRS, error) {
 	self := &ProviderSRS{
@@ -77,7 +74,6 @@ func NewProviderSRS(
 		pkg_info:            pkg_info,
 		sys:                 sys,
 		tarballs_output_dir: tarballs_output_dir,
-		cache:               cache,
 		log:                 log,
 	}
 	return self, nil
@@ -396,7 +392,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 		return errors.New("there was errors making tarballs")
 	}
 
-	lst, err := self.repo.PerformTarballCleanupListing(self.pkg_name, downloaded_files)
+	lst, err := self.repo.PrepareTarballCleanupListing(self.pkg_name, downloaded_files)
 	if err != nil {
 		return err
 	}

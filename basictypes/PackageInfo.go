@@ -18,7 +18,9 @@ type PackageInfo struct {
 	SODeps      []string //`json:"so_deps"`
 	RunTimeDeps []string //`json:"runtime_deps"`
 
-	Tags []string //`json:"tags"`
+	Tags     []string //`json:"tags"`
+	Category string
+	Groups   []string
 
 	TarballName           string //`json:"tarball_name"`
 	TarballFileNameParser string //`json:"tarball_filename_parser"`

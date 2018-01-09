@@ -5,7 +5,6 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
-	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -16,7 +15,6 @@ func Get(
 	pkg_info *basictypes.PackageInfo,
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
-	cache *cache01.CacheDir,
 	log *logger.Logger,
 ) (types.ProviderI, error) {
 	if t, ok := Index[name]; ok {
@@ -26,7 +24,6 @@ func Get(
 			pkg_info,
 			sys,
 			tarballs_output_dir,
-			cache,
 			log,
 		)
 	} else {
@@ -40,7 +37,6 @@ var Index = map[string](func(
 	pkg_info *basictypes.PackageInfo,
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
-	cache *cache01.CacheDir,
 	log *logger.Logger,
 ) (types.ProviderI, error)){
 	"https": func(
@@ -49,7 +45,6 @@ var Index = map[string](func(
 		pkg_info *basictypes.PackageInfo,
 		sys basictypes.SystemI,
 		tarballs_output_dir string,
-		cache *cache01.CacheDir,
 		log *logger.Logger,
 	) (types.ProviderI, error) {
 		return NewProviderHttps(
@@ -58,7 +53,23 @@ var Index = map[string](func(
 			pkg_info,
 			sys,
 			tarballs_output_dir,
-			cache,
+			log,
+		)
+	},
+	"sf.net": func(
+		repo types.RepositoryI,
+		pkg_name string,
+		pkg_info *basictypes.PackageInfo,
+		sys basictypes.SystemI,
+		tarballs_output_dir string,
+		log *logger.Logger,
+	) (types.ProviderI, error) {
+		return NewProviderSFNet(
+			repo,
+			pkg_name,
+			pkg_info,
+			sys,
+			tarballs_output_dir,
 			log,
 		)
 	},
@@ -68,7 +79,6 @@ var Index = map[string](func(
 		pkg_info *basictypes.PackageInfo,
 		sys basictypes.SystemI,
 		tarballs_output_dir string,
-		cache *cache01.CacheDir,
 		log *logger.Logger,
 	) (types.ProviderI, error) {
 		return NewProviderSRS(
@@ -77,7 +87,6 @@ var Index = map[string](func(
 			pkg_info,
 			sys,
 			tarballs_output_dir,
-			cache,
 			log,
 		)
 	},

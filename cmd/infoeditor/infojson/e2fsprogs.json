@@ -1,0 +1,41 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/e2fsprogs",
+  "BuilderName": "e2fsprogs",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core1",
+    "kernelorg_hosted",
+    "sf_hosted:e2fsprogs"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "e2fsprogs",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://cdn.kernel.org/pub/"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "by_https_host",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

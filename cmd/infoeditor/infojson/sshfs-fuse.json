@@ -1,0 +1,44 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://github.com/libfuse/sshfs",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted",
+    "group:core0"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "sshfs-fuse",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/libfuse/sshfs.git",
+    "sshfs-fuse",
+    "TagName:sshfs",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}

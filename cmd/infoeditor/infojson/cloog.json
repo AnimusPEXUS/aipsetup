@@ -1,0 +1,39 @@
+{
+  "Description": "",
+  "HomePage": "",
+  "BuilderName": "cloog",
+  "Removable": false,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:cross"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "cloog",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.bastoul.net/cloog/pages/download/"
+  ],
+  "TarballProviderUseCache": true,
+  "TarballProviderCachePresetName": "by_https_host",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

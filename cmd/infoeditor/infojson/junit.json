@@ -1,0 +1,44 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://github.com/junit-team/junit5",
+  "BuilderName": "junit",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted",
+    "sf_hosted:junit"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "junit",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/junit-team/junit5.git",
+    "junit",
+    "TagName:r",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}

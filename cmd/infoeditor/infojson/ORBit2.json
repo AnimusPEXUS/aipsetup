@@ -1,0 +1,39 @@
+{
+  "Description": "ORBit2 is a CORBA 2.4-compliant Object Request Broker (ORB) featuring \nmature C, C++ and Python bindings. Bindings (in various degrees of completeness) are also available for Perl, Lisp, Pascal, Ruby, and TCL; others are in-progress. It supports POA, DII, DSI, TypeCode, Any, IR and IIOP. Optional features including INS and threading are available. ORBit2 is engineered for the desktop workstation environment, with a focus on performance, low resource usage, and security. The core ORB is written in C, and runs under Linux, UNIX (BSD, Solaris, HP-UX, ...), and Windows. ORBit2 is developed and released as open source software under GPL/LGPL.\n\nIt is supported by Red Hat and Ximian as middleware of the GNOME project.\n\nrequired by gconf\n\ndeprecated! use --disable-orbit for GConf",
+  "HomePage": "https://gnome.org/",
+  "BuilderName": "orbit2",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": true,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "gnome_project"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "ORBit2",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnome.org/mirror/gnome.org/"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "by_https_host",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "gnome"
+}

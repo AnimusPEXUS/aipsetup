@@ -1,0 +1,39 @@
+{
+  "Description": "linux kernel boot loader used in this distribution",
+  "HomePage": "http://www.kernel.org",
+  "BuilderName": "syslinux",
+  "Removable": false,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "syslinux",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "",
+  "TarballProviderArguments": [
+    ""
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

@@ -1,0 +1,39 @@
+{
+  "Description": "deprecated. use dconf and (?)GSettings\n\ncan't depricate: used by ibus",
+  "HomePage": "https://gnome.org/",
+  "BuilderName": "gconf",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "gnome_project"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "GConf",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnome.org/mirror/gnome.org/"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "by_https_host",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "gnome"
+}

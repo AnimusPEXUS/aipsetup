@@ -1,0 +1,40 @@
+{
+  "Description": "",
+  "HomePage": "https://sourceforge.net/projects/procps-ng",
+  "BuilderName": "procps_ng",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core0",
+    "sf_hosted:procps-ng"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "procps-ng",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "procps-ng"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "",
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballVersionTool": "std"
+}

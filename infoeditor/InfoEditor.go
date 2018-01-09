@@ -334,7 +334,7 @@ func (self *InfoEditor) ApplySFNet(index map[string]*basictypes.PackageInfo) err
 					t := tags.New(v1.Tags)
 
 					v1.HomePage = "https://sourceforge.net/projects/" + k2
-					v1.TarballProvider = "sf"
+					v1.TarballProvider = "sf.net"
 					v1.TarballProviderArguments = []string{k2}
 
 					t.SetSingle("sf_hosted", k2)

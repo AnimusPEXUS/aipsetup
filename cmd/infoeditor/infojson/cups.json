@@ -1,0 +1,45 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://github.com/apple/cups",
+  "BuilderName": "cups",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "github_hosted",
+    "group:core1",
+    "sf_hosted:cups"
+  ],
+  "Category": "",
+  "Groups": [
+    ""
+  ],
+  "TarballName": "cups",
+  "TarballFileNameParser": "std",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/apple/cups.git",
+    "cups",
+    "TagName:release",
+    "TagStatus:"
+  ],
+  "TarballProviderUseCache": false,
+  "TarballProviderCachePresetName": "personal",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballVersionTool": "std"
+}
