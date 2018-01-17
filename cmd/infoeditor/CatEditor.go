@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"errors"
 	"strings"
 
 	"github.com/AnimusPEXUS/gotk3collection/explorer"
@@ -26,6 +26,7 @@ type CatEditor struct {
 	cated_store    *gtk.TreeStore
 	pan1           *gtk.Paned
 	tb_reload_cats *gtk.ToolButton
+	tb_apply_cats  *gtk.ToolButton
 
 	_FolderIconPixbuf, _FileIconPixbuf     *gdk.Pixbuf
 	_FolderIconPixbufGV, _FileIconPixbufGV *glib.Value
@@ -68,6 +69,12 @@ func CatEditorNew(mw *UIMainWindow, builder *gtk.Builder) (*CatEditor, error) {
 		self.tb_reload_cats = t.(*gtk.ToolButton)
 	}
 
+	if t, err := builder.GetObject("tb_apply_cats"); err != nil {
+		return nil, err
+	} else {
+		self.tb_apply_cats = t.(*gtk.ToolButton)
+	}
+
 	if t, err := explorer.ExplorerNew(); err != nil {
 		return nil, err
 	} else {
@@ -104,6 +111,13 @@ func CatEditorNew(mw *UIMainWindow, builder *gtk.Builder) (*CatEditor, error) {
 		},
 	)
 
+	self.tb_apply_cats.Connect(
+		"clicked",
+		func() {
+			self.ApplyInfo()
+		},
+	)
+
 	self.pan1.Connect(
 		"style-set",
 		func() {
@@ -119,16 +133,6 @@ func (self *CatEditor) _MoveCopyOperation(
 	path *explorer.SelectedForOperationItem,
 	move bool,
 ) error {
-
-	fmt.Println("move/copy..")
-	for _, i := range paths {
-		fmt.Print("  ")
-		if i.IsDir {
-			fmt.Print("<dir> ")
-		}
-		fmt.Println(i.Path)
-	}
-	fmt.Println("    to", path.Path)
 
 	m := self.cated_store
 
@@ -149,8 +153,6 @@ func (self *CatEditor) _MoveCopyOperation(
 			return err
 		}
 
-		fmt.Println("before copy")
-
 		c, err := treemodel.CopyTreeStore(
 			m,
 			tp,
@@ -158,10 +160,6 @@ func (self *CatEditor) _MoveCopyOperation(
 		if err != nil {
 			return err
 		}
-
-		fmt.Println("printing c")
-		fmt.Println(treemodel.TreeStoreString(c, nil))
-		fmt.Println("before walk")
 
 		err = treemodel.PasteTreeStore(c, m, t_path)
 		if err != nil {
@@ -216,7 +214,6 @@ func (self *CatEditor) _PasteFunction(
 	default:
 		// nothing
 	}
-	fmt.Println("_Paste result", ret)
 	return ret
 }
 
@@ -290,12 +287,22 @@ func (self *CatEditor) ReloadInfo() error {
 				return err
 			}
 
-			d := self.d.GetByPath(
-				strings.Split(cat_string, "/"),
+			cat_string = strings.Trim(cat_string, "/ ")
+
+			gbpl := []string{}
+			if len(cat_string) != 0 {
+				gbpl = strings.Split(cat_string, "/")
+			}
+
+			d, err := self.d.GetByPath(
+				gbpl,
 				true,
 				false,
 				nil,
 			)
+			if err != nil {
+				return err
+			}
 			d.MkFile(record_name, nil)
 		}
 	}
@@ -335,7 +342,6 @@ func (self *CatEditor) ReloadInfo() error {
 					}
 				} else {
 					t_it = s.Append(cur_lvl_path_iter)
-					// fmt.Println("folder setting pixbuf", self._FolderIconPixbuf, i.Name())
 					s.SetValue(t_it, 0, self._FolderIconPixbuf)
 					s.SetValue(t_it, 1, i.Name())
 					s.SetValue(t_it, 2, true)
@@ -352,7 +358,6 @@ func (self *CatEditor) ReloadInfo() error {
 
 			for _, i := range files {
 				it := s.Append(cur_lvl_path_iter)
-				// fmt.Println("file setting pixbuf", self._FolderIconPixbuf.GetPixbuf(), i.Name())
 				s.SetValue(it, 0, self._FileIconPixbuf)
 				s.SetValue(it, 1, i.Name())
 				s.SetValue(it, 2, false)
@@ -361,6 +366,100 @@ func (self *CatEditor) ReloadInfo() error {
 			return nil
 		},
 	)
+
+	return nil
+}
+
+func (self *CatEditor) ApplyInfo() error {
+
+	new_tree := directory.NewFile(nil, "", true, nil)
+
+	m := self.cated_store
+	err := treemodel.WalkTreeStore(
+		m, nil,
+		func(
+			m *gtk.TreeStore,
+			path *gtk.TreePath,
+			values [][]*treemodel.Value,
+		) error {
+
+			path_str_lst, err := treemodel.RenderTreePathString(
+				m,
+				path,
+				1,
+			)
+			if err != nil {
+				return err
+			}
+
+			dir, err := new_tree.GetByPath(path_str_lst, true, false, nil)
+			if err != nil {
+				return err
+			}
+
+			for _, i := range values {
+				n, err := i[1].GValue.GetString()
+				if err != nil {
+					return err
+				}
+				dir.MkFile(n, nil)
+			}
+
+			return nil
+		},
+	)
+	if err != nil {
+		return err
+	}
+
+	{
+		s := self.mw.info_table_store
+		iter, ok := s.GetIterFirst()
+		if !ok {
+			return nil
+		}
+
+		for {
+			name_v, err := s.GetValue(iter, 0)
+			if err != nil {
+				return err
+			}
+			name, err := name_v.GetString()
+			if err != nil {
+				return err
+			}
+			fres, err := new_tree.FindFile(name)
+			if err != nil {
+				return err
+			}
+
+			var cat string
+
+			switch len(fres) {
+			default:
+				return errors.New("duplicated names found in tree")
+			case 0:
+				// ignore. but potentially this is programming error
+			case 1:
+				if len(fres[0]) == 0 {
+					cat = ""
+				} else {
+					spl_fres0 := strings.Split(fres[0], "/")
+					cat = strings.Join(
+						spl_fres0[:len(spl_fres0)-1],
+						"/",
+					)
+				}
+			}
+
+			err = s.SetValue(iter, 13, cat)
+			if err != nil {
+				return err
+			}
+
+		}
+
+	}
 
 	return nil
 }
