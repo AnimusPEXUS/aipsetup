@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/AnimusPEXUS/gtkcollection/explorer"
-	"github.com/AnimusPEXUS/gtkcollection/treemodel"
+	"github.com/AnimusPEXUS/gotk3collection/explorer"
+	"github.com/AnimusPEXUS/gotk3collection/treemodel"
 	"github.com/AnimusPEXUS/utils/directory"
 	"github.com/gotk3/gotk3/gdk"
 	"github.com/gotk3/gotk3/glib"
