@@ -58,9 +58,13 @@ type UIMainWindow struct {
 
 	nb *gtk.Notebook
 	pb *gtk.ProgressBar
+
+	cat_editor *CatEditor
 }
 
 func UIMainWindowNew() (*UIMainWindow, error) {
+
+	self := new(UIMainWindow)
 
 	builder, err := gtk.BuilderNew()
 	if err != nil {
@@ -74,7 +78,11 @@ func UIMainWindowNew() (*UIMainWindow, error) {
 		panic(err.Error())
 	}
 
-	self := new(UIMainWindow)
+	if t, err := CatEditorNew(self, builder); err != nil {
+		return nil, err
+	} else {
+		self.cat_editor = t
+	}
 
 	if t, err := builder.GetObject("root"); err != nil {
 		return nil, err
@@ -370,53 +378,6 @@ func (self *UIMainWindow) Show() {
 	self.window.ShowAll()
 }
 
-// func (self *UIMainWindow) LoadTable() error {
-// 	for k, v := range pkginfodb.Index {
-// 		iter := self.info_table_store.Append()
-// 		err := self.info_table_store.Set(
-// 			iter,
-// 			[]int{
-// 				0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-// 				10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-// 				20, 21,
-// 			},
-// 			[]interface{}{
-// 				k,
-// 				v.Description,
-// 				v.HomePage,
-//
-// 				v.BuilderName,
-//
-// 				v.Removable,
-// 				v.Reducible,
-// 				v.NonInstallable,
-// 				v.Deprecated,
-// 				v.PrimaryInstallOnly,
-//
-// 				strings.Join(v.BuildDeps, "\n"),
-// 				strings.Join(v.SODeps, "\n"),
-// 				strings.Join(v.RunTimeDeps, "\n"),
-//
-// 				tags.New(v.Tags).String(),
-//
-// 				v.TarballName,
-// 				v.TarballFileNameParser,
-// 				strings.Join(v.TarballFilters, "\n"),
-// 				v.TarballProvider,
-// 				strings.Join(v.TarballProviderArguments, "\n"),
-// 				v.TarballProviderUseCache,
-// 				v.TarballProviderCachePresetName,
-// 				v.TarballProviderVersionSyncDepth,
-// 				v.TarballVersionTool,
-// 			},
-// 		)
-// 		if err != nil {
-// 			panic(err)
-// 		}
-// 	}
-// 	return nil
-// }
-
 func (self *UIMainWindow) LoadTable() error {
 	glib.IdleAdd(
 		func() {
@@ -463,24 +424,6 @@ func (self *UIMainWindow) LoadTable() error {
 			name := i.Name()[0 : len(i.Name())-5]
 			pi[name] = t
 
-			// res, ok, err2 := pkginfodb.GetCategoryByPkgName(name, "")
-			// if ok && err2 == nil {
-			// 	t.Category = res
-			// }
-			//
-			// g := []string{}
-			//
-			// for k, v := range pkginfodb.GROUPS {
-			// 	for _, i := range v {
-			// 		if i == name {
-			// 			g = append(g, k)
-			// 			break
-			// 		}
-			// 	}
-			// }
-			//
-			// t.Groups = g
-
 		}
 		c := make(chan bool)
 		glib.IdleAdd(
@@ -493,23 +436,11 @@ func (self *UIMainWindow) LoadTable() error {
 		<-c
 	}
 
-	// glib.IdleAdd(
-	// 	func() {
-	// 		self.nb.SetVisible(false)
-	// 	},
-	// )
-
 	{
 		c := make(chan bool)
 		glib.IdleAdd(
 			func() {
-				for {
-					if i, ok := self.info_table_store.GetIterFirst(); ok {
-						self.info_table_store.Remove(i)
-					} else {
-						break
-					}
-				}
+				self.info_table_store.Clear()
 				c <- true
 			},
 		)
@@ -519,9 +450,7 @@ func (self *UIMainWindow) LoadTable() error {
 	{
 		c := make(chan bool)
 		glib.IdleAdd(
-			func(
-			// pi map[string]*basictypes.PackageInfo,
-			) {
+			func() {
 
 				i := 0
 				for k, v := range pi {
@@ -576,7 +505,6 @@ func (self *UIMainWindow) LoadTable() error {
 				}
 				c <- true
 			},
-			// pi,
 		)
 		<-c
 	}
