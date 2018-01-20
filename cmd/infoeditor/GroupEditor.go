@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"sort"
 	"strings"
 
 	"github.com/AnimusPEXUS/gotk3collection/explorer"
@@ -12,13 +13,13 @@ import (
 	"github.com/gotk3/gotk3/gtk"
 )
 
-type CatEditor struct {
-	mw             *UIMainWindow
-	cated1, cated2 *explorer.Explorer
-	cated_store    *gtk.TreeStore
-	pan1           *gtk.Paned
-	tb_reload_cats *gtk.ToolButton
-	tb_apply_cats  *gtk.ToolButton
+type GroupEditor struct {
+	mw                 *UIMainWindow
+	grouped1, grouped2 *explorer.Explorer
+	grouped_store      *gtk.TreeStore
+	pan2               *gtk.Paned
+	tb_reload_groups   *gtk.ToolButton
+	tb_apply_groups    *gtk.ToolButton
 
 	_FolderIconPixbuf, _FileIconPixbuf     *gdk.Pixbuf
 	_FolderIconPixbufGV, _FileIconPixbufGV *glib.Value
@@ -27,8 +28,8 @@ type CatEditor struct {
 	operation_subject []*explorer.SelectedForOperationItem
 }
 
-func CatEditorNew(mw *UIMainWindow, builder *gtk.Builder) (*CatEditor, error) {
-	self := &CatEditor{
+func GroupEditorNew(mw *UIMainWindow, builder *gtk.Builder) (*GroupEditor, error) {
+	self := &GroupEditor{
 		mw: mw,
 	}
 
@@ -44,50 +45,50 @@ func CatEditorNew(mw *UIMainWindow, builder *gtk.Builder) (*CatEditor, error) {
 	); err != nil {
 		return nil, err
 	} else {
-		self.cated_store = t
+		self.grouped_store = t
 	}
 
-	if t, err := builder.GetObject("pan1"); err != nil {
+	if t, err := builder.GetObject("pan2"); err != nil {
 		return nil, err
 	} else {
-		self.pan1 = t.(*gtk.Paned)
+		self.pan2 = t.(*gtk.Paned)
 	}
 
-	if t, err := builder.GetObject("tb_reload_cats"); err != nil {
+	if t, err := builder.GetObject("tb_reload_groups"); err != nil {
 		return nil, err
 	} else {
-		self.tb_reload_cats = t.(*gtk.ToolButton)
+		self.tb_reload_groups = t.(*gtk.ToolButton)
 	}
 
-	if t, err := builder.GetObject("tb_apply_cats"); err != nil {
+	if t, err := builder.GetObject("tb_apply_groups"); err != nil {
 		return nil, err
 	} else {
-		self.tb_apply_cats = t.(*gtk.ToolButton)
-	}
-
-	if t, err := explorer.ExplorerNew(); err != nil {
-		return nil, err
-	} else {
-		self.cated1 = t
+		self.tb_apply_groups = t.(*gtk.ToolButton)
 	}
 
 	if t, err := explorer.ExplorerNew(); err != nil {
 		return nil, err
 	} else {
-		self.cated2 = t
+		self.grouped1 = t
+	}
+
+	if t, err := explorer.ExplorerNew(); err != nil {
+		return nil, err
+	} else {
+		self.grouped2 = t
 	}
 
 	for _, i := range []*explorer.Explorer{
-		self.cated1, self.cated2,
+		self.grouped1, self.grouped2,
 	} {
-		self.pan1.Add(i.GetWidget())
+		self.pan2.Add(i.GetWidget())
 
 		i.SetColumns(0, 1, 2)
 		i.SetControlls(
-			false, true,
-			true, false, true,
+			true, true,
+			true, true, true,
 		)
-		i.SetModel(self.cated_store)
+		i.SetModel(self.grouped_store)
 
 		i.SetCutFunction(self._CutFunction)
 		i.SetPasteFunction(self._PasteFunction)
@@ -95,21 +96,21 @@ func CatEditorNew(mw *UIMainWindow, builder *gtk.Builder) (*CatEditor, error) {
 		i.SetMkDirFunction(self._MkDirFunction)
 	}
 
-	self.tb_reload_cats.Connect(
+	self.tb_reload_groups.Connect(
 		"clicked",
 		func() {
 			self.ReloadInfo()
 		},
 	)
 
-	self.tb_apply_cats.Connect(
+	self.tb_apply_groups.Connect(
 		"clicked",
 		func() {
 			self.ApplyInfo()
 		},
 	)
 
-	self.pan1.Connect(
+	self.pan2.Connect(
 		"style-set",
 		func() {
 			self._UpdateIconPixbufs()
@@ -119,13 +120,13 @@ func CatEditorNew(mw *UIMainWindow, builder *gtk.Builder) (*CatEditor, error) {
 	return self, nil
 }
 
-func (self *CatEditor) _MoveCopyOperation(
+func (self *GroupEditor) _MoveCopyOperation(
 	paths []*explorer.SelectedForOperationItem,
 	path *explorer.SelectedForOperationItem,
 	move bool,
 ) error {
 
-	m := self.cated_store
+	m := self.grouped_store
 
 	var t_path *gtk.TreePath
 	var err error
@@ -174,7 +175,7 @@ func (self *CatEditor) _MoveCopyOperation(
 	return nil
 }
 
-func (self *CatEditor) _CutFunction(
+func (self *GroupEditor) _CutFunction(
 	paths []*explorer.SelectedForOperationItem,
 ) error {
 	self.current_operation = OperationCut
@@ -182,7 +183,7 @@ func (self *CatEditor) _CutFunction(
 	return nil
 }
 
-func (self *CatEditor) _CopyFunction(
+func (self *GroupEditor) _CopyFunction(
 	paths []*explorer.SelectedForOperationItem,
 ) error {
 	self.current_operation = OperationCopy
@@ -190,7 +191,7 @@ func (self *CatEditor) _CopyFunction(
 	return nil
 }
 
-func (self *CatEditor) _PasteFunction(
+func (self *GroupEditor) _PasteFunction(
 	path *explorer.SelectedForOperationItem,
 ) error {
 	var ret error
@@ -214,19 +215,23 @@ func (self *CatEditor) _PasteFunction(
 	return ret
 }
 
-func (self *CatEditor) _DeleteFunction(
+func (self *GroupEditor) _DeleteFunction(
 	paths []*explorer.SelectedForOperationItem,
 ) error {
-	err := self._MoveCopyOperation(paths, nil, true)
+	err := self._MoveCopyOperation(
+		paths,
+		nil,
+		true,
+	)
 	return err
 }
 
-func (self *CatEditor) _MkDirFunction(target *explorer.SelectedForOperationItem) error {
+func (self *GroupEditor) _MkDirFunction(target *explorer.SelectedForOperationItem) error {
 
 	return nil
 }
 
-func (self *CatEditor) _UpdateIconPixbufs() error {
+func (self *GroupEditor) _UpdateIconPixbufs() error {
 	it, err := gtk.IconThemeGetDefault()
 	if err != nil {
 		return err
@@ -247,8 +252,8 @@ func (self *CatEditor) _UpdateIconPixbufs() error {
 	return nil
 }
 
-func (self *CatEditor) ReloadInfo() error {
-	s := self.cated_store
+func (self *GroupEditor) ReloadInfo() error {
+	s := self.grouped_store
 
 	s.Clear()
 
@@ -280,7 +285,7 @@ func (self *CatEditor) ReloadInfo() error {
 				return err
 			}
 
-			gv, err = s.GetValue(it, 13)
+			gv, err = s.GetValue(it, 14)
 			if err != nil {
 				return err
 			}
@@ -290,25 +295,54 @@ func (self *CatEditor) ReloadInfo() error {
 				return err
 			}
 
-			cat_string = strings.Trim(cat_string, "/ ")
-
 			gbpl := []string{}
 			if len(cat_string) != 0 {
-				gbpl = strings.Split(cat_string, "/")
+				gbpl = strings.Split(cat_string, "\n")
 			}
 
-			dd, err := d.GetByPath(
-				gbpl,
-				true,
-				false,
-				nil,
-			)
-			if err != nil {
-				return err
+			for i := 0; i != len(gbpl); i++ {
+				gbpl[i] = strings.Trim(gbpl[i], " ")
+				gbpl[i] = strings.Replace(gbpl[i], "/", "_", -1)
 			}
-			dd.MkFile(record_name, nil)
+
+			for i := len(gbpl) - 1; i != -1; i = i - 1 {
+				if len(gbpl[i]) == 0 {
+					gbpl = append(gbpl[:i], gbpl[:i+1]...)
+				}
+			}
+
+			// group for elements without group.
+			if len(gbpl) == 0 {
+				gbpl = append(gbpl, "")
+			}
+
+			for _, i := range gbpl {
+				dd, err := d.GetByPath(
+					[]string{i},
+					true,
+					false,
+					nil,
+				)
+				if err != nil {
+					return err
+				}
+				dd.MkFile(record_name, nil)
+
+			}
+
 		}
 	}
+
+	// {
+	// 	s, err := d.TreeString()
+	// 	if err != nil {
+	// 		fmt.Println("tree error", err)
+	// 	} else {
+	// 		fmt.Println("tree")
+	// 		fmt.Println(s)
+	// 	}
+	//
+	// }
 
 	d.Walk(
 		func(path []*directory.File, dirs, files []*directory.File) error {
@@ -373,12 +407,12 @@ func (self *CatEditor) ReloadInfo() error {
 	return nil
 }
 
-func (self *CatEditor) ApplyInfo() error {
+func (self *GroupEditor) ApplyInfo() error {
 
 	new_tree := directory.NewFile(nil, "", true, nil)
 
 	{
-		m := self.cated_store
+		m := self.grouped_store
 		err := treemodel.WalkTreeStore(
 			m, nil,
 			func(
@@ -415,9 +449,16 @@ func (self *CatEditor) ApplyInfo() error {
 						if err != nil {
 							return err
 						}
-						_, err = dir.MkFile(n, nil)
+						r, err := dir.Have(n)
 						if err != nil {
 							return err
+						}
+
+						if !r {
+							_, err = dir.MkFile(n, nil)
+							if err != nil {
+								return err
+							}
 						}
 					}
 				}
@@ -463,34 +504,47 @@ func (self *CatEditor) ApplyInfo() error {
 				return err
 			}
 
-			var cat string
+			if len(fres) == 0 {
+				err = s.SetValue(iter, 14, "")
+				if err != nil {
+					return err
+				}
+			} else {
 
-			switch len(fres) {
-			default:
-				return errors.New("duplicated names found in tree")
-			case 0:
-				cat = ""
-				// ignore. but potentially this is programming error
-			case 1:
+				groups := make([]string, 0)
 
-				if len(fres[0]) == 0 {
-					cat = ""
-				} else {
-					spl_fres0 := strings.Split(fres[0], "/")
-					cat = strings.Join(
-						spl_fres0[:len(spl_fres0)-1],
-						"/",
-					)
+				for _, i := range fres {
+					var group string
+
+					if len(i) == 0 {
+						group = ""
+					} else {
+						spl_fres_i := strings.Split(i, "/")
+						group = strings.Join(
+							spl_fres_i[:len(spl_fres_i)-1],
+							"/",
+						)
+					}
+
+					groups = append(groups, group)
+
 				}
 
-			}
-			err = s.SetValue(iter, 13, cat)
-			if err != nil {
-				return err
-			}
+				sort.Strings(groups)
 
+				if len(groups) == 0 {
+					err = s.SetValue(iter, 14, "")
+					if err != nil {
+						return err
+					}
+				} else {
+					err = s.SetValue(iter, 14, strings.Join(groups, "\n"))
+					if err != nil {
+						return err
+					}
+				}
+			}
 		}
-
 	}
 
 	return nil

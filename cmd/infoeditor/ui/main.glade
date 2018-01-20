@@ -90,6 +90,8 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="show_border">False</property>
+            <property name="scrollable">True</property>
+            <property name="enable_popup">True</property>
             <child>
               <object class="GtkBox">
                 <property name="visible">True</property>
@@ -215,7 +217,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="orientation">vertical</property>
-                    <property name="position">337</property>
+                    <property name="position">5</property>
                     <property name="wide_handle">True</property>
                     <child>
                       <placeholder/>
@@ -293,7 +295,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="orientation">vertical</property>
-                    <property name="position">337</property>
+                    <property name="position">50</property>
                     <property name="position_set">True</property>
                     <property name="wide_handle">True</property>
                     <child>

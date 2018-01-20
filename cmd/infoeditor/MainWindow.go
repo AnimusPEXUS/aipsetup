@@ -59,7 +59,8 @@ type UIMainWindow struct {
 	nb *gtk.Notebook
 	pb *gtk.ProgressBar
 
-	cat_editor *CatEditor
+	cat_editor   *CatEditor
+	group_editor *GroupEditor
 }
 
 func UIMainWindowNew() (*UIMainWindow, error) {
@@ -82,6 +83,12 @@ func UIMainWindowNew() (*UIMainWindow, error) {
 		return nil, err
 	} else {
 		self.cat_editor = t
+	}
+
+	if t, err := GroupEditorNew(self, builder); err != nil {
+		return nil, err
+	} else {
+		self.group_editor = t
 	}
 
 	if t, err := builder.GetObject("root"); err != nil {
