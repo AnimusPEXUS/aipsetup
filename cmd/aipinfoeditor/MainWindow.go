@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/aipsetup/cmd/infoeditor/ui"
+	"github.com/AnimusPEXUS/aipsetup/cmd/aipinfoeditor/ui"
 	"github.com/AnimusPEXUS/utils/tags"
 	"github.com/gotk3/gotk3/glib"
 	"github.com/gotk3/gotk3/gtk"
@@ -705,7 +705,7 @@ func (self *UIMainWindow) _IterToPackageInfo(iter *gtk.TreeIter) (
 func _EditorDir() (string, error) {
 
 	d, err := build.Import(
-		"github.com/AnimusPEXUS/aipsetup/cmd/infoeditor",
+		"github.com/AnimusPEXUS/aipsetup/cmd/aipinfoeditor",
 		"",
 		build.FindOnly,
 	)

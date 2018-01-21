@@ -3,10 +3,10 @@
   "HomePage": "http://www.kernel.org/",
   "BuilderName": "linux",
   "Removable": false,
-  "Reducible": false,
+  "Reducible": true,
   "NonInstallable": false,
   "Deprecated": false,
-  "PrimaryInstallOnly": false,
+  "PrimaryInstallOnly": true,
   "BuildDeps": [
     ""
   ],
