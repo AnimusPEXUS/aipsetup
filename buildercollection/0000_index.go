@@ -14,8 +14,7 @@ func Get(name string, bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, erro
 	}
 }
 
-var Index = map[string](func(bs basictypes.BuildingSiteCtlI) basictypes.BuilderI){
-	"std": func(bs basictypes.BuildingSiteCtlI) basictypes.BuilderI {
-		return NewBuilderStdAutotools(bs)
-	},
-}
+var Index = make(
+	map[string](func(bs basictypes.BuildingSiteCtlI) basictypes.BuilderI),
+	0,
+)

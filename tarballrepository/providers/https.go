@@ -36,6 +36,8 @@ type ProviderHttps struct {
 	scheme string
 	host   string
 	path   string
+
+	excludes []string
 }
 
 func NewProviderHttps(
@@ -55,19 +57,23 @@ func NewProviderHttps(
 	self.tarballs_output_dir = tarballs_output_dir
 	self.log = log
 
-	switch len(pkg_info.TarballProviderArguments) {
-	case 0:
-	case 1:
-		u, err := url.Parse(pkg_info.TarballProviderArguments[0])
-		if err != nil {
-			return nil, err
-		}
-		self.scheme = u.Scheme
-		self.host = u.Host
-		self.path = u.Path
-	default:
+	if len(pkg_info.TarballProviderArguments) < 1 {
 		return nil, errors.New("invalid arguments count")
 	}
+
+	self.excludes = []string{}
+
+	if len(pkg_info.TarballProviderArguments) > 1 {
+		self.excludes = pkg_info.TarballProviderArguments[1:]
+	}
+
+	u, err := url.Parse(pkg_info.TarballProviderArguments[0])
+	if err != nil {
+		return nil, err
+	}
+	self.scheme = u.Scheme
+	self.host = u.Host
+	self.path = u.Path
 
 	if t, err := cache01.NewCacheDir(
 		path.Join(
@@ -117,6 +123,7 @@ func (self *ProviderHttps) _GetHTW() (*htmlwalk.HTMLWalk, error) {
 			self.host,
 			self.cache,
 			self.log,
+			self.excludes,
 		)
 		if err != nil {
 			return nil, err

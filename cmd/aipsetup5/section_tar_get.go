@@ -7,11 +7,14 @@ import (
 	"sort"
 
 	"github.com/AnimusPEXUS/aipsetup"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/tarballname"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/version"
 )
 
 func SectionAipsetupTarGet() *cliapp.AppCmdNode {
@@ -49,6 +52,14 @@ func SectionAipsetupTarGet() *cliapp.AppCmdNode {
 			&cliapp.AppCmdNode{
 				Name:      "for",
 				Callable:  CmdAipsetupTarGetFor,
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   1,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:      "copy-for",
+				Callable:  CmdAipsetupTarGetLatestCopyFor,
 				CheckArgs: true,
 				MinArgs:   0,
 				MaxArgs:   1,
@@ -103,6 +114,105 @@ func CmdAipsetupTarGetFor(
 	}
 
 	name := getopt_result.Args[0]
+
+	err = repo.PerformPackageTarballsUpdate(name)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    10,
+			Message: err.Error(),
+		}
+	}
+
+	return &cliapp.AppResult{Code: 0}
+}
+
+func CmdAipsetupTarGetLatestCopyFor(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	// TODO: add root parameter to command
+	sys := aipsetup.NewSystem("/")
+
+	repo, err := tarballrepository.NewRepository(sys)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    11,
+			Message: err.Error(),
+		}
+	}
+
+	name := getopt_result.Args[0]
+
+	name_info, err := pkginfodb.Get(name)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    15,
+			Message: err.Error(),
+		}
+	}
+
+	tarballs, err := repo.ListLocalTarballs(name, true)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    12,
+			Message: err.Error(),
+		}
+	}
+
+	if len(tarballs) == 0 {
+		return &cliapp.AppResult{
+			Code:    17,
+			Message: "repository have no tarballs for this package",
+		}
+	}
+
+	p, err := tarballnameparsers.Get(name_info.TarballFileNameParser)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    16,
+			Message: err.Error(),
+		}
+	}
+
+	err = version.SortByVersion(tarballs, p)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    13,
+			Message: err.Error(),
+		}
+	}
+
+	err = repo.CopyTarballToDir(name, tarballs[len(tarballs)-1], ".")
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    18,
+			Message: err.Error(),
+		}
+	}
+
+	return &cliapp.AppResult{Code: 0}
+}
+
+func CmdAipsetupTarGetCopyForGroup(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	// TODO: add root parameter to command
+	sys := aipsetup.NewSystem("/")
+
+	repo, err := tarballrepository.NewRepository(sys)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    11,
+			Message: err.Error(),
+		}
+	}
+
+	name := getopt_result.Args[0]
+
+	pkginfodb.ListPackagesByGroups([]string{"core1"})
 
 	err = repo.PerformPackageTarballsUpdate(name)
 	if err != nil {

@@ -116,3 +116,32 @@ func ApplyInfoFilter(
 
 	return ret, nil
 }
+
+func ListPackagesByGroups(groups []string) []string {
+	ret := make([]string, 0)
+	for k, v := range Index {
+		found := false
+	loop2:
+		for _, v2 := range v.Groups {
+			for _, v3 := range groups {
+				if v2 == v3 {
+					found = true
+					break loop2
+				}
+			}
+		}
+		if found {
+			found2 := false
+			for _, v2 := range ret {
+				if v2 == k {
+					found2 = true
+					break
+				}
+			}
+			if !found2 {
+				ret = append(ret, k)
+			}
+		}
+	}
+	return ret
+}

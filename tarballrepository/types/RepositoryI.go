@@ -19,4 +19,5 @@ type RepositoryI interface {
 	DeleteFiles(package_name string, filename []string) error
 	ListLocalTarballs(package_name string, done_only bool) ([]string, error)
 	ListLocalFiles(package_name string) ([]string, error)
+	CopyTarballToDir(package_name string, tarball string, outdir string) error
 }

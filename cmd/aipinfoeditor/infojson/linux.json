@@ -32,7 +32,8 @@
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/linux/kernel/"
+    "https://cdn.kernel.org/pub/linux/kernel/",
+    "/pub/linux/kernel/people"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "by_https_host",

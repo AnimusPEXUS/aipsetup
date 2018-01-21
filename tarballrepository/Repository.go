@@ -2,6 +2,7 @@ package tarballrepository
 
 import (
 	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -274,10 +275,14 @@ func (self *Repository) DeleteFile(
 	package_name string,
 	filename string,
 ) error {
+	var ret error
 	tarballs_dir := self.GetPackageTarballsPath(package_name)
 	filename = path.Base(filename)
 	full_path := path.Join(tarballs_dir, filename)
-	return os.Remove(full_path)
+	if _, err := os.Stat(full_path); err == nil {
+		ret = os.Remove(full_path)
+	}
+	return ret
 }
 
 func (self *Repository) DeleteFiles(package_name string, filename []string) error {
@@ -321,6 +326,41 @@ func (self *Repository) MoveInTarball(filename string) error {
 	}
 
 	err = os.Rename(filename, full_out_path)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (self *Repository) CopyTarballToDir(
+	package_name string,
+	tarball string,
+	outdir string,
+) error {
+	src_file_path := self.GetTarballFilePath(package_name, tarball)
+	out_file := path.Join(outdir, tarball)
+
+	if _, err := os.Stat(src_file_path); err != nil {
+		return err
+	}
+
+	err := os.MkdirAll(outdir, 0700)
+	if err != nil {
+		return err
+	}
+
+	out_file_o, err := os.Create(out_file)
+	if err != nil {
+		return err
+	}
+
+	src_file_o, err := os.Open(src_file_path)
+	if err != nil {
+		return err
+	}
+
+	_, err = io.Copy(out_file_o, src_file_o)
 	if err != nil {
 		return err
 	}

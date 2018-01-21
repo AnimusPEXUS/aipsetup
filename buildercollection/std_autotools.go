@@ -14,6 +14,12 @@ import (
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
+func init() {
+	Index["std"] = func(bs basictypes.BuildingSiteCtlI) basictypes.BuilderI {
+		return NewBuilderStdAutotools(bs)
+	}
+}
+
 type CrossBuildEnum uint
 
 const (

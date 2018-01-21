@@ -16,7 +16,7 @@ type BuildingSiteInfo struct {
 
 	Sources []string `json:"sources"`
 
-	MainTarballInfo *PackageInfo `json:"main_tarball_info"`
+	// MainTarballInfo *PackageInfo `json:"main_tarball_info"`
 }
 
 func (self *BuildingSiteInfo) SetInfoLailalo50() {

@@ -172,7 +172,7 @@ func UIMainWindowNew() (*UIMainWindow, error) {
 							err = self.info_table_store.Set(
 								ite,
 								[]int{udata},
-								[]interface{}{new_text},
+								[]interface{}{strings.Replace(new_text, "\\n", "\n", -1)},
 							)
 							if err != nil {
 								panic(err)

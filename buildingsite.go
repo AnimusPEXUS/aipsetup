@@ -15,6 +15,7 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildercollection"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
@@ -207,7 +208,7 @@ func (self *BuildingSiteCtl) ApplyInitialInfo(
 	b_info := new(basictypes.BuildingSiteInfo)
 	b_info.SetInfoLailalo50()
 
-	b_info.MainTarballInfo = info
+	// b_info.MainTarballInfo = info
 	b_info.PackageName = pkgname
 
 	err := self.WriteInfo(b_info)
@@ -335,6 +336,11 @@ maintarball_found:
 		return err
 	}
 
+	tarball_info, err := pkginfodb.Get(info.PackageName)
+	if err != nil {
+		return err
+	}
+
 	info.Sources = filelist
 
 	{
@@ -343,7 +349,7 @@ maintarball_found:
 
 		{
 			parser_c, ok :=
-				tarballnameparsers.Index[info.MainTarballInfo.TarballFileNameParser]
+				tarballnameparsers.Index[tarball_info.TarballFileNameParser]
 			if !ok {
 				return errors.New("can't find tarball name parser pointed by info file")
 			}
@@ -438,7 +444,12 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 		return err
 	}
 
-	builder_name := info.MainTarballInfo.BuilderName
+	tarball_info, err := pkginfodb.Get(info.PackageName)
+	if err != nil {
+		return err
+	}
+
+	builder_name := tarball_info.BuilderName
 
 	builder, err := buildercollection.Get(builder_name, self)
 	if err != nil {
@@ -540,20 +551,24 @@ func (self *BuildingSiteCtl) CreateLogger(name string, console_output bool) (
 }
 
 func (self *BuildingSiteCtl) ListActions() ([]string, error) {
-	ret := make([]string, 0)
 
 	info, err := self.ReadInfo()
 	if err != nil {
-		return ret, err
+		return []string{}, err
 	}
 
-	b, ok := buildercollection.Index[info.MainTarballInfo.BuilderName]
+	tarball_info, err := pkginfodb.Get(info.PackageName)
+	if err != nil {
+		return []string{}, err
+	}
+
+	b, ok := buildercollection.Index[tarball_info.BuilderName]
 	if !ok {
-		return ret, errors.New("requested builder not found")
+		return []string{}, errors.New("requested builder not found")
 	}
 
 	builder := b(self)
-	ret, _ = builder.DefineActions()
+	ret, _ := builder.DefineActions()
 
 	return ret, nil
 }

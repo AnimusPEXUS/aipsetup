@@ -1,5 +1,5 @@
 /cmd/aipsetup5/aipsetup5
-/cmd/aipinfoeditor/infoeditor
+/cmd/aipinfoeditor/aipinfoeditor
 /cmd/aipinfoeditor/infojson.tar.xz
 /tests
 *.qtpl.go

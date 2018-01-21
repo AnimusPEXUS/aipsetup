@@ -20,7 +20,7 @@ func init() {
 		t := new(basictypes.PackageInfo)
 		err := json.Unmarshal(
 			db.MustAsset(
-				fmt.Sprintf("../cmd/infoeditor/infojson/%s.json", name),
+				fmt.Sprintf("../cmd/aipinfoeditor/infojson/%s.json", name),
 			),
 			t,
 		)
