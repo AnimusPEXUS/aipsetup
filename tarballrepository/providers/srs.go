@@ -40,7 +40,6 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/aipsetup/infoeditor"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tags"
@@ -48,6 +47,10 @@ import (
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/version"
 )
+
+const GithubDefaultTagParser = "std"
+const GithubDefaultTagName = "v"
+const GithubDefaultTagStatus = `^$`
 
 var _ types.ProviderI = &ProviderSRS{}
 
@@ -207,17 +210,17 @@ func (self *ProviderSRS) MakeTarballsGit(
 
 	TagParser, _ := t.GetSingle("TagParser", true)
 	if TagParser == "" {
-		TagParser = infoeditor.GithubDefaultTagParser
+		TagParser = GithubDefaultTagParser
 	}
 
 	TagName, _ := t.GetSingle("TagName", true)
 	if TagName == "" {
-		TagName = infoeditor.GithubDefaultTagName
+		TagName = GithubDefaultTagName
 	}
 
 	TagStatus, _ := t.GetSingle("TagStatus", true)
 	if TagStatus == "" {
-		TagStatus = infoeditor.GithubDefaultTagStatus
+		TagStatus = GithubDefaultTagStatus
 	}
 
 	truncate_versions := info.TarballProviderVersionSyncDepth
@@ -293,7 +296,10 @@ func (self *ProviderSRS) MakeTarballsGit(
 		self.log.Info("-----------------")
 		self.log.Info("tag versioned truncation result")
 
-		res := version_tree.Basenames([]string{""})
+		res, err := version_tree.Basenames([]string{""})
+		if err != nil {
+			return err
+		}
 		for _, i := range res {
 			self.log.Info(fmt.Sprintf("  %s", i))
 		}

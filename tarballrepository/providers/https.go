@@ -208,7 +208,10 @@ func (self *ProviderHttps) PerformUpdate() error {
 	self.log.Info("-----------------")
 	self.log.Info("tarball versioned truncation result")
 
-	res := version_tree.Basenames(tarballname.ACCEPTABLE_TARBALL_EXTENSIONS)
+	res, err := version_tree.Basenames(tarballname.ACCEPTABLE_TARBALL_EXTENSIONS)
+	if err != nil {
+		return err
+	}
 	for _, i := range res {
 		self.log.Info(fmt.Sprintf("  %s", i))
 	}
