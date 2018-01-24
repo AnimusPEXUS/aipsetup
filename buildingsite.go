@@ -456,7 +456,7 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 		return err
 	}
 
-	actions_list, actions := builder.DefineActions()
+	_, actions := builder.DefineActions()
 
 	{
 		actions_missing := false
@@ -474,7 +474,7 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 	}
 
 main_loop:
-	for _, i := range actions_list {
+	for _, i := range targets {
 		for key, val := range actions {
 			if key == i {
 				l.Info("starting target " + key)
@@ -567,7 +567,11 @@ func (self *BuildingSiteCtl) ListActions() ([]string, error) {
 		return []string{}, errors.New("requested builder not found")
 	}
 
-	builder := b(self)
+	builder, err := b(self)
+	if err != nil {
+		return []string{}, err
+	}
+
 	ret, _ := builder.DefineActions()
 
 	return ret, nil
@@ -618,7 +622,7 @@ func (self *BuildingSiteCtl) GetConfiguredHABT() (string, string, string, string
 	return i.Host, i.Arch, i.Build, i.Target, nil
 }
 
-func (self *BuildingSiteCtl) SystemValuesCalculator() basictypes.SystemValuesCalculatorI {
+func (self *BuildingSiteCtl) ValuesCalculator() basictypes.ValuesCalculatorI {
 	return NewValuesCalculator(self)
 }
 

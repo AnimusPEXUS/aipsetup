@@ -8,13 +8,13 @@ import (
 
 func Get(name string, bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
 	if t, ok := Index[name]; ok {
-		return t(bs), nil
+		return t(bs)
 	} else {
 		return nil, errors.New("builder not found")
 	}
 }
 
 var Index = make(
-	map[string](func(bs basictypes.BuildingSiteCtlI) basictypes.BuilderI),
+	map[string](func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error)),
 	0,
 )

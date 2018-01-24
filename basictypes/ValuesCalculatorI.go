@@ -2,7 +2,7 @@ package basictypes
 
 import "github.com/AnimusPEXUS/utils/environ"
 
-type SystemValuesCalculatorI interface {
+type ValuesCalculatorI interface {
 	CalculateIsCrossbuild() (bool, error)
 	CalculateIsCrossbuilder() (bool, error)
 	CalculateIsBuildingForSameHostButDifferentArch() (bool, error)

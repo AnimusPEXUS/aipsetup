@@ -288,7 +288,7 @@ func (self *Autotools) Configure(
 	}
 
 	cmd := exec.Command(executable, int_args...)
-	cmd.Env = env
+	cmd.Env = int_env
 	cmd.Dir = working_dirpath
 
 	log.Info("Configure Parameters:")
@@ -314,6 +314,21 @@ func (self *Autotools) Configure(
 	return ret
 }
 
+/*
+
+env - additional environment variables
+
+env_mode - use empty variables or copy of variables passed to aipsetup5
+
+makefile_filename - based automatically. name of Makefile. usually "Makefile"
+
+makefile_dirpath - absoluted automatically. directory in which named makefile
+	contained
+
+working_dirpath  - absoluted automatically. working dir which shold be current
+	for startend make utility
+
+*/
 func (self *Autotools) Make(
 	args []string,
 	env []string,
@@ -321,16 +336,11 @@ func (self *Autotools) Make(
 	makefile_filename string,
 	makefile_dirpath string,
 	working_dirpath string,
-	// // 1) calculates absolute path to configure and uses it as
-	// // run-path or 2) calculates relative path from working dir to configure file
-	// // and runs it relatively
-	// run_relative bool,
-	// whatever to start script it self or to
-	// execute shell programm with configure's path as parameter
-	// run_as_argument_to_shell bool,
 	make_program string,
 	log *logger.Logger,
 ) error {
+
+	makefile_filename = path.Base(makefile_filename)
 
 	makefile_dirpath, err := filepath.Abs(makefile_dirpath)
 	if err != nil {
@@ -367,7 +377,7 @@ func (self *Autotools) Make(
 	int_args = append(int_args, args...)
 
 	cmd := exec.Command(executable, int_args...)
-	cmd.Env = env
+	cmd.Env = int_env
 	cmd.Dir = working_dirpath
 
 	log.Info("Make Parameters:")

@@ -66,7 +66,7 @@ func (self ASPackager) DestDirCheckCorrectness(log *logger.Logger) error {
 		"share", "include", "libexec", "src",
 	}
 
-	calc := self.site.SystemValuesCalculator()
+	calc := self.site.ValuesCalculator()
 
 	host, arch, _, _, err := self.site.GetConfiguredHABT()
 	if err != nil {

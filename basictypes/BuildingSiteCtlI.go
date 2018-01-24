@@ -18,5 +18,5 @@ type BuildingSiteCtlI interface {
 	GetConfiguredTarget() (string, error)
 	GetConfiguredHABT() (string, string, string, string, error)
 
-	SystemValuesCalculator() SystemValuesCalculatorI
+	ValuesCalculator() ValuesCalculatorI
 }

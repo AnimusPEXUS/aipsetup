@@ -284,31 +284,42 @@ func CmdAipsetupBuildRun(
 
 	// copy(targets, actions)
 
-	arg0 := actions[0] + "+"
+	action := actions[0] + "+"
+
 	if len(getopt_result.Args) != 0 {
-		arg0 = getopt_result.Args[0]
+		action = getopt_result.Args[0]
 	}
 
 	plus := false
-	if strings.HasSuffix(arg0, "+") {
-		arg0 = arg0[:len(arg0)-1]
+	if strings.HasSuffix(action, "+") {
+		action = action[:len(action)-1]
+		plus = true
 	}
 
-	append_act := false
-	actions2 := make([]string, 0)
-	for _, i := range actions {
-		if i == arg0 {
-			append_act = true
-		}
-		if append_act {
-			actions2 = append(actions2, i)
-			if !plus {
+	{
+		actions2 := make([]string, 0)
+		found := false
+
+		for ii, i := range actions {
+			if i == action {
+				found = true
+				actions2 = actions[ii:]
+				if !plus {
+					actions2 = actions2[:1]
+				}
 				break
 			}
 		}
+		if !found {
+			return &cliapp.AppResult{
+				Code:    15,
+				Message: "asked action not found",
+			}
+		}
+		actions = actions2
 	}
 
-	err = bs_ctl.Run(actions2)
+	err = bs_ctl.Run(actions)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    14,

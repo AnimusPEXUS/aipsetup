@@ -8,10 +8,11 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/environ"
+	"github.com/AnimusPEXUS/utils/systemtriplet"
 	"github.com/AnimusPEXUS/utils/textlist"
 )
 
-var _ basictypes.SystemValuesCalculatorI = &ValuesCalculator{}
+var _ basictypes.ValuesCalculatorI = &ValuesCalculator{}
 
 type ValuesCalculator struct {
 	site    *BuildingSiteCtl
@@ -479,7 +480,7 @@ func (self *ValuesCalculator) CalculateMultilibVariant() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	tr, err := NewSystemTripletFromString(arch)
+	tr, err := systemtriplet.NewFromString(arch)
 	if err != nil {
 		return "", err
 	}

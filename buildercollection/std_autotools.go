@@ -15,8 +15,8 @@ import (
 )
 
 func init() {
-	Index["std"] = func(bs basictypes.BuildingSiteCtlI) basictypes.BuilderI {
-		return NewBuilderStdAutotools(bs)
+	Index["std"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
+		return NewBuilderStdAutotools(bs), nil
 	}
 }
 
@@ -172,7 +172,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureEnvDef(
 ) (environ.EnvVarEd, error) {
 	env := environ.New()
 
-	calc := self.site.SystemValuesCalculator()
+	calc := self.site.ValuesCalculator()
 
 	pkgcp, err := calc.CalculatePkgConfigSearchPaths("")
 	if err != nil {
@@ -227,7 +227,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureArgsDef(
 
 	ret := make([]string, 0)
 
-	calc := self.site.SystemValuesCalculator()
+	calc := self.site.ValuesCalculator()
 
 	prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {

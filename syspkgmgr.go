@@ -14,6 +14,7 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/utils/set"
+	"github.com/AnimusPEXUS/utils/systemtriplet"
 	"github.com/ulikunitz/xz"
 )
 
@@ -40,14 +41,14 @@ func (self *SystemPackages) _TestHostArchParameters(host, arch string) error {
 	}
 
 	if host != "" {
-		_, err := NewSystemTripletFromString(host)
+		_, err := systemtriplet.NewFromString(host)
 		if err != nil {
 			return err
 		}
 	}
 
 	if arch != "" {
-		_, err := NewSystemTripletFromString(arch)
+		_, err := systemtriplet.NewFromString(arch)
 		if err != nil {
 			return err
 		}
