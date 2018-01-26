@@ -67,34 +67,22 @@ func NewBuilderStdAutotools(buildingsite basictypes.BuildingSiteCtlI) *BuilderSt
 // 	self.site = bs
 // }
 
-func (self *BuilderStdAutotools) DefineActions() (
-	[]string,
-	basictypes.BuilderActions,
-) {
-	ret0 := []string{
-		"dst_cleanup",
-		"src_cleanup",
-		"bld_cleanup",
-		"primary_extract",
-		//		"patch",
-		//	"autogen",
-		"configure",
-		"build",
-		"distribute",
+func (self *BuilderStdAutotools) DefineActions() (basictypes.BuilderActions, error) {
+
+	ret := basictypes.BuilderActions{
+
+		&basictypes.BuilderAction{"dst_cleanup", self.BuilderActionDstCleanup},
+		&basictypes.BuilderAction{"src_cleanup", self.BuilderActionSrcCleanup},
+		&basictypes.BuilderAction{"bld_cleanup", self.BuilderActionBldCleanup},
+		&basictypes.BuilderAction{"primary_extract", self.BuilderActionPrimaryExtract},
+		// &basictypes.BuilderAction{				//ret["patch"] = self.BuilderActionPatch},
+		// &basictypes.BuilderAction{				//ret["autogen"] = self.BuilderActionAutogen},
+		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
+		&basictypes.BuilderAction{"build", self.BuilderActionBuild},
+		&basictypes.BuilderAction{"distribute", self.BuilderActionDistribute},
 	}
-	ret := make(basictypes.BuilderActions)
 
-	ret["dst_cleanup"] = self.BuilderActionDstCleanup
-	ret["src_cleanup"] = self.BuilderActionSrcCleanup
-	ret["bld_cleanup"] = self.BuilderActionBldCleanup
-	ret["primary_extract"] = self.BuilderActionPrimaryExtract
-	//ret["patch"] = self.BuilderActionPatch
-	//ret["autogen"] = self.BuilderActionAutogen
-	ret["configure"] = self.BuilderActionConfigure
-	ret["build"] = self.BuilderActionBuild
-	ret["distribute"] = self.BuilderActionDistribute
-
-	return ret0, ret
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionDstCleanup(

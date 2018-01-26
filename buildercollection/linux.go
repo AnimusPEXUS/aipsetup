@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"sort"
 
+	"code.gitea.io/gitea/modules/log"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildingtools"
 	"github.com/AnimusPEXUS/utils/logger"
@@ -115,54 +116,62 @@ func NewBuilderLinux(bs basictypes.BuildingSiteCtlI) (*BuilderLinux, error) {
 	return self, nil
 }
 
-func (self *BuilderLinux) DefineActions() (
-	[]string,
-	basictypes.BuilderActions,
-) {
-	ret0 := []string{
-		"dst_cleanup",
-		"src_cleanup",
-		"bld_cleanup",
-		"primary_extract",
-		//		"patch",
-		//	"autogen",
-		"configure",
-		"build",
-		//
-		"distr_kernel",
-		"distr_modules",
-		// "distr_firmware",
-		//
-		"distr_headers_all",
-		//
-		"distr_man",
-		"distr_source",
-		//
-		// "distribute",
+func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
+
+	ret := basictypes.BuilderActions{
+		&basictypes.BuilderAction{"dst_cleanup", self.std_builder.BuilderActionDstCleanup},
+		&basictypes.BuilderAction{"src_cleanup", self.std_builder.BuilderActionSrcCleanup},
+		&basictypes.BuilderAction{"bld_cleanup", self.std_builder.BuilderActionBldCleanup},
+		&basictypes.BuilderAction{"primary_extract", self.std_builder.BuilderActionPrimaryExtract},
+		//&basictypes.BuilderAction{"patch", self.BuilderActionPatch},
+		// &basictypes.BuilderAction{"autogen", self.BuilderActionAutogen},
+		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
+		&basictypes.BuilderAction{"build", self.BuilderActionBuild},
+
+		&basictypes.BuilderAction{"distr_kernel", self.BuilderActionDistrKernel},
+		&basictypes.BuilderAction{"distr_modules", self.BuilderActionDistrModules},
+		// &basictypes.BuilderAction{"distr_firmware", self.BuilderActionDistrFirmware },// NOTE: removed from linux 4.14
+
+		&basictypes.BuilderAction{"distr_headers_all", self.BuilderActionDistrHeadersAll},
+
+		// &basictypes.BuilderAction{"distr_man", self.BuilderActionDistrMan},
+		&basictypes.BuilderAction{"distr_source", self.BuilderActionDistrSource},
+
+		&basictypes.BuilderAction{"distribute", self.BuilderActionDistribute},
 	}
-	ret := make(basictypes.BuilderActions)
 
-	ret["dst_cleanup"] = self.std_builder.BuilderActionDstCleanup
-	ret["src_cleanup"] = self.std_builder.BuilderActionSrcCleanup
-	ret["bld_cleanup"] = self.std_builder.BuilderActionBldCleanup
-	ret["primary_extract"] = self.std_builder.BuilderActionPrimaryExtract
-	//ret["patch"] = self.BuilderActionPatch
-	//ret["autogen"] = self.BuilderActionAutogen
-	ret["configure"] = self.BuilderActionConfigure
-	ret["build"] = self.BuilderActionBuild
-	//
-	ret["distr_kernel"] = self.BuilderActionDistrKernel
-	ret["distr_modules"] = self.BuilderActionDistrModules
-	// ret["distr_firmware"] = self.BuilderActionDistrFirmware // NOTE: removed from linux 4.14
-	//
-	ret["distr_headers_all"] = self.BuilderActionDistrHeadersAll
-	//
-	// ret["distr_man"] = self.BuilderActionDistrMan
-	ret["distr_source"] = self.BuilderActionDistrSource
-	//
-	ret["distribute"] = self.BuilderActionDistribute
+	crossbuilder, err := self.bs.ValuesCalculator().CalculateIsCrossbuilder()
+	if err != nil {
+		return basictypes.BuilderActions{}, err
+	}
 
-	return ret0, ret
+	onlysubarch, err := self.bs.ValuesCalculator().CalculateIsBuildingForSameHostButDifferentArch()
+	if err != nil {
+		return basictypes.BuilderActions{}, err
+	}
+
+	if crossbuilder || onlysubarch {
+		if crossbuilder {
+			log.Info("Crossbuilder building detected")
+		}
+
+		if onlysubarch {
+			log.Info("Subarch building detected")
+		}
+
+		log.Info(" - only headers will be prepared")
+
+		ret = basictypes.BuilderActions{
+			&basictypes.BuilderAction{"dst_cleanup", self.std_builder.BuilderActionDstCleanup},
+			&basictypes.BuilderAction{"src_cleanup", self.std_builder.BuilderActionSrcCleanup},
+			&basictypes.BuilderAction{"primary_extract", self.std_builder.BuilderActionPrimaryExtract},
+
+			&basictypes.BuilderAction{"distr_headers_all", self.BuilderActionDistrHeadersAll},
+		}
+
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderLinux) BuilderActionConfigure(

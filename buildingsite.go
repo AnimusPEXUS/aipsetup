@@ -456,12 +456,15 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 		return err
 	}
 
-	_, actions := builder.DefineActions()
+	actions, err := builder.DefineActions()
+	if err != nil {
+		return err
+	}
 
 	{
 		actions_missing := false
 		for _, i := range targets {
-			if _, ok := actions[i]; !ok {
+			if _, ok := actions.Get(i); !ok {
 				actions_missing = true
 				fmt.Println("missing requested target actions:", i)
 			}
@@ -474,17 +477,17 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 	}
 
 main_loop:
-	for _, i := range targets {
-		for key, val := range actions {
-			if key == i {
-				l.Info("starting target " + key)
-				lo, err := self.CreateLogger(key, true)
+	for _, i := range actions {
+		for _, j := range targets {
+			if i.Name == j {
+				l.Info("starting target " + j)
+				lo, err := self.CreateLogger(j, true)
 				if err != nil {
 					return err
 				}
-				lo.Info(key + " log started")
-				err = val(lo)
-				lo.Info(key + " log ended")
+				lo.Info(j + " log started")
+				err = i.Callable(lo)
+				lo.Info(j + " log ended")
 				lo.Close()
 				if err != nil {
 					return err
@@ -572,7 +575,12 @@ func (self *BuildingSiteCtl) ListActions() ([]string, error) {
 		return []string{}, err
 	}
 
-	ret, _ := builder.DefineActions()
+	res, err := builder.DefineActions()
+	if err != nil {
+		return []string{}, err
+	}
+
+	ret := res.ActionList()
 
 	return ret, nil
 }
