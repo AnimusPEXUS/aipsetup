@@ -19,17 +19,17 @@ import (
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
-type ASPackager struct {
+type Packager struct {
 	site *BuildingSiteCtl
 }
 
-func NewASPackager(site *BuildingSiteCtl) *ASPackager {
-	ret := new(ASPackager)
+func NewPackager(site *BuildingSiteCtl) *Packager {
+	ret := new(Packager)
 	ret.site = site
 	return ret
 }
 
-func (self *ASPackager) Run(log *logger.Logger) error {
+func (self *Packager) Run(log *logger.Logger) error {
 	for _, i := range [](func(log *logger.Logger) error){
 		self.DestDirCheckCorrectness,
 		self.DestDirFileList,
@@ -49,7 +49,7 @@ func (self *ASPackager) Run(log *logger.Logger) error {
 	return nil
 }
 
-func (self ASPackager) DestDirCheckCorrectness(log *logger.Logger) error {
+func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 
 	log.Info("Checking paths correctness")
 
@@ -151,7 +151,7 @@ func (self ASPackager) DestDirCheckCorrectness(log *logger.Logger) error {
 	return nil
 }
 
-func (self ASPackager) DestDirFileList(log *logger.Logger) error {
+func (self Packager) DestDirFileList(log *logger.Logger) error {
 
 	log.Info("Creating file list")
 
@@ -189,7 +189,7 @@ func (self ASPackager) DestDirFileList(log *logger.Logger) error {
 	return nil
 }
 
-func (self ASPackager) DestDirChecksum(log *logger.Logger) error {
+func (self Packager) DestDirChecksum(log *logger.Logger) error {
 
 	log.Info("Calculating DESTDIR files' checksums")
 
@@ -255,7 +255,7 @@ func (self ASPackager) DestDirChecksum(log *logger.Logger) error {
 	return nil
 }
 
-func (self ASPackager) CompressPatchesDestDirAndLogs(log *logger.Logger) error {
+func (self Packager) CompressPatchesDestDirAndLogs(log *logger.Logger) error {
 	log.Info(
 		fmt.Sprintf(
 			"Compressing %s, %s and %s",
@@ -325,7 +325,7 @@ func (self ASPackager) CompressPatchesDestDirAndLogs(log *logger.Logger) error {
 	return nil
 }
 
-func (self ASPackager) CompressFilesInListsDir(log *logger.Logger) error {
+func (self Packager) CompressFilesInListsDir(log *logger.Logger) error {
 	log.Info("Compressing files in lists dir")
 
 	ldir := self.site.GetDIR_LISTS()
@@ -367,7 +367,7 @@ func (self ASPackager) CompressFilesInListsDir(log *logger.Logger) error {
 	return nil
 }
 
-func (self ASPackager) UpdateTimestamp(log *logger.Logger) error {
+func (self Packager) UpdateTimestamp(log *logger.Logger) error {
 	info, err := self.site.ReadInfo()
 	if err != nil {
 		return err
@@ -396,7 +396,7 @@ func (self ASPackager) UpdateTimestamp(log *logger.Logger) error {
 	return nil
 }
 
-func (self ASPackager) _ListItemsToPack(include_checksum bool) ([]string, error) {
+func (self Packager) _ListItemsToPack(include_checksum bool) ([]string, error) {
 	ret := make([]string, 0)
 	pth := self.site.Path
 	ret = append(ret, path.Join(pth, DIR_DESTDIR+".tar.xz"))
@@ -433,7 +433,7 @@ func (self ASPackager) _ListItemsToPack(include_checksum bool) ([]string, error)
 	return ret, nil
 }
 
-func (self ASPackager) MakeChecksums(log *logger.Logger) error {
+func (self Packager) MakeChecksums(log *logger.Logger) error {
 
 	log.Info("Creating checksumms before packaging")
 
@@ -497,7 +497,7 @@ func (self ASPackager) MakeChecksums(log *logger.Logger) error {
 	return nil
 }
 
-func (self ASPackager) Pack(log *logger.Logger) error {
+func (self Packager) Pack(log *logger.Logger) error {
 
 	log.Info("Creating package")
 
