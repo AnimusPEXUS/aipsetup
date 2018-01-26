@@ -3,16 +3,21 @@ package main
 import (
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"os"
+	"path"
+	"sort"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
+	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
+	"github.com/AnimusPEXUS/utils/version"
 )
 
 func SectionAipsetupBuild() *cliapp.AppCmdNode {
@@ -21,6 +26,25 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 
 		Name: "build",
 		SubCmds: []*cliapp.AppCmdNode{
+
+			&cliapp.AppCmdNode{
+				Name:      "get-src",
+				Callable:  CmdAipsetupBuildGetSrc,
+				CheckArgs: true,
+				MinArgs:   1,
+				MaxArgs:   -1,
+
+				AvailableOptions: cliapp.GetOptCheckList{
+					&cliapp.GetOptCheckListItem{
+						Name:        "-c",
+						Description: "named names are categories, from for which tarballs to get",
+					},
+					&cliapp.GetOptCheckListItem{
+						Name:        "-g",
+						Description: "named names are groups, from for which tarballs to get",
+					},
+				},
+			},
 
 			&cliapp.AppCmdNode{
 
@@ -64,6 +88,16 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 				MaxArgs:   1,
 
 				Callable: CmdAipsetupBuildRun,
+			},
+
+			&cliapp.AppCmdNode{
+				Name: "full",
+
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   -1,
+
+				Callable: CmdAipsetupBuildFull,
 			},
 
 			&cliapp.AppCmdNode{
@@ -330,6 +364,103 @@ func CmdAipsetupBuildRun(
 	return new(cliapp.AppResult)
 }
 
+func CmdAipsetupBuildFull(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	app := adds.Rootnode
+
+	for _, i := range getopt_result.Args {
+
+		s, err := os.Stat(i)
+		if err == nil && s.IsDir() {
+			continue
+		}
+
+		appres := cliapp.RunCmd(
+			adds.Arg0,
+			[]string{"build", "init", i},
+			app,
+			adds.PassData,
+		)
+		if appres.Code != 0 {
+			return &cliapp.AppResult{
+				Code:    10,
+				Message: "error initiating building site for " + i,
+			}
+		}
+
+	}
+
+	build_dir_files, err := ioutil.ReadDir("build")
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    11,
+			Message: "error listing 'build' dir",
+		}
+	}
+
+	bsites := make([]string, 0)
+
+	for _, i := range build_dir_files {
+		if i.IsDir() {
+			bsites = append(bsites, i.Name())
+		}
+	}
+
+	sort.Strings(bsites)
+
+	init_wd, err := os.Getwd()
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    12,
+			Message: "error treating current directory",
+		}
+	}
+
+	was_build_errors := false
+
+	for _, i := range bsites {
+		joined := path.Join(init_wd, "build", i)
+
+		err := os.Chdir(joined)
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    14,
+				Message: "error cd into " + joined,
+			}
+		}
+
+		appres := cliapp.RunCmd(
+			adds.Arg0,
+			[]string{"build", "run"},
+			app,
+			adds.PassData,
+		)
+		if appres.Code != 0 {
+			was_build_errors = true
+		}
+	}
+
+	err = os.Chdir(init_wd)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    16,
+			Message: "error cd into " + init_wd,
+		}
+	}
+
+	if was_build_errors {
+		return &cliapp.AppResult{
+			Code:    17,
+			Message: "some packages failed to build",
+		}
+	}
+
+	return &cliapp.AppResult{Code: 0}
+}
+
 func CmdAipsetupBuildPack(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
@@ -363,4 +494,117 @@ func CmdAipsetupBuildPack(
 	log.Close()
 
 	return new(cliapp.AppResult)
+}
+
+func CmdAipsetupBuildGetSrc(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	// TODO: add root parameter to command
+	sys := aipsetup.NewSystem("/")
+
+	repo, err := tarballrepository.NewRepository(sys)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    11,
+			Message: err.Error(),
+		}
+	}
+
+	work_on_groups := getopt_result.DoesHaveNamedRetOptItem("-g")
+	work_on_categories := getopt_result.DoesHaveNamedRetOptItem("-c")
+
+	get_by_name_func := func(name string) error {
+
+		name_info, err := pkginfodb.Get(name)
+		if err != nil {
+			return err
+		}
+
+		tarballs, err := repo.ListLocalTarballs(name, true)
+		if err != nil {
+			return err
+		}
+
+		if len(tarballs) == 0 {
+			return errors.New("repository does not have tarballs for this package")
+		}
+
+		p, err := tarballnameparsers.Get(name_info.TarballFileNameParser)
+		if err != nil {
+			return err
+		}
+
+		err = version.SortByVersion(tarballs, p)
+		if err != nil {
+			return err
+		}
+
+		err = repo.CopyTarballToDir(name, tarballs[len(tarballs)-1], ".")
+		if err != nil {
+			return err
+		}
+		return nil
+	}
+
+	if work_on_groups && work_on_categories {
+		return &cliapp.AppResult{
+			Code:    12,
+			Message: "mutual exclusive options given",
+		}
+	} else if !work_on_groups && !work_on_categories {
+		for _, i := range getopt_result.Args {
+			err := get_by_name_func(i)
+
+			if err != nil {
+				return &cliapp.AppResult{
+					Code:    10,
+					Message: err.Error(),
+				}
+			}
+		}
+	} else if work_on_groups {
+		pkgs, err := pkginfodb.ListPackagesByGroups(getopt_result.Args)
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    11,
+				Message: err.Error(),
+			}
+		}
+
+		for _, i := range pkgs {
+			err := get_by_name_func(i)
+
+			if err != nil {
+				return &cliapp.AppResult{
+					Code:    10,
+					Message: err.Error(),
+				}
+			}
+		}
+	} else if work_on_categories {
+		pkgs, err := pkginfodb.ListPackagesByCategories(getopt_result.Args)
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    11,
+				Message: err.Error(),
+			}
+		}
+
+		for _, i := range pkgs {
+			err := get_by_name_func(i)
+
+			if err != nil {
+				return &cliapp.AppResult{
+					Code:    10,
+					Message: err.Error(),
+				}
+			}
+		}
+	} else {
+		panic("programming error")
+	}
+
+	return &cliapp.AppResult{Code: 0}
 }

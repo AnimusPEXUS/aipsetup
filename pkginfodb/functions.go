@@ -10,6 +10,7 @@ import (
 	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/set"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnamefilterfunctions"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/textlist"
@@ -117,8 +118,11 @@ func ApplyInfoFilter(
 	return ret, nil
 }
 
-func ListPackagesByGroups(groups []string) []string {
+func ListPackagesByGroups(groups []string) ([]string, error) {
 	ret := make([]string, 0)
+
+	found_groups := set.NewSetString()
+
 	for k, v := range Index {
 		found := false
 	loop2:
@@ -126,6 +130,7 @@ func ListPackagesByGroups(groups []string) []string {
 			for _, v3 := range groups {
 				if v2 == v3 {
 					found = true
+					found_groups.Add(v3)
 					break loop2
 				}
 			}
@@ -143,5 +148,63 @@ func ListPackagesByGroups(groups []string) []string {
 			}
 		}
 	}
-	return ret
+
+	for _, i := range groups {
+		found := false
+		for _, j := range found_groups.ListStrings() {
+			if i == j {
+				found = true
+				break
+			}
+		}
+		if !found {
+			return []string{}, errors.New("some of named groups are not found")
+		}
+	}
+
+	return ret, nil
+}
+
+func ListPackagesByCategories(categories []string) ([]string, error) {
+	ret := make([]string, 0)
+
+	found_categories := set.NewSetString()
+
+	for k, v := range Index {
+		found := false
+		for _, v3 := range categories {
+			if v.Category == v3 {
+				found = true
+				found_categories.Add(v3)
+				break
+			}
+		}
+		if found {
+			found2 := false
+			for _, v2 := range ret {
+				if v2 == k {
+					found2 = true
+					break
+				}
+			}
+			if !found2 {
+				ret = append(ret, k)
+			}
+		}
+	}
+
+	for _, i := range categories {
+		found := false
+		for _, j := range found_categories.ListStrings() {
+			if i == j {
+				found = true
+				break
+			}
+		}
+		if !found {
+			return []string{}, errors.New("some of categories groups are not found")
+		}
+	}
+
+	return ret, nil
 }

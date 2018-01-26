@@ -51,7 +51,7 @@ func (self *ASPackager) Run(log *logger.Logger) error {
 
 func (self ASPackager) DestDirCheckCorrectness(log *logger.Logger) error {
 
-	log.Info("Checking pach correctness")
+	log.Info("Checking paths correctness")
 
 	var allowed_in_root = []string{"multihost", "etc", "var"}
 	// others not allowed in root
