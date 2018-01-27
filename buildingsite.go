@@ -634,8 +634,16 @@ func (self *BuildingSiteCtl) ValuesCalculator() basictypes.ValuesCalculatorI {
 	return NewValuesCalculator(self)
 }
 
-func (self *BuildingSiteCtl) Packager() *Packager {
+// func (self *BuildingSiteCtl) Packager() *Packager {
+// 	return NewPackager(self)
+// }
+
+func (self *BuildingSiteCtl) Packager() basictypes.PackagerI {
 	return NewPackager(self)
+}
+
+func (self *BuildingSiteCtl) PrePackager() basictypes.PrePackagerI {
+	return NewPrePackager(self)
 }
 
 func getDIR_x(pth string, x string) string {

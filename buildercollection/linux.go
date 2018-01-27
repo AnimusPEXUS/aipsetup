@@ -136,8 +136,6 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 
 		// &basictypes.BuilderAction{"distr_man", self.BuilderActionDistrMan},
 		&basictypes.BuilderAction{"distr_source", self.BuilderActionDistrSource},
-
-		&basictypes.BuilderAction{"distribute", self.BuilderActionDistribute},
 	}
 
 	crossbuilder, err := self.bs.ValuesCalculator().CalculateIsCrossbuilder()
@@ -170,6 +168,14 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 		}
 
 	}
+
+	ret = append(
+		ret,
+		[]*basictypes.BuilderAction{
+			&basictypes.BuilderAction{"prepack", self.BuilderActionPrePack},
+			&basictypes.BuilderAction{"pack", self.BuilderActionPack},
+		}...,
+	)
 
 	return ret, nil
 }
@@ -559,9 +565,22 @@ func (self *BuilderLinux) BuilderActionDistrSource(
 	return nil
 }
 
-func (self *BuilderLinux) BuilderActionDistribute(
+func (self *BuilderLinux) BuilderActionPrePack(
 	log *logger.Logger,
 ) error {
+	err := self.bs.PrePackager().Run(log)
+	if err != nil {
+		return err
+	}
+	return nil
+}
 
+func (self *BuilderLinux) BuilderActionPack(
+	log *logger.Logger,
+) error {
+	err := self.bs.Packager().Run(log)
+	if err != nil {
+		return err
+	}
 	return nil
 }

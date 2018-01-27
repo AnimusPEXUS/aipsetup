@@ -19,4 +19,7 @@ type BuildingSiteCtlI interface {
 	GetConfiguredHABT() (string, string, string, string, error)
 
 	ValuesCalculator() ValuesCalculatorI
+
+	PrePackager() PrePackagerI
+	Packager() PackagerI
 }

@@ -100,15 +100,15 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 				Callable: CmdAipsetupBuildFull,
 			},
 
-			&cliapp.AppCmdNode{
-				Name: "pack",
-
-				CheckArgs: true,
-				MinArgs:   0,
-				MaxArgs:   0,
-
-				Callable: CmdAipsetupBuildPack,
-			},
+			// &cliapp.AppCmdNode{
+			// 	Name: "pack",
+			//
+			// 	CheckArgs: true,
+			// 	MinArgs:   0,
+			// 	MaxArgs:   0,
+			//
+			// 	Callable: CmdAipsetupBuildPack,
+			// },
 		},
 	}
 
@@ -461,40 +461,40 @@ func CmdAipsetupBuildFull(
 	return &cliapp.AppResult{Code: 0}
 }
 
-func CmdAipsetupBuildPack(
-	getopt_result *cliapp.GetOptResult,
-	adds *cliapp.AdditionalInfo,
-) *cliapp.AppResult {
-	bs_ctl, err := aipsetup.NewBuildingSiteCtl(".")
-	if err != nil {
-		return &cliapp.AppResult{
-			Code:    10,
-			Message: "Can't create building site object",
-		}
-	}
-
-	log, err := bs_ctl.CreateLogger("packaging", true)
-	if err != nil {
-		return &cliapp.AppResult{
-			Code:    11,
-			Message: "Can't create logger",
-		}
-	}
-
-	err = bs_ctl.Packager().Run(log)
-	if err != nil {
-		log.Error(err.Error())
-		return &cliapp.AppResult{
-			Code:    12,
-			Message: "Packaging error",
-		}
-	}
-
-	log.Info("Finished")
-	log.Close()
-
-	return new(cliapp.AppResult)
-}
+// func CmdAipsetupBuildPack(
+// 	getopt_result *cliapp.GetOptResult,
+// 	adds *cliapp.AdditionalInfo,
+// ) *cliapp.AppResult {
+// 	bs_ctl, err := aipsetup.NewBuildingSiteCtl(".")
+// 	if err != nil {
+// 		return &cliapp.AppResult{
+// 			Code:    10,
+// 			Message: "Can't create building site object",
+// 		}
+// 	}
+//
+// 	log, err := bs_ctl.CreateLogger("packaging", true)
+// 	if err != nil {
+// 		return &cliapp.AppResult{
+// 			Code:    11,
+// 			Message: "Can't create logger",
+// 		}
+// 	}
+//
+// 	err = bs_ctl.Packager().Run(log)
+// 	if err != nil {
+// 		log.Error(err.Error())
+// 		return &cliapp.AppResult{
+// 			Code:    12,
+// 			Message: "Packaging error",
+// 		}
+// 	}
+//
+// 	log.Info("Finished")
+// 	log.Close()
+//
+// 	return new(cliapp.AppResult)
+// }
 
 func CmdAipsetupBuildGetSrc(
 	getopt_result *cliapp.GetOptResult,
