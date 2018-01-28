@@ -34,10 +34,11 @@ func (self *Packager) Run(log *logger.Logger) error {
 		self.DestDirCheckCorrectness,
 		self.DestDirFileList,
 		self.DestDirChecksum,
-		self.CompressPatchesDestDirAndLogs,
+		self.CompressPatchesAndDestDir,
 		self.CompressFilesInListsDir,
 		self.UpdateTimestamp,
 		self.MakeChecksums,
+		self.CompressLogs,
 		self.Pack,
 	} {
 		// log.Info(fmt.Sprintf("Starting \"%v\" pack target", i))
@@ -53,7 +54,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 
 	log.Info("Checking paths correctness")
 
-	var allowed_in_root = []string{"multihost", "etc", "var"}
+	var allowed_in_root = []string{"multihost", "etc", "var", "boot"}
 	// others not allowed in root
 
 	var allowed_in_host = []string{
@@ -255,21 +256,28 @@ func (self Packager) DestDirChecksum(log *logger.Logger) error {
 	return nil
 }
 
-func (self Packager) CompressPatchesDestDirAndLogs(log *logger.Logger) error {
+func (self Packager) CompressPatchesAndDestDir(log *logger.Logger) error {
 	log.Info(
 		fmt.Sprintf(
-			"Compressing %s, %s and %s",
+			"Compressing  %s and %s",
 			DIR_PATCHES,
 			DIR_DESTDIR,
+		),
+	)
+	return self._CompressPatchesDestDirAndLogs(log, []string{DIR_PATCHES, DIR_DESTDIR})
+}
+func (self Packager) CompressLogs(log *logger.Logger) error {
+	log.Info(
+		fmt.Sprintf(
+			"Compressing %s",
 			DIR_BUILD_LOGS,
 		),
 	)
+	return self._CompressPatchesDestDirAndLogs(log, []string{DIR_BUILD_LOGS})
+}
 
-	for _, i := range []string{
-		DIR_PATCHES,
-		DIR_DESTDIR,
-		DIR_BUILD_LOGS,
-	} {
+func (self Packager) _CompressPatchesDestDirAndLogs(log *logger.Logger, subject []string) error {
+	for _, i := range subject {
 		log.Info(fmt.Sprintf("  %s", i))
 		dirname := path.Join(self.site.Path, i)
 		filename := fmt.Sprintf("%s.tar.xz", dirname)
@@ -295,7 +303,11 @@ func (self Packager) CompressPatchesDestDirAndLogs(log *logger.Logger) error {
 		)
 		tar_c.Dir = dirname
 
-		tar_c.Stderr = log.StdoutLbl()
+		if i != DIR_BUILD_LOGS {
+			tar_c.Stderr = log.StdoutLbl()
+		} else {
+			fmt.Println("Logs dir should be compressed without logging. sorry.")
+		}
 
 		if t, err := tar_c.StdoutPipe(); err == nil {
 			xz_c.Stdin = t
