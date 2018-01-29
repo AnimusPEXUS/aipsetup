@@ -33,7 +33,10 @@
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://cdn.kernel.org/pub/linux/kernel/",
-    "/pub/linux/kernel/people"
+    "/pub/linux/kernel/people",
+    "/pub/linux/kernel/projects",
+    "/pub/linux/kernel/ports",
+    "/pub/linux/kernel/testing"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "by_https_host",

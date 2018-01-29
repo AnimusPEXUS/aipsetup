@@ -14,7 +14,4 @@ func Get(name string, bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, erro
 	}
 }
 
-var Index = make(
-	map[string](func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error)),
-	0,
-)
+var Index = map[string](func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error)){}

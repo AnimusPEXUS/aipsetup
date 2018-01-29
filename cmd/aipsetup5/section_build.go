@@ -13,6 +13,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
+	"github.com/AnimusPEXUS/aipsetup/versionstabilityclassifiers"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
@@ -536,9 +537,37 @@ func CmdAipsetupBuildGetSrc(
 			return err
 		}
 
+		version_tool, err := versionstabilityclassifiers.Get(name_info.TarballVersionTool)
+		if err != nil {
+			return err
+		}
+
 		err = version.SortByVersion(tarballs, p)
 		if err != nil {
 			return err
+		}
+
+		{
+			tarballs2 := make([]string, 0)
+			for _, i := range tarballs {
+				pp, err := p.Parse(i)
+				if err != nil {
+					return err
+				}
+				vv, err := pp.Version.ArrInt()
+				if err != nil {
+					return err
+				}
+
+				isstable, err := version_tool.IsStable(vv)
+				if err != nil {
+					return err
+				}
+				if isstable {
+					tarballs2 = append(tarballs2, i)
+				}
+			}
+			tarballs = tarballs2
 		}
 
 		err = repo.CopyTarballToDir(name, tarballs[len(tarballs)-1], ".")
