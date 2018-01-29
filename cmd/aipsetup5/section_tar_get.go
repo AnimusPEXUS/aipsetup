@@ -119,22 +119,9 @@ func CmdAipsetupTarGetFor(
 
 	get_by_name_func := func(name string) error {
 
-		repo, err := tarballrepository.NewRepository(sys)
+		err := repo.PerformPackageTarballsUpdate(name)
 		if err != nil {
-			return &cliapp.AppResult{
-				Code:    11,
-				Message: err.Error(),
-			}
-		}
-
-		name := getopt_result.Args[0]
-
-		err = repo.PerformPackageTarballsUpdate(name)
-		if err != nil {
-			return &cliapp.AppResult{
-				Code:    10,
-				Message: err.Error(),
-			}
+			return err
 		}
 
 		return nil
