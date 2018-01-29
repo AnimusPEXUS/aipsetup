@@ -7,6 +7,7 @@ import (
 	"sort"
 
 	"github.com/AnimusPEXUS/aipsetup"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
 	"github.com/AnimusPEXUS/utils/cliapp"
@@ -50,8 +51,19 @@ func SectionAipsetupTarGet() *cliapp.AppCmdNode {
 				Name:      "for",
 				Callable:  CmdAipsetupTarGetFor,
 				CheckArgs: true,
-				MinArgs:   0,
-				MaxArgs:   1,
+				MinArgs:   1,
+				MaxArgs:   -1,
+
+				AvailableOptions: cliapp.GetOptCheckList{
+					&cliapp.GetOptCheckListItem{
+						Name:        "-c",
+						Description: "named names are categories, from for which tarballs to get",
+					},
+					&cliapp.GetOptCheckListItem{
+						Name:        "-g",
+						Description: "named names are groups, from for which tarballs to get",
+					},
+				},
 			},
 
 			&cliapp.AppCmdNode{
@@ -102,16 +114,89 @@ func CmdAipsetupTarGetFor(
 		}
 	}
 
-	name := getopt_result.Args[0]
+	work_on_groups := getopt_result.DoesHaveNamedRetOptItem("-g")
+	work_on_categories := getopt_result.DoesHaveNamedRetOptItem("-c")
 
-	err = repo.PerformPackageTarballsUpdate(name)
-	if err != nil {
-		return &cliapp.AppResult{
-			Code:    10,
-			Message: err.Error(),
+	get_by_name_func := func(name string) error {
+
+		repo, err := tarballrepository.NewRepository(sys)
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    11,
+				Message: err.Error(),
+			}
 		}
+
+		name := getopt_result.Args[0]
+
+		err = repo.PerformPackageTarballsUpdate(name)
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    10,
+				Message: err.Error(),
+			}
+		}
+
+		return nil
 	}
 
+	if work_on_groups && work_on_categories {
+		return &cliapp.AppResult{
+			Code:    12,
+			Message: "mutual exclusive options given",
+		}
+	} else if !work_on_groups && !work_on_categories {
+		for _, i := range getopt_result.Args {
+			err := get_by_name_func(i)
+
+			if err != nil {
+				return &cliapp.AppResult{
+					Code:    10,
+					Message: err.Error(),
+				}
+			}
+		}
+	} else if work_on_groups {
+		pkgs, err := pkginfodb.ListPackagesByGroups(getopt_result.Args)
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    11,
+				Message: err.Error(),
+			}
+		}
+
+		for _, i := range pkgs {
+			err := get_by_name_func(i)
+
+			if err != nil {
+				return &cliapp.AppResult{
+					Code:    10,
+					Message: err.Error(),
+				}
+			}
+		}
+	} else if work_on_categories {
+		pkgs, err := pkginfodb.ListPackagesByCategories(getopt_result.Args)
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    11,
+				Message: err.Error(),
+			}
+		}
+
+		for _, i := range pkgs {
+			err := get_by_name_func(i)
+
+			if err != nil {
+				return &cliapp.AppResult{
+					Code:    10,
+					Message: err.Error(),
+				}
+			}
+		}
+	} else {
+		panic("programming error")
+	}
 	return &cliapp.AppResult{Code: 0}
 }
 
