@@ -1,9 +1,5 @@
 package pkginfodb
 
-// WARNING: This file is not generated automatically.
-//          Keep it safe when copying files generated with "info-db code"
-//          command.
-
 import (
 	"errors"
 	"fmt"
