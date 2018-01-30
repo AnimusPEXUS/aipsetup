@@ -1,8 +1,8 @@
 {
-  "Description": "None",
+  "Description": "",
   "HomePage": "http://python.org/",
   "BuilderName": "python",
-  "Removable": true,
+  "Removable": false,
   "Reducible": true,
   "NonInstallable": false,
   "Deprecated": false,
@@ -21,16 +21,18 @@
   ],
   "Category": "langs",
   "Groups": [
-    "core0"
+    "core0",
+    "fi"
   ],
   "TarballName": "Python",
   "TarballFileNameParser": "std",
   "TarballFilters": [
-    ""
+    "- version-\u003c 2",
+    "- version-\u003e= 3"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.python.org/ftp/python/"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

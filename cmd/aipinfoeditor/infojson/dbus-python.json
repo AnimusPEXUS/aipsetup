@@ -5,7 +5,7 @@
   "Removable": true,
   "Reducible": true,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildDeps": [
     ""
@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://dbus.freedesktop.org/releases/"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

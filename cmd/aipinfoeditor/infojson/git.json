@@ -31,7 +31,7 @@
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/"
+    "https://www.kernel.org/pub/software/scm/git/"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "by_https_host",

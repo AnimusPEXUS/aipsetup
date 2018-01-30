@@ -26,11 +26,12 @@
   "TarballName": "icu4c",
   "TarballFileNameParser": "std",
   "TarballFilters": [
-    ""
+    "- basename-re ",
+    "+ basename-re src"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "http://download.icu-project.org/files/icu4c/"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",
