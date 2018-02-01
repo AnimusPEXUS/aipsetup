@@ -591,6 +591,8 @@ func (self *UIMainWindow) SaveTable() error {
 			return err
 		}
 
+		v.Groups = tags.New(v.Groups).Values()
+
 		by, err := json.Marshal(v)
 		if err != nil {
 			return err

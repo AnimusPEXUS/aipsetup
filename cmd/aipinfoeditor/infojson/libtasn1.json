@@ -21,8 +21,8 @@
   ],
   "Category": "gnu",
   "Groups": [
-    "fi",
-    "crypt"
+    "crypt",
+    "fi"
   ],
   "TarballName": "libtasn1",
   "TarballFileNameParser": "std",

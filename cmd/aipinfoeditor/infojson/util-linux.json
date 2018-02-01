@@ -22,9 +22,9 @@
   ],
   "Category": "kernel",
   "Groups": [
+    "core0",
     "fi",
-    "fib",
-    "core0"
+    "fib"
   ],
   "TarballName": "util-linux",
   "TarballFileNameParser": "std",

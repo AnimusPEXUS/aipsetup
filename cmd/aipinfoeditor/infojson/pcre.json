@@ -22,8 +22,8 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "fi",
-    "core0"
+    "core0",
+    "fi"
   ],
   "TarballName": "pcre",
   "TarballFileNameParser": "std",

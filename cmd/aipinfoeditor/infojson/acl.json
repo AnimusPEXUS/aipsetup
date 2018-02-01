@@ -21,9 +21,9 @@
   ],
   "Category": "core",
   "Groups": [
+    "core0",
     "fi",
-    "fib",
-    "core0"
+    "fib"
   ],
   "TarballName": "acl",
   "TarballFileNameParser": "std",

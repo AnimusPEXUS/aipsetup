@@ -23,9 +23,9 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "fib",
+    "core1",
     "fi",
-    "core1"
+    "fib"
   ],
   "TarballName": "e2fsprogs",
   "TarballFileNameParser": "std",

@@ -21,9 +21,9 @@
   ],
   "Category": "non_categorized",
   "Groups": [
+    "core0",
     "fi",
-    "fib",
-    "core0"
+    "fib"
   ],
   "TarballName": "libcap",
   "TarballFileNameParser": "std",

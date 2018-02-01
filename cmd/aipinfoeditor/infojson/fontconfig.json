@@ -21,8 +21,8 @@
   ],
   "Category": "freedesktop/fontconfig",
   "Groups": [
-    "gtk",
-    "fd"
+    "fd",
+    "gtk"
   ],
   "TarballName": "fontconfig",
   "TarballFileNameParser": "std",

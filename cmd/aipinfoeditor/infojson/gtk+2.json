@@ -21,8 +21,8 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "gtk2",
-    "gtk"
+    "gtk",
+    "gtk2"
   ],
   "TarballName": "gtk+2",
   "TarballFileNameParser": "std",

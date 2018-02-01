@@ -22,9 +22,6 @@
   "Category": "nettools",
   "Groups": [
     "",
-    "netfilter",
-    "netfilter",
-    "netfilter",
     "netfilter"
   ],
   "TarballName": "libnfnetlink",

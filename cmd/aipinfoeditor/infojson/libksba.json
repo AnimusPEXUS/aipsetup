@@ -21,8 +21,8 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "fi",
-    "crypt"
+    "crypt",
+    "fi"
   ],
   "TarballName": "libksba",
   "TarballFileNameParser": "std",

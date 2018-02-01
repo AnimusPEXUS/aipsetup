@@ -22,9 +22,9 @@
   ],
   "Category": "gnu",
   "Groups": [
+    "core0",
     "fi",
-    "fib",
-    "core0"
+    "fib"
   ],
   "TarballName": "zlib",
   "TarballFileNameParser": "std",

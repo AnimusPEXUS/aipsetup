@@ -22,8 +22,8 @@
   ],
   "Category": "freedesktop/pkgconfig",
   "Groups": [
-    "fd",
     "core0",
+    "fd",
     "fi"
   ],
   "TarballName": "pkg-config",

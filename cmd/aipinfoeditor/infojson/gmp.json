@@ -21,8 +21,8 @@
   ],
   "Category": "kernel",
   "Groups": [
-    "fi",
-    "cross"
+    "cross",
+    "fi"
   ],
   "TarballName": "gmp",
   "TarballFileNameParser": "std",

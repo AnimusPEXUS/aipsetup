@@ -21,9 +21,9 @@
   ],
   "Category": "non_categorized",
   "Groups": [
+    "core1",
     "crypt",
-    "fi",
-    "core1"
+    "fi"
   ],
   "TarballName": "libgcrypt",
   "TarballFileNameParser": "std",

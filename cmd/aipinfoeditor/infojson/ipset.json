@@ -21,11 +21,8 @@
   ],
   "Category": "nettools",
   "Groups": [
-    "fi",
     "core0",
-    "netfilter",
-    "netfilter",
-    "netfilter",
+    "fi",
     "netfilter"
   ],
   "TarballName": "ipset",

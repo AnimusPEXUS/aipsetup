@@ -21,8 +21,8 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "fi",
-    "core1"
+    "core1",
+    "fi"
   ],
   "TarballName": "LVM",
   "TarballFileNameParser": "std",

@@ -22,8 +22,8 @@
   ],
   "Category": "kernel",
   "Groups": [
-    "fi",
-    "core1"
+    "core1",
+    "fi"
   ],
   "TarballName": "pciutils",
   "TarballFileNameParser": "std",

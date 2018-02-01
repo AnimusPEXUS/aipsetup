@@ -21,9 +21,9 @@
   ],
   "Category": "freedesktop/p11-glue",
   "Groups": [
-    "fi",
+    "crypt",
     "fd",
-    "crypt"
+    "fi"
   ],
   "TarballName": "p11-kit",
   "TarballFileNameParser": "std",

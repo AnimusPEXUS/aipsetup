@@ -22,8 +22,8 @@
   ],
   "Category": "gnu",
   "Groups": [
-    "fi",
-    "cross"
+    "cross",
+    "fi"
   ],
   "TarballName": "gcc",
   "TarballFileNameParser": "std",

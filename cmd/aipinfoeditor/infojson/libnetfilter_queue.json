@@ -21,9 +21,6 @@
   ],
   "Category": "nettools",
   "Groups": [
-    "netfilter",
-    "netfilter",
-    "netfilter",
     "netfilter"
   ],
   "TarballName": "libnetfilter_queue",

@@ -22,9 +22,9 @@
   ],
   "Category": "wm_gnome",
   "Groups": [
-    "gtk",
+    "core0",
     "fi",
-    "core0"
+    "gtk"
   ],
   "TarballName": "glib",
   "TarballFileNameParser": "std",

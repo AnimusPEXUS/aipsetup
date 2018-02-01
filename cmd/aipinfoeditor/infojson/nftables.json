@@ -22,9 +22,6 @@
   "Category": "nettools",
   "Groups": [
     "core0",
-    "netfilter",
-    "netfilter",
-    "netfilter",
     "netfilter"
   ],
   "TarballName": "nftables",

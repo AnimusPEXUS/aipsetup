@@ -22,8 +22,8 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "sec",
-    "core1"
+    "core1",
+    "sec"
   ],
   "TarballName": "policycoreutils",
   "TarballFileNameParser": "std",

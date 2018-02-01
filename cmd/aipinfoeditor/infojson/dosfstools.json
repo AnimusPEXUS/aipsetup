@@ -22,8 +22,8 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "fi",
-    "core1"
+    "core1",
+    "fi"
   ],
   "TarballName": "dosfstools",
   "TarballFileNameParser": "std",

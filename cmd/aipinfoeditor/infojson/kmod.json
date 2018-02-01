@@ -22,8 +22,8 @@
   ],
   "Category": "kernel",
   "Groups": [
-    "fi",
-    "core0"
+    "core0",
+    "fi"
   ],
   "TarballName": "kmod",
   "TarballFileNameParser": "std",

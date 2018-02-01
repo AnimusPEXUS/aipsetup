@@ -22,9 +22,6 @@
   "Category": "nettools",
   "Groups": [
     "core1",
-    "netfilter",
-    "netfilter",
-    "netfilter",
     "netfilter"
   ],
   "TarballName": "libmnl",

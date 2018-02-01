@@ -22,8 +22,8 @@
   ],
   "Category": "gnu",
   "Groups": [
-    "fi",
-    "core1"
+    "core1",
+    "fi"
   ],
   "TarballName": "groff",
   "TarballFileNameParser": "std",

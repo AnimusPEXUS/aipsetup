@@ -21,8 +21,8 @@
   ],
   "Category": "kernel",
   "Groups": [
-    "fi",
-    "core1"
+    "core1",
+    "fi"
   ],
   "TarballName": "cryptsetup",
   "TarballFileNameParser": "std",
