@@ -3,7 +3,6 @@ package providers
 import (
 	"errors"
 	"fmt"
-	"net/url"
 	"path"
 	"sort"
 	"strings"
@@ -238,7 +237,7 @@ func (self *ProviderSFNet) PerformUpdate() error {
 
 	downloading_errors := false
 	for _, i := range res {
-		uri, err := self.GetDownloadingURIForTarball(i)
+		uri, err := self.GetDownloadingURIForFile(i)
 		if err != nil {
 			return err
 		}
@@ -274,7 +273,7 @@ func (self *ProviderSFNet) PerformUpdate() error {
 	return nil
 }
 
-func (self *ProviderSFNet) GetDownloadingURIForTarball(name string) (string, error) {
+func (self *ProviderSFNet) GetDownloadingURIForFile(name string) (string, error) {
 	name = path.Base(name)
 
 	htw, err := self._GetSFW()
@@ -282,21 +281,5 @@ func (self *ProviderSFNet) GetDownloadingURIForTarball(name string) (string, err
 		return "", err
 	}
 
-	tree, err := htw.Tree("/")
-	if err != nil {
-		return "", err
-	}
-
-	for k, _ := range tree {
-		if path.Base(k) == name {
-			u := &url.URL{
-				Scheme: "https",
-				Host:   "sourceforge.net",
-				Path:   path.Join("projects", self.project, "files", k, "download"),
-			}
-			return u.String(), nil
-		}
-	}
-
-	return "", errors.New("not found")
+	return htw.GetDownloadingURIForFile(name)
 }
