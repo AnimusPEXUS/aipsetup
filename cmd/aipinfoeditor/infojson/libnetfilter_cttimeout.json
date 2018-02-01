@@ -21,6 +21,9 @@
   ],
   "Category": "nettools",
   "Groups": [
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "libnetfilter_cttimeout",
@@ -30,8 +33,10 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/libnetfilter_cttimeout",
-    "libnetfilter_cttimeout"
+    "libnetfilter_cttimeout",
+    "TagName:^libnetfilter_cttimeout$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

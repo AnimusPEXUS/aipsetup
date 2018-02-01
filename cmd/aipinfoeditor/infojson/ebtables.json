@@ -21,6 +21,9 @@
   ],
   "Category": "nettools",
   "Groups": [
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "ebtables",
@@ -30,8 +33,10 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/ebtables",
-    "ebtables"
+    "ebtables",
+    "TagName:^ebtables$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

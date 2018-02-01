@@ -21,6 +21,9 @@
   ],
   "Category": "nettools",
   "Groups": [
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "nfacct",
@@ -30,8 +33,10 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/nfacct",
-    "nfacct"
+    "nfacct",
+    "TagName:^nfacct$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

@@ -21,6 +21,9 @@
   ],
   "Category": "nettools",
   "Groups": [
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "arptables",
@@ -30,8 +33,10 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/arptables",
-    "arptables"
+    "arptables",
+    "TagName:^arptables$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

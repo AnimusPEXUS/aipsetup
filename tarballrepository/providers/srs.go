@@ -208,6 +208,15 @@ func (self *ProviderSRS) MakeTarballsGit(
 
 	t := tags.New(info.TarballProviderArguments)
 
+	{
+		tp := self.repo.GetPackageTarballsPath(self.pkg_name)
+
+		err := os.MkdirAll(tp, 0700)
+		if err != nil {
+			return err
+		}
+	}
+
 	TagParser, _ := t.GetSingle("TagParser", true)
 	if TagParser == "" {
 		TagParser = GithubDefaultTagParser
@@ -388,6 +397,8 @@ func (self *ProviderSRS) MakeTarballsGit(
 			}
 
 			target_file := self.repo.GetTarballFilePath(self.pkg_name, tag_filename)
+
+			// fmt.Println("target_file", target_file)
 
 			self.log.Info(fmt.Sprintf("archiving %s (%s)", i, tag_filename))
 

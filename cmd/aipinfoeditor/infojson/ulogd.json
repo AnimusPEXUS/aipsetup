@@ -22,6 +22,9 @@
   "Category": "nettools",
   "Groups": [
     "",
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "ulogd",
@@ -31,6 +34,7 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/ulogd",
     "ulogd"
   ],

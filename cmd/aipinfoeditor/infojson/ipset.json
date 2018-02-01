@@ -23,6 +23,9 @@
   "Groups": [
     "fi",
     "core0",
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "ipset",
@@ -32,6 +35,7 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/ipset",
     "ipset"
   ],

@@ -21,6 +21,9 @@
   ],
   "Category": "nettools",
   "Groups": [
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "conntrack-tools",
@@ -30,8 +33,10 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/conntrack-tools",
-    "conntrack-tools"
+    "conntrack-tools",
+    "TagName:^conntrack-tools$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

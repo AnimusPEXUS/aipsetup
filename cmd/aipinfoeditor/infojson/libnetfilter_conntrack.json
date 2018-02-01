@@ -21,6 +21,9 @@
   ],
   "Category": "nettools",
   "Groups": [
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "libnetfilter_conntrack",
@@ -30,8 +33,10 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/libnetfilter_conntrack",
-    "libnetfilter_conntrack"
+    "libnetfilter_conntrack",
+    "TagName:^libnetfilter_conntrack$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

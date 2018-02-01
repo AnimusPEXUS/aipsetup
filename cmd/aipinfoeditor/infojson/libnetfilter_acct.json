@@ -21,6 +21,9 @@
   ],
   "Category": "nettools",
   "Groups": [
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "libnetfilter_acct",
@@ -30,8 +33,10 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/libnetfilter_acct",
-    "libnetfilter_acct"
+    "libnetfilter_acct",
+    "TagName:^libnetfilter_acct$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

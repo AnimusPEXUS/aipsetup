@@ -21,6 +21,9 @@
   ],
   "Category": "nettools",
   "Groups": [
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "libnetfilter_log",
@@ -30,8 +33,10 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/libnetfilter_log",
-    "libnetfilter_log"
+    "libnetfilter_log",
+    "TagName:^libnetfilter_log$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

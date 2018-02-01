@@ -13,32 +13,38 @@ func main() {
 
 	infojson_dir := "../infojson"
 
-	lst := []string{
-		"iptables",
-		"ipset",
-		"conntrack-tools",
-		"ulogd2",
-		"nfacct",
-		"arptables",
-		"ebtables",
+	lst := [][]string{
+		[]string{"iptables"},
+		[]string{"ipset"},
+		[]string{"conntrack-tools", "conntrack-tools"},
+		[]string{"ulogd2", "ulogd"},
+		[]string{"nfacct", "nfacct"},
+		[]string{"arptables", "arptables"},
+		[]string{"ebtables", "ebtables"},
 
-		"libmnl",
-		"libnfnetlink",
-		"libnetfilter_acct",
-		"libnetfilter_conntrack",
-		"libnetfilter_cttimeout",
-		"libnetfilter_cthelper",
-		"libnetfilter_queue",
-		"libnetfilter_log",
+		[]string{"libmnl", "libmnl"},
+		[]string{"libnfnetlink", "libnfnetlink"},
+		[]string{"libnetfilter_acct", "libnetfilter_acct"},
+		[]string{"libnetfilter_conntrack", "libnetfilter_conntrack"},
+		[]string{"libnetfilter_cttimeout", "libnetfilter_cttimeout"},
+		[]string{"libnetfilter_cthelper", "libnetfilter_cthelper"},
+		[]string{"libnetfilter_queue", "libnetfilter_queue"},
+		[]string{"libnetfilter_log", "libnetfilter_log"},
 
-		"libnftnl",
-		"nftables",
-		"nft-sync",
+		[]string{"libnftnl", "libnftnl"},
+		[]string{"nftables"},
+		[]string{"nft-sync"},
 
-		"ulogd",
+		[]string{"ulogd"},
 	}
 
-	for _, i := range lst {
+	for _, items := range lst {
+		i := items[0]
+		tag_prefix := "v"
+		if len(items) > 1 {
+			tag_prefix = items[1]
+		}
+
 		file_name := path.Join(infojson_dir, i+".json")
 		_, err := os.Stat(file_name)
 		exists := true
@@ -66,9 +72,18 @@ func main() {
 		info.HomePage = "https://git.netfilter.org/"
 		info.TarballProvider = "srs"
 		info.TarballProviderArguments = []string{
+			"git",
 			"git://git.netfilter.org/" + i,
 			i,
 		}
+		switch tag_prefix {
+		case "v":
+		case "":
+			info.TarballProviderArguments = append(info.TarballProviderArguments, "TagName:^$")
+		default:
+			info.TarballProviderArguments = append(info.TarballProviderArguments, "TagName:^"+tag_prefix+"$")
+		}
+
 		info.TarballVersionTool = "std"
 		info.TarballProviderVersionSyncDepth = 3
 

@@ -22,6 +22,9 @@
   "Category": "nettools",
   "Groups": [
     "core0",
+    "netfilter",
+    "netfilter",
+    "netfilter",
     "netfilter"
   ],
   "TarballName": "nftables",
@@ -31,6 +34,7 @@
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
     "git://git.netfilter.org/nftables",
     "nftables"
   ],
