@@ -28,9 +28,13 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/legionus/kbd.git",
+    "kbd",
+    "TagName:^$",
+    "TagStatus:"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",
