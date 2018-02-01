@@ -28,9 +28,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/stevegrubb/libcap-ng",
+    "libcap-ng"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

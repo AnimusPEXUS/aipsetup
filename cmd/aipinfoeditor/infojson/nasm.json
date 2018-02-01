@@ -26,11 +26,12 @@
   "TarballName": "nasm",
   "TarballFileNameParser": "std",
   "TarballFilters": [
-    ""
+    "- basename-re doc"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "http://www.nasm.us/pub/nasm/releasebuilds/",
+    "rc\\d"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

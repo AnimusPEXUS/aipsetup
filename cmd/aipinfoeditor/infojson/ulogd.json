@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.netfilter.org",
+  "HomePage": "https://git.netfilter.org/",
   "BuilderName": "",
   "Removable": true,
   "Reducible": true,
@@ -19,21 +19,23 @@
   "Tags": [
     ""
   ],
-  "Category": "non_categorized",
+  "Category": "nettools",
   "Groups": [
-    ""
+    "",
+    "netfilter"
   ],
   "TarballName": "ulogd",
   "TarballFileNameParser": "std",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git://git.netfilter.org/ulogd",
+    "ulogd"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",
-  "TarballProviderVersionSyncDepth": 0,
+  "TarballProviderVersionSyncDepth": 3,
   "TarballVersionTool": "std"
 }

@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://None",
+  "HomePage": "https://git.netfilter.org/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -19,21 +19,24 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "non_categorized",
+  "Category": "nettools",
   "Groups": [
-    "core0"
+    "fi",
+    "core0",
+    "netfilter"
   ],
-  "TarballName": "lzo",
+  "TarballName": "ipset",
   "TarballFileNameParser": "std",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "http://www.oberhumer.com/opensource/lzo/download/"
+    "git://git.netfilter.org/ipset",
+    "ipset"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",
-  "TarballProviderVersionSyncDepth": 0,
+  "TarballProviderVersionSyncDepth": 3,
   "TarballVersionTool": "std"
 }
