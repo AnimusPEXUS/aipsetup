@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "launchpad.net",
   "TarballProviderArguments": [
-    ""
+    "inkscape"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",
