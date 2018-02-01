@@ -256,11 +256,16 @@ func (self *ProviderSRS) MakeTarballsGit(
 				continue
 			}
 
-			if parse_res.Name != TagName {
+			matched, err := regexp.MatchString(TagName, parse_res.Name)
+			if err != nil {
+				return err
+			}
+
+			if !matched {
 				continue
 			}
 
-			matched, err := regexp.MatchString(TagStatus, parse_res.Status.DirtyStr)
+			matched, err = regexp.MatchString(TagStatus, parse_res.Status.DirtyStr)
 			if err != nil {
 				return err
 			}
@@ -274,6 +279,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 	}
 
 	{
+
 		version_tree, err := version.NewVersionTree(
 			TagName,
 			parser,
@@ -283,7 +289,12 @@ func (self *ProviderSRS) MakeTarballsGit(
 		}
 
 		for _, i := range acceptable_tags {
-			version_tree.Add(path.Base(i))
+			b := path.Base(i)
+			err = version_tree.Add(b)
+			if err != nil {
+				return err
+			}
+
 		}
 
 		depth := self.pkg_info.TarballProviderVersionSyncDepth
@@ -291,12 +302,23 @@ func (self *ProviderSRS) MakeTarballsGit(
 			depth = 3
 		}
 
+		self.log.Info("-----------------")
+		self.log.Info("tags before versioned truncation")
+
+		res, err := version_tree.Basenames([]string{""})
+		if err != nil {
+			return err
+		}
+		for _, i := range res {
+			self.log.Info(fmt.Sprintf("  %s", i))
+		}
+
 		version_tree.TruncateByVersionDepth(nil, depth)
 
 		self.log.Info("-----------------")
 		self.log.Info("tag versioned truncation result")
 
-		res, err := version_tree.Basenames([]string{""})
+		res, err = version_tree.Basenames([]string{""})
 		if err != nil {
 			return err
 		}
