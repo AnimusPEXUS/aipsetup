@@ -26,11 +26,11 @@
   "TarballName": "tdb",
   "TarballFileNameParser": "std",
   "TarballFilters": [
-    ""
+    "- version-\u003c 1.3"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.samba.org/ftp/tdb/"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

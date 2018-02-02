@@ -13,12 +13,12 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
-	"github.com/AnimusPEXUS/aipsetup/versionstabilityclassifiers"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
 	"github.com/AnimusPEXUS/utils/version"
+	"github.com/AnimusPEXUS/utils/version/versionstabilityclassifiers"
 )
 
 func SectionAipsetupBuild() *cliapp.AppCmdNode {

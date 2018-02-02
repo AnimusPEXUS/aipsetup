@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.tcpdump.org/release/"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

@@ -28,9 +28,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "git://git.kernel.org/pub/scm/fs/xfs/dmapi-dev.git",
+    "dmapi"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

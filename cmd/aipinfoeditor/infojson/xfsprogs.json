@@ -28,9 +28,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "git://git.kernel.org/pub/scm/fs/xfs/xfsprogs-dev.git",
+    "xfsprogs"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

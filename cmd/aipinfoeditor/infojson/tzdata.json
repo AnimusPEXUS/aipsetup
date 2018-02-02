@@ -24,16 +24,16 @@
     "core0"
   ],
   "TarballName": "tzdata",
-  "TarballFileNameParser": "std",
+  "TarballFileNameParser": "slang",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://data.iana.org/time-zones/releases/"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",
-  "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballProviderVersionSyncDepth": -1,
+  "TarballVersionTool": "slang"
 }
