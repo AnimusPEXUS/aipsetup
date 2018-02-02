@@ -439,6 +439,8 @@ func (self *ProviderSRS) MakeTarballsGit(
 		return errors.New("there was errors making tarballs")
 	}
 
+	// TODO: maybe rest of this func shold be moved to PerformUpdate
+
 	lst, err := self.repo.PrepareTarballCleanupListing(self.pkg_name, downloaded_files)
 	if err != nil {
 		return err

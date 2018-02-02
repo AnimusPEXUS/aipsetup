@@ -264,7 +264,7 @@ func (self *Repository) PrepareTarballCleanupListing(
 			to_delete = append(to_delete, i)
 
 			done_file_path := self.GetTarballDoneFilePath(package_name, i)
-			to_delete = append(to_delete, done_file_path)
+			to_delete = append(to_delete, path.Base(done_file_path))
 		}
 	}
 
