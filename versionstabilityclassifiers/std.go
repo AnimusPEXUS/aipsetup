@@ -2,7 +2,7 @@ package versionstabilityclassifiers
 
 import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
+	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
 )
 
@@ -18,15 +18,10 @@ func NewClassifierStd() basictypes.VersionStabilityClassifierI {
 	return ret
 }
 
-func (self *ClassifierStd) Check(p types.TarballNameParserI, filename string) (
+func (self *ClassifierStd) Check(parsed *tarballname.ParsedTarballName) (
 	tarballstabilityclassification.StabilityClassification,
 	error,
 ) {
-
-	parsed, err := p.Parse(filename)
-	if err != nil {
-		return tarballstabilityclassification.Development, err
-	}
 
 	if parsed.Status.Str != "" {
 		return tarballstabilityclassification.Development, nil
@@ -35,11 +30,8 @@ func (self *ClassifierStd) Check(p types.TarballNameParserI, filename string) (
 	return tarballstabilityclassification.Release, nil
 }
 
-func (self *ClassifierStd) IsStable(
-	p types.TarballNameParserI,
-	filename string,
-) (bool, error) {
-	cr, err := self.Check(p, filename)
+func (self *ClassifierStd) IsStable(parsed *tarballname.ParsedTarballName) (bool, error) {
+	cr, err := self.Check(parsed)
 	if err != nil {
 		return false, err
 	}

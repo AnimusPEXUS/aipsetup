@@ -3,7 +3,7 @@ package versionstabilityclassifiers
 import (
 	"errors"
 
-	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
+	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
 )
 
@@ -14,15 +14,10 @@ func init() {
 type ClassifierGnome struct {
 }
 
-func (self *ClassifierGnome) Check(p types.TarballNameParserI, filename string) (
+func (self *ClassifierGnome) Check(parsed *tarballname.ParsedTarballName) (
 	tarballstabilityclassification.StabilityClassification,
 	error,
 ) {
-
-	parsed, err := p.Parse(filename)
-	if err != nil {
-		return tarballstabilityclassification.Development, err
-	}
 
 	if parsed.Status.Str != "" {
 		return tarballstabilityclassification.Development, nil
@@ -45,8 +40,8 @@ func (self *ClassifierGnome) Check(p types.TarballNameParserI, filename string) 
 	return tarballstabilityclassification.Release, nil
 }
 
-func (self *ClassifierGnome) IsStable(p types.TarballNameParserI, filename string) (bool, error) {
-	cr, err := self.Check(p, filename)
+func (self *ClassifierGnome) IsStable(parsed *tarballname.ParsedTarballName) (bool, error) {
+	cr, err := self.Check(parsed)
 	if err != nil {
 		return false, err
 	}

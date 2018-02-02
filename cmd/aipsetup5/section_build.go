@@ -551,7 +551,12 @@ func CmdAipsetupBuildGetSrc(
 			tarballs2 := make([]string, 0)
 			for _, i := range tarballs {
 
-				isstable, err := version_tool.IsStable(p, i)
+				parsed, err := p.Parse(i)
+				if err != nil {
+					return err
+				}
+
+				isstable, err := version_tool.IsStable(parsed)
 				if err != nil {
 					return err
 				}
