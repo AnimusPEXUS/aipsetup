@@ -18,21 +18,6 @@ func NewClassifierStd() basictypes.VersionStabilityClassifierI {
 	return ret
 }
 
-// func (self *ClassifierStd) Check(version []int) (
-// 	tarballstabilityclassification.StabilityClassification,
-// 	error,
-// ) {
-// 	return tarballstabilityclassification.Release, nil
-// }
-//
-// func (self *ClassifierStd) IsStable(version []int) (bool, error) {
-// 	cr, err := self.Check(version)
-// 	if err != nil {
-// 		return false, err
-// 	}
-// 	return tarballstabilityclassification.IsStable(cr), nil
-// }
-
 func (self *ClassifierStd) Check(p types.TarballNameParserI, filename string) (
 	tarballstabilityclassification.StabilityClassification,
 	error,
