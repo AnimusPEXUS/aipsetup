@@ -26,10 +26,14 @@
   "TarballName": "shadow",
   "TarballFileNameParser": "std",
   "TarballFilters": [
-    ""
+    "- basename-re \\d{4}"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
+    "https://github.com/shadow-maint/shadow",
+    "shadow",
+    "TagName:^$",
     ""
   ],
   "TarballProviderUseCache": false,
