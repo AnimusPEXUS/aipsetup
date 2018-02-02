@@ -25,7 +25,7 @@
     "core0"
   ],
   "TarballName": "zip",
-  "TarballFileNameParser": "std",
+  "TarballFileNameParser": "infozip",
   "TarballFilters": [
     ""
   ],
