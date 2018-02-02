@@ -488,7 +488,7 @@ func (self *UIMainWindow) LoadTable() error {
 
 							tags.New(v.Tags).String(),
 							v.Category,
-							strings.Join(v.Groups, "\n"),
+							strings.Join(tags.New(v.Groups).Values(), "\n"),
 
 							v.TarballName,
 							v.TarballFileNameParser,

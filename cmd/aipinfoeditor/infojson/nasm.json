@@ -26,7 +26,12 @@
   "TarballName": "nasm",
   "TarballFileNameParser": "std",
   "TarballFilters": [
-    "- basename-re doc"
+    "- basename-re doc",
+    "- basename-re macosx",
+    "- basename-re dos",
+    "- basename-re win\\d",
+    "- basename-re linux",
+    "- basename-re os\\d"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

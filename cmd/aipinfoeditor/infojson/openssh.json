@@ -24,13 +24,17 @@
     "core0"
   ],
   "TarballName": "openssh",
-  "TarballFileNameParser": "std",
+  "TarballFileNameParser": "openssh",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/openssh/openssh-portable.git",
+    "openssh",
+    "TagName:^V$",
+    "TagStatus:^[Pp]\\d+$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",
