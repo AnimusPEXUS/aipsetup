@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.samba.org/ftp/talloc/"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

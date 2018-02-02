@@ -34,7 +34,7 @@
     "git",
     "https://github.com/systemd/systemd.git",
     "systemd",
-    "TagStatus:"
+    "TagStatus:^$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "personal",
