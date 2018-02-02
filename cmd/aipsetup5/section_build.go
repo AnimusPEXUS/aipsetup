@@ -550,16 +550,8 @@ func CmdAipsetupBuildGetSrc(
 		{
 			tarballs2 := make([]string, 0)
 			for _, i := range tarballs {
-				pp, err := p.Parse(i)
-				if err != nil {
-					return err
-				}
-				vv, err := pp.Version.ArrInt()
-				if err != nil {
-					return err
-				}
 
-				isstable, err := version_tool.IsStable(vv)
+				isstable, err := version_tool.IsStable(p, i)
 				if err != nil {
 					return err
 				}
@@ -570,7 +562,9 @@ func CmdAipsetupBuildGetSrc(
 			tarballs = tarballs2
 		}
 
-		err = repo.CopyTarballToDir(name, tarballs[len(tarballs)-1], ".")
+		t := tarballs[len(tarballs)-1]
+		fmt.Println(t)
+		err = repo.CopyTarballToDir(name, t, ".")
 		if err != nil {
 			return err
 		}
