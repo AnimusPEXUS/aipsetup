@@ -30,9 +30,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://dist.torproject.org/"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",

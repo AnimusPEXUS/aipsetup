@@ -40,7 +40,6 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tags"
@@ -266,13 +265,13 @@ func (self *ProviderSRS) MakeTarballsGit(
 				continue
 			}
 
-			if fres, err := pkginfodb.ApplyInfoFilter(self.pkg_info, []string{i}); err != nil {
-				return err
-			} else {
-				if len(fres) == 0 {
-					continue
-				}
-			}
+			// if fres, err := pkginfodb.ApplyInfoFilter(self.pkg_info, []string{i}); err != nil {
+			// 	return err
+			// } else {
+			// 	if len(fres) == 0 {
+			// 		continue
+			// 	}
+			// }
 
 			matched, err := regexp.MatchString(TagName, parse_res.Name)
 			if err != nil {
@@ -287,6 +286,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 			if err != nil {
 				return err
 			}
+			fmt.Println("TagStatus, parse_res.Status.DirtyStr matched", TagStatus, "|", parse_res.Status.DirtyStr, "|", matched)
 
 			if !matched {
 				continue

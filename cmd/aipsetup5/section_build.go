@@ -141,19 +141,12 @@ func CmdAipsetupBuildInitSub01(
 	{
 		var parser types.TarballNameParserI
 
-		{
-			parser_c, ok :=
-				tarballnameparsers.Index[buildinfo0.TarballFileNameParser]
-			if !ok {
-				return errors.New(
-					"can't find tarball name parser pointed by info file: " + err.Error(),
-				)
-			}
-
-			parser = parser_c()
+		parser, err := tarballnameparsers.Get(buildinfo0.TarballFileNameParser)
+		if err != nil {
+			return err
 		}
 
-		err := tarballname.IsPossibleTarballNameErr(target_tarball)
+		err = tarballname.IsPossibleTarballNameErr(target_tarball)
 		if err != nil {
 			return err
 		}

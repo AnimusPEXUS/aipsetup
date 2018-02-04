@@ -26,16 +26,21 @@
     "fi"
   ],
   "TarballName": "openssl",
-  "TarballFileNameParser": "std",
+  "TarballFileNameParser": "openssl",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/openssl/openssl.git",
+    "openssl",
+    "TagParser:openssl",
+    "TagName:^OpenSSL$",
+    "TagStatus:^[a-z]+$"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "openssl"
 }

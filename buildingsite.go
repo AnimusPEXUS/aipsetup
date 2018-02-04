@@ -19,7 +19,6 @@ import (
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
-	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
 )
 
 var (
@@ -345,19 +344,12 @@ maintarball_found:
 
 	{
 
-		var parser types.TarballNameParserI
-
-		{
-			parser_c, ok :=
-				tarballnameparsers.Index[tarball_info.TarballFileNameParser]
-			if !ok {
-				return errors.New("can't find tarball name parser pointed by info file")
-			}
-
-			parser = parser_c()
+		parser, err := tarballnameparsers.Get(tarball_info.TarballFileNameParser)
+		if err != nil {
+			return err
 		}
 
-		err := tarballname.IsPossibleTarballNameErr(filelist[0])
+		err = tarballname.IsPossibleTarballNameErr(filelist[0])
 		if err != nil {
 			return err
 		}

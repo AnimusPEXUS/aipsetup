@@ -28,9 +28,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/yasm/yasm.git",
+    "yasm"
   ],
   "TarballProviderUseCache": false,
   "TarballProviderCachePresetName": "",
