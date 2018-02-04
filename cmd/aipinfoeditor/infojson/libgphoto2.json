@@ -23,8 +23,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "libgphoto2",
   "TarballFileNameParser": "std",
+  "TarballName": "libgphoto2",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "gphoto"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

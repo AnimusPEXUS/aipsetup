@@ -24,8 +24,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "libevent",
   "TarballFileNameParser": "std",
+  "TarballName": "libevent",
   "TarballFilters": [
     ""
   ],
@@ -37,8 +37,8 @@
     "TagName:release",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

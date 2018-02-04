@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "ode",
   "TarballFileNameParser": "std",
+  "TarballName": "ode",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "opende"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

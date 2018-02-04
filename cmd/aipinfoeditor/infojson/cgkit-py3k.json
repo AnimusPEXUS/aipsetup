@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "cgkit",
   "TarballFileNameParser": "std",
+  "TarballName": "cgkit",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "cgkit"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

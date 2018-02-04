@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "xorriso",
   "TarballFileNameParser": "std",
+  "TarballName": "xorriso",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/xorriso"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

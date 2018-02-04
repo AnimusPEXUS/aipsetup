@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "cmake",
   "TarballFileNameParser": "std",
+  "TarballName": "cmake",
   "TarballFilters": [
     "- basename-re \\d{4}",
     "- basename-re x86_64",
@@ -50,8 +50,8 @@
   "TarballProviderArguments": [
     "https://cmake.org/files/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

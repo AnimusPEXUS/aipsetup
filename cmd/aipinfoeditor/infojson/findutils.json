@@ -25,8 +25,8 @@
     "core0",
     "fi"
   ],
-  "TarballName": "findutils",
   "TarballFileNameParser": "std",
+  "TarballName": "findutils",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/findutils"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "ogre_src_v",
   "TarballFileNameParser": "std",
+  "TarballName": "ogre_src_v",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "ogre"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

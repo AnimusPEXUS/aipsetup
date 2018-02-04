@@ -23,8 +23,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "liboggz",
   "TarballFileNameParser": "std",
+  "TarballName": "liboggz",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

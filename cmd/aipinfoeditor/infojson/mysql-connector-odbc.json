@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "mysql-connector-odbc",
   "TarballFileNameParser": "std",
+  "TarballName": "mysql-connector-odbc",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -25,8 +25,8 @@
     "cross",
     "fi"
   ],
-  "TarballName": "linux",
   "TarballFileNameParser": "std",
+  "TarballName": "linux",
   "TarballFilters": [
     ""
   ],
@@ -38,8 +38,8 @@
     "/pub/linux/kernel/ports",
     "/pub/linux/kernel/testing"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

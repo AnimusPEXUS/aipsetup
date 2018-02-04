@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "screen",
   "TarballFileNameParser": "std",
+  "TarballName": "screen",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/screen"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

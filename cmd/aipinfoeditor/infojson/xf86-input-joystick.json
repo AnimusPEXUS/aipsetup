@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "xf86-input-joystick",
   "TarballFileNameParser": "std",
+  "TarballName": "xf86-input-joystick",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

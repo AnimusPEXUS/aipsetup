@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "dbus-python",
   "TarballFileNameParser": "std",
+  "TarballName": "dbus-python",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://dbus.freedesktop.org/releases/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

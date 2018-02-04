@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "gnome-devel-docs",
   "TarballFileNameParser": "std",
+  "TarballName": "gnome-devel-docs",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnome.org/mirror/gnome.org/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "gnome"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "gnome"
 }

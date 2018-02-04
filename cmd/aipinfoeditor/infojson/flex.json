@@ -25,8 +25,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "flex",
   "TarballFileNameParser": "std",
+  "TarballName": "flex",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
   "TarballProviderArguments": [
     "flex"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

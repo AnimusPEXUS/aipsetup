@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "podofobrowser",
   "TarballFileNameParser": "std",
+  "TarballName": "podofobrowser",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "podofo"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

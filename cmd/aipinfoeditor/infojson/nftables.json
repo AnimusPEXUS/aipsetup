@@ -24,8 +24,8 @@
     "core0",
     "netfilter"
   ],
-  "TarballName": "nftables",
   "TarballFileNameParser": "std",
+  "TarballName": "nftables",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "git://git.netfilter.org/nftables",
     "nftables"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

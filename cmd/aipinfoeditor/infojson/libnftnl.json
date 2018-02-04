@@ -24,8 +24,8 @@
     "core1",
     "netfilter"
   ],
-  "TarballName": "libnftnl",
   "TarballFileNameParser": "std",
+  "TarballName": "libnftnl",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "libnftnl",
     "TagName:^libnftnl$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

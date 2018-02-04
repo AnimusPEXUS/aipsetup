@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "libffi",
   "TarballFileNameParser": "std",
+  "TarballName": "libffi",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
     "https://github.com/libffi/libffi",
     "libffi"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "openmpi",
   "TarballFileNameParser": "std",
+  "TarballName": "openmpi",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "openmpi",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

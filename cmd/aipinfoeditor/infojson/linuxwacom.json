@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "linuxwacom",
   "TarballFileNameParser": "std",
+  "TarballName": "linuxwacom",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "linuxwacom"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

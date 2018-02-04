@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "clisp-powerpc-unknown-linuxlibc",
   "TarballFileNameParser": "std",
+  "TarballName": "clisp-powerpc-unknown-linuxlibc",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -24,8 +24,8 @@
     "crypt",
     "fi"
   ],
-  "TarballName": "libassuan",
   "TarballFileNameParser": "std",
+  "TarballName": "libassuan",
   "TarballFilters": [
     ""
   ],
@@ -33,8 +33,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

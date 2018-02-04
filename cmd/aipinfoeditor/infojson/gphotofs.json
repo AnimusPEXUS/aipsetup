@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "gphotofs",
   "TarballFileNameParser": "std",
+  "TarballName": "gphotofs",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "gphoto"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

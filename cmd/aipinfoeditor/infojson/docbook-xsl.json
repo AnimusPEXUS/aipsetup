@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "docbook-xsl",
   "TarballFileNameParser": "std",
+  "TarballName": "docbook-xsl",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "docbook"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

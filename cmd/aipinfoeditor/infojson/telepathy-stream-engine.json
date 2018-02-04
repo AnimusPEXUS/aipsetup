@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "telepathy-stream-engine",
   "TarballFileNameParser": "std",
+  "TarballName": "telepathy-stream-engine",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

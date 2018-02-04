@@ -24,8 +24,8 @@
     "core1",
     "netfilter"
   ],
-  "TarballName": "libmnl",
   "TarballFileNameParser": "std",
+  "TarballName": "libmnl",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "libmnl",
     "TagName:^libmnl$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "tightvnc",
   "TarballFileNameParser": "std",
+  "TarballName": "tightvnc",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "vnc-tight"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

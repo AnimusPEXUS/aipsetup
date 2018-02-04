@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "fakeroot-ng",
   "TarballFileNameParser": "std",
+  "TarballName": "fakeroot-ng",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "fakerootng"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

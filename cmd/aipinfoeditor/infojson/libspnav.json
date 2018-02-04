@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "libspnav",
   "TarballFileNameParser": "std",
+  "TarballName": "libspnav",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "spacenav"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

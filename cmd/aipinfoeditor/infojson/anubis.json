@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "anubis",
   "TarballFileNameParser": "std",
+  "TarballName": "anubis",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/anubis"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

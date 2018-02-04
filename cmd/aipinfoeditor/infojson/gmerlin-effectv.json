@@ -23,8 +23,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "gmerlin-effectv",
   "TarballFileNameParser": "std",
+  "TarballName": "gmerlin-effectv",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "gmerlin"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

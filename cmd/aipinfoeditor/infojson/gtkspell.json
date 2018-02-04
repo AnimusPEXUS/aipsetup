@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "gtkspell",
   "TarballFileNameParser": "std",
+  "TarballName": "gtkspell",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "gtkspell"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

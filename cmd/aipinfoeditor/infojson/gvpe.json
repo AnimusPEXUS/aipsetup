@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "gvpe",
   "TarballFileNameParser": "std",
+  "TarballName": "gvpe",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/gvpe"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

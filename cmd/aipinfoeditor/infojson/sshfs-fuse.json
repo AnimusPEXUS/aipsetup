@@ -24,8 +24,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "sshfs-fuse",
   "TarballFileNameParser": "std",
+  "TarballName": "sshfs-fuse",
   "TarballFilters": [
     ""
   ],
@@ -37,8 +37,8 @@
     "TagName:sshfs",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

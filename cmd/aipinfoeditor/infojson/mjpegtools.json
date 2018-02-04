@@ -23,8 +23,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "mjpegtools",
   "TarballFileNameParser": "std",
+  "TarballName": "mjpegtools",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "mjpeg"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "ftgl",
   "TarballFileNameParser": "std",
+  "TarballName": "ftgl",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "ftgl"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

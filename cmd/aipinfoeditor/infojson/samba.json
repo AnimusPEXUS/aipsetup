@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "samba",
   "TarballFileNameParser": "std",
+  "TarballName": "samba",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://www.samba.org/ftp/samba/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

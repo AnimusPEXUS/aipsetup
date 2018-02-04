@@ -23,8 +23,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "djvulibre",
   "TarballFileNameParser": "std",
+  "TarballName": "djvulibre",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "djvu"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

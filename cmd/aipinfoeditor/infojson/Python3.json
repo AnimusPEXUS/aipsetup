@@ -24,8 +24,8 @@
     "core0",
     "fi"
   ],
-  "TarballName": "Python",
   "TarballFileNameParser": "std",
+  "TarballName": "Python",
   "TarballFilters": [
     "- version-\u003c 3",
     "- version-\u003e= 4"
@@ -34,8 +34,8 @@
   "TarballProviderArguments": [
     "https://www.python.org/ftp/python/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

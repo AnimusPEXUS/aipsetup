@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "pdfedit",
   "TarballFileNameParser": "std",
+  "TarballName": "pdfedit",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "pdfedit"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

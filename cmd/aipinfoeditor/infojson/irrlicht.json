@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "irrlicht",
   "TarballFileNameParser": "std",
+  "TarballName": "irrlicht",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "irrlicht"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

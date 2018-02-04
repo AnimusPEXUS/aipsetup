@@ -23,8 +23,8 @@
   "Groups": [
     "llvm"
   ],
-  "TarballName": "clang-tools-extra",
   "TarballFileNameParser": "std",
+  "TarballName": "clang-tools-extra",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

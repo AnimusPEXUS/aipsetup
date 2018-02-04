@@ -24,8 +24,8 @@
   "Groups": [
     "fd"
   ],
-  "TarballName": "libepoxy",
   "TarballFileNameParser": "std",
+  "TarballName": "libepoxy",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "libepoxy",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "gnome"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "gnome"
 }

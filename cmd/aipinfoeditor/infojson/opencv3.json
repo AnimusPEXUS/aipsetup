@@ -23,8 +23,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "opencv",
   "TarballFileNameParser": "std",
+  "TarballName": "opencv",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "opencvlibrary"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

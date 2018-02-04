@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "libnetfilter_cttimeout",
   "TarballFileNameParser": "std",
+  "TarballName": "libnetfilter_cttimeout",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "libnetfilter_cttimeout",
     "TagName:^libnetfilter_cttimeout$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

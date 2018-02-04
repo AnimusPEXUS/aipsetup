@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "libraw1394",
   "TarballFileNameParser": "std",
+  "TarballName": "libraw1394",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "libraw1394"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

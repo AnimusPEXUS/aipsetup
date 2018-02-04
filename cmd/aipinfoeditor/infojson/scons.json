@@ -24,8 +24,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "scons-src",
   "TarballFileNameParser": "std",
+  "TarballName": "scons-src",
   "TarballFilters": [
     ""
   ],
@@ -33,8 +33,8 @@
   "TarballProviderArguments": [
     "scons"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

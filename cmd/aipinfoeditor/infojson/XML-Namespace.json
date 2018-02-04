@@ -23,8 +23,8 @@
   "Groups": [
     "perlmod"
   ],
-  "TarballName": "XML-Namespace",
   "TarballFileNameParser": "std",
+  "TarballName": "XML-Namespace",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

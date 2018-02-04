@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "unittest-cpp",
   "TarballFileNameParser": "std",
+  "TarballName": "unittest-cpp",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "unittest-cpp",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "lzo",
   "TarballFileNameParser": "std",
+  "TarballName": "lzo",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "http://www.oberhumer.com/opensource/lzo/download/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

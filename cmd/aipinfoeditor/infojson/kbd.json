@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "kbd",
   "TarballFileNameParser": "std",
+  "TarballName": "kbd",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "TagName:^$",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

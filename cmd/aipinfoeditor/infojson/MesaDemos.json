@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "MesaDemos",
   "TarballFileNameParser": "std",
+  "TarballName": "MesaDemos",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "mesa3d"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

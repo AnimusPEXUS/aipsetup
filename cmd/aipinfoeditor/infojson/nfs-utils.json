@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "nfs-utils",
   "TarballFileNameParser": "std",
+  "TarballName": "nfs-utils",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "nfs"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

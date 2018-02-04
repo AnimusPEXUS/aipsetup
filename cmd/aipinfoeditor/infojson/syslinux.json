@@ -24,8 +24,8 @@
     "core0",
     "fi"
   ],
-  "TarballName": "syslinux",
   "TarballFileNameParser": "std",
+  "TarballName": "syslinux",
   "TarballFilters": [
     ""
   ],
@@ -33,8 +33,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

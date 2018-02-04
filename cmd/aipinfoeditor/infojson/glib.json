@@ -26,8 +26,8 @@
     "fi",
     "gtk"
   ],
-  "TarballName": "glib",
   "TarballFileNameParser": "std",
+  "TarballName": "glib",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnome.org/mirror/gnome.org/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "gnome"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "gnome"
 }

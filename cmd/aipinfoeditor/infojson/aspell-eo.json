@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "aspell-eo",
   "TarballFileNameParser": "std",
+  "TarballName": "aspell-eo",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

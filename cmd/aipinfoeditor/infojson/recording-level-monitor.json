@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "recording-level-monitor",
   "TarballFileNameParser": "std",
+  "TarballName": "recording-level-monitor",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

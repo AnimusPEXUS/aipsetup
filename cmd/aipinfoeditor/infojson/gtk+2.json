@@ -24,8 +24,8 @@
     "gtk",
     "gtk2"
   ],
-  "TarballName": "gtk+2",
   "TarballFileNameParser": "std",
+  "TarballName": "gtk+2",
   "TarballFilters": [
     ""
   ],
@@ -33,8 +33,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnome.org/mirror/gnome.org/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "gnome"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "gnome"
 }

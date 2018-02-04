@@ -24,8 +24,8 @@
     "",
     "netfilter"
   ],
-  "TarballName": "ulogd",
   "TarballFileNameParser": "std",
+  "TarballName": "ulogd",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "git://git.netfilter.org/ulogd",
     "ulogd"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

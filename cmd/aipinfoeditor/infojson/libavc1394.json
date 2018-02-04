@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "libavc1394",
   "TarballFileNameParser": "std",
+  "TarballName": "libavc1394",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "libavc1394"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

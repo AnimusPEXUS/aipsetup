@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "rdesktop",
   "TarballFileNameParser": "std",
+  "TarballName": "rdesktop",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "rdesktop"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

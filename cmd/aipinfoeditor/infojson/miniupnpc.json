@@ -24,8 +24,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "miniupnpc",
   "TarballFileNameParser": "std",
+  "TarballName": "miniupnpc",
   "TarballFilters": [
     ""
   ],
@@ -37,8 +37,8 @@
     "TagName:miniupnpc",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

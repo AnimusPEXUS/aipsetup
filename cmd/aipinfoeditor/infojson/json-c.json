@@ -24,8 +24,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "json-c",
   "TarballFileNameParser": "std",
+  "TarballName": "json-c",
   "TarballFilters": [
     ""
   ],
@@ -37,8 +37,8 @@
     "TagName:json-c",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

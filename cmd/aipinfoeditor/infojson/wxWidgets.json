@@ -23,8 +23,8 @@
   "Groups": [
     "wx"
   ],
-  "TarballName": "wxWidgets",
   "TarballFileNameParser": "std",
+  "TarballName": "wxWidgets",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "wxwindows"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

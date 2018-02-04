@@ -23,8 +23,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "FreeImage",
   "TarballFileNameParser": "std",
+  "TarballName": "FreeImage",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "freeimage"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "arptables",
   "TarballFileNameParser": "std",
+  "TarballName": "arptables",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "arptables",
     "TagName:^arptables$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -24,8 +24,8 @@
     "core0",
     "fi"
   ],
-  "TarballName": "libatomic_ops",
   "TarballFileNameParser": "std",
+  "TarballName": "libatomic_ops",
   "TarballFilters": [
     ""
   ],
@@ -33,8 +33,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

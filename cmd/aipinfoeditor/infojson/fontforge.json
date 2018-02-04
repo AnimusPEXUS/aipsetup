@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "fontforge_full",
   "TarballFileNameParser": "std",
+  "TarballName": "fontforge_full",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "fontforge"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

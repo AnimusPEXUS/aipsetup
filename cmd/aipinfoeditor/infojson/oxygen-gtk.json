@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "oxygen-gtk",
   "TarballFileNameParser": "std",
+  "TarballName": "oxygen-gtk",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

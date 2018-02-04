@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "PyQt-x11-gpl",
   "TarballFileNameParser": "std",
+  "TarballName": "PyQt-x11-gpl",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "pyqt"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

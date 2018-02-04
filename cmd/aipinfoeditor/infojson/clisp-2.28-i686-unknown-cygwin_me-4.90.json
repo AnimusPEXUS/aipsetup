@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "clisp-2.28-i686-unknown-cygwin_me-4.90",
   "TarballFileNameParser": "std",
+  "TarballName": "clisp-2.28-i686-unknown-cygwin_me-4.90",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

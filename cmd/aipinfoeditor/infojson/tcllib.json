@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "tcllib",
   "TarballFileNameParser": "std",
+  "TarballName": "tcllib",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "tcllib"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

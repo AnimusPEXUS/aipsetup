@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "xkeyboard-config",
   "TarballFileNameParser": "std",
+  "TarballName": "xkeyboard-config",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

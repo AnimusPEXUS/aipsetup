@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "nft-sync",
   "TarballFileNameParser": "std",
+  "TarballName": "nft-sync",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
     "git://git.netfilter.org/nft-sync",
     "nft-sync"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "meanwhile",
   "TarballFileNameParser": "std",
+  "TarballName": "meanwhile",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "meanwhile"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

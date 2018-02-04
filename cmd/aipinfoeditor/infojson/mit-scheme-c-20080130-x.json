@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "mit-scheme-c-20080130-x",
   "TarballFileNameParser": "std",
+  "TarballName": "mit-scheme-c-20080130-x",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "xfsprogs",
   "TarballFileNameParser": "std",
+  "TarballName": "xfsprogs",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
     "git://git.kernel.org/pub/scm/fs/xfs/xfsprogs-dev.git",
     "xfsprogs"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

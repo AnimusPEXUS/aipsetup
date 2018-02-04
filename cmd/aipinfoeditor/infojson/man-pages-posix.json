@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "man-pages-posix",
   "TarballFileNameParser": "std",
+  "TarballName": "man-pages-posix",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "vigra",
   "TarballFileNameParser": "std",
+  "TarballName": "vigra",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "TagName:Version",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

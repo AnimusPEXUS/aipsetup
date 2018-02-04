@@ -34,15 +34,14 @@ var TableStructure = [][3]interface{}{
 	[3]interface{}{12, glib.TYPE_STRING, "Tags"},
 	[3]interface{}{13, glib.TYPE_STRING, "Category"},
 	[3]interface{}{14, glib.TYPE_STRING, "Groups"},
-	[3]interface{}{15, glib.TYPE_STRING, "Tarball Name"},
-	[3]interface{}{16, glib.TYPE_STRING, "Tarball Parser"},
+	[3]interface{}{15, glib.TYPE_STRING, "Tarball Parser"},
+	[3]interface{}{16, glib.TYPE_STRING, "Tarball Name"},
 	[3]interface{}{17, glib.TYPE_STRING, "Tarball Filters"},
 	[3]interface{}{18, glib.TYPE_STRING, "Tarball Provider"},
 	[3]interface{}{19, glib.TYPE_STRING, "Provider Arguments"},
-	[3]interface{}{20, glib.TYPE_BOOLEAN, "Use Cache"},
-	[3]interface{}{21, glib.TYPE_STRING, "Cache Preset Name"},
+	[3]interface{}{20, glib.TYPE_STRING, "Tarball Stability Classifier"},
+	[3]interface{}{21, glib.TYPE_STRING, "Tarball Version Comparator"},
 	[3]interface{}{22, glib.TYPE_INT, "Tarball Sync Depth"},
-	[3]interface{}{23, glib.TYPE_STRING, "Version Tool"},
 }
 
 type UIMainWindow struct {
@@ -467,7 +466,7 @@ func (self *UIMainWindow) LoadTable() error {
 						[]int{
 							0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 							10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-							20, 21, 22, 23,
+							20, 21, 22,
 						},
 						[]interface{}{
 							k,
@@ -490,15 +489,14 @@ func (self *UIMainWindow) LoadTable() error {
 							v.Category,
 							strings.Join(tags.New(v.Groups).Values(), "\n"),
 
-							v.TarballName,
 							v.TarballFileNameParser,
+							v.TarballName,
 							strings.Join(v.TarballFilters, "\n"),
 							v.TarballProvider,
 							strings.Join(v.TarballProviderArguments, "\n"),
-							v.TarballProviderUseCache,
-							v.TarballProviderCachePresetName,
+							v.TarballStabilityClassifier,
+							v.TarballVersionComparator,
 							v.TarballProviderVersionSyncDepth,
-							v.TarballVersionTool,
 						},
 					)
 					if err != nil {
@@ -681,9 +679,9 @@ func (self *UIMainWindow) _IterToPackageInfo(iter *gtk.TreeIter) (
 		case 14:
 			ret.Groups = strings.Split(vv.(string), "\n")
 		case 15:
-			ret.TarballName = vv.(string)
-		case 16:
 			ret.TarballFileNameParser = vv.(string)
+		case 16:
+			ret.TarballName = vv.(string)
 		case 17:
 			ret.TarballFilters = strings.Split(vv.(string), "\n")
 		case 18:
@@ -691,13 +689,11 @@ func (self *UIMainWindow) _IterToPackageInfo(iter *gtk.TreeIter) (
 		case 19:
 			ret.TarballProviderArguments = strings.Split(vv.(string), "\n")
 		case 20:
-			ret.TarballProviderUseCache = vv.(bool)
+			ret.TarballStabilityClassifier = vv.(string)
 		case 21:
-			ret.TarballProviderCachePresetName = vv.(string)
+			ret.TarballVersionComparator = vv.(string)
 		case 22:
 			ret.TarballProviderVersionSyncDepth = vv.(int)
-		case 23:
-			ret.TarballVersionTool = vv.(string)
 		}
 	}
 

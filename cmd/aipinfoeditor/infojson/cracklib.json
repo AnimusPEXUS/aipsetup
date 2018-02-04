@@ -24,8 +24,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "cracklib",
   "TarballFileNameParser": "std",
+  "TarballName": "cracklib",
   "TarballFilters": [
     ""
   ],
@@ -33,8 +33,8 @@
   "TarballProviderArguments": [
     "cracklib"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

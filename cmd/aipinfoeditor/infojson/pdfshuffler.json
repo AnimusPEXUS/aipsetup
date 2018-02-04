@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "pdfshuffler",
   "TarballFileNameParser": "std",
+  "TarballName": "pdfshuffler",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "pdfshuffler"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

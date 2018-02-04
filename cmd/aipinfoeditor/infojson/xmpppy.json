@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "xmpppy",
   "TarballFileNameParser": "std",
+  "TarballName": "xmpppy",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "xmpppy"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

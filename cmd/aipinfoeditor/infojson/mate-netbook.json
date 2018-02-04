@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "mate-netbook",
   "TarballFileNameParser": "std",
+  "TarballName": "mate-netbook",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

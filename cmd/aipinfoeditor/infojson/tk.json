@@ -24,8 +24,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "tk",
   "TarballFileNameParser": "std",
+  "TarballName": "tk",
   "TarballFilters": [
     "- basename-re html",
     "- !basename-re src",
@@ -37,8 +37,8 @@
   "TarballProviderArguments": [
     "tcl"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "tcltk"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "tcltk",
+  "TarballVersionComparator": "tcltk"
 }

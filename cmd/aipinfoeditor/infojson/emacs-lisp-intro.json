@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "emacs-lisp-intro",
   "TarballFileNameParser": "std",
+  "TarballName": "emacs-lisp-intro",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

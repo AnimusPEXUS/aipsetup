@@ -25,8 +25,8 @@
     "core0",
     "fi"
   ],
-  "TarballName": "grep",
   "TarballFileNameParser": "std",
+  "TarballName": "grep",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/grep"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

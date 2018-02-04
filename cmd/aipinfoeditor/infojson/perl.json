@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "perl",
   "TarballFileNameParser": "std",
+  "TarballName": "perl",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://www.cpan.org/src/5.0/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "gnome"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "gnome"
 }

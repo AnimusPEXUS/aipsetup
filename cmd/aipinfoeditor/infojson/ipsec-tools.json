@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "ipsec-tools",
   "TarballFileNameParser": "std",
+  "TarballName": "ipsec-tools",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "ipsec-tools"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

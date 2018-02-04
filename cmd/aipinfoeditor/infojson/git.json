@@ -24,8 +24,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "git",
   "TarballFileNameParser": "std",
+  "TarballName": "git",
   "TarballFilters": [
     ""
   ],
@@ -33,8 +33,8 @@
   "TarballProviderArguments": [
     "https://www.kernel.org/pub/software/scm/git/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

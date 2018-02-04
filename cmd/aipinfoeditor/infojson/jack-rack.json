@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "jack-rack",
   "TarballFileNameParser": "std",
+  "TarballName": "jack-rack",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "jack-rack"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

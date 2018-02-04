@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "libnetfilter_conntrack",
   "TarballFileNameParser": "std",
+  "TarballName": "libnetfilter_conntrack",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "libnetfilter_conntrack",
     "TagName:^libnetfilter_conntrack$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

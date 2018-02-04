@@ -23,8 +23,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "Dev86src",
   "TarballFileNameParser": "std",
+  "TarballName": "Dev86src",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "e2fsprogs-libs",
   "TarballFileNameParser": "std",
+  "TarballName": "e2fsprogs-libs",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "e2fsprogs"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

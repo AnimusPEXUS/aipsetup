@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "liboauth",
   "TarballFileNameParser": "std",
+  "TarballName": "liboauth",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "liboauth"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

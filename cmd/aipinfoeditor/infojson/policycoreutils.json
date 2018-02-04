@@ -25,8 +25,8 @@
     "core1",
     "sec"
   ],
-  "TarballName": "policycoreutils",
   "TarballFileNameParser": "std",
+  "TarballName": "policycoreutils",
   "TarballFilters": [
     ""
   ],
@@ -38,8 +38,8 @@
     "TagName:policycoreutils",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

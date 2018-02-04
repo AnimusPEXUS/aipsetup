@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "WindowMaker",
   "TarballFileNameParser": "std",
+  "TarballName": "WindowMaker",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

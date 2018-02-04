@@ -23,8 +23,8 @@
   "Groups": [
     "langs"
   ],
-  "TarballName": "fpc",
   "TarballFileNameParser": "std",
+  "TarballName": "fpc",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "lazarus"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

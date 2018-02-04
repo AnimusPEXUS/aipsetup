@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "glibc-linuxthreads",
   "TarballFileNameParser": "std",
+  "TarballName": "glibc-linuxthreads",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

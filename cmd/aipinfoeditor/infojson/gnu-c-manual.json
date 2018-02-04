@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "gnu-c-manual",
   "TarballFileNameParser": "std",
+  "TarballName": "gnu-c-manual",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/gnu-c-manual"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

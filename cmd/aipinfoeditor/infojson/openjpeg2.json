@@ -24,8 +24,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "openjpeg",
   "TarballFileNameParser": "std",
+  "TarballName": "openjpeg",
   "TarballFilters": [
     ""
   ],
@@ -37,8 +37,8 @@
     "TagName:version.",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

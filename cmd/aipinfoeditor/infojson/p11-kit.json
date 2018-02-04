@@ -25,8 +25,8 @@
     "fd",
     "fi"
   ],
-  "TarballName": "p11-kit",
   "TarballFileNameParser": "std",
+  "TarballName": "p11-kit",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

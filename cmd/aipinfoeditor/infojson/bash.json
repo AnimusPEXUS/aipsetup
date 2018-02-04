@@ -26,8 +26,8 @@
     "fi",
     "fib"
   ],
-  "TarballName": "bash",
   "TarballFileNameParser": "std",
+  "TarballName": "bash",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/bash"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

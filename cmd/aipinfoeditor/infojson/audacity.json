@@ -23,8 +23,8 @@
   "Groups": [
     "media"
   ],
-  "TarballName": "audacity-minsrc",
   "TarballFileNameParser": "std",
+  "TarballName": "audacity-minsrc",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "TagName:Audacity",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

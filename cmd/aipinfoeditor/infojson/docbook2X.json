@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "docbook2X",
   "TarballFileNameParser": "std",
+  "TarballName": "docbook2X",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "docbook2x"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

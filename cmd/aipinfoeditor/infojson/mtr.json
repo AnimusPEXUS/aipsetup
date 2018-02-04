@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "mtr",
   "TarballFileNameParser": "std",
+  "TarballName": "mtr",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "mtr",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

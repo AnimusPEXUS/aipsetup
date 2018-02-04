@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "x11vnc",
   "TarballFileNameParser": "std",
+  "TarballName": "x11vnc",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "libvncserver"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "shadow",
   "TarballFileNameParser": "std",
+  "TarballName": "shadow",
   "TarballFilters": [
     "- basename-re \\d{4}"
   ],
@@ -36,8 +36,8 @@
     "TagName:^$",
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

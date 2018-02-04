@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "xfce4-dev-tools",
   "TarballFileNameParser": "std",
+  "TarballName": "xfce4-dev-tools",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -26,8 +26,8 @@
     "fi",
     "fib"
   ],
-  "TarballName": "zlib",
   "TarballFileNameParser": "std",
+  "TarballName": "zlib",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
   "TarballProviderArguments": [
     "libpng"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

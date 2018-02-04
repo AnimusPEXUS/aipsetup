@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "elisp-manual-21",
   "TarballFileNameParser": "std",
+  "TarballName": "elisp-manual-21",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

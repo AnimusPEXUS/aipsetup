@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "ebtables",
   "TarballFileNameParser": "std",
+  "TarballName": "ebtables",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "ebtables",
     "TagName:^ebtables$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

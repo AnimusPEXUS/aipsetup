@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "libxkbcommon",
   "TarballFileNameParser": "std",
+  "TarballName": "libxkbcommon",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "TagName:xkbcommon",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

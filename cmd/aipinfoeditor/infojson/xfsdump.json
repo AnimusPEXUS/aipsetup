@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "xfsdump",
   "TarballFileNameParser": "std",
+  "TarballName": "xfsdump",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
     "git://git.kernel.org/pub/scm/fs/xfs/xfsdump-dev.git",
     "xfsdump"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

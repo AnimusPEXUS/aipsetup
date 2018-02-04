@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "nut",
   "TarballFileNameParser": "std",
+  "TarballName": "nut",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "nut",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "tftp-hpa",
   "TarballFileNameParser": "std",
+  "TarballName": "tftp-hpa",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

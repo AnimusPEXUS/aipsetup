@@ -27,8 +27,8 @@
     "fi",
     "fib"
   ],
-  "TarballName": "e2fsprogs",
   "TarballFileNameParser": "std",
+  "TarballName": "e2fsprogs",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
   "TarballProviderArguments": [
     "https://cdn.kernel.org/pub/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

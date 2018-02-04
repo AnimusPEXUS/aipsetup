@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "conntrack-tools",
   "TarballFileNameParser": "std",
+  "TarballName": "conntrack-tools",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "conntrack-tools",
     "TagName:^conntrack-tools$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

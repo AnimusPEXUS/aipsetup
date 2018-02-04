@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "gnome-device-manager",
   "TarballFileNameParser": "std",
+  "TarballName": "gnome-device-manager",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

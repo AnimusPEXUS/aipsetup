@@ -25,8 +25,8 @@
     "crypt",
     "fi"
   ],
-  "TarballName": "openssl",
   "TarballFileNameParser": "openssl",
+  "TarballName": "openssl",
   "TarballFilters": [
     ""
   ],
@@ -39,8 +39,8 @@
     "TagName:^OpenSSL$",
     "TagStatus:^[a-z]+$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "openssl"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "openssl",
+  "TarballVersionComparator": "openssl"
 }

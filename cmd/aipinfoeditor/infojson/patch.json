@@ -25,8 +25,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "patch",
   "TarballFileNameParser": "std",
+  "TarballName": "patch",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/patch"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

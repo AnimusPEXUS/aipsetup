@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "patchelf",
   "TarballFileNameParser": "std",
+  "TarballName": "patchelf",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "patchelf",
     "TagName:^$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

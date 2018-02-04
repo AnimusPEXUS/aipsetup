@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "sonic-visualiser",
   "TarballFileNameParser": "std",
+  "TarballName": "sonic-visualiser",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "sv1"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

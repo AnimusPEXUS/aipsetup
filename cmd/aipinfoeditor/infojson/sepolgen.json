@@ -23,8 +23,8 @@
   "Groups": [
     "sec"
   ],
-  "TarballName": "sepolgen",
   "TarballFileNameParser": "std",
+  "TarballName": "sepolgen",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "TagName:sepolgen",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

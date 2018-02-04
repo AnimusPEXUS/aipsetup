@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "itstool",
   "TarballFileNameParser": "std",
+  "TarballName": "itstool",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "http://files.itstool.org/itstool/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     "perlmod"
   ],
-  "TarballName": "Gtk2",
   "TarballFileNameParser": "std",
+  "TarballName": "Gtk2",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "gtk2-perl"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

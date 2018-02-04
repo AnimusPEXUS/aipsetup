@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "libnetfilter_queue",
   "TarballFileNameParser": "std",
+  "TarballName": "libnetfilter_queue",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "libnetfilter_queue",
     "TagName:^libnetfilter_queue$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

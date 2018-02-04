@@ -25,8 +25,8 @@
     "core0",
     "fi"
   ],
-  "TarballName": "pcre",
   "TarballFileNameParser": "std",
+  "TarballName": "pcre",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
   "TarballProviderArguments": [
     "qpdf"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -24,8 +24,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "autoconf",
   "TarballFileNameParser": "std",
+  "TarballName": "autoconf",
   "TarballFilters": [
     "- version-== 2.13"
   ],
@@ -33,8 +33,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/autoconf"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

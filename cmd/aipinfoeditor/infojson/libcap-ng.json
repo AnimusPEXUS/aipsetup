@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "libcap-ng",
   "TarballFileNameParser": "std",
+  "TarballName": "libcap-ng",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
     "https://github.com/stevegrubb/libcap-ng",
     "libcap-ng"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

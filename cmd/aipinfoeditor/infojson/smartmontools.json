@@ -24,8 +24,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "smartmontools",
   "TarballFileNameParser": "std",
+  "TarballName": "smartmontools",
   "TarballFilters": [
     ""
   ],
@@ -33,8 +33,8 @@
   "TarballProviderArguments": [
     "smartmontools"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

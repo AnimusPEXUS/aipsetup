@@ -23,8 +23,8 @@
   "Groups": [
     "sec"
   ],
-  "TarballName": "libselinux",
   "TarballFileNameParser": "std",
+  "TarballName": "libselinux",
   "TarballFilters": [
     "- !tarball-status-re ^$"
   ],
@@ -35,8 +35,8 @@
     "checkpolicy",
     "TagName:libselinux"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -24,8 +24,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "libnl",
   "TarballFileNameParser": "std",
+  "TarballName": "libnl",
   "TarballFilters": [
     ""
   ],
@@ -37,8 +37,8 @@
     "TagName:libnl",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

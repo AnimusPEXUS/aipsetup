@@ -23,8 +23,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "libpipeline",
   "TarballFileNameParser": "std",
+  "TarballName": "libpipeline",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

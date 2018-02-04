@@ -25,8 +25,8 @@
     "crypt",
     "fi"
   ],
-  "TarballName": "libgcrypt",
   "TarballFileNameParser": "std",
+  "TarballName": "libgcrypt",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

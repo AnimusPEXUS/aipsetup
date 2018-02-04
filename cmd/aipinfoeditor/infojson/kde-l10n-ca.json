@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "kde-l10n-ca",
   "TarballFileNameParser": "std",
+  "TarballName": "kde-l10n-ca",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

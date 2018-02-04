@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "gtk-xfce-engine",
   "TarballFileNameParser": "std",
+  "TarballName": "gtk-xfce-engine",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "xfce"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

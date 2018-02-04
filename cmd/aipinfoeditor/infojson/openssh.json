@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "openssh",
   "TarballFileNameParser": "openssh",
+  "TarballName": "openssh",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "TagName:^V$",
     "TagStatus:^[Pp]\\d+$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

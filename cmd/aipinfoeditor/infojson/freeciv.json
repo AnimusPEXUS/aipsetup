@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "freeciv",
   "TarballFileNameParser": "std",
+  "TarballName": "freeciv",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "freeciv"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

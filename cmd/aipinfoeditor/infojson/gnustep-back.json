@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "gnustep-back",
   "TarballFileNameParser": "std",
+  "TarballName": "gnustep-back",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

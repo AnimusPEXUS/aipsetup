@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "libgit2",
   "TarballFileNameParser": "std",
+  "TarballName": "libgit2",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "libgit2",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

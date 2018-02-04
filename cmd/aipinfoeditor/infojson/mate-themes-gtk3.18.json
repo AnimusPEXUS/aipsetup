@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "mate-themes-gtk3.18",
   "TarballFileNameParser": "std",
+  "TarballName": "mate-themes-gtk3.18",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "sqlcipher",
   "TarballFileNameParser": "std",
+  "TarballName": "sqlcipher",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "sqlcipher",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

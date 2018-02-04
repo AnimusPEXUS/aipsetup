@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "pidgin",
   "TarballFileNameParser": "std",
+  "TarballName": "pidgin",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "pidgin"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

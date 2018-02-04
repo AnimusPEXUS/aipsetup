@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "spacenavd",
   "TarballFileNameParser": "std",
+  "TarballName": "spacenavd",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "spacenav"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

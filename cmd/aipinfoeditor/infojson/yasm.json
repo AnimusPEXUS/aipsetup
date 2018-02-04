@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "yasm",
   "TarballFileNameParser": "std",
+  "TarballName": "yasm",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
     "https://github.com/yasm/yasm.git",
     "yasm"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

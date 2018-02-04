@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "cdrtools",
   "TarballFileNameParser": "std",
+  "TarballName": "cdrtools",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "cdrtools"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

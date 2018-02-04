@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "tdb",
   "TarballFileNameParser": "std",
+  "TarballName": "tdb",
   "TarballFilters": [
     "- version-\u003c 1.3"
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://www.samba.org/ftp/tdb/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

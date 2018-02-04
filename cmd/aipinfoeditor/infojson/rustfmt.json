@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "rustfmt",
   "TarballFileNameParser": "std",
+  "TarballName": "rustfmt",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "rustfmt",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

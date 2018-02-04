@@ -25,8 +25,8 @@
     "cross",
     "fi"
   ],
-  "TarballName": "gcc",
   "TarballFileNameParser": "std",
+  "TarballName": "gcc",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/gcc"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "by_https_host",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "gcc"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "gcc",
+  "TarballVersionComparator": "gcc"
 }

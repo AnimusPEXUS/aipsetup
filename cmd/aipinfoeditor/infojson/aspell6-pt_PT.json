@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "aspell6-pt_PT",
   "TarballFileNameParser": "std",
+  "TarballName": "aspell6-pt_PT",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -25,8 +25,8 @@
   "Groups": [
     "core1"
   ],
-  "TarballName": "cups",
   "TarballFileNameParser": "std",
+  "TarballName": "cups",
   "TarballFilters": [
     ""
   ],
@@ -38,8 +38,8 @@
     "TagName:release",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "libnetfilter_acct",
   "TarballFileNameParser": "std",
+  "TarballName": "libnetfilter_acct",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "libnetfilter_acct",
     "TagName:^libnetfilter_acct$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

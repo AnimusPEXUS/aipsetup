@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "qimageblitz",
   "TarballFileNameParser": "std",
+  "TarballName": "qimageblitz",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "qimageblitz"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

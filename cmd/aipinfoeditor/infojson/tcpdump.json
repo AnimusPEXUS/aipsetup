@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "tcpdump",
   "TarballFileNameParser": "std",
+  "TarballName": "tcpdump",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://www.tcpdump.org/release/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

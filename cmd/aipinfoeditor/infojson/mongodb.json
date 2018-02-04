@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "mongodb-src-r",
   "TarballFileNameParser": "std",
+  "TarballName": "mongodb-src-r",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

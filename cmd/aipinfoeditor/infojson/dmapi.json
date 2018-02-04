@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "dmapi",
   "TarballFileNameParser": "std",
+  "TarballName": "dmapi",
   "TarballFilters": [
     ""
   ],
@@ -34,8 +34,8 @@
     "git://git.kernel.org/pub/scm/fs/xfs/dmapi-dev.git",
     "dmapi"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

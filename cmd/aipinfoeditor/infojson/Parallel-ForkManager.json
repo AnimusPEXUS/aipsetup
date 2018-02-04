@@ -23,8 +23,8 @@
   "Groups": [
     "perlmod"
   ],
-  "TarballName": "Parallel-ForkManager",
   "TarballFileNameParser": "std",
+  "TarballName": "Parallel-ForkManager",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

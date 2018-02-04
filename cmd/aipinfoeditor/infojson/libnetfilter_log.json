@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "libnetfilter_log",
   "TarballFileNameParser": "std",
+  "TarballName": "libnetfilter_log",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "libnetfilter_log",
     "TagName:^libnetfilter_log$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "shared-desktop-ontologies",
   "TarballFileNameParser": "std",
+  "TarballName": "shared-desktop-ontologies",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "oscaf"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

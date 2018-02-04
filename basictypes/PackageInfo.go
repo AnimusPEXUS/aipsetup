@@ -22,19 +22,17 @@ type PackageInfo struct {
 	Category string
 	Groups   []string
 
-	TarballName           string //`json:"tarball_name"`
 	TarballFileNameParser string //`json:"tarball_filename_parser"`
-	TarballFilters        []string
-	TarballProvider       string //`json:"tarball_provider"`
-	// NOTE: some providers, like sf.net, requires to know additional data to
-	//       work with. for instance sf.net needs a project name, as one may
-	//       spawn multiple tarball names. so, for such additional data, this
-	//       field is provided. Providers, on theyr part, should describe
-	//       arguments which they require, using for this they'r source
-	//       files.
+
+	TarballName string //`json:"tarball_name"`
+
+	TarballFilters []string
+
+	TarballProvider                 string   //`json:"tarball_provider"`
 	TarballProviderArguments        []string // `json:"tarball_provider_arguments"`
-	TarballProviderUseCache         bool
-	TarballProviderCachePresetName  string
 	TarballProviderVersionSyncDepth int
-	TarballVersionTool              string //`json:"tarball_version_tool"`
+
+	TarballVersionTool         string
+	TarballStabilityClassifier string
+	TarballVersionComparator   string
 }

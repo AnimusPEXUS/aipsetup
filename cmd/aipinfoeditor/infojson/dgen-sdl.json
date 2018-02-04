@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "dgen-sdl",
   "TarballFileNameParser": "std",
+  "TarballName": "dgen-sdl",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "dgen"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "warzone2100",
   "TarballFileNameParser": "std",
+  "TarballName": "warzone2100",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "warzone2100"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

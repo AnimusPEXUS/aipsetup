@@ -23,8 +23,8 @@
   "Groups": [
     "langs"
   ],
-  "TarballName": "rustc",
   "TarballFileNameParser": "std",
+  "TarballName": "rustc",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "TagName:^$",
     "TagStatus:"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "personal",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

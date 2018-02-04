@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "libxfce4util",
   "TarballFileNameParser": "std",
+  "TarballName": "libxfce4util",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

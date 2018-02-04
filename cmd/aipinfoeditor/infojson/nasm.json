@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "nasm",
   "TarballFileNameParser": "std",
+  "TarballName": "nasm",
   "TarballFilters": [
     "- basename-re doc",
     "- basename-re macosx",
@@ -38,8 +38,8 @@
     "http://www.nasm.us/pub/nasm/releasebuilds/",
     "rc\\d"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

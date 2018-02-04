@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "cairo-5c",
   "TarballFileNameParser": "std",
+  "TarballName": "cairo-5c",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     ""
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

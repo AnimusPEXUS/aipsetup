@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "jpegsrc.v",
   "TarballFileNameParser": "std",
+  "TarballName": "jpegsrc.v",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "libjpeg"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

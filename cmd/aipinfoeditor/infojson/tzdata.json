@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "tzdata",
   "TarballFileNameParser": "slang",
+  "TarballName": "tzdata",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://data.iana.org/time-zones/releases/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": -1,
-  "TarballVersionTool": "slang"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "slang",
+  "TarballVersionComparator": "slang"
 }

@@ -24,8 +24,8 @@
     "",
     "netfilter"
   ],
-  "TarballName": "libnfnetlink",
   "TarballFileNameParser": "std",
+  "TarballName": "libnfnetlink",
   "TarballFilters": [
     ""
   ],
@@ -36,8 +36,8 @@
     "libnfnetlink",
     "TagName:^libnfnetlink$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

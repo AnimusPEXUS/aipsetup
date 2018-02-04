@@ -23,8 +23,8 @@
   "Groups": [
     "netfilter"
   ],
-  "TarballName": "ulogd2",
   "TarballFileNameParser": "std",
+  "TarballName": "ulogd2",
   "TarballFilters": [
     ""
   ],
@@ -35,8 +35,8 @@
     "ulogd2",
     "TagName:^ulogd$"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

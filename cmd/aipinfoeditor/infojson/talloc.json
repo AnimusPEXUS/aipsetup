@@ -23,8 +23,8 @@
   "Groups": [
     "core0"
   ],
-  "TarballName": "talloc",
   "TarballFileNameParser": "std",
+  "TarballName": "talloc",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "https://www.samba.org/ftp/talloc/"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

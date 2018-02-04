@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "mysql",
   "TarballFileNameParser": "std",
+  "TarballName": "mysql",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "squirrel-sql"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

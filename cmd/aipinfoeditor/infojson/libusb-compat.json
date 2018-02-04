@@ -23,8 +23,8 @@
   "Groups": [
     ""
   ],
-  "TarballName": "libusb-compat",
   "TarballFileNameParser": "std",
+  "TarballName": "libusb-compat",
   "TarballFilters": [
     ""
   ],
@@ -32,8 +32,8 @@
   "TarballProviderArguments": [
     "libusb"
   ],
-  "TarballProviderUseCache": false,
-  "TarballProviderCachePresetName": "",
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "std"
+  "TarballVersionTool": "",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }
