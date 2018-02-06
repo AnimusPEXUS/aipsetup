@@ -32,7 +32,6 @@ type PackageInfo struct {
 	TarballProviderArguments        []string // `json:"tarball_provider_arguments"`
 	TarballProviderVersionSyncDepth int
 
-	TarballVersionTool         string
 	TarballStabilityClassifier string
 	TarballVersionComparator   string
 }

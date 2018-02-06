@@ -18,7 +18,7 @@ import (
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
 	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
-	"github.com/AnimusPEXUS/utils/version"
+	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
 
 func SectionAipsetupBuild() *cliapp.AppCmdNode {
@@ -530,12 +530,17 @@ func CmdAipsetupBuildGetSrc(
 			return err
 		}
 
-		version_tool, err := tarballstabilityclassification.Get(name_info.TarballVersionTool)
+		c, err := versioncomparators.Get(name_info.TarballVersionComparator)
 		if err != nil {
 			return err
 		}
 
-		err = version.SortByVersion(tarballs, p)
+		version_tool, err := tarballstabilityclassification.Get(name_info.TarballStabilityClassifier)
+		if err != nil {
+			return err
+		}
+
+		err = c.SortStrings(tarballs, p)
 		if err != nil {
 			return err
 		}

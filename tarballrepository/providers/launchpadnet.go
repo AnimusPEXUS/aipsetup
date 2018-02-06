@@ -16,6 +16,7 @@ import (
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/version"
+	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
 
 var _ types.ProviderI = &ProviderLaunchpadNet{}
@@ -142,6 +143,11 @@ func (self *ProviderLaunchpadNet) PerformUpdate() error {
 		return err
 	}
 
+	comparator, err := versioncomparators.Get(self.pkg_info.TarballVersionComparator)
+	if err != nil {
+		return err
+	}
+
 	for _, i := range tree_keys {
 		if strings.HasSuffix(i, "/") {
 			continue
@@ -207,7 +213,7 @@ func (self *ProviderLaunchpadNet) PerformUpdate() error {
 		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
-	err = version.SortByVersion(res, parser)
+	err = comparator.SortStrings(res, parser)
 	if err != nil {
 		return err
 	}

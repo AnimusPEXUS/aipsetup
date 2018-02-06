@@ -6,11 +6,11 @@ import (
 	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/versionfilterfunctions"
 	"github.com/AnimusPEXUS/utils/set"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnamefilterfunctions"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/textlist"
-	"github.com/AnimusPEXUS/utils/version/versionfilterfunctions"
 )
 
 func Get(name string) (*basictypes.PackageInfo, error) {

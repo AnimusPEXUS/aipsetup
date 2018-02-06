@@ -46,11 +46,12 @@ import (
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/version"
+	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
 
-const GithubDefaultTagParser = "std"
-const GithubDefaultTagName = "v"
-const GithubDefaultTagStatus = `^$`
+// const GithubDefaultTagParser = "std"
+// const GithubDefaultTagName = "v"
+// const GithubDefaultTagStatus = `^$`
 
 var _ types.ProviderI = &ProviderSRS{}
 
@@ -219,25 +220,36 @@ func (self *ProviderSRS) MakeTarballsGit(
 
 	TagParser, _ := t.GetSingle("TagParser", true)
 	if TagParser == "" {
-		TagParser = GithubDefaultTagParser
+		TagParser = self.pkg_info.TarballFileNameParser
 	}
 
 	TagName, _ := t.GetSingle("TagName", true)
 	if TagName == "" {
-		TagName = GithubDefaultTagName
+		TagName = "v"
 	}
 
 	TagStatus, _ := t.GetSingle("TagStatus", true)
 	if TagStatus == "" {
-		TagStatus = GithubDefaultTagStatus
+		TagStatus = "^$"
 	}
 
+	TagComparator, _ := t.GetSingle("TagComparator", true)
+	if TagStatus == "" {
+		TagComparator = self.pkg_info.TarballVersionComparator
+	}
+
+	// TODO: do srs SyncDepth should also be moved from InfoDB to srs args?
 	truncate_versions := info.TarballProviderVersionSyncDepth
 	if truncate_versions == 0 {
 		truncate_versions = 3
 	}
 
 	parser, err := tarballnameparsers.Get(TagParser)
+	if err != nil {
+		return err
+	}
+
+	comparator, err := versioncomparators.Get(TagComparator)
 	if err != nil {
 		return err
 	}
@@ -343,7 +355,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 			self.log.Info(fmt.Sprintf("  %s", i))
 		}
 
-		err = version.SortByVersion(res, parser)
+		err = comparator.SortStrings(res, parser)
 		if err != nil {
 			return err
 		}
