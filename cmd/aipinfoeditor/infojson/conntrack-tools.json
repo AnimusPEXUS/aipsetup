@@ -36,7 +36,6 @@
     "TagName:^conntrack-tools$"
   ],
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

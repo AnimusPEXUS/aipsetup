@@ -1,35 +1,33 @@
 package basictypes
 
 type PackageInfo struct {
-	// Name string `json:"name"`
+	Description string
+	HomePage    string
 
-	Description string //`json:"description"`
-	HomePage    string //`json:"homepage"`
+	BuilderName string
 
-	BuilderName string //`json:"builder_name"`
+	Removable          bool
+	Reducible          bool
+	NonInstallable     bool
+	Deprecated         bool
+	PrimaryInstallOnly bool
 
-	Removable          bool //`json:"removable"`
-	Reducible          bool //`json:"reducible"`
-	NonInstallable     bool //`json:"non_installable"`
-	Deprecated         bool //`json:"deprecated"`
-	PrimaryInstallOnly bool //`json:"primary_install_only"`
+	BuildDeps   []string
+	SODeps      []string
+	RunTimeDeps []string
 
-	BuildDeps   []string //`json:"build_deps"`
-	SODeps      []string //`json:"so_deps"`
-	RunTimeDeps []string //`json:"runtime_deps"`
-
-	Tags     []string //`json:"tags"`
+	Tags     []string
 	Category string
 	Groups   []string
 
-	TarballFileNameParser string //`json:"tarball_filename_parser"`
+	TarballFileNameParser string
 
-	TarballName string //`json:"tarball_name"`
+	TarballName string
 
 	TarballFilters []string
 
-	TarballProvider                 string   //`json:"tarball_provider"`
-	TarballProviderArguments        []string // `json:"tarball_provider_arguments"`
+	TarballProvider                 string
+	TarballProviderArguments        []string
 	TarballProviderVersionSyncDepth int
 
 	TarballStabilityClassifier string

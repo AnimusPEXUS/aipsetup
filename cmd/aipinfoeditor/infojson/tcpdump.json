@@ -33,7 +33,6 @@
     "https://www.tcpdump.org/release/"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

@@ -34,7 +34,6 @@
     "libseccomp"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

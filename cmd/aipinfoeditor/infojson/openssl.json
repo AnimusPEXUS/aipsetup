@@ -35,12 +35,10 @@
     "git",
     "https://github.com/openssl/openssl.git",
     "openssl",
-    "TagParser:openssl",
     "TagName:^OpenSSL$",
-    "TagStatus:^[a-z]+$"
+    "TagStatus:^[a-z]{0,3}$"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "openssl",
   "TarballVersionComparator": "openssl"
 }

@@ -234,7 +234,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 	}
 
 	TagComparator, _ := t.GetSingle("TagComparator", true)
-	if TagStatus == "" {
+	if TagComparator == "" {
 		TagComparator = self.pkg_info.TarballVersionComparator
 	}
 
@@ -277,14 +277,6 @@ func (self *ProviderSRS) MakeTarballsGit(
 				continue
 			}
 
-			// if fres, err := pkginfodb.ApplyInfoFilter(self.pkg_info, []string{i}); err != nil {
-			// 	return err
-			// } else {
-			// 	if len(fres) == 0 {
-			// 		continue
-			// 	}
-			// }
-
 			matched, err := regexp.MatchString(TagName, parse_res.Name)
 			if err != nil {
 				return err
@@ -298,7 +290,6 @@ func (self *ProviderSRS) MakeTarballsGit(
 			if err != nil {
 				return err
 			}
-			fmt.Println("TagStatus, parse_res.Status.DirtyStr matched", TagStatus, "|", parse_res.Status.DirtyStr, "|", matched)
 
 			if !matched {
 				continue
@@ -313,6 +304,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 		version_tree, err := version.NewVersionTree(
 			TagName,
 			parser,
+			comparator,
 		)
 		if err != nil {
 			return err
@@ -320,6 +312,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 
 		for _, i := range acceptable_tags {
 			b := path.Base(i)
+
 			err = version_tree.Add(b)
 			if err != nil {
 				return err
@@ -398,11 +391,14 @@ func (self *ProviderSRS) MakeTarballsGit(
 				return err
 			}
 
-			tag_filename_noext := (&tarballname.ParsedTarballName{
+			tag_filename_noext, err := parser.Render(&tarballname.ParsedTarballName{
 				Name:    info.TarballName,
 				Version: i_parsed.Version,
 				Status:  i_parsed.Status,
-			}).Render(false)
+			})
+			if err != nil {
+				return err
+			}
 
 			tag_filename := tag_filename_noext + ".tar.xz"
 
@@ -417,8 +413,6 @@ func (self *ProviderSRS) MakeTarballsGit(
 			}
 
 			target_file := self.repo.GetTarballFilePath(self.pkg_name, tag_filename)
-
-			// fmt.Println("target_file", target_file)
 
 			self.log.Info(fmt.Sprintf("archiving %s (%s)", i, tag_filename))
 

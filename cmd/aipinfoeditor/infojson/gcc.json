@@ -35,7 +35,6 @@
     "https://ftp.gnu.org/gnu/gcc"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "gcc",
   "TarballVersionComparator": "gcc"
 }

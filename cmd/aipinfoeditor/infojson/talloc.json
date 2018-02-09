@@ -33,7 +33,6 @@
     "https://www.samba.org/ftp/talloc/"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

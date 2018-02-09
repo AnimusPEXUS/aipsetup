@@ -33,7 +33,6 @@
     "https://ftp.gnu.org/gnu/slib"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

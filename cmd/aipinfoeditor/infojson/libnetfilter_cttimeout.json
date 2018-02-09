@@ -36,7 +36,6 @@
     "TagName:^libnetfilter_cttimeout$"
   ],
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

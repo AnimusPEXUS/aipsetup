@@ -33,7 +33,6 @@
     "https://data.iana.org/time-zones/releases/"
   ],
   "TarballProviderVersionSyncDepth": -1,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "slang",
   "TarballVersionComparator": "slang"
 }

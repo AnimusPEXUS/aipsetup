@@ -34,7 +34,6 @@
     "https://ftp.gnu.org/gnu/libtasn1"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

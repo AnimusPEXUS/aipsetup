@@ -202,6 +202,7 @@ func (self *ProviderHttps) PerformUpdate() error {
 	version_tree, err := version.NewVersionTree(
 		self.pkg_info.TarballName,
 		parser,
+		comparator,
 	)
 	if err != nil {
 		return err

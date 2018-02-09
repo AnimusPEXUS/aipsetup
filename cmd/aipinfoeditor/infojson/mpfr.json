@@ -35,7 +35,6 @@
     "https://ftp.gnu.org/gnu/mpfr"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

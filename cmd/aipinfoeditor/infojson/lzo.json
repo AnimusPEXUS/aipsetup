@@ -33,7 +33,6 @@
     "http://www.oberhumer.com/opensource/lzo/download/"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

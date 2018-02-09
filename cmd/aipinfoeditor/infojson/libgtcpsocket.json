@@ -33,7 +33,6 @@
     "https://ftp.gnome.org/mirror/gnome.org/"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "gnome",
   "TarballVersionComparator": "gnome"
 }

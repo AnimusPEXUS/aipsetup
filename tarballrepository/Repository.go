@@ -301,17 +301,11 @@ func (self *Repository) MoveInTarball(filename string) error {
 		return err
 	}
 
-	// fmt.Println("found", len(res), "matches:")
-	// for pkgname, _ := range res {
-	// 	fmt.Println("   ", pkgname)
-	// }
-
 	if len(res) != 1 {
 		return fmt.Errorf("invalid number of recognized results: %d", len(res))
 	}
 
 	var pkgname string
-	// var info *basictypes.PackageInfo
 
 	for pkgname, _ = range res {
 		break

@@ -36,7 +36,6 @@
     "TagName:^nfacct$"
   ],
   "TarballProviderVersionSyncDepth": 3,
-  "TarballVersionTool": "",
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

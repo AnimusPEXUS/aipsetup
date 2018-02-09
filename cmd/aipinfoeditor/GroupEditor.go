@@ -333,17 +333,6 @@ func (self *GroupEditor) ReloadInfo() error {
 		}
 	}
 
-	// {
-	// 	s, err := d.TreeString()
-	// 	if err != nil {
-	// 		fmt.Println("tree error", err)
-	// 	} else {
-	// 		fmt.Println("tree")
-	// 		fmt.Println(s)
-	// 	}
-	//
-	// }
-
 	d.Walk(
 		func(path []*directory.File, dirs, files []*directory.File) error {
 
