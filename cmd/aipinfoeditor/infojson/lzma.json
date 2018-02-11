@@ -1,8 +1,8 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.greenwoodsoftware.com/less/",
-  "BuilderName": "less",
-  "Removable": true,
+  "HomePage": "http://www.tukaani.org",
+  "BuilderName": "std",
+  "Removable": false,
   "Reducible": true,
   "NonInstallable": false,
   "Deprecated": false,
@@ -17,24 +17,26 @@
     ""
   ],
   "Tags": [
-    "gnu_project",
     "group:core0"
   ],
-  "Category": "gnu",
+  "Category": "non_categorized",
   "Groups": [
     "core0",
-    "fi"
+    "fi",
+    "fib"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "less",
+  "TarballName": "lzma",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://ftp.gnu.org/gnu/less"
+    "git",
+    "https://git.tukaani.org/lzma.git",
+    "lzma"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "less",
+  "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

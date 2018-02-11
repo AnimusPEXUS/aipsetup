@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.sgi.com",
+  "HomePage": "http://xfs.org",
   "BuilderName": "xfs",
   "Removable": true,
   "Reducible": true,
@@ -30,9 +30,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://git.savannah.nongnu.org/git/acl.git",
+    "acl"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

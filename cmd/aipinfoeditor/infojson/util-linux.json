@@ -31,9 +31,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/"
+    "git",
+    "git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git",
+    "util-linux",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

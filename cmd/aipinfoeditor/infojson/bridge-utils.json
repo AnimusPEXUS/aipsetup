@@ -1,11 +1,11 @@
 {
-  "Description": "write something here, please",
+  "Description": "deprecated https://www.google.com/url?sa=t\u0026rct=j\u0026q=\u0026esrc=s\u0026source=web\u0026cd=1\u0026cad=rja\u0026uact=8\u0026ved=0ahUKEwiThYi5-Z3ZAhVJKywKHZdDAscQFggrMAA\u0026url=https%3A%2F%2Ffedoramagazine.org%2Fbuild-network-bridge-fedora%2F\u0026usg=AOvVaw3n9SkjCquOyxkbkcvJ1EXQ \n use iproute2",
   "HomePage": "https://sourceforge.net/projects/bridge",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildDeps": [
     ""

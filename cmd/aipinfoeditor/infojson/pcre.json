@@ -1,6 +1,6 @@
 {
-  "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/qpdf",
+  "Description": "",
+  "HomePage": "https://www.pcre.org/",
   "BuilderName": "pcre",
   "Removable": true,
   "Reducible": true,
@@ -28,11 +28,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "pcre",
   "TarballFilters": [
-    ""
+    "- !tarball-status-re ^$"
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "qpdf"
+    "https://ftp.pcre.org/pub/pcre/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

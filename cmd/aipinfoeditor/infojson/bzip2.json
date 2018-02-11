@@ -31,7 +31,7 @@
   ],
   "TarballProvider": "",
   "TarballProviderArguments": [
-    ""
+    "http://bzip.org/downloads.html"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

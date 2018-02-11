@@ -30,8 +30,10 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
+    "https://gitlab.com/procps-ng/procps.git",
     "procps-ng"
   ],
   "TarballProviderVersionSyncDepth": 0,

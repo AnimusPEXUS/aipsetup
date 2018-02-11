@@ -31,11 +31,14 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/"
+    "git",
+    "git://anongit.freedesktop.org/pkg-config",
+    "pkg-config",
+    "TagName:pkg-config"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "std"
 }

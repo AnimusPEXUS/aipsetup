@@ -32,7 +32,7 @@
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/autoconf"
   ],
-  "TarballProviderVersionSyncDepth": 0,
+  "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

@@ -26,11 +26,16 @@
   "TarballFileNameParser": "std",
   "TarballName": "libcap",
   "TarballFilters": [
-    ""
+    "- basename-re \\d{4}",
+    "- version-\u003e= 2"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://git.kernel.org/pub/scm/linux/kernel/git/morgan/libcap.git",
+    "libcap",
+    "TagName:^libcap$",
+    "TagFilters:+"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

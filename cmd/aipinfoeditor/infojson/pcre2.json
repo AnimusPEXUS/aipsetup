@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "http://www.csx.cam.ac.uk",
+  "HomePage": "https://www.pcre.org/",
   "BuilderName": "pcre",
   "Removable": true,
   "Reducible": true,
@@ -27,11 +27,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "pcre2",
   "TarballFilters": [
-    ""
+    "- !tarball-status-re ^$"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://ftp.pcre.org/pub/pcre/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

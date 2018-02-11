@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/libpng",
+  "HomePage": "https://www.zlib.net/",
   "BuilderName": "zlib",
   "Removable": true,
   "Reducible": true,
@@ -31,9 +31,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "libpng"
+    "git",
+    "https://github.com/madler/zlib.git",
+    "zlib"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

@@ -40,6 +40,7 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tags"
@@ -238,6 +239,8 @@ func (self *ProviderSRS) MakeTarballsGit(
 		TagComparator = self.pkg_info.TarballVersionComparator
 	}
 
+	TagFilters, TagFiltersUse := t.GetSingle("TagFilters", true)
+
 	// TODO: do srs SyncDepth should also be moved from InfoDB to srs args?
 	truncate_versions := info.TarballProviderVersionSyncDepth
 	if truncate_versions == 0 {
@@ -293,6 +296,31 @@ func (self *ProviderSRS) MakeTarballsGit(
 
 			if !matched {
 				continue
+			}
+
+			if TagFiltersUse {
+				info := self.pkg_info
+				switch TagFilters {
+				case "+":
+					info = self.pkg_info
+				default:
+					var err error
+					info, err = pkginfodb.Get(TagFilters)
+					if err != nil {
+						return errors.New("can't get named info filters for srs")
+					}
+				}
+				fres, err := pkginfodb.ApplyInfoFilter(
+					info,
+					[]string{i},
+				)
+				if err != nil {
+					return err
+				}
+
+				if len(fres) != 1 {
+					continue
+				}
 			}
 
 			acceptable_tags = append(acceptable_tags, i)
@@ -414,7 +442,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 
 			target_file := self.repo.GetTarballFilePath(self.pkg_name, tag_filename)
 
-			self.log.Info(fmt.Sprintf("archiving %s (%s)", i, tag_filename))
+			self.log.Info(fmt.Sprintf("  archiving %s (%s)", i, tag_filename))
 
 			c := exec.Command(
 				"git",

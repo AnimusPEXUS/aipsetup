@@ -41,6 +41,6 @@
     "TagStatus:"
   ],
   "TarballProviderVersionSyncDepth": 3,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "gnome",
   "TarballVersionComparator": "std"
 }

@@ -30,9 +30,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/"
+    "git",
+    "https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git",
+    "kmod"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

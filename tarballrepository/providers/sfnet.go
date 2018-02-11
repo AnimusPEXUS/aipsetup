@@ -166,7 +166,10 @@ func (self *ProviderSFNet) PerformUpdate() error {
 			continue
 		}
 
-		fres, err := pkginfodb.ApplyInfoFilter(self.pkg_info, []string{i})
+		fres, err := pkginfodb.ApplyInfoFilter(
+			self.pkg_info,
+			[]string{i},
+		)
 		if err != nil {
 			return err
 		}

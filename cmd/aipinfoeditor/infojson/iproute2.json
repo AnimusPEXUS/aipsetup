@@ -30,9 +30,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/"
+    "git",
+    "https://git.kernel.org/pub/scm/network/iproute2/iproute2.git",
+    "iproute2"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
