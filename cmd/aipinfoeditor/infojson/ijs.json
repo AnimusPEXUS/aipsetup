@@ -1,11 +1,11 @@
 {
-  "Description": "None",
-  "HomePage": "http://www.openprinting.org/download/ijs/",
+  "Description": "part of ghostscript",
+  "HomePage": "https://www.openprinting.org/download/ijs/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildDeps": [
     ""

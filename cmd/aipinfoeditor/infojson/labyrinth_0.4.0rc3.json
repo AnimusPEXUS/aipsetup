@@ -1,0 +1,38 @@
+{
+  "Description": "",
+  "HomePage": "https://wiki.gnome.org/Projects/",
+  "BuilderName": "",
+  "Removable": false,
+  "Reducible": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    ""
+  ],
+  "Category": "wm/gnome",
+  "Groups": [
+    "gnome"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "labyrinth_0.4.0rc3",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnome.org/mirror/gnome.org/sources/labyrinth_0.4.0rc3"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "std"
+}

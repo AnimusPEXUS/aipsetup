@@ -179,25 +179,57 @@ func (self *ProviderSRS) GetAndUpdateGit(
 
 		self.log.Info(fmt.Sprintf("getting %s", git_source_url))
 
+		// "--recurse-submodules",
 		c := exec.Command("git", "clone", git_source_url, ".")
 		c.Dir = git_dir
 		c.Stdout = os.Stdout
 		c.Stderr = os.Stderr
 
-		return c.Run()
+		err = c.Run()
+		if err != nil {
+			return err
+		}
 
 	} else {
 
 		self.log.Info(fmt.Sprintf("updating %s", git_source_url))
 
+		// , "--recurse-submodules"
 		c := exec.Command("git", "pull")
 		c.Dir = git_dir
 		c.Stdout = os.Stdout
 		c.Stderr = os.Stderr
 
-		return c.Run()
+		err = c.Run()
+		if err != nil {
+			return err
+		}
 
 	}
+
+	// self.log.Info(fmt.Sprintf("initiating submodules %s", git_source_url))
+	//
+	// c := exec.Command("git", "submodule", "init")
+	// c.Dir = git_dir
+	// c.Stdout = os.Stdout
+	// c.Stderr = os.Stderr
+	//
+	// err = c.Run()
+	// if err != nil {
+	// 	return err
+	// }
+	//
+	// self.log.Info(fmt.Sprintf("updating submodules %s", git_source_url))
+	//
+	// c = exec.Command("git", "submodule", "update")
+	// c.Dir = git_dir
+	// c.Stdout = os.Stdout
+	// c.Stderr = os.Stderr
+	//
+	// err = c.Run()
+	// if err != nil {
+	// 	return err
+	// }
 
 	return nil
 }
@@ -219,24 +251,24 @@ func (self *ProviderSRS) MakeTarballsGit(
 		}
 	}
 
-	TagParser, _ := t.GetSingle("TagParser", true)
-	if TagParser == "" {
-		TagParser = self.pkg_info.TarballFileNameParser
+	TagParser := self.pkg_info.TarballFileNameParser
+	if tt, ok := t.GetSingle("TagParser", true); ok {
+		TagParser = tt
 	}
 
-	TagName, _ := t.GetSingle("TagName", true)
-	if TagName == "" {
-		TagName = "v"
+	TagName := "v"
+	if tt, ok := t.GetSingle("TagName", true); ok {
+		TagName = tt
 	}
 
-	TagStatus, _ := t.GetSingle("TagStatus", true)
-	if TagStatus == "" {
-		TagStatus = "^$"
+	TagStatus := "^$"
+	if tt, ok := t.GetSingle("TagStatus", true); ok {
+		TagStatus = tt
 	}
 
-	TagComparator, _ := t.GetSingle("TagComparator", true)
-	if TagComparator == "" {
-		TagComparator = self.pkg_info.TarballVersionComparator
+	TagComparator := self.pkg_info.TarballVersionComparator
+	if tt, ok := t.GetSingle("TagComparator", true); ok {
+		TagComparator = tt
 	}
 
 	TagFilters, TagFiltersUse := t.GetSingle("TagFilters", true)

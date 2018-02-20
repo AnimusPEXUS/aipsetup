@@ -1,0 +1,38 @@
+{
+  "Description": "",
+  "HomePage": "https://wiki.gnome.org/Projects/",
+  "BuilderName": "",
+  "Removable": false,
+  "Reducible": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    ""
+  ],
+  "Category": "wm/gnome",
+  "Groups": [
+    "gnome"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "rep-gtk-2002-04",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnome.org/mirror/gnome.org/sources/rep-gtk-2002-04"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "std"
+}

@@ -1,0 +1,41 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.graphviz.org/",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildDeps": [
+    ""
+  ],
+  "SODeps": [
+    ""
+  ],
+  "RunTimeDeps": [
+    ""
+  ],
+  "Tags": [
+    "group:core1"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core1"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "webdot",
+  "TarballFilters": [
+    ""
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://gitlab.com/graphviz/webdot.git",
+    "graphviz",
+    "TagName:^stable_release$"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
+}

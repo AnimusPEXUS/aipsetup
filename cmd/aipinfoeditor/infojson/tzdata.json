@@ -23,7 +23,7 @@
   "Groups": [
     "core0"
   ],
-  "TarballFileNameParser": "slang",
+  "TarballFileNameParser": "openssl",
   "TarballName": "tzdata",
   "TarballFilters": [
     ""
@@ -33,6 +33,6 @@
     "https://data.iana.org/time-zones/releases/"
   ],
   "TarballProviderVersionSyncDepth": -1,
-  "TarballStabilityClassifier": "slang",
-  "TarballVersionComparator": "slang"
+  "TarballStabilityClassifier": "openssl",
+  "TarballVersionComparator": "openssl"
 }

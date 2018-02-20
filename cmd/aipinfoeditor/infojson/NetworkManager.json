@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://gnome.org/",
+  "HomePage": "https://wiki.gnome.org/Projects/",
   "BuilderName": "NetworkManager",
   "Removable": true,
   "Reducible": true,
@@ -20,9 +20,10 @@
     "gnome_project",
     "group:core1"
   ],
-  "Category": "wm_gnome",
+  "Category": "wm/gnome",
   "Groups": [
-    "core1"
+    "core1",
+    "gnome"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "NetworkManager",
@@ -31,9 +32,9 @@
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/"
+    "https://ftp.gnome.org/mirror/gnome.org/sources/NetworkManager"
   ],
-  "TarballProviderVersionSyncDepth": 0,
+  "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "std"
 }

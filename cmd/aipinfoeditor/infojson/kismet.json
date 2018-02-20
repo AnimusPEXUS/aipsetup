@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.kismetwireless.net",
+  "HomePage": "https://www.kismetwireless.net/",
   "BuilderName": "kismet",
   "Removable": true,
   "Reducible": true,
@@ -26,13 +26,18 @@
   "TarballFileNameParser": "std",
   "TarballName": "kismet",
   "TarballFilters": [
-    ""
+    "- !basename-re ^[kK]ismet\\-\\d{4}\\-\\d{2}(\\-[Rr][Cc]?\\d+)?(\\.|$)"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://www.kismetwireless.net/git/kismet.git",
+    "kismet",
+    "TagName:^[kK]ismet$",
+    "TagStatus:",
+    "TagFilters:+"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
-  "TarballVersionComparator": "std"
+  "TarballStabilityClassifier": "kismet",
+  "TarballVersionComparator": "kismet"
 }

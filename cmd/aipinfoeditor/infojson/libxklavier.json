@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/gswitchit",
+  "HomePage": "https://wiki.gnome.org/Projects/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -20,7 +20,7 @@
     "gnome_project",
     "sf_hosted:gswitchit"
   ],
-  "Category": "wm_gnome",
+  "Category": "wm/gnome",
   "Groups": [
     ""
   ],
@@ -29,11 +29,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "gswitchit"
+    "https://ftp.gnome.org/mirror/gnome.org/sources/libxklavier"
   ],
-  "TarballProviderVersionSyncDepth": 0,
+  "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "std"
 }

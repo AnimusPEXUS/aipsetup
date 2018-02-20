@@ -23,16 +23,19 @@
   "Groups": [
     "core1"
   ],
-  "TarballFileNameParser": "std",
+  "TarballFileNameParser": "openssh",
   "TarballName": "bind",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/isc-projects/bind9.git",
+    "bind",
+    "TagStatus:^[pP]\\d+$"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
-  "TarballVersionComparator": "std"
+  "TarballStabilityClassifier": "openssh",
+  "TarballVersionComparator": "openssh"
 }

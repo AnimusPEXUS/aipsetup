@@ -5,7 +5,7 @@
   "Removable": true,
   "Reducible": true,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildDeps": [
     ""

@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://gnome.org/",
+  "HomePage": "http://xmlsoft.org",
   "BuilderName": "libxslt",
   "Removable": true,
   "Reducible": true,
@@ -19,8 +19,10 @@
   "Tags": [
     "gnome_project"
   ],
-  "Category": "wm_gnome",
+  "Category": "wm/gnome",
   "Groups": [
+    "gnome",
+    "gtk",
     "xml"
   ],
   "TarballFileNameParser": "std",
@@ -28,11 +30,13 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/"
+    "git",
+    "https://git.gnome.org/browse/libxslt",
+    "libxslt"
   ],
-  "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std"
 }

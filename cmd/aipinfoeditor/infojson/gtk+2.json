@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://gnome.org/",
+  "HomePage": "https://wiki.gnome.org/Projects/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -21,19 +21,19 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "gtk",
-    "gtk2"
+    "gtk"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "gtk+2",
+  "TarballName": "gtk+",
   "TarballFilters": [
-    ""
+    "- version-\u003e= 3",
+    "- basename-re [89]\\d+"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/"
+    "https://ftp.gnome.org/mirror/gnome.org/sources/gtk+"
   ],
-  "TarballProviderVersionSyncDepth": 0,
+  "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "std"
 }

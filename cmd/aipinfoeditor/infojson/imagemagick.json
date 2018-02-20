@@ -28,11 +28,15 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/ImageMagick/ImageMagick.git",
+    "ImageMagick",
+    "TagName:^$",
+    "TagStatus:"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
-  "TarballVersionComparator": "std"
+  "TarballVersionComparator": "ImageMagick"
 }

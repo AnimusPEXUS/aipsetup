@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.x.org",
+  "HomePage": "https://www.x.org/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -26,11 +26,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "xprop",
   "TarballFilters": [
-    ""
+    "- basename-re 9\\d+"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.mirrorservice.org/sites/ftp.x.org/pub/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

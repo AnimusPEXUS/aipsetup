@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/boost",
+  "HomePage": "https://boost.org/",
   "BuilderName": "boost",
   "Removable": true,
   "Reducible": true,
@@ -29,9 +29,10 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "boost"
+    "https://dl.bintray.com/boostorg/release/",
+    "binar"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

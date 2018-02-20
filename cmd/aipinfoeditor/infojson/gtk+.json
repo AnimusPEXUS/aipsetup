@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/xfce",
+  "HomePage": "https://wiki.gnome.org/Projects/",
   "BuilderName": "gtk3",
   "Removable": true,
   "Reducible": true,
@@ -20,20 +20,22 @@
     "gnome_project",
     "sf_hosted:xfce"
   ],
-  "Category": "wm_gnome",
+  "Category": "wm/gnome",
   "Groups": [
+    "gnome",
     "gtk"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "gtk+",
   "TarballFilters": [
-    ""
+    "- version-\u003c 3",
+    "- basename-re [89]\\d+"
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "xfce"
+    "https://ftp.gnome.org/mirror/gnome.org/sources/gtk+"
   ],
-  "TarballProviderVersionSyncDepth": 0,
+  "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "std"
 }

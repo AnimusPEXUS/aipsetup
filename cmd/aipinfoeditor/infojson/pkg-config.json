@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://gnome.org/",
+  "HomePage": "https://www.freedesktop.org/wiki/Software/pkg-config/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -20,7 +20,7 @@
     "gnome_project",
     "group:core0"
   ],
-  "Category": "freedesktop/pkgconfig",
+  "Category": "freedesktop",
   "Groups": [
     "core0",
     "fd",
@@ -31,14 +31,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "srs",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "git",
-    "git://anongit.freedesktop.org/pkg-config",
-    "pkg-config",
-    "TagName:pkg-config"
+    "https://pkg-config.freedesktop.org/releases/"
   ],
-  "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "gnome",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std"
 }

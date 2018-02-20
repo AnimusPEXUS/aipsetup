@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://www.gnu.org/software/ghostscript",
+  "HomePage": "https://www.ghostscript.com/",
   "BuilderName": "ghostscript",
   "Removable": true,
   "Reducible": true,
@@ -19,8 +19,9 @@
   "Tags": [
     "gnu_project"
   ],
-  "Category": "gnu",
+  "Category": "",
   "Groups": [
+    "core1",
     "media"
   ],
   "TarballFileNameParser": "std",
@@ -28,9 +29,13 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://ftp.gnu.org/gnu/ghostscript"
+    "git",
+    "git://git.ghostscript.com/ghostpdl.git",
+    "ghostscript",
+    "TagName:^ghostscript$",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

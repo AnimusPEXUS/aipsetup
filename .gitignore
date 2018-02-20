@@ -5,3 +5,4 @@
 *.qtpl.go
 *.glade~
 /cmd/aipinfoeditor/editors/netfilter
+/cmd/aipinfoeditor/editors/gnome

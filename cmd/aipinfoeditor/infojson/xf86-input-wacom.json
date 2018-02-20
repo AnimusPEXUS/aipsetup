@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "https://sourceforge.net/projects/linuxwacom",
+  "HomePage": "https://www.x.org/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -26,11 +26,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "xf86-input-wacom",
   "TarballFilters": [
-    ""
+    "- basename-re 9\\d+"
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "linuxwacom"
+    "https://www.mirrorservice.org/sites/ftp.x.org/pub/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

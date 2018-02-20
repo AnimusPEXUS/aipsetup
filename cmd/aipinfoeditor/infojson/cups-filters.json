@@ -26,11 +26,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "cups-filters",
   "TarballFilters": [
-    ""
+    "- basename-re \\d{4}"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.openprinting.org/download/cups-filters/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

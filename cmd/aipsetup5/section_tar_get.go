@@ -171,6 +171,8 @@ func CmdAipsetupTarGetFor(
 			}
 		}
 
+		sort.Strings(pkgs)
+
 		for _, i := range pkgs {
 			err := get_by_name_func(i)
 

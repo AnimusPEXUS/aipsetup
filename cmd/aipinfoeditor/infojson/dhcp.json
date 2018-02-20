@@ -1,11 +1,11 @@
 {
-  "Description": "write something here, please",
+  "Description": "new dhcp is kea",
   "HomePage": "http://www.isc.org",
   "BuilderName": "dhcp",
   "Removable": true,
   "Reducible": true,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildDeps": [
     ""

@@ -28,9 +28,14 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://ftp.isc.org/isc/inn/",
+    "contrib",
+    "snap",
+    "OLD",
+    "extra",
+    "test"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

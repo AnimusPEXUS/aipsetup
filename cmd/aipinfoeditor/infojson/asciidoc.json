@@ -29,9 +29,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "asciidoc"
+    "git",
+    "https://github.com/asciidoc/asciidoc",
+    "asciidoc",
+    "TagName:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

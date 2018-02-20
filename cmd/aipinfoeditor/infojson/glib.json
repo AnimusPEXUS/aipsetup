@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://gnome.org/",
+  "HomePage": "https://wiki.gnome.org/Projects/",
   "BuilderName": "glib",
   "Removable": true,
   "Reducible": true,
@@ -20,10 +20,11 @@
     "gnome_project",
     "group:core0"
   ],
-  "Category": "wm_gnome",
+  "Category": "wm/gnome",
   "Groups": [
     "core0",
     "fi",
+    "gnome",
     "gtk"
   ],
   "TarballFileNameParser": "std",
@@ -33,9 +34,9 @@
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/"
+    "https://ftp.gnome.org/mirror/gnome.org/sources/glib"
   ],
-  "TarballProviderVersionSyncDepth": 0,
+  "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "std"
 }

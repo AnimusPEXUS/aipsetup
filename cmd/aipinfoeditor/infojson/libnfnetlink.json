@@ -21,8 +21,7 @@
   ],
   "Category": "nettools",
   "Groups": [
-    "",
-    "netfilter"
+    ""
   ],
   "TarballFileNameParser": "std",
   "TarballName": "libnfnetlink",

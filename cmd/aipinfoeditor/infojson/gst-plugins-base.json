@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://gnome.org/",
+  "HomePage": "https://wiki.gnome.org/Projects/",
   "BuilderName": "gst_plugins_base",
   "Removable": true,
   "Reducible": true,
@@ -19,8 +19,9 @@
   "Tags": [
     "gnome_project"
   ],
-  "Category": "non_categorized",
+  "Category": "wm/gnome",
   "Groups": [
+    "gnome",
     "media"
   ],
   "TarballFileNameParser": "std",
@@ -30,9 +31,9 @@
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/"
+    "https://ftp.gnome.org/mirror/gnome.org/sources/gst-plugins-base"
   ],
-  "TarballProviderVersionSyncDepth": 0,
+  "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "std"
 }

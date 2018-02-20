@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "https://github.com/anholt/libepoxy",
+  "HomePage": "https://wiki.gnome.org/Projects/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -20,23 +20,21 @@
     "github_hosted",
     "gnome_project"
   ],
-  "Category": "non_categorized",
+  "Category": "wm/gnome",
   "Groups": [
-    "fd"
+    "fd",
+    "gnome"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "libepoxy",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "srs",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "git",
-    "https://github.com/anholt/libepoxy.git",
-    "libepoxy",
-    "TagStatus:"
+    "https://ftp.gnome.org/mirror/gnome.org/sources/libepoxy"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "std"
 }

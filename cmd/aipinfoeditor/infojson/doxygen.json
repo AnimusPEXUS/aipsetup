@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/doxygen",
+  "HomePage": "https://www.doxygen.org/",
   "BuilderName": "doxygen",
   "Removable": true,
   "Reducible": true,
@@ -27,11 +27,15 @@
   "TarballFileNameParser": "std",
   "TarballName": "doxygen",
   "TarballFilters": [
-    ""
+    "- basename-re \\d{4}"
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "doxygen"
+    "git",
+    "https://github.com/doxygen/doxygen.git",
+    "doxygen",
+    "TagName:^Release$",
+    "TagFilters:+"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

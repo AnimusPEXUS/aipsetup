@@ -29,9 +29,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/"
+    "git",
+    "https://git.kernel.org/pub/scm/bluetooth/bluez.git",
+    "bluez",
+    "TagName:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

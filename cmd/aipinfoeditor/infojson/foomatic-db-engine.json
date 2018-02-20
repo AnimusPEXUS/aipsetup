@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.openprinting.org/download/foomatic",
+  "HomePage": "https://www.openprinting.org/download/foomatic",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -26,11 +26,12 @@
   "TarballFileNameParser": "std",
   "TarballName": "foomatic-db-engine",
   "TarballFilters": [
-    ""
+    "- basename-re \\d{4}",
+    "- !tarball-status-re ^$"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.openprinting.org/download/foomatic/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

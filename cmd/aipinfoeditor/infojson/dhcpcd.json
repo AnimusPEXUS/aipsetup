@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://roy.marples.name",
+  "HomePage": "https://roy.marples.name/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://roy.marples.name/downloads/dhcpcd/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://github.com/MidnightCommander/mc",
+  "HomePage": "https://wiki.gnome.org/Projects/",
   "BuilderName": "mc",
   "Removable": true,
   "Reducible": true,
@@ -22,23 +22,20 @@
     "gnu_project",
     "group:core0"
   ],
-  "Category": "gnu",
+  "Category": "wm/gnome",
   "Groups": [
     "core0",
-    "fi"
+    "fi",
+    "gnome"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "mc",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "srs",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "git",
-    "https://github.com/MidnightCommander/mc.git",
-    "mc",
-    "TagName:^$",
-    "TagStatus:"
+    "https://ftp.gnome.org/mirror/gnome.org/sources/mc"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

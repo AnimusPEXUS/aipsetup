@@ -29,9 +29,13 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "cracklib"
+    "git",
+    "https://github.com/cracklib/cracklib.git",
+    "cracklib",
+    "TagName:^cracklib$",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

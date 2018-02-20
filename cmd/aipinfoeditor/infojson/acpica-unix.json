@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.acpica.org",
+  "HomePage": "https://www.acpica.org/downloads/linux",
   "BuilderName": "",
   "Removable": true,
   "Reducible": true,
@@ -26,11 +26,15 @@
   "TarballFileNameParser": "std",
   "TarballName": "acpica-unix",
   "TarballFilters": [
-    ""
+    "- basename-re \\d{4}"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/acpica/acpica.git",
+    "acpica-unix",
+    "TagName:^R$",
+    "TagFilters:+"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

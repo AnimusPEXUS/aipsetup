@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/freetype",
+  "HomePage": "https://www.freetype.org/",
   "BuilderName": "freetype",
   "Removable": true,
   "Reducible": true,
@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "freetype"
+    "https://download.savannah.gnu.org/releases/freetype/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.haxx.se",
+  "HomePage": "https://curl.haxx.se/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -28,9 +28,13 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/curl/curl.git",
+    "curl",
+    "TagName:^curl$",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

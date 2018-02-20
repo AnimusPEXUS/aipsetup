@@ -1,6 +1,6 @@
 {
   "Description": "WARNING\n\nas libxml++-2.36.0.tar.xz is too complicated for parsing, it need to be renamed to libxmlplusplus-2.36.0.tar.xz in order to properly work with aipsetup",
-  "HomePage": "http://www.gnome.org",
+  "HomePage": "https://wiki.gnome.org/Projects/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -19,7 +19,7 @@
   "Tags": [
     ""
   ],
-  "Category": "wm_gnome",
+  "Category": "wm/gnome",
   "Groups": [
     ""
   ],
@@ -28,11 +28,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://ftp.gnome.org/mirror/gnome.org/sources/libxml++"
   ],
-  "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "gnome",
   "TarballVersionComparator": "std"
 }

@@ -21,7 +21,7 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "core1"
+    ""
   ],
   "TarballFileNameParser": "std",
   "TarballName": "dovecot",

@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.x.org",
+  "HomePage": "http://www.pixman.org/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -28,11 +28,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.cairographics.org/releases/"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "gnome",
   "TarballVersionComparator": "std"
 }
