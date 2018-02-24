@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"net/url"
-	"os"
 	"path"
 	"sort"
 	"strings"
@@ -13,7 +12,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
-	"github.com/AnimusPEXUS/utils/htmlwalk"
+	"github.com/AnimusPEXUS/utils/gnupghtmlftpwalk"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
@@ -21,9 +20,9 @@ import (
 	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
 
-var _ types.ProviderI = &ProviderHttps{}
+var _ types.ProviderI = &ProviderGNUPGOrg{}
 
-type ProviderHttps struct {
+type ProviderGNUPGOrg struct {
 	repo                types.RepositoryI
 	pkg_name            string
 	pkg_info            *basictypes.PackageInfo
@@ -33,40 +32,29 @@ type ProviderHttps struct {
 
 	cache *cache01.CacheDir
 
-	htw *htmlwalk.HTMLWalk
+	gpgw *gnupghtmlftpwalk.Walk
 
 	scheme string
 	host   string
 	path   string
-
-	excludes []string
 }
 
-func NewProviderHttps(
+func NewProviderGNUPGOrg(
 	repo types.RepositoryI,
 	pkg_name string,
 	pkg_info *basictypes.PackageInfo,
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
 	log *logger.Logger,
-) (*ProviderHttps, error) {
+) (*ProviderGNUPGOrg, error) {
 
-	self := new(ProviderHttps)
-	self.repo = repo
-	self.pkg_name = pkg_name
-	self.pkg_info = pkg_info
-	self.sys = sys
-	self.tarballs_output_dir = tarballs_output_dir
-	self.log = log
-
-	if len(pkg_info.TarballProviderArguments) < 1 {
-		return nil, errors.New("invalid arguments count")
-	}
-
-	self.excludes = []string{}
-
-	if len(pkg_info.TarballProviderArguments) > 1 {
-		self.excludes = pkg_info.TarballProviderArguments[1:]
+	self := &ProviderGNUPGOrg{
+		repo:                repo,
+		pkg_name:            pkg_name,
+		pkg_info:            pkg_info,
+		sys:                 sys,
+		tarballs_output_dir: tarballs_output_dir,
+		log:                 log,
 	}
 
 	u, err := url.Parse(pkg_info.TarballProviderArguments[0])
@@ -77,11 +65,16 @@ func NewProviderHttps(
 	self.host = u.Host
 	self.path = u.Path
 
+	cache_uri := (&url.URL{
+		Scheme: self.scheme,
+		Host:   self.host,
+	}).String()
+
 	if t, err := cache01.NewCacheDir(
 		path.Join(
 			self.repo.GetCachesDir(),
-			"https",
-			url.PathEscape(self.scheme+"://"+self.host),
+			"gnupg.org",
+			url.PathEscape(cache_uri),
 		),
 		nil,
 	); err != nil {
@@ -93,72 +86,49 @@ func NewProviderHttps(
 	return self, nil
 }
 
-func (self *ProviderHttps) ProviderDescription() string {
+func (self *ProviderGNUPGOrg) ProviderDescription() string {
 	return ""
 }
 
-func (self *ProviderHttps) ArgCount() int {
+func (self *ProviderGNUPGOrg) ArgCount() int {
 	return 1
 }
 
-func (self *ProviderHttps) CanListArg(i int) bool {
+func (self *ProviderGNUPGOrg) CanListArg(i int) bool {
 	return false
 }
 
-func (self *ProviderHttps) ListArg(i int) ([]string, error) {
+func (self *ProviderGNUPGOrg) ListArg(i int) ([]string, error) {
 	return []string{}, errors.New("not supported")
 }
 
-func (self *ProviderHttps) TarballNames() ([]string, error) {
-	return make([]string, 0), nil
+func (self *ProviderGNUPGOrg) Tarballs() ([]string, error) {
+	return []string{}, nil
 }
 
-func (self *ProviderHttps) Tarballs() ([]string, error) {
-	return make([]string, 0), nil
+func (self *ProviderGNUPGOrg) TarballNames() ([]string, error) {
+	return []string{}, nil
 }
 
-func (self *ProviderHttps) _GetHTW() (*htmlwalk.HTMLWalk, error) {
-	if self.htw == nil {
+func (self *ProviderGNUPGOrg) _GetGPGW() (*gnupghtmlftpwalk.Walk, error) {
+	if self.gpgw == nil {
 
-		h, err := htmlwalk.NewHTMLWalk(
+		h, err := gnupghtmlftpwalk.NewWalk(
 			self.scheme,
 			self.host,
 			self.cache,
 			self.log,
-			self.excludes,
 		)
 		if err != nil {
 			return nil, err
 		}
-		self.htw = h
+		self.gpgw = h
 	}
-	return self.htw, nil
+	return self.gpgw, nil
 }
 
-func (self *ProviderHttps) PerformUpdate() error {
-
-	{
-		pth := self.repo.GetPackageTarballsPath(self.pkg_name)
-		s, err := os.Lstat(pth)
-		if err != nil {
-			if !os.IsNotExist(err) {
-				return err
-			} else {
-				err = os.MkdirAll(pth, 0700)
-				if err != nil {
-					return err
-				}
-			}
-		} else {
-			if !s.IsDir() {
-				return errors.New(
-					"target tarball-dir file exists and it isn't a directory",
-				)
-			}
-		}
-	}
-
-	htw, err := self._GetHTW()
+func (self *ProviderGNUPGOrg) PerformUpdate() error {
+	htw, err := self._GetGPGW()
 	if err != nil {
 		return err
 	}
@@ -322,10 +292,10 @@ func (self *ProviderHttps) PerformUpdate() error {
 	return nil
 }
 
-func (self *ProviderHttps) GetDownloadingURIForFile(name string) (string, error) {
+func (self *ProviderGNUPGOrg) GetDownloadingURIForFile(name string) (string, error) {
 	name = path.Base(name)
 
-	htw, err := self._GetHTW()
+	htw, err := self._GetGPGW()
 	if err != nil {
 		return "", err
 	}

@@ -444,6 +444,9 @@ func (self *ProviderSRS) MakeTarballsGit(
 	downloaded_files := make([]string, 0)
 
 	{
+		self.log.Info("-----------------")
+		self.log.Info("archiving")
+
 		for _, i := range acceptable_tags {
 
 			i_parsed, err := parser.Parse(i)
@@ -474,7 +477,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 
 			target_file := self.repo.GetTarballFilePath(self.pkg_name, tag_filename)
 
-			self.log.Info(fmt.Sprintf("  archiving %s (%s)", i, tag_filename))
+			self.log.Info(fmt.Sprintf("  %s", tag_filename))
 
 			c := exec.Command(
 				"git",

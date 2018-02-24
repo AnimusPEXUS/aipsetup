@@ -73,6 +73,23 @@ var Index = map[string](func(
 			log,
 		)
 	},
+	"gnupg.org": func(
+		repo types.RepositoryI,
+		pkg_name string,
+		pkg_info *basictypes.PackageInfo,
+		sys basictypes.SystemI,
+		tarballs_output_dir string,
+		log *logger.Logger,
+	) (types.ProviderI, error) {
+		return NewProviderGNUPGOrg(
+			repo,
+			pkg_name,
+			pkg_info,
+			sys,
+			tarballs_output_dir,
+			log,
+		)
+	},
 	"launchpad.net": func(
 		repo types.RepositoryI,
 		pkg_name string,
