@@ -32,9 +32,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/"
+    "git",
+    "https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git",
+    "e2fsprogs",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

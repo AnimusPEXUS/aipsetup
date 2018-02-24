@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.kernel.org",
+  "HomePage": "http://neil.brown.name/blog/mdadm",
   "BuilderName": "mdadm",
   "Removable": true,
   "Reducible": true,
@@ -32,7 +32,7 @@
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/"
+    "https://www.kernel.org/pub/linux/utils/raid/mdadm/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

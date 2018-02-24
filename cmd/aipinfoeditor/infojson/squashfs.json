@@ -28,7 +28,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "squashfs",
   "TarballFilters": [
-    ""
+    "- !tarball-status-re ^$"
   ],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [
