@@ -371,8 +371,9 @@ func UIMainWindowNew() (*UIMainWindow, error) {
 
 	glib.IdleAdd(
 		func() {
-			go func() {
+			go func() bool {
 				self.LoadTable()
+				return false
 			}()
 		},
 	)
@@ -386,19 +387,21 @@ func (self *UIMainWindow) Show() {
 
 func (self *UIMainWindow) LoadTable() error {
 	glib.IdleAdd(
-		func() {
+		func() bool {
 			self.mb.SetSensitive(false)
 			self.nb.SetSensitive(false)
 			// self.nb.SetVisible(false)
 			self.pb.Show()
+			return false
 		},
 	)
 	defer glib.IdleAdd(
-		func() {
+		func() bool {
 			self.pb.Hide()
 			self.mb.SetSensitive(true)
 			// self.nb.SetVisible(true)
 			self.nb.SetSensitive(true)
+			return false
 		},
 	)
 
@@ -433,10 +436,11 @@ func (self *UIMainWindow) LoadTable() error {
 		}
 		c := make(chan bool)
 		glib.IdleAdd(
-			func() {
+			func() bool {
 				f := 0.5 / float64(len(stats)) * float64(ii+1)
 				self.pb.SetFraction(f)
 				c <- true
+				return false
 			},
 		)
 		<-c
@@ -445,9 +449,10 @@ func (self *UIMainWindow) LoadTable() error {
 	{
 		c := make(chan bool)
 		glib.IdleAdd(
-			func() {
+			func() bool {
 				self.info_table_store.Clear()
 				c <- true
+				return false
 			},
 		)
 		<-c
@@ -456,7 +461,7 @@ func (self *UIMainWindow) LoadTable() error {
 	{
 		c := make(chan bool)
 		glib.IdleAdd(
-			func() {
+			func() bool {
 
 				i := 0
 				for k, v := range pi {
@@ -509,6 +514,7 @@ func (self *UIMainWindow) LoadTable() error {
 
 				}
 				c <- true
+				return false
 			},
 		)
 		<-c
@@ -519,17 +525,19 @@ func (self *UIMainWindow) LoadTable() error {
 func (self *UIMainWindow) SaveTable() error {
 
 	glib.IdleAdd(
-		func() {
+		func() bool {
 			self.mb.SetSensitive(false)
 			self.nb.SetSensitive(false)
 			self.pb.Show()
+			return false
 		},
 	)
 	defer glib.IdleAdd(
-		func() {
+		func() bool {
 			self.pb.Hide()
 			self.mb.SetSensitive(true)
 			self.nb.SetSensitive(true)
+			return false
 		},
 	)
 
@@ -537,8 +545,6 @@ func (self *UIMainWindow) SaveTable() error {
 	if err != nil {
 		return err
 	}
-
-	// pi := pkginfodb.Index
 
 	pi := make(map[string]*basictypes.PackageInfo)
 
@@ -548,8 +554,9 @@ func (self *UIMainWindow) SaveTable() error {
 
 		for {
 			glib.IdleAdd(
-				func() {
+				func() bool {
 					self.pb.Pulse()
+					return false
 				},
 			)
 
@@ -613,9 +620,10 @@ func (self *UIMainWindow) SaveTable() error {
 
 		i++
 		glib.IdleAdd(
-			func() {
+			func() bool {
 				f := 1.0 / float64(len(pi)) * float64(i+1)
 				self.pb.SetFraction(f)
+				return false
 			},
 		)
 	}
