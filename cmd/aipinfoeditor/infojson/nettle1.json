@@ -1,7 +1,7 @@
 {
-  "Description": "",
-  "HomePage": "",
-  "BuilderName": "tree",
+  "Description": "it's absent on gnu.org, so look's like it's deprecated",
+  "HomePage": "https://www.gnu.org/software/nettle",
+  "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
   "NonInstallable": false,
@@ -17,20 +17,21 @@
     ""
   ],
   "Tags": [
-    "group:core1"
+    "gnu_project"
   ],
   "Category": "non_categorized",
   "Groups": [
-    ""
+    "crypt",
+    "fi"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "tree",
+  "TarballName": "nettle",
   "TarballFilters": [
-    ""
+    "- version-\u003e= 2"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "http://mama.indstate.edu/users/ice/tree/src/"
+    "https://ftp.gnu.org/gnu/nettle"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

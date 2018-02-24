@@ -30,9 +30,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "gnupg.org",
   "TarballProviderArguments": [
-    ""
+    "https://www.gnupg.org/ftp/gcrypt/libgcrypt/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

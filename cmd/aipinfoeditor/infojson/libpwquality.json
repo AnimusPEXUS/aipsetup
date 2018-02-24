@@ -28,9 +28,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/libpwquality/libpwquality.git",
+    "libpwquality",
+    "TagName:^libpwquality$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.kernel.org",
+  "HomePage": "http://www.linux-pam.org/",
   "BuilderName": "linux_pam",
   "Removable": true,
   "Reducible": true,
@@ -27,11 +27,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "Linux-PAM",
   "TarballFilters": [
-    ""
+    "- tarball-status-re docs"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/"
+    "http://www.linux-pam.org/library/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

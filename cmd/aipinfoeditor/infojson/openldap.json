@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.openldap.org/software/download/OpenLDAP/openldap-release/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

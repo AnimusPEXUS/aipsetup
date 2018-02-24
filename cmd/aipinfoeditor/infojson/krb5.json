@@ -28,9 +28,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/krb5/krb5.git",
+    "TagName:^krb5$",
+    "TagStatus:^final$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

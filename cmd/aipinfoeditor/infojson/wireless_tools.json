@@ -28,9 +28,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/hewlettpackard/wireless-tools",
+    "wireless_tools"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

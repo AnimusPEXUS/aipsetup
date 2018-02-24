@@ -27,7 +27,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "p7zip",
   "TarballFilters": [
-    ""
+    "- !basename-re src[\\-_]all"
   ],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [

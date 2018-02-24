@@ -28,11 +28,15 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.sudo.ws/dist/",
+    "beta",
+    "OLD",
+    "misc",
+    "packages"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
-  "TarballVersionComparator": "std"
+  "TarballVersionComparator": "openssh"
 }

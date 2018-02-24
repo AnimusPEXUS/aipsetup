@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/gns-3",
+  "HomePage": "https://www.qemu.org/",
   "BuilderName": "qemu",
   "Removable": true,
   "Reducible": true,
@@ -17,8 +17,7 @@
     ""
   ],
   "Tags": [
-    "group:core1",
-    "sf_hosted:gns-3"
+    "group:core1"
   ],
   "Category": "non_categorized",
   "Groups": [
@@ -27,11 +26,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "qemu",
   "TarballFilters": [
-    ""
+    "- basename-re rc"
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "gns-3"
+    "https://download.qemu.org/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

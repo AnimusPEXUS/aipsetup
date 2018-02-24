@@ -26,13 +26,15 @@
   "TarballFileNameParser": "std",
   "TarballName": "ntp",
   "TarballFilters": [
-    ""
+    "- basename-re rc",
+    "- basename-re beta",
+    "- basename-re win"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
-  "TarballVersionComparator": "std"
+  "TarballVersionComparator": "openssh"
 }

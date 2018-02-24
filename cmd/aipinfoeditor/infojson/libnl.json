@@ -35,7 +35,7 @@
     "https://github.com/tgraf/libnl.git",
     "libnl",
     "TagName:libnl",
-    "TagStatus:"
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "std",

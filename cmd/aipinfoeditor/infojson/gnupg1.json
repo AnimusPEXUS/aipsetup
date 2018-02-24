@@ -27,11 +27,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "gnupg",
   "TarballFilters": [
-    ""
+    "- version-\u003e= 2"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "gnupg.org",
   "TarballProviderArguments": [
-    ""
+    "https://www.gnupg.org/ftp/gcrypt/gnupg/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

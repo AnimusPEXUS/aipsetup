@@ -26,11 +26,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "valgrind",
   "TarballFilters": [
-    ""
+    "- !tarball-status-re ^$"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://sourceware.org/pub/valgrind/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

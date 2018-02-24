@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "",
+  "HomePage": "http://www.linuxfromscratch.org/blfs/view/svn/general/lsof.html",
   "BuilderName": "lsof",
   "Removable": true,
   "Reducible": true,

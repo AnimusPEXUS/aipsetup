@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www.samba.org/ftp/rsync/src"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

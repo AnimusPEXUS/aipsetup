@@ -1,5 +1,5 @@
 {
-  "Description": "write something here, please",
+  "Description": "",
   "HomePage": "https://www.gnu.org/software/nettle",
   "BuilderName": "std",
   "Removable": true,
@@ -19,7 +19,7 @@
   "Tags": [
     "gnu_project"
   ],
-  "Category": "non_categorized",
+  "Category": "gnu",
   "Groups": [
     "crypt",
     "fi"
@@ -27,7 +27,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "nettle",
   "TarballFilters": [
-    ""
+    "- version-\u003c 2"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

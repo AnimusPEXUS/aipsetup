@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "",
+  "HomePage": "https://fukuchi.org/works/qrencode/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -28,9 +28,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/fukuchi/libqrencode.git",
+    "qrencode",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

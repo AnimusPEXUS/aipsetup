@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.citi.umich.edu",
+  "HomePage": "http://www.citi.umich.edu/projects/nfsv4/linux/libgssglue/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "http://www.citi.umich.edu/projects/nfsv4/linux/libgssglue/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

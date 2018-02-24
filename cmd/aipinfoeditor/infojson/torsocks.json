@@ -28,9 +28,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/dgoulet/torsocks.git",
+    "torsocks",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

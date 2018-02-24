@@ -29,9 +29,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "gnupg.org",
   "TarballProviderArguments": [
-    ""
+    "https://www.gnupg.org/ftp/gcrypt/gpa"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

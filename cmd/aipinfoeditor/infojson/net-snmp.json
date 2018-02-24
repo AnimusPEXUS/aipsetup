@@ -27,7 +27,8 @@
   "TarballFileNameParser": "std",
   "TarballName": "net-snmp",
   "TarballFilters": [
-    ""
+    "- basename-re pre",
+    "- basename-re rc"
   ],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [

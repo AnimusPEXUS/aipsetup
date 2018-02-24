@@ -29,8 +29,10 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
+    "git",
+    "https://github.com/seccomp/libseccomp.git",
     "libseccomp"
   ],
   "TarballProviderVersionSyncDepth": 0,

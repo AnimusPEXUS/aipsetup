@@ -1,6 +1,6 @@
 {
-  "Description": "",
-  "HomePage": "https://www.gnu.org/software/nettle",
+  "Description": "write something here, please",
+  "HomePage": "http://www.gnupg.org",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -17,21 +17,22 @@
     ""
   ],
   "Tags": [
-    "gnu_project"
+    "group:core1"
   ],
-  "Category": "gnu",
+  "Category": "non_categorized",
   "Groups": [
+    "core1",
     "crypt",
     "fi"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "nettle",
+  "TarballName": "ntbtls",
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "gnupg.org",
   "TarballProviderArguments": [
-    "https://ftp.gnu.org/gnu/nettle"
+    "https://www.gnupg.org/ftp/gcrypt/ntbtls/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

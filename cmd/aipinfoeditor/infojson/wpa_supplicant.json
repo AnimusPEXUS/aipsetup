@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://None",
+  "HomePage": "https://w1.fi/",
   "BuilderName": "wpa_supplicant",
   "Removable": true,
   "Reducible": true,
@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://w1.fi/releases/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

@@ -29,9 +29,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "libusb"
+    "git",
+    "https://github.com/libusb/libusb.git",
+    "libusb",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

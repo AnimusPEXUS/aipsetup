@@ -28,7 +28,7 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "gnupg.org",
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/pth"
   ],

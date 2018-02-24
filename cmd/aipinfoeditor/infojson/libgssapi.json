@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "",
+  "HomePage": "http://www.citi.umich.edu/projects/nfsv4/linux/libgssapi/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -28,9 +28,9 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "http://www.citi.umich.edu/projects/nfsv4/linux/libgssapi/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

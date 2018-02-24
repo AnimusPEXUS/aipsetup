@@ -35,7 +35,7 @@
     "https://github.com/yaml/libyaml.git",
     "libyaml",
     "TagName:^$",
-    "TagStatus:"
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "std",

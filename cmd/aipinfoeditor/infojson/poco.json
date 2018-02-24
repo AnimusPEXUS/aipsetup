@@ -26,11 +26,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "poco",
   "TarballFilters": [
-    ""
+    "- !tarball-status-re ^all$"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://pocoproject.org/releases/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

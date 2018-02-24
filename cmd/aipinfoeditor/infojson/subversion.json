@@ -26,11 +26,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "subversion",
   "TarballFilters": [
-    ""
+    "- !tarball-status-re ^$"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://www-eu.apache.org/dist/subversion/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
