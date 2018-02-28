@@ -34,5 +34,5 @@
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "std"
 }

@@ -34,6 +34,6 @@
     "https://ftp.gnu.org/gnu/gdb"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "strict",
   "TarballVersionComparator": "std"
 }

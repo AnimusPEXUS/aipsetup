@@ -27,11 +27,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "ilmbase",
   "TarballFilters": [
-    ""
+    "- basename-re TEST"
   ],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    ""
+    "https://download.savannah.nongnu.org/releases/openexr/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

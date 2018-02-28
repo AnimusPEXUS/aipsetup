@@ -36,5 +36,5 @@
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "gcc",
-  "TarballVersionComparator": "gcc"
+  "TarballVersionComparator": "std"
 }

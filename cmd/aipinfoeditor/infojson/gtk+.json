@@ -28,8 +28,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "gtk+",
   "TarballFilters": [
-    "- version-\u003c 3",
-    "- basename-re [89]\\d+"
+    "- version-\u003c 3"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

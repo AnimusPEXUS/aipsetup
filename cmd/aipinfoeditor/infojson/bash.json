@@ -36,6 +36,6 @@
     "https://ftp.gnu.org/gnu/bash"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "strict",
   "TarballVersionComparator": "std"
 }

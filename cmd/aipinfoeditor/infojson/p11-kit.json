@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "http://p11-glue.freedesktop.org/",
+  "HomePage": "https://p11-glue.github.io/",
   "BuilderName": "p11_kit",
   "Removable": true,
   "Reducible": true,
@@ -19,10 +19,9 @@
   "Tags": [
     ""
   ],
-  "Category": "freedesktop/p11-glue",
+  "Category": "",
   "Groups": [
     "crypt",
-    "fd",
     "fi"
   ],
   "TarballFileNameParser": "std",
@@ -30,9 +29,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    ""
+    "git",
+    "https://github.com/p11-glue/p11-kit.git",
+    "p11-kit",
+    "TagName:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

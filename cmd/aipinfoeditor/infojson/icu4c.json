@@ -34,6 +34,6 @@
     "http://download.icu-project.org/files/icu4c/"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "strict",
   "TarballVersionComparator": "std"
 }

@@ -32,9 +32,15 @@
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://www.python.org/ftp/python/"
+    "https://www.python.org/ftp/python/",
+    "bin",
+    "rpm",
+    "win",
+    "contrib",
+    "amd",
+    "doc"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "strict",
   "TarballVersionComparator": "std"
 }

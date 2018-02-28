@@ -33,6 +33,6 @@
     "https://dbus.freedesktop.org/releases/"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "gnome",
   "TarballVersionComparator": "std"
 }

@@ -38,6 +38,6 @@
     "tcl"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "tcltk",
-  "TarballVersionComparator": "tcltk"
+  "TarballStabilityClassifier": "strict",
+  "TarballVersionComparator": "std"
 }

@@ -33,9 +33,12 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/mc"
+    "git",
+    "https://github.com/MidnightCommander/mc.git",
+    "mc",
+    "TagName:^$"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

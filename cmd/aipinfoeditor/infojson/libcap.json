@@ -21,7 +21,7 @@
   ],
   "Category": "kernel",
   "Groups": [
-    ""
+    "core0"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "libcap",
