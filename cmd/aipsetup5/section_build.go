@@ -471,9 +471,6 @@ func CmdAipsetupBuildGetSrc(
 		}
 	}
 
-	work_on_groups := getopt_result.DoesHaveNamedRetOptItem("-g")
-	work_on_categories := getopt_result.DoesHaveNamedRetOptItem("-c")
-
 	get_by_name_func := func(name string) error {
 
 		name_info, err := pkginfodb.Get(name)
@@ -539,65 +536,12 @@ func CmdAipsetupBuildGetSrc(
 		return nil
 	}
 
-	if work_on_groups && work_on_categories {
-		return &cliapp.AppResult{
-			Code:    12,
-			Message: "mutual exclusive options given",
-		}
-	} else if !work_on_groups && !work_on_categories {
-		for _, i := range getopt_result.Args {
-			err := get_by_name_func(i)
+	ret := MiscDoSomethingForGroupsCategoriesOrLists(
+		sys,
+		getopt_result,
+		adds,
+		get_by_name_func,
+	)
 
-			if err != nil {
-				return &cliapp.AppResult{
-					Code:    10,
-					Message: err.Error(),
-				}
-			}
-		}
-	} else if work_on_groups {
-		pkgs, err := pkginfodb.ListPackagesByGroups(getopt_result.Args)
-		if err != nil {
-			return &cliapp.AppResult{
-				Code:    11,
-				Message: err.Error(),
-			}
-		}
-
-		for _, i := range pkgs {
-			err := get_by_name_func(i)
-
-			if err != nil {
-				return &cliapp.AppResult{
-					Code:    10,
-					Message: err.Error(),
-				}
-			}
-		}
-	} else if work_on_categories {
-		pkgs, err := pkginfodb.ListPackagesByCategories(getopt_result.Args)
-		if err != nil {
-			return &cliapp.AppResult{
-				Code:    11,
-				Message: err.Error(),
-			}
-		}
-
-		sort.Strings(pkgs)
-
-		for _, i := range pkgs {
-			err := get_by_name_func(i)
-
-			if err != nil {
-				return &cliapp.AppResult{
-					Code:    10,
-					Message: err.Error(),
-				}
-			}
-		}
-	} else {
-		panic("programming error")
-	}
-
-	return &cliapp.AppResult{Code: 0}
+	return ret
 }

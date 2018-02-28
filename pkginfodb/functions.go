@@ -198,7 +198,7 @@ func ListPackagesByCategories(categories []string) ([]string, error) {
 			}
 		}
 		if !found {
-			return []string{}, errors.New("some of categories groups are not found")
+			return []string{}, errors.New("some of categories are not found")
 		}
 	}
 

@@ -16,6 +16,7 @@ import (
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
 	"github.com/AnimusPEXUS/utils/version"
 	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
@@ -157,6 +158,13 @@ func (self *ProviderGNUPGOrg) PerformUpdate() error {
 		return err
 	}
 
+	stability_classifier, err := tarballstabilityclassification.Get(
+		self.pkg_info.TarballStabilityClassifier,
+	)
+	if err != nil {
+		return err
+	}
+
 	for _, i := range tree_keys {
 		if strings.HasSuffix(i, "/") {
 			continue
@@ -185,6 +193,14 @@ func (self *ProviderGNUPGOrg) PerformUpdate() error {
 
 		if len(fres) != 1 {
 			continue
+		}
+
+		if ok, err := stability_classifier.IsStable(parse_res); err != nil {
+			return err
+		} else {
+			if !ok {
+				continue
+			}
 		}
 
 		filtered_keys = append(filtered_keys, i)
