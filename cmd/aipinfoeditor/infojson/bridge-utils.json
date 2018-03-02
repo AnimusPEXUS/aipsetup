@@ -29,9 +29,11 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "bridge"
+    "git",
+    "git://git.kernel.org/pub/scm/linux/kernel/git/shemminger/bridge-utils.git",
+    "bridge-utils"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

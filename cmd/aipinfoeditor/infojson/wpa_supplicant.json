@@ -33,6 +33,6 @@
     "https://w1.fi/releases/"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "strict",
   "TarballVersionComparator": "std"
 }
