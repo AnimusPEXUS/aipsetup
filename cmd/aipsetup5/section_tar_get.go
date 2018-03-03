@@ -121,7 +121,7 @@ func CmdAipsetupTarGetFor(
 		fmt.Println("   updating " + name)
 		fmt.Println("--------------------------------------")
 
-		err := repo.PerformPackageTarballsUpdate(name)
+		err := repo.PerformPackageSourcesUpdate(name)
 		if err != nil {
 			failed_list = append(failed_list, name)
 			fmt.Println("error")

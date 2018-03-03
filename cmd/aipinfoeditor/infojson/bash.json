@@ -38,6 +38,6 @@
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "strict",
   "TarballVersionComparator": "std",
-  "DownloadPatches": false,
-  "PatchesDownloadingScriptText": ""
+  "DownloadPatches": true,
+  "PatchesDownloadingScriptText": "#!/bin/bash\n\nwget -rc -nd -I '/gnu/bash/*-patches' -A 'bash[0-9]*' 'https://ftp.gnu.org/gnu/bash/'\n"
 }

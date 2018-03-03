@@ -38,6 +38,6 @@
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
-  "DownloadPatches": false,
-  "PatchesDownloadingScriptText": ""
+  "DownloadPatches": true,
+  "PatchesDownloadingScriptText": "#!/bin/bash\n\nwget -rc -nH --cut-dirs=2 -I '/archives/ncurses/[0-9].[0-9]' -A 'ncurses-[0-9].[0-9]*' 'https://invisible-mirror.net/archives/ncurses/'\n"
 }

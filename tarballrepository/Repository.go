@@ -1,12 +1,16 @@
 package tarballrepository
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
 	"os/exec"
+	"os/user"
 	"path"
+	"time"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
@@ -44,6 +48,10 @@ func (self *Repository) GetPackageSRSPath(name string) string {
 
 func (self *Repository) GetPackageTarballsPath(name string) string {
 	return path.Join(self.GetPackagePath(name), "tarballs")
+}
+
+func (self *Repository) GetPackagePatchesPath(name string) string {
+	return path.Join(self.GetPackagePath(name), "patches")
 }
 
 func (self *Repository) GetPackageCachePath(name string) string {
@@ -109,6 +117,20 @@ func (self *Repository) GetTarballFilePath(package_name, as_filename string) str
 // 	return nil, errors.New("programming error")
 // }
 
+func (self *Repository) PerformPackageSourcesUpdate(name string) error {
+	for _, i := range []func(string) error{
+		self.PerformPackageTarballsUpdate,
+		self.PerformPackagePatchesUpdate,
+	} {
+		err := i(name)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (self *Repository) PerformPackageTarballsUpdate(name string) error {
 
 	info, err := pkginfodb.Get(name)
@@ -133,6 +155,82 @@ func (self *Repository) PerformPackageTarballsUpdate(name string) error {
 	}
 
 	err = prov.PerformUpdate()
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (self *Repository) PerformPackagePatchesUpdate(name string) error {
+	info, err := pkginfodb.Get(name)
+	if err != nil {
+		return err
+	}
+
+	if !info.DownloadPatches {
+		return nil
+	}
+
+	patches_path := self.GetPackagePatchesPath(name)
+
+	err = os.MkdirAll(patches_path, 0700)
+	if err != nil {
+		return err
+	}
+
+	u, err := user.Current()
+	if err != nil {
+		return err
+	}
+
+	file_tmp_dir_path := path.Join(u.HomeDir, ".config", "aipsetup5", "tmp")
+	// file_tmp_dir_path := "/tmp"
+
+	err = os.MkdirAll(file_tmp_dir_path, 0700)
+	if err != nil {
+		return err
+	}
+
+	h := md5.New()
+	h.Write([]byte(time.Now().UTC().String()))
+
+	f, err := ioutil.TempFile(
+		file_tmp_dir_path,
+		hex.EncodeToString(h.Sum([]byte{})),
+	)
+	if err != nil {
+		return err
+	}
+
+	file_tmp_dir_file_path := f.Name()
+
+	defer func(f *os.File, pth string) {
+		f.Close()
+		os.Remove(pth)
+	}(f, file_tmp_dir_file_path)
+
+	err = os.Chmod(file_tmp_dir_file_path, 0700)
+	if err != nil {
+		return err
+	}
+
+	_, err = f.Write([]byte(info.PatchesDownloadingScriptText))
+	if err != nil {
+		return err
+	}
+
+	err = f.Close()
+	if err != nil {
+		return err
+	}
+
+	cmd := exec.Command(file_tmp_dir_file_path)
+	cmd.Dir = patches_path
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+
+	err = cmd.Run()
 	if err != nil {
 		return err
 	}

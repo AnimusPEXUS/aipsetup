@@ -11,7 +11,9 @@ type RepositoryI interface {
 	GetTarballDoneFilePath(package_name string, as_filename string) string
 	GetTarballFilePath(package_name, as_filename string) string
 
+	PerformPackageSourcesUpdate(name string) error
 	PerformPackageTarballsUpdate(name string) error
+	PerformPackagePatchesUpdate(name string) error
 	// CreateCacheObjectForPackage(name string) (*cache01.CacheDir, error)
 	PerformDownload(package_name string, as_filename string, uri string) error
 	PrepareTarballCleanupListing(package_name string, files_to_keep []string) ([]string, error)
