@@ -32,4 +32,7 @@ type PackageInfo struct {
 
 	TarballStabilityClassifier string
 	TarballVersionComparator   string
+
+	DownloadPatches              bool
+	PatchesDownloadingScriptText string
 }

@@ -36,5 +36,7 @@
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
-  "TarballVersionComparator": "openssh"
+  "TarballVersionComparator": "openssh",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
 }

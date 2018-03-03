@@ -38,5 +38,7 @@
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
-  "TarballVersionComparator": "ImageMagick"
+  "TarballVersionComparator": "ImageMagick",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
 }

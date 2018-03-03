@@ -39,5 +39,7 @@
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "libevent",
-  "TarballVersionComparator": "std"
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
 }

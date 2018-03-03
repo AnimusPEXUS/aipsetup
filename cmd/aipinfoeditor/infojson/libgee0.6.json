@@ -34,5 +34,7 @@
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome"
+  "TarballVersionComparator": "gnome",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
 }

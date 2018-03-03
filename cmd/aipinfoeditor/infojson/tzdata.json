@@ -34,5 +34,7 @@
   ],
   "TarballProviderVersionSyncDepth": -1,
   "TarballStabilityClassifier": "openssl",
-  "TarballVersionComparator": "openssl"
+  "TarballVersionComparator": "openssl",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
 }

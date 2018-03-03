@@ -34,5 +34,7 @@
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "lynx",
-  "TarballVersionComparator": "lynx"
+  "TarballVersionComparator": "lynx",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
 }

@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path"
+	"sort"
 	"strconv"
 	"strings"
 
@@ -42,6 +43,8 @@ var TableStructure = [][3]interface{}{
 	[3]interface{}{20, glib.TYPE_STRING, "Tarball Stability Classifier"},
 	[3]interface{}{21, glib.TYPE_STRING, "Tarball Version Comparator"},
 	[3]interface{}{22, glib.TYPE_INT, "Tarball Sync Depth"},
+	[3]interface{}{23, glib.TYPE_BOOLEAN, "Download Patches"},
+	[3]interface{}{24, glib.TYPE_STRING, "Patches Downloading Script Text"},
 }
 
 type UIMainWindow struct {
@@ -149,7 +152,23 @@ func UIMainWindowNew() (*UIMainWindow, error) {
 					case 1:
 						r.SetProperty("wrap-mode", pango.WRAP_WORD)
 						r.SetProperty("wrap-width", 0)
+						c.SetFixedWidth(200)
+					case 2:
+						c.SetFixedWidth(250)
+					case 12:
+						fallthrough
+					case 13:
+						fallthrough
+					case 14:
+						c.SetFixedWidth(150)
+					case 16:
+						c.SetFixedWidth(150)
+					case 17:
+						c.SetFixedWidth(200)
+					case 19:
 						c.SetFixedWidth(400)
+					case 24:
+						c.SetFixedWidth(500)
 					}
 
 					self.info_table.AppendColumn(c)
@@ -464,14 +483,20 @@ func (self *UIMainWindow) LoadTable() error {
 			func() bool {
 
 				i := 0
-				for k, v := range pi {
+				pi_keys := make([]string, 0)
+				for k, _ := range pi {
+					pi_keys = append(pi_keys, k)
+				}
+				sort.Strings(pi_keys)
+				for _, k := range pi_keys {
+					v := pi[k]
 					iter := self.info_table_store.Append()
 					err := self.info_table_store.Set(
 						iter,
 						[]int{
 							0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 							10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-							20, 21, 22,
+							20, 21, 22, 23, 24,
 						},
 						[]interface{}{
 							k,
@@ -502,6 +527,9 @@ func (self *UIMainWindow) LoadTable() error {
 							v.TarballStabilityClassifier,
 							v.TarballVersionComparator,
 							v.TarballProviderVersionSyncDepth,
+
+							v.DownloadPatches,
+							v.PatchesDownloadingScriptText,
 						},
 					)
 					if err != nil {
@@ -702,6 +730,10 @@ func (self *UIMainWindow) _IterToPackageInfo(iter *gtk.TreeIter) (
 			ret.TarballVersionComparator = vv.(string)
 		case 22:
 			ret.TarballProviderVersionSyncDepth = vv.(int)
+		case 23:
+			ret.DownloadPatches = vv.(bool)
+		case 24:
+			ret.PatchesDownloadingScriptText = vv.(string)
 		}
 	}
 
