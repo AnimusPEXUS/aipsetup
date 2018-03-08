@@ -31,10 +31,10 @@
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://www.sudo.ws/dist/",
-    "beta",
-    "OLD",
-    "misc",
-    "packages"
+    "-X=beta",
+    "-X=OLD",
+    "-X=misc",
+    "-X=packages"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

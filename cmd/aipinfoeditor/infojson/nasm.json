@@ -36,7 +36,7 @@
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "http://www.nasm.us/pub/nasm/releasebuilds/",
-    "rc\\d"
+    "-X=rc\\d"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

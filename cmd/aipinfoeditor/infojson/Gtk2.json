@@ -28,9 +28,10 @@
   "TarballFilters": [
     ""
   ],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "gtk2-perl"
+    "https://www.cpan.org/modules/by-module/Gtk2/",
+    "-maxdepth=1"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

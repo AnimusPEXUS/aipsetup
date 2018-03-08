@@ -32,7 +32,7 @@
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://dl.bintray.com/boostorg/release/",
-    "binar"
+    "-X=binar"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

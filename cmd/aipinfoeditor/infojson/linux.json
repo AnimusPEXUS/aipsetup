@@ -33,10 +33,10 @@
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://cdn.kernel.org/pub/linux/kernel/",
-    "/pub/linux/kernel/people",
-    "/pub/linux/kernel/projects",
-    "/pub/linux/kernel/ports",
-    "/pub/linux/kernel/testing"
+    "-X=/pub/linux/kernel/people",
+    "-X=/pub/linux/kernel/projects",
+    "-X=/pub/linux/kernel/ports",
+    "-X=/pub/linux/kernel/testing"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

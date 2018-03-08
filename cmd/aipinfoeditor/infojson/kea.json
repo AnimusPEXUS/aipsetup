@@ -31,10 +31,10 @@
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://ftp.isc.org/isc/kea/",
-    "beta",
-    "alpha",
-    "private",
-    "\\d{4}"
+    "-X=beta",
+    "-X=alpha",
+    "-X=private",
+    "-X=\\d{4}"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "openssh",
