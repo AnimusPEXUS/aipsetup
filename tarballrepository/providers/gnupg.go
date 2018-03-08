@@ -23,6 +23,10 @@ import (
 
 var _ types.ProviderI = &ProviderGNUPGOrg{}
 
+func init() {
+	Index["gnupg.org"] = NewProviderGNUPGOrg
+}
+
 type ProviderGNUPGOrg struct {
 	repo                types.RepositoryI
 	pkg_name            string
@@ -47,7 +51,7 @@ func NewProviderGNUPGOrg(
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
 	log *logger.Logger,
-) (*ProviderGNUPGOrg, error) {
+) (types.ProviderI, error) {
 
 	self := &ProviderGNUPGOrg{
 		repo:                repo,

@@ -22,6 +22,10 @@ import (
 
 var _ types.ProviderI = &ProviderSFNet{}
 
+func init() {
+	Index["sf.net"] = NewProviderSFNet
+}
+
 type ProviderSFNet struct {
 	repo                types.RepositoryI
 	pkg_name            string
@@ -44,7 +48,7 @@ func NewProviderSFNet(
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
 	log *logger.Logger,
-) (*ProviderSFNet, error) {
+) (types.ProviderI, error) {
 
 	self := &ProviderSFNet{
 		repo:                repo,

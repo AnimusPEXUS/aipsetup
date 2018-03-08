@@ -7,12 +7,14 @@ import (
 	"os"
 	"path"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
+	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/htmlwalk"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
@@ -23,6 +25,10 @@ import (
 )
 
 var _ types.ProviderI = &ProviderHttps{}
+
+func init() {
+	Index["https"] = NewProviderHttps
+}
 
 type ProviderHttps struct {
 	repo                types.RepositoryI
@@ -41,6 +47,8 @@ type ProviderHttps struct {
 	path   string
 
 	excludes []string
+
+	maxdepth int
 }
 
 func NewProviderHttps(
@@ -50,7 +58,7 @@ func NewProviderHttps(
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
 	log *logger.Logger,
-) (*ProviderHttps, error) {
+) (types.ProviderI, error) {
 
 	self := new(ProviderHttps)
 	self.repo = repo
@@ -60,17 +68,32 @@ func NewProviderHttps(
 	self.tarballs_output_dir = tarballs_output_dir
 	self.log = log
 
-	if len(pkg_info.TarballProviderArguments) < 1 {
+	self.maxdepth = -1
+
+	getoptres := cliapp.GetOpt(pkg_info.TarballProviderArguments)
+
+	maxdepth_res := getoptres.GetLastNamedRetOptItem("-maxdepth")
+	if maxdepth_res != nil {
+		i, err := strconv.Atoi(maxdepth_res.Value)
+		if err != nil {
+			return nil, errors.New("invalid value for maxdepth")
+		}
+		self.maxdepth = i
+	}
+
+	if len(getoptres.Args) < 1 {
 		return nil, errors.New("invalid arguments count")
 	}
 
 	self.excludes = []string{}
 
-	if len(pkg_info.TarballProviderArguments) > 1 {
-		self.excludes = pkg_info.TarballProviderArguments[1:]
+	exes := getoptres.GetAllNamedRetOptItems("-X")
+
+	for _, i := range exes {
+		self.excludes = append(self.excludes, i.Value)
 	}
 
-	u, err := url.Parse(pkg_info.TarballProviderArguments[0])
+	u, err := url.Parse(getoptres.Args[0])
 	if err != nil {
 		return nil, err
 	}
@@ -127,6 +150,7 @@ func (self *ProviderHttps) _GetHTW() (*htmlwalk.HTMLWalk, error) {
 			self.cache,
 			self.log,
 			self.excludes,
+			self.maxdepth,
 		)
 		if err != nil {
 			return nil, err

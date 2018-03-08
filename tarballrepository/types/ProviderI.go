@@ -1,13 +1,11 @@
 package types
 
+import (
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/logger"
+)
+
 type ProviderI interface {
-	// can be accessed by user?
-	// Enabled() bool
-	// commented out. to disable provider - comment out it
-	//                in providers/00000_index.go
-
-	// SetArgs([]string) error
-
 	ProviderDescription() string
 
 	ArgCount() int
@@ -20,3 +18,12 @@ type ProviderI interface {
 
 	PerformUpdate() error
 }
+
+type NewProviderFunc func(
+	repo RepositoryI,
+	pkg_name string,
+	pkg_info *basictypes.PackageInfo,
+	sys basictypes.SystemI,
+	tarballs_output_dir string,
+	log *logger.Logger,
+) (ProviderI, error)

@@ -57,6 +57,10 @@ import (
 
 var _ types.ProviderI = &ProviderSRS{}
 
+func init() {
+	Index["srs"] = NewProviderSRS
+}
+
 type ProviderSRS struct {
 	repo                types.RepositoryI
 	pkg_name            string
@@ -73,7 +77,7 @@ func NewProviderSRS(
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
 	log *logger.Logger,
-) (*ProviderSRS, error) {
+) (types.ProviderI, error) {
 	self := &ProviderSRS{
 		repo:                repo,
 		pkg_name:            pkg_name,

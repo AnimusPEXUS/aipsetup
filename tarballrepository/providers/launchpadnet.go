@@ -22,6 +22,10 @@ import (
 
 var _ types.ProviderI = &ProviderLaunchpadNet{}
 
+func init() {
+	Index["launchpad.net"] = NewProviderLaunchpadNet
+}
+
 type ProviderLaunchpadNet struct {
 	repo                types.RepositoryI
 	pkg_name            string
@@ -44,7 +48,7 @@ func NewProviderLaunchpadNet(
 	sys basictypes.SystemI,
 	tarballs_output_dir string,
 	log *logger.Logger,
-) (*ProviderLaunchpadNet, error) {
+) (types.ProviderI, error) {
 
 	self := &ProviderLaunchpadNet{
 		repo:                repo,
