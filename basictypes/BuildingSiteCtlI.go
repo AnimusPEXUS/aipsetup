@@ -11,6 +11,7 @@ type BuildingSiteCtlI interface {
 	GetDIR_TEMP() string
 
 	ReadInfo() (*BuildingSiteInfo, error)
+	WriteInfo(*BuildingSiteInfo) error
 
 	GetConfiguredHost() (string, error)
 	GetConfiguredArch() (string, error)
