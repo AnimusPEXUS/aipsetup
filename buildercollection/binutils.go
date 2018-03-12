@@ -88,45 +88,47 @@ func (self *BuilderBinutils) BuilderActionEditInfo(
 	return nil
 }
 
-func (self *BuilderBinutils) AfterExtract(in_ret error, log *logger.Logger) error {
+func (self *BuilderBinutils) AfterExtract(ret error, log *logger.Logger) error {
 
-	if in_ret == nil {
-		a_tools := new(buildingtools.Autotools)
-		tar_dir := self.bs.GetDIR_TARBALL()
-		files, err := ioutil.ReadDir(tar_dir)
-		if err != nil {
-			return err
+	if ret != nil {
+		return ret
+	}
+
+	a_tools := new(buildingtools.Autotools)
+	tar_dir := self.bs.GetDIR_TARBALL()
+	files, err := ioutil.ReadDir(tar_dir)
+	if err != nil {
+		return err
+	}
+
+	for _, i := range []string{
+		"gmp", "mpc", "mpfr", "isl", "cloog",
+	} {
+		filename := ""
+		for _, j := range files {
+			b := path.Base(j.Name())
+			if strings.HasPrefix(b, i) {
+				filename = b
+				break
+			}
+		}
+		if filename == "" {
+			return errors.New("not found tarball for " + i)
 		}
 
-		for _, i := range []string{
-			"gmp", "mpc", "mpfr", "isl", "cloog",
-		} {
-			filename := ""
-			for _, j := range files {
-				b := path.Base(j.Name())
-				if strings.HasPrefix(b, i) {
-					filename = b
-					break
-				}
-			}
-			if filename == "" {
-				return errors.New("not found tarball for " + i)
-			}
-
-			err = a_tools.Extract(
-				path.Join(tar_dir, filename),
-				self.bs.GetDIR_SOURCE(),
-				self.bs.GetDIR_TEMP(),
-				false,
-				true,
-				i,
-				false,
-				false,
-				log,
-			)
-			if err != nil {
-				return err
-			}
+		err = a_tools.Extract(
+			path.Join(tar_dir, filename),
+			self.bs.GetDIR_SOURCE(),
+			self.bs.GetDIR_TEMP(),
+			false,
+			true,
+			i,
+			false,
+			false,
+			log,
+		)
+		if err != nil {
+			return err
 		}
 	}
 
