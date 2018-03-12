@@ -15,7 +15,7 @@ import (
 )
 
 func init() {
-	Index["std"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
+	Index["std_autotools"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
 		return NewBuilderStdAutotools(bs), nil
 	}
 }
@@ -30,6 +30,9 @@ const (
 
 type BuilderStdAutotools struct {
 
+	// NOTE: some comments in this file are left from python time and may be not
+	//       correspond to situation. (2018-03-12)
+
 	// # this is for builder_action_autogen() method
 	ForcedAutogen                bool
 	SeparateBuildDir             bool
@@ -40,6 +43,28 @@ type BuilderStdAutotools struct {
 	// # None - not used, bool - force value
 	ForceCrossbuilder CrossBuildEnum
 	ForceCrossbuild   CrossBuildEnum
+
+	EditActionsCB                    func(basictypes.BuilderActions) (basictypes.BuilderActions, error)
+	AfterExtractCB                   func(log *logger.Logger) error
+	EditConfigureEnvCB               func(log *logger.Logger, env environ.EnvVarEd) (environ.EnvVarEd, error)
+	EditConfigureArgsCB              func(log *logger.Logger, args []string) ([]string, error)
+	EditConfigureScriptNameCB        func(log *logger.Logger, value string) (string, error)
+	EditConfigureDirCB               func(log *logger.Logger, value string) (string, error)
+	EditConfigureWorkingDirCB        func(log *logger.Logger, value string) (string, error)
+	EditConfigureRelativeExecutionCB func(log *logger.Logger, value bool) (bool, error)
+	EditConfigureIsArgToShellCB      func(log *logger.Logger, value bool) (bool, error)
+	EditBuildConcurentJobsCountCB    func(log *logger.Logger, value int) int
+	EditBuildEnvCB                   func(log *logger.Logger, env environ.EnvVarEd) (environ.EnvVarEd, error)
+	EditBuildArgsCB                  func(log *logger.Logger, args []string) ([]string, error)
+	EditBuildMakefileNameCB          func(log *logger.Logger, value string) (string, error)
+	EditBuildMakefileDirCB           func(log *logger.Logger, value string) (string, error)
+	EditBuildWorkingDirCB            func(log *logger.Logger, value string) (string, error)
+	EditDistributeEnvCB              func(log *logger.Logger, env environ.EnvVarEd) (environ.EnvVarEd, error)
+	EditDistributeDESTDIRCB          func(log *logger.Logger, value string) (string, error)
+	EditDistributeArgsCB             func(log *logger.Logger, args []string) ([]string, error)
+	EditDistributeMakefileNameCB     func(log *logger.Logger, value string) (string, error)
+	EditDistributeMakefileCB         func(log *logger.Logger, value string) (string, error)
+	EditDistributeWorkingDirCB       func(log *logger.Logger, value string) (string, error)
 
 	site basictypes.BuildingSiteCtlI
 }
@@ -80,6 +105,14 @@ func (self *BuilderStdAutotools) DefineActions() (basictypes.BuilderActions, err
 		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
 		&basictypes.BuilderAction{"build", self.BuilderActionBuild},
 		&basictypes.BuilderAction{"distribute", self.BuilderActionDistribute},
+	}
+
+	if self.EditActionsCB != nil {
+		var err error
+		ret, err = self.EditActionsCB(ret)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return ret, nil
@@ -140,6 +173,14 @@ func (self *BuilderStdAutotools) BuilderActionPrimaryExtract(
 	if err != nil {
 		return err
 	}
+
+	if self.AfterExtractCB != nil {
+		err = self.AfterExtractCB(log)
+		if err != nil {
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -205,6 +246,13 @@ func (self *BuilderStdAutotools) BuilderActionConfigureEnvDef(
 	env.Set("CC", cc)
 	env.Set("CXX", cxx)
 
+	if self.EditConfigureEnvCB != nil {
+		env, err = self.EditConfigureEnvCB(log, env)
+		if err != nil {
+			return nil, err
+		}
+	}
+
 	return env, nil
 
 }
@@ -256,38 +304,99 @@ func (self *BuilderStdAutotools) BuilderActionConfigureArgsDef(
 		opt_map.Strings()...,
 	)
 
+	if self.EditConfigureArgsCB != nil {
+		ret, err = self.EditConfigureArgsCB(log, ret)
+		if err != nil {
+			return nil, err
+		}
+	}
+
 	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionConfigureScriptNameDef(
 	log *logger.Logger,
 ) (string, error) {
-	return "configure", nil
+
+	ret := "configure"
+
+	if self.EditConfigureScriptNameCB != nil {
+		var err error
+		ret, err = self.EditConfigureScriptNameCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionConfigureDirDef(
 	log *logger.Logger,
 ) (string, error) {
-	return self.site.GetDIR_SOURCE(), nil
+
+	ret := self.site.GetDIR_SOURCE()
+
+	if self.EditConfigureDirCB != nil {
+		var err error
+		ret, err = self.EditConfigureDirCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionConfigureWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
-	return self.site.GetDIR_SOURCE(), nil
+
+	ret := self.site.GetDIR_SOURCE()
+
+	if self.EditConfigureWorkingDirCB != nil {
+		var err error
+		ret, err = self.EditConfigureWorkingDirCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionConfigureRelativeExecutionDef(
 	log *logger.Logger,
 ) (bool, error) {
 
-	return true, nil
+	ret := true
+
+	if self.EditConfigureRelativeExecutionCB != nil {
+		var err error
+		ret, err = self.EditConfigureRelativeExecutionCB(log, ret)
+		if err != nil {
+			return false, err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionConfigureIsArgToShellDef(
 	log *logger.Logger,
 ) (bool, error) {
-	return false, nil
+
+	ret := false
+
+	if self.EditConfigureIsArgToShellCB != nil {
+		var err error
+		ret, err = self.EditConfigureIsArgToShellCB(log, ret)
+		if err != nil {
+			return false, err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionConfigure(
@@ -357,7 +466,13 @@ func (self *BuilderStdAutotools) BuilderActionBuildConcurentJobsCountDef(
 	log *logger.Logger,
 ) int {
 
-	return runtime.NumCPU()
+	ret := runtime.NumCPU()
+
+	if self.EditBuildConcurentJobsCountCB != nil {
+		ret = self.EditBuildConcurentJobsCountCB(log, ret)
+	}
+
+	return ret
 
 }
 
@@ -367,32 +482,88 @@ func (self *BuilderStdAutotools) BuilderActionBuildEnvDef(
 	log.Info(
 		"this builder uses same environment variables for make as for configure",
 	)
-	return self.BuilderActionConfigureEnvDef(log)
+
+	ret, err := self.BuilderActionConfigureEnvDef(log)
+	if err != nil {
+		return nil, err
+	}
+
+	if self.EditBuildEnvCB != nil {
+
+		ret, err = self.EditBuildEnvCB(log, ret)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionBuildArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
 	ret := make([]string, 0)
+
+	if self.EditBuildArgsCB != nil {
+		var err error
+		ret, err = self.EditBuildArgsCB(log, ret)
+		if err != nil {
+			return nil, err
+		}
+	}
+
 	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionBuildMakefileNameDef(
 	log *logger.Logger,
 ) (string, error) {
-	return "Makefile", nil
+
+	ret := "Makefile"
+
+	if self.EditBuildMakefileNameCB != nil {
+		var err error
+		ret, err = self.EditBuildMakefileNameCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionBuildMakefileDirDef(
 	log *logger.Logger,
 ) (string, error) {
-	return self.site.GetDIR_SOURCE(), nil
+
+	ret := self.site.GetDIR_SOURCE()
+
+	if self.EditBuildMakefileDirCB != nil {
+		var err error
+		ret, err = self.EditBuildMakefileDirCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionBuildWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
-	return self.site.GetDIR_SOURCE(), nil
+
+	ret := self.site.GetDIR_SOURCE()
+
+	if self.EditBuildWorkingDirCB != nil {
+		var err error
+		ret, err = self.EditBuildWorkingDirCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionBuild(
@@ -458,50 +629,124 @@ func (self *BuilderStdAutotools) BuilderActionBuild(
 func (self *BuilderStdAutotools) BuilderActionDistributeEnvDef(
 	log *logger.Logger,
 ) (environ.EnvVarEd, error) {
+
+	// TODO: all those info logs are, probably, should be corrected.. or
+	//       detalized in Edit callbacks
 	log.Info(
 		"this builder uses same environment variables for make as for configure",
 	)
-	return self.BuilderActionConfigureEnvDef(log)
+
+	ret, err := self.BuilderActionConfigureEnvDef(log)
+	if err != nil {
+		return nil, err
+	}
+
+	if self.EditDistributeEnvCB != nil {
+		ret, err = self.EditDistributeEnvCB(log, ret)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionDistributeDESTDIRDef(
 	log *logger.Logger,
-) string {
-	return "DESTDIR"
+) (string, error) {
+
+	ret := "DESTDIR"
+
+	if self.EditDistributeDESTDIRCB != nil {
+		var err error
+		ret, err = self.EditDistributeDESTDIRCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionDistributeArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
+	destdir_string, err := self.BuilderActionDistributeDESTDIRDef(log)
+	if err != nil {
+		return nil, err
+	}
+
 	ret := make([]string, 0)
 	ret = append(ret, "install")
 	ret = append(
 		ret,
 		fmt.Sprintf(
 			"%s=%s",
-			self.BuilderActionDistributeDESTDIRDef(log),
+			destdir_string,
 			self.site.GetDIR_DESTDIR(),
 		),
 	)
+
+	if self.EditDistributeArgsCB != nil {
+		var err error
+		ret, err = self.EditDistributeArgsCB(log, ret)
+		if err != nil {
+			return nil, err
+		}
+	}
+
 	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionDistributeMakefileNameDef(
 	log *logger.Logger,
 ) (string, error) {
-	return "Makefile", nil
+
+	ret := "Makefile"
+
+	if self.EditDistributeMakefileNameCB != nil {
+		var err error
+		ret, err = self.EditDistributeMakefileNameCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionDistributeMakefileDirDef(
 	log *logger.Logger,
 ) (string, error) {
-	return self.site.GetDIR_SOURCE(), nil
+
+	ret := self.site.GetDIR_SOURCE()
+
+	if self.EditDistributeMakefileCB != nil {
+		var err error
+		ret, err = self.EditDistributeMakefileCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionDistributeWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
-	return self.site.GetDIR_SOURCE(), nil
+
+	ret := self.site.GetDIR_SOURCE()
+
+	if self.EditDistributeWorkingDirCB != nil {
+		var err error
+		ret, err = self.EditDistributeWorkingDirCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionDistribute(

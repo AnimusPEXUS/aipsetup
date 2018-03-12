@@ -1,6 +1,10 @@
 package basictypes
 
-import "github.com/AnimusPEXUS/utils/logger"
+import (
+	"errors"
+
+	"github.com/AnimusPEXUS/utils/logger"
+)
 
 type BuilderAction struct {
 	Name     string
@@ -16,6 +20,18 @@ func (self BuilderActions) Get(name string) (*BuilderAction, bool) {
 		}
 	}
 	return nil, false
+}
+
+func (self BuilderActions) Replace(name string, action *BuilderAction) error {
+	for k := range self {
+		v := self[k]
+		if v.Name == name {
+			self[k] = action
+			return nil
+		}
+	}
+
+	return errors.New("not found")
 }
 
 func (self BuilderActions) ActionList() []string {
