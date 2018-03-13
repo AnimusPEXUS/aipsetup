@@ -88,10 +88,10 @@ func (self *BuilderBinutils) BuilderActionEditInfo(
 	return nil
 }
 
-func (self *BuilderBinutils) AfterExtract(ret error, log *logger.Logger) error {
+func (self *BuilderBinutils) AfterExtract(log *logger.Logger, err error) error {
 
-	if ret != nil {
-		return ret
+	if err != nil {
+		return err
 	}
 
 	a_tools := new(buildingtools.Autotools)

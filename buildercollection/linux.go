@@ -172,8 +172,8 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 	ret = append(
 		ret,
 		[]*basictypes.BuilderAction{
-			&basictypes.BuilderAction{"prepack", self.BuilderActionPrePack},
-			&basictypes.BuilderAction{"pack", self.BuilderActionPack},
+			&basictypes.BuilderAction{"prepack", self.std_builder.BuilderActionPrePack},
+			&basictypes.BuilderAction{"pack", self.std_builder.BuilderActionPack},
 		}...,
 	)
 
@@ -561,26 +561,6 @@ func (self *BuilderLinux) BuilderActionDistrSource(
 		if err != nil {
 			return err
 		}
-	}
-	return nil
-}
-
-func (self *BuilderLinux) BuilderActionPrePack(
-	log *logger.Logger,
-) error {
-	err := self.bs.PrePackager().Run(log)
-	if err != nil {
-		return err
-	}
-	return nil
-}
-
-func (self *BuilderLinux) BuilderActionPack(
-	log *logger.Logger,
-) error {
-	err := self.bs.Packager().Run(log)
-	if err != nil {
-		return err
 	}
 	return nil
 }

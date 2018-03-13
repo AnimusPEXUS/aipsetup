@@ -45,7 +45,7 @@ type BuilderStdAutotools struct {
 	ForceCrossbuild   CrossBuildEnum
 
 	EditActionsCB                    func(basictypes.BuilderActions) (basictypes.BuilderActions, error)
-	AfterExtractCB                   func(ret error, log *logger.Logger) error
+	AfterExtractCB                   func(log *logger.Logger, ret error) error
 	EditConfigureEnvCB               func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
 	EditConfigureArgsCB              func(log *logger.Logger, ret []string) ([]string, error)
 	EditConfigureScriptNameCB        func(log *logger.Logger, ret string) (string, error)
@@ -66,14 +66,14 @@ type BuilderStdAutotools struct {
 	EditDistributeMakefileCB         func(log *logger.Logger, ret string) (string, error)
 	EditDistributeWorkingDirCB       func(log *logger.Logger, ret string) (string, error)
 
-	site basictypes.BuildingSiteCtlI
+	bs basictypes.BuildingSiteCtlI
 }
 
 // builders are independent of anything so have no moto to return errors
 func NewBuilderStdAutotools(buildingsite basictypes.BuildingSiteCtlI) *BuilderStdAutotools {
 	ret := new(BuilderStdAutotools)
 
-	ret.site = buildingsite
+	ret.bs = buildingsite
 
 	ret.ForcedAutogen = false
 
@@ -105,6 +105,8 @@ func (self *BuilderStdAutotools) DefineActions() (basictypes.BuilderActions, err
 		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
 		&basictypes.BuilderAction{"build", self.BuilderActionBuild},
 		&basictypes.BuilderAction{"distribute", self.BuilderActionDistribute},
+		&basictypes.BuilderAction{"prepack", self.BuilderActionPrePack},
+		&basictypes.BuilderAction{"pack", self.BuilderActionPack},
 	}
 
 	if self.EditActionsCB != nil {
@@ -121,7 +123,7 @@ func (self *BuilderStdAutotools) DefineActions() (basictypes.BuilderActions, err
 func (self *BuilderStdAutotools) BuilderActionDstCleanup(
 	log *logger.Logger,
 ) error {
-	dst_dir := self.site.GetDIR_DESTDIR()
+	dst_dir := self.bs.GetDIR_DESTDIR()
 	os.RemoveAll(dst_dir)
 	os.MkdirAll(dst_dir, 0700)
 	return nil
@@ -130,7 +132,7 @@ func (self *BuilderStdAutotools) BuilderActionDstCleanup(
 func (self *BuilderStdAutotools) BuilderActionSrcCleanup(
 	log *logger.Logger,
 ) error {
-	src_dir := self.site.GetDIR_SOURCE()
+	src_dir := self.bs.GetDIR_SOURCE()
 	os.RemoveAll(src_dir)
 	os.MkdirAll(src_dir, 0700)
 	return nil
@@ -138,7 +140,7 @@ func (self *BuilderStdAutotools) BuilderActionSrcCleanup(
 func (self *BuilderStdAutotools) BuilderActionBldCleanup(
 	log *logger.Logger,
 ) error {
-	bld_dir := self.site.GetDIR_BUILDING()
+	bld_dir := self.bs.GetDIR_BUILDING()
 	os.RemoveAll(bld_dir)
 	os.MkdirAll(bld_dir, 0700)
 	return nil
@@ -149,7 +151,7 @@ func (self *BuilderStdAutotools) BuilderActionPrimaryExtract(
 ) error {
 	a_tools := new(buildingtools.Autotools)
 
-	info, err := self.site.ReadInfo()
+	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -158,11 +160,11 @@ func (self *BuilderStdAutotools) BuilderActionPrimaryExtract(
 		return errors.New("no tarballs supplied. primary tarball is required")
 	}
 	tarball := info.Sources[0]
-	tarball = path.Join(self.site.GetDIR_TARBALL(), tarball)
+	tarball = path.Join(self.bs.GetDIR_TARBALL(), tarball)
 	err = a_tools.Extract(
 		tarball,
-		self.site.GetDIR_SOURCE(),
-		path.Join(self.site.GetDIR_TEMP(), "primary_tarball"),
+		self.bs.GetDIR_SOURCE(),
+		path.Join(self.bs.GetDIR_TEMP(), "primary_tarball"),
 		true,
 		false,
 		"",
@@ -175,7 +177,7 @@ func (self *BuilderStdAutotools) BuilderActionPrimaryExtract(
 	}
 
 	if self.AfterExtractCB != nil {
-		err = self.AfterExtractCB(err, log)
+		err = self.AfterExtractCB(log, err)
 		if err != nil {
 			return err
 		}
@@ -201,7 +203,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureEnvDef(
 ) (environ.EnvVarEd, error) {
 	env := environ.New()
 
-	calc := self.site.ValuesCalculator()
+	calc := self.bs.ValuesCalculator()
 
 	pkgcp, err := calc.CalculatePkgConfigSearchPaths("")
 	if err != nil {
@@ -263,7 +265,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureArgsDef(
 
 	ret := make([]string, 0)
 
-	calc := self.site.ValuesCalculator()
+	calc := self.bs.ValuesCalculator()
 
 	prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
@@ -335,7 +337,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.site.GetDIR_SOURCE()
+	ret := self.bs.GetDIR_SOURCE()
 
 	if self.EditConfigureDirCB != nil {
 		var err error
@@ -352,7 +354,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.site.GetDIR_SOURCE()
+	ret := self.bs.GetDIR_SOURCE()
 
 	if self.EditConfigureWorkingDirCB != nil {
 		var err error
@@ -536,7 +538,7 @@ func (self *BuilderStdAutotools) BuilderActionBuildMakefileDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.site.GetDIR_SOURCE()
+	ret := self.bs.GetDIR_SOURCE()
 
 	if self.EditBuildMakefileDirCB != nil {
 		var err error
@@ -553,7 +555,7 @@ func (self *BuilderStdAutotools) BuilderActionBuildWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.site.GetDIR_SOURCE()
+	ret := self.bs.GetDIR_SOURCE()
 
 	if self.EditBuildWorkingDirCB != nil {
 		var err error
@@ -683,7 +685,7 @@ func (self *BuilderStdAutotools) BuilderActionDistributeArgsDef(
 		fmt.Sprintf(
 			"%s=%s",
 			destdir_string,
-			self.site.GetDIR_DESTDIR(),
+			self.bs.GetDIR_DESTDIR(),
 		),
 	)
 
@@ -719,7 +721,7 @@ func (self *BuilderStdAutotools) BuilderActionDistributeMakefileDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.site.GetDIR_SOURCE()
+	ret := self.bs.GetDIR_SOURCE()
 
 	if self.EditDistributeMakefileCB != nil {
 		var err error
@@ -736,7 +738,7 @@ func (self *BuilderStdAutotools) BuilderActionDistributeWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.site.GetDIR_SOURCE()
+	ret := self.bs.GetDIR_SOURCE()
 
 	if self.EditDistributeWorkingDirCB != nil {
 		var err error
@@ -797,5 +799,25 @@ func (self *BuilderStdAutotools) BuilderActionDistribute(
 		return err
 	}
 
+	return nil
+}
+
+func (self *BuilderStdAutotools) BuilderActionPrePack(
+	log *logger.Logger,
+) error {
+	err := self.bs.PrePackager().Run(log)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (self *BuilderStdAutotools) BuilderActionPack(
+	log *logger.Logger,
+) error {
+	err := self.bs.Packager().Run(log)
+	if err != nil {
+		return err
+	}
 	return nil
 }
