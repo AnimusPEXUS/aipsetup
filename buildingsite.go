@@ -472,19 +472,19 @@ main_loop:
 	for _, i := range actions {
 		for _, j := range targets {
 			if i.Name == j {
-				l.Info("starting target " + j)
+				l.Info(fmt.Sprintf("---====//////[start %s]\\\\\\\\\\\\====---", j))
 				lo, err := self.CreateLogger(j, true)
 				if err != nil {
 					return err
 				}
-				lo.Info(j + " log started")
+				// lo.Info(j + " log started")
 				err = i.Callable(lo)
-				lo.Info(j + " log ended")
+				// lo.Info(j + " log ended")
 				lo.Close()
 				if err != nil {
 					return err
 				}
-				l.Info("---------------------")
+				l.Info(fmt.Sprintf("---====\\\\\\\\\\\\[ending %s]//////====---", j))
 				continue main_loop
 			}
 		}

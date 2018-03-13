@@ -118,13 +118,11 @@ func (self *BuilderBinutils) AfterExtract(log *logger.Logger, err error) error {
 
 		err = a_tools.Extract(
 			path.Join(tar_dir, filename),
-			self.bs.GetDIR_SOURCE(),
+			path.Join(self.bs.GetDIR_SOURCE(), i),
 			self.bs.GetDIR_TEMP(),
+			true,
 			false,
 			true,
-			i,
-			false,
-			false,
 			log,
 		)
 		if err != nil {

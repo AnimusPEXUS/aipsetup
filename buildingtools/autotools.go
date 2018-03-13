@@ -27,13 +27,11 @@ type Autotools struct {
 
 func (self *Autotools) Extract(
 	filename string,
-	srcdir string,
+	outputdir string,
 	tempdir string,
 	unwrap bool,
-	rename_dir bool,
-	new_name string,
 	is_more_than_one_extracted_ok bool,
-	cleanup_srcdir bool,
+	cleanup_outputdir bool,
 	log *logger.Logger,
 ) error {
 
@@ -41,11 +39,11 @@ func (self *Autotools) Extract(
 	os.MkdirAll(tempdir, 0700)
 	defer os.RemoveAll(tempdir)
 
-	if cleanup_srcdir {
-		os.RemoveAll(srcdir)
+	if cleanup_outputdir {
+		os.RemoveAll(outputdir)
 	}
 
-	os.MkdirAll(srcdir, 0700)
+	os.MkdirAll(outputdir, 0700)
 
 	// TODO: mega fast decision. this should be replaced by internal functionality
 	log.Info("starting tar utility")
@@ -69,16 +67,22 @@ func (self *Autotools) Extract(
 	}
 
 	log.Info(
-		fmt.Sprintf("tar work resulted in %d files and/or directories", len(info)),
+		fmt.Sprintf("tar work resulted in %d files", len(info)),
 	)
 
+	directory_to_work_with := tempdir
+
 	if unwrap {
+		is_more_than_one_extracted_ok = false
+	}
 
-		log.Info("unwrapping and moving files to source directory")
-
-		if len(info) != 1 && !is_more_than_one_extracted_ok {
-			return errors.New("extracted more than one item")
+	if !is_more_than_one_extracted_ok {
+		if len(info) != 1 {
+			return errors.New("can't unwrap: extracted more than one item")
 		}
+	}
+
+	if unwrap {
 
 		extracted_dir := ""
 
@@ -90,31 +94,22 @@ func (self *Autotools) Extract(
 		}
 
 		if extracted_dir == "" {
-			return errors.New("no directories extracted")
+			return errors.New("unwrap failed no directories extracted")
 		}
 
-		extracted_dir = path.Join(tempdir, extracted_dir)
+		directory_to_work_with = path.Join(directory_to_work_with, extracted_dir)
+	}
 
-		info, err = ioutil.ReadDir(extracted_dir)
-		if err != nil {
-			return err
-		}
+	info, err = ioutil.ReadDir(directory_to_work_with)
+	if err != nil {
+		return err
+	}
 
-		for _, i := range info {
-			os.Rename(
-				path.Join(extracted_dir, i.Name()),
-				path.Join(srcdir, i.Name()),
-			)
-		}
-
-	} else {
-		log.Info("moving files to source directory")
-		for _, i := range info {
-			os.Rename(
-				path.Join(tempdir, i.Name()),
-				path.Join(srcdir, i.Name()),
-			)
-		}
+	for _, i := range info {
+		os.Rename(
+			path.Join(directory_to_work_with, i.Name()),
+			path.Join(outputdir, i.Name()),
+		)
 	}
 
 	log.Info("extraction procedure ended without errors")

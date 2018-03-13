@@ -60,6 +60,8 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 	var allowed_in_host = []string{
 		"bin", "sbin", "opt", "lib", "lib64",
 		"share", "include", "libexec", "multiarch", "src",
+
+		"x86_64-pc-linux-gnu", // TODO: compiler dir's should be checcked smarter
 	}
 
 	var allowed_in_host_arch = []string{
@@ -90,7 +92,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 					continue loop
 				}
 			}
-
+			log.Error(fmt.Sprintf("file %s not allowed in root directory", i.Name()))
 			return errors.New("found not allowed files in destdir root")
 		}
 	}
@@ -115,6 +117,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 				}
 			}
 
+			log.Error(fmt.Sprintf("file %s not allowed in host directory", i.Name()))
 			return errors.New("found not allowed files in host dir")
 		}
 	}
@@ -141,6 +144,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 					}
 				}
 
+				log.Error(fmt.Sprintf("file %s not allowed in host's arch directory", i.Name()))
 				return errors.New("found not allowed files in host's arch dir")
 			}
 		}
@@ -408,12 +412,15 @@ func (self Packager) UpdateTimestamp(log *logger.Logger) error {
 	return nil
 }
 
-func (self Packager) _ListItemsToPack(include_checksum bool) ([]string, error) {
+func (self Packager) _ListItemsToPack(include_checksum, include_build_logs bool) ([]string, error) {
 	ret := make([]string, 0)
 	pth := self.site.Path
 	ret = append(ret, path.Join(pth, DIR_DESTDIR+".tar.xz"))
 	ret = append(ret, path.Join(pth, DIR_PATCHES+".tar.xz"))
-	ret = append(ret, path.Join(pth, DIR_BUILD_LOGS+".tar.xz"))
+
+	if include_build_logs {
+		ret = append(ret, path.Join(pth, DIR_BUILD_LOGS+".tar.xz"))
+	}
 
 	ret = append(ret, path.Join(pth, PACKAGE_INFO_FILENAME_V5))
 	if include_checksum {
@@ -453,7 +460,7 @@ func (self Packager) MakeChecksums(log *logger.Logger) error {
 
 	result_file := path.Join(self.site.Path, "package.sha512")
 
-	list_to_checksum, err := self._ListItemsToPack(false)
+	list_to_checksum, err := self._ListItemsToPack(false, false)
 	if err != nil {
 		return err
 	}
@@ -553,7 +560,7 @@ func (self Packager) Pack(log *logger.Logger) error {
 		return err
 	}
 
-	list_to_pack, err := self._ListItemsToPack(true)
+	list_to_pack, err := self._ListItemsToPack(true, true)
 	if err != nil {
 		return err
 	}

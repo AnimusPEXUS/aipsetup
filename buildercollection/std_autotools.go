@@ -167,8 +167,6 @@ func (self *BuilderStdAutotools) BuilderActionPrimaryExtract(
 		path.Join(self.bs.GetDIR_TEMP(), "primary_tarball"),
 		true,
 		false,
-		"",
-		false,
 		false,
 		log,
 	)
