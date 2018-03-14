@@ -353,6 +353,9 @@ func (self *BuilderStdAutotools) BuilderActionConfigureWorkingDirDef(
 ) (string, error) {
 
 	ret := self.bs.GetDIR_SOURCE()
+	if self.SeparateBuildDir {
+		ret = self.bs.GetDIR_BUILDING()
+	}
 
 	if self.EditConfigureWorkingDirCB != nil {
 		var err error
@@ -553,7 +556,10 @@ func (self *BuilderStdAutotools) BuilderActionBuildWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.bs.GetDIR_SOURCE()
+	ret, err := self.BuilderActionConfigureWorkingDirDef(log)
+	if err != nil {
+		return "", err
+	}
 
 	if self.EditBuildWorkingDirCB != nil {
 		var err error
@@ -736,7 +742,10 @@ func (self *BuilderStdAutotools) BuilderActionDistributeWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.bs.GetDIR_SOURCE()
+	ret, err := self.BuilderActionBuildWorkingDirDef(log)
+	if err != nil {
+		return "", err
+	}
 
 	if self.EditDistributeWorkingDirCB != nil {
 		var err error

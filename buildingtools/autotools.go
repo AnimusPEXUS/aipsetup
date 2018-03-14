@@ -367,7 +367,9 @@ func (self *Autotools) Make(
 		string(os.PathSeparator),
 	)
 
-	int_args = append(int_args, []string{"-f", dirpath_script_to_run}...)
+	if makefile_filename != "Makefile" {
+		int_args = append(int_args, []string{"-f", dirpath_script_to_run}...)
+	}
 
 	int_args = append(int_args, args...)
 
