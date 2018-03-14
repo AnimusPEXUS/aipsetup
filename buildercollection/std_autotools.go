@@ -15,7 +15,7 @@ import (
 )
 
 func init() {
-	Index["std_autotools"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
+	Index["std"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
 		return NewBuilderStdAutotools(bs), nil
 	}
 }

@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "",
-  "BuilderName": "cloog",
+  "BuilderName": "std",
   "Removable": false,
   "Reducible": true,
   "NonInstallable": false,
