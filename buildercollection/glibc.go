@@ -3,7 +3,12 @@ package buildercollection
 import (
 	"errors"
 	"fmt"
+	"io"
+	"os"
+	"os/exec"
 	"path"
+	"path/filepath"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/logger"
@@ -11,7 +16,7 @@ import (
 
 func init() {
 	Index["glibc"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderGlibc(bs), nil
+		return NewBuilderGlibc(bs)
 	}
 }
 
@@ -19,9 +24,11 @@ type BuilderGlibc struct {
 	bs basictypes.BuildingSiteCtlI
 
 	std_builder *BuilderStdAutotools
+
+	slibdir string
 }
 
-func NewBuilderGlibc(bs basictypes.BuildingSiteCtlI) *BuilderGlibc {
+func NewBuilderGlibc(bs basictypes.BuildingSiteCtlI) (*BuilderGlibc, error) {
 
 	self := new(BuilderGlibc)
 	self.bs = bs
@@ -34,7 +41,18 @@ func NewBuilderGlibc(bs basictypes.BuildingSiteCtlI) *BuilderGlibc {
 
 	self.std_builder.EditConfigureArgsCB = self.EditConfigureArgs
 
-	return self
+	calc := self.bs.ValuesCalculator()
+
+	if t, err := calc.CalculateInstallLibDir(); err != nil {
+		return nil, err
+	} else {
+		self.slibdir = t
+	}
+
+	self.std_builder.EditBuildArgsCB = self.EditBuildArgs
+	self.std_builder.EditDistributeArgsCB = self.EditDistributeArgs
+
+	return self, nil
 }
 
 func (self *BuilderGlibc) DefineActions() (basictypes.BuilderActions, error) {
@@ -203,14 +221,14 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 		}...,
 	)
 
-	// '''
-	// # NOTE: it's not working
-	// # NOTE: don't remove this block. it's for informational reason
-	// if self.get_arch_from_pkgi().startswith('x86_64'):
-	//     ret += ['slibdir=lib64']
+	// """
+	// # NOTE: it"s not working
+	// # NOTE: don"t remove this block. it"s for informational reason
+	// if self.get_arch_from_pkgi().startswith("x86_64"):
+	//     ret += ["slibdir=lib64"]
 	// else:
-	//     ret += ['slibdir=lib']
-	// '''
+	//     ret += ["slibdir=lib"]
+	// """
 
 	// NOTE: this block is not found in pythonish aipsetup clibc builder, and
 	//       is only binutils.go builder copy result. probably can be removed
@@ -228,18 +246,18 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 			//       wiser. to be done..
 
 			// # this can be commented whan gcc fully built and installed
-			// #'libc_cv_forced_unwind=yes',
+			// #"libc_cv_forced_unwind=yes",
 			//
-			// # this parameter is required to build `build_02+'
+			// # this parameter is required to build `build_02+"
 			// # stage.  comment and completle rebuild this glibc
 			// # after rebuilding gcc without --without-headers and
 			// # with --with-sysroot parameter.
 			// #
-			// # 'libc_cv_ssp=no'
+			// # "libc_cv_ssp=no"
 			// #
 			// # else You will see errors like this:
 			// #     gethnamaddr.c:185: undefined reference to
-			// #     `__stack_chk_guard'
+			// #     `__stack_chk_guard"
 
 			}...,
 		)
@@ -248,52 +266,227 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 	return ret, nil
 }
 
+func (self *BuilderGlibc) EditBuildArgs(log *logger.Logger, ret []string) ([]string, error) {
+	ret = append(ret, "slibdir="+self.slibdir)
+	return ret, nil
+}
+
+func (self *BuilderGlibc) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
+	ret = append(ret, "slibdir="+self.slibdir)
+	return ret, nil
+}
+
 func (self *BuilderGlibc) BuilderActionDistribute_01(
 	log *logger.Logger,
 ) error {
-	return errors.New("todo")
-	// TODO: high priority TODO
-	return nil
+
+	self.std_builder.EditBuildArgsCB = func(
+		log *logger.Logger,
+		ret []string,
+	) ([]string, error) {
+		return []string{
+			"install-bootstrap-headers=yes",
+			"install-headers",
+			"DESTDIR=" + self.bs.GetDIR_DESTDIR(),
+		}, nil
+	}
+
+	return self.std_builder.BuilderActionBuild(log)
 }
 
 func (self *BuilderGlibc) BuilderActionDistribute_01_2(
 	log *logger.Logger,
 ) error {
-	return nil
+
+	self.std_builder.EditBuildArgsCB = func(
+		log *logger.Logger,
+		ret []string,
+	) ([]string, error) {
+		return []string{
+			"csu/subdir_lib",
+		}, nil
+	}
+
+	return self.std_builder.BuilderActionBuild(log)
 }
 
 func (self *BuilderGlibc) BuilderActionDistribute_01_3(
 	log *logger.Logger,
 ) error {
+
+	calc := self.bs.ValuesCalculator()
+
+	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
+	if err != nil {
+		return err
+	}
+
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	mmldn, err := calc.CalculateMainMultiarchLibDirName()
+	if err != nil {
+		return err
+	}
+
+	gres, err := filepath.Glob(
+		path.Join(self.bs.GetDIR_BUILDING(), "csu", "*crt*.o"),
+	)
+	if err != nil {
+		return err
+	}
+
+	dest_lib_dir := path.Join(dhcd, info.Target, mmldn)
+
+	err = os.MkdirAll(dest_lib_dir, 0755)
+	if err != nil {
+		return err
+	}
+
+	for _, i := range gres {
+		fromf, err := os.Open(i)
+		if err != nil {
+			return err
+		}
+		tof, err := os.Create(path.Join(dest_lib_dir, path.Base(i)))
+		if err != nil {
+			fromf.Close()
+			return err
+		}
+		_, err = io.Copy(tof, fromf)
+
+		fromf.Close()
+		tof.Close()
+
+		if err != nil {
+			return err
+		}
+	}
+
 	return nil
 }
 
 func (self *BuilderGlibc) BuilderActionDistribute_01_4(
 	log *logger.Logger,
 ) error {
+	calc := self.bs.ValuesCalculator()
+
+	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
+	if err != nil {
+		return err
+	}
+
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	mmldn, err := calc.CalculateMainMultiarchLibDirName()
+	if err != nil {
+		return err
+	}
+
+	cwd := path.Join(dhcd, info.Target, mmldn)
+
+	cmd := []string{
+		"-nostdlib",
+		"-nostartfiles",
+		"-shared",
+		"-x",
+		"c",
+		"/dev/null",
+		"-o",
+		"libc.so",
+	}
+
+	log.Info("directory: " + cwd)
+	log.Info("cmd: " + strings.Join(cmd, "/"))
+
+	c := exec.Command(info.Target+"-gcc", cmd...)
+	c.Stdout = os.Stdout
+	c.Stderr = os.Stderr
+	c.Dir = cwd
+
+	err = c.Run()
+
 	return nil
 }
 
 func (self *BuilderGlibc) BuilderActionDistribute_01_5(
 	log *logger.Logger,
 ) error {
+
+	calc := self.bs.ValuesCalculator()
+
+	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
+	if err != nil {
+		return err
+	}
+
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	cwd := path.Join(dhcd, info.Target, "include", "gnu")
+
+	cwdf := path.Join(cwd, "stubs.h")
+
+	err = os.MkdirAll(cwd, 0755)
+	if err != nil {
+		return err
+	}
+
+	f, err := os.Create(cwdf)
+	if err != nil {
+		return err
+	}
+
+	f.Close()
+
 	return nil
 }
 
 func (self *BuilderGlibc) BuilderActionIntermediateInstruction(
 	log *logger.Logger,
 ) error {
-	return nil
+	for _, i := range []string{
+		"---------------",
+		"pack and install this glibc build.",
+		"then continue with gcc build_02+",
+		"---------------",
+	} {
+		log.Info(i)
+	}
+	return errors.New("user action required")
 }
 
 func (self *BuilderGlibc) BuilderActionBuild_02(
 	log *logger.Logger,
 ) error {
-	return nil
+
+	self.std_builder.EditBuildArgsCB = func(
+		log *logger.Logger,
+		ret []string,
+	) ([]string, error) {
+		return []string{}, nil
+	}
+
+	return self.std_builder.BuilderActionBuild(log)
 }
 
 func (self *BuilderGlibc) BuilderActionDistribute_02(
 	log *logger.Logger,
 ) error {
-	return nil
+
+	self.std_builder.EditDistributeArgsCB = func(
+		log *logger.Logger,
+		ret []string,
+	) ([]string, error) {
+		return []string{"install", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
+	}
+
+	return self.std_builder.BuilderActionDistribute(log)
 }
