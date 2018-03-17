@@ -15,6 +15,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
@@ -527,28 +528,17 @@ func (self Packager) Pack(log *logger.Logger) error {
 
 	pack_dir := path.Join(self.site.Path, "..", "pack")
 
-	has_target_part := info.Target != info.Arch
-	has_arch_part := (info.Arch != info.Host) || has_target_part
-
-	target_part := ""
-	if has_target_part {
-		target_part = fmt.Sprintf("-(%s)", info.Target)
-	}
-
-	arch_part := ""
-	if has_arch_part {
-		arch_part = fmt.Sprintf("-(%s)", info.Arch)
-	}
-
 	pack_file_name := fmt.Sprintf(
-		"(%s)-(%s)-(%s)-(%s)-(%s)%s%s.asp",
-		info.PackageName,
-		info.PackageVersion,
-		info.PackageStatus,
-		info.PackageTimestamp,
-		info.Host,
-		arch_part,
-		target_part,
+		"%s.asp",
+		(&basictypes.ASPName{
+			Name:      info.PackageName,
+			Version:   info.PackageVersion,
+			Status:    info.PackageStatus,
+			TimeStamp: info.PackageTimestamp,
+			Host:      info.Host,
+			Arch:      info.Arch,
+			Target:    info.Target,
+		}).String(),
 	)
 
 	j_pack_file_name := path.Join(pack_dir, pack_file_name)

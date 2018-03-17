@@ -13,6 +13,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/set"
 	"github.com/AnimusPEXUS/utils/systemtriplet"
 	"github.com/ulikunitz/xz"
@@ -79,7 +80,7 @@ func (self *SystemPackages) ListInstalledASPs(
 			for _, i := range files_in_dir {
 				if !i.IsDir() && strings.HasSuffix(i.Name(), ").xz") {
 
-					parsed_asp_name, err := NewASPNameFromString(i.Name())
+					parsed_asp_name, err := basictypes.NewASPNameFromString(i.Name())
 					if err != nil {
 						return make([]string, 0),
 							errors.New("could not parse string as ASP name: " + i.Name())
@@ -116,7 +117,7 @@ func (self *SystemPackages) ListInstalledPackageNames(
 searching_missing_names:
 	for _, i := range res {
 
-		parsed_asp_name, err := NewASPNameFromString(i)
+		parsed_asp_name, err := basictypes.NewASPNameFromString(i)
 		if err != nil {
 			return make([]string, 0),
 				errors.New(
@@ -152,7 +153,7 @@ func (self *SystemPackages) ListInstalledPackageNameASPs(
 search:
 	for _, i := range res {
 
-		parsed_asp_name, err := NewASPNameFromString(i)
+		parsed_asp_name, err := basictypes.NewASPNameFromString(i)
 		if err != nil {
 			return make([]string, 0),
 				errors.New(
@@ -176,7 +177,7 @@ search:
 }
 
 func (self *SystemPackages) GenASPFileListPath(
-	aspname *ASPName,
+	aspname *basictypes.ASPName,
 ) (string, error) {
 	return path.Join(
 		self.Sys.GetInstalledASPDir(),
@@ -185,7 +186,7 @@ func (self *SystemPackages) GenASPFileListPath(
 }
 
 func (self *SystemPackages) IsASPInstalled(
-	aspname *ASPName,
+	aspname *basictypes.ASPName,
 ) (bool, error) {
 	fullname, err := self.GenASPFileListPath(aspname)
 	if err != nil {
@@ -208,7 +209,7 @@ func (self *SystemPackages) IsASPInstalled(
 // }
 
 func (self *SystemPackages) ListInstalledASPFiles(
-	aspname *ASPName,
+	aspname *basictypes.ASPName,
 ) ([]string, error) {
 
 	ret := make([]string, 0)
@@ -267,7 +268,7 @@ reading_lines:
 }
 
 func (self *SystemPackages) RemoveASP_DestDir(
-	aspname *ASPName,
+	aspname *basictypes.ASPName,
 	exclude_files []string,
 ) error {
 
@@ -420,7 +421,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 }
 
 func (self *SystemPackages) RemoveASP_FileLists(
-	aspname *ASPName,
+	aspname *basictypes.ASPName,
 ) error {
 	for _, i := range [][3]string{
 		{
@@ -468,7 +469,7 @@ func (self *SystemPackages) RemoveASP_FileLists(
 }
 
 func (self *SystemPackages) RemoveASP(
-	aspname *ASPName,
+	aspname *basictypes.ASPName,
 	unregister_only bool,
 	exclude_files []string,
 ) error {
@@ -491,12 +492,12 @@ func (self *SystemPackages) RemoveASP(
 }
 
 func (self *SystemPackages) ReduceASP(
-	reduce_to *ASPName,
-	reduce_what []*ASPName,
+	reduce_to *basictypes.ASPName,
+	reduce_what []*basictypes.ASPName,
 	host, arch string,
 ) error {
 
-	reduce_what_copy := make([]*ASPName, 0)
+	reduce_what_copy := make([]*basictypes.ASPName, 0)
 	reduce_what_copy = append(reduce_what_copy, reduce_what...)
 
 	err := self._TestHostArchParameters(host, arch)
@@ -534,7 +535,7 @@ func (self *SystemPackages) ReduceASP(
 		return err
 	}
 
-	errors_while_reducing_asps := make([]*ASPName, 0)
+	errors_while_reducing_asps := make([]*basictypes.ASPName, 0)
 	for _, i := range reduce_what_copy {
 		err := self.RemoveASP(i, false, fiba)
 		if err != nil {
@@ -553,7 +554,7 @@ func (self *SystemPackages) ReduceASP(
 
 func (self *SystemPackages) InstallASP_FileLists(
 	filename string,
-	parsed *ASPName,
+	parsed *basictypes.ASPName,
 ) error {
 
 	tar_file_obj, err := os.Open(filename)
@@ -863,10 +864,12 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 
 func (self *SystemPackages) InstallASP(filename string) error {
 
-	parsed, err := NewASPNameFromString(filename)
+	parsed, err := basictypes.NewASPNameFromString(filename)
 	if err != nil {
 		return err
 	}
+
+	fmt.Println("parse result\n", parsed.StringD())
 
 	host := parsed.Host
 	arch := parsed.Arch

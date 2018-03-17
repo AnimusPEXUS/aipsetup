@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/AnimusPEXUS/aipsetup"
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
@@ -177,7 +178,7 @@ func StdRoutineMustGetOneArg(getopt_result *cliapp.GetOptResult) (
 }
 
 func StdRoutineMustGetASPName(getopt_result *cliapp.GetOptResult) (
-	*aipsetup.ASPName,
+	*basictypes.ASPName,
 	*cliapp.AppResult,
 ) {
 
@@ -186,7 +187,7 @@ func StdRoutineMustGetASPName(getopt_result *cliapp.GetOptResult) (
 		return nil, res_err
 	}
 
-	name, err := aipsetup.NewASPNameFromString(res)
+	name, err := basictypes.NewASPNameFromString(res)
 	if err != nil {
 		return nil, &cliapp.AppResult{
 			Code:    11,

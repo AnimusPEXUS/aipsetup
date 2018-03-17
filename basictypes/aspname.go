@@ -1,4 +1,4 @@
-package aipsetup
+package basictypes
 
 import (
 	"errors"
@@ -17,9 +17,14 @@ var (
 
 const (
 	ASP_NAME_REGEXPS_AIPSETUP3 string = `` +
-		`^\((?P<name>.+?)\)-\((?P<version>(\d+\.??)+)\)-\((?P<status>.*?)\)` +
-		`-\((?P<timestamp>\d{8}\.\d{6}\.\d{7})\)-\((?P<host>.*)\)` +
-		`-\((?P<arch>.*)\)((\.tar.xz)|(\.asp)|(\.xz))?$`
+		`^\((?P<name>.+?)\)` +
+		`-\((?P<version>\d+(\.\d+)*)\)` +
+		`-\((?P<status>.*?)\)` +
+		`-\((?P<timestamp>\d{8}\.\d{6}\.\d{7})\)` +
+		`-\((?P<host>.*)\)` +
+		`(-\((?P<arch>.*)\)` +
+		`(-\((?P<target>.*)\))?)?` +
+		`((\.tar.xz)|(\.asp)|(\.xz))?$`
 
 	ASP_NAME_REGEXPS_AIPSETUP3_TIMESTAMP = `` +
 		`(?P<year>\d{4})(?P<month>\d{2})(?P<day>\d{2})\.` +
@@ -44,18 +49,36 @@ type ASPName struct {
 	TimeStamp string
 	Host      string
 	Arch      string
+	Target    string
 }
 
 func (self *ASPName) String() string {
-	return fmt.Sprintf(
-		"(%s)-(%s)-(%s)-(%s)-(%s)-(%s)",
+
+	has_target_part := self.Target != self.Arch
+	has_arch_part := (self.Arch != self.Host) || has_target_part
+
+	target_part := ""
+	if has_target_part {
+		target_part = fmt.Sprintf("-(%s)", self.Target)
+	}
+
+	arch_part := ""
+	if has_arch_part {
+		arch_part = fmt.Sprintf("-(%s)", self.Arch)
+	}
+
+	ret := fmt.Sprintf(
+		"(%s)-(%s)-(%s)-(%s)-(%s)%s%s",
 		self.Name,
 		self.Version,
 		self.Status,
 		self.TimeStamp,
 		self.Host,
-		self.Arch,
+		arch_part,
+		target_part,
 	)
+
+	return ret
 }
 
 func (self *ASPName) TimeStampTime() (*time.Time, error) {
@@ -190,10 +213,32 @@ func NewASPNameFromString(str string) (*ASPName, error) {
 			ret.Host = parsed_strs[ii]
 		case "arch":
 			ret.Arch = parsed_strs[ii]
+		case "target":
+			ret.Target = parsed_strs[ii]
 		}
 	}
 
+	if ret.Arch == "" {
+		ret.Arch = ret.Host
+	}
+
+	if ret.Target == "" {
+		ret.Target = ret.Arch
+	}
+
 	return ret, nil
+}
+
+func (self *ASPName) StringD() string {
+	ret := ""
+	ret += "Name:      " + self.Name + "\n"
+	ret += "Version:   " + self.Version + "\n"
+	ret += "Status:    " + self.Status + "\n"
+	ret += "TimeStamp: " + self.TimeStamp + "\n"
+	ret += "Host:      " + self.Host + "\n"
+	ret += "Arch:      " + self.Arch + "\n"
+	ret += "Target:    " + self.Target + "\n"
+	return ret
 }
 
 type ASPNameSorter []string
