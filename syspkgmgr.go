@@ -7,6 +7,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 	"path"
 	"path/filepath"
@@ -15,7 +16,6 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/set"
-	"github.com/AnimusPEXUS/utils/systemtriplet"
 	"github.com/ulikunitz/xz"
 )
 
@@ -35,76 +35,100 @@ func NewSystemPackages(system *System) *SystemPackages {
 	return ret
 }
 
-func (self *SystemPackages) _TestHostArchParameters(host, arch string) error {
-
-	if host == "" && arch != "" {
-		return errors.New("if `host' is empty, `arch' must be empty too")
-	}
-
-	if host != "" {
-		_, err := systemtriplet.NewFromString(host)
-		if err != nil {
-			return err
-		}
-	}
-
-	if arch != "" {
-		_, err := systemtriplet.NewFromString(arch)
-		if err != nil {
-			return err
-		}
-	}
-
-	return nil
-}
+// func (self *SystemPackages) _TestHostArchParameters(host, hostarch, target string) error {
+//
+// 	if host == "" && arch != "" {
+// 		return errors.New("if `host' is empty, `arch' must be empty too")
+// 	}
+//
+// 	if host != "" {
+// 		_, err := systemtriplet.NewFromString(host)
+// 		if err != nil {
+// 			return err
+// 		}
+// 	}
+//
+// 	if arch != "" {
+// 		_, err := systemtriplet.NewFromString(arch)
+// 		if err != nil {
+// 			return err
+// 		}
+// 	}
+//
+// 	return nil
+// }
 
 func (self *SystemPackages) UninstallName(filename string) int {
 	return 1
 }
 
-func (self *SystemPackages) ListInstalledASPs(
-	host, arch string,
+func (self *SystemPackages) ListAllInstalledASPs() ([]string, error) {
+	pth := self.Sys.GetInstalledASPDir()
+	files, err := ioutil.ReadDir(pth)
+	if err != nil {
+		return nil, err
+	}
+
+	ret := make([]string, 0)
+
+	for _, i := range files {
+		n := path.Base(i.Name())
+		if !i.IsDir() && strings.HasSuffix(n, ").xz") {
+			nn, err := basictypes.NewASPNameFromString(n)
+			if err != nil {
+				fmt.Errorf("Can't parse %s inside installed asps dir\n", i.Name())
+				continue
+			}
+			ret = append(ret, nn.String())
+		}
+	}
+
+	sort.Strings(ret)
+
+	return ret, nil
+}
+
+func (self *SystemPackages) ListFilteredInstalledASPs(
+	host, hostarch, target string,
 ) ([]string, error) {
 
-	if arch != "" && host == "" {
-		panic("if host is empty, arch must be empty also")
+	complete_list, err := self.ListAllInstalledASPs()
+	if err != nil {
+		return nil, err
 	}
 
 	asps := make([]string, 0)
 
-	dir, err := os.Open(self.Sys.GetInstalledASPDir())
-	if dir != nil && err == nil {
-		files_in_dir, err := dir.Readdir(-1)
-		if files_in_dir != nil && err == nil {
+	for _, i := range complete_list {
 
-			for _, i := range files_in_dir {
-				if !i.IsDir() && strings.HasSuffix(i.Name(), ").xz") {
-
-					parsed_asp_name, err := basictypes.NewASPNameFromString(i.Name())
-					if err != nil {
-						return make([]string, 0),
-							errors.New("could not parse string as ASP name: " + i.Name())
-					}
-
-					if (host == "") ||
-						((host != "" && host == parsed_asp_name.Host) &&
-							((arch == "") || (arch != "" && arch == parsed_asp_name.Arch))) {
-						asps = append(asps, i.Name())
-					}
-
-				}
-			}
+		parsed_asp_name, err := basictypes.NewASPNameFromString(i)
+		if err != nil {
+			return nil, errors.New("could not parse string as ASP name: " + i)
 		}
+
+		if host != "" && parsed_asp_name.Host != host {
+			continue
+		}
+
+		if hostarch != "" && parsed_asp_name.Arch != hostarch {
+			continue
+		}
+
+		if target != "" && parsed_asp_name.Target != target {
+			continue
+		}
+
+		asps = append(asps, i)
 	}
 
 	return asps, nil
 }
 
 func (self *SystemPackages) ListInstalledPackageNames(
-	host, arch string,
+	host, hostarch, target string,
 ) ([]string, error) {
 
-	res, err := self.ListInstalledASPs(host, arch)
+	res, err := self.ListFilteredInstalledASPs(host, hostarch, target)
 	if err != nil {
 		return make([]string, 0),
 			errors.New(
@@ -138,12 +162,12 @@ searching_missing_names:
 
 func (self *SystemPackages) ListInstalledPackageNameASPs(
 	name string,
-	host, arch string,
+	host, hostarch, target string,
 ) ([]string, error) {
 
 	ret := []string{}
 
-	res, err := self.ListInstalledASPs(host, arch)
+	res, err := self.ListFilteredInstalledASPs(host, hostarch, target)
 	if err != nil {
 		return make([]string, 0), errors.New(
 			"Error listing installed package names: " + err.Error(),
@@ -494,16 +518,11 @@ func (self *SystemPackages) RemoveASP(
 func (self *SystemPackages) ReduceASP(
 	reduce_to *basictypes.ASPName,
 	reduce_what []*basictypes.ASPName,
-	host, arch string,
+	// host, hostarch, target string, // NOTE: abowe parameters already have this info
 ) error {
 
 	reduce_what_copy := make([]*basictypes.ASPName, 0)
 	reduce_what_copy = append(reduce_what_copy, reduce_what...)
-
-	err := self._TestHostArchParameters(host, arch)
-	if err != nil {
-		return err
-	}
 
 	if yes, err := self.IsASPInstalled(reduce_to); err != nil {
 		return err
@@ -521,9 +540,7 @@ func (self *SystemPackages) ReduceASP(
 
 	for i := range reduce_what_copy {
 		reduce_what_i := reduce_what_copy[i]
-		if err != nil {
-			return err
-		}
+		// TODO: something strange. check this
 		if reduce_what_i.String() == reduce_to.String() {
 			reduce_what_copy =
 				append(reduce_what_copy[0:i], reduce_what_copy[:i+1]...)

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
@@ -37,92 +38,108 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 				MaxArgs:   1,
 			},
 
-			// &cliapp.AppCmdNode{
-			// 	Name:    "pkg",
-			// 	SubCmds: []*cliapp.AppCmdNode{},
-			// },
+			&cliapp.AppCmdNode{
+				Name:     "install",
+				Callable: CmdAipsetupSysInstall,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+					STD_OPTION_NAMED_INSTALLATION_FOR_HOST,
+					STD_OPTION_NAMED_INSTALLATION_FOR_HOSTARCH,
+					STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
+				},
+				CheckArgs: true,
+				MinArgs:   -1,
+				MaxArgs:   -1,
+			},
 
 			&cliapp.AppCmdNode{
-				Name: "asp",
-				SubCmds: []*cliapp.AppCmdNode{
-
-					&cliapp.AppCmdNode{
-						Name:             "list",
-						ShortDescription: "list installed asps",
-						Callable:         CmdAipsetupSysAllAsps,
-						AvailableOptions: cliapp.GetOptCheckList{
-							STD_ROOT_OPTION,
-						},
-						CheckArgs: true,
-						MinArgs:   0,
-						MaxArgs:   0,
-					},
-
-					&cliapp.AppCmdNode{
-						Name:             "files",
-						ShortDescription: "list files installed by named asp",
-						Callable:         CmdAipsetupSysASPFiles,
-						AvailableOptions: cliapp.GetOptCheckList{
-							STD_ROOT_OPTION,
-						},
-						CheckArgs: true,
-						MaxArgs:   1,
-						MinArgs:   1,
-					},
-
-					&cliapp.AppCmdNode{
-						Name:             "remove",
-						ShortDescription: "remove asp package",
-						Callable:         CmdAipsetupSysRemoveASP,
-						AvailableOptions: cliapp.GetOptCheckList{
-							STD_ROOT_OPTION,
-						},
-						CheckArgs: true,
-						MinArgs:   1,
-						MaxArgs:   1,
-					},
-
-					&cliapp.AppCmdNode{
-						Name: "install",
-						ShortDescription: "install asp package.\n" +
-							"install asps via 'sys pkg install' for automatic " +
-							"uninstallation of old asps",
-						Callable: CmdAipsetupSysInstallASP,
-						AvailableOptions: cliapp.GetOptCheckList{
-							STD_ROOT_OPTION,
-						},
-						CheckArgs: true,
-						MinArgs:   1,
-						MaxArgs:   1,
-					},
+				Name:     "remove",
+				Callable: CmdAipsetupSysRemove,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+					STD_OPTION_NAMED_INSTALLATION_FOR_HOST,
+					STD_OPTION_NAMED_INSTALLATION_FOR_HOSTARCH,
+					STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
 				},
+				CheckArgs: true,
+				MinArgs:   -1,
+				MaxArgs:   -1,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:     "reduce-to",
+				Callable: CmdAipsetupSysReduceTo,
+				Description: "Reduces named installed asp to named installed asp. " +
+					"Second argument may be a 'leatest' keyword. " +
+					"If named asp is last left in system or is already latest - " +
+					"nothing is done and 0 code returned.",
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   2,
+				MaxArgs:   2,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:             "list-asps",
+				ShortDescription: "list installed asps",
+				Description: "argumenth have to be package name. " +
+					"Currently installed asps in pointed root will be listed.",
+				Callable: CmdAipsetupSysListAsps,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+					STD_OPTION_ASP_LIST_FILTER_HOST,
+					STD_OPTION_ASP_LIST_FILTER_HOSTARCH,
+					STD_OPTION_ASP_LIST_FILTER_TARGET,
+				},
+				CheckArgs: true,
+				MinArgs:   1,
+				MaxArgs:   1,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:             "list-files",
+				ShortDescription: "list files installed by named asp",
+				Callable:         CmdAipsetupSysASPFiles,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MaxArgs:   1,
+				MinArgs:   1,
 			},
 		},
 	}
 
 }
 
-func CmdAipsetupSysAllAsps(
+// ----v-------v-------v---- rework 21 march 2018
+
+func CmdAipsetupSysListAsps(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, host, arch, sys, res := StdRoutineRootHostArchSys(getopt_result)
-	if res.Code != 0 {
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	installed_asps, err := sys.ASPs.ListInstalledASPs(host, arch)
-	if err != nil {
-		return &cliapp.AppResult{Code: 1}
+	host, hostarch, target, res := StdRoutineGetASPListFiltersHHaT(getopt_result, sys)
+	if res != nil && res.Code != 0 {
+		return res
 	}
 
-	num_len := len(fmt.Sprintf("%d", len(installed_asps)))
+	res_lst, err := sys.ASPs.ListFilteredInstalledASPs(host, hostarch, target)
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
 
-	print_fmt := "#%0" + fmt.Sprintf("%d", num_len) + "d %s\n"
+	sort.Strings(res_lst)
 
-	for ii, i := range installed_asps {
-		fmt.Printf(print_fmt, ii, i)
+	for _, i := range res_lst {
+		fmt.Println(i)
 	}
 
 	return &cliapp.AppResult{Code: 0}
@@ -133,24 +150,25 @@ func CmdAipsetupSysAllNames(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, host, arch, sys, res := StdRoutineRootHostArchSys(getopt_result)
-	if res.Code != 0 {
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	installed_names, err := sys.ASPs.ListInstalledPackageNames(host, arch)
-	if err != nil {
-		return &cliapp.AppResult{Code: 1}
+	host, hostarch, target, res := StdRoutineGetASPListFiltersHHaT(getopt_result, sys)
+	if res != nil && res.Code != 0 {
+		return res
 	}
 
-	sort.Strings(installed_names)
+	res_lst, err := sys.ASPs.ListInstalledPackageNames(host, hostarch, target)
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
 
-	num_len := len(fmt.Sprintf("%d", len(installed_names)))
+	sort.Strings(res_lst)
 
-	print_fmt := "#%0" + fmt.Sprintf("%d", num_len) + "d %s\n"
-
-	for ii, i := range installed_names {
-		fmt.Printf(print_fmt, ii, i)
+	for _, i := range res_lst {
+		fmt.Println(i)
 	}
 
 	return &cliapp.AppResult{Code: 0}
@@ -161,30 +179,27 @@ func CmdAipsetupSysNameASPs(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, host, arch, sys, res := StdRoutineRootHostArchSys(getopt_result)
-	if res.Code != 0 {
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	name, res := StdRoutineMustGetOneArg(getopt_result)
-	if res.Code != 0 {
+	host, hostarch, target, res := StdRoutineGetASPListFiltersHHaT(getopt_result, sys)
+	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	installed_archs, err :=
-		sys.ASPs.ListInstalledPackageNameASPs(name, host, arch)
+	asp_name := getopt_result.Args[0]
+
+	res_lst, err := sys.ASPs.ListInstalledPackageNameASPs(asp_name, host, hostarch, target)
 	if err != nil {
-		return &cliapp.AppResult{Code: 1}
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
 
-	sort.Strings(installed_archs)
+	sort.Strings(res_lst)
 
-	num_len := len(fmt.Sprintf("%d", len(installed_archs)))
-
-	print_fmt := "#%0" + fmt.Sprintf("%d", num_len) + "d %s\n"
-
-	for ii, i := range installed_archs {
-		fmt.Printf(print_fmt, ii, i)
+	for _, i := range res_lst {
+		fmt.Println(i)
 	}
 
 	return &cliapp.AppResult{Code: 0}
@@ -195,17 +210,20 @@ func CmdAipsetupSysASPFiles(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineRootSys(getopt_result)
-	if res.Code != 0 {
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	name, res := StdRoutineMustGetASPName(getopt_result)
-	if res.Code != 0 {
-		return res
+	asp_name, err := basictypes.NewASPNameFromString(getopt_result.Args[0])
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    11,
+			Message: err.Error(),
+		}
 	}
 
-	files, err := sys.ASPs.ListInstalledASPFiles(name)
+	files, err := sys.ASPs.ListInstalledASPFiles(asp_name)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -226,22 +244,27 @@ func CmdAipsetupSysASPFiles(
 	return &cliapp.AppResult{Code: 0}
 }
 
-func CmdAipsetupSysRemoveASP(
+func CmdAipsetupSysInstall(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
+	fmt.Println(getopt_result.String())
 
-	_, sys, res := StdRoutineRootSys(getopt_result)
-	if res.Code != 0 {
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	name, res := StdRoutineMustGetASPName(getopt_result)
-	if res.Code != 0 {
-		return res
-	}
+	// host, hostarch, target, res := StdRoutineGetInstallationHHaT(getopt_result, sys)
+	// if res != nil && res.Code != 0 {
+	// 	return res
+	// }
+	//
+	// names := getopt_result.Args
+	panic("TODO")
 
-	err := sys.ASPs.RemoveASP(name, false, []string{})
+	err := sys.ASPs.InstallASP("dummy")
+
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -252,25 +275,25 @@ func CmdAipsetupSysRemoveASP(
 	return &cliapp.AppResult{Code: 0}
 }
 
-func CmdAipsetupSysInstallASP(
+func CmdAipsetupSysRemove(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	fmt.Println(getopt_result.String())
-
-	_, sys, res := StdRoutineRootSys(getopt_result)
-	if res.Code != 0 {
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	name, res := StdRoutineMustGetOneArg(getopt_result)
-	if res.Code != 0 {
-		return res
-	}
+	// host, hostarch, target, res := StdRoutineGetInstallationHHaT(getopt_result, sys)
+	// if res != nil && res.Code != 0 {
+	// 	return res
+	// }
+	//
+	// names := getopt_result.Args
+	panic("TODO")
 
-	err := sys.ASPs.InstallASP(name)
-
+	err := sys.ASPs.RemoveASP(nil, false, []string{})
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -279,4 +302,11 @@ func CmdAipsetupSysInstallASP(
 	}
 
 	return &cliapp.AppResult{Code: 0}
+}
+
+func CmdAipsetupSysReduceTo(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+	return nil
 }

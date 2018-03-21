@@ -52,6 +52,16 @@ type ASPName struct {
 	Target    string
 }
 
+func (self *ASPName) IsEqual(other *ASPName) bool {
+	return self.Name == other.Name &&
+		self.Version == other.Version &&
+		self.Status == other.Status &&
+		self.TimeStamp == other.TimeStamp &&
+		self.Host == other.Host &&
+		self.Arch == other.Arch &&
+		self.Target == other.Target
+}
+
 func (self *ASPName) String() string {
 
 	has_target_part := self.Target != self.Arch

@@ -14,6 +14,7 @@ type RepositoryI interface {
 	PerformPackageSourcesUpdate(name string) error
 	PerformPackageTarballsUpdate(name string) error
 	PerformPackagePatchesUpdate(name string) error
+	GetPackageASPsPath(name string) string
 	// CreateCacheObjectForPackage(name string) (*cache01.CacheDir, error)
 	PerformDownload(package_name string, as_filename string, uri string) error
 	PrepareTarballCleanupListing(package_name string, files_to_keep []string) ([]string, error)

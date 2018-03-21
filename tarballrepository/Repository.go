@@ -15,6 +15,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
+	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
@@ -52,6 +53,10 @@ func (self *Repository) GetPackageTarballsPath(name string) string {
 
 func (self *Repository) GetPackagePatchesPath(name string) string {
 	return path.Join(self.GetPackagePath(name), "patches")
+}
+
+func (self *Repository) GetPackageASPsPath(name string) string {
+	return path.Join(self.GetPackagePath(name), "asps")
 }
 
 func (self *Repository) GetPackageCachePath(name string) string {
@@ -392,7 +397,7 @@ func (self *Repository) DeleteFiles(package_name string, filename []string) erro
 	return nil
 }
 
-func (self *Repository) MoveInTarball(filename string) error {
+func (self *Repository) MoveInTarball(filename string, copy bool) error {
 
 	res, err := pkginfodb.DetermineTarballsBuildInfo(filename)
 	if err != nil {
@@ -417,9 +422,48 @@ func (self *Repository) MoveInTarball(filename string) error {
 		return err
 	}
 
-	err = os.Rename(filename, full_out_path)
+	if copy {
+		err = filetools.CopyWithInfo(filename, full_out_path, nil)
+		if err != nil {
+			return err
+		}
+	} else {
+		err = os.Rename(filename, full_out_path)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (self *Repository) MoveInASP(filename string, copy bool) error {
+	aspname, err := basictypes.NewASPNameFromString(filename)
 	if err != nil {
 		return err
+	}
+
+	name := aspname.Name
+
+	pth := self.GetPackageASPsPath(name)
+
+	err = os.MkdirAll(pth, 0700)
+	if err != nil {
+		return err
+	}
+
+	filename_j := path.Join(pth, path.Base(filename))
+
+	if copy {
+		err = filetools.CopyWithInfo(filename, filename_j, nil)
+		if err != nil {
+			return err
+		}
+	} else {
+		err = os.Rename(filename, filename_j)
+		if err != nil {
+			return err
+		}
 	}
 
 	return nil
