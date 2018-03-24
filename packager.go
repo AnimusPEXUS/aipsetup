@@ -72,7 +72,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 
 	calc := self.site.ValuesCalculator()
 
-	host, arch, _, _, err := self.site.GetConfiguredHABT()
+	host, hostarch, _, err := self.site.GetConfiguredHHAT()
 	if err != nil {
 		return err
 	}
@@ -123,7 +123,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 		}
 	}
 
-	if arch != host {
+	if hostarch != host {
 
 		dest_dir_host_arch, err := calc.CalculateDstHostArchDir()
 		if err != nil {
@@ -284,7 +284,7 @@ func (self Packager) CompressLogs(log *logger.Logger) error {
 func (self Packager) _CompressPatchesDestDirAndLogs(log *logger.Logger, subject []string) error {
 	for _, i := range subject {
 		log.Info(fmt.Sprintf("  %s", i))
-		dirname := path.Join(self.site.Path, i)
+		dirname := path.Join(self.site.path, i)
 		filename := fmt.Sprintf("%s.tar.xz", dirname)
 
 		filename_o, err := os.Create(filename)
@@ -415,7 +415,7 @@ func (self Packager) UpdateTimestamp(log *logger.Logger) error {
 
 func (self Packager) _ListItemsToPack(include_checksum, include_build_logs bool) ([]string, error) {
 	ret := make([]string, 0)
-	pth := self.site.Path
+	pth := self.site.path
 	ret = append(ret, path.Join(pth, DIR_DESTDIR+".tar.xz"))
 	ret = append(ret, path.Join(pth, DIR_PATCHES+".tar.xz"))
 
@@ -457,9 +457,9 @@ func (self Packager) MakeChecksums(log *logger.Logger) error {
 
 	log.Info("Creating checksumms before packaging")
 
-	pth := self.site.Path
+	pth := self.site.path
 
-	result_file := path.Join(self.site.Path, "package.sha512")
+	result_file := path.Join(self.site.path, "package.sha512")
 
 	list_to_checksum, err := self._ListItemsToPack(false, false)
 	if err != nil {
@@ -526,7 +526,7 @@ func (self Packager) Pack(log *logger.Logger) error {
 		return err
 	}
 
-	pack_dir := path.Join(self.site.Path, "..", "pack")
+	pack_dir := path.Join(self.site.path, "..", "pack")
 
 	pack_file_name := fmt.Sprintf(
 		"%s.asp",
@@ -536,7 +536,7 @@ func (self Packager) Pack(log *logger.Logger) error {
 			Status:    info.PackageStatus,
 			TimeStamp: info.PackageTimestamp,
 			Host:      info.Host,
-			Arch:      info.Arch,
+			HostArch:  info.HostArch,
 			Target:    info.Target,
 		}).String(),
 	)
@@ -559,7 +559,7 @@ func (self Packager) Pack(log *logger.Logger) error {
 		list_to_pack2 := make([]string, 0)
 		var r string
 		for _, i := range list_to_pack {
-			r, err = filepath.Rel(self.site.Path, i)
+			r, err = filepath.Rel(self.site.path, i)
 			if err != nil {
 				return err
 			}
@@ -576,7 +576,7 @@ func (self Packager) Pack(log *logger.Logger) error {
 	args = append(args, list_to_pack...)
 
 	c := exec.Command("tar", args...)
-	c.Dir = self.site.Path
+	c.Dir = self.site.path
 	c.Stderr = os.Stdout
 	return c.Run()
 

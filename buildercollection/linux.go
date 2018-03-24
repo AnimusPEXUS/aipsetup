@@ -59,7 +59,7 @@ func NewBuilderLinux(bs basictypes.BuildingSiteCtlI) (*BuilderLinux, error) {
 			return nil, err
 		}
 
-		arch, err := bs.GetConfiguredArch()
+		hostarch, err := bs.GetConfiguredHostArch()
 		if err != nil {
 			return nil, err
 		}
@@ -101,7 +101,7 @@ func NewBuilderLinux(bs basictypes.BuildingSiteCtlI) (*BuilderLinux, error) {
 			self.crossbuild_params,
 			[]string{
 				fmt.Sprintf("ARCH=%s", headers_arch),
-				fmt.Sprintf("CROSS_COMPILE=%s-", arch), // TODO: not sure arch is the valid value here
+				fmt.Sprintf("CROSS_COMPILE=%s-", hostarch), // TODO: not sure arch is the valid value here
 			}...,
 		)
 	}
@@ -366,7 +366,7 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 		return err
 	}
 
-	_, arch, _, target, err := self.bs.GetConfiguredHABT()
+	_, hostarch, target, err := self.bs.GetConfiguredHHAT()
 	if err != nil {
 		return err
 	}
@@ -374,7 +374,7 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 	if diff_arch {
 		install_hdr_path = path.Join(
 			self.bs.GetDIR_DESTDIR(), "usr", "multiarch",
-			arch,
+			hostarch,
 		)
 
 	} else if crossbuilder {

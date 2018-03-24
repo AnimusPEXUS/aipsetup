@@ -48,7 +48,7 @@ type ASPName struct {
 	Status    string
 	TimeStamp string
 	Host      string
-	Arch      string
+	HostArch  string
 	Target    string
 }
 
@@ -58,14 +58,14 @@ func (self *ASPName) IsEqual(other *ASPName) bool {
 		self.Status == other.Status &&
 		self.TimeStamp == other.TimeStamp &&
 		self.Host == other.Host &&
-		self.Arch == other.Arch &&
+		self.HostArch == other.HostArch &&
 		self.Target == other.Target
 }
 
 func (self *ASPName) String() string {
 
-	has_target_part := self.Target != self.Arch
-	has_arch_part := (self.Arch != self.Host) || has_target_part
+	has_target_part := self.Target != self.HostArch
+	has_arch_part := (self.HostArch != self.Host) || has_target_part
 
 	target_part := ""
 	if has_target_part {
@@ -74,7 +74,7 @@ func (self *ASPName) String() string {
 
 	arch_part := ""
 	if has_arch_part {
-		arch_part = fmt.Sprintf("-(%s)", self.Arch)
+		arch_part = fmt.Sprintf("-(%s)", self.HostArch)
 	}
 
 	ret := fmt.Sprintf(
@@ -222,18 +222,18 @@ func NewASPNameFromString(str string) (*ASPName, error) {
 		case "host":
 			ret.Host = parsed_strs[ii]
 		case "arch":
-			ret.Arch = parsed_strs[ii]
+			ret.HostArch = parsed_strs[ii]
 		case "target":
 			ret.Target = parsed_strs[ii]
 		}
 	}
 
-	if ret.Arch == "" {
-		ret.Arch = ret.Host
+	if ret.HostArch == "" {
+		ret.HostArch = ret.Host
 	}
 
 	if ret.Target == "" {
-		ret.Target = ret.Arch
+		ret.Target = ret.HostArch
 	}
 
 	return ret, nil
@@ -246,7 +246,7 @@ func (self *ASPName) StringD() string {
 	ret += "Status:    " + self.Status + "\n"
 	ret += "TimeStamp: " + self.TimeStamp + "\n"
 	ret += "Host:      " + self.Host + "\n"
-	ret += "Arch:      " + self.Arch + "\n"
+	ret += "HostArch:  " + self.HostArch + "\n"
 	ret += "Target:    " + self.Target + "\n"
 	return ret
 }
@@ -273,8 +273,8 @@ func (self ASPNameSorter) Less(i, j int) bool {
 		panic(err)
 	}
 
-	if ni.Host != nj.Host || ni.Arch != nj.Arch {
-		panic("Hosts or Archs missmatch")
+	if ni.Host != nj.Host || ni.HostArch != nj.HostArch {
+		panic("Hosts or HostArchs missmatch")
 	}
 
 	return ni.TimeStamp < nj.TimeStamp

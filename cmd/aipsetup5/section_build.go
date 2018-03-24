@@ -94,9 +94,10 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 }
 
 func CmdAipsetupBuildInitSub01(
+	sys *aipsetup.System,
 	main_tarball string,
 	addittional_tarballs []string,
-	host, arch, build, target string,
+	host, arch, target string,
 ) error {
 
 	target_tarball := main_tarball
@@ -139,6 +140,7 @@ func CmdAipsetupBuildInitSub01(
 	}
 
 	bs_ctl, err := aipsetup.NewBuildingSiteCtl(
+		sys,
 		fmt.Sprintf("build/%s-%s", buildinfoname, version),
 	)
 
@@ -152,7 +154,7 @@ func CmdAipsetupBuildInitSub01(
 		return errors.New("can't apply initial info to building site: " + err.Error())
 	}
 
-	err = bs_ctl.ApplyHostArchBuildTarget(host, arch, build, target)
+	err = bs_ctl.ApplyHostHostArchTarget(host, arch, target)
 	if err != nil {
 		return errors.New("can't apply habt info to building site: " + err.Error())
 	}
@@ -211,20 +213,20 @@ func CmdAipsetupBuildInit(
 
 	if getopt_result.DoesHaveNamedRetOptItem("-o") {
 		err = CmdAipsetupBuildInitSub01(
+			sys,
 			getopt_result.Args[0],
 			getopt_result.Args[1:],
-			// NOTE: TODO: hostarch used as value to 'build' argument. consider adding
-			//             build option support to StdRoutineGetBuildingHHaT()
-			host, hostarch, hostarch, target,
+			host, hostarch, target,
 		)
 	} else {
 
 		for _, i := range getopt_result.Args {
 
 			err = CmdAipsetupBuildInitSub01(
+				sys,
 				i,
 				[]string{},
-				host, hostarch, hostarch, target,
+				host, hostarch, target,
 			)
 
 			if err != nil {
@@ -250,7 +252,12 @@ func CmdAipsetupBuildListActions(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	bs_ctl, err := aipsetup.NewBuildingSiteCtl(".")
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".")
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -277,7 +284,13 @@ func CmdAipsetupBuildRun(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
-	bs_ctl, err := aipsetup.NewBuildingSiteCtl(".")
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".")
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,

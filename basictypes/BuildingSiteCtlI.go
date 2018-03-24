@@ -14,10 +14,9 @@ type BuildingSiteCtlI interface {
 	WriteInfo(*BuildingSiteInfo) error
 
 	GetConfiguredHost() (string, error)
-	GetConfiguredArch() (string, error)
-	GetConfiguredBuild() (string, error)
+	GetConfiguredHostArch() (string, error)
 	GetConfiguredTarget() (string, error)
-	GetConfiguredHABT() (string, string, string, string, error)
+	GetConfiguredHHAT() (string, string, string, error)
 
 	ValuesCalculator() ValuesCalculatorI
 

@@ -115,10 +115,14 @@ func IsDirRestrictedForWork(path string) bool {
 var _ basictypes.BuildingSiteCtlI = &BuildingSiteCtl{}
 
 type BuildingSiteCtl struct {
-	Path string
+	sys  *System
+	path string
 }
 
-func NewBuildingSiteCtl(path string) (*BuildingSiteCtl, error) {
+func NewBuildingSiteCtl(
+	sys *System,
+	path string,
+) (*BuildingSiteCtl, error) {
 
 	{
 		var err error
@@ -136,13 +140,14 @@ func NewBuildingSiteCtl(path string) (*BuildingSiteCtl, error) {
 
 	ret := new(BuildingSiteCtl)
 
-	ret.Path = path
+	ret.path = path
+	ret.sys = sys
 
 	return ret, nil
 }
 
 func (self *BuildingSiteCtl) ReadInfo() (*basictypes.BuildingSiteInfo, error) {
-	fullpath := path.Join(self.Path, PACKAGE_INFO_FILENAME_V5)
+	fullpath := path.Join(self.path, PACKAGE_INFO_FILENAME_V5)
 
 	res, err := ioutil.ReadFile(fullpath)
 	if err != nil {
@@ -160,7 +165,7 @@ func (self *BuildingSiteCtl) ReadInfo() (*basictypes.BuildingSiteInfo, error) {
 }
 
 func (self *BuildingSiteCtl) WriteInfo(info *basictypes.BuildingSiteInfo) error {
-	fullpath := path.Join(self.Path, PACKAGE_INFO_FILENAME_V5)
+	fullpath := path.Join(self.path, PACKAGE_INFO_FILENAME_V5)
 
 	res, err := json.Marshal(info)
 	if err != nil {
@@ -183,9 +188,9 @@ func (self *BuildingSiteCtl) WriteInfo(info *basictypes.BuildingSiteInfo) error 
 }
 
 func (self *BuildingSiteCtl) Init() error {
-	fmt.Println("Going to initiate directory", self.Path)
+	fmt.Println("Going to initiate directory", self.path)
 	for _, i := range DIR_ALL {
-		j := filepath.Join(self.Path, i)
+		j := filepath.Join(self.path, i)
 		f, err := os.Open(j)
 		if err != nil {
 			err := os.MkdirAll(j, 0700)
@@ -215,8 +220,8 @@ func (self *BuildingSiteCtl) ApplyInitialInfo(
 	return err
 }
 
-func (self *BuildingSiteCtl) ApplyHostArchBuildTarget(
-	host, arch, build, target string,
+func (self *BuildingSiteCtl) ApplyHostHostArchTarget(
+	host, hostarch, target string,
 ) error {
 	i, err := self.ReadInfo()
 	if err != nil {
@@ -224,8 +229,7 @@ func (self *BuildingSiteCtl) ApplyHostArchBuildTarget(
 	}
 
 	i.Host = host
-	i.Arch = arch
-	i.Build = build
+	i.HostArch = hostarch
 	i.Target = target
 
 	err = self.WriteInfo(i)
@@ -375,47 +379,47 @@ maintarball_found:
 }
 
 func (self *BuildingSiteCtl) GetDIR_TARBALL() string {
-	return GetDIR_TARBALL(self.Path)
+	return GetDIR_TARBALL(self.path)
 }
 
 func (self *BuildingSiteCtl) GetDIR_SOURCE() string {
-	return GetDIR_SOURCE(self.Path)
+	return GetDIR_SOURCE(self.path)
 }
 
 func (self *BuildingSiteCtl) GetDIR_PATCHES() string {
-	return GetDIR_PATCHES(self.Path)
+	return GetDIR_PATCHES(self.path)
 }
 
 func (self *BuildingSiteCtl) GetDIR_BUILDING() string {
-	return GetDIR_BUILDING(self.Path)
+	return GetDIR_BUILDING(self.path)
 }
 
 func (self *BuildingSiteCtl) GetDIR_DESTDIR() string {
-	return GetDIR_DESTDIR(self.Path)
+	return GetDIR_DESTDIR(self.path)
 }
 
 func (self *BuildingSiteCtl) GetDIR_BUILD_LOGS() string {
-	return GetDIR_BUILD_LOGS(self.Path)
+	return GetDIR_BUILD_LOGS(self.path)
 }
 
 func (self *BuildingSiteCtl) GetDIR_LISTS() string {
-	return GetDIR_LISTS(self.Path)
+	return GetDIR_LISTS(self.path)
 }
 
 func (self *BuildingSiteCtl) GetDIR_TEMP() string {
-	return GetDIR_TEMP(self.Path)
+	return GetDIR_TEMP(self.path)
 }
 
 func (self *BuildingSiteCtl) IsWdDirRestricted() bool {
-	return IsWdDirRestricted(self.Path)
+	return IsWdDirRestricted(self.path)
 }
 
 func (self *BuildingSiteCtl) IsDirRestrictedForWork() bool {
-	return IsDirRestrictedForWork(self.Path)
+	return IsDirRestrictedForWork(self.path)
 }
 
 func (self *BuildingSiteCtl) IsBuildingSite() bool {
-	pkg_file := path.Join(self.Path, PACKAGE_INFO_FILENAME_V5)
+	pkg_file := path.Join(self.path, PACKAGE_INFO_FILENAME_V5)
 	_, err := os.Stat(pkg_file)
 	if os.IsNotExist(err) {
 		return false
@@ -584,22 +588,13 @@ func (self *BuildingSiteCtl) GetConfiguredHost() (string, error) {
 	return i.Host, nil
 }
 
-func (self *BuildingSiteCtl) GetConfiguredArch() (string, error) {
+func (self *BuildingSiteCtl) GetConfiguredHostArch() (string, error) {
 	i, err := self.ReadInfo()
 	if err != nil {
 		return "", err
 	}
 
-	return i.Arch, nil
-}
-
-func (self *BuildingSiteCtl) GetConfiguredBuild() (string, error) {
-	i, err := self.ReadInfo()
-	if err != nil {
-		return "", err
-	}
-
-	return i.Build, nil
+	return i.HostArch, nil
 }
 
 func (self *BuildingSiteCtl) GetConfiguredTarget() (string, error) {
@@ -611,13 +606,13 @@ func (self *BuildingSiteCtl) GetConfiguredTarget() (string, error) {
 	return i.Target, nil
 }
 
-func (self *BuildingSiteCtl) GetConfiguredHABT() (string, string, string, string, error) {
+func (self *BuildingSiteCtl) GetConfiguredHHAT() (string, string, string, error) {
 	i, err := self.ReadInfo()
 	if err != nil {
-		return "", "", "", "", err
+		return "", "", "", err
 	}
 
-	return i.Host, i.Arch, i.Build, i.Target, nil
+	return i.Host, i.HostArch, i.Target, nil
 }
 
 func (self *BuildingSiteCtl) ValuesCalculator() basictypes.ValuesCalculatorI {

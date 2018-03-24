@@ -4,10 +4,9 @@ type BuildingSiteInfo struct {
 	SystemTitle   string `json:"system_title"`
 	SystemVersion string `json:"system_version"`
 
-	Host   string `json:"host"`
-	Arch   string `json:"arch"`
-	Build  string `json:"build"`
-	Target string `json:"target"`
+	Host     string `json:"host"`
+	HostArch string `json:"hostarch"`
+	Target   string `json:"target"`
 
 	PackageName      string `json:"package_name"`
 	PackageVersion   string `json:"package_version"`

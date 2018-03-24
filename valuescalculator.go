@@ -26,45 +26,51 @@ func NewValuesCalculator(site *BuildingSiteCtl) *ValuesCalculator {
 	return ret
 }
 
+/*
+	returns true, if building site configured to build for
+	[host] which not equal to [host aipsetup configured in /etc/aipsetup5.system.ini]
+*/
 func (self *ValuesCalculator) CalculateIsCrossbuild() (bool, error) {
-	// ret = self.force_crossbuild
-	// if ret is None:
-	host, arch, build, _, err := self.site.GetConfiguredHABT()
+	host, _, _, err := self.site.GetConfiguredHHAT()
 	if err != nil {
 		return false, err
 	}
 
-	ret := host != build && host == arch
+	build := self.site.sys.Host()
+
+	ret := host != build
 
 	return ret, nil
 }
 
+/*
+	returns true if target != host
+*/
 func (self *ValuesCalculator) CalculateIsCrossbuilder() (bool, error) {
-	// ret = self.force_crossbuilder
-	// if ret is None:
 
-	host, arch, _, target, err := self.site.GetConfiguredHABT()
+	host, hostarch, target, err := self.site.GetConfiguredHHAT()
 	if err != nil {
 		return false, err
 	}
 
-	ret := (target != "" &&
-		target != host && // experemental line
-		host != target &&
-		host != arch)
+	ret := target != host
+
+	if host != hostarch {
+		return false, errors.New("invalid configuration")
+	}
 
 	return ret, nil
 }
 
 func (self *ValuesCalculator) CalculateIsBuildingForSameHostButDifferentArch() (bool, error) {
-	host, arch, build, target, err := self.site.GetConfiguredHABT()
+	host, hostarch, _, err := self.site.GetConfiguredHHAT()
 	if err != nil {
 		return false, err
 	}
 
-	ret := (host == build &&
-		((target != "" && target == host) || (target == host)) &&
-		arch != host)
+	build := self.site.sys.Host()
+
+	ret := (host == build) && hostarch != host
 
 	return ret, err
 }
@@ -115,7 +121,7 @@ func (self *ValuesCalculator) CalculateHostArchDir() (string, error) {
 		return "", err
 	}
 
-	arch, err := self.site.GetConfiguredArch()
+	arch, err := self.site.GetConfiguredHostArch()
 	if err != nil {
 		return "", err
 	}
@@ -212,12 +218,12 @@ func (self *ValuesCalculator) CalculateDstHostArchLibDir() (string, error) {
 }
 
 func (self *ValuesCalculator) CalculateInstallPrefix() (string, error) {
-	host, arch, _, _, err := self.site.GetConfiguredHABT()
+	host, hostarch, _, err := self.site.GetConfiguredHHAT()
 	if err != nil {
 		return "", err
 	}
 
-	if host == arch {
+	if host == hostarch {
 		return self.CalculateHostDir()
 	} else {
 		return self.CalculateHostArchDir()
@@ -233,12 +239,12 @@ func (self *ValuesCalculator) CalculateDstInstallPrefix() (string, error) {
 }
 
 func (self *ValuesCalculator) CalculateInstallLibDir() (string, error) {
-	host, arch, _, _, err := self.site.GetConfiguredHABT()
+	host, hostarch, _, err := self.site.GetConfiguredHHAT()
 	if err != nil {
 		return "", err
 	}
 
-	if host == arch {
+	if host == hostarch {
 		return self.CalculateHostLibDir()
 	} else {
 		return self.CalculateHostArchLibDir()
@@ -282,7 +288,7 @@ func (self *ValuesCalculator) CalculateDstInstallLibDir() (string, error) {
 // #        )
 
 func (self *ValuesCalculator) CalculateMainMultiarchLibDirName() (string, error) {
-	host, arch, _, _, err := self.site.GetConfiguredHABT()
+	host, hostarch, _, err := self.site.GetConfiguredHHAT()
 	if err != nil {
 		return "", err
 	}
@@ -290,13 +296,13 @@ func (self *ValuesCalculator) CalculateMainMultiarchLibDirName() (string, error)
 	switch host {
 
 	case "i686-pc-linux-gnu":
-		switch arch {
+		switch hostarch {
 		case "i686-pc-linux-gnu":
 			return "lib", nil
 		}
 
 	case "x86_64-pc-linux-gnu":
-		switch arch {
+		switch hostarch {
 		case "i686-pc-linux-gnu":
 			return "lib", nil
 		case "x86_64-pc-linux-gnu":
@@ -476,11 +482,11 @@ func (self *ValuesCalculator) Calculate_CXX_Compiler() (string, error) {
 }
 
 func (self *ValuesCalculator) CalculateMultilibVariant() (string, error) {
-	_, arch, _, _, err := self.site.GetConfiguredHABT()
+	_, hostarch, _, err := self.site.GetConfiguredHHAT()
 	if err != nil {
 		return "", err
 	}
-	tr, err := systemtriplet.NewFromString(arch)
+	tr, err := systemtriplet.NewFromString(hostarch)
 	if err != nil {
 		return "", err
 	}
@@ -557,7 +563,7 @@ func (self *ValuesCalculator) CalculateCompilerOptionsMap() (environ.EnvVarEd, e
 func (self *ValuesCalculator) CalculateAutotoolsHBTOptions() ([]string, error) {
 	ret := make([]string, 0)
 
-	host, arch, build, target, err := self.site.GetConfiguredHABT()
+	host, hostarch, target, err := self.site.GetConfiguredHHAT()
 	if err != nil {
 		return ret, err
 	}
@@ -568,9 +574,11 @@ func (self *ValuesCalculator) CalculateAutotoolsHBTOptions() ([]string, error) {
 	//       so
 	forced_target := false
 
-	if arch != "" &&
+	build := self.site.sys.Host()
+
+	if hostarch != "" &&
 		(((host == build) && (build == target)) ||
-			((arch == build) && (build == target)) ||
+			((hostarch == build) && (build == target)) ||
 			((host == build) && (target == ""))) &&
 		!forced_target {
 		target = ""

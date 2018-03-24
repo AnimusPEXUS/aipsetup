@@ -110,7 +110,7 @@ func (self *SystemPackages) ListFilteredInstalledASPs(
 			continue
 		}
 
-		if hostarch != "" && parsed_asp_name.Arch != hostarch {
+		if hostarch != "" && parsed_asp_name.HostArch != hostarch {
 			continue
 		}
 
@@ -889,9 +889,10 @@ func (self *SystemPackages) InstallASP(filename string) error {
 	fmt.Println("parse result\n", parsed.StringD())
 
 	host := parsed.Host
-	arch := parsed.Arch
+	hostarch := parsed.HostArch
+	// target := parsed.Target
 
-	if host == "" || arch == "" {
+	if host == "" || hostarch == "" {
 		return errors.New("Invalid value for host or arch")
 	}
 
