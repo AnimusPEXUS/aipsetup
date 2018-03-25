@@ -72,7 +72,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 
 	calc := self.site.ValuesCalculator()
 
-	host, hostarch, _, err := self.site.GetConfiguredHHAT()
+	host, hostarch, err := self.site.GetConfiguredHostHostArch()
 	if err != nil {
 		return err
 	}
@@ -537,7 +537,7 @@ func (self Packager) Pack(log *logger.Logger) error {
 			TimeStamp: info.PackageTimestamp,
 			Host:      info.Host,
 			HostArch:  info.HostArch,
-			Target:    info.Target,
+			// Target:    info.Target,
 		}).String(),
 	)
 

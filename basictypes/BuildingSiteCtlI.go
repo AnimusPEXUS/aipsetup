@@ -15,8 +15,7 @@ type BuildingSiteCtlI interface {
 
 	GetConfiguredHost() (string, error)
 	GetConfiguredHostArch() (string, error)
-	GetConfiguredTarget() (string, error)
-	GetConfiguredHHAT() (string, string, string, error)
+	GetConfiguredHostHostArch() (string, string, error)
 
 	ValuesCalculator() ValuesCalculatorI
 

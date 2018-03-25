@@ -31,7 +31,7 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 					STD_ROOT_OPTION,
 					STD_OPTION_BUILD_FOR_HOST,
 					STD_OPTION_BUILD_FOR_HOSTARCH,
-					STD_OPTION_BUILD_TO_TARGET,
+					// STD_OPTION_BUILD_TO_TARGET,
 					// STD_BUILDER_BUILD_OPTION,
 					&cliapp.GetOptCheckListItem{
 						Name: "-o",
@@ -47,6 +47,16 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 				CheckArgs: true,
 				MinArgs:   0,
 				MaxArgs:   -1,
+			},
+
+			&cliapp.AppCmdNode{
+				Name: "info",
+
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+
+				Callable: CmdAipsetupBuildPrintInfo,
 			},
 
 			&cliapp.AppCmdNode{
@@ -97,7 +107,7 @@ func CmdAipsetupBuildInitSub01(
 	sys *aipsetup.System,
 	main_tarball string,
 	addittional_tarballs []string,
-	host, arch, target string,
+	host, arch string,
 ) error {
 
 	target_tarball := main_tarball
@@ -154,7 +164,7 @@ func CmdAipsetupBuildInitSub01(
 		return errors.New("can't apply initial info to building site: " + err.Error())
 	}
 
-	err = bs_ctl.ApplyHostHostArchTarget(host, arch, target)
+	err = bs_ctl.ApplyHostHostArch(host, arch)
 	if err != nil {
 		return errors.New("can't apply habt info to building site: " + err.Error())
 	}
@@ -185,7 +195,7 @@ func CmdAipsetupBuildInit(
 		getopt_result.GetLastNamedRetOptItem("--root").Value,
 	)
 
-	host, hostarch, target, res := StdRoutineGetBuildingHHaT(getopt_result, sys)
+	host, hostarch, res := StdRoutineGetBuildingHostHostArch(getopt_result, sys)
 	if res != nil && res.Code != 0 {
 		return res
 	}
@@ -216,7 +226,7 @@ func CmdAipsetupBuildInit(
 			sys,
 			getopt_result.Args[0],
 			getopt_result.Args[1:],
-			host, hostarch, target,
+			host, hostarch,
 		)
 	} else {
 
@@ -226,7 +236,7 @@ func CmdAipsetupBuildInit(
 				sys,
 				i,
 				[]string{},
-				host, hostarch, target,
+				host, hostarch,
 			)
 
 			if err != nil {
@@ -244,7 +254,7 @@ func CmdAipsetupBuildInit(
 		}
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 }
 
 func CmdAipsetupBuildListActions(
@@ -448,5 +458,34 @@ func CmdAipsetupBuildFull(
 		}
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
+}
+
+func CmdAipsetupBuildPrintInfo(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".")
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    10,
+			Message: "Can't create building site object",
+		}
+	}
+
+	err = bs_ctl.PrintCalculations()
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    11,
+			Message: err.Error(),
+		}
+	}
+
+	return &cliapp.AppResult{}
 }

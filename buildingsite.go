@@ -220,8 +220,8 @@ func (self *BuildingSiteCtl) ApplyInitialInfo(
 	return err
 }
 
-func (self *BuildingSiteCtl) ApplyHostHostArchTarget(
-	host, hostarch, target string,
+func (self *BuildingSiteCtl) ApplyHostHostArch(
+	host, hostarch string,
 ) error {
 	i, err := self.ReadInfo()
 	if err != nil {
@@ -230,7 +230,6 @@ func (self *BuildingSiteCtl) ApplyHostHostArchTarget(
 
 	i.Host = host
 	i.HostArch = hostarch
-	i.Target = target
 
 	err = self.WriteInfo(i)
 	if err != nil {
@@ -597,22 +596,13 @@ func (self *BuildingSiteCtl) GetConfiguredHostArch() (string, error) {
 	return i.HostArch, nil
 }
 
-func (self *BuildingSiteCtl) GetConfiguredTarget() (string, error) {
+func (self *BuildingSiteCtl) GetConfiguredHostHostArch() (string, string, error) {
 	i, err := self.ReadInfo()
 	if err != nil {
-		return "", err
+		return "", "", err
 	}
 
-	return i.Target, nil
-}
-
-func (self *BuildingSiteCtl) GetConfiguredHHAT() (string, string, string, error) {
-	i, err := self.ReadInfo()
-	if err != nil {
-		return "", "", "", err
-	}
-
-	return i.Host, i.HostArch, i.Target, nil
+	return i.Host, i.HostArch, nil
 }
 
 func (self *BuildingSiteCtl) ValuesCalculator() basictypes.ValuesCalculatorI {
@@ -629,6 +619,64 @@ func (self *BuildingSiteCtl) Packager() basictypes.PackagerI {
 
 func (self *BuildingSiteCtl) PrePackager() basictypes.PrePackagerI {
 	return NewPrePackager(self)
+}
+
+func (self *BuildingSiteCtl) PrintCalculations() error {
+	fmt.Println(
+		"Calculating values",
+	)
+
+	fmt.Println("-----------------------------------")
+
+	i, err := self.ReadInfo()
+	if err != nil {
+		fmt.Println("Error reading building site configuration")
+		return err
+	}
+
+	fmt.Println("Building package", i.PackageName)
+	fmt.Println()
+	fmt.Println("Now running and building on system")
+	fmt.Println("(defined by aipsetup5.system.ini):")
+	fmt.Println()
+	fmt.Println("Build        ", self.sys.Host())
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("Values gotten from building site config")
+	fmt.Println("(resulting package going to be installed as):")
+	fmt.Println()
+	fmt.Println("Host         ", i.Host)
+	fmt.Println("HostArch     ", i.HostArch)
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("Calculated or guessed stuff:")
+	fmt.Println()
+	if cb, err := self.ValuesCalculator().CalculateIsCrossbuild(); err != nil {
+		fmt.Println("can't calculate crossbuild value. error:", err)
+	} else {
+		fmt.Println("crossbuild?  ", cb)
+	}
+
+	if cb, err := self.ValuesCalculator().CalculateIsCrossbuilder(); err != nil {
+		fmt.Println("can't calculate crossbuilder value. error:", err)
+	} else {
+		fmt.Println("crossbuilder?", cb)
+	}
+
+	fmt.Println()
+	fmt.Println(
+		"Calculated --host --build --target options for autotools configurations:",
+	)
+
+	if ops, err := self.ValuesCalculator().CalculateAutotoolsHBTOptions(); err != nil {
+		fmt.Println(" error:", err)
+	} else {
+		for _, i := range ops {
+			fmt.Println("   ", i)
+		}
+	}
+
+	return nil
 }
 
 func getDIR_x(pth string, x string) string {

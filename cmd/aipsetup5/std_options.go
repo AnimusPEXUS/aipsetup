@@ -5,6 +5,7 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/utils/cliapp"
+	"github.com/AnimusPEXUS/utils/systemtriplet"
 )
 
 var (
@@ -31,8 +32,9 @@ var (
 	}
 
 	STD_OPTION_BUILD_FOR_HOST = &cliapp.GetOptCheckListItem{
-		Name:          "--build-for-host",
-		Description:   "Select which system will run. Default is current host",
+		Name: "--build-for-host",
+		Description: "Select main name of system which will run package. " +
+			"Default is current host.",
 		HaveDefault:   true,
 		Default:       "",
 		IsRequired:    false,
@@ -41,21 +43,10 @@ var (
 
 	STD_OPTION_BUILD_FOR_HOSTARCH = &cliapp.GetOptCheckListItem{
 		Name: "--build-for-hostarch",
-		Description: "Select which system arch will run. " +
+		Description: "Select subsystem (subarch) name which will run package. " +
 			"Default is equal to value calculated (or given to) with " +
-			"--build-for-host",
+			"--build-for-host.",
 		HaveDefault:   true,
-		Default:       "",
-		IsRequired:    false,
-		MustHaveValue: true,
-	}
-
-	STD_OPTION_BUILD_TO_TARGET = &cliapp.GetOptCheckListItem{
-		Name: "--build-to-target",
-		Description: "This option is for building crosscompiler, " +
-			"so crosscompiler will be built to compile for named system. " +
-			"Default value for this option is empty value, what disables this option",
-		HaveDefault:   false,
 		Default:       "",
 		IsRequired:    false,
 		MustHaveValue: true,
@@ -74,21 +65,8 @@ var (
 	STD_OPTION_NAMED_INSTALLATION_FOR_HOSTARCH = &cliapp.GetOptCheckListItem{
 		Name: "--install-for-hostarch",
 		Description: "Select hosting subarch system. " +
-			"Default value is 'config', which means to read aipsetup5.system.ini " +
-			"and get subarch values for hosting system selected with " +
-			"--install-for-host",
+			"Default is to use subarch values for named host from aipsetup5.system.ini. ",
 		HaveDefault:   true,
-		Default:       "",
-		IsRequired:    false,
-		MustHaveValue: true,
-	}
-
-	STD_OPTION_NAMED_INSTALLATION_TO_TARGET = &cliapp.GetOptCheckListItem{
-		Name: "--install-to-target",
-		Description: "This option is for selecting crosscompiler, " +
-			"which can build for named target. No default or automatic value - " +
-			"select one",
-		HaveDefault:   false,
 		Default:       "",
 		IsRequired:    false,
 		MustHaveValue: true,
@@ -113,16 +91,6 @@ var (
 		IsRequired:    false,
 		MustHaveValue: true,
 	}
-
-	STD_OPTION_ASP_LIST_FILTER_TARGET = &cliapp.GetOptCheckListItem{
-		Name: "--show-only-target",
-		Description: "Value is regexp. Show only selected by regexp. " +
-			"default is empty value, which shows all",
-		HaveDefault:   true,
-		Default:       "",
-		IsRequired:    false,
-		MustHaveValue: true,
-	}
 )
 
 func StdRoutineGetRootOption(getopt_result *cliapp.GetOptResult) (
@@ -138,90 +106,14 @@ func StdRoutineGetRootOption(getopt_result *cliapp.GetOptResult) (
 	return "", false
 }
 
-// func StdRoutineGetHostArchOptionsDeprecated(getopt_result *cliapp.GetOptResult) (
-// 	string, bool,
-// 	string, bool,
-// ) {
-//
-// 	host := ""
-// 	host_ok := false
-// 	arch := ""
-// 	arch_ok := false
-//
-// 	{
-// 		res := getopt_result.GetLastNamedRetOptItem("--host")
-// 		if res != nil {
-// 			host = res.Value
-// 			host_ok = true
-// 		}
-// 	}
-//
-// 	{
-// 		res := getopt_result.GetLastNamedRetOptItem("--arch")
-// 		if res != nil {
-// 			arch = res.Value
-// 			arch_ok = true
-// 		}
-// 	}
-//
-// 	return host, host_ok, arch, arch_ok
-// }
-
-// func StdRoutineRootHostArchSysDeprecated(getopt_result *cliapp.GetOptResult) (
-// 	root string,
-// 	host string,
-// 	arch string,
-// 	sys *aipsetup.System,
-// 	ret *cliapp.AppResult,
-// ) {
-//
-// 	root = "/"
-// 	host = ""
-// 	arch = ""
-// 	ret = &cliapp.AppResult{Code: 0}
-//
-// 	root_opt, ok := StdRoutineGetRootOption(getopt_result)
-// 	if ok {
-// 		root = root_opt
-// 	}
-//
-// 	sys = aipsetup.NewSystem(root)
-//
-// 	{
-// 		host_opt, host_ok, arch_opt, arch_ok :=
-// 			StdRoutineGetHostArchOptions(getopt_result)
-//
-// 		if host_ok {
-// 			host = host_opt
-// 		}
-//
-// 		if arch_ok {
-// 			arch = arch_opt
-// 		}
-// 	}
-//
-// 	if arch != "" && host == "" {
-// 		ret = &cliapp.AppResult{
-// 			Code:    10,
-// 			Message: "if host is empty, arch must be empty too",
-// 		}
-// 	}
-// 	return
-// }
-//
 func StdRoutineGetRootOptionAndSystemObject(getopt_result *cliapp.GetOptResult) (
 	root string,
 	sys *aipsetup.System,
 	ret *cliapp.AppResult,
 ) {
 
-	// TODO: cleanup required
-	// TODO: move this function closer to StdRoutineGetRootOption()
-	// TODO: or, maybe, even, StdRoutineGetRootOption() may be removed, if it's
-	//       newer used alone.
-
 	root = "/"
-	ret = &cliapp.AppResult{Code: 0}
+	ret = &cliapp.AppResult{}
 
 	if root_opt, ok := StdRoutineGetRootOption(getopt_result); ok {
 		root = root_opt
@@ -232,65 +124,20 @@ func StdRoutineGetRootOptionAndSystemObject(getopt_result *cliapp.GetOptResult) 
 	return
 }
 
-// func StdRoutineMustGetOneArgDeprecated(getopt_result *cliapp.GetOptResult) (
-// 	res string,
-// 	err *cliapp.AppResult,
-// ) {
-//
-// 	if len(getopt_result.Args) != 1 {
-// 		res = ""
-// 		err = &cliapp.AppResult{
-// 			Code:    1,
-// 			Message: "exactly one argument required",
-// 		}
-// 	} else {
-// 		res = getopt_result.Args[0]
-// 		err = &cliapp.AppResult{Code: 0}
-// 	}
-//
-// 	return
-// }
-
-// func StdRoutineMustGetASPNameDeprecated(getopt_result *cliapp.GetOptResult) (
-// 	*basictypes.ASPName,
-// 	*cliapp.AppResult,
-// ) {
-//
-// 	res, res_err := StdRoutineMustGetOneArg(getopt_result)
-// 	if res_err.Code != 0 {
-// 		return nil, res_err
-// 	}
-//
-// 	name, err := basictypes.NewASPNameFromString(res)
-// 	if err != nil {
-// 		return nil, &cliapp.AppResult{
-// 			Code:    11,
-// 			Message: "Can't parse given string as ASP name",
-// 		}
-// 	}
-//
-// 	return name, &cliapp.AppResult{Code: 0}
-// }
-
-// ----v-------v-------v---- rework 20 march 2018
-
-func StdRoutineGetBuildingHHaT(
+func StdRoutineGetBuildingHostHostArch(
 	getopt_result *cliapp.GetOptResult,
 	system *aipsetup.System,
-) (string, string, string, *cliapp.AppResult) {
+) (string, string, *cliapp.AppResult) {
 
 	var (
 		host     = ""
 		hostarch = ""
-		target   = ""
 	)
 
 	if t := getopt_result.GetLastNamedRetOptItem("--build-for-host"); t != nil {
 		if t.Value != "" {
 			host = t.Value
 		} else {
-			// TODO: smarter decigen needed for current_host value, or change description
-			//       of --build-for-host option
 			host = system.Host()
 		}
 	}
@@ -303,24 +150,31 @@ func StdRoutineGetBuildingHHaT(
 		}
 	}
 
-	if t := getopt_result.GetLastNamedRetOptItem("--build-to-target"); t != nil {
-		if t.Value != "" {
-			target = t.Value
+	if _, err := systemtriplet.NewFromString(host); err != nil {
+		return "", "", &cliapp.AppResult{
+			Code:    21,
+			Message: "Can't parse --build-for-host as system name triplet",
 		}
 	}
 
-	return host, hostarch, target, nil
+	if _, err := systemtriplet.NewFromString(hostarch); err != nil {
+		return "", "", &cliapp.AppResult{
+			Code:    21,
+			Message: "Can't parse --build-for-hostarch as system name triplet",
+		}
+	}
+
+	return host, hostarch, nil
 }
 
-func StdRoutineGetInstallationHHaT(
+func StdRoutineGetInstallationHostHostArch(
 	getopt_result *cliapp.GetOptResult,
 	system *aipsetup.System,
-) (string, []string, string, *cliapp.AppResult) {
+) (string, []string, *cliapp.AppResult) {
 
 	var (
 		host     = ""
 		hostarch = []string{}
-		target   = ""
 	)
 
 	if t := getopt_result.GetLastNamedRetOptItem("--install-for-host"); t != nil {
@@ -339,24 +193,33 @@ func StdRoutineGetInstallationHHaT(
 		}
 	}
 
-	if t := getopt_result.GetLastNamedRetOptItem("--install-to-target"); t != nil {
-		if t.Value != "" {
-			target = t.Value
+	if _, err := systemtriplet.NewFromString(host); err != nil {
+		return "", nil, &cliapp.AppResult{
+			Code:    21,
+			Message: "Can't parse --install-for-host as system name triplet",
 		}
 	}
 
-	return host, hostarch, target, nil
+	for _, i := range hostarch {
+		if _, err := systemtriplet.NewFromString(i); err != nil {
+			return "", nil, &cliapp.AppResult{
+				Code:    21,
+				Message: "Can't parse --install-for-hostarch as system name triplet",
+			}
+		}
+	}
+
+	return host, hostarch, nil
 }
 
-func StdRoutineGetASPListFiltersHHaT(
+func StdRoutineGetASPListFiltersHostHostArch(
 	getopt_result *cliapp.GetOptResult,
 	system *aipsetup.System,
-) (string, string, string, *cliapp.AppResult) {
+) (string, string, *cliapp.AppResult) {
 
 	var (
 		host     = ""
 		hostarch = ""
-		target   = ""
 	)
 
 	if t := getopt_result.GetLastNamedRetOptItem("--show-only-host"); t != nil {
@@ -371,11 +234,19 @@ func StdRoutineGetASPListFiltersHHaT(
 		}
 	}
 
-	if t := getopt_result.GetLastNamedRetOptItem("--show-only-target"); t != nil {
-		if t.Value != "" {
-			target = t.Value
+	if _, err := systemtriplet.NewFromString(host); err != nil {
+		return "", "", &cliapp.AppResult{
+			Code:    21,
+			Message: "Can't parse --show-only-host as system name triplet",
 		}
 	}
 
-	return host, hostarch, target, nil
+	if _, err := systemtriplet.NewFromString(hostarch); err != nil {
+		return "", "", &cliapp.AppResult{
+			Code:    21,
+			Message: "Can't parse --show-only-hostarchs as system name triplet",
+		}
+	}
+
+	return host, hostarch, nil
 }

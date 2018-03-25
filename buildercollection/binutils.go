@@ -2,7 +2,6 @@ package buildercollection
 
 import (
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"path"
 	"strings"
@@ -67,18 +66,18 @@ func (self *BuilderBinutils) BuilderActionEditInfo(
 		return err
 	}
 
-	calc := self.bs.ValuesCalculator()
+	// calc := self.bs.ValuesCalculator()
 
-	cb, err := calc.CalculateIsCrossbuilder()
-	if err != nil {
-		return err
-	}
+	// cb, err := calc.CalculateIsCrossbuilder()
+	// if err != nil {
+	// 	return err
+	// }
 
-	if cb {
-		info.PackageName = fmt.Sprintf("cb-binutils-%s", info.Target)
-	} else {
-		info.PackageName = "binutils"
-	}
+	// if cb {
+	// 	info.PackageName = fmt.Sprintf("cb-binutils-%s", info.Target)
+	// } else {
+	// 	info.PackageName = "binutils"
+	// }
 
 	err = self.bs.WriteInfo(info)
 	if err != nil {
@@ -137,50 +136,50 @@ func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string)
 
 	calc := self.bs.ValuesCalculator()
 
-	info, err := self.bs.ReadInfo()
-	if err != nil {
-		return nil, err
-	}
+	// info, err := self.bs.ReadInfo()
+	// if err != nil {
+	// 	return nil, err
+	// }
 
 	cb, err := calc.CalculateIsCrossbuilder()
 	if err != nil {
 		return nil, err
 	}
 
-	if cb {
-
-		host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
-		if err != nil {
-			return nil, err
-		}
-
-		prefix := path.Join(
-			host_builders_dir,
-			info.Target,
-		)
-
-		hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
-		if err != nil {
-			return nil, err
-		}
-
-		ret = make([]string, 0)
-		ret = append(
-			ret,
-			[]string{
-				"--prefix=" + prefix,
-				"--mandir=" + path.Join(prefix, "share", "man"),
-				"--sysconfdir=/etc",
-				"--localstatedir=/var",
-				"--enable-shared",
-			}...,
-		)
-		ret = append(
-			ret,
-			hbt_opts...,
-		)
-
-	}
+	// if cb {
+	//
+	// 	host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
+	// 	if err != nil {
+	// 		return nil, err
+	// 	}
+	//
+	// 	prefix := path.Join(
+	// 		host_builders_dir,
+	// 		info.Target,
+	// 	)
+	//
+	// 	hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
+	// 	if err != nil {
+	// 		return nil, err
+	// 	}
+	//
+	// 	ret = make([]string, 0)
+	// 	ret = append(
+	// 		ret,
+	// 		[]string{
+	// 			"--prefix=" + prefix,
+	// 			"--mandir=" + path.Join(prefix, "share", "man"),
+	// 			"--sysconfdir=/etc",
+	// 			"--localstatedir=/var",
+	// 			"--enable-shared",
+	// 		}...,
+	// 	)
+	// 	ret = append(
+	// 		ret,
+	// 		hbt_opts...,
+	// 	)
+	//
+	// }
 
 	host_dir, err := calc.CalculateHostDir()
 	if err != nil {

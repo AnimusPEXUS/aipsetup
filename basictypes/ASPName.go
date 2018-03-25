@@ -22,8 +22,7 @@ const (
 		`-\((?P<status>.*?)\)` +
 		`-\((?P<timestamp>\d{8}\.\d{6}\.\d{7})\)` +
 		`-\((?P<host>.*)\)` +
-		`(-\((?P<arch>.*)\)` +
-		`(-\((?P<target>.*)\))?)?` +
+		`(-\((?P<arch>.*)\))?` +
 		`((\.tar.xz)|(\.asp)|(\.xz))?$`
 
 	ASP_NAME_REGEXPS_AIPSETUP3_TIMESTAMP = `` +
@@ -49,7 +48,6 @@ type ASPName struct {
 	TimeStamp string
 	Host      string
 	HostArch  string
-	Target    string
 }
 
 func (self *ASPName) IsEqual(other *ASPName) bool {
@@ -58,19 +56,12 @@ func (self *ASPName) IsEqual(other *ASPName) bool {
 		self.Status == other.Status &&
 		self.TimeStamp == other.TimeStamp &&
 		self.Host == other.Host &&
-		self.HostArch == other.HostArch &&
-		self.Target == other.Target
+		self.HostArch == other.HostArch
 }
 
 func (self *ASPName) String() string {
 
-	has_target_part := self.Target != self.HostArch
-	has_arch_part := (self.HostArch != self.Host) || has_target_part
-
-	target_part := ""
-	if has_target_part {
-		target_part = fmt.Sprintf("-(%s)", self.Target)
-	}
+	has_arch_part := self.HostArch != self.Host
 
 	arch_part := ""
 	if has_arch_part {
@@ -85,7 +76,6 @@ func (self *ASPName) String() string {
 		self.TimeStamp,
 		self.Host,
 		arch_part,
-		target_part,
 	)
 
 	return ret
@@ -223,17 +213,11 @@ func NewASPNameFromString(str string) (*ASPName, error) {
 			ret.Host = parsed_strs[ii]
 		case "arch":
 			ret.HostArch = parsed_strs[ii]
-		case "target":
-			ret.Target = parsed_strs[ii]
 		}
 	}
 
 	if ret.HostArch == "" {
 		ret.HostArch = ret.Host
-	}
-
-	if ret.Target == "" {
-		ret.Target = ret.HostArch
 	}
 
 	return ret, nil
@@ -247,7 +231,6 @@ func (self *ASPName) StringD() string {
 	ret += "TimeStamp: " + self.TimeStamp + "\n"
 	ret += "Host:      " + self.Host + "\n"
 	ret += "HostArch:  " + self.HostArch + "\n"
-	ret += "Target:    " + self.Target + "\n"
 	return ret
 }
 

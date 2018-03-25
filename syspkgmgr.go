@@ -35,7 +35,7 @@ func NewSystemPackages(system *System) *SystemPackages {
 	return ret
 }
 
-// func (self *SystemPackages) _TestHostArchParameters(host, hostarch, target string) error {
+// func (self *SystemPackages) _TestHostArchParameters(host, hostarch string,) error {
 //
 // 	if host == "" && arch != "" {
 // 		return errors.New("if `host' is empty, `arch' must be empty too")
@@ -89,7 +89,7 @@ func (self *SystemPackages) ListAllInstalledASPs() ([]string, error) {
 }
 
 func (self *SystemPackages) ListFilteredInstalledASPs(
-	host, hostarch, target string,
+	host, hostarch string,
 ) ([]string, error) {
 
 	complete_list, err := self.ListAllInstalledASPs()
@@ -114,10 +114,6 @@ func (self *SystemPackages) ListFilteredInstalledASPs(
 			continue
 		}
 
-		if target != "" && parsed_asp_name.Target != target {
-			continue
-		}
-
 		asps = append(asps, i)
 	}
 
@@ -125,10 +121,10 @@ func (self *SystemPackages) ListFilteredInstalledASPs(
 }
 
 func (self *SystemPackages) ListInstalledPackageNames(
-	host, hostarch, target string,
+	host, hostarch string,
 ) ([]string, error) {
 
-	res, err := self.ListFilteredInstalledASPs(host, hostarch, target)
+	res, err := self.ListFilteredInstalledASPs(host, hostarch)
 	if err != nil {
 		return make([]string, 0),
 			errors.New(
@@ -162,12 +158,12 @@ searching_missing_names:
 
 func (self *SystemPackages) ListInstalledPackageNameASPs(
 	name string,
-	host, hostarch, target string,
+	host, hostarch string,
 ) ([]string, error) {
 
 	ret := []string{}
 
-	res, err := self.ListFilteredInstalledASPs(host, hostarch, target)
+	res, err := self.ListFilteredInstalledASPs(host, hostarch)
 	if err != nil {
 		return make([]string, 0), errors.New(
 			"Error listing installed package names: " + err.Error(),
@@ -518,7 +514,7 @@ func (self *SystemPackages) RemoveASP(
 func (self *SystemPackages) ReduceASP(
 	reduce_to *basictypes.ASPName,
 	reduce_what []*basictypes.ASPName,
-	// host, hostarch, target string, // NOTE: abowe parameters already have this info
+	// host, hostarch string, // NOTE: abowe parameters already have this info
 ) error {
 
 	reduce_what_copy := make([]*basictypes.ASPName, 0)

@@ -2,7 +2,6 @@ package buildercollection
 
 import (
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"path"
 	"strings"
@@ -98,18 +97,18 @@ func (self *BuilderGCC) BuilderActionEditInfo(
 		return err
 	}
 
-	calc := self.bs.ValuesCalculator()
+	// calc := self.bs.ValuesCalculator()
 
-	cb, err := calc.CalculateIsCrossbuilder()
-	if err != nil {
-		return err
-	}
+	// cb, err := calc.CalculateIsCrossbuilder()
+	// if err != nil {
+	// 	return err
+	// }
 
-	if cb {
-		info.PackageName = fmt.Sprintf("cb-gcc-%s", info.Target)
-	} else {
-		info.PackageName = "gcc"
-	}
+	// if cb {
+	// 	info.PackageName = fmt.Sprintf("cb-gcc-%s", info.Target)
+	// } else {
+	// 	info.PackageName = "gcc"
+	// }
 
 	err = self.bs.WriteInfo(info)
 	if err != nil {
@@ -192,84 +191,84 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 		return nil, err
 	}
 
-	host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
-	if err != nil {
-		return nil, err
-	}
+	// host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
+	// if err != nil {
+	// 	return nil, err
+	// }
 
-	hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
-	if err != nil {
-		return nil, err
-	}
+	// hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
+	// if err != nil {
+	// 	return nil, err
+	// }
 
 	// 1
-	if cbuilder {
-
-		prefix := path.Join(
-			host_builders_dir,
-			info.Target,
-		)
-
-		ret = make([]string, 0)
-		ret = append(
-			ret,
-			[]string{
-				"--prefix=" + prefix,
-				"--mandir=" + path.Join(prefix, "share", "man"),
-				"--sysconfdir=/etc",
-				"--localstatedir=/var",
-				"--enable-shared",
-				"--disable-gold",
-			}...,
-		)
-	}
+	// if cbuilder {
+	//
+	// 	prefix := path.Join(
+	// 		host_builders_dir,
+	// 		info.Target,
+	// 	)
+	//
+	// 	ret = make([]string, 0)
+	// 	ret = append(
+	// 		ret,
+	// 		[]string{
+	// 			"--prefix=" + prefix,
+	// 			"--mandir=" + path.Join(prefix, "share", "man"),
+	// 			"--sysconfdir=/etc",
+	// 			"--localstatedir=/var",
+	// 			"--enable-shared",
+	// 			"--disable-gold",
+	// 		}...,
+	// 	)
+	// }
 
 	// 2
-	if cbuilder {
-
-		sysroot := path.Join(host_builders_dir, info.Target)
-
-		ret = append(
-			ret,
-			[]string{
-				"--disable-gold",
-
-				"--enable-tls",
-				"--enable-nls",
-				"--enable-__cxa_atexit",
-				"--enable-languages=c,c++,objc,obj-c++,fortran,ada",
-				"--disable-bootstrap",
-				"--enable-threads=posix",
-
-				"--disable-multiarch",
-				"--disable-multilib",
-
-				"--enable-checking=release",
-				"--enable-libada",
-				"--enable-shared",
-
-				// # use it when you haven"t built glibc basic parts yet
-				// # "--without-headers",
-
-				// # use it when you already have glibc headers and basic parts
-				// # installed
-				// # using this parameter may reqire creating hacky symlink
-				// # pointing to /multiarch dir - you"ll see error what file not
-				// # found.
-				// # so after gcc and glibc built and installed - rebuild gcc both
-				// # without --with-sysroot= and without --without-headers options
-				"--with-sysroot=" + sysroot,
-
-				// # TODO: need to try building without --with-sysroot if possible
-
-			}...,
-		)
-		ret = append(
-			ret,
-			hbt_opts...,
-		)
-
-	}
+	// if cbuilder {
+	//
+	// 	sysroot := path.Join(host_builders_dir, info.Target)
+	//
+	// 	ret = append(
+	// 		ret,
+	// 		[]string{
+	// 			"--disable-gold",
+	//
+	// 			"--enable-tls",
+	// 			"--enable-nls",
+	// 			"--enable-__cxa_atexit",
+	// 			"--enable-languages=c,c++,objc,obj-c++,fortran,ada",
+	// 			"--disable-bootstrap",
+	// 			"--enable-threads=posix",
+	//
+	// 			"--disable-multiarch",
+	// 			"--disable-multilib",
+	//
+	// 			"--enable-checking=release",
+	// 			"--enable-libada",
+	// 			"--enable-shared",
+	//
+	// 			// # use it when you haven"t built glibc basic parts yet
+	// 			// # "--without-headers",
+	//
+	// 			// # use it when you already have glibc headers and basic parts
+	// 			// # installed
+	// 			// # using this parameter may reqire creating hacky symlink
+	// 			// # pointing to /multiarch dir - you"ll see error what file not
+	// 			// # found.
+	// 			// # so after gcc and glibc built and installed - rebuild gcc both
+	// 			// # without --with-sysroot= and without --without-headers options
+	// 			"--with-sysroot=" + sysroot,
+	//
+	// 			// # TODO: need to try building without --with-sysroot if possible
+	//
+	// 		}...,
+	// 	)
+	// 	ret = append(
+	// 		ret,
+	// 		hbt_opts...,
+	// 	)
+	//
+	// }
 
 	// 3
 	if cbuild {

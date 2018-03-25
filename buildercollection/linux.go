@@ -366,7 +366,7 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 		return err
 	}
 
-	_, hostarch, target, err := self.bs.GetConfiguredHHAT()
+	_, hostarch, err := self.bs.GetConfiguredHostHostArch()
 	if err != nil {
 		return err
 	}
@@ -378,10 +378,10 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 		)
 
 	} else if crossbuilder {
-		install_hdr_path = path.Join(
-			self.bs.GetDIR_DESTDIR(), "usr", "crossbuilders",
-			target,
-		)
+		// install_hdr_path = path.Join(
+		// 	self.bs.GetDIR_DESTDIR(), "usr", "crossbuilders",
+		// 	target,
+		// )
 
 	} else {
 		install_hdr_path = path.Join(self.bs.GetDIR_DESTDIR(), "usr")

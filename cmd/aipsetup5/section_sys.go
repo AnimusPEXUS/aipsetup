@@ -45,7 +45,7 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 					STD_ROOT_OPTION,
 					STD_OPTION_NAMED_INSTALLATION_FOR_HOST,
 					STD_OPTION_NAMED_INSTALLATION_FOR_HOSTARCH,
-					STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
+					// STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
 				},
 				CheckArgs: true,
 				MinArgs:   -1,
@@ -59,7 +59,7 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 					STD_ROOT_OPTION,
 					STD_OPTION_NAMED_INSTALLATION_FOR_HOST,
 					STD_OPTION_NAMED_INSTALLATION_FOR_HOSTARCH,
-					STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
+					// STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
 				},
 				CheckArgs: true,
 				MinArgs:   -1,
@@ -91,7 +91,7 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 					STD_ROOT_OPTION,
 					STD_OPTION_ASP_LIST_FILTER_HOST,
 					STD_OPTION_ASP_LIST_FILTER_HOSTARCH,
-					STD_OPTION_ASP_LIST_FILTER_TARGET,
+					// STD_OPTION_ASP_LIST_FILTER_TARGET,
 				},
 				CheckArgs: true,
 				MinArgs:   1,
@@ -126,12 +126,12 @@ func CmdAipsetupSysListAsps(
 		return res
 	}
 
-	host, hostarch, target, res := StdRoutineGetASPListFiltersHHaT(getopt_result, sys)
+	host, hostarch, res := StdRoutineGetASPListFiltersHostHostArch(getopt_result, sys)
 	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	res_lst, err := sys.ASPs.ListFilteredInstalledASPs(host, hostarch, target)
+	res_lst, err := sys.ASPs.ListFilteredInstalledASPs(host, hostarch)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -142,7 +142,7 @@ func CmdAipsetupSysListAsps(
 		fmt.Println(i)
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 }
 
 func CmdAipsetupSysAllNames(
@@ -155,12 +155,12 @@ func CmdAipsetupSysAllNames(
 		return res
 	}
 
-	host, hostarch, target, res := StdRoutineGetASPListFiltersHHaT(getopt_result, sys)
+	host, hostarch, res := StdRoutineGetASPListFiltersHostHostArch(getopt_result, sys)
 	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	res_lst, err := sys.ASPs.ListInstalledPackageNames(host, hostarch, target)
+	res_lst, err := sys.ASPs.ListInstalledPackageNames(host, hostarch)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -171,7 +171,7 @@ func CmdAipsetupSysAllNames(
 		fmt.Println(i)
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 }
 
 func CmdAipsetupSysNameASPs(
@@ -184,14 +184,14 @@ func CmdAipsetupSysNameASPs(
 		return res
 	}
 
-	host, hostarch, target, res := StdRoutineGetASPListFiltersHHaT(getopt_result, sys)
+	host, hostarch, res := StdRoutineGetASPListFiltersHostHostArch(getopt_result, sys)
 	if res != nil && res.Code != 0 {
 		return res
 	}
 
 	asp_name := getopt_result.Args[0]
 
-	res_lst, err := sys.ASPs.ListInstalledPackageNameASPs(asp_name, host, hostarch, target)
+	res_lst, err := sys.ASPs.ListInstalledPackageNameASPs(asp_name, host, hostarch)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -202,7 +202,7 @@ func CmdAipsetupSysNameASPs(
 		fmt.Println(i)
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 }
 
 func CmdAipsetupSysASPFiles(
@@ -241,7 +241,7 @@ func CmdAipsetupSysASPFiles(
 		fmt.Printf(print_fmt, ii, i)
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 }
 
 func CmdAipsetupSysInstall(
@@ -272,7 +272,7 @@ func CmdAipsetupSysInstall(
 		}
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 }
 
 func CmdAipsetupSysRemove(
@@ -301,7 +301,7 @@ func CmdAipsetupSysRemove(
 		}
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 }
 
 func CmdAipsetupSysReduceTo(

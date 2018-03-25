@@ -79,5 +79,5 @@ func MiscDoSomethingForGroupsCategoriesOrLists(
 	} else {
 		panic("programming error")
 	}
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 }

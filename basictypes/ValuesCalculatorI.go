@@ -20,12 +20,12 @@ type ValuesCalculatorI interface {
 	CalculateDstHostArchDir() (string, error)
 
 	// /{hostpath}/corssbuilders
-	CalculateHostCrossbuildersDir() (string, error)
-	CalculateDstHostCrossbuildersDir() (string, error)
+	// CalculateHostCrossbuildersDir() (string, error)
+	// CalculateDstHostCrossbuildersDir() (string, error)
 
 	// /{hostpath}/corssbuilders/{target}
-	CalculateHostCrossbuilderDir() (string, error)
-	CalculateDstHostCrossbuilderDir() (string, error)
+	// CalculateHostCrossbuilderDir() (string, error)
+	// CalculateDstHostCrossbuilderDir() (string, error)
 
 	CalculateHostLibDir() (string, error)
 	CalculateDstHostLibDir() (string, error)

@@ -184,7 +184,7 @@ func CmdAipsetupRepoFor(
 		}
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 
 }
 
@@ -246,7 +246,7 @@ func CmdAipsetupRepoPut(
 		return &cliapp.AppResult{Code: 12}
 	}
 
-	return &cliapp.AppResult{Code: 0}
+	return &cliapp.AppResult{}
 }
 
 func CmdAipsetupRepoGetSrc(
