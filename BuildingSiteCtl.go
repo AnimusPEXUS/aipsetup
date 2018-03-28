@@ -110,13 +110,14 @@ func IsDirRestrictedForWork(path string) bool {
 	return false
 }
 
-// forced compile-time type checking: BuildingSiteCtl must fullfill
-// BuildingSiteCtlI
 var _ basictypes.BuildingSiteCtlI = &BuildingSiteCtl{}
 
 type BuildingSiteCtl struct {
 	sys  *System
 	path string
+	info *basictypes.BuildingSiteInfo
+
+	buildingsitevaluescalculator *BuildingSiteValuesCalculator
 }
 
 func NewBuildingSiteCtl(
@@ -138,33 +139,39 @@ func NewBuildingSiteCtl(
 		return nil, errors.New("dir is restricted " + path)
 	}
 
-	ret := new(BuildingSiteCtl)
+	self := new(BuildingSiteCtl)
 
-	ret.path = path
-	ret.sys = sys
+	self.buildingsitevaluescalculator = NewBuildingSiteValuesCalculator(self)
 
-	return ret, nil
+	self.path = path
+	self.sys = sys
+
+	return self, nil
 }
 
 func (self *BuildingSiteCtl) ReadInfo() (*basictypes.BuildingSiteInfo, error) {
-	fullpath := path.Join(self.path, PACKAGE_INFO_FILENAME_V5)
 
-	res, err := ioutil.ReadFile(fullpath)
-	if err != nil {
-		return nil, err
+	if self.info == nil {
+		fullpath := path.Join(self.path, PACKAGE_INFO_FILENAME_V5)
+
+		res, err := ioutil.ReadFile(fullpath)
+		if err != nil {
+			return nil, err
+		}
+
+		j_res := new(basictypes.BuildingSiteInfo)
+
+		err = json.Unmarshal(res, j_res)
+		if err != nil {
+			return nil, err
+		}
 	}
 
-	j_res := new(basictypes.BuildingSiteInfo)
-
-	err = json.Unmarshal(res, j_res)
-	if err != nil {
-		return nil, err
-	}
-
-	return j_res, nil
+	return self.info, nil
 }
 
 func (self *BuildingSiteCtl) WriteInfo(info *basictypes.BuildingSiteInfo) error {
+
 	fullpath := path.Join(self.path, PACKAGE_INFO_FILENAME_V5)
 
 	res, err := json.Marshal(info)
@@ -183,6 +190,8 @@ func (self *BuildingSiteCtl) WriteInfo(info *basictypes.BuildingSiteInfo) error 
 	if err != nil {
 		return err
 	}
+
+	self.info = info
 
 	return nil
 }
@@ -605,8 +614,12 @@ func (self *BuildingSiteCtl) GetConfiguredHostHostArch() (string, string, error)
 	return i.Host, i.HostArch, nil
 }
 
-func (self *BuildingSiteCtl) ValuesCalculator() basictypes.ValuesCalculatorI {
-	return NewValuesCalculator(self)
+func (self *BuildingSiteCtl) GetSystem() basictypes.SystemI {
+	return self.sys
+}
+
+func (self *BuildingSiteCtl) GetBuildingSiteValuesCalculator() basictypes.BuildingSiteValuesCalculatorI {
+	return self.buildingsitevaluescalculator
 }
 
 // func (self *BuildingSiteCtl) Packager() *Packager {
@@ -636,10 +649,14 @@ func (self *BuildingSiteCtl) PrintCalculations() error {
 
 	fmt.Println("Building package", i.PackageName)
 	fmt.Println()
-	fmt.Println("Now running and building on system")
-	fmt.Println("(defined by aipsetup5.system.ini):")
+	fmt.Println("Now running and building on system (calculated at runtime):")
 	fmt.Println()
-	fmt.Println("Build        ", self.sys.Host())
+	host, err := self.sys.Host()
+	if err != nil {
+		fmt.Println("error: can't determine current host")
+		return err
+	}
+	fmt.Println("Build        ", host)
 	fmt.Println()
 	fmt.Println()
 	fmt.Println("Values gotten from building site config")
@@ -651,24 +668,16 @@ func (self *BuildingSiteCtl) PrintCalculations() error {
 	fmt.Println()
 	fmt.Println("Calculated or guessed stuff:")
 	fmt.Println()
-	if cb, err := self.ValuesCalculator().CalculateIsCrossbuild(); err != nil {
-		fmt.Println("can't calculate crossbuild value. error:", err)
-	} else {
-		fmt.Println("crossbuild?  ", cb)
-	}
-
-	if cb, err := self.ValuesCalculator().CalculateIsCrossbuilder(); err != nil {
-		fmt.Println("can't calculate crossbuilder value. error:", err)
-	} else {
-		fmt.Println("crossbuilder?", cb)
-	}
+	fmt.Println("crossbuilding?  ", i.ThisIsCrossbuilding)
+	fmt.Println("crossbuilder?    ", i.ThisIsCrossbuilder)
+	fmt.Println("subarch building?", i.ThisIsSubarchBuilding)
 
 	fmt.Println()
 	fmt.Println(
 		"Calculated --host --build --target options for autotools configurations:",
 	)
 
-	if ops, err := self.ValuesCalculator().CalculateAutotoolsHBTOptions(); err != nil {
+	if ops, err := self.GetBuildingSiteValuesCalculator().CalculateAutotoolsHBTOptions(); err != nil {
 		fmt.Println(" error:", err)
 	} else {
 		for _, i := range ops {

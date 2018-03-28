@@ -201,7 +201,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureEnvDef(
 ) (environ.EnvVarEd, error) {
 	env := environ.New()
 
-	calc := self.bs.ValuesCalculator()
+	calc := self.bs.GetBuildingSiteValuesCalculator()
 
 	pkgcp, err := calc.CalculatePkgConfigSearchPaths("")
 	if err != nil {
@@ -263,7 +263,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureArgsDef(
 
 	ret := make([]string, 0)
 
-	calc := self.bs.ValuesCalculator()
+	calc := self.bs.GetBuildingSiteValuesCalculator()
 
 	prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {

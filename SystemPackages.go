@@ -35,29 +35,6 @@ func NewSystemPackages(system *System) *SystemPackages {
 	return ret
 }
 
-// func (self *SystemPackages) _TestHostArchParameters(host, hostarch string,) error {
-//
-// 	if host == "" && arch != "" {
-// 		return errors.New("if `host' is empty, `arch' must be empty too")
-// 	}
-//
-// 	if host != "" {
-// 		_, err := systemtriplet.NewFromString(host)
-// 		if err != nil {
-// 			return err
-// 		}
-// 	}
-//
-// 	if arch != "" {
-// 		_, err := systemtriplet.NewFromString(arch)
-// 		if err != nil {
-// 			return err
-// 		}
-// 	}
-//
-// 	return nil
-// }
-
 func (self *SystemPackages) UninstallName(filename string) int {
 	return 1
 }

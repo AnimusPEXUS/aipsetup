@@ -13,11 +13,12 @@ type BuildingSiteCtlI interface {
 	ReadInfo() (*BuildingSiteInfo, error)
 	WriteInfo(*BuildingSiteInfo) error
 
-	GetConfiguredHost() (string, error)
-	GetConfiguredHostArch() (string, error)
-	GetConfiguredHostHostArch() (string, string, error)
+	// GetConfiguredHost() (string, error)
+	// GetConfiguredHostArch() (string, error)
+	// GetConfiguredTarget() (string, string, error)
 
-	ValuesCalculator() ValuesCalculatorI
+	GetSystem() SystemI
+	GetBuildingSiteValuesCalculator() BuildingSiteValuesCalculatorI
 
 	PrePackager() PrePackagerI
 	Packager() PackagerI

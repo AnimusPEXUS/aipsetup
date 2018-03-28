@@ -1,7 +1,13 @@
 package buildercollection
 
 import (
+	"errors"
+	"io"
+	"os"
+	"os/exec"
 	"path"
+	"path/filepath"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/logger"
@@ -34,7 +40,7 @@ func NewBuilderGlibc(bs basictypes.BuildingSiteCtlI) (*BuilderGlibc, error) {
 
 	self.std_builder.EditConfigureArgsCB = self.EditConfigureArgs
 
-	calc := self.bs.ValuesCalculator()
+	calc := self.bs.GetBuildingSiteValuesCalculator()
 
 	if t, err := calc.CalculateInstallLibDir(); err != nil {
 		return nil, err
@@ -50,91 +56,45 @@ func NewBuilderGlibc(bs basictypes.BuildingSiteCtlI) (*BuilderGlibc, error) {
 
 func (self *BuilderGlibc) DefineActions() (basictypes.BuilderActions, error) {
 
-	// calc := self.bs.ValuesCalculator()
-
-	// cb, err := calc.CalculateIsCrossbuilder()
-	// if err != nil {
-	// 	return nil, err
-	// }
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return nil, err
+	}
 
 	ret, err := self.std_builder.DefineActions()
 	if err != nil {
 		return nil, err
 	}
 
-	ret = ret.AddBefore(
-		basictypes.BuilderActions{
-			&basictypes.BuilderAction{"edit_package_info", self.BuilderActionEditInfo},
-		},
-		0,
-	)
+	if info.ThisIsCrossbuilder {
+		ret = ret.Remove("build")
+		ret = ret.Remove("distribute")
 
-	// if cb {
-	// 	ret = ret.Remove("build")
-	// 	ret = ret.Remove("distribute")
-	//
-	// 	ret = ret.AddAfter(
-	// 		basictypes.BuilderActions{
-	// 			&basictypes.BuilderAction{"distribute_01", self.BuilderActionDistribute_01},
-	// 			&basictypes.BuilderAction{"distribute_01_2", self.BuilderActionDistribute_01_2},
-	// 			&basictypes.BuilderAction{"distribute_01_3", self.BuilderActionDistribute_01_3},
-	// 			&basictypes.BuilderAction{"distribute_01_4", self.BuilderActionDistribute_01_4},
-	// 			&basictypes.BuilderAction{"distribute_01_5", self.BuilderActionDistribute_01_5},
-	//
-	// 			&basictypes.BuilderAction{"intermediate_instruction", self.BuilderActionIntermediateInstruction},
-	//
-	// 			&basictypes.BuilderAction{"build_02", self.BuilderActionBuild_02},
-	// 			&basictypes.BuilderAction{"distribute_02", self.BuilderActionDistribute_02},
-	// 		},
-	// 		len(ret)-1,
-	// 	)
-	// }
+		ret = ret.AddAfter(
+			basictypes.BuilderActions{
+				&basictypes.BuilderAction{"distribute_01", self.BuilderActionDistribute_01},
+				&basictypes.BuilderAction{"distribute_01_2", self.BuilderActionDistribute_01_2},
+				&basictypes.BuilderAction{"distribute_01_3", self.BuilderActionDistribute_01_3},
+				&basictypes.BuilderAction{"distribute_01_4", self.BuilderActionDistribute_01_4},
+				&basictypes.BuilderAction{"distribute_01_5", self.BuilderActionDistribute_01_5},
+
+				&basictypes.BuilderAction{"intermediate_instruction", self.BuilderActionIntermediateInstruction},
+
+				&basictypes.BuilderAction{"build_02", self.BuilderActionBuild_02},
+				&basictypes.BuilderAction{"distribute_02", self.BuilderActionDistribute_02},
+			},
+			len(ret)-1,
+		)
+	}
 
 	return ret, nil
 }
 
-func (self *BuilderGlibc) BuilderActionEditInfo(
-	log *logger.Logger,
-) error {
-
-	log.Info("Checking info file editing need")
-
-	info, err := self.bs.ReadInfo()
-	if err != nil {
-		return err
-	}
-
-	// calc := self.bs.ValuesCalculator()
-
-	// cb, err := calc.CalculateIsCrossbuilder()
-	// if err != nil {
-	// 	return err
-	// }
-
-	// if cb {
-	// 	info.PackageName = fmt.Sprintf("cb-glibc-%s", info.Target)
-	// } else {
-	// 	info.PackageName = "glibc"
-	// }
-
-	err = self.bs.WriteInfo(info)
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.ValuesCalculator()
+	calc := self.bs.GetBuildingSiteValuesCalculator()
 
-	// info, err := self.bs.ReadInfo()
-	// if err != nil {
-	// 	return nil, err
-	// }
-
-	cb, err := calc.CalculateIsCrossbuilder()
+	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -147,47 +107,39 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 		with_headers = path.Join(t, "include")
 	}
 
-	// if cb {
-	//
-	// 	host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
-	// 	if err != nil {
-	// 		return nil, err
-	// 	}
-	//
-	// 	prefix := path.Join(
-	// 		host_builders_dir,
-	// 		info.Target,
-	// 	)
-	//
-	// 	with_headers = path.Join(prefix, "include")
-	//
-	// 	hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
-	// 	if err != nil {
-	// 		return nil, err
-	// 	}
-	//
-	// 	ret = make([]string, 0)
-	// 	ret = append(
-	// 		ret,
-	// 		[]string{
-	// 			"--prefix=" + prefix,
-	// 			"--mandir=" + path.Join(prefix, "share", "man"),
-	// 			"--sysconfdir=/etc",
-	// 			"--localstatedir=/var",
-	// 			"--enable-shared",
-	// 		}...,
-	// 	)
-	// 	ret = append(
-	// 		ret,
-	// 		hbt_opts...,
-	// 	)
-	//
-	// }
+	if info.ThisIsCrossbuilder {
 
-	// host_dir, err := calc.CalculateHostDir()
-	// if err != nil {
-	// 	return nil, err
-	// }
+		host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
+		if err != nil {
+			return nil, err
+		}
+
+		prefix := path.Join(host_builders_dir, info.CrossbuilderTarget)
+
+		with_headers = path.Join(prefix, "include")
+
+		hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
+		if err != nil {
+			return nil, err
+		}
+
+		ret = make([]string, 0)
+		ret = append(
+			ret,
+			[]string{
+				"--prefix=" + prefix,
+				"--mandir=" + path.Join(prefix, "share", "man"),
+				"--sysconfdir=/etc",
+				"--localstatedir=/var",
+				"--enable-shared",
+			}...,
+		)
+		ret = append(
+			ret,
+			hbt_opts...,
+		)
+
+	}
 
 	ret = append(
 		ret,
@@ -215,7 +167,7 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 	)
 
 	// """
-	// # NOTE: it"s not working
+	// # NOTE: it's not working
 	// # NOTE: don"t remove this block. it"s for informational reason
 	// if self.get_arch_from_pkgi().startswith("x86_64"):
 	//     ret += ["slibdir=lib64"]
@@ -230,7 +182,7 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 	// 	ret = append(ret, "--with-sysroot")
 	// }
 
-	if cb {
+	if info.ThisIsCrossbuilder {
 		ret = append(
 			ret,
 			[]string{
@@ -303,183 +255,183 @@ func (self *BuilderGlibc) BuilderActionDistribute_01_2(
 	return self.std_builder.BuilderActionBuild(log)
 }
 
-// func (self *BuilderGlibc) BuilderActionDistribute_01_3(
-// 	log *logger.Logger,
-// ) error {
-//
-// 	calc := self.bs.ValuesCalculator()
-//
-// 	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	info, err := self.bs.ReadInfo()
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	mmldn, err := calc.CalculateMainMultiarchLibDirName()
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	gres, err := filepath.Glob(
-// 		path.Join(self.bs.GetDIR_BUILDING(), "csu", "*crt*.o"),
-// 	)
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	dest_lib_dir := path.Join(dhcd, info.Target, mmldn)
-//
-// 	err = os.MkdirAll(dest_lib_dir, 0755)
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	for _, i := range gres {
-// 		fromf, err := os.Open(i)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		tof, err := os.Create(path.Join(dest_lib_dir, path.Base(i)))
-// 		if err != nil {
-// 			fromf.Close()
-// 			return err
-// 		}
-// 		_, err = io.Copy(tof, fromf)
-//
-// 		fromf.Close()
-// 		tof.Close()
-//
-// 		if err != nil {
-// 			return err
-// 		}
-// 	}
-//
-// 	return nil
-// }
-//
-// func (self *BuilderGlibc) BuilderActionDistribute_01_4(
-// 	log *logger.Logger,
-// ) error {
-// 	calc := self.bs.ValuesCalculator()
-//
-// 	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	info, err := self.bs.ReadInfo()
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	mmldn, err := calc.CalculateMainMultiarchLibDirName()
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	cwd := path.Join(dhcd, info.Target, mmldn)
-//
-// 	cmd := []string{
-// 		"-nostdlib",
-// 		"-nostartfiles",
-// 		"-shared",
-// 		"-x",
-// 		"c",
-// 		"/dev/null",
-// 		"-o",
-// 		"libc.so",
-// 	}
-//
-// 	log.Info("directory: " + cwd)
-// 	log.Info("cmd: " + strings.Join(cmd, "/"))
-//
-// 	c := exec.Command(info.Target+"-gcc", cmd...)
-// 	c.Stdout = os.Stdout
-// 	c.Stderr = os.Stderr
-// 	c.Dir = cwd
-//
-// 	err = c.Run()
-//
-// 	return nil
-// }
-//
-// func (self *BuilderGlibc) BuilderActionDistribute_01_5(
-// 	log *logger.Logger,
-// ) error {
-//
-// 	calc := self.bs.ValuesCalculator()
-//
-// 	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	info, err := self.bs.ReadInfo()
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	cwd := path.Join(dhcd, info.Target, "include", "gnu")
-//
-// 	cwdf := path.Join(cwd, "stubs.h")
-//
-// 	err = os.MkdirAll(cwd, 0755)
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	f, err := os.Create(cwdf)
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	f.Close()
-//
-// 	return nil
-// }
-//
-// func (self *BuilderGlibc) BuilderActionIntermediateInstruction(
-// 	log *logger.Logger,
-// ) error {
-// 	for _, i := range []string{
-// 		"---------------",
-// 		"pack and install this glibc build.",
-// 		"then continue with gcc build_02+",
-// 		"---------------",
-// 	} {
-// 		log.Info(i)
-// 	}
-// 	return errors.New("user action required")
-// }
-//
-// func (self *BuilderGlibc) BuilderActionBuild_02(
-// 	log *logger.Logger,
-// ) error {
-//
-// 	self.std_builder.EditBuildArgsCB = func(
-// 		log *logger.Logger,
-// 		ret []string,
-// 	) ([]string, error) {
-// 		return []string{}, nil
-// 	}
-//
-// 	return self.std_builder.BuilderActionBuild(log)
-// }
-//
-// func (self *BuilderGlibc) BuilderActionDistribute_02(
-// 	log *logger.Logger,
-// ) error {
-//
-// 	self.std_builder.EditDistributeArgsCB = func(
-// 		log *logger.Logger,
-// 		ret []string,
-// 	) ([]string, error) {
-// 		return []string{"install", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
-// 	}
-//
-// 	return self.std_builder.BuilderActionDistribute(log)
-// }
+func (self *BuilderGlibc) BuilderActionDistribute_01_3(
+	log *logger.Logger,
+) error {
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
+	if err != nil {
+		return err
+	}
+
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	mmldn, err := calc.CalculateMainMultiarchLibDirName()
+	if err != nil {
+		return err
+	}
+
+	gres, err := filepath.Glob(
+		path.Join(self.bs.GetDIR_BUILDING(), "csu", "*crt*.o"),
+	)
+	if err != nil {
+		return err
+	}
+
+	dest_lib_dir := path.Join(dhcd, info.CrossbuilderTarget, mmldn)
+
+	err = os.MkdirAll(dest_lib_dir, 0755)
+	if err != nil {
+		return err
+	}
+
+	for _, i := range gres {
+		fromf, err := os.Open(i)
+		if err != nil {
+			return err
+		}
+		tof, err := os.Create(path.Join(dest_lib_dir, path.Base(i)))
+		if err != nil {
+			fromf.Close()
+			return err
+		}
+		_, err = io.Copy(tof, fromf)
+
+		fromf.Close()
+		tof.Close()
+
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (self *BuilderGlibc) BuilderActionDistribute_01_4(
+	log *logger.Logger,
+) error {
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
+	if err != nil {
+		return err
+	}
+
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	mmldn, err := calc.CalculateMainMultiarchLibDirName()
+	if err != nil {
+		return err
+	}
+
+	cwd := path.Join(dhcd, info.CrossbuilderTarget, mmldn)
+
+	cmd := []string{
+		"-nostdlib",
+		"-nostartfiles",
+		"-shared",
+		"-x",
+		"c",
+		"/dev/null",
+		"-o",
+		"libc.so",
+	}
+
+	log.Info("directory: " + cwd)
+	log.Info("cmd: " + strings.Join(cmd, "/"))
+
+	c := exec.Command(info.CrossbuilderTarget+"-gcc", cmd...)
+	c.Stdout = os.Stdout
+	c.Stderr = os.Stderr
+	c.Dir = cwd
+
+	err = c.Run()
+
+	return nil
+}
+
+func (self *BuilderGlibc) BuilderActionDistribute_01_5(
+	log *logger.Logger,
+) error {
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
+	if err != nil {
+		return err
+	}
+
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	cwd := path.Join(dhcd, info.CrossbuilderTarget, "include", "gnu")
+
+	cwdf := path.Join(cwd, "stubs.h")
+
+	err = os.MkdirAll(cwd, 0755)
+	if err != nil {
+		return err
+	}
+
+	f, err := os.Create(cwdf)
+	if err != nil {
+		return err
+	}
+
+	f.Close()
+
+	return nil
+}
+
+func (self *BuilderGlibc) BuilderActionIntermediateInstruction(
+	log *logger.Logger,
+) error {
+	for _, i := range []string{
+		"---------------",
+		"pack and install this glibc build.",
+		"then continue with gcc build_02+",
+		"---------------",
+	} {
+		log.Info(i)
+	}
+	return errors.New("user action required")
+}
+
+func (self *BuilderGlibc) BuilderActionBuild_02(
+	log *logger.Logger,
+) error {
+
+	self.std_builder.EditBuildArgsCB = func(
+		log *logger.Logger,
+		ret []string,
+	) ([]string, error) {
+		return []string{}, nil
+	}
+
+	return self.std_builder.BuilderActionBuild(log)
+}
+
+func (self *BuilderGlibc) BuilderActionDistribute_02(
+	log *logger.Logger,
+) error {
+
+	self.std_builder.EditDistributeArgsCB = func(
+		log *logger.Logger,
+		ret []string,
+	) ([]string, error) {
+		return []string{"install", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
+	}
+
+	return self.std_builder.BuilderActionDistribute(log)
+}

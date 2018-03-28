@@ -2,11 +2,7 @@ package basictypes
 
 import "github.com/AnimusPEXUS/utils/environ"
 
-type ValuesCalculatorI interface {
-	CalculateIsCrossbuild() (bool, error)
-	CalculateIsCrossbuilder() (bool, error)
-	CalculateIsBuildingForSameHostButDifferentArch() (bool, error)
-
+type BuildingSiteValuesCalculatorI interface {
 	CalculateMultihostDir() string
 	CalculateDstMultihostDir() string
 
@@ -20,12 +16,12 @@ type ValuesCalculatorI interface {
 	CalculateDstHostArchDir() (string, error)
 
 	// /{hostpath}/corssbuilders
-	// CalculateHostCrossbuildersDir() (string, error)
-	// CalculateDstHostCrossbuildersDir() (string, error)
+	CalculateHostCrossbuildersDir() (string, error)
+	CalculateDstHostCrossbuildersDir() (string, error)
 
 	// /{hostpath}/corssbuilders/{target}
-	// CalculateHostCrossbuilderDir() (string, error)
-	// CalculateDstHostCrossbuilderDir() (string, error)
+	CalculateHostCrossbuilderDir() (string, error)
+	CalculateDstHostCrossbuilderDir() (string, error)
 
 	CalculateHostLibDir() (string, error)
 	CalculateDstHostLibDir() (string, error)

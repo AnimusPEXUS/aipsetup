@@ -31,8 +31,8 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 					STD_ROOT_OPTION,
 					STD_OPTION_BUILD_FOR_HOST,
 					STD_OPTION_BUILD_FOR_HOSTARCH,
-					// STD_OPTION_BUILD_TO_TARGET,
-					// STD_BUILDER_BUILD_OPTION,
+					STD_OPTION_BUILD_CROSSBUILDER,
+					STD_OPTION_BUILD_CROSSBUILDING,
 					&cliapp.GetOptCheckListItem{
 						Name: "-o",
 						Description: "" +
@@ -79,15 +79,15 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 				Callable: CmdAipsetupBuildRun,
 			},
 
-			&cliapp.AppCmdNode{
-				Name: "full",
-
-				CheckArgs: true,
-				MinArgs:   0,
-				MaxArgs:   -1,
-
-				Callable: CmdAipsetupBuildFull,
-			},
+			// &cliapp.AppCmdNode{
+			// 	Name: "full",
+			//
+			// 	CheckArgs: true,
+			// 	MinArgs:   0,
+			// 	MaxArgs:   -1,
+			//
+			// 	Callable: CmdAipsetupBuildFull,
+			// },
 
 			// &cliapp.AppCmdNode{
 			// 	Name: "pack",

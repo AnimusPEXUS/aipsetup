@@ -42,27 +42,18 @@ func NewBuilderLinux(bs basictypes.BuildingSiteCtlI) (*BuilderLinux, error) {
 
 	self.bs = bs
 
-	self.std_builder = NewBuilderStdAutotools(bs)
-
-	self.crossbuild_params = make([]string, 0)
-
-	vc := bs.ValuesCalculator()
-
-	cb, err := vc.CalculateIsCrossbuild()
+	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return nil, err
 	}
 
-	if cb {
-		host, err := bs.GetConfiguredHost()
-		if err != nil {
-			return nil, err
-		}
+	self.std_builder = NewBuilderStdAutotools(bs)
 
-		hostarch, err := bs.GetConfiguredHostArch()
-		if err != nil {
-			return nil, err
-		}
+	self.crossbuild_params = make([]string, 0)
+
+	if info.ThisIsCrossbuilding { // Crossbuilder?
+		host := info.Host
+		hostarch := info.HostArch
 
 		tri, err := systemtriplet.NewFromString(host)
 		if err != nil {
@@ -118,6 +109,11 @@ func NewBuilderLinux(bs basictypes.BuildingSiteCtlI) (*BuilderLinux, error) {
 
 func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return nil, err
+	}
+
 	ret := basictypes.BuilderActions{
 		&basictypes.BuilderAction{"dst_cleanup", self.std_builder.BuilderActionDstCleanup},
 		&basictypes.BuilderAction{"src_cleanup", self.std_builder.BuilderActionSrcCleanup},
@@ -138,22 +134,12 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 		&basictypes.BuilderAction{"distr_source", self.BuilderActionDistrSource},
 	}
 
-	crossbuilder, err := self.bs.ValuesCalculator().CalculateIsCrossbuilder()
-	if err != nil {
-		return basictypes.BuilderActions{}, err
-	}
-
-	onlysubarch, err := self.bs.ValuesCalculator().CalculateIsBuildingForSameHostButDifferentArch()
-	if err != nil {
-		return basictypes.BuilderActions{}, err
-	}
-
-	if crossbuilder || onlysubarch {
-		if crossbuilder {
+	if info.ThisIsCrossbuilder || info.ThisIsSubarchBuilding {
+		if info.ThisIsCrossbuilder {
 			log.Info("Crossbuilder building detected")
 		}
 
-		if onlysubarch {
+		if info.ThisIsSubarchBuilding {
 			log.Info("Subarch building detected")
 		}
 
@@ -354,34 +340,21 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 
 	var install_hdr_path string
 
-	calc := self.bs.ValuesCalculator()
-
-	diff_arch, err := calc.CalculateIsBuildingForSameHostButDifferentArch()
+	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return err
 	}
 
-	crossbuilder, err := calc.CalculateIsCrossbuilder()
-	if err != nil {
-		return err
-	}
-
-	_, hostarch, err := self.bs.GetConfiguredHostHostArch()
-	if err != nil {
-		return err
-	}
-
-	if diff_arch {
+	if info.ThisIsSubarchBuilding {
 		install_hdr_path = path.Join(
-			self.bs.GetDIR_DESTDIR(), "usr", "multiarch",
-			hostarch,
+			self.bs.GetDIR_DESTDIR(), "usr", "multiarch", info.HostArch,
 		)
 
-	} else if crossbuilder {
-		// install_hdr_path = path.Join(
-		// 	self.bs.GetDIR_DESTDIR(), "usr", "crossbuilders",
-		// 	target,
-		// )
+	} else if info.ThisIsCrossbuilder {
+		install_hdr_path = path.Join(
+			self.bs.GetDIR_DESTDIR(), "usr", "crossbuilders",
+			info.CrossbuilderTarget,
+		)
 
 	} else {
 		install_hdr_path = path.Join(self.bs.GetDIR_DESTDIR(), "usr")
@@ -419,7 +392,7 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 	user_action_required := false
 
 	sublog := "eeeeeeeeeeeeeeeeeeee"
-	if crossbuilder || diff_arch {
+	if info.ThisIsCrossbuilder || info.ThisIsSubarchBuilding {
 		sublog = "and pack this building site - package building completed'"
 	} else {
 		sublog = "and continue with 'distr_man+' action"

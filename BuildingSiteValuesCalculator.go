@@ -12,76 +12,45 @@ import (
 	"github.com/AnimusPEXUS/utils/textlist"
 )
 
-var _ basictypes.ValuesCalculatorI = &ValuesCalculator{}
+var _ basictypes.BuildingSiteValuesCalculatorI = &BuildingSiteValuesCalculator{}
 
-type ValuesCalculator struct {
+type BuildingSiteValuesCalculator struct {
 	site    *BuildingSiteCtl
 	builder basictypes.BuilderI
 }
 
-func NewValuesCalculator(site *BuildingSiteCtl) *ValuesCalculator {
-	ret := new(ValuesCalculator)
+func NewBuildingSiteValuesCalculator(site *BuildingSiteCtl) *BuildingSiteValuesCalculator {
+	ret := new(BuildingSiteValuesCalculator)
 	ret.site = site
 	//ret.builder = builder
 	return ret
 }
 
-func (self *ValuesCalculator) CalculateIsCrossbuild() (bool, error) {
-	// host, _, _, err := self.site.GetConfiguredHostHostArch()
-	// if err != nil {
-	// 	return false, err
-	// }
-	//
-	// build := self.site.sys.Host()
-	//
-	// ret := host != build
-	//
-	// return ret, nil
-	return false, nil
-}
-
-func (self *ValuesCalculator) CalculateIsCrossbuilder() (bool, error) {
-
-	// host, hostarch, target, err := self.site.GetConfiguredHostHostArch()
-	// if err != nil {
-	// 	return false, err
-	// }
-	//
-	// ret := target != host
-	//
-	// if ret && (host != hostarch) {
-	// 	return false, errors.New(
-	// 		"invalid configuration: underlying system should not be used " +
-	// 			"to crossbuild or to build crossbuilders",
-	// 	)
-	// }
-
-	// return ret, nil
-	return false, nil
-}
-
-func (self *ValuesCalculator) CalculateIsBuildingForSameHostButDifferentArch() (bool, error) {
+func (self *BuildingSiteValuesCalculator) CalculateIsBuildingForSameHostButDifferentArch() (bool, error) {
 	host, hostarch, err := self.site.GetConfiguredHostHostArch()
 	if err != nil {
 		return false, err
 	}
 
-	build := self.site.sys.Host()
+	build, err := self.site.sys.Host()
+	if err != nil {
+		return false, err
+	}
 
 	ret := (host == build) && hostarch != host
 
-	return ret, err
+	return ret, nil
 }
 
-func (self *ValuesCalculator) CalculateMultihostDir() string {
-	return path.Join(string(os.PathSeparator), LAILALO_ROOT_MULTIHOST_DIRNAME)
+func (self *BuildingSiteValuesCalculator) CalculateMultihostDir() string {
+	return self.site.sys.GetSystemValuesCalculator().CalculateMultihostDir()
 }
 
-func (self *ValuesCalculator) CalculateDstMultihostDir() string {
+func (self *BuildingSiteValuesCalculator) CalculateDstMultihostDir() string {
 	return path.Join(self.site.GetDIR_DESTDIR(), self.CalculateMultihostDir())
 }
 
-func (self *ValuesCalculator) CalculateHostDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateHostDir() (string, error) {
 	host, err := self.site.GetConfiguredHost()
 	if err != nil {
 		return "", err
@@ -89,7 +58,7 @@ func (self *ValuesCalculator) CalculateHostDir() (string, error) {
 	return path.Join(self.CalculateMultihostDir(), host), nil
 }
 
-func (self *ValuesCalculator) CalculateDstHostDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstHostDir() (string, error) {
 	hostdir, err := self.CalculateHostDir()
 	if err != nil {
 		return "", err
@@ -97,7 +66,7 @@ func (self *ValuesCalculator) CalculateDstHostDir() (string, error) {
 	return path.Join(self.site.GetDIR_DESTDIR(), hostdir), nil
 }
 
-func (self *ValuesCalculator) CalculateHostMultiarchDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateHostMultiarchDir() (string, error) {
 	hostdir, err := self.CalculateHostDir()
 	if err != nil {
 		return "", err
@@ -105,7 +74,7 @@ func (self *ValuesCalculator) CalculateHostMultiarchDir() (string, error) {
 	return path.Join(hostdir, LAILALO_MULTIHOST_MULTIARCH_DIRNAME), nil
 }
 
-func (self *ValuesCalculator) CalculateDstHostMultiarchDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstHostMultiarchDir() (string, error) {
 	hostmultiarchdir, err := self.CalculateHostMultiarchDir()
 	if err != nil {
 		return "", err
@@ -113,7 +82,7 @@ func (self *ValuesCalculator) CalculateDstHostMultiarchDir() (string, error) {
 	return path.Join(self.site.GetDIR_DESTDIR(), hostmultiarchdir), nil
 }
 
-func (self *ValuesCalculator) CalculateHostArchDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateHostArchDir() (string, error) {
 	hostmultiarchdir, err := self.CalculateHostMultiarchDir()
 	if err != nil {
 		return "", err
@@ -127,7 +96,7 @@ func (self *ValuesCalculator) CalculateHostArchDir() (string, error) {
 	return path.Join(hostmultiarchdir, arch), nil
 }
 
-func (self *ValuesCalculator) CalculateDstHostArchDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstHostArchDir() (string, error) {
 	hostarchdir, err := self.CalculateHostArchDir()
 	if err != nil {
 		return "", err
@@ -136,44 +105,48 @@ func (self *ValuesCalculator) CalculateDstHostArchDir() (string, error) {
 }
 
 // /{hostpath}/corssbuilders
-// func (self *ValuesCalculator) CalculateHostCrossbuildersDir() (string, error) {
-// 	hostdir, err := self.CalculateHostDir()
-// 	if err != nil {
-// 		return "", err
-// 	}
-// 	return path.Join(hostdir, LAILALO_MULTIHOST_CROSSBULDERS_DIRNAME), nil
-// }
+func (self *BuildingSiteValuesCalculator) CalculateHostCrossbuildersDir() (string, error) {
+	hostdir, err := self.CalculateHostDir()
+	if err != nil {
+		return "", err
+	}
+	return path.Join(hostdir, LAILALO_MULTIHOST_CROSSBULDERS_DIRNAME), nil
+}
 
-// func (self *ValuesCalculator) CalculateDstHostCrossbuildersDir() (string, error) {
-// 	hostcrossbuildersdir, err := self.CalculateHostCrossbuildersDir()
-// 	if err != nil {
-// 		return "", err
-// 	}
-// 	return path.Join(self.site.GetDIR_DESTDIR(), hostcrossbuildersdir), nil
-// }
+func (self *BuildingSiteValuesCalculator) CalculateDstHostCrossbuildersDir() (string, error) {
+	hostcrossbuildersdir, err := self.CalculateHostCrossbuildersDir()
+	if err != nil {
+		return "", err
+	}
+	return path.Join(self.site.GetDIR_DESTDIR(), hostcrossbuildersdir), nil
+}
 
 // /{hostpath}/corssbuilders/{target}
-// func (self *ValuesCalculator) CalculateHostCrossbuilderDir() (string, error) {
-// 	hostcrossbuildersdir, err := self.CalculateHostCrossbuildersDir()
-// 	if err != nil {
-// 		return "", err
-// 	}
-// 	target, err := self.site.GetConfiguredTarget()
-// 	if err != nil {
-// 		return "", err
-// 	}
-// 	return path.Join(hostcrossbuildersdir, target), nil
-// }
+func (self *BuildingSiteValuesCalculator) CalculateHostCrossbuilderDir() (string, error) {
+	// TODO: maybe this should return error, if building site not configured as
+	//  		 crossbuilder
+	hostcrossbuildersdir, err := self.CalculateHostCrossbuildersDir()
+	if err != nil {
+		return "", err
+	}
+	info, err := self.site.ReadInfo()
+	if err != nil {
+		return "", err
+	}
+	target := info.CrossbuilderTarget
 
-// func (self *ValuesCalculator) CalculateDstHostCrossbuilderDir() (string, error) {
-// 	hostcrossbuilderdir, err := self.CalculateHostCrossbuilderDir()
-// 	if err != nil {
-// 		return "", err
-// 	}
-// 	return path.Join(self.site.GetDIR_DESTDIR(), hostcrossbuilderdir), nil
-// }
+	return path.Join(hostcrossbuildersdir, target), nil
+}
 
-func (self *ValuesCalculator) CalculateHostLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstHostCrossbuilderDir() (string, error) {
+	hostcrossbuilderdir, err := self.CalculateHostCrossbuilderDir()
+	if err != nil {
+		return "", err
+	}
+	return path.Join(self.site.GetDIR_DESTDIR(), hostcrossbuilderdir), nil
+}
+
+func (self *BuildingSiteValuesCalculator) CalculateHostLibDir() (string, error) {
 	hostdir, err := self.CalculateHostDir()
 	if err != nil {
 		return "", err
@@ -185,7 +158,7 @@ func (self *ValuesCalculator) CalculateHostLibDir() (string, error) {
 	return path.Join(hostdir, mmldn), nil
 }
 
-func (self *ValuesCalculator) CalculateDstHostLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstHostLibDir() (string, error) {
 	host_lib_dir, err := self.CalculateHostLibDir()
 	if err != nil {
 		return "", err
@@ -193,7 +166,7 @@ func (self *ValuesCalculator) CalculateDstHostLibDir() (string, error) {
 	return path.Join(self.site.GetDIR_DESTDIR(), host_lib_dir), nil
 }
 
-func (self *ValuesCalculator) CalculateHostArchLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateHostArchLibDir() (string, error) {
 	lib_dir_name, err := self.CalculateMainMultiarchLibDirName()
 	if err != nil {
 		return "", err
@@ -207,7 +180,7 @@ func (self *ValuesCalculator) CalculateHostArchLibDir() (string, error) {
 	return path.Join(host_arch_dir, lib_dir_name), nil
 }
 
-func (self *ValuesCalculator) CalculateDstHostArchLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstHostArchLibDir() (string, error) {
 	v, err := self.CalculateHostArchLibDir()
 	if err != nil {
 		return "", err
@@ -215,7 +188,7 @@ func (self *ValuesCalculator) CalculateDstHostArchLibDir() (string, error) {
 	return path.Join(self.site.GetDIR_DESTDIR(), v), nil
 }
 
-func (self *ValuesCalculator) CalculateInstallPrefix() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateInstallPrefix() (string, error) {
 	host, hostarch, err := self.site.GetConfiguredHostHostArch()
 	if err != nil {
 		return "", err
@@ -228,7 +201,7 @@ func (self *ValuesCalculator) CalculateInstallPrefix() (string, error) {
 	}
 }
 
-func (self *ValuesCalculator) CalculateDstInstallPrefix() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstInstallPrefix() (string, error) {
 	v, err := self.CalculateInstallPrefix()
 	if err != nil {
 		return "", err
@@ -236,7 +209,7 @@ func (self *ValuesCalculator) CalculateDstInstallPrefix() (string, error) {
 	return path.Join(self.site.GetDIR_DESTDIR(), v), nil
 }
 
-func (self *ValuesCalculator) CalculateInstallLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateInstallLibDir() (string, error) {
 	host, hostarch, err := self.site.GetConfiguredHostHostArch()
 	if err != nil {
 		return "", err
@@ -249,7 +222,7 @@ func (self *ValuesCalculator) CalculateInstallLibDir() (string, error) {
 	}
 }
 
-func (self *ValuesCalculator) CalculateDstInstallLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstInstallLibDir() (string, error) {
 	v, err := self.CalculateInstallPrefix()
 	if err != nil {
 		return "", err
@@ -285,7 +258,7 @@ func (self *ValuesCalculator) CalculateDstInstallLibDir() (string, error) {
 // #        self.calculate_default_linker_program_ld_parameter()
 // #        )
 
-func (self *ValuesCalculator) CalculateMainMultiarchLibDirName() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateMainMultiarchLibDirName() (string, error) {
 	host, hostarch, err := self.site.GetConfiguredHostHostArch()
 	if err != nil {
 		return "", err
@@ -311,7 +284,7 @@ func (self *ValuesCalculator) CalculateMainMultiarchLibDirName() (string, error)
 	return "", errors.New("host or [host/arch] value not supported")
 }
 
-func (self *ValuesCalculator) CalculatePkgConfigSearchPaths(prefix string) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths(prefix string) ([]string, error) {
 
 	inst_prefix, err := self.CalculateInstallPrefix()
 	if err != nil {
@@ -346,7 +319,7 @@ func (self *ValuesCalculator) CalculatePkgConfigSearchPaths(prefix string) ([]st
 	return ret, nil
 }
 
-func (self *ValuesCalculator) Calculate_LD_LIBRARY_PATH(prefixes []string) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_LD_LIBRARY_PATH(prefixes []string) ([]string, error) {
 
 	// inst_prefix, err := self.CalculateInstallPrefix()
 	// if err != nil {
@@ -381,7 +354,7 @@ func (self *ValuesCalculator) Calculate_LD_LIBRARY_PATH(prefixes []string) ([]st
 	return ret, nil
 }
 
-func (self *ValuesCalculator) Calculate_LIBRARY_PATH(prefixes []string) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_LIBRARY_PATH(prefixes []string) ([]string, error) {
 	// # NOTE: potentially this is different from LD_LIBRARY_PATH.
 	// #       LIBRARY_PATH is for GCC and it's friends. so it's possible
 	// #       for it to differ also in code, in future, not only in name.
@@ -389,7 +362,7 @@ func (self *ValuesCalculator) Calculate_LIBRARY_PATH(prefixes []string) ([]strin
 	return self.Calculate_LD_LIBRARY_PATH(prefixes)
 }
 
-func (self *ValuesCalculator) Calculate_C_INCLUDE_PATH(prefixes []string) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_C_INCLUDE_PATH(prefixes []string) ([]string, error) {
 
 	inst_prefix, err := self.CalculateInstallPrefix()
 	if err != nil {
@@ -420,7 +393,7 @@ func (self *ValuesCalculator) Calculate_C_INCLUDE_PATH(prefixes []string) ([]str
 	return ret, nil
 }
 
-func (self *ValuesCalculator) Calculate_PATH(prefix string) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_PATH(prefix string) ([]string, error) {
 
 	inst_prefix, err := self.CalculateInstallPrefix()
 	if err != nil {
@@ -463,7 +436,7 @@ func (self *ValuesCalculator) Calculate_PATH(prefix string) ([]string, error) {
 	return ret, nil
 }
 
-func (self *ValuesCalculator) Calculate_C_Compiler() (string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_C_Compiler() (string, error) {
 	host, err := self.site.GetConfiguredHost()
 	if err != nil {
 		return "", err
@@ -471,7 +444,7 @@ func (self *ValuesCalculator) Calculate_C_Compiler() (string, error) {
 	return fmt.Sprintf("%s-%s", host, "gcc"), nil
 }
 
-func (self *ValuesCalculator) Calculate_CXX_Compiler() (string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_CXX_Compiler() (string, error) {
 	host, err := self.site.GetConfiguredHost()
 	if err != nil {
 		return "", err
@@ -479,7 +452,7 @@ func (self *ValuesCalculator) Calculate_CXX_Compiler() (string, error) {
 	return fmt.Sprintf("%s-%s", host, "g++"), nil
 }
 
-func (self *ValuesCalculator) CalculateMultilibVariant() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateMultilibVariant() (string, error) {
 	_, hostarch, err := self.site.GetConfiguredHostHostArch()
 	if err != nil {
 		return "", err
@@ -501,7 +474,7 @@ func (self *ValuesCalculator) CalculateMultilibVariant() (string, error) {
 	return "", errors.New("CalculateMultilibVariant(): not supported cpu")
 }
 
-func (self *ValuesCalculator) CalculateAutotoolsCCParameterValue() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCCParameterValue() (string, error) {
 	c, err := self.Calculate_C_Compiler()
 	if err != nil {
 		return "", err
@@ -513,7 +486,7 @@ func (self *ValuesCalculator) CalculateAutotoolsCCParameterValue() (string, erro
 	return fmt.Sprintf("%s -m%s", c, mlv), nil
 }
 
-func (self *ValuesCalculator) CalculateAutotoolsCXXParameterValue() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCXXParameterValue() (string, error) {
 	c, err := self.Calculate_CXX_Compiler()
 	if err != nil {
 		return "", err
@@ -525,7 +498,7 @@ func (self *ValuesCalculator) CalculateAutotoolsCXXParameterValue() (string, err
 	return fmt.Sprintf("%s -m%s", c, mlv), nil
 }
 
-func (self *ValuesCalculator) CalculateAllOptionsMap() (environ.EnvVarEd, error) {
+func (self *BuildingSiteValuesCalculator) CalculateAllOptionsMap() (environ.EnvVarEd, error) {
 
 	ret := environ.New()
 
@@ -539,7 +512,7 @@ func (self *ValuesCalculator) CalculateAllOptionsMap() (environ.EnvVarEd, error)
 	return ret, nil
 }
 
-func (self *ValuesCalculator) CalculateCompilerOptionsMap() (environ.EnvVarEd, error) {
+func (self *BuildingSiteValuesCalculator) CalculateCompilerOptionsMap() (environ.EnvVarEd, error) {
 	ret := environ.New()
 
 	cc_string, err := self.CalculateAutotoolsCCParameterValue()
@@ -558,7 +531,7 @@ func (self *ValuesCalculator) CalculateCompilerOptionsMap() (environ.EnvVarEd, e
 	return ret, nil
 }
 
-func (self *ValuesCalculator) CalculateAutotoolsHBTOptions() ([]string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsHBTOptions() ([]string, error) {
 	ret := make([]string, 0)
 
 	host, hostarch, err := self.site.GetConfiguredHostHostArch()
@@ -572,7 +545,11 @@ func (self *ValuesCalculator) CalculateAutotoolsHBTOptions() ([]string, error) {
 	//       so
 	forced_target := false
 
-	build := self.site.sys.Host()
+	build, err := self.site.sys.Host()
+	if err != nil {
+		return nil, err
+	}
+
 	target := hostarch
 
 	if hostarch != "" &&

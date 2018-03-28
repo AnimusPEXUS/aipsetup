@@ -37,54 +37,7 @@ func NewBuilderBinutils(bs basictypes.BuildingSiteCtlI) *BuilderBinutils {
 }
 
 func (self *BuilderBinutils) DefineActions() (basictypes.BuilderActions, error) {
-
-	ret := make(basictypes.BuilderActions, 0)
-
-	ret = append(
-		ret,
-		&basictypes.BuilderAction{"edit_package_info", self.BuilderActionEditInfo},
-	)
-
-	std_actions, err := self.std_builder.DefineActions()
-	if err != nil {
-		return nil, err
-	}
-
-	ret = append(ret, std_actions...)
-
-	return ret, nil
-}
-
-func (self *BuilderBinutils) BuilderActionEditInfo(
-	log *logger.Logger,
-) error {
-
-	log.Info("Checking info file editing need")
-
-	info, err := self.bs.ReadInfo()
-	if err != nil {
-		return err
-	}
-
-	// calc := self.bs.ValuesCalculator()
-
-	// cb, err := calc.CalculateIsCrossbuilder()
-	// if err != nil {
-	// 	return err
-	// }
-
-	// if cb {
-	// 	info.PackageName = fmt.Sprintf("cb-binutils-%s", info.Target)
-	// } else {
-	// 	info.PackageName = "binutils"
-	// }
-
-	err = self.bs.WriteInfo(info)
-	if err != nil {
-		return err
-	}
-
-	return nil
+	return self.std_builder.DefineActions()
 }
 
 func (self *BuilderBinutils) AfterExtract(log *logger.Logger, err error) error {
@@ -134,52 +87,49 @@ func (self *BuilderBinutils) AfterExtract(log *logger.Logger, err error) error {
 
 func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.ValuesCalculator()
+	calc := self.bs.GetBuildingSiteValuesCalculator()
 
-	// info, err := self.bs.ReadInfo()
-	// if err != nil {
-	// 	return nil, err
-	// }
-
-	cb, err := calc.CalculateIsCrossbuilder()
+	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return nil, err
 	}
 
-	// if cb {
-	//
-	// 	host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
-	// 	if err != nil {
-	// 		return nil, err
-	// 	}
-	//
-	// 	prefix := path.Join(
-	// 		host_builders_dir,
-	// 		info.Target,
-	// 	)
-	//
-	// 	hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
-	// 	if err != nil {
-	// 		return nil, err
-	// 	}
-	//
-	// 	ret = make([]string, 0)
-	// 	ret = append(
-	// 		ret,
-	// 		[]string{
-	// 			"--prefix=" + prefix,
-	// 			"--mandir=" + path.Join(prefix, "share", "man"),
-	// 			"--sysconfdir=/etc",
-	// 			"--localstatedir=/var",
-	// 			"--enable-shared",
-	// 		}...,
-	// 	)
-	// 	ret = append(
-	// 		ret,
-	// 		hbt_opts...,
-	// 	)
-	//
+	// cb, err := calc.CalculateIsCrossbuilder()
+	// if err != nil {
+	// 	return nil, err
 	// }
+
+	if info.ThisIsCrossbuilder {
+
+		host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
+		if err != nil {
+			return nil, err
+		}
+
+		prefix := path.Join(host_builders_dir, info.CrossbuilderTarget)
+
+		hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
+		if err != nil {
+			return nil, err
+		}
+
+		ret = make([]string, 0)
+		ret = append(
+			ret,
+			[]string{
+				"--prefix=" + prefix,
+				"--mandir=" + path.Join(prefix, "share", "man"),
+				"--sysconfdir=/etc",
+				"--localstatedir=/var",
+				"--enable-shared",
+			}...,
+		)
+		ret = append(
+			ret,
+			hbt_opts...,
+		)
+
+	}
 
 	host_dir, err := calc.CalculateHostDir()
 	if err != nil {
@@ -215,7 +165,7 @@ func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string)
 		}...,
 	)
 
-	if cb {
+	if info.ThisIsCrossbuilder {
 		ret = append(ret, "--with-sysroot")
 	}
 

@@ -130,7 +130,7 @@ func (self *PrePackager) DestDirMoveUsrToPrefix(log *logger.Logger) error {
 
 	log.Info("calculating new path for usr contents")
 
-	new_usr_dir, err := self.site.ValuesCalculator().CalculateDstInstallPrefix()
+	new_usr_dir, err := self.site.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	if err != nil {
 		log.Info(" error: " + err.Error())
 		return err

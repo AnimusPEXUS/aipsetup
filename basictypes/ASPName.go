@@ -22,7 +22,8 @@ const (
 		`-\((?P<status>.*?)\)` +
 		`-\((?P<timestamp>\d{8}\.\d{6}\.\d{7})\)` +
 		`-\((?P<host>.*)\)` +
-		`(-\((?P<arch>.*)\))?` +
+		`(-\((?P<hostarch>.*)\))?` +
+		`(-\((?P<crossbuilder_target>crossbuilder\-target\:.*)\))?` +
 		`((\.tar.xz)|(\.asp)|(\.xz))?$`
 
 	ASP_NAME_REGEXPS_AIPSETUP3_TIMESTAMP = `` +
@@ -42,12 +43,13 @@ var (
 )
 
 type ASPName struct {
-	Name      string
-	Version   string
-	Status    string
-	TimeStamp string
-	Host      string
-	HostArch  string
+	Name               string
+	Version            string
+	Status             string
+	TimeStamp          string
+	Host               string
+	HostArch           string
+	CrossbuilderTarget string
 }
 
 func (self *ASPName) IsEqual(other *ASPName) bool {
@@ -56,26 +58,34 @@ func (self *ASPName) IsEqual(other *ASPName) bool {
 		self.Status == other.Status &&
 		self.TimeStamp == other.TimeStamp &&
 		self.Host == other.Host &&
-		self.HostArch == other.HostArch
+		self.HostArch == other.HostArch &&
+		self.CrossbuilderTarget == other.CrossbuilderTarget
 }
 
 func (self *ASPName) String() string {
 
 	has_arch_part := self.HostArch != self.Host
+	has_target_part := self.CrossbuilderTarget != ""
 
 	arch_part := ""
 	if has_arch_part {
 		arch_part = fmt.Sprintf("-(%s)", self.HostArch)
 	}
 
+	target_part := ""
+	if has_target_part {
+		target_part = fmt.Sprintf("-(crossbuilder-target:%s)", self.CrossbuilderTarget)
+	}
+
 	ret := fmt.Sprintf(
-		"(%s)-(%s)-(%s)-(%s)-(%s)%s%s",
+		"(%s)-(%s)-(%s)-(%s)-(%s)%s%s%s",
 		self.Name,
 		self.Version,
 		self.Status,
 		self.TimeStamp,
 		self.Host,
 		arch_part,
+		target_part,
 	)
 
 	return ret

@@ -41,9 +41,7 @@ func NewBuilderGCC(bs basictypes.BuildingSiteCtlI) *BuilderGCC {
 
 func (self *BuilderGCC) DefineActions() (basictypes.BuilderActions, error) {
 
-	calc := self.bs.ValuesCalculator()
-
-	cb, err := calc.CalculateIsCrossbuilder()
+	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -53,14 +51,7 @@ func (self *BuilderGCC) DefineActions() (basictypes.BuilderActions, error) {
 		return nil, err
 	}
 
-	ret = ret.AddBefore(
-		basictypes.BuilderActions{
-			&basictypes.BuilderAction{"edit_package_info", self.BuilderActionEditInfo},
-		},
-		0,
-	)
-
-	if cb {
+	if info.ThisIsCrossbuilder {
 		ret = ret.Remove("build")
 		ret = ret.Remove("distribute")
 
@@ -84,38 +75,6 @@ func (self *BuilderGCC) DefineActions() (basictypes.BuilderActions, error) {
 	}
 
 	return ret, nil
-}
-
-func (self *BuilderGCC) BuilderActionEditInfo(
-	log *logger.Logger,
-) error {
-
-	log.Info("Checking info file editing need")
-
-	info, err := self.bs.ReadInfo()
-	if err != nil {
-		return err
-	}
-
-	// calc := self.bs.ValuesCalculator()
-
-	// cb, err := calc.CalculateIsCrossbuilder()
-	// if err != nil {
-	// 	return err
-	// }
-
-	// if cb {
-	// 	info.PackageName = fmt.Sprintf("cb-gcc-%s", info.Target)
-	// } else {
-	// 	info.PackageName = "gcc"
-	// }
-
-	err = self.bs.WriteInfo(info)
-	if err != nil {
-		return err
-	}
-
-	return nil
 }
 
 func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
@@ -174,104 +133,91 @@ func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
 
 func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.ValuesCalculator()
+	calc := self.bs.GetBuildingSiteValuesCalculator()
 
 	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return nil, err
 	}
 
-	cbuilder, err := calc.CalculateIsCrossbuilder()
+	host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
 	if err != nil {
 		return nil, err
 	}
 
-	cbuild, err := calc.CalculateIsCrossbuild()
+	hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
 	if err != nil {
 		return nil, err
 	}
-
-	// host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
-	// if err != nil {
-	// 	return nil, err
-	// }
-
-	// hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
-	// if err != nil {
-	// 	return nil, err
-	// }
 
 	// 1
-	// if cbuilder {
-	//
-	// 	prefix := path.Join(
-	// 		host_builders_dir,
-	// 		info.Target,
-	// 	)
-	//
-	// 	ret = make([]string, 0)
-	// 	ret = append(
-	// 		ret,
-	// 		[]string{
-	// 			"--prefix=" + prefix,
-	// 			"--mandir=" + path.Join(prefix, "share", "man"),
-	// 			"--sysconfdir=/etc",
-	// 			"--localstatedir=/var",
-	// 			"--enable-shared",
-	// 			"--disable-gold",
-	// 		}...,
-	// 	)
-	// }
+	if info.ThisIsCrossbuilder {
+
+		prefix := path.Join(host_builders_dir, info.CrossbuilderTarget)
+
+		ret = make([]string, 0)
+		ret = append(
+			ret,
+			[]string{
+				"--prefix=" + prefix,
+				"--mandir=" + path.Join(prefix, "share", "man"),
+				"--sysconfdir=/etc",
+				"--localstatedir=/var",
+				"--enable-shared",
+				"--disable-gold",
+			}...,
+		)
+	}
 
 	// 2
-	// if cbuilder {
-	//
-	// 	sysroot := path.Join(host_builders_dir, info.Target)
-	//
-	// 	ret = append(
-	// 		ret,
-	// 		[]string{
-	// 			"--disable-gold",
-	//
-	// 			"--enable-tls",
-	// 			"--enable-nls",
-	// 			"--enable-__cxa_atexit",
-	// 			"--enable-languages=c,c++,objc,obj-c++,fortran,ada",
-	// 			"--disable-bootstrap",
-	// 			"--enable-threads=posix",
-	//
-	// 			"--disable-multiarch",
-	// 			"--disable-multilib",
-	//
-	// 			"--enable-checking=release",
-	// 			"--enable-libada",
-	// 			"--enable-shared",
-	//
-	// 			// # use it when you haven"t built glibc basic parts yet
-	// 			// # "--without-headers",
-	//
-	// 			// # use it when you already have glibc headers and basic parts
-	// 			// # installed
-	// 			// # using this parameter may reqire creating hacky symlink
-	// 			// # pointing to /multiarch dir - you"ll see error what file not
-	// 			// # found.
-	// 			// # so after gcc and glibc built and installed - rebuild gcc both
-	// 			// # without --with-sysroot= and without --without-headers options
-	// 			"--with-sysroot=" + sysroot,
-	//
-	// 			// # TODO: need to try building without --with-sysroot if possible
-	//
-	// 		}...,
-	// 	)
-	// 	ret = append(
-	// 		ret,
-	// 		hbt_opts...,
-	// 	)
-	//
-	// }
+	if info.ThisIsCrossbuilder {
+
+		sysroot := path.Join(host_builders_dir, info.CrossbuilderTarget)
+
+		ret = append(
+			ret,
+			[]string{
+				"--disable-gold",
+
+				"--enable-tls",
+				"--enable-nls",
+				"--enable-__cxa_atexit",
+				"--enable-languages=c,c++,objc,obj-c++,fortran,ada",
+				"--disable-bootstrap",
+				"--enable-threads=posix",
+
+				"--disable-multiarch",
+				"--disable-multilib",
+
+				"--enable-checking=release",
+				"--enable-libada",
+				"--enable-shared",
+
+				// # use it when you haven"t built glibc basic parts yet
+				// # "--without-headers",
+
+				// # use it when you already have glibc headers and basic parts
+				// # installed
+				// # using this parameter may reqire creating hacky symlink
+				// # pointing to /multiarch dir - you"ll see error what file not
+				// # found.
+				// # so after gcc and glibc built and installed - rebuild gcc both
+				// # without --with-sysroot= and without --without-headers options
+				"--with-sysroot=" + sysroot,
+
+				// # TODO: need to try building without --with-sysroot if possible
+
+			}...,
+		)
+		ret = append(
+			ret,
+			hbt_opts...,
+		)
+
+	}
 
 	// 3
-	if cbuild {
+	if info.ThisIsCrossbuilding {
 		ret = append(
 			ret,
 			[]string{
@@ -295,8 +241,7 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 	}
 
 	// 4
-
-	if !cbuild && !cbuilder {
+	if !info.ThisIsCrossbuilding && !info.ThisIsCrossbuilder {
 		host_dir, err := calc.CalculateHostDir()
 		if err != nil {
 			return nil, err

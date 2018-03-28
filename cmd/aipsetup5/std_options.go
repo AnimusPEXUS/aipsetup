@@ -18,13 +18,10 @@ var (
 		MustHaveValue: true,
 	}
 
-	// TODO: hot sure about this option
-	STD_OPTION_BUILD_USING = &cliapp.GetOptCheckListItem{
-		Name: "--build-using",
-		Description: "Select system which' builder should be used as builder" +
-			"Default is hosting system, but this may change " +
-			"in future releases of aipsetup. Value passed here should be one " +
-			"or two system tripletts separated with comma.",
+	STD_OPTION_BUILD_CURRENT_HOST = &cliapp.GetOptCheckListItem{
+		Name: "--build-current-host",
+		Description: "Override current host. " +
+			"Default is current host.",
 		HaveDefault:   true,
 		Default:       "",
 		IsRequired:    false,
@@ -52,6 +49,28 @@ var (
 		MustHaveValue: true,
 	}
 
+	STD_OPTION_BUILD_CROSSBUILDER = &cliapp.GetOptCheckListItem{
+		Name: "--build-crossbuilder",
+		Description: "Configure and build this package to be a " +
+			"crossbuilder for named system. " +
+			"Default is empty - disabling this mode",
+		HaveDefault:   true,
+		Default:       "",
+		IsRequired:    false,
+		MustHaveValue: true,
+	}
+
+	STD_OPTION_BUILD_CROSSBUILDING = &cliapp.GetOptCheckListItem{
+		Name: "--build-crossbuilding",
+		Description: "Configure this package to be built with crosscompiler " +
+			"and use crosscompiler to build it. " +
+			"Default is empty - disabling this mode",
+		HaveDefault:   true,
+		Default:       "",
+		IsRequired:    false,
+		MustHaveValue: true,
+	}
+
 	STD_OPTION_NAMED_INSTALLATION_FOR_HOST = &cliapp.GetOptCheckListItem{
 		Name: "--install-for-host",
 		Description: "Select hosting system. " +
@@ -72,9 +91,19 @@ var (
 		MustHaveValue: true,
 	}
 
+	STD_OPTION_NAMED_INSTALLATION_CROSSBUILDER = &cliapp.GetOptCheckListItem{
+		Name: "--install-crossbuilder",
+		Description: "Select crossbuilder for which system you wish to install. " +
+			"No default value. You must select one manually.",
+		HaveDefault:   false,
+		Default:       "",
+		IsRequired:    false,
+		MustHaveValue: true,
+	}
+
 	STD_OPTION_ASP_LIST_FILTER_HOST = &cliapp.GetOptCheckListItem{
 		Name: "--show-only-host",
-		Description: "Value is regexp. Show only selected by regexp. " +
+		Description: "Value is exact name. Show only selected. " +
 			"default is empty value, which shows all",
 		HaveDefault:   true,
 		Default:       "",
@@ -84,7 +113,17 @@ var (
 
 	STD_OPTION_ASP_LIST_FILTER_HOSTARCH = &cliapp.GetOptCheckListItem{
 		Name: "--show-only-hostarchs",
-		Description: "Value is regexp. Show only selected by regexp. " +
+		Description: "Value is exact name. Show only selected. " +
+			"default is empty value, which shows all",
+		HaveDefault:   true,
+		Default:       "",
+		IsRequired:    false,
+		MustHaveValue: true,
+	}
+
+	STD_OPTION_ASP_LIST_FILTER_CROSSBUILDER = &cliapp.GetOptCheckListItem{
+		Name: "--show-only-crossbuilder",
+		Description: "Value is exact name. Show only selected. " +
 			"default is empty value, which shows all",
 		HaveDefault:   true,
 		Default:       "",
@@ -130,6 +169,7 @@ func StdRoutineGetBuildingHostHostArch(
 ) (string, string, *cliapp.AppResult) {
 
 	var (
+		err      error
 		host     = ""
 		hostarch = ""
 	)
@@ -138,7 +178,10 @@ func StdRoutineGetBuildingHostHostArch(
 		if t.Value != "" {
 			host = t.Value
 		} else {
-			host = system.Host()
+			host, err = system.Host()
+			if err != nil {
+				return "", "", &cliapp.AppResult{Code: 22, Message: err.Error()}
+			}
 		}
 	}
 
@@ -173,6 +216,7 @@ func StdRoutineGetInstallationHostHostArch(
 ) (string, []string, *cliapp.AppResult) {
 
 	var (
+		err      error
 		host     = ""
 		hostarch = []string{}
 	)
@@ -181,7 +225,10 @@ func StdRoutineGetInstallationHostHostArch(
 		if t.Value != "" {
 			host = t.Value
 		} else {
-			host = system.Host()
+			host, err = system.Host()
+			if err != nil {
+				return "", nil, &cliapp.AppResult{Code: 22, Message: err.Error()}
+			}
 		}
 	}
 
@@ -189,7 +236,10 @@ func StdRoutineGetInstallationHostHostArch(
 		if t.Value != "" {
 			hostarch = strings.Split(t.Value, ",")
 		} else {
-			hostarch = system.Archs()
+			hostarch, err = system.Archs()
+			if err != nil {
+				return "", nil, &cliapp.AppResult{Code: 22, Message: err.Error()}
+			}
 		}
 	}
 

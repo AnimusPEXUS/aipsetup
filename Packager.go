@@ -70,7 +70,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 		"share", "include", "libexec", "src",
 	}
 
-	calc := self.site.ValuesCalculator()
+	calc := self.site.GetBuildingSiteValuesCalculator()
 
 	host, hostarch, err := self.site.GetConfiguredHostHostArch()
 	if err != nil {
