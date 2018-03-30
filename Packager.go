@@ -72,7 +72,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 
 	calc := self.site.GetBuildingSiteValuesCalculator()
 
-	host, hostarch, err := self.site.GetConfiguredHostHostArch()
+	info, err := self.site.ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -123,7 +123,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 		}
 	}
 
-	if hostarch != host {
+	if info.HostArch != info.Host {
 
 		dest_dir_host_arch, err := calc.CalculateDstHostArchDir()
 		if err != nil {

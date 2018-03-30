@@ -163,13 +163,9 @@ func (self *System) GetInstalledASPDepsDir() string {
 	return self.root_paths.GetInstalledASPDepsDir()
 }
 
-func (self *System) GetMovedRootForCrossbuilder(host, target string) (*SystemMovedRoot, error) {
-	calc := self.GetSystemValuesCalculator()
-	d, err := calc.CalculateHostCrossbuilderDir(host, target)
-	if err != nil {
-		return nil, err
-	}
-	return NewSystemMovedRoot(d, self), nil
+func (self *System) GetMovedRootForCrossbuilder(host, target string) *SystemMovedRoot {
+	d := self.GetSystemValuesCalculator().CalculateHostCrossbuilderDir(host, target)
+	return NewSystemMovedRoot(d, self)
 }
 
 func (self *System) GetTarballRepoRootDir() string {

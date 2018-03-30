@@ -587,33 +587,6 @@ func (self *BuildingSiteCtl) ListActions() ([]string, error) {
 	return ret, nil
 }
 
-func (self *BuildingSiteCtl) GetConfiguredHost() (string, error) {
-	i, err := self.ReadInfo()
-	if err != nil {
-		return "", err
-	}
-
-	return i.Host, nil
-}
-
-func (self *BuildingSiteCtl) GetConfiguredHostArch() (string, error) {
-	i, err := self.ReadInfo()
-	if err != nil {
-		return "", err
-	}
-
-	return i.HostArch, nil
-}
-
-func (self *BuildingSiteCtl) GetConfiguredHostHostArch() (string, string, error) {
-	i, err := self.ReadInfo()
-	if err != nil {
-		return "", "", err
-	}
-
-	return i.Host, i.HostArch, nil
-}
-
 func (self *BuildingSiteCtl) GetSystem() basictypes.SystemI {
 	return self.sys
 }
