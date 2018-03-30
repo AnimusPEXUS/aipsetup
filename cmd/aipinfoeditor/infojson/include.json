@@ -24,7 +24,7 @@
     ""
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "include",
+  "TarballName": DIRNAME_INCLUDE,
   "TarballFilters": [
     ""
   ],

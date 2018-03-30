@@ -101,7 +101,7 @@ func NewBuilderLinux(bs basictypes.BuildingSiteCtlI) (*BuilderLinux, error) {
 	self.dst_boot_dir = path.Join(bs.GetDIR_DESTDIR(), "boot")
 	self.dst_man_dir = path.Join(
 		bs.GetDIR_DESTDIR(),
-		"usr", "share", "man", "man9",
+		"usr", basictypes.DIRNAME_SHARE, "man", "man9",
 	)
 
 	return self, nil
@@ -299,7 +299,7 @@ func (self *BuilderLinux) BuilderActionDistrModules(
 		return err
 	}
 
-	modules_dir := path.Join(self.bs.GetDIR_DESTDIR(), "lib", "modules")
+	modules_dir := path.Join(self.bs.GetDIR_DESTDIR(), basictypes.DIRNAME_LIB, "modules")
 
 	files, err := ioutil.ReadDir(modules_dir)
 	if err != nil {

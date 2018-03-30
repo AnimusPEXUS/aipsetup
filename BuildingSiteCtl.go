@@ -21,64 +21,6 @@ import (
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 )
 
-var (
-	DIR_TARBALL string = "00.TARBALL"
-	/*
-	   Directory for storing tarballs used in package building. contents is packed
-	   into resulting  package as  it is requirements  of most  good licenses
-	*/
-
-	DIR_SOURCE string = "01.SOURCE"
-	/*
-	   Directory for detarred sources, which used for building package. This is not
-	   packed  into final  package,  as we  already  have original  tarballs.
-	*/
-
-	DIR_PATCHES string = "02.PATCHES"
-	/*
-	   Patches stored here. packed.
-	*/
-
-	DIR_BUILDING string = "03.BUILDING"
-	/*
-	   Here package are build. not packed.
-	*/
-
-	DIR_DESTDIR string = "04.DESTDIR"
-	/*
-	   Primary root of files for package. those will be installed into target system.
-	*/
-
-	DIR_BUILD_LOGS string = "05.BUILD_LOGS"
-	/*
-	   Various building logs are stored here. Packed.
-	*/
-
-	DIR_LISTS string = "06.LISTS"
-	/*
-	   Various lists stored here. Packed.
-	*/
-
-	DIR_TEMP string = "07.TEMP"
-	/*
-	   Temporary directory used by aipsetup while building package. Throwed away.
-	*/
-
-	DIR_ALL []string = []string{
-		DIR_TARBALL,
-		DIR_SOURCE,
-		DIR_PATCHES,
-		DIR_BUILDING,
-		DIR_DESTDIR,
-		DIR_BUILD_LOGS,
-		DIR_LISTS,
-		DIR_TEMP,
-	}
-)
-
-const PACKAGE_INFO_FILENAME_V5 = "package_info_v5.json"
-const PACKAGE_CHECKSUM_FILENAME = "package.sha512"
-
 func IsDirRestrictedForWork(path string) bool {
 	var err error
 
@@ -152,7 +94,7 @@ func NewBuildingSiteCtl(
 func (self *BuildingSiteCtl) ReadInfo() (*basictypes.BuildingSiteInfo, error) {
 
 	if self.info == nil {
-		fullpath := path.Join(self.path, PACKAGE_INFO_FILENAME_V5)
+		fullpath := path.Join(self.path, basictypes.PACKAGE_INFO_FILENAME_V5)
 
 		res, err := ioutil.ReadFile(fullpath)
 		if err != nil {
@@ -172,7 +114,7 @@ func (self *BuildingSiteCtl) ReadInfo() (*basictypes.BuildingSiteInfo, error) {
 
 func (self *BuildingSiteCtl) WriteInfo(info *basictypes.BuildingSiteInfo) error {
 
-	fullpath := path.Join(self.path, PACKAGE_INFO_FILENAME_V5)
+	fullpath := path.Join(self.path, basictypes.PACKAGE_INFO_FILENAME_V5)
 
 	res, err := json.Marshal(info)
 	if err != nil {
@@ -198,7 +140,7 @@ func (self *BuildingSiteCtl) WriteInfo(info *basictypes.BuildingSiteInfo) error 
 
 func (self *BuildingSiteCtl) Init() error {
 	fmt.Println("Going to initiate directory", self.path)
-	for _, i := range DIR_ALL {
+	for _, i := range basictypes.DIR_ALL {
 		j := filepath.Join(self.path, i)
 		f, err := os.Open(j)
 		if err != nil {
@@ -418,16 +360,12 @@ func (self *BuildingSiteCtl) GetDIR_TEMP() string {
 	return GetDIR_TEMP(self.path)
 }
 
-func (self *BuildingSiteCtl) IsWdDirRestricted() bool {
-	return IsWdDirRestricted(self.path)
-}
-
 func (self *BuildingSiteCtl) IsDirRestrictedForWork() bool {
 	return IsDirRestrictedForWork(self.path)
 }
 
 func (self *BuildingSiteCtl) IsBuildingSite() bool {
-	pkg_file := path.Join(self.path, PACKAGE_INFO_FILENAME_V5)
+	pkg_file := path.Join(self.path, basictypes.PACKAGE_INFO_FILENAME_V5)
 	_, err := os.Stat(pkg_file)
 	if os.IsNotExist(err) {
 		return false
@@ -674,38 +612,33 @@ func getDIR_x(pth string, x string) string {
 }
 
 func GetDIR_TARBALL(pth string) string {
-	return getDIR_x(pth, DIR_TARBALL)
+	return getDIR_x(pth, basictypes.DIR_TARBALL)
 }
 
 func GetDIR_SOURCE(pth string) string {
-	return getDIR_x(pth, DIR_SOURCE)
+	return getDIR_x(pth, basictypes.DIR_SOURCE)
 }
 
 func GetDIR_PATCHES(pth string) string {
-	return getDIR_x(pth, DIR_PATCHES)
+	return getDIR_x(pth, basictypes.DIR_PATCHES)
 }
 
 func GetDIR_BUILDING(pth string) string {
-	return getDIR_x(pth, DIR_BUILDING)
+	return getDIR_x(pth, basictypes.DIR_BUILDING)
 }
 
 func GetDIR_DESTDIR(pth string) string {
-	return getDIR_x(pth, DIR_DESTDIR)
+	return getDIR_x(pth, basictypes.DIR_DESTDIR)
 }
 
 func GetDIR_BUILD_LOGS(pth string) string {
-	return getDIR_x(pth, DIR_BUILD_LOGS)
+	return getDIR_x(pth, basictypes.DIR_BUILD_LOGS)
 }
 
 func GetDIR_LISTS(pth string) string {
-	return getDIR_x(pth, DIR_LISTS)
+	return getDIR_x(pth, basictypes.DIR_LISTS)
 }
 
 func GetDIR_TEMP(pth string) string {
-	return getDIR_x(pth, DIR_TEMP)
-}
-
-func IsWdDirRestricted(pth string) bool {
-	panic("use IsDirRestrictedForWork() instead")
-	return true
+	return getDIR_x(pth, basictypes.DIR_TEMP)
 }

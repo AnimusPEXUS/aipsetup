@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/AnimusPEXUS/aipsetup"
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/cliapp"
 )
 
@@ -46,7 +47,7 @@ func CmdAipsetupSysConfigWriteExample(
 
 	file_dir := path.Join(root, "/etc")
 	file_path :=
-		path.Join(file_dir, aipsetup.AIPSETUP_SYSTEM_CONFIG_FILENAME+".example")
+		path.Join(file_dir, basictypes.AIPSETUP_SYSTEM_CONFIG_FILENAME+".example")
 
 	err = os.MkdirAll(file_dir, 0755)
 	if err != nil {

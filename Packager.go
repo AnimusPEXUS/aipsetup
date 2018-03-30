@@ -59,15 +59,30 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 	// others not allowed in root
 
 	var allowed_in_host = []string{
-		"bin", "sbin", "opt", "lib", "lib64",
-		"share", "include", "libexec", "multiarch", "src",
+		basictypes.DIRNAME_BIN,
+		basictypes.DIRNAME_SBIN,
+		"opt",
+		basictypes.DIRNAME_LIB,
+		basictypes.DIRNAME_LIB64,
+		basictypes.DIRNAME_SHARE,
+		basictypes.DIRNAME_INCLUDE,
+		"libexec",
+		"multiarch",
+		"src",
 
 		"x86_64-pc-linux-gnu", // TODO: compiler dir's should be checcked smarter
 	}
 
 	var allowed_in_host_arch = []string{
-		"bin", "sbin", "opt", "lib", "lib64",
-		"share", "include", "libexec", "src",
+		basictypes.DIRNAME_BIN,
+		basictypes.DIRNAME_SBIN,
+		"opt",
+		basictypes.DIRNAME_LIB,
+		basictypes.DIRNAME_LIB64,
+		basictypes.DIRNAME_SHARE,
+		basictypes.DIRNAME_INCLUDE,
+		"libexec",
+		"src",
 	}
 
 	calc := self.site.GetBuildingSiteValuesCalculator()
@@ -191,6 +206,9 @@ func (self Packager) DestDirFileList(log *logger.Logger) error {
 			return nil
 		},
 	)
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -258,6 +276,10 @@ func (self Packager) DestDirChecksum(log *logger.Logger) error {
 			return nil
 		},
 	)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -265,20 +287,26 @@ func (self Packager) CompressPatchesAndDestDir(log *logger.Logger) error {
 	log.Info(
 		fmt.Sprintf(
 			"Compressing  %s and %s",
-			DIR_PATCHES,
-			DIR_DESTDIR,
+			basictypes.DIR_PATCHES,
+			basictypes.DIR_DESTDIR,
 		),
 	)
-	return self._CompressPatchesDestDirAndLogs(log, []string{DIR_PATCHES, DIR_DESTDIR})
+	return self._CompressPatchesDestDirAndLogs(
+		log,
+		[]string{basictypes.DIR_PATCHES, basictypes.DIR_DESTDIR},
+	)
 }
 func (self Packager) CompressLogs(log *logger.Logger) error {
 	log.Info(
 		fmt.Sprintf(
 			"Compressing %s",
-			DIR_BUILD_LOGS,
+			basictypes.DIR_BUILD_LOGS,
 		),
 	)
-	return self._CompressPatchesDestDirAndLogs(log, []string{DIR_BUILD_LOGS})
+	return self._CompressPatchesDestDirAndLogs(
+		log,
+		[]string{basictypes.DIR_BUILD_LOGS},
+	)
 }
 
 func (self Packager) _CompressPatchesDestDirAndLogs(log *logger.Logger, subject []string) error {
@@ -308,7 +336,7 @@ func (self Packager) _CompressPatchesDestDirAndLogs(log *logger.Logger, subject 
 		)
 		tar_c.Dir = dirname
 
-		if i != DIR_BUILD_LOGS {
+		if i != basictypes.DIR_BUILD_LOGS {
 			tar_c.Stderr = log.StdoutLbl()
 		} else {
 			fmt.Println("Logs dir should be compressed without logging. sorry.")
@@ -416,16 +444,16 @@ func (self Packager) UpdateTimestamp(log *logger.Logger) error {
 func (self Packager) _ListItemsToPack(include_checksum, include_build_logs bool) ([]string, error) {
 	ret := make([]string, 0)
 	pth := self.site.path
-	ret = append(ret, path.Join(pth, DIR_DESTDIR+".tar.xz"))
-	ret = append(ret, path.Join(pth, DIR_PATCHES+".tar.xz"))
+	ret = append(ret, path.Join(pth, basictypes.DIR_DESTDIR+".tar.xz"))
+	ret = append(ret, path.Join(pth, basictypes.DIR_PATCHES+".tar.xz"))
 
 	if include_build_logs {
-		ret = append(ret, path.Join(pth, DIR_BUILD_LOGS+".tar.xz"))
+		ret = append(ret, path.Join(pth, basictypes.DIR_BUILD_LOGS+".tar.xz"))
 	}
 
-	ret = append(ret, path.Join(pth, PACKAGE_INFO_FILENAME_V5))
+	ret = append(ret, path.Join(pth, basictypes.PACKAGE_INFO_FILENAME_V5))
 	if include_checksum {
-		ret = append(ret, path.Join(pth, PACKAGE_CHECKSUM_FILENAME))
+		ret = append(ret, path.Join(pth, basictypes.PACKAGE_CHECKSUM_FILENAME))
 	}
 
 	{
@@ -435,7 +463,7 @@ func (self Packager) _ListItemsToPack(include_checksum, include_build_logs bool)
 		}
 		for _, i := range tarballs {
 			if !i.IsDir() {
-				ret = append(ret, path.Join(pth, DIR_TARBALL, i.Name()))
+				ret = append(ret, path.Join(pth, basictypes.DIR_TARBALL, i.Name()))
 			}
 		}
 	}
@@ -446,7 +474,7 @@ func (self Packager) _ListItemsToPack(include_checksum, include_build_logs bool)
 		}
 		for _, i := range lists {
 			if !i.IsDir() && strings.HasSuffix(i.Name(), ".xz") {
-				ret = append(ret, path.Join(pth, DIR_LISTS, i.Name()))
+				ret = append(ret, path.Join(pth, basictypes.DIR_LISTS, i.Name()))
 			}
 		}
 	}

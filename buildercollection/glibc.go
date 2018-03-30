@@ -104,7 +104,7 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 	if t, err := calc.CalculateHostDir(); err != nil {
 		return nil, err
 	} else {
-		with_headers = path.Join(t, "include")
+		with_headers = path.Join(t, basictypes.DIRNAME_INCLUDE)
 	}
 
 	if info.ThisIsCrossbuilder {
@@ -116,7 +116,7 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 
 		prefix := path.Join(host_builders_dir, info.CrossbuilderTarget)
 
-		with_headers = path.Join(prefix, "include")
+		with_headers = path.Join(prefix, basictypes.DIRNAME_INCLUDE)
 
 		hbt_opts, err := calc.CalculateAutotoolsHBTOptions()
 		if err != nil {
@@ -128,7 +128,7 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 			ret,
 			[]string{
 				"--prefix=" + prefix,
-				"--mandir=" + path.Join(prefix, "share", "man"),
+				"--mandir=" + path.Join(prefix, basictypes.DIRNAME_SHARE, "man"),
 				"--sysconfdir=/etc",
 				"--localstatedir=/var",
 				"--enable-shared",
@@ -375,7 +375,7 @@ func (self *BuilderGlibc) BuilderActionDistribute_01_5(
 		return err
 	}
 
-	cwd := path.Join(dhcd, info.CrossbuilderTarget, "include", "gnu")
+	cwd := path.Join(dhcd, info.CrossbuilderTarget, basictypes.DIRNAME_INCLUDE, "gnu")
 
 	cwdf := path.Join(cwd, "stubs.h")
 

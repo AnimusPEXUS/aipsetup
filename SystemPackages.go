@@ -271,7 +271,12 @@ func (self *SystemPackages) RemoveASP_DestDir(
 
 	lib_dirs := make([]string, 0)
 
-	for _, i := range []string{"lib", "lib64", "lib32", "libx32"} {
+	for _, i := range []string{
+		basictypes.DIRNAME_LIB,
+		basictypes.DIRNAME_LIB64,
+		basictypes.DIRNAME_LIB32,
+		basictypes.DIRNAME_LIBX32,
+	} {
 		res, err := filepath.Glob(
 			path.Join(self.Sys.Root(), "/", "multihost", "*", i),
 		)
@@ -281,7 +286,12 @@ func (self *SystemPackages) RemoveASP_DestDir(
 		lib_dirs = append(lib_dirs, res...)
 	}
 
-	for _, i := range []string{"lib", "lib64", "lib32", "libx32"} {
+	for _, i := range []string{
+		basictypes.DIRNAME_LIB,
+		basictypes.DIRNAME_LIB64,
+		basictypes.DIRNAME_LIB32,
+		basictypes.DIRNAME_LIBX32,
+	} {
 		res, err := filepath.Glob(
 			path.Join(self.Sys.Root(), "/", "multihost", "*", i),
 		)
@@ -296,7 +306,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 	// FIXME: so may be this is error
 
 	// NOTE: this was commented at 2017-08-20
-	// for _, i := range []string{"lib", "lib64", "lib32", "libx32"} {
+	// for _, i := range []string{DIRNAME_LIB, DIRNAME_LIB64, DIRNAME_LIB32, DIRNAME_LIBX32} {
 	// 	lib_dirs = append(
 	// 		lib_dirs,
 	// 		path.Join(self.Sys.Root(), "multiarch", "*", i),
@@ -307,7 +317,12 @@ func (self *SystemPackages) RemoveASP_DestDir(
 	// FIXME: so may be this is error too
 
 	// NOTE: variants with /multihost/*/multiarch/lib* added at 2017-08-20
-	for _, i := range []string{"lib", "lib64", "lib32", "libx32"} {
+	for _, i := range []string{
+		basictypes.DIRNAME_LIB,
+		basictypes.DIRNAME_LIB64,
+		basictypes.DIRNAME_LIB32,
+		basictypes.DIRNAME_LIBX32,
+	} {
 		res, err := filepath.Glob(
 			path.Join(
 				self.Sys.Root(),
@@ -471,7 +486,7 @@ func (self *SystemPackages) RemoveASP(
 	exclude_files []string,
 ) error {
 
-	var err error = nil
+	var err error
 
 	if !unregister_only {
 		err = self.RemoveASP_DestDir(aspname, exclude_files)
@@ -772,7 +787,7 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 
 					ln_value := xztar_head.Linkname
 					if !strings.HasPrefix("/", ln_value) {
-						ln_value := path.Join(path.Dir(new_file_path), ln_value)
+						ln_value = path.Join(path.Dir(new_file_path), ln_value)
 						abs, err := filepath.Abs(ln_value)
 						if err != nil {
 							return err
@@ -827,7 +842,7 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 						return err
 					}
 				*/
-				err := os.Chmod(i, 0755)
+				err = os.Chmod(i, 0755)
 				if err != nil {
 					return err
 				}

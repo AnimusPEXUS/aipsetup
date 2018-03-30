@@ -2,6 +2,8 @@ package aipsetup
 
 import (
 	"path"
+
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
 )
 
 type OverallPathsCalculator struct {
@@ -11,15 +13,11 @@ type OverallPathsCalculator struct {
 // 	return OverallPathsCalculator{}
 // }
 
-func (self OverallPathsCalculator) CalculateMultihostDir(
-	root string,
-) string {
-	return path.Join(root, LAILALO_ROOT_MULTIHOST_DIRNAME)
+func (self OverallPathsCalculator) CalculateMultihostDir(root string) string {
+	return path.Join(root, basictypes.LAILALO_ROOT_MULTIHOST_DIRNAME)
 }
 
-func (self OverallPathsCalculator) CalculateHostDir(
-	root, host string,
-) string {
+func (self OverallPathsCalculator) CalculateHostDir(root, host string) string {
 	return path.Join(self.CalculateMultihostDir(root), host)
 }
 
@@ -28,7 +26,7 @@ func (self OverallPathsCalculator) CalculateHostMultiarchDir(
 ) string {
 	return path.Join(
 		self.CalculateHostDir(root, host),
-		LAILALO_MULTIHOST_MULTIARCH_DIRNAME,
+		basictypes.LAILALO_MULTIHOST_MULTIARCH_DIRNAME,
 	)
 }
 
@@ -44,7 +42,7 @@ func (self OverallPathsCalculator) CalculateHostCrossbuildersDir(
 ) string {
 	return path.Join(
 		self.CalculateHostDir(root, host),
-		LAILALO_MULTIHOST_CROSSBULDERS_DIRNAME,
+		basictypes.LAILALO_MULTIHOST_CROSSBULDERS_DIRNAME,
 	)
 }
 

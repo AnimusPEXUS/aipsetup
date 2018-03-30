@@ -118,7 +118,7 @@ func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string)
 			ret,
 			[]string{
 				"--prefix=" + prefix,
-				"--mandir=" + path.Join(prefix, "share", "man"),
+				"--mandir=" + path.Join(prefix, basictypes.DIRNAME_SHARE, "man"),
 				"--sysconfdir=/etc",
 				"--localstatedir=/var",
 				"--enable-shared",

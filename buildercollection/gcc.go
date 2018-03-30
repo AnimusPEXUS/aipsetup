@@ -160,7 +160,7 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 			ret,
 			[]string{
 				"--prefix=" + prefix,
-				"--mandir=" + path.Join(prefix, "share", "man"),
+				"--mandir=" + path.Join(prefix, basictypes.DIRNAME_SHARE, "man"),
 				"--sysconfdir=/etc",
 				"--localstatedir=/var",
 				"--enable-shared",
@@ -280,7 +280,7 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 				// #"--oldincludedir=" +
 				// # wayround_i2p.utils.path.join(
 				// #    self.get_host_dir(),
-				// #    "include"
+				// #    DIRNAME_INCLUDE
 				// #    ),
 
 				// #"--with-gxx-include-dir={}".format(
@@ -309,7 +309,7 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 					// #"multiarch",
 					// # self.get_host_from_pkgi(),
 					host_dir,
-					"include",
+					basictypes.DIRNAME_INCLUDE,
 				),
 				// ),
 				// #"--with-isl={}".format(self.get_host_dir())

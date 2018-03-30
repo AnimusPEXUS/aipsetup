@@ -7,6 +7,7 @@ import (
 	"os"
 	"path"
 
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
@@ -45,7 +46,12 @@ func (self *PrePackager) Run(log *logger.Logger) error {
 func (self *PrePackager) DestDirMoveRootToUsr(log *logger.Logger) error {
 	log.Info("checking and moving *bin/lib* dirs to usr")
 	dst_dir := self.site.GetDIR_DESTDIR()
-	for _, i := range []string{"bin", "sbin", "lib", "lib64"} {
+	for _, i := range []string{
+		basictypes.DIRNAME_BIN,
+		basictypes.DIRNAME_SBIN,
+		basictypes.DIRNAME_LIB,
+		basictypes.DIRNAME_LIB64,
+	} {
 		log.Info(" searching for " + i + " directory")
 		i_j := path.Join(dst_dir, i)
 		stat, err := os.Lstat(i_j)

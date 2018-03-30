@@ -69,7 +69,11 @@ func NewSystem(root string) *System {
 
 	if res, err :=
 		ioutil.ReadFile(
-			path.Join(self.root, "/etc", AIPSETUP_SYSTEM_CONFIG_FILENAME),
+			path.Join(
+				self.root,
+				"/etc",
+				basictypes.AIPSETUP_SYSTEM_CONFIG_FILENAME,
+			),
 		); err != nil {
 		panic(err)
 	} else {

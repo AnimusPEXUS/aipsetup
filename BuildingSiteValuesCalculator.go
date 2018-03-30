@@ -16,15 +16,14 @@ var _ basictypes.BuildingSiteValuesCalculatorI = &BuildingSiteValuesCalculator{}
 
 type BuildingSiteValuesCalculator struct {
 	site basictypes.BuildingSiteCtlI
-	// builder basictypes.BuilderI
-
-	opc OverallPathsCalculator
+	opc  OverallPathsCalculator
 }
 
-func NewBuildingSiteValuesCalculator(site basictypes.BuildingSiteCtlI) *BuildingSiteValuesCalculator {
+func NewBuildingSiteValuesCalculator(
+	site basictypes.BuildingSiteCtlI,
+) *BuildingSiteValuesCalculator {
 	ret := new(BuildingSiteValuesCalculator)
 	ret.site = site
-	//ret.builder = builder
 	return ret
 }
 
@@ -148,7 +147,9 @@ func (self *BuildingSiteValuesCalculator) CalculateHostCrossbuilderDir() (
 		nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateDstHostCrossbuilderDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstHostCrossbuilderDir() (
+	string, error,
+) {
 	hostcrossbuilderdir, err := self.CalculateHostCrossbuilderDir()
 	if err != nil {
 		return "", err
@@ -156,7 +157,9 @@ func (self *BuildingSiteValuesCalculator) CalculateDstHostCrossbuilderDir() (str
 	return path.Join(self.site.GetDIR_DESTDIR(), hostcrossbuilderdir), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateHostLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateHostLibDir() (
+	string, error,
+) {
 	hostdir, err := self.CalculateHostDir()
 	if err != nil {
 		return "", err
@@ -168,7 +171,9 @@ func (self *BuildingSiteValuesCalculator) CalculateHostLibDir() (string, error) 
 	return path.Join(hostdir, mmldn), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateDstHostLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstHostLibDir() (
+	string, error,
+) {
 	host_lib_dir, err := self.CalculateHostLibDir()
 	if err != nil {
 		return "", err
@@ -176,7 +181,9 @@ func (self *BuildingSiteValuesCalculator) CalculateDstHostLibDir() (string, erro
 	return path.Join(self.site.GetDIR_DESTDIR(), host_lib_dir), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateHostArchLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateHostArchLibDir() (
+	string, error,
+) {
 	lib_dir_name, err := self.CalculateMainMultiarchLibDirName()
 	if err != nil {
 		return "", err
@@ -190,7 +197,9 @@ func (self *BuildingSiteValuesCalculator) CalculateHostArchLibDir() (string, err
 	return path.Join(host_arch_dir, lib_dir_name), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateDstHostArchLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstHostArchLibDir() (
+	string, error,
+) {
 	v, err := self.CalculateHostArchLibDir()
 	if err != nil {
 		return "", err
@@ -198,7 +207,9 @@ func (self *BuildingSiteValuesCalculator) CalculateDstHostArchLibDir() (string, 
 	return path.Join(self.site.GetDIR_DESTDIR(), v), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateInstallPrefix() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateInstallPrefix() (
+	string, error,
+) {
 
 	info, err := self.site.ReadInfo()
 	if err != nil {
@@ -212,7 +223,9 @@ func (self *BuildingSiteValuesCalculator) CalculateInstallPrefix() (string, erro
 	}
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateDstInstallPrefix() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstInstallPrefix() (
+	string, error,
+) {
 	v, err := self.CalculateInstallPrefix()
 	if err != nil {
 		return "", err
@@ -220,7 +233,9 @@ func (self *BuildingSiteValuesCalculator) CalculateDstInstallPrefix() (string, e
 	return path.Join(self.site.GetDIR_DESTDIR(), v), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateInstallLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateInstallLibDir() (
+	string, error,
+) {
 
 	info, err := self.site.ReadInfo()
 	if err != nil {
@@ -234,7 +249,9 @@ func (self *BuildingSiteValuesCalculator) CalculateInstallLibDir() (string, erro
 	}
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateDstInstallLibDir() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateDstInstallLibDir() (
+	string, error,
+) {
 	v, err := self.CalculateInstallPrefix()
 	if err != nil {
 		return "", err
@@ -242,35 +259,9 @@ func (self *BuildingSiteValuesCalculator) CalculateDstInstallLibDir() (string, e
 	return path.Join(self.site.GetDIR_DESTDIR(), v), nil
 }
 
-// def get_host_arch_list(self):
-// 		ret = []
-//
-// 		lst = os.listdir(self.get_host_multiarch_dir())
-//
-// 		for i in lst:
-// 				jo = wayround_i2p.utils.path.join(
-// 						self.get_host_multiarch_dir(),
-// 						i
-// 						)
-// 				if os.path.isdir(jo) and not os.path.islink(jo):
-// 						ret.append(i)
-//
-// 		return sorted(ret)
-
-// # def calculate_default_linker_program(self):
-// #    return wayround_i2p.aipsetup.build.find_dl(self.get_host_arch_dir())
-//
-// # def calculate_default_linker_program_ld_parameter(self):
-// #    return '--dynamic-linker={}'.format(
-// #        self.calculate_default_linker_program()
-// #        )
-//
-// # def calculate_default_linker_program_gcc_parameter(self):
-// #    return '-Wl,{}'.format(
-// #        self.calculate_default_linker_program_ld_parameter()
-// #        )
-
-func (self *BuildingSiteValuesCalculator) CalculateMainMultiarchLibDirName() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateMainMultiarchLibDirName() (
+	string, error,
+) {
 
 	info, err := self.site.ReadInfo()
 	if err != nil {
@@ -279,25 +270,27 @@ func (self *BuildingSiteValuesCalculator) CalculateMainMultiarchLibDirName() (st
 
 	switch info.Host {
 
-	case "i686-pc-linux-gnu":
+	case basictypes.I686_PC_LINUX_GNU:
 		switch info.HostArch {
-		case "i686-pc-linux-gnu":
-			return "lib", nil
+		case basictypes.I686_PC_LINUX_GNU:
+			return basictypes.DIRNAME_LIB, nil
 		}
 
-	case "x86_64-pc-linux-gnu":
+	case basictypes.X86_64_PC_LINUX_GNU:
 		switch info.HostArch {
-		case "i686-pc-linux-gnu":
-			return "lib", nil
-		case "x86_64-pc-linux-gnu":
-			return "lib64", nil
+		case basictypes.I686_PC_LINUX_GNU:
+			return basictypes.DIRNAME_LIB, nil
+		case basictypes.X86_64_PC_LINUX_GNU:
+			return basictypes.DIRNAME_LIB64, nil
 		}
 	}
 
 	return "", errors.New("host or [host/hostarch] value not supported")
 }
 
-func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths(prefix string) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths(
+	prefix string,
+) ([]string, error) {
 
 	inst_prefix, err := self.CalculateInstallPrefix()
 	if err != nil {
@@ -315,12 +308,12 @@ func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths(prefix s
 	}
 
 	for _, i := range []string{
-		path.Join(prefix, "share", "pkgconfig"),
-		path.Join(prefix, "lib", "pkgconfig"),
-		path.Join(prefix, "lib64", "pkgconfig"),
-		path.Join(inst_prefix, "share", "pkgconfig"),
-		path.Join(inst_prefix, "lib", "pkgconfig"),
-		path.Join(inst_prefix, "lib64", "pkgconfig"),
+		path.Join(prefix, basictypes.DIRNAME_SHARE, "pkgconfig"),
+		path.Join(prefix, basictypes.DIRNAME_LIB, "pkgconfig"),
+		path.Join(prefix, basictypes.DIRNAME_LIB64, "pkgconfig"),
+		path.Join(inst_prefix, basictypes.DIRNAME_SHARE, "pkgconfig"),
+		path.Join(inst_prefix, basictypes.DIRNAME_LIB, "pkgconfig"),
+		path.Join(inst_prefix, basictypes.DIRNAME_LIB64, "pkgconfig"),
 	} {
 		if s, err := os.Stat(i); err == nil && s.IsDir() {
 			ret = append(ret, i)
@@ -332,12 +325,9 @@ func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths(prefix s
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_LD_LIBRARY_PATH(prefixes []string) ([]string, error) {
-
-	// inst_prefix, err := self.CalculateInstallPrefix()
-	// if err != nil {
-	// 	return []string{}, err
-	// }
+func (self *BuildingSiteValuesCalculator) Calculate_LD_LIBRARY_PATH(
+	prefixes []string,
+) ([]string, error) {
 
 	host_dir, err := self.CalculateHostDir()
 	if err != nil {
@@ -354,7 +344,7 @@ func (self *BuildingSiteValuesCalculator) Calculate_LD_LIBRARY_PATH(prefixes []s
 	search_roots = textlist.RemoveDuplicatedStrings(search_roots)
 
 	for _, i := range search_roots {
-		for _, j := range POSSIBLE_LIBDIR_NAMES {
+		for _, j := range basictypes.POSSIBLE_LIBDIR_NAMES {
 			joined := path.Join(i, j)
 			if s, err := os.Stat(joined); err == nil && s.IsDir() {
 				ret = append(ret, joined)
@@ -367,7 +357,9 @@ func (self *BuildingSiteValuesCalculator) Calculate_LD_LIBRARY_PATH(prefixes []s
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_LIBRARY_PATH(prefixes []string) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_LIBRARY_PATH(
+	prefixes []string,
+) ([]string, error) {
 	// # NOTE: potentially this is different from LD_LIBRARY_PATH.
 	// #       LIBRARY_PATH is for GCC and it's friends. so it's possible
 	// #       for it to differ also in code, in future, not only in name.
@@ -375,7 +367,9 @@ func (self *BuildingSiteValuesCalculator) Calculate_LIBRARY_PATH(prefixes []stri
 	return self.Calculate_LD_LIBRARY_PATH(prefixes)
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_C_INCLUDE_PATH(prefixes []string) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_C_INCLUDE_PATH(
+	prefixes []string,
+) ([]string, error) {
 
 	inst_prefix, err := self.CalculateInstallPrefix()
 	if err != nil {
@@ -395,7 +389,7 @@ func (self *BuildingSiteValuesCalculator) Calculate_C_INCLUDE_PATH(prefixes []st
 	search_roots = textlist.RemoveDuplicatedStrings(search_roots)
 
 	for _, i := range search_roots {
-		joined := path.Join(i, "include")
+		joined := path.Join(i, basictypes.DIRNAME_INCLUDE)
 		if s, err := os.Stat(joined); err == nil && s.IsDir() {
 			ret = append(ret, joined)
 		}
@@ -406,7 +400,9 @@ func (self *BuildingSiteValuesCalculator) Calculate_C_INCLUDE_PATH(prefixes []st
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_PATH(prefix string) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_PATH(prefix string) (
+	[]string, error,
+) {
 
 	inst_prefix, err := self.CalculateInstallPrefix()
 	if err != nil {
@@ -436,7 +432,7 @@ func (self *BuildingSiteValuesCalculator) Calculate_PATH(prefix string) ([]strin
 	search_roots = textlist.RemoveDuplicatedStrings(search_roots)
 
 	for _, i := range search_roots {
-		for _, j := range PATH_CALCULATOR_BIN_DIR_NAMES {
+		for _, j := range basictypes.PATH_CALCULATOR_BIN_DIR_NAMES {
 			joined := path.Join(i, j)
 			if s, err := os.Stat(joined); err == nil && s.IsDir() {
 				ret = append(ret, joined)
@@ -449,7 +445,9 @@ func (self *BuildingSiteValuesCalculator) Calculate_PATH(prefix string) ([]strin
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_C_Compiler() (string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_C_Compiler() (
+	string, error,
+) {
 
 	info, err := self.site.ReadInfo()
 	if err != nil {
@@ -459,7 +457,9 @@ func (self *BuildingSiteValuesCalculator) Calculate_C_Compiler() (string, error)
 	return fmt.Sprintf("%s-%s", info.Host, "gcc"), nil
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_CXX_Compiler() (string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_CXX_Compiler() (
+	string, error,
+) {
 
 	info, err := self.site.ReadInfo()
 	if err != nil {
@@ -469,7 +469,9 @@ func (self *BuildingSiteValuesCalculator) Calculate_CXX_Compiler() (string, erro
 	return fmt.Sprintf("%s-%s", info.Host, "g++"), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateMultilibVariant() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateMultilibVariant() (
+	string, error,
+) {
 
 	info, err := self.site.ReadInfo()
 	if err != nil {
@@ -495,7 +497,9 @@ func (self *BuildingSiteValuesCalculator) CalculateMultilibVariant() (string, er
 	return "", errors.New("CalculateMultilibVariant(): not supported cpu")
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCCParameterValue() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCCParameterValue() (
+	string, error,
+) {
 	c, err := self.Calculate_C_Compiler()
 	if err != nil {
 		return "", err
@@ -507,7 +511,9 @@ func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCCParameterValue() (
 	return fmt.Sprintf("%s -m%s", c, mlv), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCXXParameterValue() (string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCXXParameterValue() (
+	string, error,
+) {
 	c, err := self.Calculate_CXX_Compiler()
 	if err != nil {
 		return "", err
@@ -519,7 +525,9 @@ func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCXXParameterValue() 
 	return fmt.Sprintf("%s -m%s", c, mlv), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateAllOptionsMap() (environ.EnvVarEd, error) {
+func (self *BuildingSiteValuesCalculator) CalculateAllOptionsMap() (
+	environ.EnvVarEd, error,
+) {
 
 	ret := environ.New()
 
@@ -533,7 +541,9 @@ func (self *BuildingSiteValuesCalculator) CalculateAllOptionsMap() (environ.EnvV
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateCompilerOptionsMap() (environ.EnvVarEd, error) {
+func (self *BuildingSiteValuesCalculator) CalculateCompilerOptionsMap() (
+	environ.EnvVarEd, error,
+) {
 	ret := environ.New()
 
 	cc_string, err := self.CalculateAutotoolsCCParameterValue()
@@ -552,7 +562,9 @@ func (self *BuildingSiteValuesCalculator) CalculateCompilerOptionsMap() (environ
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateAutotoolsHBTOptions() ([]string, error) {
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsHBTOptions() (
+	[]string, error,
+) {
 
 	info, err := self.site.ReadInfo()
 	if err != nil {
