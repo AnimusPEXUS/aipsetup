@@ -313,10 +313,10 @@ func (self *SystemPackages) RemoveASP_DestDir(
 	// 	)
 	// }
 
-	// TODO: and why there is no variant with /multihost/*/multiarch/*/lib* ?
+	// OLDTODO: and why there is no variant with /multihost/*/multiarch/*/lib* ?
 	// FIXME: so may be this is error too
 
-	// NOTE: variants with /multihost/*/multiarch/lib* added at 2017-08-20
+	// NOTE: variants with /multihost/*/multiarch/*/lib* added at 2017-08-20
 	for _, i := range []string{
 		basictypes.DIRNAME_LIB,
 		basictypes.DIRNAME_LIB64,
@@ -506,7 +506,6 @@ func (self *SystemPackages) RemoveASP(
 func (self *SystemPackages) ReduceASP(
 	reduce_to *basictypes.ASPName,
 	reduce_what []*basictypes.ASPName,
-	// host, hostarch string, // NOTE: abowe parameters already have this info
 ) error {
 
 	reduce_what_copy := make([]*basictypes.ASPName, 0)
@@ -544,8 +543,8 @@ func (self *SystemPackages) ReduceASP(
 	for _, i := range reduce_what_copy {
 		err := self.RemoveASP(i, false, fiba)
 		if err != nil {
-			// NOTE: error should be reported, but process should continue.
-			//       in the end function should exit with error
+			// error should be reported, but process should continue.
+			// in the end function should exit with error
 			errors_while_reducing_asps = append(errors_while_reducing_asps, i)
 		}
 	}

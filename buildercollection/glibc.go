@@ -168,7 +168,7 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 
 	// """
 	// # NOTE: it's not working
-	// # NOTE: don"t remove this block. it"s for informational reason
+	// # NOTE: don't remove this block. it's for informational reason
 	// if self.get_arch_from_pkgi().startswith("x86_64"):
 	//     ret += ["slibdir=lib64"]
 	// else:

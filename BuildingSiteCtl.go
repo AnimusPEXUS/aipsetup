@@ -328,36 +328,40 @@ maintarball_found:
 	return nil
 }
 
+func (self *BuildingSiteCtl) getDIR_x(x string) string {
+	return path.Join(self.path, x)
+}
+
 func (self *BuildingSiteCtl) GetDIR_TARBALL() string {
-	return GetDIR_TARBALL(self.path)
+	return self.getDIR_x(basictypes.DIR_TARBALL)
 }
 
 func (self *BuildingSiteCtl) GetDIR_SOURCE() string {
-	return GetDIR_SOURCE(self.path)
+	return self.getDIR_x(basictypes.DIR_SOURCE)
 }
 
 func (self *BuildingSiteCtl) GetDIR_PATCHES() string {
-	return GetDIR_PATCHES(self.path)
+	return self.getDIR_x(basictypes.DIR_PATCHES)
 }
 
 func (self *BuildingSiteCtl) GetDIR_BUILDING() string {
-	return GetDIR_BUILDING(self.path)
+	return self.getDIR_x(basictypes.DIR_BUILDING)
 }
 
 func (self *BuildingSiteCtl) GetDIR_DESTDIR() string {
-	return GetDIR_DESTDIR(self.path)
+	return self.getDIR_x(basictypes.DIR_DESTDIR)
 }
 
 func (self *BuildingSiteCtl) GetDIR_BUILD_LOGS() string {
-	return GetDIR_BUILD_LOGS(self.path)
+	return self.getDIR_x(basictypes.DIR_BUILD_LOGS)
 }
 
 func (self *BuildingSiteCtl) GetDIR_LISTS() string {
-	return GetDIR_LISTS(self.path)
+	return self.getDIR_x(basictypes.DIR_LISTS)
 }
 
 func (self *BuildingSiteCtl) GetDIR_TEMP() string {
-	return GetDIR_TEMP(self.path)
+	return self.getDIR_x(basictypes.DIR_TEMP)
 }
 
 func (self *BuildingSiteCtl) IsDirRestrictedForWork() bool {
@@ -597,48 +601,4 @@ func (self *BuildingSiteCtl) PrintCalculations() error {
 	}
 
 	return nil
-}
-
-func getDIR_x(pth string, x string) string {
-	res, err := filepath.Abs(path.Join(pth, x))
-	if err != nil {
-		panic(
-			"TODO " +
-				"(if you reading this," +
-				" write a bugreport) with name 'getDIR_x Abs error'",
-		)
-	}
-	return res
-}
-
-func GetDIR_TARBALL(pth string) string {
-	return getDIR_x(pth, basictypes.DIR_TARBALL)
-}
-
-func GetDIR_SOURCE(pth string) string {
-	return getDIR_x(pth, basictypes.DIR_SOURCE)
-}
-
-func GetDIR_PATCHES(pth string) string {
-	return getDIR_x(pth, basictypes.DIR_PATCHES)
-}
-
-func GetDIR_BUILDING(pth string) string {
-	return getDIR_x(pth, basictypes.DIR_BUILDING)
-}
-
-func GetDIR_DESTDIR(pth string) string {
-	return getDIR_x(pth, basictypes.DIR_DESTDIR)
-}
-
-func GetDIR_BUILD_LOGS(pth string) string {
-	return getDIR_x(pth, basictypes.DIR_BUILD_LOGS)
-}
-
-func GetDIR_LISTS(pth string) string {
-	return getDIR_x(pth, basictypes.DIR_LISTS)
-}
-
-func GetDIR_TEMP(pth string) string {
-	return getDIR_x(pth, basictypes.DIR_TEMP)
 }

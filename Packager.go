@@ -71,6 +71,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 		"src",
 
 		"x86_64-pc-linux-gnu", // TODO: compiler dir's should be checcked smarter
+		"i686-pc-linux-gnu",
 	}
 
 	var allowed_in_host_arch = []string{
@@ -83,6 +84,8 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 		basictypes.DIRNAME_INCLUDE,
 		"libexec",
 		"src",
+		"x86_64-pc-linux-gnu", // TODO: compiler dir's should be checcked smarter
+		"i686-pc-linux-gnu",
 	}
 
 	calc := self.site.GetBuildingSiteValuesCalculator()

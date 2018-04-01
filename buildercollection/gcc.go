@@ -83,6 +83,11 @@ func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
 		return err
 	}
 
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
 	a_tools := new(buildingtools.Autotools)
 	tar_dir := self.bs.GetDIR_TARBALL()
 	files, err := ioutil.ReadDir(tar_dir)
@@ -90,7 +95,7 @@ func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
 		return err
 	}
 
-	for _, i := range []string{
+	NEEDED_PACKAGES := []string{
 		"gmp",
 		"mpc", "mpfr", "isl", "cloog",
 		// #"gmp",
@@ -98,10 +103,16 @@ func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
 		// #       so use system gmp
 		// # requires compiler for bootstrap
 		// # "binutils", "gdb", "glibc"
-		// TODO: make "binutils", "gdb", "glibc" autoadd if crosscompiler
-		//       building
+	}
 
-	} {
+	if info.ThisIsCrossbuilder {
+		NEEDED_PACKAGES = append(
+			NEEDED_PACKAGES,
+			[]string{"binutils", "gdb", "glibc"}...,
+		)
+	}
+
+	for _, i := range NEEDED_PACKAGES {
 		filename := ""
 		for _, j := range files {
 			b := path.Base(j.Name())

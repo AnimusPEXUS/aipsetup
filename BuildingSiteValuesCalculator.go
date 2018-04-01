@@ -582,8 +582,6 @@ func (self *BuildingSiteValuesCalculator) CalculateAutotoolsHBTOptions() (
 		return nil, err
 	}
 
-	// TODO: todo
-
 	host := info.Host
 	hostarch := info.HostArch
 	target := info.CrossbuilderTarget

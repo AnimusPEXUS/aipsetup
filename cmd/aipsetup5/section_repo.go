@@ -33,21 +33,8 @@ func SectionAipsetupRepo() *cliapp.AppCmdNode {
 						Name:     "list",
 						Callable: CmdAipsetupRepoProvidersList,
 					},
-
-					// &cliapp.AppCmdNode{
-					// 	Name:     "tarballs",
-					// 	Callable: CmdAipsetupRepoProvidersTarballs,
-					// },
 				},
 			},
-
-			// &cliapp.AppCmdNode{
-			// 	Name:      "init",
-			// 	Callable:  CmdAipsetupRepoInit,
-			// 	CheckArgs: true,
-			// 	MinArgs:   0,
-			// 	MaxArgs:   0,
-			// },
 
 			&cliapp.AppCmdNode{
 				Name:      "get-src",
@@ -57,6 +44,7 @@ func SectionAipsetupRepo() *cliapp.AppCmdNode {
 				MaxArgs:   -1,
 
 				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
 					&cliapp.GetOptCheckListItem{
 						Name:        "-c",
 						Description: "named names are categories, from for which tarballs to get",
@@ -70,13 +58,14 @@ func SectionAipsetupRepo() *cliapp.AppCmdNode {
 
 			&cliapp.AppCmdNode{
 				Name:        "up",
-				Callable:    CmdAipsetupRepoFor,
+				Callable:    CmdAipsetupRepoUp,
 				Description: "update sources of named package or packages' names by group or category",
 				CheckArgs:   true,
 				MinArgs:     1,
 				MaxArgs:     -1,
 
 				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
 					&cliapp.GetOptCheckListItem{
 						Name:        "-c",
 						Description: "named names are categories, from for which tarballs to get",
@@ -128,13 +117,15 @@ func CmdAipsetupRepoProvidersList(
 	return new(cliapp.AppResult)
 }
 
-func CmdAipsetupRepoFor(
+func CmdAipsetupRepoUp(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	// TODO: add root parameter to command
-	sys := aipsetup.NewSystem("/")
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
+		return res
+	}
 
 	repo, err := tarballrepository.NewRepository(sys)
 	if err != nil {
@@ -254,8 +245,10 @@ func CmdAipsetupRepoGetSrc(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	// TODO: add root parameter to command
-	sys := aipsetup.NewSystem("/")
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	if res != nil && res.Code != 0 {
+		return res
+	}
 
 	repo, err := tarballrepository.NewRepository(sys)
 	if err != nil {

@@ -6,14 +6,13 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	"os/exec"
 	"path"
 	"path/filepath"
 	"sort"
 
-	"code.gitea.io/gitea/modules/log"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildingtools"
+	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/systemtriplet"
 )
@@ -136,14 +135,14 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 
 	if info.ThisIsCrossbuilder || info.ThisIsSubarchBuilding {
 		if info.ThisIsCrossbuilder {
-			log.Info("Crossbuilder building detected")
+			fmt.Println("Crossbuilder building detected")
 		}
 
 		if info.ThisIsSubarchBuilding {
-			log.Info("Subarch building detected")
+			fmt.Println("Subarch building detected")
 		}
 
-		log.Info(" - only headers will be prepared")
+		fmt.Println(" - only headers will be prepared")
 
 		ret = basictypes.BuilderActions{
 			&basictypes.BuilderAction{"dst_cleanup", self.std_builder.BuilderActionDstCleanup},
@@ -514,26 +513,41 @@ func (self *BuilderLinux) BuilderActionDistrSource(
 		return err
 	}
 
-	src_file_list, err := ioutil.ReadDir(self.bs.GetDIR_SOURCE())
+	err = filetools.CopyTree(
+		self.bs.GetDIR_SOURCE(),
+		dst_dir,
+		false,
+		true,
+		false,
+		true,
+		log,
+		filetools.CopyWithInfo,
+	)
 	if err != nil {
 		return err
 	}
 
-	for _, i := range src_file_list {
+	// src_file_list, err := ioutil.ReadDir(self.bs.GetDIR_SOURCE())
+	// if err != nil {
+	// 	return err
+	// }
+	//
+	// for _, i := range src_file_list {
+	//
+	// 	// TODO: need to create own copy functions
+	// 	cmd := exec.Command(
+	// 		"cp",
+	// 		"-afv",
+	// 		path.Join(self.bs.GetDIR_SOURCE(), i.Name()),
+	// 		dst_dir,
+	// 	)
+	// 	cmd.Stdout = log.StdoutLbl()
+	// 	cmd.Stderr = log.StderrLbl()
+	// 	err = cmd.Run()
+	// 	if err != nil {
+	// 		return err
+	// 	}
+	// }
 
-		// TODO: need to create own copy functions
-		cmd := exec.Command(
-			"cp",
-			"-afv",
-			path.Join(self.bs.GetDIR_SOURCE(), i.Name()),
-			dst_dir,
-		)
-		cmd.Stdout = log.StdoutLbl()
-		cmd.Stderr = log.StderrLbl()
-		err = cmd.Run()
-		if err != nil {
-			return err
-		}
-	}
 	return nil
 }
