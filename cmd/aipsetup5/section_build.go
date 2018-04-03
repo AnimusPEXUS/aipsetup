@@ -13,6 +13,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/utils/cliapp"
+	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers/types"
@@ -27,8 +28,30 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 
 			&cliapp.AppCmdNode{
 
+				Name: "mass",
+				SubCmds: []*cliapp.AppCmdNode{
+
+					&cliapp.AppCmdNode{
+						Callable: CmdAipsetupMassBuildInit,
+						Name:     "init",
+
+						AvailableOptions: cliapp.GetOptCheckList{
+							STD_ROOT_OPTION,
+							STD_OPTION_MASS_BUILD_CURRENT_HOST,
+							STD_OPTION_MASS_BUILD_FOR_HOST,
+							STD_OPTION_MASS_BUILD_FOR_HOSTARCHS,
+							STD_OPTION_MASS_BUILD_CROSSBUILDER,
+							STD_OPTION_MASS_BUILD_CROSSBUILDING,
+						},
+					},
+				},
+			},
+
+			&cliapp.AppCmdNode{
+
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
+					STD_OPTION_BUILD_CURRENT_HOST,
 					STD_OPTION_BUILD_FOR_HOST,
 					STD_OPTION_BUILD_FOR_HOSTARCH,
 					STD_OPTION_BUILD_CROSSBUILDER,
@@ -107,23 +130,16 @@ func CmdAipsetupBuildInitSub01(
 	sys *aipsetup.System,
 	main_tarball string,
 	addittional_tarballs []string,
-	host, arch string,
+	host, hostarch string,
+	log *logger.Logger,
 ) error {
 
 	target_tarball := main_tarball
 
-	buildinfo, err := pkginfodb.DetermineTarballsBuildInfo(target_tarball)
+	buildinfoname, buildinfo0, err :=
+		pkginfodb.DetermineTarballPackageInfoSingle(target_tarball)
 	if err != nil {
-		return errors.New("error searching matching info record: " + err.Error())
-	}
-
-	var buildinfoname string
-	var buildinfo0 *basictypes.PackageInfo = nil
-
-	for n, v := range buildinfo {
-		buildinfoname = n
-		buildinfo0 = v
-		break
+		return err
 	}
 
 	var version string
@@ -149,9 +165,12 @@ func CmdAipsetupBuildInitSub01(
 
 	}
 
+	new_timestamp := basictypes.NewASPTimeStampFromCurrentTime()
+
 	bs_ctl, err := aipsetup.NewBuildingSiteCtl(
 		sys,
-		fmt.Sprintf("build/%s-%s", buildinfoname, version),
+		fmt.Sprintf("build/%s-%s-%s", buildinfoname, version, new_timestamp.String()),
+		log,
 	)
 
 	err = bs_ctl.Init()
@@ -159,30 +178,29 @@ func CmdAipsetupBuildInitSub01(
 		return errors.New("can't init new building site: " + err.Error())
 	}
 
-	err = bs_ctl.ApplyInitialInfo(buildinfoname, buildinfo0)
+	new_bs_info := &basictypes.BuildingSiteInfo{
+		PackageName:      buildinfoname,
+		Host:             host,
+		HostArch:         hostarch,
+		PackageVersion:   version,
+		PackageTimeStamp: new_timestamp.String(),
+	}
+	new_bs_info.SetInfoLailalo50()
+
+	err = bs_ctl.WriteInfo(new_bs_info)
 	if err != nil {
-		return errors.New("can't apply initial info to building site: " + err.Error())
+		return err
 	}
 
-	err = bs_ctl.ApplyHostHostArch(host, arch)
-	if err != nil {
-		return errors.New("can't apply habt info to building site: " + err.Error())
-	}
+	// TODO: here was source application. but should be PrepareToRun()
 
-	all_tarballs := make([]string, 0)
-	all_tarballs = append(all_tarballs, main_tarball)
-	all_tarballs = append(all_tarballs, addittional_tarballs...)
+	return nil
+}
 
-	err = bs_ctl.CopyInTarballs(all_tarballs)
-	if err != nil {
-		return errors.New("can't copy tarballs into building site: " + err.Error())
-	}
-
-	err = bs_ctl.ApplyTarballs(all_tarballs[0])
-	if err != nil {
-		return errors.New("can't apply tarballs to building site: " + err.Error())
-	}
-
+func CmdAipsetupMassBuildInit(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
 	return nil
 }
 
@@ -191,8 +209,11 @@ func CmdAipsetupBuildInit(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
+	log := adds.PassData.(*logger.Logger)
+
 	sys := aipsetup.NewSystem(
 		getopt_result.GetLastNamedRetOptItem("--root").Value,
+		log,
 	)
 
 	host, hostarch, res := StdRoutineGetBuildingHostHostArch(getopt_result, sys)
@@ -227,6 +248,7 @@ func CmdAipsetupBuildInit(
 			getopt_result.Args[0],
 			getopt_result.Args[1:],
 			host, hostarch,
+			log,
 		)
 	} else {
 
@@ -237,6 +259,7 @@ func CmdAipsetupBuildInit(
 				i,
 				[]string{},
 				host, hostarch,
+				log,
 			)
 
 			if err != nil {
@@ -262,12 +285,14 @@ func CmdAipsetupBuildListActions(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".")
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".", log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -295,12 +320,14 @@ func CmdAipsetupBuildRun(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".")
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".", log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -466,12 +493,14 @@ func CmdAipsetupBuildPrintInfo(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".")
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".", log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,

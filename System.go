@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/set"
 	"github.com/AnimusPEXUS/utils/systemtriplet"
 	"github.com/go-ini/ini"
@@ -22,8 +23,7 @@ var (
 
 var DEFAULT_AIPSETUP_SYSTEM_CONFIG = []byte("" +
 	`
-[main]
-host = x86_64-pc-linux-gnu
+[x86_64-pc-linux-gnu]
 archs = i686-pc-linux-gnu
 
 [tarball_downloading]
@@ -35,6 +35,8 @@ var _ basictypes.SystemI = &System{}
 
 type System struct {
 	root string
+
+	log *logger.Logger
 
 	ASPs *SystemPackages
 
@@ -48,8 +50,9 @@ type System struct {
 	valuescalculator *SystemValuesCalculator
 }
 
-func NewSystem(root string) *System {
+func NewSystem(root string, log *logger.Logger) *System {
 	self := new(System)
+	self.log = log
 
 	self.valuescalculator = NewSystemValuesCalculator(self)
 

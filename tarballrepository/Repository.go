@@ -3,7 +3,7 @@ package tarballrepository
 import (
 	"crypto/md5"
 	"encoding/hex"
-	"fmt"
+	"errors"
 	"io"
 	"io/ioutil"
 	"os"
@@ -15,19 +15,26 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
+	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
+	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
+
+var _ types.RepositoryI = &Repository{}
 
 type Repository struct {
 	sys basictypes.SystemI
+	log *logger.Logger
 }
 
-func NewRepository(sys basictypes.SystemI) (*Repository, error) {
+func NewRepository(sys basictypes.SystemI, log *logger.Logger) (*Repository, error) {
 	ret := new(Repository)
 	ret.sys = sys
+	ret.log = log
 	return ret, nil
 }
 
@@ -79,48 +86,6 @@ func (self *Repository) GetTarballFilePath(package_name, as_filename string) str
 	tarballs_dir := self.GetPackageTarballsPath(package_name)
 	return path.Join(tarballs_dir, as_filename)
 }
-
-// func (self *Repository) CreateCacheObjectForPackage(name string) (
-// 	*cache01.CacheDir,
-// 	error,
-// ) {
-// 	info, err := pkginfodb.Get(name)
-// 	if err != nil {
-// 		return nil, err
-// 	}
-//
-// 	var preset *cache01.Settings
-//
-// 	switch info.TarballProviderCachePresetName {
-// 	default:
-// 		return nil, errors.New("unknown cache preset name")
-// 	case "":
-// 		fallthrough
-// 	case "personal":
-// 		return cache01.NewCacheDir(self.GetPackageCachePath(name), preset)
-// 	case "by_https_host":
-// 		if info.TarballProvider != "https" {
-// 			return nil, errors.New("TarballProvider have to be https")
-// 		}
-//
-// 		if len(info.TarballProviderArguments) == 0 {
-// 			return nil, errors.New("invalid https provider arguments")
-// 		}
-//
-// 		u, err := url.Parse(info.TarballProviderArguments[0])
-// 		if err != nil {
-// 			return nil, err
-// 		}
-//
-// 		if u.Host == "" {
-// 			return nil, errors.New("invalid Host for https provider")
-// 		}
-//
-// 		return cache01.NewCacheDir(self.GetDedicatedCachePath(u.Host), nil)
-// 	}
-//
-// 	return nil, errors.New("programming error")
-// }
 
 func (self *Repository) PerformPackageSourcesUpdate(name string) error {
 	for _, i := range []func(string) error{
@@ -241,6 +206,68 @@ func (self *Repository) PerformPackagePatchesUpdate(name string) error {
 	}
 
 	return nil
+}
+
+func (self *Repository) DetermineNewestStableTarball(package_name string) (string, error) {
+
+	name_info, err := pkginfodb.Get(package_name)
+	if err != nil {
+		return "", err
+	}
+
+	tarballs, err := self.ListLocalTarballs(package_name, true)
+	if err != nil {
+		return "", err
+	}
+
+	if len(tarballs) == 0 {
+		return "", errors.New("repository does not have tarballs for this package")
+	}
+
+	p, err := tarballnameparsers.Get(name_info.TarballFileNameParser)
+	if err != nil {
+		return "", err
+	}
+
+	c, err := versioncomparators.Get(name_info.TarballVersionComparator)
+	if err != nil {
+		return "", err
+	}
+
+	version_tool, err := tarballstabilityclassification.Get(name_info.TarballStabilityClassifier)
+	if err != nil {
+		return "", err
+	}
+
+	err = c.SortStrings(tarballs, p)
+	if err != nil {
+		return "", err
+	}
+
+	{
+		tarballs2 := make([]string, 0)
+		for _, i := range tarballs {
+
+			parsed, err := p.Parse(i)
+			if err != nil {
+				return "", err
+			}
+
+			isstable, err := version_tool.IsStable(parsed)
+			if err != nil {
+				return "", err
+			}
+			if isstable {
+				tarballs2 = append(tarballs2, i)
+			}
+		}
+		tarballs = tarballs2
+	}
+
+	ret := tarballs[len(tarballs)-1]
+	//fmt.Println(t)
+
+	return ret, nil
 }
 
 func (self *Repository) ListLocalTarballs(package_name string, done_only bool) ([]string, error) {
@@ -399,19 +426,9 @@ func (self *Repository) DeleteFiles(package_name string, filename []string) erro
 
 func (self *Repository) MoveInTarball(filename string, copy bool) error {
 
-	res, err := pkginfodb.DetermineTarballsBuildInfo(filename)
+	pkgname, _, err := pkginfodb.DetermineTarballPackageInfoSingle(filename)
 	if err != nil {
 		return err
-	}
-
-	if len(res) != 1 {
-		return fmt.Errorf("invalid number of recognized results: %d", len(res))
-	}
-
-	var pkgname string
-
-	for pkgname, _ = range res {
-		break
 	}
 
 	tarballs_dir := self.GetPackageTarballsPath(pkgname)
@@ -497,6 +514,29 @@ func (self *Repository) CopyTarballToDir(
 	}
 
 	_, err = io.Copy(out_file_o, src_file_o)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (self *Repository) CopyPatchesToDir(
+	package_name string,
+	outdir string,
+) error {
+
+	err := filetools.CopyTree(
+		self.GetPackagePatchesPath(package_name),
+		outdir,
+		false,
+		true,
+		true,
+		true,
+		self.log,
+		filetools.CopyWithInfo,
+	)
+
 	if err != nil {
 		return err
 	}

@@ -12,6 +12,8 @@ type PackageInfo struct {
 	Deprecated         bool
 	PrimaryInstallOnly bool
 
+	BuildPkgDeps []string
+
 	BuildDeps   []string
 	SODeps      []string
 	RunTimeDeps []string

@@ -16,6 +16,8 @@ const (
 	DIR_LISTS      = "06.LISTS"
 	DIR_TEMP       = "07.TEMP"
 
+	MASSBUILDER_INFO_FILENAME = "massbuilder.info"
+	PACKAGE_INFO_FILENAME     = "package_info.json"
 	PACKAGE_INFO_FILENAME_V5  = "package_info_v5.json"
 	PACKAGE_CHECKSUM_FILENAME = "package.sha512"
 
@@ -53,4 +55,72 @@ var (
 		DIR_LISTS,
 		DIR_TEMP,
 	}
+
+	AIPSETUP_SUPPORTED_HOST_ARCHS = map[string]([]string){
+		"x86_64-pc-linux-gnu": []string{
+			"i686-pc-linux-gnu",
+			"i586-pc-linux-gnu",
+			"i486-pc-linux-gnu",
+		},
+	}
+
+	AIPSETUP_SUPPORTED_HOST_TARGETS = map[string]([]string){
+		"x86_64-pc-linux-gnu": []string{
+			"i686-pc-linux-gnu",
+		},
+		"i686-pc-linux-gnu": []string{
+			"x86_64-pc-linux-gnu",
+		},
+	}
 )
+
+func IsAipsetuHostSupported(name string) bool {
+	for k, _ := range AIPSETUP_SUPPORTED_HOST_ARCHS {
+		if k == name {
+			return true
+		}
+	}
+	return false
+}
+
+func IsAipsetupHostArchSupported(host, hostarch string) bool {
+
+	host_supported := IsAipsetuHostSupported(host)
+
+	if !host_supported {
+		return false
+	}
+
+	if host == hostarch {
+		return true
+	}
+
+	for _, i := range AIPSETUP_SUPPORTED_HOST_ARCHS[host] {
+		if i == hostarch {
+			return true
+		}
+	}
+
+	return false
+}
+
+func IsAipsetupHostTargetSupported(host, target string) bool {
+
+	host_supported := IsAipsetuHostSupported(host)
+
+	if !host_supported {
+		return false
+	}
+
+	if host == target {
+		return true
+	}
+
+	for _, i := range AIPSETUP_SUPPORTED_HOST_TARGETS[host] {
+		if i == target {
+			return true
+		}
+	}
+
+	return false
+}

@@ -151,18 +151,13 @@ func (self *BuilderStdAutotools) BuilderActionPrimaryExtract(
 ) error {
 	a_tools := new(buildingtools.Autotools)
 
-	info, err := self.bs.ReadInfo()
+	main_tarball, err := self.bs.DetermineMainTarrball()
 	if err != nil {
 		return err
 	}
 
-	if len(info.Sources) == 0 {
-		return errors.New("no tarballs supplied. primary tarball is required")
-	}
-	tarball := info.Sources[0]
-	tarball = path.Join(self.bs.GetDIR_TARBALL(), tarball)
 	err = a_tools.Extract(
-		tarball,
+		main_tarball,
 		self.bs.GetDIR_SOURCE(),
 		path.Join(self.bs.GetDIR_TEMP(), "primary_tarball"),
 		true,

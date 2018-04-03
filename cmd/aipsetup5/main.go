@@ -1,6 +1,9 @@
 package main
 
-import "github.com/AnimusPEXUS/utils/cliapp"
+import (
+	"github.com/AnimusPEXUS/utils/cliapp"
+	"github.com/AnimusPEXUS/utils/logger"
+)
 
 func main() {
 
@@ -18,6 +21,8 @@ func main() {
 		},
 	}
 
-	cliapp.RunApp(&app, nil)
+	global_logger := logger.New()
+
+	cliapp.RunApp(&app, global_logger)
 
 }

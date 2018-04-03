@@ -434,7 +434,7 @@ func (self Packager) UpdateTimestamp(log *logger.Logger) error {
 		t.Nanosecond()/1000,
 	)
 
-	info.PackageTimestamp = t_s
+	info.PackageTimeStamp = t_s
 
 	err = self.site.WriteInfo(info)
 	if err != nil {
@@ -559,13 +559,18 @@ func (self Packager) Pack(log *logger.Logger) error {
 
 	pack_dir := path.Join(self.site.path, "..", "pack")
 
+	ts_str, err := basictypes.NewASPTimeStampFromString(info.PackageTimeStamp)
+	if err != nil {
+		return err
+	}
+
 	pack_file_name := fmt.Sprintf(
 		"%s.asp",
 		(&basictypes.ASPName{
 			Name:      info.PackageName,
 			Version:   info.PackageVersion,
 			Status:    info.PackageStatus,
-			TimeStamp: info.PackageTimestamp,
+			TimeStamp: ts_str,
 			Host:      info.Host,
 			HostArch:  info.HostArch,
 			// Target:    info.Target,

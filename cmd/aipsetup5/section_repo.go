@@ -1,20 +1,15 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 	"sort"
 
-	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
 	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
 	"github.com/AnimusPEXUS/utils/cliapp"
+	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
-	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
-	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
-	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
 
 func SectionAipsetupRepo() *cliapp.AppCmdNode {
@@ -45,14 +40,8 @@ func SectionAipsetupRepo() *cliapp.AppCmdNode {
 
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
-					&cliapp.GetOptCheckListItem{
-						Name:        "-c",
-						Description: "named names are categories, from for which tarballs to get",
-					},
-					&cliapp.GetOptCheckListItem{
-						Name:        "-g",
-						Description: "named names are groups, from for which tarballs to get",
-					},
+					STD_NAMES_ARE_CATEGORIES,
+					STD_NAMES_ARE_GROUPS,
 				},
 			},
 
@@ -66,14 +55,8 @@ func SectionAipsetupRepo() *cliapp.AppCmdNode {
 
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
-					&cliapp.GetOptCheckListItem{
-						Name:        "-c",
-						Description: "named names are categories, from for which tarballs to get",
-					},
-					&cliapp.GetOptCheckListItem{
-						Name:        "-g",
-						Description: "named names are groups, from for which tarballs to get",
-					},
+					STD_NAMES_ARE_CATEGORIES,
+					STD_NAMES_ARE_GROUPS,
 				},
 			},
 
@@ -122,12 +105,14 @@ func CmdAipsetupRepoUp(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	repo, err := tarballrepository.NewRepository(sys)
+	repo, err := tarballrepository.NewRepository(sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    11,
@@ -184,9 +169,14 @@ func CmdAipsetupRepoPut(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	sys := aipsetup.NewSystem("/")
+	log := adds.PassData.(*logger.Logger)
 
-	repo, err := tarballrepository.NewRepository(sys)
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	repo, err := tarballrepository.NewRepository(sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    11,
@@ -245,12 +235,14 @@ func CmdAipsetupRepoGetSrc(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
 
-	repo, err := tarballrepository.NewRepository(sys)
+	repo, err := tarballrepository.NewRepository(sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    11,
@@ -260,62 +252,11 @@ func CmdAipsetupRepoGetSrc(
 
 	get_by_name_func := func(name string) error {
 
-		name_info, err := pkginfodb.Get(name)
+		t, err := repo.DetermineNewestStableTarball(name)
 		if err != nil {
 			return err
 		}
 
-		tarballs, err := repo.ListLocalTarballs(name, true)
-		if err != nil {
-			return err
-		}
-
-		if len(tarballs) == 0 {
-			return errors.New("repository does not have tarballs for this package")
-		}
-
-		p, err := tarballnameparsers.Get(name_info.TarballFileNameParser)
-		if err != nil {
-			return err
-		}
-
-		c, err := versioncomparators.Get(name_info.TarballVersionComparator)
-		if err != nil {
-			return err
-		}
-
-		version_tool, err := tarballstabilityclassification.Get(name_info.TarballStabilityClassifier)
-		if err != nil {
-			return err
-		}
-
-		err = c.SortStrings(tarballs, p)
-		if err != nil {
-			return err
-		}
-
-		{
-			tarballs2 := make([]string, 0)
-			for _, i := range tarballs {
-
-				parsed, err := p.Parse(i)
-				if err != nil {
-					return err
-				}
-
-				isstable, err := version_tool.IsStable(parsed)
-				if err != nil {
-					return err
-				}
-				if isstable {
-					tarballs2 = append(tarballs2, i)
-				}
-			}
-			tarballs = tarballs2
-		}
-
-		t := tarballs[len(tarballs)-1]
-		fmt.Println(t)
 		err = repo.CopyTarballToDir(name, t, ".")
 		if err != nil {
 			return err

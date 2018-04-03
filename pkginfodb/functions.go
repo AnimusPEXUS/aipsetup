@@ -21,7 +21,26 @@ func Get(name string) (*basictypes.PackageInfo, error) {
 	}
 }
 
-func DetermineTarballsBuildInfo(filename string) (
+func DetermineTarballPackageInfoSingle(filename string) (
+	string,
+	*basictypes.PackageInfo,
+	error,
+) {
+	res, err := DetermineTarballPackageInfo(filename)
+	if err != nil {
+		return "", nil, err
+	}
+	if len(res) != 1 {
+		return "", nil, errors.New("couldn't determine single package info by tarball name")
+	}
+	var name string
+	var info *basictypes.PackageInfo
+	for name, info = range res {
+	}
+	return name, info, nil
+}
+
+func DetermineTarballPackageInfo(filename string) (
 	map[string]*basictypes.PackageInfo,
 	error,
 ) {

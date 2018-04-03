@@ -16,6 +16,8 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildercollection"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
+	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
+	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
@@ -57,6 +59,8 @@ var _ basictypes.BuildingSiteCtlI = &BuildingSiteCtl{}
 type BuildingSiteCtl struct {
 	sys  *System
 	path string
+	log  *logger.Logger
+
 	info *basictypes.BuildingSiteInfo
 
 	buildingsitevaluescalculator *BuildingSiteValuesCalculator
@@ -65,6 +69,7 @@ type BuildingSiteCtl struct {
 func NewBuildingSiteCtl(
 	sys *System,
 	path string,
+	log *logger.Logger,
 ) (*BuildingSiteCtl, error) {
 
 	{
@@ -82,6 +87,8 @@ func NewBuildingSiteCtl(
 	}
 
 	self := new(BuildingSiteCtl)
+
+	self.log = log
 
 	self.buildingsitevaluescalculator = NewBuildingSiteValuesCalculator(self)
 
@@ -107,6 +114,7 @@ func (self *BuildingSiteCtl) ReadInfo() (*basictypes.BuildingSiteInfo, error) {
 		if err != nil {
 			return nil, err
 		}
+		self.info = j_res
 	}
 
 	return self.info, nil
@@ -155,40 +163,24 @@ func (self *BuildingSiteCtl) Init() error {
 	return nil
 }
 
-func (self *BuildingSiteCtl) ApplyInitialInfo(
-	pkgname string,
-	info *basictypes.PackageInfo,
-) error {
-
-	b_info := new(basictypes.BuildingSiteInfo)
-	b_info.SetInfoLailalo50()
-
-	// b_info.MainTarballInfo = info
-	b_info.PackageName = pkgname
-
-	err := self.WriteInfo(b_info)
-
-	return err
-}
-
-func (self *BuildingSiteCtl) ApplyHostHostArch(
-	host, hostarch string,
-) error {
-	i, err := self.ReadInfo()
-	if err != nil {
-		return err
-	}
-
-	i.Host = host
-	i.HostArch = hostarch
-
-	err = self.WriteInfo(i)
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
+// func (self *BuildingSiteCtl) ApplyHostHostArch(
+// 	host, hostarch string,
+// ) error {
+// 	i, err := self.ReadInfo()
+// 	if err != nil {
+// 		return err
+// 	}
+//
+// 	i.Host = host
+// 	i.HostArch = hostarch
+//
+// 	err = self.WriteInfo(i)
+// 	if err != nil {
+// 		return err
+// 	}
+//
+// 	return nil
+// }
 
 func (self *BuildingSiteCtl) CopyInTarballs(filelist []string) error {
 
@@ -245,7 +237,45 @@ func (self *BuildingSiteCtl) CopyInTarballs(filelist []string) error {
 
 }
 
-func (self *BuildingSiteCtl) ApplyTarballs(maintarball string) error {
+func (self *BuildingSiteCtl) DetermineMainTarrball() (string, error) {
+	info, err := self.ReadInfo()
+	if err != nil {
+		return "", err
+	}
+
+	stats, err := ioutil.ReadDir(self.GetDIR_TARBALL())
+	if err != nil {
+		return "", err
+	}
+
+	var main_tarball string
+
+	for _, i := range stats {
+		infoname, _, err := pkginfodb.DetermineTarballPackageInfoSingle(i.Name())
+		if err != nil {
+			return "", err
+		}
+
+		if infoname == info.PackageName {
+			main_tarball = path.Base(i.Name())
+			break
+		}
+
+	}
+	if main_tarball == "" {
+		return "", errors.New("couldn't find main tarball for package")
+	}
+
+	return main_tarball, nil
+}
+
+// TODO: somehow I don't like this method
+func (self *BuildingSiteCtl) ApplyMainTarball() error {
+
+	maintarball, err := self.DetermineMainTarrball()
+	if err != nil {
+		return err
+	}
 
 	maintarball = path.Base(maintarball)
 
@@ -293,8 +323,6 @@ maintarball_found:
 	if err != nil {
 		return err
 	}
-
-	info.Sources = filelist
 
 	{
 
@@ -375,6 +403,10 @@ func (self *BuildingSiteCtl) IsBuildingSite() bool {
 		return false
 	}
 	return true
+}
+
+func (self *BuildingSiteCtl) PrepareToRun() error {
+	return nil
 }
 
 func (self *BuildingSiteCtl) Run(targets []string) error {
@@ -537,9 +569,151 @@ func (self *BuildingSiteCtl) GetBuildingSiteValuesCalculator() basictypes.Buildi
 	return self.buildingsitevaluescalculator
 }
 
-// func (self *BuildingSiteCtl) Packager() *Packager {
-// 	return NewPackager(self)
-// }
+func (self *BuildingSiteCtl) GetTarballs() error {
+
+	bs_info, err := self.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	from_path := ""
+	if bs_info.GetTarballsFromDir {
+		from_path = bs_info.TarballsDir
+		if !strings.HasPrefix(from_path, "/") {
+			from_path, err = filepath.Abs(path.Join(self.path, from_path))
+			if err != nil {
+				return err
+			}
+		}
+	}
+
+	if len(from_path) != 0 {
+		if s, err := os.Stat(from_path); err != nil {
+			return err
+		} else {
+			if !s.IsDir() {
+				return errors.New("error using directory with tarballs: not a directory")
+			}
+		}
+	}
+
+	repo, err := tarballrepository.NewRepository(self.GetSystem(), self.log)
+	if err != nil {
+		return err
+	}
+
+	info, err := pkginfodb.Get(bs_info.PackageName)
+	if err != nil {
+		return err
+	}
+
+	pkg_list := make([]string, 0)
+
+	pkg_list = append(pkg_list, bs_info.PackageName)
+
+	pkg_list = append(pkg_list, info.BuildPkgDeps...)
+
+	tar_dir := self.GetDIR_TARBALL()
+
+	if len(from_path) == 0 {
+		all_needed_tarballs_gotted := true
+		for _, i := range pkg_list {
+			t, err := repo.DetermineNewestStableTarball(i)
+			if err != nil {
+				all_needed_tarballs_gotted = false
+				continue
+			}
+
+			err = repo.CopyTarballToDir(i, t, tar_dir)
+			if err != nil {
+				all_needed_tarballs_gotted = false
+				continue
+			}
+		}
+		if !all_needed_tarballs_gotted {
+			return errors.New("couldn't get all the needed tarballs")
+		}
+	} else {
+		stats, err := ioutil.ReadDir(from_path)
+		if err != nil {
+			return err
+		}
+
+		all_needed_stats_found := true
+
+		for _, i := range pkg_list {
+			needed_stat_found := false
+			for _, j := range stats {
+
+				linfo_name, _, err := pkginfodb.DetermineTarballPackageInfoSingle(j.Name())
+				if err != nil {
+					return err
+				}
+
+				if linfo_name == i {
+					err := filetools.CopyWithInfo(
+						path.Join(from_path, j.Name()),
+						path.Join(tar_dir, j.Name()),
+						self.log,
+					)
+					if err != nil {
+						break
+					}
+					needed_stat_found = true
+				}
+
+			}
+			if !needed_stat_found {
+				all_needed_stats_found = false
+			}
+		}
+		if !all_needed_stats_found {
+			return errors.New("not found all the needed tarballs in given directory")
+		}
+	}
+
+	return nil
+}
+
+func (self *BuildingSiteCtl) GetPatches() error {
+
+	bs_info, err := self.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	repo, err := tarballrepository.NewRepository(self.GetSystem(), self.log)
+	if err != nil {
+		return err
+	}
+
+	info, err := pkginfodb.Get(bs_info.PackageName)
+	if err != nil {
+		return err
+	}
+
+	pkg_list := make([]string, 0)
+
+	pkg_list = append(pkg_list, bs_info.PackageName)
+	pkg_list = append(pkg_list, info.BuildPkgDeps...)
+
+	patches_dir := self.GetDIR_PATCHES()
+
+	all_needed_patches_gotted := true
+	for _, i := range pkg_list {
+
+		err = repo.CopyPatchesToDir(i, patches_dir)
+		if err != nil {
+			all_needed_patches_gotted = false
+			continue
+		}
+	}
+	if !all_needed_patches_gotted {
+		return errors.New("couldn't get all the needed patches")
+	}
+
+	return nil
+}
 
 func (self *BuildingSiteCtl) Packager() basictypes.PackagerI {
 	return NewPackager(self)

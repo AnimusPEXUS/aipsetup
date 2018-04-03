@@ -17,8 +17,13 @@ type BuildingSiteCtlI interface {
 	// GetConfiguredHostArch() (string, error)
 	// GetConfiguredTarget() (string, string, error)
 
+	DetermineMainTarrball() (string, error)
+
 	GetSystem() SystemI
 	GetBuildingSiteValuesCalculator() BuildingSiteValuesCalculatorI
+
+	PrepareToRun() error
+	Run(targets []string) error
 
 	PrePackager() PrePackagerI
 	Packager() PackagerI

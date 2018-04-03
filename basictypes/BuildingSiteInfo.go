@@ -23,14 +23,17 @@ type BuildingSiteInfo struct {
 	ThisIsSubarchBuilding bool `json:"this_is_subarchbuilding"`
 
 	// RunningByHost is host which started this building site
-	RunningByHost bool `json:"this_bs_starter_host"`
+	InitiatedByHost string `json:"initiated_by_host"`
 
 	PackageName      string `json:"package_name"`
 	PackageVersion   string `json:"package_version"`
 	PackageStatus    string `json:"package_status"`
-	PackageTimestamp string `json:"package_timestamp"`
+	PackageTimeStamp string `json:"package_timestamp"`
 
-	Sources []string `json:"sources"`
+	GetTarballsFromDir bool   `json:"get_tarballs_from_dir"`
+	TarballsDir        string `json:"tarballs_dir"`
+
+	//	Sources []string `json:"sources"`
 
 	// MainTarballInfo *PackageInfo `json:"main_tarball_info"`
 }

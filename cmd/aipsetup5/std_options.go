@@ -5,6 +5,7 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/utils/cliapp"
+	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/systemtriplet"
 )
 
@@ -71,6 +72,29 @@ var (
 		MustHaveValue: true,
 	}
 
+	// -------------------------
+
+	STD_OPTION_MASS_BUILD_CURRENT_HOST = STD_OPTION_BUILD_CURRENT_HOST
+
+	STD_OPTION_MASS_BUILD_FOR_HOST = STD_OPTION_BUILD_FOR_HOST
+
+	STD_OPTION_MASS_BUILD_FOR_HOSTARCHS = &cliapp.GetOptCheckListItem{
+		Name: "--build-for-hostarchs",
+		Description: "Select subsystems (subarchs) names which will run packages. " +
+			"Default is use aipsetup.system.ini to take all subarchs for host pointed" +
+			"or calculated for --build-for-host.",
+		HaveDefault:   true,
+		Default:       "",
+		IsRequired:    false,
+		MustHaveValue: true,
+	}
+
+	STD_OPTION_MASS_BUILD_CROSSBUILDER = STD_OPTION_BUILD_CROSSBUILDER
+
+	STD_OPTION_MASS_BUILD_CROSSBUILDING = STD_OPTION_BUILD_CROSSBUILDING
+
+	// -------------------------
+
 	STD_OPTION_NAMED_INSTALLATION_FOR_HOST = &cliapp.GetOptCheckListItem{
 		Name: "--install-for-host",
 		Description: "Select hosting system. " +
@@ -130,6 +154,16 @@ var (
 		IsRequired:    false,
 		MustHaveValue: true,
 	}
+
+	STD_NAMES_ARE_CATEGORIES = &cliapp.GetOptCheckListItem{
+		Name:        "-c",
+		Description: "named names are categories",
+	}
+
+	STD_NAMES_ARE_GROUPS = &cliapp.GetOptCheckListItem{
+		Name:        "-g",
+		Description: "named names are groups",
+	}
 )
 
 func StdRoutineGetRootOption(getopt_result *cliapp.GetOptResult) (
@@ -145,7 +179,10 @@ func StdRoutineGetRootOption(getopt_result *cliapp.GetOptResult) (
 	return "", false
 }
 
-func StdRoutineGetRootOptionAndSystemObject(getopt_result *cliapp.GetOptResult) (
+func StdRoutineGetRootOptionAndSystemObject(
+	getopt_result *cliapp.GetOptResult,
+	log *logger.Logger,
+) (
 	root string,
 	sys *aipsetup.System,
 	ret *cliapp.AppResult,
@@ -158,7 +195,7 @@ func StdRoutineGetRootOptionAndSystemObject(getopt_result *cliapp.GetOptResult) 
 		root = root_opt
 	}
 
-	sys = aipsetup.NewSystem(root)
+	sys = aipsetup.NewSystem(root, log)
 
 	return
 }

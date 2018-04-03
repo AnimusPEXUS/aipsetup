@@ -6,6 +6,7 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/cliapp"
+	"github.com/AnimusPEXUS/utils/logger"
 )
 
 func SectionAipsetupSys() *cliapp.AppCmdNode {
@@ -121,7 +122,9 @@ func CmdAipsetupSysListAsps(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
@@ -150,7 +153,9 @@ func CmdAipsetupSysAllNames(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
@@ -179,7 +184,9 @@ func CmdAipsetupSysNameASPs(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
@@ -210,7 +217,9 @@ func CmdAipsetupSysASPFiles(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
@@ -250,7 +259,9 @@ func CmdAipsetupSysInstall(
 ) *cliapp.AppResult {
 	fmt.Println(getopt_result.String())
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
@@ -280,7 +291,9 @@ func CmdAipsetupSysRemove(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result)
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
 	if res != nil && res.Code != 0 {
 		return res
 	}
