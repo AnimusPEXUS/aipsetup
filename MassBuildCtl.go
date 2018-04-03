@@ -127,7 +127,7 @@ func (self *MassBuildCtl) PerformMassBuilding(pth string) (
 	built := make([]string, 0)
 	notbuilt := make([]string, 0)
 
-	// repo, err := tarballrepository.NewRepository(self.sys, self.log)
+	// repo, err := repository.NewRepository(self.sys, self.log)
 	// if err != nil {
 	// 	return nil, nil, err
 	// }

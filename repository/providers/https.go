@@ -12,7 +12,7 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
+	"github.com/AnimusPEXUS/aipsetup/repository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/htmlwalk"

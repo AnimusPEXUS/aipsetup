@@ -16,7 +16,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildercollection"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
+	"github.com/AnimusPEXUS/aipsetup/repository"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
@@ -597,7 +597,7 @@ func (self *BuildingSiteCtl) GetTarballs() error {
 		}
 	}
 
-	repo, err := tarballrepository.NewRepository(self.GetSystem(), self.log)
+	repo, err := repository.NewRepository(self.GetSystem(), self.log)
 	if err != nil {
 		return err
 	}
@@ -682,7 +682,7 @@ func (self *BuildingSiteCtl) GetPatches() error {
 		return err
 	}
 
-	repo, err := tarballrepository.NewRepository(self.GetSystem(), self.log)
+	repo, err := repository.NewRepository(self.GetSystem(), self.log)
 	if err != nil {
 		return err
 	}

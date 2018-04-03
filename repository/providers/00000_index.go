@@ -4,7 +4,7 @@ import (
 	"errors"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
+	"github.com/AnimusPEXUS/aipsetup/repository/types"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 

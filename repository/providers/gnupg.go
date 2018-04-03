@@ -3,16 +3,17 @@ package providers
 import (
 	"errors"
 	"fmt"
+	"net/url"
 	"path"
 	"sort"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
+	"github.com/AnimusPEXUS/aipsetup/repository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
+	"github.com/AnimusPEXUS/utils/gnupghtmlftpwalk"
 	"github.com/AnimusPEXUS/utils/logger"
-	"github.com/AnimusPEXUS/utils/sfnetwalk"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
@@ -20,13 +21,13 @@ import (
 	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
 
-var _ types.ProviderI = &ProviderSFNet{}
+var _ types.ProviderI = &ProviderGNUPGOrg{}
 
 func init() {
-	Index["sf.net"] = NewProviderSFNet
+	Index["gnupg.org"] = NewProviderGNUPGOrg
 }
 
-type ProviderSFNet struct {
+type ProviderGNUPGOrg struct {
 	repo                types.RepositoryI
 	pkg_name            string
 	pkg_info            *basictypes.PackageInfo
@@ -36,12 +37,14 @@ type ProviderSFNet struct {
 
 	cache *cache01.CacheDir
 
-	sfw *sfnetwalk.SFNetWalk
+	gpgw *gnupghtmlftpwalk.Walk
 
-	project string
+	scheme string
+	host   string
+	path   string
 }
 
-func NewProviderSFNet(
+func NewProviderGNUPGOrg(
 	repo types.RepositoryI,
 	pkg_name string,
 	pkg_info *basictypes.PackageInfo,
@@ -50,7 +53,7 @@ func NewProviderSFNet(
 	log *logger.Logger,
 ) (types.ProviderI, error) {
 
-	self := &ProviderSFNet{
+	self := &ProviderGNUPGOrg{
 		repo:                repo,
 		pkg_name:            pkg_name,
 		pkg_info:            pkg_info,
@@ -59,19 +62,24 @@ func NewProviderSFNet(
 		log:                 log,
 	}
 
-	switch len(pkg_info.TarballProviderArguments) {
-	case 0:
-	case 1:
-		self.project = pkg_info.TarballProviderArguments[0]
-	default:
-		return nil, errors.New("invalid arguments count")
+	u, err := url.Parse(pkg_info.TarballProviderArguments[0])
+	if err != nil {
+		return nil, err
 	}
+	self.scheme = u.Scheme
+	self.host = u.Host
+	self.path = u.Path
+
+	cache_uri := (&url.URL{
+		Scheme: self.scheme,
+		Host:   self.host,
+	}).String()
 
 	if t, err := cache01.NewCacheDir(
 		path.Join(
 			self.repo.GetCachesDir(),
-			"sf.net",
-			self.project,
+			"gnupg.org",
+			url.PathEscape(cache_uri),
 		),
 		nil,
 	); err != nil {
@@ -83,53 +91,54 @@ func NewProviderSFNet(
 	return self, nil
 }
 
-func (self *ProviderSFNet) ProviderDescription() string {
+func (self *ProviderGNUPGOrg) ProviderDescription() string {
 	return ""
 }
 
-func (self *ProviderSFNet) ArgCount() int {
+func (self *ProviderGNUPGOrg) ArgCount() int {
 	return 1
 }
 
-func (self *ProviderSFNet) CanListArg(i int) bool {
+func (self *ProviderGNUPGOrg) CanListArg(i int) bool {
 	return false
 }
 
-func (self *ProviderSFNet) ListArg(i int) ([]string, error) {
+func (self *ProviderGNUPGOrg) ListArg(i int) ([]string, error) {
 	return []string{}, errors.New("not supported")
 }
 
-func (self *ProviderSFNet) Tarballs() ([]string, error) {
+func (self *ProviderGNUPGOrg) Tarballs() ([]string, error) {
 	return []string{}, nil
 }
 
-func (self *ProviderSFNet) TarballNames() ([]string, error) {
+func (self *ProviderGNUPGOrg) TarballNames() ([]string, error) {
 	return []string{}, nil
 }
 
-func (self *ProviderSFNet) _GetSFW() (*sfnetwalk.SFNetWalk, error) {
-	if self.sfw == nil {
+func (self *ProviderGNUPGOrg) _GetGPGW() (*gnupghtmlftpwalk.Walk, error) {
+	if self.gpgw == nil {
 
-		h, err := sfnetwalk.NewSFNetWalk(
-			self.project,
+		h, err := gnupghtmlftpwalk.NewWalk(
+			self.scheme,
+			self.host,
 			self.cache,
 			self.log,
 		)
 		if err != nil {
 			return nil, err
 		}
-		self.sfw = h
+		self.gpgw = h
 	}
-	return self.sfw, nil
+	return self.gpgw, nil
 }
 
-func (self *ProviderSFNet) PerformUpdate() error {
-	htw, err := self._GetSFW()
+func (self *ProviderGNUPGOrg) PerformUpdate() error {
+	htw, err := self._GetGPGW()
 	if err != nil {
 		return err
 	}
 
-	tree, err := htw.Tree("/")
+	tree, err := htw.Tree(self.path)
 	if err != nil {
 		return err
 	}
@@ -303,13 +312,13 @@ func (self *ProviderSFNet) PerformUpdate() error {
 	return nil
 }
 
-func (self *ProviderSFNet) GetDownloadingURIForFile(name string) (string, error) {
+func (self *ProviderGNUPGOrg) GetDownloadingURIForFile(name string) (string, error) {
 	name = path.Base(name)
 
-	htw, err := self._GetSFW()
+	htw, err := self._GetGPGW()
 	if err != nil {
 		return "", err
 	}
 
-	return htw.GetDownloadingURIForFile(name)
+	return htw.GetDownloadingURIForFile(name, self.path)
 }

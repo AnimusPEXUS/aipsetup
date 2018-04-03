@@ -5,8 +5,8 @@ import (
 	"sort"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
+	"github.com/AnimusPEXUS/aipsetup/repository"
+	"github.com/AnimusPEXUS/aipsetup/repository/providers"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
@@ -112,7 +112,7 @@ func CmdAipsetupRepoUp(
 		return res
 	}
 
-	repo, err := tarballrepository.NewRepository(sys, log)
+	repo, err := repository.NewRepository(sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    11,
@@ -176,7 +176,7 @@ func CmdAipsetupRepoPut(
 		return res
 	}
 
-	repo, err := tarballrepository.NewRepository(sys, log)
+	repo, err := repository.NewRepository(sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    11,
@@ -242,7 +242,7 @@ func CmdAipsetupRepoGetSrc(
 		return res
 	}
 
-	repo, err := tarballrepository.NewRepository(sys, log)
+	repo, err := repository.NewRepository(sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    11,

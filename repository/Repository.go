@@ -14,8 +14,8 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository/providers"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
+	"github.com/AnimusPEXUS/aipsetup/repository/providers"
+	"github.com/AnimusPEXUS/aipsetup/repository/types"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"

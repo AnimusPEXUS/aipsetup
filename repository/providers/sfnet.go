@@ -9,10 +9,10 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
-	"github.com/AnimusPEXUS/aipsetup/tarballrepository/types"
+	"github.com/AnimusPEXUS/aipsetup/repository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
-	"github.com/AnimusPEXUS/utils/launchpadnetwalk"
 	"github.com/AnimusPEXUS/utils/logger"
+	"github.com/AnimusPEXUS/utils/sfnetwalk"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
@@ -20,13 +20,13 @@ import (
 	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
 
-var _ types.ProviderI = &ProviderLaunchpadNet{}
+var _ types.ProviderI = &ProviderSFNet{}
 
 func init() {
-	Index["launchpad.net"] = NewProviderLaunchpadNet
+	Index["sf.net"] = NewProviderSFNet
 }
 
-type ProviderLaunchpadNet struct {
+type ProviderSFNet struct {
 	repo                types.RepositoryI
 	pkg_name            string
 	pkg_info            *basictypes.PackageInfo
@@ -36,12 +36,12 @@ type ProviderLaunchpadNet struct {
 
 	cache *cache01.CacheDir
 
-	lpw *launchpadnetwalk.LaunchpadNetWalk
+	sfw *sfnetwalk.SFNetWalk
 
 	project string
 }
 
-func NewProviderLaunchpadNet(
+func NewProviderSFNet(
 	repo types.RepositoryI,
 	pkg_name string,
 	pkg_info *basictypes.PackageInfo,
@@ -50,7 +50,7 @@ func NewProviderLaunchpadNet(
 	log *logger.Logger,
 ) (types.ProviderI, error) {
 
-	self := &ProviderLaunchpadNet{
+	self := &ProviderSFNet{
 		repo:                repo,
 		pkg_name:            pkg_name,
 		pkg_info:            pkg_info,
@@ -70,7 +70,7 @@ func NewProviderLaunchpadNet(
 	if t, err := cache01.NewCacheDir(
 		path.Join(
 			self.repo.GetCachesDir(),
-			"launchpad.net",
+			"sf.net",
 			self.project,
 		),
 		nil,
@@ -83,34 +83,34 @@ func NewProviderLaunchpadNet(
 	return self, nil
 }
 
-func (self *ProviderLaunchpadNet) ProviderDescription() string {
-	return "launchpad.net"
+func (self *ProviderSFNet) ProviderDescription() string {
+	return ""
 }
 
-func (self *ProviderLaunchpadNet) ArgCount() int {
+func (self *ProviderSFNet) ArgCount() int {
 	return 1
 }
 
-func (self *ProviderLaunchpadNet) CanListArg(i int) bool {
+func (self *ProviderSFNet) CanListArg(i int) bool {
 	return false
 }
 
-func (self *ProviderLaunchpadNet) ListArg(i int) ([]string, error) {
+func (self *ProviderSFNet) ListArg(i int) ([]string, error) {
 	return []string{}, errors.New("not supported")
 }
 
-func (self *ProviderLaunchpadNet) Tarballs() ([]string, error) {
+func (self *ProviderSFNet) Tarballs() ([]string, error) {
 	return []string{}, nil
 }
 
-func (self *ProviderLaunchpadNet) TarballNames() ([]string, error) {
+func (self *ProviderSFNet) TarballNames() ([]string, error) {
 	return []string{}, nil
 }
 
-func (self *ProviderLaunchpadNet) _GetLPW() (*launchpadnetwalk.LaunchpadNetWalk, error) {
-	if self.lpw == nil {
+func (self *ProviderSFNet) _GetSFW() (*sfnetwalk.SFNetWalk, error) {
+	if self.sfw == nil {
 
-		h, err := launchpadnetwalk.NewLaunchpadNetWalk(
+		h, err := sfnetwalk.NewSFNetWalk(
 			self.project,
 			self.cache,
 			self.log,
@@ -118,13 +118,13 @@ func (self *ProviderLaunchpadNet) _GetLPW() (*launchpadnetwalk.LaunchpadNetWalk,
 		if err != nil {
 			return nil, err
 		}
-		self.lpw = h
+		self.sfw = h
 	}
-	return self.lpw, nil
+	return self.sfw, nil
 }
 
-func (self *ProviderLaunchpadNet) PerformUpdate() error {
-	htw, err := self._GetLPW()
+func (self *ProviderSFNet) PerformUpdate() error {
+	htw, err := self._GetSFW()
 	if err != nil {
 		return err
 	}
@@ -303,10 +303,10 @@ func (self *ProviderLaunchpadNet) PerformUpdate() error {
 	return nil
 }
 
-func (self *ProviderLaunchpadNet) GetDownloadingURIForFile(name string) (string, error) {
+func (self *ProviderSFNet) GetDownloadingURIForFile(name string) (string, error) {
 	name = path.Base(name)
 
-	htw, err := self._GetLPW()
+	htw, err := self._GetSFW()
 	if err != nil {
 		return "", err
 	}
