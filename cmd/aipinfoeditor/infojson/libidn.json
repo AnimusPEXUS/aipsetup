@@ -7,6 +7,9 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [
+    ""
+  ],
   "BuildDeps": [
     ""
   ],
