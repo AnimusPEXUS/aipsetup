@@ -1,4 +1,4 @@
-package tarballrepository
+package repository
 
 import (
 	"crypto/md5"
