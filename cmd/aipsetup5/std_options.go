@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup"
@@ -81,7 +82,7 @@ var (
 	STD_OPTION_MASS_BUILD_FOR_HOSTARCHS = &cliapp.GetOptCheckListItem{
 		Name: "--build-for-hostarchs",
 		Description: "Select subsystems (subarchs) names which will run packages. " +
-			"Default is use aipsetup.system.ini to take all subarchs for host pointed" +
+			"Default is use aipsetup.system.ini to take all subarchs for host pointed " +
 			"or calculated for --build-for-host.",
 		HaveDefault:   true,
 		Default:       "",
@@ -336,4 +337,63 @@ func StdRoutineGetASPListFiltersHostHostArch(
 	}
 
 	return host, hostarch, nil
+}
+
+func StdRoutineGetMassBuildOptions(
+	getopt_result *cliapp.GetOptResult,
+	system *aipsetup.System,
+) (
+	current_host, for_host string,
+	for_hostarchs []string,
+	crossbuilder, crossbuilding string,
+	ret *cliapp.AppResult,
+) {
+
+	var err error
+
+	if o := getopt_result.GetLastNamedRetOptItem("--build-current-host"); o != nil {
+		fmt.Println("--build-current-host")
+		current_host = o.Value
+	} else {
+		current_host, err = system.Host()
+		if err != nil {
+			ret = &cliapp.AppResult{Code: 200, Message: err.Error()}
+			return
+		}
+	}
+
+	if o := getopt_result.GetLastNamedRetOptItem("--build-for-host"); o != nil {
+		for_host = o.Value
+	} else {
+		for_host = current_host
+	}
+
+	if o := getopt_result.GetLastNamedRetOptItem("--build-for-hostarchs"); o != nil {
+		for_hostarchs = strings.Split(o.Value, ",")
+	} else {
+		cfg := system.Cfg()
+		if cfg == nil {
+			ret = &cliapp.AppResult{Code: 201, Message: "aipsetup configuration problems"}
+		}
+		s := cfg.Section(for_host)
+		// if err != nil {
+		// 	ret = &cliapp.AppResult{Code: 202, Message: err.Error()}
+		// }
+		a := s.Key("archs")
+		for_hostarchs = a.Strings(",")
+	}
+
+	if o := getopt_result.GetLastNamedRetOptItem("--build-crossbuilder"); o != nil {
+		crossbuilder = o.Value
+	} else {
+		crossbuilder = ""
+	}
+
+	if o := getopt_result.GetLastNamedRetOptItem("--build-crossbuilding"); o != nil {
+		crossbuilding = o.Value
+	} else {
+		crossbuilding = ""
+	}
+
+	return
 }

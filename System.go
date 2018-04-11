@@ -91,6 +91,10 @@ func NewSystem(root string, log *logger.Logger) *System {
 	return self
 }
 
+func (self *System) Cfg() *ini.File {
+	return self.cfg
+}
+
 func (self *System) Root() string {
 	return self.root
 }

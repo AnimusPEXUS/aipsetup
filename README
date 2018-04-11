@@ -1,0 +1,32 @@
+AipSetup
+
+  .. is system for creating and maintaining own GNU+Linux operating system.
+
+  It can (Python version could, but, I hope, I'll finally find forces to finish
+    this to Go rewrite):
+   * mirror tarballs used in distro to local hard drive
+   * build distribution packages
+   * install and uninstall packages
+   * build crosscompiler systems
+   * creating bootable flash drive with installer
+
+  Present AipSetup system in it's early stages was thought as Python's version
+    rewrite, but power of Go language made it possible to extend it to be
+    more smart and self contained.
+
+  Previous version was built with Python 3, but finally I had to discard Python
+    from such responsive use: CPython realization and Python language it self
+    is not good enough to be used for such purposes: Python language programs
+    are hard to maintain, CPython have many problems, including CPython
+    building and installation problems.
+
+  The early one aipsetup was a number of bash scripts.. this can be found on
+    SF.net under same name.
+
+  Both was hosted on GitHub, but I've considered those old versions too bad
+    to continue providing them. If somebody wants to see them on GitHub,
+    please, state so in Issues section.
+
+
+Accepting motivational gifts:
+  BTC: 1LRdzd5pnaiuctai9aHnftwNRrUMTmFrNe

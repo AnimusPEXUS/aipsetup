@@ -1,6 +1,11 @@
 package basictypes
 
+import (
+	"github.com/go-ini/ini"
+)
+
 type SystemI interface {
+	Cfg() *ini.File
 	Root() string
 	Host() (string, error)
 	Archs() ([]string, error)

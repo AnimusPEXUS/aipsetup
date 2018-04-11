@@ -94,6 +94,10 @@ func (self *MassBuildCtl) WriteInfo(info *basictypes.MassBuilderInfo) error {
 	return nil
 }
 
+func (self *MassBuildCtl) TarballsPath() string {
+	return path.Join(self.path, "01.tarballs")
+}
+
 func (self *MassBuildCtl) PerformMassBuilding(pth string) (
 	[]string, []string, error,
 ) {
@@ -126,11 +130,6 @@ func (self *MassBuildCtl) PerformMassBuilding(pth string) (
 
 	built := make([]string, 0)
 	notbuilt := make([]string, 0)
-
-	// repo, err := repository.NewRepository(self.sys, self.log)
-	// if err != nil {
-	// 	return nil, nil, err
-	// }
 
 	for _, i := range files {
 
