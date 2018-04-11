@@ -1,4 +1,4 @@
-AipSetup
+= AipSetup =
 
   .. is system for creating and maintaining own GNU+Linux operating system.
 
@@ -27,6 +27,12 @@ AipSetup
     to continue providing them. If somebody wants to see them on GitHub,
     please, state so in Issues section.
 
+== Building and Installation ==
+
+This should be as easy as
+`go get github.com/AnimusPEXUS/aipsetup`
+
+aipsetup5 and info editor executables should be installed.
 
 Accepting motivational gifts:
   BTC: 1LRdzd5pnaiuctai9aHnftwNRrUMTmFrNe
