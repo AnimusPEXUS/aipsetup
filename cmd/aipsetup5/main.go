@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/logger"
 )
@@ -23,6 +25,7 @@ func main() {
 	}
 
 	global_logger := logger.New()
+	global_logger.AddOutput(os.Stdout)
 
 	cliapp.RunApp(&app, global_logger)
 

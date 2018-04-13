@@ -189,12 +189,12 @@ func (self *MassBuildCtl) findBuildingSite(
 			pth := path.Join(self.path, i.Name())
 			nbs, err := NewBuildingSiteCtl(pth, self.sys, self.log)
 			if err != nil {
-				return nil, err
+				continue
 			}
 
 			nbs_info, err := nbs.ReadInfo()
 			if err != nil {
-				return nil, err
+				continue
 			}
 
 			if nbs_info.PackageName == pkgname &&
@@ -287,9 +287,15 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 
 	var bs *BuildingSiteCtl
 
+	self.log.Info(
+		"trying to find " + pkgname + "-" + tarball_parsed.Version.Str + "-" +
+			host + "-" + hostarch,
+	)
+
 	if tbs, err := self.findBuildingSite(
 		pkgname, tarball_parsed.Version.Str, host, hostarch,
 	); err != nil {
+		self.log.Info("  finding error: " + err.Error())
 		tbs, err := self.createBuildingSite(
 			pkgname,
 			host, hostarch,
@@ -301,6 +307,7 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 		bs = tbs
 	} else {
 		bs = tbs
+		self.log.Info("  using existing: " + bs.path)
 	}
 
 	bs_actions, err := bs.ListActions()

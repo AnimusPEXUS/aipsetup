@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"path"
+	"sort"
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
@@ -48,6 +50,19 @@ func SectionAipsetupMBuild() *cliapp.AppCmdNode {
 				CheckArgs: true,
 				MinArgs:   1,
 				MaxArgs:   -1,
+			},
+
+			&cliapp.AppCmdNode{
+				Callable: CmdAipsetupMassBuildPerform,
+				Name:     "full",
+
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
 			},
 		},
 	}
@@ -148,4 +163,56 @@ func CmdAipsetupMassBuildGetTars(
 
 	return nil
 
+}
+
+func CmdAipsetupMassBuildPerform(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(
+		getopt_result,
+		log,
+	)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	mbuild, err := aipsetup.NewMassBuilder(".", sys, log)
+	if err != nil {
+		return &cliapp.AppResult{Code: 10, Message: err.Error()}
+	}
+
+	_, f, err := mbuild.PerformMassBuilding()
+	if err != nil {
+		return &cliapp.AppResult{Code: 11, Message: err.Error()}
+	}
+
+	keys := make([]string, 0)
+	for k, _ := range f {
+		keys = append(keys, k)
+	}
+
+	sort.Strings(keys)
+
+	failed := false
+
+	for _, i := range keys {
+		fmt.Println("arch", i)
+		sort.Strings(f[i])
+		for _, j := range f[i] {
+			fmt.Println("   ", j)
+			failed = true
+		}
+	}
+
+	if failed {
+		return &cliapp.AppResult{
+			Code:    12,
+			Message: "some packages building have failed",
+		}
+	}
+
+	return nil
 }

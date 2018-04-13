@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup"
@@ -381,6 +382,8 @@ func StdRoutineGetMassBuildOptions(
 		// }
 		a := s.Key("archs")
 		for_hostarchs = a.Strings(",")
+		for_hostarchs = append(for_hostarchs, for_host)
+		sort.Strings(for_hostarchs)
 	}
 
 	if o := getopt_result.GetLastNamedRetOptItem("--build-crossbuilder"); o != nil {
