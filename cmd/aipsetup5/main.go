@@ -17,6 +17,7 @@ func main() {
 			SectionAipsetupSys(),
 			SectionAipsetupSysConfig(),
 			SectionAipsetupBuild(),
+			SectionAipsetupMBuild(),
 			SectionAipsetupRepo(),
 		},
 	}

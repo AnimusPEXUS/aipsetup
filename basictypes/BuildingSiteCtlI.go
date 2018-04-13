@@ -13,16 +13,15 @@ type BuildingSiteCtlI interface {
 	ReadInfo() (*BuildingSiteInfo, error)
 	WriteInfo(*BuildingSiteInfo) error
 
-	// GetConfiguredHost() (string, error)
-	// GetConfiguredHostArch() (string, error)
-	// GetConfiguredTarget() (string, string, error)
-
 	DetermineMainTarrball() (string, error)
 
 	GetSystem() SystemI
 	GetBuildingSiteValuesCalculator() BuildingSiteValuesCalculatorI
 
-	PrepareToRun() error
+	GetSources() error
+	GetTarballs() error
+	GetPatches() error
+
 	Run(targets []string) error
 
 	PrePackager() PrePackagerI

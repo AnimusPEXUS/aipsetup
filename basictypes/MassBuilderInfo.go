@@ -4,8 +4,8 @@ type MassBuilderInfo struct {
 	Host      string   `json:"host"`
 	HostArchs []string `json:"hostarchs"`
 
-	BuildCrossbuilders  bool   `json:"build_crossbuilders"`
-	CrossbuildersTarget string `json:"crossbuilders_target"`
+	BuildCrossbuilders bool   `json:"build_crossbuilders"`
+	CrossbuilderTarget string `json:"crossbuilder_target"`
 
 	BuildCrossbuildings bool   `json:"build_crossbuildings"`
 	CrossbuildersHost   string `json:"crossbuilders_host"`

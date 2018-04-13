@@ -50,7 +50,7 @@ func NewBuilderLinux(bs basictypes.BuildingSiteCtlI) (*BuilderLinux, error) {
 
 	self.crossbuild_params = make([]string, 0)
 
-	if info.ThisIsCrossbuilding { // Crossbuilder?
+	if info.ThisIsCrossbuilding() { // Crossbuilder?
 		host := info.Host
 		hostarch := info.HostArch
 
@@ -133,12 +133,12 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 		&basictypes.BuilderAction{"distr_source", self.BuilderActionDistrSource},
 	}
 
-	if info.ThisIsCrossbuilder || info.ThisIsSubarchBuilding {
-		if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() || info.ThisIsSubarchBuilding() { // TODO: simplify
+		if info.ThisIsCrossbuilder() {
 			fmt.Println("Crossbuilder building detected")
 		}
 
-		if info.ThisIsSubarchBuilding {
+		if info.ThisIsSubarchBuilding() {
 			fmt.Println("Subarch building detected")
 		}
 
@@ -344,12 +344,12 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 		return err
 	}
 
-	if info.ThisIsSubarchBuilding {
+	if info.ThisIsSubarchBuilding() {
 		install_hdr_path = path.Join(
 			self.bs.GetDIR_DESTDIR(), "usr", "multiarch", info.HostArch,
 		)
 
-	} else if info.ThisIsCrossbuilder {
+	} else if info.ThisIsCrossbuilder() {
 		install_hdr_path = path.Join(
 			self.bs.GetDIR_DESTDIR(), "usr", "crossbuilders",
 			info.CrossbuilderTarget,
@@ -390,8 +390,8 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 
 	user_action_required := false
 
-	sublog := "eeeeeeeeeeeeeeeeeeee"
-	if info.ThisIsCrossbuilder || info.ThisIsSubarchBuilding {
+	var sublog string
+	if info.ThisIsCrossbuilder() || info.ThisIsSubarchBuilding() {
 		sublog = "and pack this building site - package building completed'"
 	} else {
 		sublog = "and continue with 'distr_man+' action"

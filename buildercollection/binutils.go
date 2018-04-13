@@ -99,7 +99,7 @@ func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string)
 	// 	return nil, err
 	// }
 
-	if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() {
 
 		host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
 		if err != nil {
@@ -165,7 +165,7 @@ func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string)
 		}...,
 	)
 
-	if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() {
 		ret = append(ret, "--with-sysroot")
 	}
 

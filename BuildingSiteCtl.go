@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io"
 	"io/ioutil"
 	"os"
 	"path"
@@ -67,8 +66,8 @@ type BuildingSiteCtl struct {
 }
 
 func NewBuildingSiteCtl(
-	sys *System,
 	path string,
+	sys *System,
 	log *logger.Logger,
 ) (*BuildingSiteCtl, error) {
 
@@ -161,80 +160,6 @@ func (self *BuildingSiteCtl) Init() error {
 		}
 	}
 	return nil
-}
-
-// func (self *BuildingSiteCtl) ApplyHostHostArch(
-// 	host, hostarch string,
-// ) error {
-// 	i, err := self.ReadInfo()
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	i.Host = host
-// 	i.HostArch = hostarch
-//
-// 	err = self.WriteInfo(i)
-// 	if err != nil {
-// 		return err
-// 	}
-//
-// 	return nil
-// }
-
-func (self *BuildingSiteCtl) CopyInTarballs(filelist []string) error {
-
-	read_buffer := make([]byte, 2*1024*1024)
-
-	for _, i := range filelist {
-
-		b := path.Base(i)
-
-		new_full_path := path.Join(self.GetDIR_TARBALL(), b)
-
-		in_f, err := os.Open(i)
-		if err != nil {
-			return err
-		}
-		defer in_f.Close()
-
-		of_f, err := os.Create(new_full_path)
-		if err != nil {
-			return err
-		}
-		defer of_f.Close()
-
-		for {
-
-			count, err := in_f.Read(read_buffer)
-			if err != nil {
-				if err != nil {
-					if err == io.EOF {
-						break
-					} else {
-						return err
-					}
-				}
-			}
-
-			_, err = of_f.Write(read_buffer[:count])
-			if err != nil {
-				return err
-			}
-
-		}
-
-		stat, err := os.Stat(i)
-		if err != nil {
-			return err
-		}
-
-		os.Chtimes(new_full_path, stat.ModTime(), stat.ModTime())
-
-	}
-
-	return nil
-
 }
 
 func (self *BuildingSiteCtl) DetermineMainTarrball() (string, error) {
@@ -405,10 +330,6 @@ func (self *BuildingSiteCtl) IsBuildingSite() bool {
 	return true
 }
 
-func (self *BuildingSiteCtl) PrepareToRun() error {
-	return nil
-}
-
 func (self *BuildingSiteCtl) Run(targets []string) error {
 
 	l, err := self.CreateLogger("aipsetup bs run log", true)
@@ -567,6 +488,20 @@ func (self *BuildingSiteCtl) GetSystem() basictypes.SystemI {
 
 func (self *BuildingSiteCtl) GetBuildingSiteValuesCalculator() basictypes.BuildingSiteValuesCalculatorI {
 	return self.buildingsitevaluescalculator
+}
+
+func (self *BuildingSiteCtl) GetSources() error {
+	err := self.GetTarballs()
+	if err != nil {
+		return err
+	}
+
+	err = self.GetPatches()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (self *BuildingSiteCtl) GetTarballs() error {

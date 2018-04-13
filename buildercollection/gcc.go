@@ -51,7 +51,7 @@ func (self *BuilderGCC) DefineActions() (basictypes.BuilderActions, error) {
 		return nil, err
 	}
 
-	if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() {
 		ret = ret.Remove("build")
 		ret = ret.Remove("distribute")
 
@@ -105,7 +105,7 @@ func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
 		// # "binutils", "gdb", "glibc"
 	}
 
-	if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() {
 		NEEDED_PACKAGES = append(
 			NEEDED_PACKAGES,
 			[]string{"binutils", "gdb", "glibc"}...,
@@ -162,7 +162,7 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 	}
 
 	// 1
-	if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() {
 
 		prefix := path.Join(host_builders_dir, info.CrossbuilderTarget)
 
@@ -181,7 +181,7 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 	}
 
 	// 2
-	if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() {
 
 		sysroot := path.Join(host_builders_dir, info.CrossbuilderTarget)
 
@@ -228,7 +228,7 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 	}
 
 	// 3
-	if info.ThisIsCrossbuilding {
+	if info.ThisIsCrossbuilding() {
 		ret = append(
 			ret,
 			[]string{
@@ -252,7 +252,7 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 	}
 
 	// 4
-	if !info.ThisIsCrossbuilding && !info.ThisIsCrossbuilder {
+	if !info.ThisIsCrossbuilding() && !info.ThisIsCrossbuilder() {
 		host_dir, err := calc.CalculateHostDir()
 		if err != nil {
 			return nil, err

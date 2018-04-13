@@ -12,7 +12,6 @@ import (
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
-	"github.com/AnimusPEXUS/aipsetup/repository"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
@@ -26,46 +25,6 @@ func SectionAipsetupBuild() *cliapp.AppCmdNode {
 
 		Name: "build",
 		SubCmds: []*cliapp.AppCmdNode{
-
-			&cliapp.AppCmdNode{
-
-				Name: "mass",
-				SubCmds: []*cliapp.AppCmdNode{
-
-					&cliapp.AppCmdNode{
-						Callable: CmdAipsetupMassBuildInit,
-						Name:     "init",
-
-						AvailableOptions: cliapp.GetOptCheckList{
-							STD_ROOT_OPTION,
-							STD_OPTION_MASS_BUILD_CURRENT_HOST,
-							STD_OPTION_MASS_BUILD_FOR_HOST,
-							STD_OPTION_MASS_BUILD_FOR_HOSTARCHS,
-							STD_OPTION_MASS_BUILD_CROSSBUILDER,
-							STD_OPTION_MASS_BUILD_CROSSBUILDING,
-						},
-
-						MaxArgs:   0,
-						MinArgs:   0,
-						CheckArgs: true,
-					},
-
-					&cliapp.AppCmdNode{
-						Callable: CmdAipsetupMassBuildGetTars,
-						Name:     "get-tars",
-
-						AvailableOptions: cliapp.GetOptCheckList{
-							STD_ROOT_OPTION,
-							STD_NAMES_ARE_CATEGORIES,
-							STD_NAMES_ARE_GROUPS,
-						},
-
-						CheckArgs: true,
-						MinArgs:   1,
-						MaxArgs:   -1,
-					},
-				},
-			},
 
 			&cliapp.AppCmdNode{
 
@@ -188,8 +147,8 @@ func CmdAipsetupBuildInitSub01(
 	new_timestamp := basictypes.NewASPTimeStampFromCurrentTime()
 
 	bs_ctl, err := aipsetup.NewBuildingSiteCtl(
-		sys,
 		fmt.Sprintf("build/%s-%s-%s", buildinfoname, version, new_timestamp.String()),
+		sys,
 		log,
 	)
 
@@ -305,7 +264,7 @@ func CmdAipsetupBuildListActions(
 		return res
 	}
 
-	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".", log)
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(".", sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -340,7 +299,7 @@ func CmdAipsetupBuildRun(
 		return res
 	}
 
-	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".", log)
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(".", sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -513,7 +472,7 @@ func CmdAipsetupBuildPrintInfo(
 		return res
 	}
 
-	bs_ctl, err := aipsetup.NewBuildingSiteCtl(sys, ".", log)
+	bs_ctl, err := aipsetup.NewBuildingSiteCtl(".", sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -530,101 +489,4 @@ func CmdAipsetupBuildPrintInfo(
 	}
 
 	return &cliapp.AppResult{}
-}
-
-func CmdAipsetupMassBuildInit(
-	getopt_result *cliapp.GetOptResult,
-	adds *cliapp.AdditionalInfo,
-) *cliapp.AppResult {
-	log := adds.PassData.(*logger.Logger)
-
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(
-		getopt_result,
-		log,
-	)
-	if res != nil && res.Code != 0 {
-		return res
-	}
-
-	mbuild, err := aipsetup.NewMassBuilder(".", sys, log)
-	if err != nil {
-		return &cliapp.AppResult{Code: 10, Message: err.Error()}
-	}
-
-	current_host,
-		for_host, for_hostarchs,
-		crossbuilder, crossbuilding,
-		res := StdRoutineGetMassBuildOptions(getopt_result, sys)
-
-	mbuild_info := &basictypes.MassBuilderInfo{
-		Host:                for_host,
-		HostArchs:           for_hostarchs,
-		BuildCrossbuilders:  crossbuilder != "",
-		CrossbuildersTarget: crossbuilder,
-		BuildCrossbuildings: crossbuilding != "",
-		CrossbuildersHost:   crossbuilding,
-		InitiatedByHost:     current_host,
-	}
-
-	err = mbuild.WriteInfo(mbuild_info)
-	if err != nil {
-		return &cliapp.AppResult{Code: 10, Message: err.Error()}
-	}
-
-	return nil
-}
-
-func CmdAipsetupMassBuildGetTars(
-	getopt_result *cliapp.GetOptResult,
-	adds *cliapp.AdditionalInfo,
-) *cliapp.AppResult {
-	log := adds.PassData.(*logger.Logger)
-
-	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
-	if res != nil && res.Code != 0 {
-		return res
-	}
-
-	mbuild, err := aipsetup.NewMassBuilder(".", sys, log)
-	if err != nil {
-		return &cliapp.AppResult{
-			Code:    11,
-			Message: err.Error(),
-		}
-	}
-
-	repo, err := repository.NewRepository(sys, log)
-	if err != nil {
-		return &cliapp.AppResult{
-			Code:    11,
-			Message: err.Error(),
-		}
-	}
-
-	get_by_name_func := func(name string) error {
-
-		t, err := repo.DetermineNewestStableTarball(name)
-		if err != nil {
-			return err
-		}
-
-		err = repo.CopyTarballToDir(name, t, path.Join(mbuild.TarballsPath()))
-		if err != nil {
-			return err
-		}
-		return nil
-	}
-
-	res = MiscDoSomethingForGroupsCategoriesOrLists(
-		sys,
-		getopt_result,
-		adds,
-		get_by_name_func,
-	)
-	if res != nil && res.Code != 0 {
-		return res
-	}
-
-	return nil
-
 }

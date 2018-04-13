@@ -66,7 +66,7 @@ func (self *BuilderGlibc) DefineActions() (basictypes.BuilderActions, error) {
 		return nil, err
 	}
 
-	if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() {
 		ret = ret.Remove("build")
 		ret = ret.Remove("distribute")
 
@@ -107,7 +107,7 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 		with_headers = path.Join(t, basictypes.DIRNAME_INCLUDE)
 	}
 
-	if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() {
 
 		host_builders_dir, err := calc.CalculateHostCrossbuildersDir()
 		if err != nil {
@@ -182,7 +182,7 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 	// 	ret = append(ret, "--with-sysroot")
 	// }
 
-	if info.ThisIsCrossbuilder {
+	if info.ThisIsCrossbuilder() {
 		ret = append(
 			ret,
 			[]string{
