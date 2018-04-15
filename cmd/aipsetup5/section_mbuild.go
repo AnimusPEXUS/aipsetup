@@ -38,8 +38,8 @@ func SectionAipsetupMBuild() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
-				Callable: CmdAipsetupMassBuildGetTars,
-				Name:     "get-tars",
+				Callable: CmdAipsetupMassBuildGetSrc,
+				Name:     "get-src",
 
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
@@ -108,7 +108,7 @@ func CmdAipsetupMassBuildInit(
 	return nil
 }
 
-func CmdAipsetupMassBuildGetTars(
+func CmdAipsetupMassBuildGetSrc(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
