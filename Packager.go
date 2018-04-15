@@ -557,7 +557,10 @@ func (self Packager) Pack(log *logger.Logger) error {
 		return err
 	}
 
-	pack_dir := path.Join(self.site.path, "..", "pack")
+	pack_dir, err := self.site.GetOuterAspsDir()
+	if err != nil {
+		return err
+	}
 
 	ts_str, err := basictypes.NewASPTimeStampFromString(info.PackageTimeStamp)
 	if err != nil {

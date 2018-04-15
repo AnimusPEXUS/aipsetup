@@ -146,7 +146,7 @@ func (self *BuildingSiteCtl) WriteInfo(info *basictypes.BuildingSiteInfo) error 
 }
 
 func (self *BuildingSiteCtl) Init() error {
-	fmt.Println("Going to initiate directory", self.path)
+	self.log.Info("Going to initiate directory: " + self.path)
 	for _, i := range basictypes.DIR_ALL {
 		j := filepath.Join(self.path, i)
 		f, err := os.Open(j)
@@ -365,7 +365,7 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 		for _, i := range targets {
 			if _, ok := actions.Get(i); !ok {
 				actions_missing = true
-				fmt.Println("missing requested target actions:", i)
+				self.log.Error("missing requested target actions: " + i)
 			}
 		}
 		if actions_missing {
@@ -486,8 +486,46 @@ func (self *BuildingSiteCtl) GetSystem() basictypes.SystemI {
 	return self.sys
 }
 
+func (self *BuildingSiteCtl) GetLog() *logger.Logger {
+	return self.log
+}
+
 func (self *BuildingSiteCtl) GetBuildingSiteValuesCalculator() basictypes.BuildingSiteValuesCalculatorI {
 	return self.buildingsitevaluescalculator
+}
+
+func (self *BuildingSiteCtl) GetPath() string {
+	return self.path
+}
+
+func (self *BuildingSiteCtl) GetOuterTarballsDir() (string, error) {
+	info, err := self.ReadInfo()
+	if err != nil {
+		return "", err
+	}
+
+	if info.TarballsDir == "" {
+		return "", nil
+	}
+
+	if strings.HasPrefix(info.TarballsDir, "/") {
+		return info.TarballsDir, nil
+	}
+
+	return path.Join(self.path, info.TarballsDir), nil
+}
+
+func (self *BuildingSiteCtl) GetOuterAspsDir() (string, error) {
+	info, err := self.ReadInfo()
+	if err != nil {
+		return "", err
+	}
+
+	if strings.HasPrefix(info.AspsDir, "/") {
+		return info.AspsDir, nil
+	}
+
+	return path.Join(self.path, info.AspsDir), nil
 }
 
 func (self *BuildingSiteCtl) GetSources() error {
@@ -512,12 +550,17 @@ func (self *BuildingSiteCtl) GetTarballs() error {
 	}
 
 	from_path := ""
-	if bs_info.GetTarballsFromDir {
-		from_path = bs_info.TarballsDir
-		if !strings.HasPrefix(from_path, "/") {
-			from_path, err = filepath.Abs(path.Join(self.path, from_path))
-			if err != nil {
-				return err
+
+	if outer_tarballs_dir, err := self.GetOuterTarballsDir(); err != nil {
+		return err
+	} else {
+		if outer_tarballs_dir != "" {
+			from_path = bs_info.TarballsDir
+			if !strings.HasPrefix(from_path, "/") {
+				from_path, err = filepath.Abs(path.Join(self.path, from_path))
+				if err != nil {
+					return err
+				}
 			}
 		}
 	}
@@ -577,26 +620,38 @@ func (self *BuildingSiteCtl) GetTarballs() error {
 		all_needed_stats_found := true
 
 		for _, i := range pkg_list {
+			self.log.Info("Searching tarball of " + i + " package")
 			needed_stat_found := false
 			for _, j := range stats {
 
-				linfo_name, _, err := pkginfodb.DetermineTarballPackageInfoSingle(j.Name())
+				matches, err := pkginfodb.CheckTarballMatchesInfo(j.Name(), i)
 				if err != nil {
 					return err
 				}
 
-				if linfo_name == i {
+				if matches {
+					fs := path.Join(from_path, j.Name())
+					ts := path.Join(tar_dir, j.Name())
+					self.log.Info("  copy")
+					self.log.Info("    " + fs)
+					self.log.Info("    to " + ts)
 					err := filetools.CopyWithInfo(
-						path.Join(from_path, j.Name()),
-						path.Join(tar_dir, j.Name()),
+						fs,
+						ts,
 						self.log,
 					)
 					if err != nil {
 						break
 					}
 					needed_stat_found = true
+					break
 				}
 
+			}
+			if needed_stat_found {
+				self.log.Info("  found")
+			} else {
+				self.log.Error("  not found")
 			}
 			if !needed_stat_found {
 				all_needed_stats_found = false

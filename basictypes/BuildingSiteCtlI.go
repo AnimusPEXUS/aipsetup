@@ -1,5 +1,9 @@
 package basictypes
 
+import (
+	"github.com/AnimusPEXUS/utils/logger"
+)
+
 type BuildingSiteCtlI interface {
 	GetDIR_TARBALL() string
 	GetDIR_SOURCE() string
@@ -15,8 +19,13 @@ type BuildingSiteCtlI interface {
 
 	DetermineMainTarrball() (string, error)
 
+	GetPath() string
 	GetSystem() SystemI
+	GetLog() *logger.Logger
 	GetBuildingSiteValuesCalculator() BuildingSiteValuesCalculatorI
+
+	GetOuterTarballsDir() (string, error)
+	GetOuterAspsDir() (string, error)
 
 	GetSources() error
 	GetTarballs() error

@@ -93,13 +93,11 @@ func CmdAipsetupMassBuildInit(
 		res := StdRoutineGetMassBuildOptions(getopt_result, sys)
 
 	mbuild_info := &basictypes.MassBuilderInfo{
-		Host:                for_host,
-		HostArchs:           for_hostarchs,
-		BuildCrossbuilders:  crossbuilder != "",
-		CrossbuilderTarget:  crossbuilder,
-		BuildCrossbuildings: crossbuilding != "",
-		CrossbuildersHost:   crossbuilding,
-		InitiatedByHost:     current_host,
+		Host:               for_host,
+		HostArchs:          for_hostarchs,
+		CrossbuilderTarget: crossbuilder,
+		CrossbuildersHost:  crossbuilding,
+		InitiatedByHost:    current_host,
 	}
 
 	err = mbuild.WriteInfo(mbuild_info)

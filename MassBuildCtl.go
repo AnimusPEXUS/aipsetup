@@ -132,6 +132,7 @@ func (self *MassBuildCtl) PerformMassBuilding() (
 	for _, i := range tarballs {
 		bi := path.Base(i)
 		for _, arch := range archs {
+			self.log.Info("========= building " + i + " for " + host + "-" + arch)
 			res := self.fullBuildTarball(bi, host, arch)
 
 			var vret map[string][]string
@@ -253,7 +254,10 @@ func (self *MassBuildCtl) createBuildingSite(
 		CrossbuilderTarget: mb_info.CrossbuilderTarget,
 		CrossbuildersHost:  mb_info.CrossbuildersHost,
 		TarballsDir:        self.GetTarballsPath(),
+		AspsDir:            self.GetAspsPath(),
 	}
+
+	new_bs_info.SetInfoLailalo50()
 
 	err = ret.WriteInfo(new_bs_info)
 	if err != nil {
@@ -310,12 +314,12 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 		self.log.Info("  using existing: " + bs.path)
 	}
 
-	bs_actions, err := bs.ListActions()
+	err = bs.GetSources()
 	if err != nil {
 		return err
 	}
 
-	err = bs.GetSources()
+	bs_actions, err := bs.ListActions()
 	if err != nil {
 		return err
 	}
@@ -333,28 +337,6 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 
 	return nil
 }
-
-// // returns 2 maps and 1 error:
-// // 1st map - successfuly built tarball names devided by
-// // 2nd list -      failed built tarball names
-// func (self *MassBuildCtl) performMassBuildingH(pth, host string) (
-// 	map[string][]string,
-// 	map[string][]string,
-// 	error,
-// ) {
-// 	return nil
-// }
-//
-// // returns 2 slices and 1 error:
-// // 1st slice - successfuly built tarball names
-// // 2nd slice -      failed built tarball names
-// func (self *MassBuildCtl) performMassBuildingHA(pth, host, hostarch string) (
-// 	[]string,
-// 	[]string,
-// 	error,
-// ) {
-// 	return nil, nil, nil
-// }
 
 func (self *MassBuildCtl) tarballsList() ([]string, error) {
 	pth := self.GetTarballsPath()

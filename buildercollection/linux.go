@@ -135,14 +135,14 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 
 	if info.ThisIsCrossbuilder() || info.ThisIsSubarchBuilding() { // TODO: simplify
 		if info.ThisIsCrossbuilder() {
-			fmt.Println("Crossbuilder building detected")
+			self.bs.GetLog().Info("Crossbuilder building detected")
 		}
 
 		if info.ThisIsSubarchBuilding() {
-			fmt.Println("Subarch building detected")
+			self.bs.GetLog().Info("Subarch building detected")
 		}
 
-		fmt.Println(" - only headers will be prepared")
+		self.bs.GetLog().Info(" - only headers will be prepared")
 
 		ret = basictypes.BuilderActions{
 			&basictypes.BuilderAction{"dst_cleanup", self.std_builder.BuilderActionDstCleanup},

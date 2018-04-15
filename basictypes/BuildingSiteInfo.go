@@ -30,8 +30,8 @@ type BuildingSiteInfo struct {
 	PackageStatus    string `json:"package_status"`
 	PackageTimeStamp string `json:"package_timestamp"`
 
-	GetTarballsFromDir bool   `json:"get_tarballs_from_dir"`
-	TarballsDir        string `json:"tarballs_dir"`
+	TarballsDir string `json:"tarballs_dir"`
+	AspsDir     string `json:"asps_dir"`
 
 	//	Sources []string `json:"sources"`
 
