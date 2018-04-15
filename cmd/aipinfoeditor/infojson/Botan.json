@@ -7,34 +7,18 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
-  "Tags": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
   "Category": "c_a_s/libs",
-  "Groups": [
-    ""
-  ],
+  "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "Botan",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "",
-  "TarballProviderArguments": [
-    ""
-  ],
+  "TarballProviderArguments": [],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

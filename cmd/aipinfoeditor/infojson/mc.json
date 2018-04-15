@@ -7,18 +7,10 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
   "Tags": [
     "github_hosted",
     "gnome_project",
@@ -33,9 +25,7 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "mc",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
     "git",

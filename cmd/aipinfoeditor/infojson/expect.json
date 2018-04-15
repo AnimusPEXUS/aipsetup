@@ -8,17 +8,12 @@
   "Deprecated": false,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [
-    ""
+    "tcl",
+    "tk"
   ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
   "Tags": [
     "group:core0",
     "sf_hosted:expect"
@@ -29,9 +24,7 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "expect",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [
     "expect"

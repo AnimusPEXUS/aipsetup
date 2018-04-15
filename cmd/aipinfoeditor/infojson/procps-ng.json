@@ -7,18 +7,10 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
   "Tags": [
     "group:core0",
     "sf_hosted:procps-ng"
@@ -30,9 +22,7 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "procps-ng",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
     "git",

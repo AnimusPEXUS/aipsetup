@@ -7,34 +7,18 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
-  "Tags": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
   "Category": "gnu",
-  "Groups": [
-    ""
-  ],
+  "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "clisp-2.30-i686-unknown-cygwin32",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "",
-  "TarballProviderArguments": [
-    ""
-  ],
+  "TarballProviderArguments": [],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

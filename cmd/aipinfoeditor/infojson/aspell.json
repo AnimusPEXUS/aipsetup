@@ -7,30 +7,18 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
   "Tags": [
     "gnu_project"
   ],
   "Category": "gnu/aspell",
-  "Groups": [
-    ""
-  ],
+  "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "aspell",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/aspell"

@@ -7,21 +7,11 @@
   "NonInstallable": false,
   "Deprecated": true,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
-  "Tags": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
   "Category": "kernel",
   "Groups": [
     "core0"

@@ -7,30 +7,18 @@
   "NonInstallable": false,
   "Deprecated": true,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
   "Tags": [
     "group:core1"
   ],
   "Category": "non_categorized",
-  "Groups": [
-    ""
-  ],
+  "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "tree",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "http://mama.indstate.edu/users/ice/tree/src/"

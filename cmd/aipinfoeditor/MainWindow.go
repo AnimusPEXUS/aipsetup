@@ -16,6 +16,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/cmd/aipinfoeditor/ui"
 	"github.com/AnimusPEXUS/utils/tags"
+	"github.com/AnimusPEXUS/utils/textlist"
 	"github.com/gotk3/gotk3/glib"
 	"github.com/gotk3/gotk3/gtk"
 	"github.com/gotk3/gotk3/pango"
@@ -713,29 +714,29 @@ func (self *UIMainWindow) _IterToPackageInfo(iter *gtk.TreeIter) (
 		case 8:
 			ret.PrimaryInstallOnly = vv.(bool)
 		case 9:
-			ret.BuildPkgDeps = strings.Split(vv.(string), "\n")
+			ret.BuildPkgDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 10:
-			ret.BuildDeps = strings.Split(vv.(string), "\n")
+			ret.BuildDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 11:
-			ret.SODeps = strings.Split(vv.(string), "\n")
+			ret.SODeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 12:
-			ret.RunTimeDeps = strings.Split(vv.(string), "\n")
+			ret.RunTimeDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 13:
-			ret.Tags = tags.NewFromString(vv.(string)).Values()
+			ret.Tags = textlist.RemoveZeroLengthItems(tags.NewFromString(vv.(string)).Values())
 		case 14:
 			ret.Category = vv.(string)
 		case 15:
-			ret.Groups = strings.Split(vv.(string), "\n")
+			ret.Groups = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 16:
 			ret.TarballFileNameParser = vv.(string)
 		case 17:
 			ret.TarballName = vv.(string)
 		case 18:
-			ret.TarballFilters = strings.Split(vv.(string), "\n")
+			ret.TarballFilters = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 19:
 			ret.TarballProvider = vv.(string)
 		case 20:
-			ret.TarballProviderArguments = strings.Split(vv.(string), "\n")
+			ret.TarballProviderArguments = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 21:
 			ret.TarballStabilityClassifier = vv.(string)
 		case 22:

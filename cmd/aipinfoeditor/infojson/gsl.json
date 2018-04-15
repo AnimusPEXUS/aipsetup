@@ -7,18 +7,10 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
   "Tags": [
     "gnu_project"
   ],
@@ -28,9 +20,7 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "gsl",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/gsl"

@@ -7,18 +7,10 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
   "Tags": [
     "gnu_project"
   ],
@@ -29,9 +21,7 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "gnutls",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "gnupg.org",
   "TarballProviderArguments": [
     "https://www.gnupg.org/ftp/gcrypt/gnutls"

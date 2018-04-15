@@ -7,18 +7,10 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
   "Tags": [
     "gnome_project",
     "group:core0"
@@ -31,9 +23,7 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "pkg-config",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://pkg-config.freedesktop.org/releases/"

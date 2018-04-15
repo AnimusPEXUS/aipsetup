@@ -8,17 +8,16 @@
   "Deprecated": false,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [
-    ""
+    "glibc",
+    "cloog",
+    "gpm",
+    "mpc",
+    "mpfr",
+    "binutils"
   ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
   "Tags": [
     "gnu_project",
     "group:cross"
@@ -29,9 +28,7 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "binutils",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/binutils"

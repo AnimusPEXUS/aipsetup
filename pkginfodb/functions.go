@@ -223,3 +223,16 @@ func ListPackagesByCategories(categories []string) ([]string, error) {
 
 	return ret, nil
 }
+
+func CheckTarballMatchesInfo(
+	tarballfilename string,
+	infoname string,
+) (bool, error) {
+
+	res_name, _, err := DetermineTarballPackageInfoSingle(tarballfilename)
+	if err != nil {
+		return false, err
+	}
+
+	return res_name == infoname, nil
+}

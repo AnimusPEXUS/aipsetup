@@ -7,21 +7,11 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [
-    ""
-  ],
-  "BuildDeps": [
-    ""
-  ],
-  "SODeps": [
-    ""
-  ],
-  "RunTimeDeps": [
-    ""
-  ],
-  "Tags": [
-    ""
-  ],
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
   "Category": "non_categorized",
   "Groups": [
     "crypt",
@@ -29,9 +19,7 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "libksba",
-  "TarballFilters": [
-    ""
-  ],
+  "TarballFilters": [],
   "TarballProvider": "gnupg.org",
   "TarballProviderArguments": [
     "https://www.gnupg.org/ftp/gcrypt/libksba/"
