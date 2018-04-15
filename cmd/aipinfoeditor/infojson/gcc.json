@@ -10,9 +10,10 @@
   "BuildPkgDeps": [
     "glibc",
     "cloog",
-    "gpm",
+    "gmp",
     "mpc",
     "mpfr",
+    "isl",
     "binutils"
   ],
   "BuildDeps": [],
