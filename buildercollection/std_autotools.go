@@ -157,7 +157,7 @@ func (self *BuilderStdAutotools) BuilderActionPrimaryExtract(
 	}
 
 	err = a_tools.Extract(
-		main_tarball,
+		path.Join(self.bs.GetDIR_TARBALL(), main_tarball),
 		self.bs.GetDIR_SOURCE(),
 		path.Join(self.bs.GetDIR_TEMP(), "primary_tarball"),
 		true,
