@@ -242,6 +242,11 @@ func (self Packager) DestDirChecksum(log *logger.Logger) error {
 			}
 
 			for _, i := range files {
+
+				if i.Mode()&os.ModeSymlink != 0 {
+					continue
+				}
+
 				drilljn := path.Join(dir, i.Name())
 				drillj := path.Join("/", drill, i.Name())
 

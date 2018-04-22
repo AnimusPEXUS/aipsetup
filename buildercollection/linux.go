@@ -9,6 +9,7 @@ import (
 	"path"
 	"path/filepath"
 	"sort"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildingtools"
@@ -131,6 +132,7 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 
 		// &basictypes.BuilderAction{"distr_man", self.BuilderActionDistrMan},
 		&basictypes.BuilderAction{"distr_source", self.BuilderActionDistrSource},
+		&basictypes.BuilderAction{"distr_symlink", self.BuilderActionDistrSymLink},
 	}
 
 	if info.ThisIsCrossbuilder() || info.ThisIsSubarchBuilding() { // TODO: simplify
@@ -394,7 +396,7 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 	if info.ThisIsCrossbuilder() || info.ThisIsSubarchBuilding() {
 		sublog = "and pack this building site - package building completed'"
 	} else {
-		sublog = "and continue with 'distr_man+' action"
+		sublog = "and continue with 'distr_source+' action"
 		user_action_required = true
 	}
 
@@ -548,6 +550,38 @@ func (self *BuilderLinux) BuilderActionDistrSource(
 	// 		return err
 	// 	}
 	// }
+	return nil
+}
+
+func (self *BuilderLinux) BuilderActionDistrSymLink(
+	log *logger.Logger,
+) error {
+
+	dst_usr_src_dir := path.Join(self.bs.GetDIR_DESTDIR(), "usr", "src")
+	dst_usr_src_dir_linux := ""
+
+	dst_usr_src_dir_files, err := ioutil.ReadDir(dst_usr_src_dir)
+	if err != nil {
+		return err
+	}
+
+	for _, i := range dst_usr_src_dir_files {
+		if i.IsDir() {
+			inb := path.Base(i.Name())
+			if strings.HasPrefix(inb, "linux-") {
+				dst_usr_src_dir_linux = inb
+			}
+		}
+	}
+
+	if dst_usr_src_dir_linux == "" {
+		return errors.New("not found linux-* directory with sources in usr/src")
+	}
+
+	err = os.Symlink(dst_usr_src_dir_linux, path.Join(dst_usr_src_dir, "linux"))
+	if err != nil {
+		return err
+	}
 
 	return nil
 }

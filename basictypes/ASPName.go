@@ -67,7 +67,7 @@ func (self *ASPName) String() string {
 	}
 
 	ret := fmt.Sprintf(
-		"(%s)-(%s)-(%s)-(%s)-(%s)%s%s%s",
+		"(%s)-(%s)-(%s)-(%s)-(%s)%s%s",
 		self.Name,
 		self.Version,
 		self.Status,
