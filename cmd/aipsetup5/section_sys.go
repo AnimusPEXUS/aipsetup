@@ -40,12 +40,25 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
-				Name:     "install",
+				Name:             "get-asp",
+				Callable:         CmdAipsetupSysGetASP,
+				ShortDescription: "get asps for named package from repository",
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+					STD_OPTION_NAMED_GET_ASP_FOR_HOST,
+					STD_OPTION_NAMED_GET_ASP_FOR_HOSTARCH,
+					STD_OPTION_NAMED_GET_ASP_CROSSBUILDER,
+				},
+				CheckArgs: true,
+				MinArgs:   1,
+				MaxArgs:   -1,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:     "install-asp",
 				Callable: CmdAipsetupSysInstall,
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
-					STD_OPTION_NAMED_INSTALLATION_FOR_HOST,
-					STD_OPTION_NAMED_INSTALLATION_FOR_HOSTARCH,
 					// STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
 				},
 				CheckArgs: true,
@@ -54,32 +67,15 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
-				Name:     "remove",
+				Name:     "remove-asp",
 				Callable: CmdAipsetupSysRemove,
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
-					STD_OPTION_NAMED_INSTALLATION_FOR_HOST,
-					STD_OPTION_NAMED_INSTALLATION_FOR_HOSTARCH,
 					// STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
 				},
 				CheckArgs: true,
-				MinArgs:   -1,
-				MaxArgs:   -1,
-			},
-
-			&cliapp.AppCmdNode{
-				Name:     "reduce-to",
-				Callable: CmdAipsetupSysReduceTo,
-				Description: "Reduces named installed asp to named installed asp. " +
-					"Second argument may be a 'leatest' keyword. " +
-					"If named asp is last left in system or is already latest - " +
-					"nothing is done and 0 code returned.",
-				AvailableOptions: cliapp.GetOptCheckList{
-					STD_ROOT_OPTION,
-				},
-				CheckArgs: true,
-				MinArgs:   2,
-				MaxArgs:   2,
+				MinArgs:   1,
+				MaxArgs:   1,
 			},
 
 			&cliapp.AppCmdNode{
@@ -139,13 +135,18 @@ func CmdAipsetupSysListAsps(
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
 
-	sort.Strings(res_lst)
-
+	res_lst_str := make([]string, 0)
 	for _, i := range res_lst {
+		res_lst_str = append(res_lst_str, i.String())
+	}
+
+	sort.Strings(res_lst_str)
+
+	for _, i := range res_lst_str {
 		fmt.Println(i)
 	}
 
-	return &cliapp.AppResult{}
+	return nil
 }
 
 func CmdAipsetupSysAllNames(
@@ -176,7 +177,7 @@ func CmdAipsetupSysAllNames(
 		fmt.Println(i)
 	}
 
-	return &cliapp.AppResult{}
+	return nil
 }
 
 func CmdAipsetupSysNameASPs(
@@ -203,13 +204,18 @@ func CmdAipsetupSysNameASPs(
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
 
-	sort.Strings(res_lst)
-
+	res_lst_str := make([]string, 0)
 	for _, i := range res_lst {
+		res_lst_str = append(res_lst_str, i.String())
+	}
+
+	sort.Strings(res_lst_str)
+
+	for _, i := range res_lst_str {
 		fmt.Println(i)
 	}
 
-	return &cliapp.AppResult{}
+	return nil
 }
 
 func CmdAipsetupSysASPFiles(
@@ -250,7 +256,7 @@ func CmdAipsetupSysASPFiles(
 		fmt.Printf(print_fmt, ii, i)
 	}
 
-	return &cliapp.AppResult{}
+	return nil
 }
 
 func CmdAipsetupSysInstall(
@@ -266,24 +272,23 @@ func CmdAipsetupSysInstall(
 		return res
 	}
 
-	// host, hostarch, target, res := StdRoutineGetInstallationHHaT(getopt_result, sys)
-	// if res != nil && res.Code != 0 {
-	// 	return res
-	// }
-	//
-	// names := getopt_result.Args
-	panic("TODO")
+	errors := false
 
-	err := sys.ASPs.InstallASP("dummy")
-
-	if err != nil {
-		return &cliapp.AppResult{
-			Code:    10,
-			Message: err.Error(),
+	for _, i := range getopt_result.Args {
+		res := sys.ASPs.InstallASP(i)
+		if res != nil {
+			errors = true
 		}
 	}
 
-	return &cliapp.AppResult{}
+	if errors {
+		return &cliapp.AppResult{
+			Code:    10,
+			Message: "some packages was installed with errors",
+		}
+	}
+
+	return nil
 }
 
 func CmdAipsetupSysRemove(
@@ -304,9 +309,8 @@ func CmdAipsetupSysRemove(
 	// }
 	//
 	// names := getopt_result.Args
-	panic("TODO")
 
-	err := sys.ASPs.RemoveASP(nil, false, []string{})
+	err := sys.ASPs.RemoveASP(nil, false, false, nil)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    10,
@@ -314,10 +318,10 @@ func CmdAipsetupSysRemove(
 		}
 	}
 
-	return &cliapp.AppResult{}
+	return nil
 }
 
-func CmdAipsetupSysReduceTo(
+func CmdAipsetupSysGetASP(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {

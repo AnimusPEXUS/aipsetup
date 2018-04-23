@@ -160,7 +160,7 @@ func CmdAipsetupRepoUp(
 		}
 	}
 
-	return &cliapp.AppResult{}
+	return nil
 
 }
 
@@ -227,7 +227,7 @@ func CmdAipsetupRepoPut(
 		return &cliapp.AppResult{Code: 12}
 	}
 
-	return &cliapp.AppResult{}
+	return nil
 }
 
 func CmdAipsetupRepoGetSrc(

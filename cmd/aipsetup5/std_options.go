@@ -22,7 +22,7 @@ var (
 	}
 
 	STD_OPTION_BUILD_CURRENT_HOST = &cliapp.GetOptCheckListItem{
-		Name: "--build-current-host",
+		Name: "--current-host",
 		Description: "Override current host. " +
 			"Default is current host.",
 		HaveDefault:   true,
@@ -32,7 +32,7 @@ var (
 	}
 
 	STD_OPTION_BUILD_FOR_HOST = &cliapp.GetOptCheckListItem{
-		Name: "--build-for-host",
+		Name: "--host",
 		Description: "Select main name of system which will run package. " +
 			"Default is current host.",
 		HaveDefault:   true,
@@ -42,7 +42,7 @@ var (
 	}
 
 	STD_OPTION_BUILD_FOR_HOSTARCH = &cliapp.GetOptCheckListItem{
-		Name: "--build-for-hostarch",
+		Name: "--hostarch",
 		Description: "Select subsystem (subarch) name which will run package. " +
 			"Default is equal to value calculated (or given to) with " +
 			"--build-for-host.",
@@ -53,7 +53,7 @@ var (
 	}
 
 	STD_OPTION_BUILD_CROSSBUILDER = &cliapp.GetOptCheckListItem{
-		Name: "--build-crossbuilder",
+		Name: "--crossbuilder",
 		Description: "Configure and build this package to be a " +
 			"crossbuilder for named system. " +
 			"Default is empty - disabling this mode",
@@ -64,7 +64,7 @@ var (
 	}
 
 	STD_OPTION_BUILD_CROSSBUILDING = &cliapp.GetOptCheckListItem{
-		Name: "--build-crossbuilding",
+		Name: "--crossbuilding",
 		Description: "Configure this package to be built with crosscompiler " +
 			"and use crosscompiler to build it. " +
 			"Default is empty - disabling this mode",
@@ -81,10 +81,10 @@ var (
 	STD_OPTION_MASS_BUILD_FOR_HOST = STD_OPTION_BUILD_FOR_HOST
 
 	STD_OPTION_MASS_BUILD_FOR_HOSTARCHS = &cliapp.GetOptCheckListItem{
-		Name: "--build-for-hostarchs",
+		Name: "--hostarchs",
 		Description: "Select subsystems (subarchs) names which will run packages. " +
 			"Default is use aipsetup.system.ini to take all subarchs for host pointed " +
-			"or calculated for --build-for-host.",
+			"or calculated for --host.",
 		HaveDefault:   true,
 		Default:       "",
 		IsRequired:    false,
@@ -97,38 +97,41 @@ var (
 
 	// -------------------------
 
-	STD_OPTION_NAMED_INSTALLATION_FOR_HOST = &cliapp.GetOptCheckListItem{
-		Name: "--install-for-host",
+	STD_OPTION_NAMED_GET_ASP_FOR_HOST = &cliapp.GetOptCheckListItem{
+		Name: "--host",
 		Description: "Select hosting system. " +
-			"Default is to get value from aipsetup5.system.ini",
+			"Default is current host",
 		HaveDefault:   true,
 		Default:       "",
 		IsRequired:    false,
 		MustHaveValue: true,
 	}
 
-	STD_OPTION_NAMED_INSTALLATION_FOR_HOSTARCH = &cliapp.GetOptCheckListItem{
-		Name: "--install-for-hostarch",
+	STD_OPTION_NAMED_GET_ASP_FOR_HOSTARCH = &cliapp.GetOptCheckListItem{
+		Name: "--hostarch",
 		Description: "Select hosting subarch system. " +
-			"Default is to use subarch values for named host from aipsetup5.system.ini. ",
+			"Default is equal to current host + " +
+			"all it's subarchs found already installed in system.",
 		HaveDefault:   true,
 		Default:       "",
 		IsRequired:    false,
 		MustHaveValue: true,
 	}
 
-	STD_OPTION_NAMED_INSTALLATION_CROSSBUILDER = &cliapp.GetOptCheckListItem{
-		Name: "--install-crossbuilder",
+	STD_OPTION_NAMED_GET_ASP_CROSSBUILDER = &cliapp.GetOptCheckListItem{
+		Name: "--crossbuilder",
 		Description: "Select crossbuilder for which system you wish to install. " +
 			"No default value. You must select one manually.",
 		HaveDefault:   false,
 		Default:       "",
 		IsRequired:    false,
 		MustHaveValue: true,
+
+		// -------------------------
 	}
 
 	STD_OPTION_ASP_LIST_FILTER_HOST = &cliapp.GetOptCheckListItem{
-		Name: "--show-only-host",
+		Name: "--host",
 		Description: "Value is exact name. Show only selected. " +
 			"default is empty value, which shows all",
 		HaveDefault:   true,
@@ -138,7 +141,7 @@ var (
 	}
 
 	STD_OPTION_ASP_LIST_FILTER_HOSTARCH = &cliapp.GetOptCheckListItem{
-		Name: "--show-only-hostarchs",
+		Name: "--hostarch",
 		Description: "Value is exact name. Show only selected. " +
 			"default is empty value, which shows all",
 		HaveDefault:   true,
@@ -148,7 +151,7 @@ var (
 	}
 
 	STD_OPTION_ASP_LIST_FILTER_CROSSBUILDER = &cliapp.GetOptCheckListItem{
-		Name: "--show-only-crossbuilder",
+		Name: "--crossbuilder",
 		Description: "Value is exact name. Show only selected. " +
 			"default is empty value, which shows all",
 		HaveDefault:   true,
@@ -191,7 +194,7 @@ func StdRoutineGetRootOptionAndSystemObject(
 ) {
 
 	root = "/"
-	ret = &cliapp.AppResult{}
+	ret = nil
 
 	if root_opt, ok := StdRoutineGetRootOption(getopt_result); ok {
 		root = root_opt

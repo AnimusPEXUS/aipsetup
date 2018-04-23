@@ -15,12 +15,23 @@ type RepositoryI interface {
 	PerformPackageTarballsUpdate(name string) error
 	PerformPackagePatchesUpdate(name string) error
 	GetPackageASPsPath(name string) string
-	// CreateCacheObjectForPackage(name string) (*cache01.CacheDir, error)
+
 	PerformDownload(package_name string, as_filename string, uri string) error
 	PrepareTarballCleanupListing(package_name string, files_to_keep []string) ([]string, error)
-	DeleteFile(package_name string, filename string) error
-	DeleteFiles(package_name string, filename []string) error
+
+	DeleteTarballFile(package_name string, filename string) error
+	DeleteTarballFiles(package_name string, filename []string) error
+
+	ListLocalTarballFiles(package_name string) ([]string, error)
 	ListLocalTarballs(package_name string, done_only bool) ([]string, error)
-	ListLocalFiles(package_name string) ([]string, error)
+
+	DeleteASPFile(package_name string, filename string) error
+	DeleteASPFiles(package_name string, filename []string) error
+
+	ListLocalASPFiles(package_name string) ([]string, error)
+	ListLocalASPs(package_name string) ([]string, error)
+
 	CopyTarballToDir(package_name string, tarball string, outdir string) error
+	CopyPatchesToDir(package_name string, outdir string) error
+	CopyASPToDir(package_name string, asp string, outdir string) error
 }

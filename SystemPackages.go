@@ -15,38 +15,37 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/utils/set"
 	"github.com/ulikunitz/xz"
 )
 
 type SystemPackages struct {
-	Sys *System
+	sys *System
 }
 
 func NewSystemPackages(system *System) *SystemPackages {
-
-	var (
-		ret *SystemPackages
-	)
-
-	ret = new(SystemPackages)
-	ret.Sys = system
-
-	return ret
+	self := new(SystemPackages)
+	self.sys = system
+	return self
 }
 
-func (self *SystemPackages) UninstallName(filename string) int {
-	return 1
-}
+// func (self *SystemPackages) Uninstall(filename string) error {
+// 	return 1
+// }
+//
+// func (self *SystemPackages) Install(filename string) error {
+// 	return 1
+// }
 
-func (self *SystemPackages) ListAllInstalledASPs() ([]string, error) {
-	pth := self.Sys.GetInstalledASPDir()
+func (self *SystemPackages) ListAllInstalledASPs() ([]*basictypes.ASPName, error) {
+	pth := self.sys.GetInstalledASPDir()
 	files, err := ioutil.ReadDir(pth)
 	if err != nil {
 		return nil, err
 	}
 
-	ret := make([]string, 0)
+	ret := make([]*basictypes.ASPName, 0)
 
 	for _, i := range files {
 		n := path.Base(i.Name())
@@ -56,32 +55,25 @@ func (self *SystemPackages) ListAllInstalledASPs() ([]string, error) {
 				fmt.Errorf("Can't parse %s inside installed asps dir\n", i.Name())
 				continue
 			}
-			ret = append(ret, nn.String())
+			ret = append(ret, nn)
 		}
 	}
-
-	sort.Strings(ret)
 
 	return ret, nil
 }
 
 func (self *SystemPackages) ListFilteredInstalledASPs(
 	host, hostarch string,
-) ([]string, error) {
+) ([]*basictypes.ASPName, error) {
 
 	complete_list, err := self.ListAllInstalledASPs()
 	if err != nil {
 		return nil, err
 	}
 
-	asps := make([]string, 0)
+	asps := make([]*basictypes.ASPName, 0)
 
-	for _, i := range complete_list {
-
-		parsed_asp_name, err := basictypes.NewASPNameFromString(i)
-		if err != nil {
-			return nil, errors.New("could not parse string as ASP name: " + i)
-		}
+	for _, parsed_asp_name := range complete_list {
 
 		if host != "" && parsed_asp_name.Host != host {
 			continue
@@ -91,7 +83,7 @@ func (self *SystemPackages) ListFilteredInstalledASPs(
 			continue
 		}
 
-		asps = append(asps, i)
+		asps = append(asps, parsed_asp_name)
 	}
 
 	return asps, nil
@@ -103,24 +95,16 @@ func (self *SystemPackages) ListInstalledPackageNames(
 
 	res, err := self.ListFilteredInstalledASPs(host, hostarch)
 	if err != nil {
-		return make([]string, 0),
+		return nil,
 			errors.New(
 				"Error listing installed package names: " + err.Error(),
 			)
 	}
 
-	names := []string{}
+	names := make([]string, 0)
 
 searching_missing_names:
-	for _, i := range res {
-
-		parsed_asp_name, err := basictypes.NewASPNameFromString(i)
-		if err != nil {
-			return make([]string, 0),
-				errors.New(
-					"Can't parse package name: " + i,
-				)
-		}
+	for _, parsed_asp_name := range res {
 
 		for _, j := range names {
 			if parsed_asp_name.Name == j {
@@ -136,13 +120,13 @@ searching_missing_names:
 func (self *SystemPackages) ListInstalledPackageNameASPs(
 	name string,
 	host, hostarch string,
-) ([]string, error) {
+) ([]*basictypes.ASPName, error) {
 
-	ret := []string{}
+	ret := make([]*basictypes.ASPName, 0)
 
 	res, err := self.ListFilteredInstalledASPs(host, hostarch)
 	if err != nil {
-		return make([]string, 0), errors.New(
+		return nil, errors.New(
 			"Error listing installed package names: " + err.Error(),
 		)
 	}
@@ -150,24 +134,16 @@ func (self *SystemPackages) ListInstalledPackageNameASPs(
 search:
 	for _, i := range res {
 
-		parsed_asp_name, err := basictypes.NewASPNameFromString(i)
-		if err != nil {
-			return make([]string, 0),
-				errors.New(
-					"Can't parse package name: " + i,
-				)
-		}
-
-		if parsed_asp_name.Name != name {
+		if i.Name != name {
 			continue search
 		}
 
 		for _, j := range ret {
-			if i == j {
+			if i.Name == j.Name {
 				continue search
 			}
 		}
-		ret = append(ret, parsed_asp_name.String())
+		ret = append(ret, i)
 	}
 
 	return ret, nil
@@ -177,7 +153,7 @@ func (self *SystemPackages) GenASPFileListPath(
 	aspname *basictypes.ASPName,
 ) (string, error) {
 	return path.Join(
-		self.Sys.GetInstalledASPDir(),
+		self.sys.GetInstalledASPDir(),
 		aspname.String(),
 	) + ".xz", nil
 }
@@ -278,7 +254,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 		basictypes.DIRNAME_LIBX32,
 	} {
 		res, err := filepath.Glob(
-			path.Join(self.Sys.Root(), "/", "multihost", "*", i),
+			path.Join(self.sys.Root(), "/", "multihost", "*", i),
 		)
 		if err != nil {
 			return err
@@ -293,7 +269,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 		basictypes.DIRNAME_LIBX32,
 	} {
 		res, err := filepath.Glob(
-			path.Join(self.Sys.Root(), "/", "multihost", "*", i),
+			path.Join(self.sys.Root(), "/", "multihost", "*", i),
 		)
 		if err != nil {
 			return err
@@ -309,7 +285,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 	// for _, i := range []string{DIRNAME_LIB, DIRNAME_LIB64, DIRNAME_LIB32, DIRNAME_LIBX32} {
 	// 	lib_dirs = append(
 	// 		lib_dirs,
-	// 		path.Join(self.Sys.Root(), "multiarch", "*", i),
+	// 		path.Join(self.sys.Root(), "multiarch", "*", i),
 	// 	)
 	// }
 
@@ -325,7 +301,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 	} {
 		res, err := filepath.Glob(
 			path.Join(
-				self.Sys.Root(),
+				self.sys.Root(),
 				"/",
 				"multihost",
 				"*",
@@ -361,13 +337,13 @@ func (self *SystemPackages) RemoveASP_DestDir(
 	deleting_files:
 		for _, i := range res {
 
-			i_joined := path.Join(self.Sys.Root(), "/", i)
+			i_joined := path.Join(self.sys.Root(), "/", i)
 			i_joined_dir := path.Dir(i_joined)
 
 			// exclude shared objects
 			// TODO: todo
 			for _, j := range lib_dirs {
-				j_joined := path.Join(self.Sys.Root(), "/", j)
+				j_joined := path.Join(self.sys.Root(), "/", j)
 				if _t, err := filepath.Abs(j); err != nil {
 					return err
 				} else {
@@ -417,7 +393,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 
 					d = path.Dir(d)
 
-					if d == "/" || d == self.Sys.Root() {
+					if d == "/" || d == self.sys.Root() {
 						break
 					}
 				}
@@ -438,22 +414,22 @@ func (self *SystemPackages) RemoveASP_FileLists(
 	for _, i := range [][3]string{
 		{
 			"./06.LISTS/DESTDIR.sha512.xz",
-			self.Sys.GetInstalledASPSumsDir(),
+			self.sys.GetInstalledASPSumsDir(),
 			"package's check sums",
 		},
 		{
 			"./05.BUILD_LOGS.tar.xz",
-			self.Sys.GetInstalledASPBuildLogsDir(),
+			self.sys.GetInstalledASPBuildLogsDir(),
 			"package's buildlogs",
 		},
 		{
 			"./06.LISTS/DESTDIR.dep_c.xz",
-			self.Sys.GetInstalledASPDepsDir(),
+			self.sys.GetInstalledASPDepsDir(),
 			"package's dependencies listing",
 		},
 		{
 			"./06.LISTS/DESTDIR.lst.xz",
-			self.Sys.GetInstalledASPDir(),
+			self.sys.GetInstalledASPDir(),
 			"package's file list",
 		},
 	} {
@@ -483,18 +459,34 @@ func (self *SystemPackages) RemoveASP_FileLists(
 func (self *SystemPackages) RemoveASP(
 	aspname *basictypes.ASPName,
 	unregister_only bool,
-	exclude_files []string,
+	called_by_reduce bool,
+	reduce_exclude_files []string,
 ) error {
 
-	var err error
+	pkginfo, err := pkginfodb.Get(aspname.Name)
+	if err != nil {
+		return err
+	}
+
+	if !called_by_reduce && !pkginfo.Removable {
+		return errors.New("this package is not removable")
+	}
+
+	if pkginfo.Reducible && !called_by_reduce {
+		return errors.New(
+			"package is reducible. so can be removed only by reducing doe " +
+				"to installing new one",
+		)
+	}
 
 	if !unregister_only {
-		err = self.RemoveASP_DestDir(aspname, exclude_files)
+		err = self.RemoveASP_DestDir(aspname, reduce_exclude_files)
 		if err != nil {
 			return err
 		}
 	}
 
+	// unregister must be final step
 	err = self.RemoveASP_FileLists(aspname)
 	if err != nil {
 		return err
@@ -511,6 +503,13 @@ func (self *SystemPackages) ReduceASP(
 	reduce_what_copy := make([]*basictypes.ASPName, 0)
 	reduce_what_copy = append(reduce_what_copy, reduce_what...)
 
+	for _, i := range reduce_what {
+		if i.Name != reduce_to.Name {
+			// this is programming error, so here is a panic
+			panic("reduce_to.Name is different to names in reduce_what")
+		}
+	}
+
 	if yes, err := self.IsASPInstalled(reduce_to); err != nil {
 		return err
 	} else if !yes {
@@ -525,12 +524,13 @@ func (self *SystemPackages) ReduceASP(
 		}
 	}
 
-	for i := range reduce_what_copy {
-		reduce_what_i := reduce_what_copy[i]
-		// TODO: something strange. check this
-		if reduce_what_i.String() == reduce_to.String() {
+	for i := len(reduce_what_copy) - 1; i != -1; i-- {
+		if reduce_what_copy[i].IsEqual(reduce_to) {
 			reduce_what_copy =
-				append(reduce_what_copy[0:i], reduce_what_copy[:i+1]...)
+				append(
+					reduce_what_copy[:i],
+					reduce_what_copy[:i+1]...,
+				)
 		}
 	}
 
@@ -541,7 +541,7 @@ func (self *SystemPackages) ReduceASP(
 
 	errors_while_reducing_asps := make([]*basictypes.ASPName, 0)
 	for _, i := range reduce_what_copy {
-		err := self.RemoveASP(i, false, fiba)
+		err := self.RemoveASP(i, false, true, fiba)
 		if err != nil {
 			// error should be reported, but process should continue.
 			// in the end function should exit with error
@@ -585,22 +585,22 @@ func (self *SystemPackages) InstallASP_FileLists(
 		for _, i := range [][3]string{
 			{
 				"./06.LISTS/DESTDIR.lst.xz",
-				self.Sys.GetInstalledASPDir(),
+				self.sys.GetInstalledASPDir(),
 				"package's file list",
 			},
 			{
 				"./06.LISTS/DESTDIR.sha512.xz",
-				self.Sys.GetInstalledASPSumsDir(),
+				self.sys.GetInstalledASPSumsDir(),
 				"package's check sums",
 			},
 			{
 				"./05.BUILD_LOGS.tar.xz",
-				self.Sys.GetInstalledASPBuildLogsDir(),
+				self.sys.GetInstalledASPBuildLogsDir(),
 				"package's buildlogs",
 			},
 			{
 				"./06.LISTS/DESTDIR.dep_c.xz",
-				self.Sys.GetInstalledASPDepsDir(),
+				self.sys.GetInstalledASPDepsDir(),
 				"package's dependencies listing",
 			},
 		} {
@@ -713,7 +713,7 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 				}
 
 				new_file_path := path.Join(
-					self.Sys.Root(),
+					self.sys.Root(),
 					"/",
 					xztar_head.Name[1:],
 				)
@@ -754,13 +754,10 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 					}
 					new_file.Close()
 
-					/* NOTE: this should be uncommented when this functionality is
-								 ready to work with root
 					err = os.Chown(new_file_path, 0, 0)
 					if err != nil {
 						return err
 					}
-					*/
 
 					err = os.Chmod(new_file_path, 0755)
 					if err != nil {
@@ -866,14 +863,18 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 	return nil
 }
 
-func (self *SystemPackages) InstallASP(filename string) error {
+func (self *SystemPackages) InstallASP(
+	filename string,
+) error {
 
 	parsed, err := basictypes.NewASPNameFromString(filename)
 	if err != nil {
 		return err
 	}
 
-	fmt.Println("parse result\n", parsed.StringD())
+	// TODO: add checks for ASP integrity
+
+	self.sys.log.Info("parse result\n" + parsed.StringD())
 
 	host := parsed.Host
 	hostarch := parsed.HostArch
@@ -881,6 +882,25 @@ func (self *SystemPackages) InstallASP(filename string) error {
 
 	if host == "" || hostarch == "" {
 		return errors.New("Invalid value for host or arch")
+	}
+
+	pkginfo, err := pkginfodb.Get(parsed.Name)
+	if err != nil {
+		return err
+	}
+
+	if pkginfo.Deprecated {
+		return errors.New("package " + parsed.Name + " is deprecated")
+	}
+
+	if pkginfo.NonInstallable {
+		return errors.New("package " + parsed.Name + " is non installable")
+	}
+
+	if pkginfo.PrimaryInstallOnly {
+		if host != hostarch {
+			return errors.New("package " + parsed.Name + " is only for primary install")
+		}
 	}
 
 	err = self.InstallASP_FileLists(filename, parsed)
@@ -891,6 +911,24 @@ func (self *SystemPackages) InstallASP(filename string) error {
 	err = self.InstallASP_DestDir(filename)
 	if err != nil {
 		return err
+	}
+
+	if pkginfo.Reducible {
+		lst, err := self.ListFilteredInstalledASPs(host, hostarch)
+		if err != nil {
+			return err
+		}
+
+		for i := len(lst); i != -1; i-- {
+			if parsed.IsEqual(lst[i]) {
+				lst = append(lst[:i], lst[i+1:]...)
+			}
+		}
+
+		err = self.ReduceASP(parsed, lst)
+		if err != nil {
+			return err
+		}
 	}
 
 	return nil

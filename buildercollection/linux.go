@@ -3,7 +3,6 @@ package buildercollection
 import (
 	"errors"
 	"fmt"
-	"io"
 	"io/ioutil"
 	"os"
 	"path"
@@ -472,17 +471,7 @@ func (self *BuilderLinux) BuilderActionDistrMan(
 		base := path.Base(i)
 		log.Info(fmt.Sprintf("copying %s", base))
 
-		des_file, err := os.Create(path.Join(self.dst_man_dir, base))
-		if err != nil {
-			return err
-		}
-
-		src_file, err := os.Open(i)
-		if err != nil {
-			return err
-		}
-
-		_, err = io.Copy(des_file, src_file)
+		err = filetools.CopyWithInfo(i, path.Join(self.dst_man_dir, base), nil)
 		if err != nil {
 			return err
 		}

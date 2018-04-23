@@ -66,5 +66,5 @@ func CmdAipsetupSysConfigWriteExample(
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
 
-	return &cliapp.AppResult{}
+	return nil
 }

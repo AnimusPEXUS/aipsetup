@@ -189,5 +189,5 @@ func CmdAipsetupBuildPrintInfo(
 		}
 	}
 
-	return &cliapp.AppResult{}
+	return nil
 }

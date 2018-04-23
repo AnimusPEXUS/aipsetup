@@ -355,7 +355,7 @@ func (self *ProviderHttps) PerformUpdate() error {
 		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
-	err = self.repo.DeleteFiles(self.pkg_name, lst)
+	err = self.repo.DeleteTarballFiles(self.pkg_name, lst)
 	if err != nil {
 		return err
 	}

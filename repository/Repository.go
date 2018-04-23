@@ -4,7 +4,6 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"errors"
-	"io"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -81,10 +80,16 @@ func (self *Repository) GetTarballDoneFilePath(
 	return self.GetTarballFilePath(package_name, as_filename) + ".done"
 }
 
-func (self *Repository) GetTarballFilePath(package_name, as_filename string) string {
-	as_filename = path.Base(as_filename)
+func (self *Repository) GetTarballFilePath(package_name, filename string) string {
+	filename = path.Base(filename)
 	tarballs_dir := self.GetPackageTarballsPath(package_name)
-	return path.Join(tarballs_dir, as_filename)
+	return path.Join(tarballs_dir, filename)
+}
+
+func (self *Repository) GetASPsFilePath(package_name, filename string) string {
+	filename = path.Base(filename)
+	asps_dir := self.GetPackageASPsPath(package_name)
+	return path.Join(asps_dir, filename)
 }
 
 func (self *Repository) PerformPackageSourcesUpdate(name string) error {
@@ -270,10 +275,29 @@ func (self *Repository) DetermineNewestStableTarball(package_name string) (strin
 	return ret, nil
 }
 
+func (self *Repository) ListLocalTarballFiles(package_name string) ([]string, error) {
+	ret := make([]string, 0)
+
+	pth := self.GetPackageTarballsPath(package_name)
+
+	files, err := ioutil.ReadDir(pth)
+	if err != nil {
+		return ret, err
+	}
+
+	for _, i := range files {
+		if !i.IsDir() {
+			ret = append(ret, i.Name())
+		}
+	}
+
+	return ret, nil
+}
+
 func (self *Repository) ListLocalTarballs(package_name string, done_only bool) ([]string, error) {
 	ret := make([]string, 0)
 
-	res, err := self.ListLocalFiles(package_name)
+	res, err := self.ListLocalTarballFiles(package_name)
 	if err != nil {
 		return ret, err
 	}
@@ -315,10 +339,10 @@ func (self *Repository) ListLocalTarballs(package_name string, done_only bool) (
 	return ret, nil
 }
 
-func (self *Repository) ListLocalFiles(package_name string) ([]string, error) {
+func (self *Repository) ListLocalASPFiles(package_name string) ([]string, error) {
 	ret := make([]string, 0)
 
-	pth := self.GetPackageTarballsPath(package_name)
+	pth := self.GetPackageASPsPath(package_name)
 
 	files, err := ioutil.ReadDir(pth)
 	if err != nil {
@@ -328,6 +352,24 @@ func (self *Repository) ListLocalFiles(package_name string) ([]string, error) {
 	for _, i := range files {
 		if !i.IsDir() {
 			ret = append(ret, i.Name())
+		}
+	}
+
+	return ret, nil
+}
+
+func (self *Repository) ListLocalASPs(package_name string) ([]string, error) {
+
+	res, err := self.ListLocalASPFiles(package_name)
+	if err != nil {
+		return nil, err
+	}
+
+	ret := make([]string, 0)
+
+	for _, i := range res {
+		if _, err := basictypes.NewASPNameFromString(i); err == nil {
+			ret = append(ret, i)
 		}
 	}
 
@@ -401,7 +443,7 @@ func (self *Repository) PrepareTarballCleanupListing(
 	return to_delete, nil
 }
 
-func (self *Repository) DeleteFile(
+func (self *Repository) DeleteTarballFile(
 	package_name string,
 	filename string,
 ) error {
@@ -415,9 +457,32 @@ func (self *Repository) DeleteFile(
 	return ret
 }
 
-func (self *Repository) DeleteFiles(package_name string, filename []string) error {
+func (self *Repository) DeleteTarballFiles(package_name string, filename []string) error {
 	for _, i := range filename {
-		if err := self.DeleteFile(package_name, i); err != nil {
+		if err := self.DeleteTarballFile(package_name, i); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (self *Repository) DeleteASPFile(
+	package_name string,
+	filename string,
+) error {
+	var ret error
+	tarballs_dir := self.GetPackageASPsPath(package_name)
+	filename = path.Base(filename)
+	full_path := path.Join(tarballs_dir, filename)
+	if _, err := os.Stat(full_path); err == nil {
+		ret = os.Remove(full_path)
+	}
+	return ret
+}
+
+func (self *Repository) DeleteASPFiles(package_name string, filename []string) error {
+	for _, i := range filename {
+		if err := self.DeleteASPFile(package_name, i); err != nil {
 			return err
 		}
 	}
@@ -503,17 +568,11 @@ func (self *Repository) CopyTarballToDir(
 		return err
 	}
 
-	out_file_o, err := os.Create(out_file)
-	if err != nil {
-		return err
-	}
-
-	src_file_o, err := os.Open(src_file_path)
-	if err != nil {
-		return err
-	}
-
-	_, err = io.Copy(out_file_o, src_file_o)
+	err = filetools.CopyWithInfo(
+		src_file_path,
+		out_file,
+		nil,
+	)
 	if err != nil {
 		return err
 	}
@@ -537,6 +596,32 @@ func (self *Repository) CopyPatchesToDir(
 		filetools.CopyWithInfo,
 	)
 
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (self *Repository) CopyASPToDir(package_name string, asp string, outdir string) error {
+
+	src_file_path := self.GetASPsFilePath(package_name, asp)
+	out_file := path.Join(outdir, asp)
+
+	if _, err := os.Stat(src_file_path); err != nil {
+		return err
+	}
+
+	err := os.MkdirAll(outdir, 0700)
+	if err != nil {
+		return err
+	}
+
+	err = filetools.CopyWithInfo(
+		src_file_path,
+		out_file,
+		nil,
+	)
 	if err != nil {
 		return err
 	}

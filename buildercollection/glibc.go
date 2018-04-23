@@ -2,7 +2,6 @@ package buildercollection
 
 import (
 	"errors"
-	"io"
 	"os"
 	"os/exec"
 	"path"
@@ -10,6 +9,7 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -291,19 +291,11 @@ func (self *BuilderGlibc) BuilderActionDistribute_01_3(
 	}
 
 	for _, i := range gres {
-		fromf, err := os.Open(i)
-		if err != nil {
-			return err
-		}
-		tof, err := os.Create(path.Join(dest_lib_dir, path.Base(i)))
-		if err != nil {
-			fromf.Close()
-			return err
-		}
-		_, err = io.Copy(tof, fromf)
 
-		fromf.Close()
-		tof.Close()
+		err = filetools.CopyWithInfo(i, path.Join(dest_lib_dir, path.Base(i)), nil)
+		if err != nil {
+			return err
+		}
 
 		if err != nil {
 			return err
