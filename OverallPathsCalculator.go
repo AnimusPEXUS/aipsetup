@@ -14,7 +14,7 @@ type OverallPathsCalculator struct {
 // }
 
 func (self OverallPathsCalculator) CalculateMultihostDir(root string) string {
-	return path.Join(root, basictypes.LAILALO_ROOT_MULTIHOST_DIRNAME)
+	return path.Join(root, basictypes.LILITH_ROOT_MULTIHOST_DIRNAME)
 }
 
 func (self OverallPathsCalculator) CalculateHostDir(root, host string) string {
@@ -26,7 +26,7 @@ func (self OverallPathsCalculator) CalculateHostMultiarchDir(
 ) string {
 	return path.Join(
 		self.CalculateHostDir(root, host),
-		basictypes.LAILALO_MULTIHOST_MULTIARCH_DIRNAME,
+		basictypes.LILITH_MULTIHOST_MULTIARCH_DIRNAME,
 	)
 }
 
@@ -42,7 +42,7 @@ func (self OverallPathsCalculator) CalculateHostCrossbuildersDir(
 ) string {
 	return path.Join(
 		self.CalculateHostDir(root, host),
-		basictypes.LAILALO_MULTIHOST_CROSSBULDERS_DIRNAME,
+		basictypes.LILITH_MULTIHOST_CROSSBULDERS_DIRNAME,
 	)
 }
 

@@ -151,7 +151,7 @@ func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string)
 			"--enable-lto",
 			"--enable-ld",
 
-			// # NOTE: no google software in Lailalo
+			// # NOTE: no google software in Lilith distro
 			"--disable-gold",
 			"--without-gold",
 

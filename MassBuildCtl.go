@@ -257,7 +257,7 @@ func (self *MassBuildCtl) createBuildingSite(
 		AspsDir:            self.GetAspsPath(),
 	}
 
-	new_bs_info.SetInfoLailalo50()
+	new_bs_info.SetInfoLilith50()
 
 	err = ret.WriteInfo(new_bs_info)
 	if err != nil {

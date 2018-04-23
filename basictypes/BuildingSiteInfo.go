@@ -38,8 +38,8 @@ type BuildingSiteInfo struct {
 	// MainTarballInfo *PackageInfo `json:"main_tarball_info"`
 }
 
-func (self *BuildingSiteInfo) SetInfoLailalo50() {
-	self.SystemTitle = "LAILALO"
+func (self *BuildingSiteInfo) SetInfoLilith50() {
+	self.SystemTitle = "Lilith"
 	self.SystemVersion = "5.0"
 }
 

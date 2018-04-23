@@ -144,7 +144,7 @@ func CmdAipsetupRepoUp(
 		adds,
 		get_by_name_func,
 	)
-	if err2.Code != 0 {
+	if err2 != nil && err2.Code != 0 {
 		return err2
 	}
 
