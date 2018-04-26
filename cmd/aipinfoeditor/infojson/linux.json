@@ -4,6 +4,7 @@
   "BuilderName": "linux",
   "Removable": false,
   "Reducible": true,
+  "AutoReduce": false,
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": true,

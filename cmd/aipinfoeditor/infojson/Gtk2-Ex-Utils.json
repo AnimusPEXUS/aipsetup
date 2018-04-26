@@ -4,6 +4,7 @@
   "BuilderName": "perl_mod",
   "Removable": true,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": false,
   "Deprecated": true,
   "PrimaryInstallOnly": false,

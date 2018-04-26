@@ -4,6 +4,7 @@
   "BuilderName": "panda3d",
   "Removable": true,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,

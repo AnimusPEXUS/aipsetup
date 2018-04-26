@@ -4,6 +4,7 @@
   "BuilderName": "",
   "Removable": false,
   "Reducible": false,
+  "AutoReduce": true,
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,

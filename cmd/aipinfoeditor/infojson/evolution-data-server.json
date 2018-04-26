@@ -4,6 +4,7 @@
   "BuilderName": "evolution_data_server",
   "Removable": true,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,

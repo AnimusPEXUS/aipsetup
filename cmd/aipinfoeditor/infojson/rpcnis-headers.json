@@ -4,6 +4,7 @@
   "BuilderName": "rpcnis_headers",
   "Removable": true,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": true,
   "Deprecated": true,
   "PrimaryInstallOnly": false,

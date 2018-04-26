@@ -4,6 +4,7 @@
   "BuilderName": "orbit2",
   "Removable": true,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": false,
   "Deprecated": true,
   "PrimaryInstallOnly": false,

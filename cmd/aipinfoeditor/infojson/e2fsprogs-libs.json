@@ -4,6 +4,7 @@
   "BuilderName": "e2fsprogs",
   "Removable": true,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": true,
   "Deprecated": false,
   "PrimaryInstallOnly": false,

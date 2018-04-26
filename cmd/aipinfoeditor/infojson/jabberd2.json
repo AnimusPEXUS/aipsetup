@@ -4,6 +4,7 @@
   "BuilderName": "jabberd2",
   "Removable": true,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,

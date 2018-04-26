@@ -4,6 +4,7 @@
   "BuilderName": "std",
   "Removable": false,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,

@@ -4,6 +4,7 @@
   "BuilderName": "gst_plugins_base",
   "Removable": true,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,

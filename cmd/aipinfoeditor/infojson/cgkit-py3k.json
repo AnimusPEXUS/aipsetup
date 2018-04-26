@@ -4,6 +4,7 @@
   "BuilderName": "cgkit_py3k",
   "Removable": true,
   "Reducible": true,
+  "AutoReduce": true,
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
