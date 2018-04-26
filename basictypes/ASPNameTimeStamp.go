@@ -127,7 +127,7 @@ func (self ASPNameTimeStamp) GetTime() time.Time {
 
 func (self ASPNameTimeStamp) String() string {
 	return fmt.Sprintf(
-		"%04d%02d%02d.%02d%02d%02d.%d",
+		"%04d%02d%02d.%02d%02d%02d.%09d",
 		self.Year(),
 		self.Month(),
 		self.Day(),

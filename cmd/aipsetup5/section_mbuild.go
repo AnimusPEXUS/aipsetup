@@ -142,6 +142,8 @@ func CmdAipsetupMassBuildGetSrc(
 			return err
 		}
 
+		log.Info(path.Base(t))
+
 		err = repo.CopyTarballToDir(name, t, path.Join(mbuild.GetTarballsPath()))
 		if err != nil {
 			return err

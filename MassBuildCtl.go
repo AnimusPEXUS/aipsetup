@@ -190,11 +190,13 @@ func (self *MassBuildCtl) findBuildingSite(
 			pth := path.Join(self.path, i.Name())
 			nbs, err := NewBuildingSiteCtl(pth, self.sys, self.log)
 			if err != nil {
+				self.sys.log.Error(err.Error())
 				continue
 			}
 
 			nbs_info, err := nbs.ReadInfo()
 			if err != nil {
+				self.sys.log.Error(err.Error())
 				continue
 			}
 

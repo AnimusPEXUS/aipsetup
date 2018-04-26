@@ -345,12 +345,7 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 		return err
 	}
 
-	if info.ThisIsSubarchBuilding() {
-		install_hdr_path = path.Join(
-			self.bs.GetDIR_DESTDIR(), "usr", "multiarch", info.HostArch,
-		)
-
-	} else if info.ThisIsCrossbuilder() {
+	if info.ThisIsCrossbuilder() {
 		install_hdr_path = path.Join(
 			self.bs.GetDIR_DESTDIR(), "usr", "crossbuilders",
 			info.CrossbuilderTarget,
@@ -394,6 +389,7 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 	var sublog string
 	if info.ThisIsCrossbuilder() || info.ThisIsSubarchBuilding() {
 		sublog = "and pack this building site - package building completed'"
+		user_action_required = true
 	} else {
 		sublog = "and continue with 'distr_source+' action"
 		user_action_required = true
@@ -402,7 +398,7 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 	log.Info(
 		"\n" +
 			"-----------------\n" +
-			"Now You have to create asm symlink in include dir\n" +
+			"Now You have to create asm symlink inside include dir\n" +
 			sublog + "\n" +
 			"-----------------",
 	)

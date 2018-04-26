@@ -370,7 +370,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 
 			dirs.Add(path.Dir(i_joined))
 
-			self.sys.log.Info(" Eracing:  " + i_joined)
+			self.sys.log.Info(" Removing: " + i_joined)
 			err := os.Remove(i_joined)
 			if err != nil {
 				return err
@@ -387,7 +387,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 				for {
 
 					if err := os.Remove(d); err == nil {
-						fmt.Println(" -  ", d)
+						self.sys.log.Info(" Removing: " + d)
 						removed++
 					}
 
@@ -782,11 +782,11 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 
 					directories.Add(new_file_dir)
 
-					fmt.Printf(
-						" + %s\n  s -> %s\n",
-						new_file_path,
-						xztar_head.Linkname,
-					)
+					self.sys.log.Info(" Symlinking")
+
+					self.sys.log.Info(fmt.Sprintf("  %s", new_file_path))
+					self.sys.log.Info("  ->")
+					self.sys.log.Info(fmt.Sprintf("  %s", xztar_head.Linkname))
 
 					_, err = os.Lstat(new_file_path)
 
@@ -895,27 +895,31 @@ func (self *SystemPackages) InstallASP(
 	}
 
 	if pkginfo.Reducible {
+		if pkginfo.AutoReduce {
+			self.sys.log.Info(
+				"package is reducable and autoreduce is enabled.. reducing..",
+			)
 
-		lst, err := self.ListInstalledPackageNameASPs(parsed.Name, host, hostarch)
-		if err != nil {
-			return err
-		}
-
-		for i := len(lst) - 1; i != -1; i-- {
-			if parsed.IsEqual(lst[i]) {
-				lst = append(lst[:i], lst[i+1:]...)
+			lst, err := self.ListInstalledPackageNameASPs(parsed.Name, host, hostarch)
+			if err != nil {
+				return err
 			}
-		}
 
-		// self.sys.log.Info("list of packages which could get deleted")
+			for i := len(lst) - 1; i != -1; i-- {
+				if parsed.IsEqual(lst[i]) {
+					lst = append(lst[:i], lst[i+1:]...)
+				}
+			}
 
-		// for _, i := range lst {
-		// 	fmt.Println(i.String())
-		// }
-
-		err = self.ReduceASP(parsed, lst)
-		if err != nil {
-			return err
+			err = self.ReduceASP(parsed, lst)
+			if err != nil {
+				return err
+			}
+		} else {
+			self.sys.log.Warning(
+				"This package is reducable, but autoreduce is disabled. " +
+					"You'll have to command reduction of older installations separately.",
+			)
 		}
 	}
 

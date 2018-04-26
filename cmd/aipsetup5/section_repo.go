@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"path"
 	"sort"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
@@ -257,6 +258,7 @@ func CmdAipsetupRepoGetSrc(
 			return err
 		}
 
+		log.Info(path.Base(t))
 		err = repo.CopyTarballToDir(name, t, ".")
 		if err != nil {
 			return err
