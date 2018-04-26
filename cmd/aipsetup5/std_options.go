@@ -205,105 +205,6 @@ func StdRoutineGetRootOptionAndSystemObject(
 	return
 }
 
-func StdRoutineGetBuildingHostHostArch(
-	getopt_result *cliapp.GetOptResult,
-	system *aipsetup.System,
-) (string, string, *cliapp.AppResult) {
-
-	var (
-		err      error
-		host     = ""
-		hostarch = ""
-	)
-
-	if t := getopt_result.GetLastNamedRetOptItem("--build-for-host"); t != nil {
-		if t.Value != "" {
-			host = t.Value
-		} else {
-			host, err = system.Host()
-			if err != nil {
-				return "", "", &cliapp.AppResult{Code: 22, Message: err.Error()}
-			}
-		}
-	}
-
-	if t := getopt_result.GetLastNamedRetOptItem("--build-for-hostarch"); t != nil {
-		if t.Value != "" {
-			hostarch = t.Value
-		} else {
-			hostarch = host
-		}
-	}
-
-	if _, err := systemtriplet.NewFromString(host); err != nil {
-		return "", "", &cliapp.AppResult{
-			Code:    21,
-			Message: "Can't parse --build-for-host as system name triplet",
-		}
-	}
-
-	if _, err := systemtriplet.NewFromString(hostarch); err != nil {
-		return "", "", &cliapp.AppResult{
-			Code:    21,
-			Message: "Can't parse --build-for-hostarch as system name triplet",
-		}
-	}
-
-	return host, hostarch, nil
-}
-
-func StdRoutineGetInstallationHostHostArch(
-	getopt_result *cliapp.GetOptResult,
-	system *aipsetup.System,
-) (string, []string, *cliapp.AppResult) {
-
-	var (
-		err      error
-		host     = ""
-		hostarch = []string{}
-	)
-
-	if t := getopt_result.GetLastNamedRetOptItem("--install-for-host"); t != nil {
-		if t.Value != "" {
-			host = t.Value
-		} else {
-			host, err = system.Host()
-			if err != nil {
-				return "", nil, &cliapp.AppResult{Code: 22, Message: err.Error()}
-			}
-		}
-	}
-
-	if t := getopt_result.GetLastNamedRetOptItem("--install-for-hostarch"); t != nil {
-		if t.Value != "" {
-			hostarch = strings.Split(t.Value, ",")
-		} else {
-			hostarch, err = system.Archs()
-			if err != nil {
-				return "", nil, &cliapp.AppResult{Code: 22, Message: err.Error()}
-			}
-		}
-	}
-
-	if _, err := systemtriplet.NewFromString(host); err != nil {
-		return "", nil, &cliapp.AppResult{
-			Code:    21,
-			Message: "Can't parse --install-for-host as system name triplet",
-		}
-	}
-
-	for _, i := range hostarch {
-		if _, err := systemtriplet.NewFromString(i); err != nil {
-			return "", nil, &cliapp.AppResult{
-				Code:    21,
-				Message: "Can't parse --install-for-hostarch as system name triplet",
-			}
-		}
-	}
-
-	return host, hostarch, nil
-}
-
 func StdRoutineGetASPListFiltersHostHostArch(
 	getopt_result *cliapp.GetOptResult,
 	system *aipsetup.System,
@@ -314,29 +215,46 @@ func StdRoutineGetASPListFiltersHostHostArch(
 		hostarch = ""
 	)
 
-	if t := getopt_result.GetLastNamedRetOptItem("--show-only-host"); t != nil {
+	if t := getopt_result.GetLastNamedRetOptItem(STD_OPTION_ASP_LIST_FILTER_HOST.Name); t != nil {
 		if t.Value != "" {
 			host = t.Value
 		}
 	}
 
-	if t := getopt_result.GetLastNamedRetOptItem("--show-only-hostarchs"); t != nil {
+	if t := getopt_result.GetLastNamedRetOptItem(STD_OPTION_ASP_LIST_FILTER_HOSTARCH.Name); t != nil {
 		if t.Value != "" {
 			hostarch = t.Value
 		}
 	}
 
-	if _, err := systemtriplet.NewFromString(host); err != nil {
+	if hostarch != "" && host == "" {
 		return "", "", &cliapp.AppResult{
-			Code:    21,
-			Message: "Can't parse --show-only-host as system name triplet",
+			Code: 22,
+			Message: STD_OPTION_ASP_LIST_FILTER_HOSTARCH.Name +
+				" can't be specified without specifiyng " +
+				STD_OPTION_ASP_LIST_FILTER_HOST.Name,
 		}
 	}
 
-	if _, err := systemtriplet.NewFromString(hostarch); err != nil {
-		return "", "", &cliapp.AppResult{
-			Code:    21,
-			Message: "Can't parse --show-only-hostarchs as system name triplet",
+	if host != "" {
+		if _, err := systemtriplet.NewFromString(host); err != nil {
+			return "", "", &cliapp.AppResult{
+				Code: 21,
+				Message: "Can't parse " +
+					STD_OPTION_ASP_LIST_FILTER_HOST.Name +
+					" as system name triplet",
+			}
+		}
+	}
+
+	if hostarch != "" {
+		if _, err := systemtriplet.NewFromString(hostarch); err != nil {
+			return "", "", &cliapp.AppResult{
+				Code: 21,
+				Message: "Can't parse " +
+					STD_OPTION_ASP_LIST_FILTER_HOSTARCH.Name +
+					"as system name triplet",
+			}
 		}
 	}
 

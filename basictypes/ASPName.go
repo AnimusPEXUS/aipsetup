@@ -18,7 +18,7 @@ const (
 		`^\((?P<name>.+?)\)` +
 		`-\((?P<version>\d+(\.\d+)*)\)` +
 		`-\((?P<status>.*?)\)` +
-		`-\((?P<timestamp>\d{8}\.\d{6}\.\d{7})\)` +
+		`-\((?P<timestamp>\d{8}\.\d{6}\.\d+)\)` +
 		`-\((?P<host>.*)\)` +
 		`(-\((?P<hostarch>.*)\))?` +
 		`(-\((?P<crossbuilder_target>crossbuilder\-target\:.*)\))?` +

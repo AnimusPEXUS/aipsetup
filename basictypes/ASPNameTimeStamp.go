@@ -107,7 +107,7 @@ func NewASPTimeStampFromString(text string) (ASPNameTimeStamp, error) {
 			if err != nil {
 				return ASPNameTimeStamp{}, ErrCantParseTimestamp
 			}
-			tmp.nsec = int(time.Duration(t) * time.Microsecond)
+			tmp.nsec = t
 		}
 	}
 

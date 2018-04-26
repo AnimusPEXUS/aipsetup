@@ -81,14 +81,29 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 			&cliapp.AppCmdNode{
 				Name:             "list-asps",
 				ShortDescription: "list installed asps",
-				Description: "argumenth have to be package name. " +
-					"Currently installed asps in pointed root will be listed.",
+				Description: "list all installed asps. " +
+					"can be filtered with --host and --hostarch options",
 				Callable: CmdAipsetupSysListAsps,
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
 					STD_OPTION_ASP_LIST_FILTER_HOST,
 					STD_OPTION_ASP_LIST_FILTER_HOSTARCH,
-					// STD_OPTION_ASP_LIST_FILTER_TARGET,
+				},
+				CheckArgs: true,
+				MinArgs:   -1,
+				MaxArgs:   0,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:             "list-pkg-asps",
+				ShortDescription: "list installed asps",
+				Description: "list installed asps of given package name. " +
+					"can be filtered with --host and --hostarch options",
+				Callable: CmdAipsetupSysNameASPs,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+					STD_OPTION_ASP_LIST_FILTER_HOST,
+					STD_OPTION_ASP_LIST_FILTER_HOSTARCH,
 				},
 				CheckArgs: true,
 				MinArgs:   1,
@@ -130,7 +145,10 @@ func CmdAipsetupSysListAsps(
 		return res
 	}
 
-	res_lst, err := sys.ASPs.ListFilteredInstalledASPs(host, hostarch)
+	res_lst, err := sys.ASPs.ListFilteredInstalledASPs(
+		host,
+		hostarch,
+	)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -276,7 +294,9 @@ func CmdAipsetupSysInstall(
 
 	for _, i := range getopt_result.Args {
 		res := sys.ASPs.InstallASP(i)
+
 		if res != nil {
+			log.Error(res.Error())
 			errors = true
 		}
 	}

@@ -354,7 +354,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 					elf_obj, err := elf.Open(i_joined)
 					if err == nil && elf_obj.Type == elf.ET_DYN {
 						elf_obj.Close()
-						fmt.Println(" SO!", i_joined)
+						self.sys.log.Info(" Shared OBJ Exclusion: " + i_joined)
 						continue deleting_files
 					}
 				}
@@ -363,14 +363,14 @@ func (self *SystemPackages) RemoveASP_DestDir(
 
 			for _, j := range exclude_files {
 				if j == i {
-					fmt.Println(" EX!", i_joined)
+					// self.sys.log.Info(" Reduction Exclusion: " + i_joined)
 					continue deleting_files
 				}
 			}
 
 			dirs.Add(path.Dir(i_joined))
 
-			fmt.Println(" -  ", i_joined)
+			self.sys.log.Info(" Eracing:  " + i_joined)
 			err := os.Remove(i_joined)
 			if err != nil {
 				return err
@@ -411,48 +411,27 @@ func (self *SystemPackages) RemoveASP_DestDir(
 func (self *SystemPackages) RemoveASP_FileLists(
 	aspname *basictypes.ASPName,
 ) error {
-	for _, i := range [][3]string{
-		{
-			"./06.LISTS/DESTDIR.sha512.xz",
-			self.sys.GetInstalledASPSumsDir(),
-			"package's check sums",
-		},
-		{
-			"./05.BUILD_LOGS.tar.xz",
-			self.sys.GetInstalledASPBuildLogsDir(),
-			"package's buildlogs",
-		},
-		{
-			"./06.LISTS/DESTDIR.dep_c.xz",
-			self.sys.GetInstalledASPDepsDir(),
-			"package's dependencies listing",
-		},
-		{
-			"./06.LISTS/DESTDIR.lst.xz",
-			self.sys.GetInstalledASPDir(),
-			"package's file list",
-		},
-	} {
-		var dst_dir string
-
-		dst_dir = i[1]
-
-		var dst_filename string
-
-		if i[0] == "./05.BUILD_LOGS.tar.xz" {
-			dst_filename = fmt.Sprintf("%s.tar.xz", aspname.String())
-		} else {
-			dst_filename = fmt.Sprintf("%s.xz", aspname.String())
-		}
-
-		dst_filename = path.Join(dst_dir, dst_filename)
-
-		err := os.Remove(dst_filename)
-		if err != nil {
-			return err
-		}
-
+	res, err := self.FindSystemPackageRegistrationByName(aspname)
+	if err != nil {
+		return err
 	}
+
+	self.sys.log.Info("Going to unregister package " + aspname.String())
+	self.sys.log.Info("  going to remove files:")
+	self.sys.log.Info("   build log:")
+	self.sys.log.Info(fmt.Sprintf("    %v", res.Buildlogs))
+	self.sys.log.Info("   sums:")
+	self.sys.log.Info(fmt.Sprintf("    %v", res.Sums))
+	self.sys.log.Info("   dep list:")
+	self.sys.log.Info(fmt.Sprintf("    %v", res.Deps))
+	self.sys.log.Info("   file list:")
+	self.sys.log.Info(fmt.Sprintf("    %v", res.Pkg))
+
+	err = res.DeleteAll()
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -541,8 +520,10 @@ func (self *SystemPackages) ReduceASP(
 
 	errors_while_reducing_asps := make([]*basictypes.ASPName, 0)
 	for _, i := range reduce_what_copy {
+		self.sys.log.Info("Reducing asp: " + i.String())
 		err := self.RemoveASP(i, false, true, fiba)
 		if err != nil {
+			self.sys.log.Error(err.Error())
 			// error should be reported, but process should continue.
 			// in the end function should exit with error
 			errors_while_reducing_asps = append(errors_while_reducing_asps, i)
@@ -734,7 +715,7 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 				case tar.TypeReg:
 					fallthrough
 				case tar.TypeRegA:
-					fmt.Println(" +", new_file_path)
+					self.sys.log.Info(" Writing: " + new_file_path)
 
 					err := os.MkdirAll(new_file_dir, 0755)
 					if err != nil {
@@ -914,16 +895,23 @@ func (self *SystemPackages) InstallASP(
 	}
 
 	if pkginfo.Reducible {
-		lst, err := self.ListFilteredInstalledASPs(host, hostarch)
+
+		lst, err := self.ListInstalledPackageNameASPs(parsed.Name, host, hostarch)
 		if err != nil {
 			return err
 		}
 
-		for i := len(lst); i != -1; i-- {
+		for i := len(lst) - 1; i != -1; i-- {
 			if parsed.IsEqual(lst[i]) {
 				lst = append(lst[:i], lst[i+1:]...)
 			}
 		}
+
+		// self.sys.log.Info("list of packages which could get deleted")
+
+		// for _, i := range lst {
+		// 	fmt.Println(i.String())
+		// }
 
 		err = self.ReduceASP(parsed, lst)
 		if err != nil {
@@ -931,5 +919,13 @@ func (self *SystemPackages) InstallASP(
 		}
 	}
 
+	self.sys.log.Info("Installation Finished. Looks Ok")
+
 	return nil
+}
+
+func (self *SystemPackages) FindSystemPackageRegistrationByName(
+	aspname *basictypes.ASPName,
+) (*SystemPackageRegistration, error) {
+	return FindSystemPackageRegistrationByName(aspname, self.sys)
 }
