@@ -7,7 +7,7 @@
   "AutoReduce": false,
   "NonInstallable": false,
   "Deprecated": false,
-  "PrimaryInstallOnly": true,
+  "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
   "BuildDeps": [],
   "SODeps": [],

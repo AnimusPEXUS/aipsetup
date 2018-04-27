@@ -19,8 +19,8 @@ const (
 		`-\((?P<version>\d+(\.\d+)*)\)` +
 		`-\((?P<status>.*?)\)` +
 		`-\((?P<timestamp>\d{8}\.\d{6}\.\d+)\)` +
-		`-\((?P<host>.*)\)` +
-		`(-\((?P<hostarch>.*)\))?` +
+		`-\((?P<host>.*?)\)` +
+		`(-\((?P<hostarch>.*?)\))?` +
 		`(-\((?P<crossbuilder_target>crossbuilder\-target\:.*)\))?` +
 		`((\.tar.xz)|(\.asp)|(\.xz))?$`
 )
@@ -53,7 +53,7 @@ func (self *ASPName) IsEqual(other *ASPName) bool {
 
 func (self *ASPName) String() string {
 
-	has_arch_part := self.HostArch != self.Host
+	has_arch_part := self.Host != self.HostArch
 	has_target_part := self.CrossbuilderTarget != ""
 
 	arch_part := ""
@@ -125,8 +125,10 @@ func NewASPNameFromString(str string) (*ASPName, error) {
 			}
 		case "host":
 			ret.Host = parsed_strs[ii]
-		case "arch":
+		case "hostarch":
 			ret.HostArch = parsed_strs[ii]
+		case "crossbuilder_target":
+			ret.CrossbuilderTarget = parsed_strs[ii]
 		}
 	}
 
@@ -139,12 +141,13 @@ func NewASPNameFromString(str string) (*ASPName, error) {
 
 func (self *ASPName) StringD() string {
 	ret := ""
-	ret += "Name:      " + self.Name + "\n"
-	ret += "Version:   " + self.Version + "\n"
-	ret += "Status:    " + self.Status + "\n"
-	ret += "TimeStamp: " + self.TimeStamp.String() + "\n"
-	ret += "Host:      " + self.Host + "\n"
-	ret += "HostArch:  " + self.HostArch + "\n"
+	ret += "Name               : " + self.Name + "\n"
+	ret += "Version            : " + self.Version + "\n"
+	ret += "Status             : " + self.Status + "\n"
+	ret += "TimeStamp          : " + self.TimeStamp.String() + "\n"
+	ret += "Host               : " + self.Host + "\n"
+	ret += "HostArch           : " + self.HostArch + "\n"
+	ret += "CrossbuilderTarget : " + self.CrossbuilderTarget + "\n"
 	return ret
 }
 

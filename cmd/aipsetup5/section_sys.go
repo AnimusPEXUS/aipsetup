@@ -79,6 +79,18 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
+				Name:     "reduce-to",
+				Callable: CmdAipsetupSysReduceTo,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+					// STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
+				},
+				CheckArgs: true,
+				MinArgs:   1,
+				MaxArgs:   -1,
+			},
+
+			&cliapp.AppCmdNode{
 				Name:             "list-asps",
 				ShortDescription: "list installed asps",
 				Description: "list all installed asps. " +
@@ -97,13 +109,10 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 			&cliapp.AppCmdNode{
 				Name:             "list-pkg-asps",
 				ShortDescription: "list installed asps",
-				Description: "list installed asps of given package name. " +
-					"can be filtered with --host and --hostarch options",
-				Callable: CmdAipsetupSysNameASPs,
+				Description:      "list installed asps of given package name.",
+				Callable:         CmdAipsetupSysNameASPs,
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
-					STD_OPTION_ASP_LIST_FILTER_HOST,
-					STD_OPTION_ASP_LIST_FILTER_HOSTARCH,
 				},
 				CheckArgs: true,
 				MinArgs:   1,
@@ -210,14 +219,9 @@ func CmdAipsetupSysNameASPs(
 		return res
 	}
 
-	host, hostarch, res := StdRoutineGetASPListFiltersHostHostArch(getopt_result, sys)
-	if res != nil && res.Code != 0 {
-		return res
-	}
-
 	asp_name := getopt_result.Args[0]
 
-	res_lst, err := sys.ASPs.ListInstalledPackageNameASPs(asp_name, host, hostarch)
+	res_lst, err := sys.ASPs.ListInstalledPackageNameASPs(asp_name, "", "")
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -281,7 +285,6 @@ func CmdAipsetupSysInstall(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
-	fmt.Println(getopt_result.String())
 
 	log := adds.PassData.(*logger.Logger)
 
@@ -305,6 +308,39 @@ func CmdAipsetupSysInstall(
 		return &cliapp.AppResult{
 			Code:    10,
 			Message: "some packages was installed with errors",
+		}
+	}
+
+	return nil
+}
+
+func CmdAipsetupSysReduceTo(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	errors := false
+
+	for _, i := range getopt_result.Args {
+		res := sys.ASPs.InstallASPReduceToSubRoutine(i, true)
+
+		if res != nil {
+			log.Error(res.Error())
+			errors = true
+		}
+	}
+
+	if errors {
+		return &cliapp.AppResult{
+			Code:    10,
+			Message: "some packages was reduced with errors",
 		}
 	}
 

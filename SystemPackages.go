@@ -39,8 +39,8 @@ func NewSystemPackages(system *System) *SystemPackages {
 // }
 
 func (self *SystemPackages) ListAllInstalledASPs() ([]*basictypes.ASPName, error) {
-	pth := self.sys.GetInstalledASPDir()
-	files, err := ioutil.ReadDir(pth)
+
+	files, err := ioutil.ReadDir(self.sys.GetInstalledASPDir())
 	if err != nil {
 		return nil, err
 	}
@@ -52,8 +52,9 @@ func (self *SystemPackages) ListAllInstalledASPs() ([]*basictypes.ASPName, error
 		if !i.IsDir() && strings.HasSuffix(n, ").xz") {
 			nn, err := basictypes.NewASPNameFromString(n)
 			if err != nil {
-				fmt.Errorf("Can't parse %s inside installed asps dir\n", i.Name())
-				continue
+				return nil, errors.New(
+					fmt.Sprintf("Can't parse %s inside installed asps dir\n", i.Name()),
+				)
 			}
 			ret = append(ret, nn)
 		}
@@ -73,17 +74,17 @@ func (self *SystemPackages) ListFilteredInstalledASPs(
 
 	asps := make([]*basictypes.ASPName, 0)
 
-	for _, parsed_asp_name := range complete_list {
+	for _, i := range complete_list {
 
-		if host != "" && parsed_asp_name.Host != host {
+		if host != "" && i.Host != host {
 			continue
 		}
 
-		if hostarch != "" && parsed_asp_name.HostArch != hostarch {
+		if hostarch != "" && i.HostArch != hostarch {
 			continue
 		}
 
-		asps = append(asps, parsed_asp_name)
+		asps = append(asps, i)
 	}
 
 	return asps, nil
@@ -135,11 +136,11 @@ search:
 	for _, i := range res {
 
 		if i.Name != name {
-			continue search
+			continue
 		}
 
 		for _, j := range ret {
-			if i.Name == j.Name {
+			if i.IsEqual(j) {
 				continue search
 			}
 		}
@@ -152,10 +153,31 @@ search:
 func (self *SystemPackages) GenASPFileListPath(
 	aspname *basictypes.ASPName,
 ) (string, error) {
-	return path.Join(
+	reg_info, err := self.FindSystemPackageRegistrationByName(aspname)
+	if err != nil {
+		return "", err
+	}
+
+	if !reg_info.Found() {
+		return "",
+			errors.New(
+				"path to filelist of " +
+					aspname.String() +
+					" isn't found",
+			)
+	}
+
+	// I don't like this.
+	// One package must have exectly one file list (and exactly one registration)
+	// But this construction is for backword comparability with old aipsetup's
+	// asp naming format + it's assumed I watched carefuly for this single-single
+	// rule
+	ret := path.Join(
 		self.sys.GetInstalledASPDir(),
-		aspname.String(),
-	) + ".xz", nil
+		reg_info.Pkg[0],
+	)
+
+	return ret, nil
 }
 
 func (self *SystemPackages) IsASPInstalled(
@@ -370,11 +392,22 @@ func (self *SystemPackages) RemoveASP_DestDir(
 
 			dirs.Add(path.Dir(i_joined))
 
-			self.sys.log.Info(" Removing: " + i_joined)
-			err := os.Remove(i_joined)
-			if err != nil {
-				return err
+			_, err := os.Lstat(i_joined)
+			if err == nil {
+				self.sys.log.Info(" Removing: " + i_joined)
+				err := os.Remove(i_joined)
+				if err != nil {
+					if !os.IsNotExist(err) {
+						// It's ok if file already missing
+						return err
+					}
+				}
+			} else {
+				if !os.IsNotExist(err) {
+					return err
+				}
 			}
+
 		}
 
 		res = dirs.ListStrings()
@@ -387,7 +420,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 				for {
 
 					if err := os.Remove(d); err == nil {
-						self.sys.log.Info(" Removing: " + d)
+						self.sys.log.Info(" Removed directory: " + d)
 						removed++
 					}
 
@@ -675,7 +708,7 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 
 				{
 					if !strings.HasPrefix(xztar_head.Name, "./") {
-						fmt.Println("   not allowed Name")
+						self.sys.log.Error("   not allowed Name")
 						return errors.New(
 							"tar file provided forbidden name elements",
 						)
@@ -826,11 +859,12 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 			}
 
 			for key, val := range hardlinks {
-				fmt.Printf(
-					" + %s\n  h -> %s\n",
-					val,
-					key,
-				)
+				self.sys.log.Info(" Hardlinking")
+
+				self.sys.log.Info(fmt.Sprintf("  %s", val))
+				self.sys.log.Info("  ->")
+				self.sys.log.Info(fmt.Sprintf("  %s", key))
+
 				err = os.Link(val, key)
 				if err != nil {
 					return err
@@ -895,35 +929,104 @@ func (self *SystemPackages) InstallASP(
 	}
 
 	if pkginfo.Reducible {
-		if pkginfo.AutoReduce {
-			self.sys.log.Info(
-				"package is reducable and autoreduce is enabled.. reducing..",
-			)
 
-			lst, err := self.ListInstalledPackageNameASPs(parsed.Name, host, hostarch)
-			if err != nil {
-				return err
+		lst, err := self.ListInstalledPackageNameASPs(parsed.Name, host, hostarch)
+		if err != nil {
+			return err
+		}
+
+		for i := len(lst) - 1; i != -1; i-- {
+			if parsed.IsEqual(lst[i]) {
+				lst = append(lst[:i], lst[i+1:]...)
+			}
+		}
+
+		if len(lst) != 0 {
+
+			self.sys.log.Info("The list of other installations of this package")
+			for ii, i := range lst {
+				self.sys.log.Info(fmt.Sprintf(" %3d: %s", ii, i.String()))
 			}
 
-			for i := len(lst) - 1; i != -1; i-- {
-				if parsed.IsEqual(lst[i]) {
-					lst = append(lst[:i], lst[i+1:]...)
+			if pkginfo.AutoReduce {
+				self.sys.log.Info(
+					"package is reducable and autoreduce is enabled.. reducing..",
+				)
+
+				err = self.InstallASPReduceToSubRoutine(filename, false)
+				if err != nil {
+					return err
 				}
-			}
 
-			err = self.ReduceASP(parsed, lst)
-			if err != nil {
-				return err
+			} else {
+				self.sys.log.Warning(
+					"This package is reducable, but autoreduce is disabled. " +
+						"You'll have to command reduction of older installations separately.",
+				)
 			}
-		} else {
-			self.sys.log.Warning(
-				"This package is reducable, but autoreduce is disabled. " +
-					"You'll have to command reduction of older installations separately.",
-			)
 		}
 	}
 
 	self.sys.log.Info("Installation Finished. Looks Ok")
+
+	return nil
+}
+
+func (self *SystemPackages) InstallASPReduceToSubRoutine(
+	filename string,
+	print_list bool,
+) error {
+
+	self.sys.log.Info("Reduction of " + filename + " asked")
+
+	parsed, err := basictypes.NewASPNameFromString(filename)
+	if err != nil {
+		return err
+	}
+
+	pkginfo, err := pkginfodb.Get(parsed.Name)
+	if err != nil {
+		return err
+	}
+
+	self.sys.log.Info("Parsed as\n" + parsed.StringD())
+
+	lst, err := self.ListInstalledPackageNameASPs(
+		parsed.Name,
+		parsed.Host,
+		parsed.HostArch,
+	)
+	if err != nil {
+		return err
+	}
+
+	for i := len(lst) - 1; i != -1; i-- {
+		if parsed.IsEqual(lst[i]) {
+			lst = append(lst[:i], lst[i+1:]...)
+		}
+	}
+
+	if print_list {
+		if len(lst) != 0 {
+			self.sys.log.Info("The list of other installations of this package")
+			for ii, i := range lst {
+				self.sys.log.Info(fmt.Sprintf(" %3d: %s", ii, i.String()))
+			}
+		} else {
+			self.sys.log.Info("Not found other installations of this package")
+		}
+	}
+
+	if !pkginfo.Reducible {
+		return errors.New("this package is not reducible")
+	}
+
+	if len(lst) != 0 {
+		err = self.ReduceASP(parsed, lst)
+		if err != nil {
+			return err
+		}
+	}
 
 	return nil
 }
