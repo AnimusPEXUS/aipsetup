@@ -48,6 +48,7 @@ type System struct {
 	root_paths *SystemMovedRoot
 
 	valuescalculator *SystemValuesCalculator
+	sysupdates       *SystemUpdates
 }
 
 func NewSystem(root string, log *logger.Logger) *System {
@@ -191,4 +192,11 @@ func (self *System) GetTarballRepoRootDir() string {
 
 func (self *System) GetSystemValuesCalculator() basictypes.SystemValuesCalculatorI {
 	return self.valuescalculator
+}
+
+func (self *System) GetSystemUpdates() *SystemUpdates {
+	if self.sysupdates == nil {
+		self.sysupdates = NewSystemUpdates(self)
+	}
+	return self.sysupdates
 }

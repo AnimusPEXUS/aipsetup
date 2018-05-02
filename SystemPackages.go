@@ -504,6 +504,8 @@ func (self *SystemPackages) RemoveASP(
 		return err
 	}
 
+	self.sys.GetSystemUpdates().UpdatesAfterPkgInstall()
+
 	return nil
 }
 
@@ -968,6 +970,8 @@ func (self *SystemPackages) InstallASP(
 	}
 
 	self.sys.log.Info("Installation Finished. Looks Ok")
+
+	self.sys.GetSystemUpdates().UpdatesAfterPkgInstall()
 
 	return nil
 }

@@ -16,6 +16,7 @@ import (
 	"time"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/checksums"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
@@ -518,32 +519,19 @@ func (self Packager) MakeChecksums(log *logger.Logger) error {
 			return err
 		}
 
-		r_f, err := os.Open(i)
+		sum, err := checksums.CalculateFileChecksum(
+			i,
+			sha512.New(),
+			2*(1024^2),
+		)
 		if err != nil {
 			return err
 		}
-		defer func(f *os.File) { f.Close() }(r_f)
-
-		h := sha512.New()
-
-		buff := make([]byte, 2*(1024^2))
-		for {
-			s, err := r_f.Read(buff)
-			if err != nil {
-				if err == io.EOF {
-					break
-				} else {
-					return err
-				}
-			}
-			h.Write(buff[:s])
-		}
-		r_f.Close()
 
 		result_file_o.WriteString(
 			fmt.Sprintf(
 				"%s *%s\n",
-				hex.EncodeToString(h.Sum(nil)),
+				hex.EncodeToString(sum),
 				j_name,
 			),
 		)
