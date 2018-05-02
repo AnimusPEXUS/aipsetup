@@ -45,7 +45,7 @@ func (self *SystemUpdates) UpdatesAfterPkgInstall() error {
 
 		self.sys.log.Info(separator_line)
 		self.sys.log.Info(
-			"System updates: Preforming System Updates After Installing/Removing " +
+			"System updates: Performing System Updates After Installing/Removing " +
 				"packages",
 		)
 		self.sys.log.Info(separator_line)

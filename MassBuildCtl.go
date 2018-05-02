@@ -163,25 +163,27 @@ func (self *MassBuildCtl) PerformMassBuilding() (
 func (self *MassBuildCtl) checkAlreadyReady(
 	pkgname, version,
 	host, hostarch string,
-) error {
+) (bool, error) {
 
 	files, err := ioutil.ReadDir(self.GetAspsPath())
 	if err != nil {
-		return err
+		return false, err
 	}
 
 	for _, i := range files {
 		if p, err := basictypes.NewASPNameFromString(i.Name()); err != nil {
+			continue
+		} else {
 			if p.Name == pkgname &&
 				p.Version == version &&
 				p.Host == host &&
 				p.HostArch == hostarch {
-				return nil
+				return true, nil
 			}
 		}
 	}
 
-	return errors.New("not built yet")
+	return false, nil
 }
 
 func (self *MassBuildCtl) findBuildingSite(
@@ -307,8 +309,17 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 		return err
 	}
 
-	if self.checkAlreadyReady(pkgname, tarball_parsed.Version.Str, host, hostarch) == nil {
-		return nil
+	if ok, err := self.checkAlreadyReady(
+		pkgname,
+		tarball_parsed.Version.Str,
+		host, hostarch,
+	); err != nil {
+		return err
+	} else {
+		if ok {
+			self.log.Info("  already done")
+			return nil
+		}
 	}
 
 	var bs *BuildingSiteCtl
@@ -359,10 +370,16 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 
 	self.log.Info("  run complete")
 
-	if err := self.checkAlreadyReady(
-		pkgname, tarball_parsed.Version.Str, host, hostarch,
+	if ok, err := self.checkAlreadyReady(
+		pkgname,
+		tarball_parsed.Version.Str,
+		host, hostarch,
 	); err != nil {
 		return err
+	} else {
+		if !ok {
+			return errors.New("not built yet")
+		}
 	}
 
 	return nil
