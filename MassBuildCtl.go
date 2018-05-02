@@ -9,6 +9,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
@@ -96,11 +97,11 @@ func (self *MassBuildCtl) WriteInfo(info *basictypes.MassBuilderInfo) error {
 }
 
 func (self *MassBuildCtl) GetTarballsPath() string {
-	return path.Join(self.path, "00.tarballs")
+	return path.Join(self.path, basictypes.MASSBUILDER_TARBALLS_DIR)
 }
 
 func (self *MassBuildCtl) GetAspsPath() string {
-	return path.Join(self.path, "01.asps")
+	return path.Join(self.path, basictypes.MASSBUILDER_ASPS_DIR)
 }
 
 func (self *MassBuildCtl) PerformMassBuilding() (
@@ -132,8 +133,13 @@ func (self *MassBuildCtl) PerformMassBuilding() (
 	for _, i := range tarballs {
 		bi := path.Base(i)
 		for _, arch := range archs {
-			self.log.Info("========= building " + i + " for " + host + "-" + arch)
+			self.sys.log.Info("--//=********************--")
+			self.log.Info("---<{[ building " + i + " for " + host + "-" + arch)
+			self.sys.log.Info(`--\\=********************--`)
 			res := self.fullBuildTarball(bi, host, arch)
+			if res != nil {
+				self.sys.log.Error("building failed: " + res.Error())
+			}
 
 			var vret map[string][]string
 
@@ -147,6 +153,7 @@ func (self *MassBuildCtl) PerformMassBuilding() (
 				vret[arch] = make([]string, 0)
 			}
 			vret[arch] = append(vret[arch], bi)
+			self.sys.log.Info("")
 		}
 	}
 
@@ -185,9 +192,23 @@ func (self *MassBuildCtl) findBuildingSite(
 	if err != nil {
 		return nil, err
 	}
+
+dirs_search:
 	for _, i := range files {
 		if i.IsDir() {
-			pth := path.Join(self.path, i.Name())
+			{
+				ib := path.Base(i.Name())
+				for _, i := range []string{
+					basictypes.MASSBUILDER_TARBALLS_DIR,
+					basictypes.MASSBUILDER_ASPS_DIR,
+				} {
+					if ib == i {
+						continue dirs_search
+					}
+				}
+			}
+
+			pth := path.Join(self.path, path.Base(i.Name()))
 			nbs, err := NewBuildingSiteCtl(pth, self.sys, self.log)
 			if err != nil {
 				self.sys.log.Error(err.Error())
@@ -215,7 +236,6 @@ func (self *MassBuildCtl) createBuildingSite(
 	pkgname string,
 	host, hostarch string,
 	tarball_parsed *tarballname.ParsedTarballName,
-
 ) (*BuildingSiteCtl, error) {
 	bs_ts := basictypes.NewASPTimeStampFromCurrentTime().String()
 
@@ -316,20 +336,28 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 		self.log.Info("  using existing: " + bs.path)
 	}
 
+	self.log.Info("  getting sources and patches..")
+
 	err = bs.GetSources()
 	if err != nil {
 		return err
 	}
+
+	self.log.Info("  getting action list..")
 
 	bs_actions, err := bs.ListActions()
 	if err != nil {
 		return err
 	}
 
+	self.log.Info("  running actions: " + strings.Join(bs_actions, ", ") + "..")
+
 	err = bs.Run(bs_actions)
 	if err != nil {
 		return err
 	}
+
+	self.log.Info("  run complete")
 
 	if err := self.checkAlreadyReady(
 		pkgname, tarball_parsed.Version.Str, host, hostarch,

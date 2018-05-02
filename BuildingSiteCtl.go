@@ -682,6 +682,14 @@ func (self *BuildingSiteCtl) GetPatches() error {
 		return err
 	}
 
+	// TODO: 1. probably, must be created separate PackageInfo setting,
+	//          like ApplyPatches.. not using for this DownloadPatches setting;
+	//       2. stop using len(info.PatchesDownloadingScriptText) == 0 as
+	//          secondary condition.
+	if !info.DownloadPatches || len(info.PatchesDownloadingScriptText) == 0 {
+		return nil
+	}
+
 	pkg_list := make([]string, 0)
 
 	pkg_list = append(pkg_list, bs_info.PackageName)

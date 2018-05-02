@@ -67,20 +67,20 @@ func (self *SystemUpdates) UpdatesAfterPkgInstall() error {
 		}
 	}
 	if was_errors {
-		return errors.New("errors while running some of system updates")
+		return errors.New("system updates errors")
 	}
 	return nil
 }
 
 func (self *SystemUpdates) Sync() error {
-	self.sys.log.Info("running sync")
+	self.sys.log.Info("Running sync")
 	syscall.Sync()
 	return nil
 }
 
 func (self *SystemUpdates) LDConfig() error {
 
-	self.sys.log.Info("running ldconfig")
+	self.sys.log.Info("Running ldconfig")
 
 	c := exec.Command("ldconfig")
 	err := c.Run()

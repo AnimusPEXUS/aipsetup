@@ -17,6 +17,9 @@ const (
 	DIR_TEMP       = "07.TEMP"
 
 	MASSBUILDER_INFO_FILENAME = "massbuilder.info"
+	MASSBUILDER_TARBALLS_DIR  = "00.tarballs"
+	MASSBUILDER_ASPS_DIR      = "01.asps"
+
 	PACKAGE_INFO_FILENAME     = "package_info.json"
 	PACKAGE_INFO_FILENAME_V5  = "package_info_v5.json"
 	PACKAGE_CHECKSUM_FILENAME = "package.sha512"
