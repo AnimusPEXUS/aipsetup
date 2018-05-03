@@ -133,12 +133,12 @@ func (self *MassBuildCtl) PerformMassBuilding() (
 	for _, i := range tarballs {
 		bi := path.Base(i)
 		for _, arch := range archs {
-			self.sys.log.Info("--//=********************--")
+			self.log.Info("-----//=********************--")
 			self.log.Info("---<{[ building " + i + " for " + host + "-" + arch)
-			self.sys.log.Info(`--\\=********************--`)
+			self.log.Info(`-----\\=********************--`)
 			res := self.fullBuildTarball(bi, host, arch)
 			if res != nil {
-				self.sys.log.Error("building failed: " + res.Error())
+				self.log.Error("building failed: " + res.Error())
 			}
 
 			var vret map[string][]string
@@ -153,7 +153,7 @@ func (self *MassBuildCtl) PerformMassBuilding() (
 				vret[arch] = make([]string, 0)
 			}
 			vret[arch] = append(vret[arch], bi)
-			self.sys.log.Info("")
+			self.log.Info("")
 		}
 	}
 
@@ -213,13 +213,13 @@ dirs_search:
 			pth := path.Join(self.path, path.Base(i.Name()))
 			nbs, err := NewBuildingSiteCtl(pth, self.sys, self.log)
 			if err != nil {
-				self.sys.log.Error(err.Error())
+				self.log.Error(err.Error())
 				continue
 			}
 
 			nbs_info, err := nbs.ReadInfo()
 			if err != nil {
-				self.sys.log.Error(err.Error())
+				self.log.Error(err.Error())
 				continue
 			}
 
@@ -347,28 +347,28 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 		self.log.Info("  using existing: " + bs.path)
 	}
 
-	self.log.Info("  getting sources and patches..")
+	self.log.Info("getting sources and patches..")
 
 	err = bs.GetSources()
 	if err != nil {
 		return err
 	}
 
-	self.log.Info("  getting action list..")
+	self.log.Info("getting action list..")
 
 	bs_actions, err := bs.ListActions()
 	if err != nil {
 		return err
 	}
 
-	self.log.Info("  running actions: " + strings.Join(bs_actions, ", ") + "..")
+	self.log.Info("running actions: " + strings.Join(bs_actions, ", ") + "..")
 
 	err = bs.Run(bs_actions)
 	if err != nil {
 		return err
 	}
 
-	self.log.Info("  run complete")
+	self.log.Info("run complete")
 
 	if ok, err := self.checkAlreadyReady(
 		pkgname,
