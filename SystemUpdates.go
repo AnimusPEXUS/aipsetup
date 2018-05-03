@@ -395,7 +395,7 @@ func (self *SystemUpdates) GtkQueryImmodules20() error {
 
 func (self *SystemUpdates) GtkQueryImmodules30() error {
 
-	self.sys.log.Info("Querry Gtk 2.0 Immodules")
+	self.sys.log.Info("Querry Gtk 3.0 Immodules")
 
 	// TODO: fix uncerteinties
 
