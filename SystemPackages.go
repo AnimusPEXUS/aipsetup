@@ -667,7 +667,7 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 	tar_obj := tar.NewReader(tar_file_obj)
 
 	directories := set.NewSetString()
-	hardlinks := make(map[string]string)
+	hardlinks := make([][2]string, 0)
 
 	var head *tar.Header
 
@@ -798,16 +798,23 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 					directories.Add(new_file_dir)
 
 					ln_value := xztar_head.Linkname
+					// fmt.Println("xztar_head.Linkname", xztar_head.Linkname)
+					// fmt.Println("new_file_path", new_file_path)
+					// if !strings.HasPrefix("/", ln_value) {
+					// 	ln_value = path.Join(path.Dir(new_file_path), ln_value)
+					// 	abs, err := filepath.Abs(ln_value)
+					// 	if err != nil {
+					// 		return err
+					// 	}
+					// 	ln_value = abs
+					// }
+					// TODO: this was fixed in a horry. need rechecks
 					if !strings.HasPrefix("/", ln_value) {
-						ln_value = path.Join(path.Dir(new_file_path), ln_value)
-						abs, err := filepath.Abs(ln_value)
-						if err != nil {
-							return err
-						}
-						ln_value = abs
+						ln_value = path.Join(self.sys.Root(), ln_value)
 					}
 
-					hardlinks[new_file_path] = ln_value
+					hardlinks = append(hardlinks, [2]string{new_file_path, ln_value})
+
 				case tar.TypeSymlink:
 
 					err := os.MkdirAll(new_file_dir, 0755)
@@ -860,12 +867,16 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 				}
 			}
 
-			for key, val := range hardlinks {
+			for _, i := range hardlinks {
+				key := i[0]
+				val := i[1]
 				self.sys.log.Info(" Hardlinking")
 
 				self.sys.log.Info(fmt.Sprintf("  %s", val))
 				self.sys.log.Info("  ->")
 				self.sys.log.Info(fmt.Sprintf("  %s", key))
+
+				os.Remove(key)
 
 				err = os.Link(val, key)
 				if err != nil {
