@@ -329,9 +329,21 @@ func (self *BuildingSiteValuesCalculator) Calculate_LD_LIBRARY_PATH(
 	prefixes []string,
 ) ([]string, error) {
 
+	info, err := self.site.ReadInfo()
+	if err != nil {
+		return nil, err
+	}
+
 	host_dir, err := self.CalculateHostDir()
 	if err != nil {
 		return []string{}, err
+	}
+
+	if info.Host != info.HostArch {
+		host_dir, err = self.CalculateHostArchDir()
+		if err != nil {
+			return []string{}, err
+		}
 	}
 
 	ret := make([]string, 0)
@@ -592,6 +604,11 @@ func (self *BuildingSiteValuesCalculator) CalculateAutotoolsHBTOptions() (
 			((host == build) && (target == ""))) &&
 		!forced_target {
 		target = ""
+	}
+
+	if info.HostArch != info.Host {
+		host = info.HostArch
+		build = info.HostArch
 	}
 
 	ret := make([]string, 0)

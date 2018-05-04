@@ -146,7 +146,7 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 		[]string{
 
 			"--enable-obsolete-rpc",
-			"--enable-kernel=4.9",
+			"--enable-kernel=4.16",
 			"--enable-tls",
 			"--with-elf",
 			// # disabled those 3 items on 2 jul 2015

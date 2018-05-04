@@ -145,18 +145,20 @@ func (self *BuildingSiteCtl) WriteInfo(info *basictypes.BuildingSiteInfo) error 
 	return nil
 }
 
-func (self *BuildingSiteCtl) Init() error {
-	self.log.Info("Going to initiate directory: " + self.path)
+func (self *BuildingSiteCtl) InitDirs() error {
 	for _, i := range basictypes.DIR_ALL {
 		j := filepath.Join(self.path, i)
-		f, err := os.Open(j)
+		_, err := os.Stat(j)
 		if err != nil {
-			err := os.MkdirAll(j, 0700)
-			if err != nil {
-				return errors.New("Can't create dir: " + err.Error())
+			if os.IsNotExist(err) {
+				self.log.Info("Creating directory: " + self.path)
+				err := os.MkdirAll(j, 0700)
+				if err != nil {
+					return errors.New("Can't create dir: " + err.Error())
+				}
+			} else {
+				return err
 			}
-		} else {
-			f.Close()
 		}
 	}
 	return nil
@@ -339,6 +341,11 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 	defer l.Close()
 
 	info, err := self.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	err = self.InitDirs()
 	if err != nil {
 		return err
 	}

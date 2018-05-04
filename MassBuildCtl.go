@@ -270,7 +270,7 @@ func (self *MassBuildCtl) createBuildingSite(
 		return nil, err
 	}
 
-	ret.Init()
+	ret.InitDirs()
 	if err != nil {
 		return nil, err
 	}
