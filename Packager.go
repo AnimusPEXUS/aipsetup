@@ -13,7 +13,6 @@ import (
 	"path/filepath"
 	"sort"
 	"strings"
-	"time"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/checksums"
@@ -427,20 +426,11 @@ func (self Packager) UpdateTimestamp(log *logger.Logger) error {
 		return err
 	}
 
-	t := time.Now().UTC()
+	if len(info.PackageTimeStamp) != 0 {
+		return nil
+	}
 
-	t_s := fmt.Sprintf(
-		"%04d%02d%02d.%02d%02d%02d.%07d",
-		t.Year(),
-		t.Month(),
-		t.Day(),
-		t.Hour(),
-		t.Minute(),
-		t.Second(),
-		t.Nanosecond()/1000,
-	)
-
-	info.PackageTimeStamp = t_s
+	info.PackageTimeStamp = basictypes.NewASPTimeStampFromCurrentTime().String()
 
 	err = self.site.WriteInfo(info)
 	if err != nil {
