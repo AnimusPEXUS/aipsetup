@@ -3,11 +3,13 @@ package buildercollection
 import (
 	"errors"
 	"io/ioutil"
+	"os"
 	"path"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildingtools"
+	"github.com/AnimusPEXUS/utils/environ"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -35,6 +37,39 @@ func NewBuilderGCC(bs basictypes.BuildingSiteCtlI) *BuilderGCC {
 
 	self.std_builder.AfterExtractCB = self.AfterExtract
 	self.std_builder.EditConfigureArgsCB = self.EditConfigureArgs
+	self.std_builder.EditBuildConcurentJobsCountCB =
+		func(log *logger.Logger, ret int) int {
+			return 1
+		}
+	self.std_builder.EditDistributeEnvCB =
+		func(
+			log *logger.Logger,
+			ret environ.EnvVarEd,
+		) (environ.EnvVarEd, error) {
+
+			calc := self.bs.GetBuildingSiteValuesCalculator()
+
+			hostdir, err := calc.CalculateHostDir()
+			if err != nil {
+				return nil, err
+			}
+
+			LD_LIBRARY_PATH := ret.Get("LD_LIBRARY_PATH", "")
+
+			// TODO: yes, this is very bad and should be redone somehow
+			for _, i := range basictypes.POSSIBLE_LIBDIR_NAMES {
+				np := path.Join(hostdir, "multiarch", "i686-pc-linux-gnu", i)
+
+				if nps, err := os.Stat(np); err == nil && nps.IsDir() {
+					LD_LIBRARY_PATH += ":" + np
+				}
+			}
+
+			ret.Set("LD_LIBRARY_PATH", LD_LIBRARY_PATH)
+			ret.Set("LIBRARY_PATH", LD_LIBRARY_PATH)
+
+			return ret, nil
+		}
 
 	return self
 }
@@ -96,6 +131,7 @@ func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
 	}
 
 	NEEDED_PACKAGES := []string{
+		// TODO: I don't know what to do
 		"gmp",
 		"mpc", "mpfr", "isl", "cloog",
 		// #"gmp",
@@ -122,23 +158,34 @@ func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
 			}
 		}
 		if filename == "" {
-			return errors.New("not found tarball for " + i)
-		}
-
-		err = a_tools.Extract(
-			path.Join(tar_dir, filename),
-			path.Join(self.bs.GetDIR_SOURCE(), i),
-			self.bs.GetDIR_TEMP(),
-			true,
-			false,
-			true,
-			log,
-		)
-		if err != nil {
-			return err
+			log.Warning("not found tarball for " + i)
 		}
 	}
 
+	for _, i := range NEEDED_PACKAGES {
+		filename := ""
+		for _, j := range files {
+			b := path.Base(j.Name())
+			if strings.HasPrefix(b, i) {
+				filename = b
+				break
+			}
+		}
+		if filename != "" {
+			err = a_tools.Extract(
+				path.Join(tar_dir, filename),
+				path.Join(self.bs.GetDIR_SOURCE(), i),
+				self.bs.GetDIR_TEMP(),
+				true,
+				false,
+				true,
+				log,
+			)
+			if err != nil {
+				return err
+			}
+		}
+	}
 	return nil
 }
 
@@ -194,7 +241,10 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 				"--enable-nls",
 				"--enable-__cxa_atexit",
 				"--enable-languages=c,c++,objc,obj-c++,fortran,ada",
+
 				"--disable-bootstrap",
+				// "--enable-bootstrap",
+
 				"--enable-threads=posix",
 
 				"--disable-multiarch",
@@ -261,16 +311,17 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 		ret = append(
 			ret,
 			[]string{
+				"--with-system-zlib",
 				"--disable-gold",
 
 				"--enable-tls",
 				"--enable-nls",
 				"--enable-__cxa_atexit",
 
-				// # NOTE: gcc somtimes fails to crossbuild self with go enabled
 				"--enable-languages=c,c++,objc,obj-c++,fortran,ada,go",
 
 				"--disable-bootstrap",
+				// "--enable-bootstrap",
 
 				"--enable-threads=posix",
 

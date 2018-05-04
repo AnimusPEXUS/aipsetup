@@ -54,7 +54,7 @@ func SectionAipsetupMBuild() *cliapp.AppCmdNode {
 
 			&cliapp.AppCmdNode{
 				Callable: CmdAipsetupMassBuildPerform,
-				Name:     "full",
+				Name:     "run",
 
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,

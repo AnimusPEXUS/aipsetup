@@ -131,10 +131,17 @@ func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string)
 
 	}
 
-	host_dir, err := calc.CalculateHostDir()
+	sysrootdir, err := calc.CalculateHostDir()
 	if err != nil {
 		return nil, err
 	}
+
+	// if info.Host != info.HostArch {
+	// 	sysrootdir, err = calc.CalculateHostArchDir()
+	// 	if err != nil {
+	// 		return nil, err
+	// 	}
+	// }
 
 	ret = append(
 		ret,
@@ -157,7 +164,7 @@ func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string)
 
 			// # this is required. else libs will be searched in /lib and
 			// # /usr/lib, but not in /multihost/xxx/lib!:
-			"--with-sysroot=" + host_dir,
+			"--with-sysroot=" + sysrootdir,
 
 			// # more experiment:
 			"--enable-multiarch",

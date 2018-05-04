@@ -758,6 +758,9 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 					}
 
 					directories.Add(new_file_dir)
+
+					os.Remove(new_file_path)
+
 					new_file, err := os.Create(new_file_path)
 					if err != nil {
 						return err

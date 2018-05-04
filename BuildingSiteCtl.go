@@ -151,7 +151,7 @@ func (self *BuildingSiteCtl) InitDirs() error {
 		_, err := os.Stat(j)
 		if err != nil {
 			if os.IsNotExist(err) {
-				self.log.Info("Creating directory: " + self.path)
+				self.log.Info("Creating directory: " + i)
 				err := os.MkdirAll(j, 0700)
 				if err != nil {
 					return errors.New("Can't create dir: " + err.Error())
@@ -334,12 +334,6 @@ func (self *BuildingSiteCtl) IsBuildingSite() bool {
 
 func (self *BuildingSiteCtl) Run(targets []string) error {
 
-	l, err := self.CreateLogger("aipsetup bs run log", true)
-	if err != nil {
-		return err
-	}
-	defer l.Close()
-
 	info, err := self.ReadInfo()
 	if err != nil {
 		return err
@@ -349,6 +343,12 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 	if err != nil {
 		return err
 	}
+
+	l, err := self.CreateLogger("aipsetup bs run log", true)
+	if err != nil {
+		return err
+	}
+	defer l.Close()
 
 	tarball_info, err := pkginfodb.Get(info.PackageName)
 	if err != nil {
