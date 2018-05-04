@@ -150,6 +150,8 @@ func (self *MassBuildCtl) PerformMassBuilding() (
 			res := self.fullBuildTarball(bi, host, arch)
 			if res != nil {
 				self.log.Error("building failed: " + res.Error())
+			} else {
+				// self.log.Info("building succeeded. removing buildingsite")
 			}
 
 			var vret map[string][]string
