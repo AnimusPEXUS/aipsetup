@@ -30,14 +30,6 @@ func NewSystemPackages(system *System) *SystemPackages {
 	return self
 }
 
-// func (self *SystemPackages) Uninstall(filename string) error {
-// 	return 1
-// }
-//
-// func (self *SystemPackages) Install(filename string) error {
-// 	return 1
-// }
-
 func (self *SystemPackages) ListAllInstalledASPs() ([]*basictypes.ASPName, error) {
 
 	files, err := ioutil.ReadDir(self.sys.GetInstalledASPDir())
@@ -504,8 +496,6 @@ func (self *SystemPackages) RemoveASP(
 		return err
 	}
 
-	self.sys.GetSystemUpdates().UpdatesAfterPkgInstall()
-
 	return nil
 }
 
@@ -905,8 +895,6 @@ func (self *SystemPackages) InstallASP(
 
 	// TODO: add checks for ASP integrity
 
-	self.sys.log.Info("parse result\n" + parsed.StringD())
-
 	host := parsed.Host
 	hostarch := parsed.HostArch
 	// target := parsed.Target
@@ -985,8 +973,6 @@ func (self *SystemPackages) InstallASP(
 
 	self.sys.log.Info("Installation Finished. Looks Ok")
 
-	self.sys.GetSystemUpdates().UpdatesAfterPkgInstall()
-
 	return nil
 }
 
@@ -995,7 +981,7 @@ func (self *SystemPackages) InstallASPReduceToSubRoutine(
 	print_list bool,
 ) error {
 
-	self.sys.log.Info("Reduction of " + filename + " asked")
+	self.sys.log.Info("Reduction to " + filename + " asked")
 
 	parsed, err := basictypes.NewASPNameFromString(filename)
 	if err != nil {
@@ -1006,8 +992,6 @@ func (self *SystemPackages) InstallASPReduceToSubRoutine(
 	if err != nil {
 		return err
 	}
-
-	self.sys.log.Info("Parsed as\n" + parsed.StringD())
 
 	lst, err := self.ListInstalledPackageNameASPs(
 		parsed.Name,

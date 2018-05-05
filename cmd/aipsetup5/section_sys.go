@@ -311,6 +311,8 @@ func CmdAipsetupSysInstall(
 		}
 	}
 
+	sys.GetSystemUpdates().UpdatesAfterPkgInstall()
+
 	return nil
 }
 
@@ -343,6 +345,8 @@ func CmdAipsetupSysReduceTo(
 			Message: "some packages was reduced with errors",
 		}
 	}
+
+	sys.GetSystemUpdates().UpdatesAfterPkgInstall()
 
 	return nil
 }
@@ -384,6 +388,8 @@ func CmdAipsetupSysRemove(
 		}
 
 	}
+
+	sys.GetSystemUpdates().UpdatesAfterPkgInstall()
 
 	return nil
 }
