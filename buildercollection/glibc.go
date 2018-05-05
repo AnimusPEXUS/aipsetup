@@ -40,9 +40,15 @@ func NewBuilderGlibc(bs basictypes.BuildingSiteCtlI) (*BuilderGlibc, error) {
 
 	self.std_builder.EditConfigureArgsCB = self.EditConfigureArgs
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	// calc := self.bs.GetBuildingSiteValuesCalculator()
 
-	if t, err := calc.CalculateInstallLibDir(); err != nil {
+	// if t, err := calc.CalculateInstallLibDir(); err != nil {
+	// 	return nil, err
+	// } else {
+	// 	self.slibdir = t
+	// }
+
+	if t, err := self._CalculateSlibdir(); err != nil {
 		return nil, err
 	} else {
 		self.slibdir = t
@@ -85,6 +91,44 @@ func (self *BuilderGlibc) DefineActions() (basictypes.BuilderActions, error) {
 			},
 			len(ret)-1,
 		)
+	}
+
+	return ret, nil
+}
+
+func (self *BuilderGlibc) _CalculateSlibdir() (string, error) {
+	// # NOTE: on multilib installations glibc libraries shuld be allways
+	// #       installed in host_lib_dir. Else - multilib GCC could
+	// #       not be built
+
+	// NOTE 2 and BIG FAT WARNING: if ix86-pc-linux-gnu's lib dir will go as
+	//      /multihost/x86_64-pc-linux-gnu/multiarch/ix86-pc-linux-gnu/lib, then
+	//      compilation of 32bit programms will stop working. this is a huge
+	//      issue on which I dont have time right now
+
+	// TODO: do something smart about this problem
+
+	// === garbage code start ===
+	// info,err := self.bs.ReadInfo()
+	// if err != nil {
+	// 	return "", nil
+	// }
+	//
+	// host_dir := calc.CalculateHostDir()
+	//
+	// if info.Host == "x86_64-pc-linux-gnu"  {
+	// 	if  info.HostArch == info.Host{
+	// 		ret = ""
+	// 	}
+	//
+	// }
+	// === garbage code end ===
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	ret, err := calc.CalculateHostLibDir()
+	if err != nil {
+		return "", err
 	}
 
 	return ret, nil
@@ -139,6 +183,17 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 			hbt_opts...,
 		)
 
+	}
+
+	slibdir, err := self._CalculateSlibdir()
+	if err != nil {
+		return nil, err
+	}
+
+	for i := range ret {
+		if strings.HasPrefix(ret[i], "--libdir=") {
+			ret[i] = "--libdir=" + slibdir
+		}
 	}
 
 	ret = append(

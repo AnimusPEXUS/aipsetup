@@ -288,9 +288,7 @@ func (self *BuildingSiteValuesCalculator) CalculateMainMultiarchLibDirName() (
 	return "", errors.New("host or [host/hostarch] value not supported")
 }
 
-func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths(
-	prefix string,
-) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths() ([]string, error) {
 
 	inst_prefix, err := self.CalculateInstallPrefix()
 	if err != nil {
@@ -299,12 +297,9 @@ func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths(
 
 	ret := make([]string, 0)
 
-	if prefix == "" {
-		var err error
-		prefix, err = self.CalculateInstallPrefix()
-		if err != nil {
-			return []string{}, nil
-		}
+	prefix, err := self.CalculateInstallPrefix()
+	if err != nil {
+		return []string{}, nil
 	}
 
 	for _, i := range []string{
@@ -325,63 +320,104 @@ func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths(
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_LD_LIBRARY_PATH(
-	prefixes []string,
-) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_LD_LIBRARY_PATH() (
+	[]string,
+	error,
+) {
+
+	// info, err := self.site.ReadInfo()
+	// if err != nil {
+	// 	return nil, err
+	// }
+	//
+	// host_dir, err := self.CalculateHostDir()
+	// if err != nil {
+	// 	return []string{}, err
+	// }
+	//
+	// if info.Host != info.HostArch {
+	// 	host_dir, err = self.CalculateHostArchDir()
+	// 	if err != nil {
+	// 		return []string{}, err
+	// 	}
+	// }
+	//
+	// ret := make([]string, 0)
+	//
+	// search_roots := make([]string, 0)
+	//
+	// search_roots = append(search_roots, host_dir)
+	// search_roots = append(search_roots, prefixes...)
+	//
+	// search_roots = textlist.RemoveDuplicatedStrings(search_roots)
+	//
+	// for _, i := range search_roots {
+	// 	for _, j := range basictypes.POSSIBLE_LIBDIR_NAMES {
+	// 		joined := path.Join(i, j)
+	// 		if s, err := os.Stat(joined); err == nil && s.IsDir() {
+	// 			ret = append(ret, joined)
+	// 		}
+	// 	}
+	// }
+	//
+	// ret = textlist.RemoveDuplicatedStrings(ret)
+
+	sys := self.site.GetSystem()
+
+	host, err := sys.Host()
+	if err != nil {
+		return nil, err
+	}
+
+	archs, err := sys.Archs()
+	if err != nil {
+		return nil, err
+	}
 
 	info, err := self.site.ReadInfo()
 	if err != nil {
 		return nil, err
 	}
 
-	host_dir, err := self.CalculateHostDir()
-	if err != nil {
-		return []string{}, err
-	}
+	prefixes := make([]string, 0)
 
-	if info.Host != info.HostArch {
-		host_dir, err = self.CalculateHostArchDir()
-		if err != nil {
-			return []string{}, err
-		}
+	prefixes = append(
+		prefixes,
+		self.opc.CalculateHostArchDir("/", info.Host, info.HostArch),
+	)
+
+	for _, arch := range archs {
+		// TODO: something wrong here
+		prefixes = append(
+			prefixes,
+			self.opc.CalculateHostArchDir("/", host, arch),
+		)
 	}
 
 	ret := make([]string, 0)
 
-	search_roots := make([]string, 0)
-
-	search_roots = append(search_roots, host_dir)
-	search_roots = append(search_roots, prefixes...)
-
-	search_roots = textlist.RemoveDuplicatedStrings(search_roots)
-
-	for _, i := range search_roots {
+	for _, i := range prefixes {
 		for _, j := range basictypes.POSSIBLE_LIBDIR_NAMES {
 			joined := path.Join(i, j)
-			if s, err := os.Stat(joined); err == nil && s.IsDir() {
+			s, err := os.Stat(joined)
+			if err == nil && s.IsDir() {
 				ret = append(ret, joined)
 			}
 		}
 	}
 
-	ret = textlist.RemoveDuplicatedStrings(ret)
-
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_LIBRARY_PATH(
-	prefixes []string,
-) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_LIBRARY_PATH() ([]string, error) {
 	// # NOTE: potentially this is different from LD_LIBRARY_PATH.
 	// #       LIBRARY_PATH is for GCC and it's friends. so it's possible
 	// #       for it to differ also in code, in future, not only in name.
 	// ret = self.calculate_LD_LIBRARY_PATH(prefix)
-	return self.Calculate_LD_LIBRARY_PATH(prefixes)
+	return self.Calculate_LD_LIBRARY_PATH()
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_C_INCLUDE_PATH(
-	prefixes []string,
-) ([]string, error) {
+func (self *BuildingSiteValuesCalculator) Calculate_C_INCLUDE_PATH() ([]string, error) {
 
 	inst_prefix, err := self.CalculateInstallPrefix()
 	if err != nil {
@@ -392,11 +428,7 @@ func (self *BuildingSiteValuesCalculator) Calculate_C_INCLUDE_PATH(
 
 	search_roots := make([]string, 0)
 
-	if len(prefixes) != 0 {
-		search_roots = append(search_roots, prefixes...)
-	} else {
-		search_roots = append(search_roots, inst_prefix)
-	}
+	search_roots = append(search_roots, inst_prefix)
 
 	search_roots = textlist.RemoveDuplicatedStrings(search_roots)
 
@@ -412,7 +444,7 @@ func (self *BuildingSiteValuesCalculator) Calculate_C_INCLUDE_PATH(
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) Calculate_PATH(prefix string) (
+func (self *BuildingSiteValuesCalculator) Calculate_PATH() (
 	[]string, error,
 ) {
 
@@ -429,14 +461,6 @@ func (self *BuildingSiteValuesCalculator) Calculate_PATH(prefix string) (
 	ret := make([]string, 0)
 
 	search_roots := make([]string, 0)
-
-	if prefix != "" {
-		if s, err := os.Stat(prefix); err == nil && s.IsDir() {
-			search_roots = append(search_roots, prefix)
-		} else {
-			return []string{}, err
-		}
-	}
 
 	search_roots = append(search_roots, inst_prefix)
 	search_roots = append(search_roots, host_dir)

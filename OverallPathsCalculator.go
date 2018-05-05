@@ -33,7 +33,13 @@ func (self OverallPathsCalculator) CalculateHostMultiarchDir(
 func (self OverallPathsCalculator) CalculateHostArchDir(
 	root, host, hostarch string,
 ) string {
-	return path.Join(self.CalculateHostMultiarchDir(root, host), hostarch)
+	var ret string
+	if host != hostarch {
+		ret = path.Join(self.CalculateHostMultiarchDir(root, host), hostarch)
+	} else {
+		ret = self.CalculateHostDir(root, host)
+	}
+	return ret
 }
 
 // /{hostpath}/corssbuilders

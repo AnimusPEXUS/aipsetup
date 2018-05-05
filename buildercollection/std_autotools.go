@@ -198,27 +198,27 @@ func (self *BuilderStdAutotools) BuilderActionConfigureEnvDef(
 
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 
-	pkgcp, err := calc.CalculatePkgConfigSearchPaths("")
+	pkgcp, err := calc.CalculatePkgConfigSearchPaths()
 	if err != nil {
 		return env, err
 	}
 
-	ldlp, err := calc.Calculate_LD_LIBRARY_PATH([]string{})
+	ldlp, err := calc.Calculate_LD_LIBRARY_PATH()
 	if err != nil {
 		return env, err
 	}
 
-	lp, err := calc.Calculate_LIBRARY_PATH([]string{})
+	lp, err := calc.Calculate_LIBRARY_PATH()
 	if err != nil {
 		return env, err
 	}
 
-	ci, err := calc.Calculate_C_INCLUDE_PATH([]string{})
+	ci, err := calc.Calculate_C_INCLUDE_PATH()
 	if err != nil {
 		return env, err
 	}
 
-	path, err := calc.Calculate_PATH("")
+	path, err := calc.Calculate_PATH()
 	if err != nil {
 		return env, err
 	}

@@ -37,12 +37,12 @@ type BuildingSiteValuesCalculatorI interface {
 
 	CalculateMainMultiarchLibDirName() (string, error)
 
-	CalculatePkgConfigSearchPaths(prefix string) ([]string, error)
+	CalculatePkgConfigSearchPaths() ([]string, error)
 
-	Calculate_LD_LIBRARY_PATH(prefixes []string) ([]string, error)
-	Calculate_LIBRARY_PATH(prefixes []string) ([]string, error)
-	Calculate_C_INCLUDE_PATH(prefixes []string) ([]string, error)
-	Calculate_PATH(prefix string) ([]string, error)
+	Calculate_LD_LIBRARY_PATH() ([]string, error)
+	Calculate_LIBRARY_PATH() ([]string, error)
+	Calculate_C_INCLUDE_PATH() ([]string, error)
+	Calculate_PATH() ([]string, error)
 
 	Calculate_C_Compiler() (string, error)
 	Calculate_CXX_Compiler() (string, error)

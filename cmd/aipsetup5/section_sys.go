@@ -366,12 +366,23 @@ func CmdAipsetupSysRemove(
 	//
 	// names := getopt_result.Args
 
-	err := sys.ASPs.RemoveASP(nil, false, false, nil)
-	if err != nil {
-		return &cliapp.AppResult{
-			Code:    10,
-			Message: err.Error(),
+	for _, i := range getopt_result.Args {
+		iname, err := basictypes.NewASPNameFromString(i)
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    11,
+				Message: err.Error(),
+			}
 		}
+
+		err = sys.ASPs.RemoveASP(iname, false, false, nil)
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    10,
+				Message: err.Error(),
+			}
+		}
+
 	}
 
 	return nil
