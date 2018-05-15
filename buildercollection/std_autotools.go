@@ -1,7 +1,6 @@
 package buildercollection
 
 import (
-	"errors"
 	"fmt"
 	"os"
 	"path"
@@ -46,6 +45,7 @@ type BuilderStdAutotools struct {
 
 	EditActionsCB                    func(basictypes.BuilderActions) (basictypes.BuilderActions, error)
 	AfterExtractCB                   func(log *logger.Logger, ret error) error
+	PatchCB                          func(log *logger.Logger) error
 	EditConfigureEnvCB               func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
 	EditConfigureArgsCB              func(log *logger.Logger, ret []string) ([]string, error)
 	EditConfigureScriptNameCB        func(log *logger.Logger, ret string) (string, error)
@@ -100,8 +100,8 @@ func (self *BuilderStdAutotools) DefineActions() (basictypes.BuilderActions, err
 		&basictypes.BuilderAction{"src_cleanup", self.BuilderActionSrcCleanup},
 		&basictypes.BuilderAction{"bld_cleanup", self.BuilderActionBldCleanup},
 		&basictypes.BuilderAction{"primary_extract", self.BuilderActionPrimaryExtract},
-		// &basictypes.BuilderAction{				//ret["patch"] = self.BuilderActionPatch},
-		// &basictypes.BuilderAction{				//ret["autogen"] = self.BuilderActionAutogen},
+		&basictypes.BuilderAction{"patch", self.BuilderActionPatch},
+		&basictypes.BuilderAction{"autogen", self.BuilderActionAutogen},
 		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
 		&basictypes.BuilderAction{"build", self.BuilderActionBuild},
 		&basictypes.BuilderAction{"distribute", self.BuilderActionDistribute},
@@ -182,13 +182,23 @@ func (self *BuilderStdAutotools) BuilderActionPrimaryExtract(
 func (self *BuilderStdAutotools) BuilderActionPatch(
 	log *logger.Logger,
 ) error {
-	return errors.New("not impl")
+	if self.PatchCB != nil {
+		err := self.PatchCB(log)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionAutogen(
 	log *logger.Logger,
 ) error {
-	return errors.New("not impl")
+	needs_autogen := false
+	if needs_autogen || self.ForcedAutogen {
+		// TODO
+	}
+	return nil
 }
 
 func (self *BuilderStdAutotools) BuilderActionConfigureEnvDef(
