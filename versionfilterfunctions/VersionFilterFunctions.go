@@ -6,8 +6,8 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/tarballversion/versioncomparators"
 	"github.com/AnimusPEXUS/utils/textlist"
-	"github.com/AnimusPEXUS/utils/version/versioncomparators"
 )
 
 var VersionFilterFunctions textlist.FilterFunctions

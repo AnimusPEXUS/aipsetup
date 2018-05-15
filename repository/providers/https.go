@@ -20,8 +20,8 @@ import (
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
-	"github.com/AnimusPEXUS/utils/version"
-	"github.com/AnimusPEXUS/utils/version/versioncomparators"
+	"github.com/AnimusPEXUS/utils/tarballversion"
+	"github.com/AnimusPEXUS/utils/tarballversion/versioncomparators"
 )
 
 var _ types.ProviderI = &ProviderHttps{}
@@ -265,7 +265,7 @@ func (self *ProviderHttps) PerformUpdate() error {
 		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
-	version_tree, err := version.NewVersionTree(
+	version_tree, err := tarballversion.NewVersionTree(
 		self.pkg_info.TarballName,
 		parser,
 		comparator,

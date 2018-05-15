@@ -20,7 +20,7 @@ import (
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
-	"github.com/AnimusPEXUS/utils/version/versioncomparators"
+	"github.com/AnimusPEXUS/utils/tarballversion/versioncomparators"
 )
 
 var _ types.RepositoryI = &Repository{}
