@@ -333,7 +333,10 @@ func (self *ProviderSRS) MakeTarballsGit(
 				continue
 			}
 
-			matched, err = regexp.MatchString(TagStatus, parse_res.Status.DirtyStr)
+			matched, err = regexp.MatchString(
+				TagStatus,
+				parse_res.Status.DirtyString(),
+			)
 			if err != nil {
 				return err
 			}

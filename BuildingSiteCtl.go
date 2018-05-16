@@ -268,9 +268,9 @@ maintarball_found:
 			return err
 		}
 
-		info.PackageVersion = parsed.Version.Str
-		if parsed.Status.Str != "" {
-			info.PackageStatus = parsed.Status.Str
+		info.PackageVersion = parsed.Version.String()
+		if parsed.Status.String() != "" {
+			info.PackageStatus = parsed.Status.String()
 		}
 
 	}

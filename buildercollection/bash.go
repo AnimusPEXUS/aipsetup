@@ -24,14 +24,14 @@ func NewBuilder_bash(bs basictypes.BuildingSiteCtlI) (*Builder_bash, error) {
 }
 
 func (self *Builder_bash) BuilderActionPatch(log *logger.Logger) error {
-
+	//
 	// info, err := self.bs.ReadInfo()
 	// if err != nil {
 	// 	return err
 	// }
-
-	// version_parsed := info.PackageVersion
-
+	//
+	// version_parsed := versionorstatus
+	//
 	// bash_patch_prefix := fmt.Sprintf("bash%d%d-")
 
 	return nil

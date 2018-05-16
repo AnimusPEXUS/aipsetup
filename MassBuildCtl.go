@@ -257,7 +257,7 @@ func (self *MassBuildCtl) createBuildingSite(
 	bs_name := fmt.Sprintf(
 		"%s-%s-%s",
 		pkgname,
-		tarball_parsed.Version.Str,
+		tarball_parsed.Version.String(),
 		bs_ts,
 	)
 
@@ -285,8 +285,8 @@ func (self *MassBuildCtl) createBuildingSite(
 		HostArch:           hostarch,
 		InitiatedByHost:    mb_info.InitiatedByHost,
 		PackageName:        pkgname,
-		PackageStatus:      tarball_parsed.Status.Str,
-		PackageVersion:     tarball_parsed.Version.Str,
+		PackageStatus:      tarball_parsed.Status.String(),
+		PackageVersion:     tarball_parsed.Version.String(),
 		PackageTimeStamp:   bs_ts,
 		CrossbuilderTarget: mb_info.CrossbuilderTarget,
 		CrossbuildersHost:  mb_info.CrossbuildersHost,
@@ -324,7 +324,7 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 
 	if ok, err := self.checkAlreadyReady(
 		pkgname,
-		tarball_parsed.Version.Str,
+		tarball_parsed.Version.String(),
 		host, hostarch,
 	); err != nil {
 		return err
@@ -338,12 +338,12 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 	var bs *BuildingSiteCtl
 
 	self.log.Info(
-		"trying to find " + pkgname + "-" + tarball_parsed.Version.Str + "-" +
+		"trying to find " + pkgname + "-" + tarball_parsed.Version.String() + "-" +
 			host + "-" + hostarch,
 	)
 
 	if tbs, err := self.findBuildingSite(
-		pkgname, tarball_parsed.Version.Str, host, hostarch,
+		pkgname, tarball_parsed.Version.String(), host, hostarch,
 	); err != nil {
 		self.log.Info("  finding error: " + err.Error())
 		tbs, err := self.createBuildingSite(
@@ -385,7 +385,7 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 
 	if ok, err := self.checkAlreadyReady(
 		pkgname,
-		tarball_parsed.Version.Str,
+		tarball_parsed.Version.String(),
 		host, hostarch,
 	); err != nil {
 		return err
