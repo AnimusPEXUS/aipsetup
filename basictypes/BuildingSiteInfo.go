@@ -36,6 +36,9 @@ type BuildingSiteInfo struct {
 	//	Sources []string `json:"sources"`
 
 	// MainTarballInfo *PackageInfo `json:"main_tarball_info"`
+
+	ModifyVersionBeforePack bool   `json:"modify_version_before_pack"`
+	NewVersion              string `json:"new_version"`
 }
 
 func (self *BuildingSiteInfo) SetInfoLilith50() {

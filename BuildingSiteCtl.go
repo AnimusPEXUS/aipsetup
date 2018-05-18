@@ -268,9 +268,14 @@ maintarball_found:
 			return err
 		}
 
-		info.PackageVersion = parsed.Version.String()
-		if parsed.Status.String() != "" {
-			info.PackageStatus = parsed.Status.String()
+		if t, err := parsed.Version.IntSliceString("."); err != nil {
+			return err
+		} else {
+			info.PackageVersion = t
+		}
+
+		if parsed.Status.StrSliceString("") != "" {
+			info.PackageStatus = parsed.Status.StrSliceString("")
 		}
 
 	}

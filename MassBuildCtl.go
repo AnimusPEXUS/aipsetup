@@ -254,10 +254,15 @@ func (self *MassBuildCtl) createBuildingSite(
 ) (*BuildingSiteCtl, error) {
 	bs_ts := basictypes.NewASPTimeStampFromCurrentTime().String()
 
+	vstr, err := tarball_parsed.Version.IntSliceString(".")
+	if err != nil {
+		return nil, err
+	}
+
 	bs_name := fmt.Sprintf(
 		"%s-%s-%s",
 		pkgname,
-		tarball_parsed.Version.String(),
+		vstr,
 		bs_ts,
 	)
 
@@ -285,8 +290,8 @@ func (self *MassBuildCtl) createBuildingSite(
 		HostArch:           hostarch,
 		InitiatedByHost:    mb_info.InitiatedByHost,
 		PackageName:        pkgname,
-		PackageStatus:      tarball_parsed.Status.String(),
-		PackageVersion:     tarball_parsed.Version.String(),
+		PackageVersion:     vstr,
+		PackageStatus:      tarball_parsed.Status.StrSliceString(""),
 		PackageTimeStamp:   bs_ts,
 		CrossbuilderTarget: mb_info.CrossbuilderTarget,
 		CrossbuildersHost:  mb_info.CrossbuildersHost,
@@ -322,9 +327,14 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 		return err
 	}
 
+	vstr, err := tarball_parsed.Version.IntSliceString(".")
+	if err != nil {
+		return err
+	}
+
 	if ok, err := self.checkAlreadyReady(
 		pkgname,
-		tarball_parsed.Version.String(),
+		vstr,
 		host, hostarch,
 	); err != nil {
 		return err
@@ -338,19 +348,14 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 	var bs *BuildingSiteCtl
 
 	self.log.Info(
-		"trying to find " + pkgname + "-" + tarball_parsed.Version.String() + "-" +
-			host + "-" + hostarch,
+		"trying to find " + pkgname + "-" + vstr + "-" + host + "-" + hostarch,
 	)
 
 	if tbs, err := self.findBuildingSite(
-		pkgname, tarball_parsed.Version.String(), host, hostarch,
+		pkgname, vstr, host, hostarch,
 	); err != nil {
 		self.log.Info("  finding error: " + err.Error())
-		tbs, err := self.createBuildingSite(
-			pkgname,
-			host, hostarch,
-			tarball_parsed,
-		)
+		tbs, err := self.createBuildingSite(pkgname, host, hostarch, tarball_parsed)
 		if err != nil {
 			return err
 		}
@@ -383,11 +388,7 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 
 	self.log.Info("run complete")
 
-	if ok, err := self.checkAlreadyReady(
-		pkgname,
-		tarball_parsed.Version.String(),
-		host, hostarch,
-	); err != nil {
+	if ok, err := self.checkAlreadyReady(pkgname, vstr, host, hostarch); err != nil {
 		return err
 	} else {
 		if !ok {
