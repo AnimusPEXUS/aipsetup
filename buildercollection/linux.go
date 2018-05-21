@@ -117,7 +117,7 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 		&basictypes.BuilderAction{"dst_cleanup", self.std_builder.BuilderActionDstCleanup},
 		&basictypes.BuilderAction{"src_cleanup", self.std_builder.BuilderActionSrcCleanup},
 		&basictypes.BuilderAction{"bld_cleanup", self.std_builder.BuilderActionBldCleanup},
-		&basictypes.BuilderAction{"primary_extract", self.std_builder.BuilderActionPrimaryExtract},
+		&basictypes.BuilderAction{"extract", self.std_builder.BuilderActionExtract},
 		//&basictypes.BuilderAction{"patch", self.BuilderActionPatch},
 		// &basictypes.BuilderAction{"autogen", self.BuilderActionAutogen},
 		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
@@ -148,7 +148,7 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 		ret = basictypes.BuilderActions{
 			&basictypes.BuilderAction{"dst_cleanup", self.std_builder.BuilderActionDstCleanup},
 			&basictypes.BuilderAction{"src_cleanup", self.std_builder.BuilderActionSrcCleanup},
-			&basictypes.BuilderAction{"primary_extract", self.std_builder.BuilderActionPrimaryExtract},
+			&basictypes.BuilderAction{"extract", self.std_builder.BuilderActionExtract},
 
 			&basictypes.BuilderAction{"distr_headers_all", self.BuilderActionDistrHeadersAll},
 		}

@@ -65,6 +65,7 @@ type BuilderStdAutotools struct {
 	EditDistributeMakefileNameCB     func(log *logger.Logger, ret string) (string, error)
 	EditDistributeMakefileCB         func(log *logger.Logger, ret string) (string, error)
 	EditDistributeWorkingDirCB       func(log *logger.Logger, ret string) (string, error)
+	AfterDistributeCB                func(log *logger.Logger, ret error) error
 
 	bs basictypes.BuildingSiteCtlI
 }
@@ -99,7 +100,7 @@ func (self *BuilderStdAutotools) DefineActions() (basictypes.BuilderActions, err
 		&basictypes.BuilderAction{"dst_cleanup", self.BuilderActionDstCleanup},
 		&basictypes.BuilderAction{"src_cleanup", self.BuilderActionSrcCleanup},
 		&basictypes.BuilderAction{"bld_cleanup", self.BuilderActionBldCleanup},
-		&basictypes.BuilderAction{"primary_extract", self.BuilderActionPrimaryExtract},
+		&basictypes.BuilderAction{"extract", self.BuilderActionExtract},
 		&basictypes.BuilderAction{"patch", self.BuilderActionPatch},
 		&basictypes.BuilderAction{"autogen", self.BuilderActionAutogen},
 		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
@@ -146,7 +147,7 @@ func (self *BuilderStdAutotools) BuilderActionBldCleanup(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionPrimaryExtract(
+func (self *BuilderStdAutotools) BuilderActionExtract(
 	log *logger.Logger,
 ) error {
 	a_tools := new(buildingtools.Autotools)
@@ -809,6 +810,13 @@ func (self *BuilderStdAutotools) BuilderActionDistribute(
 	)
 	if err != nil {
 		return err
+	}
+
+	if self.AfterDistributeCB != nil {
+		err = self.AfterDistributeCB(log, err)
+		if err != nil {
+			return err
+		}
 	}
 
 	return nil

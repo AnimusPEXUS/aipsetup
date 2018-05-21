@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
+	"os"
 	"os/exec"
 	"path"
 	"regexp"
@@ -29,6 +30,7 @@ func NewBuilder_bash(bs basictypes.BuildingSiteCtlI) (*Builder_bash, error) {
 	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
 	self.PatchCB = self.BuilderActionPatch
 	self.EditConfigureArgsCB = self.EditConfigureArgs
+	self.AfterDistributeCB = self.AfterDistribute
 	return self, nil
 }
 
@@ -194,4 +196,26 @@ func (self *Builder_bash) EditConfigureArgs(log *logger.Logger, ret []string) ([
 	}
 
 	return ret, nil
+}
+
+func (self *Builder_bash) AfterDistribute(log *logger.Logger, err error) error {
+	if err != nil {
+		return err
+	}
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	dst_install_prefix, err := calc.CalculateDstInstallPrefix()
+	if err != nil {
+		return err
+	}
+
+	tsl := path.Join(dst_install_prefix, "bin", "sh")
+
+	err = os.Symlink("bash", tsl)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
