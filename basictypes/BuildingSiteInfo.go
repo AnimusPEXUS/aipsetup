@@ -1,5 +1,7 @@
 package basictypes
 
+import "encoding/json"
+
 type BuildingSiteInfo struct {
 	SystemTitle   string `json:"system_title"`
 	SystemVersion string `json:"system_version"`
@@ -56,4 +58,17 @@ func (self *BuildingSiteInfo) ThisIsCrossbuilding() bool {
 
 func (self *BuildingSiteInfo) ThisIsSubarchBuilding() bool {
 	return self.Host != self.HostArch
+}
+
+func NewBuildingSiteInfoFromByteSlice(text []byte) (*BuildingSiteInfo, error) {
+	self := new(BuildingSiteInfo)
+	err := json.Unmarshal(text, self)
+	if err != nil {
+		return nil, err
+	}
+	return self, nil
+}
+
+func NewBuildingSiteInfoFromString(text string) (*BuildingSiteInfo, error) {
+	return NewBuildingSiteInfoFromByteSlice([]byte(text))
 }

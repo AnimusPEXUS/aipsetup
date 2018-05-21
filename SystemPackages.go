@@ -899,8 +899,6 @@ func (self *SystemPackages) InstallASP(filename string) error {
 		}
 	}
 
-	// TODO: add checks for ASP integrity
-
 	host := parsed.Host
 	hostarch := parsed.HostArch
 	// target := parsed.Target
