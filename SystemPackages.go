@@ -884,13 +884,19 @@ func (self *SystemPackages) InstallASP_DestDir(filename string) error {
 	return nil
 }
 
-func (self *SystemPackages) InstallASP(
-	filename string,
-) error {
+func (self *SystemPackages) InstallASP(filename string) error {
 
 	parsed, err := basictypes.NewASPNameFromString(filename)
 	if err != nil {
 		return err
+	}
+
+	if ok, err := CheckAspPackageByFilename(filename); err != nil {
+		return err
+	} else {
+		if !ok {
+			return errors.New("given file didn't passed package check")
+		}
 	}
 
 	// TODO: add checks for ASP integrity

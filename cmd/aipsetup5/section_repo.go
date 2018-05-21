@@ -1,10 +1,12 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"path"
 	"sort"
 
+	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/repository"
 	"github.com/AnimusPEXUS/aipsetup/repository/providers"
@@ -196,32 +198,74 @@ func CmdAipsetupRepoPut(
 		word = "copying"
 	}
 
+	ok_asp_names := make([]string, 0)
+	ok_src_names := make([]string, 0)
+	err_names := make([]string, 0)
 	was_errors := false
 
 	for _, i := range getopt_result.Args {
-		fmt.Print(word, " ", i)
-		if _, err := basictypes.NewASPNameFromString(i); err == nil {
-			err = repo.MoveInASP(i, copy)
-			if err != nil {
-				fmt.Println(" - error:", err)
-				was_errors = true
-				continue
-			}
-			fmt.Println(" - ok")
+
+		_, err := basictypes.NewASPNameFromString(i)
+		if err == nil {
+			ok_asp_names = append(ok_asp_names, i)
 			continue
 		}
+
 		if tarballname.IsPossibleTarballName(i) {
-			err = repo.MoveInTarball(i, copy)
-			if err != nil {
-				fmt.Println(" - error:", err)
-				was_errors = true
-				continue
-			}
-			fmt.Println(" - ok")
+			ok_src_names = append(ok_src_names, i)
 			continue
 		}
-		fmt.Println("- error: unknown file")
+
+		err_names = append(err_names, i)
 		was_errors = true
+	}
+
+	for _, i := range ok_asp_names {
+		fmt.Print(word, " ", i)
+
+		ok, err := aipsetup.CheckAspPackageByFilename(i)
+		if err != nil {
+			fmt.Println(" - error:", err)
+			was_errors = true
+			continue
+
+		}
+
+		if !ok {
+			err := errors.New("given file didn't passed package check")
+			fmt.Println(" - error:", err)
+			was_errors = true
+			continue
+		}
+
+		err = repo.MoveInASP(i, copy)
+		if err != nil {
+			fmt.Println(" - error:", err)
+			was_errors = true
+			continue
+		}
+
+		fmt.Println(" - ok")
+	}
+
+	for _, i := range ok_src_names {
+		fmt.Print(word, " ", i)
+
+		err = repo.MoveInTarball(i, copy)
+		if err != nil {
+			fmt.Println(" - error:", err)
+			was_errors = true
+			continue
+		}
+
+		fmt.Println(" - ok")
+	}
+
+	if len(err_names) != 0 {
+		log.Error(fmt.Sprintf("There was %d error(s):"))
+		for _, i := range err_names {
+			fmt.Println("   ", i)
+		}
 	}
 
 	if was_errors {
