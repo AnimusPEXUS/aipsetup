@@ -78,10 +78,10 @@ func (self *PackageChecker) CheckByFilename(filename string) (bool, error) {
 	{
 		_, tar_obj, err := self._MakeReader(
 			filename,
-			basictypes.PACKAGE_INFO_FILENAME_V5,
+			"./"+basictypes.PACKAGE_INFO_FILENAME_V5,
 		)
 		if err != nil {
-			return false, err
+			return false, errors.New("error checking asp's info: " + err.Error())
 		}
 
 		{
