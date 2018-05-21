@@ -38,6 +38,7 @@ func (self *Packager) Run(log *logger.Logger) error {
 		self.CompressPatchesAndDestDir,
 		self.CompressFilesInListsDir,
 		self.UpdateTimestamp,
+		//		self.UpdateVersionIfNeeded,
 		self.MakeChecksums,
 		self.CompressLogs,
 		self.Pack,
@@ -51,7 +52,7 @@ func (self *Packager) Run(log *logger.Logger) error {
 	return nil
 }
 
-func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
+func (self *Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 
 	log.Info("Checking paths correctness")
 
@@ -175,7 +176,7 @@ func (self Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 	return nil
 }
 
-func (self Packager) DestDirFileList(log *logger.Logger) error {
+func (self *Packager) DestDirFileList(log *logger.Logger) error {
 
 	log.Info("Creating file list")
 
@@ -216,7 +217,7 @@ func (self Packager) DestDirFileList(log *logger.Logger) error {
 	return nil
 }
 
-func (self Packager) DestDirChecksum(log *logger.Logger) error {
+func (self *Packager) DestDirChecksum(log *logger.Logger) error {
 
 	log.Info("Calculating DESTDIR files' checksums")
 
@@ -291,7 +292,7 @@ func (self Packager) DestDirChecksum(log *logger.Logger) error {
 	return nil
 }
 
-func (self Packager) CompressPatchesAndDestDir(log *logger.Logger) error {
+func (self *Packager) CompressPatchesAndDestDir(log *logger.Logger) error {
 	log.Info(
 		fmt.Sprintf(
 			"Compressing  %s and %s",
@@ -304,7 +305,8 @@ func (self Packager) CompressPatchesAndDestDir(log *logger.Logger) error {
 		[]string{basictypes.DIR_PATCHES, basictypes.DIR_DESTDIR},
 	)
 }
-func (self Packager) CompressLogs(log *logger.Logger) error {
+
+func (self *Packager) CompressLogs(log *logger.Logger) error {
 	log.Info(
 		fmt.Sprintf(
 			"Compressing %s",
@@ -317,7 +319,7 @@ func (self Packager) CompressLogs(log *logger.Logger) error {
 	)
 }
 
-func (self Packager) _CompressPatchesDestDirAndLogs(log *logger.Logger, subject []string) error {
+func (self *Packager) _CompressPatchesDestDirAndLogs(log *logger.Logger, subject []string) error {
 	for _, i := range subject {
 		log.Info(fmt.Sprintf("  %s", i))
 		dirname := path.Join(self.site.path, i)
@@ -378,7 +380,7 @@ func (self Packager) _CompressPatchesDestDirAndLogs(log *logger.Logger, subject 
 	return nil
 }
 
-func (self Packager) CompressFilesInListsDir(log *logger.Logger) error {
+func (self *Packager) CompressFilesInListsDir(log *logger.Logger) error {
 	log.Info("Compressing files in lists dir")
 
 	ldir := self.site.GetDIR_LISTS()
@@ -420,7 +422,7 @@ func (self Packager) CompressFilesInListsDir(log *logger.Logger) error {
 	return nil
 }
 
-func (self Packager) UpdateTimestamp(log *logger.Logger) error {
+func (self *Packager) UpdateTimestamp(log *logger.Logger) error {
 	info, err := self.site.ReadInfo()
 	if err != nil {
 		return err
@@ -440,7 +442,7 @@ func (self Packager) UpdateTimestamp(log *logger.Logger) error {
 	return nil
 }
 
-func (self Packager) _ListItemsToPack(include_checksum, include_build_logs bool) ([]string, error) {
+func (self *Packager) _ListItemsToPack(include_checksum, include_build_logs bool) ([]string, error) {
 	ret := make([]string, 0)
 	pth := self.site.path
 	ret = append(ret, path.Join(pth, basictypes.DIR_DESTDIR+".tar.xz"))
@@ -480,7 +482,26 @@ func (self Packager) _ListItemsToPack(include_checksum, include_build_logs bool)
 	return ret, nil
 }
 
-func (self Packager) MakeChecksums(log *logger.Logger) error {
+//func (self *Packager) UpdateVersionIfNeeded(log *logger.Logger) error {
+
+//	info, err := self.site.ReadInfo()
+//	if err != nil {
+//		return err
+//	}
+
+//	if info.ModifyVersionBeforePack {
+//		info.PackageVersion = info.NewVersion
+//	}
+
+//	err = self.site.WriteInfo(info)
+//	if err != nil {
+//		return err
+//	}
+
+//	return nil
+//}
+
+func (self *Packager) MakeChecksums(log *logger.Logger) error {
 
 	log.Info("Creating checksumms before packaging")
 
@@ -531,7 +552,31 @@ func (self Packager) MakeChecksums(log *logger.Logger) error {
 	return nil
 }
 
-func (self Packager) Pack(log *logger.Logger) error {
+func _PackSub01_FormatPackageName(
+	name string,
+	version string,
+	status string,
+	timestamp basictypes.ASPNameTimeStamp,
+	host string,
+	hostarch string,
+
+) string {
+	ret := fmt.Sprintf(
+		"%s.asp",
+		(&basictypes.ASPName{
+			Name:      name,
+			Version:   version,
+			Status:    status,
+			TimeStamp: timestamp,
+			Host:      host,
+			HostArch:  hostarch,
+			// Target:    info.Target,
+		}).String(),
+	)
+	return ret
+}
+
+func (self *Packager) Pack(log *logger.Logger) error {
 
 	log.Info("Creating package")
 
@@ -550,17 +595,30 @@ func (self Packager) Pack(log *logger.Logger) error {
 		return err
 	}
 
-	pack_file_name := fmt.Sprintf(
-		"%s.asp",
-		(&basictypes.ASPName{
-			Name:      info.PackageName,
-			Version:   info.PackageVersion,
-			Status:    info.PackageStatus,
-			TimeStamp: ts_str,
-			Host:      info.Host,
-			HostArch:  info.HostArch,
-			// Target:    info.Target,
-		}).String(),
+	create_empty_pack := false
+	empty_pack_version := ""
+
+	if info.ModifyVersionBeforePack {
+		log.Info(
+			"Package version modification is requested - going to create empty old" +
+				" version, so massbuild not complain",
+		)
+		create_empty_pack = true
+		empty_pack_version = info.PackageVersion
+		info.PackageVersion = info.NewVersion
+		err = self.site.WriteInfo(info)
+		if err != nil {
+			return err
+		}
+	}
+
+	pack_file_name := _PackSub01_FormatPackageName(
+		info.PackageName,
+		info.PackageVersion,
+		info.PackageStatus,
+		ts_str,
+		info.Host,
+		info.HostArch,
 	)
 
 	j_pack_file_name := path.Join(pack_dir, pack_file_name)
@@ -600,6 +658,29 @@ func (self Packager) Pack(log *logger.Logger) error {
 	c := exec.Command("tar", args...)
 	c.Dir = self.site.path
 	c.Stderr = os.Stdout
-	return c.Run()
 
+	ret := c.Run()
+
+	if ret == nil {
+		if create_empty_pack {
+			pack_file_name := _PackSub01_FormatPackageName(
+				info.PackageName,
+				empty_pack_version,
+				info.PackageStatus,
+				ts_str,
+				info.Host,
+				info.HostArch,
+			)
+			j_pack_file_name := path.Join(pack_dir, pack_file_name)
+
+			log.Info("Touching " + j_pack_file_name)
+
+			_, err = os.Create(j_pack_file_name)
+			if err != nil {
+				return err
+			}
+		}
+	}
+
+	return ret
 }
