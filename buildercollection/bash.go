@@ -175,8 +175,6 @@ func (self *Builder_bash) BuilderActionPatch(log *logger.Logger) error {
 		log.Info("resulting package version will be modified to " + info.NewVersion)
 	}
 
-	return errors.New("development exit")
-
 	return nil
 }
 
