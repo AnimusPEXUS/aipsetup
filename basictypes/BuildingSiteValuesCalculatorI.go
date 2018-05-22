@@ -23,15 +23,21 @@ type BuildingSiteValuesCalculatorI interface {
 	CalculateHostCrossbuilderDir() (string, error)
 	CalculateDstHostCrossbuilderDir() (string, error)
 
+	// /multihost/{host}/{libname}
 	CalculateHostLibDir() (string, error)
 	CalculateDstHostLibDir() (string, error)
 
+	// /multihost/{host}/multiarch/{arch}/{libname}
 	CalculateHostArchLibDir() (string, error)
 	CalculateDstHostArchLibDir() (string, error)
 
 	CalculateInstallPrefix() (string, error)
 	CalculateDstInstallPrefix() (string, error)
 
+	// /multihost/{host}/{libname}
+	// or
+	// /multihost/{host}/multiarch/{hostarch}/{libname}
+	// depending on host != hostarch
 	CalculateInstallLibDir() (string, error)
 	CalculateDstInstallLibDir() (string, error)
 

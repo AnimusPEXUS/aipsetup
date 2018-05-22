@@ -28,13 +28,13 @@ type Builder_bash struct {
 func NewBuilder_bash(bs basictypes.BuildingSiteCtlI) (*Builder_bash, error) {
 	self := new(Builder_bash)
 	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
-	self.PatchCB = self.BuilderActionPatch
+	self.PatchCB = self.Patch
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	self.AfterDistributeCB = self.AfterDistribute
 	return self, nil
 }
 
-func (self *Builder_bash) BuilderActionPatch(log *logger.Logger) error {
+func (self *Builder_bash) Patch(log *logger.Logger) error {
 
 	bash_patch_name_regexp, err := regexp.Compile(`^bash(\d)(\d)-(\d+)$`)
 	if err != nil {

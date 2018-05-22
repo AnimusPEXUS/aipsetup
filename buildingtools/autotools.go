@@ -106,10 +106,13 @@ func (self *Autotools) Extract(
 	}
 
 	for _, i := range info {
-		os.Rename(
+		err = os.Rename(
 			path.Join(directory_to_work_with, i.Name()),
 			path.Join(outputdir, i.Name()),
 		)
+		if err != nil {
+			return err
+		}
 	}
 
 	log.Info("extraction procedure ended without errors")

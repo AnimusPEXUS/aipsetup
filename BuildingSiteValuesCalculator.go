@@ -252,7 +252,7 @@ func (self *BuildingSiteValuesCalculator) CalculateInstallLibDir() (
 func (self *BuildingSiteValuesCalculator) CalculateDstInstallLibDir() (
 	string, error,
 ) {
-	v, err := self.CalculateInstallPrefix()
+	v, err := self.CalculateInstallLibDir()
 	if err != nil {
 		return "", err
 	}
@@ -272,14 +272,18 @@ func (self *BuildingSiteValuesCalculator) CalculateMainMultiarchLibDirName() (
 
 	case basictypes.I686_PC_LINUX_GNU:
 		switch info.HostArch {
+
 		case basictypes.I686_PC_LINUX_GNU:
 			return basictypes.DIRNAME_LIB, nil
+
 		}
 
 	case basictypes.X86_64_PC_LINUX_GNU:
 		switch info.HostArch {
+
 		case basictypes.I686_PC_LINUX_GNU:
 			return basictypes.DIRNAME_LIB, nil
+
 		case basictypes.X86_64_PC_LINUX_GNU:
 			return basictypes.DIRNAME_LIB64, nil
 		}
