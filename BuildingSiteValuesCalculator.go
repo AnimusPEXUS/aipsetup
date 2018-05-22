@@ -488,7 +488,6 @@ func (self *BuildingSiteValuesCalculator) Calculate_PATH() (
 func (self *BuildingSiteValuesCalculator) Calculate_C_Compiler() (
 	string, error,
 ) {
-
 	info, err := self.site.ReadInfo()
 	if err != nil {
 		return "", err

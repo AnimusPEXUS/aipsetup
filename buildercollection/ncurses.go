@@ -2,6 +2,7 @@ package buildercollection
 
 import (
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -40,7 +41,7 @@ func NewBuilder_ncurses(bs basictypes.BuildingSiteCtlI) (*Builder_ncurses, error
 	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
 
 	self.EditActionsCB = self.EditActions
-	self.PatchCB = self.BuilderActionPatch
+	self.PatchCB = self.Patch
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil
 }
@@ -80,7 +81,7 @@ func (self *Builder_ncurses) EditActions(ret basictypes.BuilderActions) (
 	return ret, nil
 }
 
-func (self *Builder_ncurses) BuilderActionPatch(log *logger.Logger) error {
+func (self *Builder_ncurses) Patch(log *logger.Logger) error {
 
 	info, err := self.bs.ReadInfo()
 	if err != nil {
@@ -271,6 +272,11 @@ func (self *Builder_ncurses) EditConfigureArgs(log *logger.Logger, ret []string)
 		return nil, err
 	}
 
+	gcc_line, err := calc.CalculateAutotoolsCCParameterValue()
+	if err != nil {
+		return nil, err
+	}
+
 	ret = append(
 		ret,
 		[]string{
@@ -284,8 +290,12 @@ func (self *Builder_ncurses) EditConfigureArgs(log *logger.Logger, ret []string)
 			"--with-ticlib",
 			"--with-termlib",
 			"--with-pkg-config=" + path.Join(install_prefix, "share", "pkgconfig"),
+
+			"--with-ada",
 			// TODO: NOTE: building with ada fails on new installations
-			"--without-ada",
+			// "--without-ada",
+
+			fmt.Sprintf("ADAFLAGS= --GCC=\"%s\" ", gcc_line),
 		}...,
 	)
 
