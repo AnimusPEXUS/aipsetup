@@ -1,8 +1,10 @@
 package buildercollection
 
 import (
+	"errors"
 	"fmt"
 	"os"
+	"os/exec"
 	"path"
 	"runtime"
 	"strings"
@@ -196,9 +198,93 @@ func (self *BuilderStdAutotools) BuilderActionAutogen(
 	log *logger.Logger,
 ) error {
 	needs_autogen := false
-	if needs_autogen || self.ForcedAutogen {
-		// TODO
+
+	config_script_name, err := self.BuilderActionConfigureScriptNameDef(log)
+	if err != nil {
+		return err
 	}
+
+	configure_dir := path.Join(
+		self.bs.GetDIR_SOURCE(),
+		self.SourceConfigureRelPath,
+	)
+
+	configure_path := path.Join(
+		configure_dir,
+		config_script_name,
+	)
+
+	_, err = os.Stat(configure_path)
+	if err != nil {
+		if !os.IsNotExist(err) {
+			return err
+		} else {
+			needs_autogen = true
+		}
+	}
+
+	if !needs_autogen && !self.ForcedAutogen {
+		log.Info("autogen usage not needed and not forced. continuing without it")
+		return nil
+	}
+
+	if self.ForcedAutogen {
+		log.Info("autogen usage forced")
+	}
+
+	if needs_autogen {
+		log.Info("detected need to use autogen")
+	}
+
+	generated := false
+
+	log.Info("searching for suitable generator")
+	for _, i := range [][]string{
+		[]string{"makeconf.sh", "./makeconf.sh"},
+		[]string{"autogen.sh", "./autogen.sh"},
+		[]string{"bootstrap.sh", "./bootstrap.sh"},
+		[]string{"bootstrap", "./bootstrap"},
+		[]string{"genconfig.sh", "./genconfig.sh"},
+		[]string{"configure.ac", "autoreconf", "-i"},
+		[]string{"configure.in", "autoreconf", "-i"},
+	} {
+		log.Info("  " + i[0])
+		generator_name := path.Join(configure_dir, i[0])
+
+		_, err := os.Stat(generator_name)
+		if err != nil {
+			if !os.IsNotExist(err) {
+				return err
+			} else {
+				log.Info("    not found")
+				continue
+			}
+		}
+		log.Info("    found")
+
+		log.Info(fmt.Sprintf("executing %s %v", i[1], i[2:]))
+
+		c := exec.Command(i[1], i[2:]...)
+		c.Dir = configure_dir
+		c.Stdout = log.StdoutLbl()
+		c.Stderr = log.StderrLbl()
+
+		err = c.Run()
+		if err != nil {
+			log.Error("  error: " + err.Error())
+			return err
+		}
+
+		log.Info("autogen exited success code")
+
+		generated = true
+		break
+	}
+
+	if !generated {
+		return errors.New("couldn't find suitable generator")
+	}
+
 	return nil
 }
 
@@ -281,7 +367,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureArgsDef(
 		return ret, err
 	}
 
-	opt_map, err := calc.CalculateAllOptionsMap()
+	opt_map, err := calc.CalculateAllAutotoolsOptionsMap()
 	if err != nil {
 		return ret, err
 	}

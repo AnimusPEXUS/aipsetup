@@ -564,43 +564,6 @@ func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCXXParameterValue() 
 	return fmt.Sprintf("%s -m%s", c, mlv), nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateAllOptionsMap() (
-	environ.EnvVarEd, error,
-) {
-
-	ret := environ.New()
-
-	c, err := self.CalculateCompilerOptionsMap()
-	if err != nil {
-		return ret, err
-	}
-
-	ret.UpdateWith(c)
-
-	return ret, nil
-}
-
-func (self *BuildingSiteValuesCalculator) CalculateCompilerOptionsMap() (
-	environ.EnvVarEd, error,
-) {
-	ret := environ.New()
-
-	cc_string, err := self.CalculateAutotoolsCCParameterValue()
-	if err != nil {
-		return ret, err
-	}
-
-	cxx_string, err := self.CalculateAutotoolsCXXParameterValue()
-	if err != nil {
-		return ret, err
-	}
-
-	ret.Set("CC", cc_string)
-	ret.Set("CXX", cxx_string)
-
-	return ret, nil
-}
-
 func (self *BuildingSiteValuesCalculator) CalculateAutotoolsHBTOptions() (
 	[]string, error,
 ) {
@@ -651,6 +614,99 @@ func (self *BuildingSiteValuesCalculator) CalculateAutotoolsHBTOptions() (
 	if target != "" {
 		ret = append(ret, fmt.Sprintf("--target=%s", target))
 	}
+
+	return ret, nil
+}
+
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCompilerOptionsMap() (
+	environ.EnvVarEd, error,
+) {
+	ret := environ.New()
+
+	cc_string, err := self.CalculateAutotoolsCCParameterValue()
+	if err != nil {
+		return ret, err
+	}
+
+	cxx_string, err := self.CalculateAutotoolsCXXParameterValue()
+	if err != nil {
+		return ret, err
+	}
+
+	ret.Set("CC", cc_string)
+	ret.Set("CXX", cxx_string)
+
+	return ret, nil
+}
+
+func (self *BuildingSiteValuesCalculator) CalculateAllAutotoolsOptionsMap() (
+	environ.EnvVarEd, error,
+) {
+
+	ret := environ.New()
+
+	c, err := self.CalculateAutotoolsCompilerOptionsMap()
+	if err != nil {
+		return ret, err
+	}
+
+	ret.UpdateWith(c)
+
+	return ret, nil
+}
+
+func (self *BuildingSiteValuesCalculator) CalculateAllCMakeOptionsMap() (
+	environ.EnvVarEd, error,
+) {
+	//        if not 'CMAKE_C_COMPILER' in d:
+	//            d['CMAKE_C_COMPILER'] = []
+	//        d['CMAKE_C_COMPILER'].append('{}'.format(self.calculate_CC()))
+
+	//        if not 'CMAKE_CXX_COMPILER' in d:
+	//            d['CMAKE_CXX_COMPILER'] = []
+	//        d['CMAKE_CXX_COMPILER'].append('{}'.format(self.calculate_CXX()))
+
+	//        if not 'CMAKE_CXX_FLAGS' in d:
+	//            d['CMAKE_CXX_FLAGS'] = []
+	//        d['CMAKE_CXX_FLAGS'].append(
+	//            '-m{}'.format(self.get_multilib_variant_int())
+	//            )
+
+	//        if not 'CMAKE_C_FLAGS' in d:
+	//            d['CMAKE_C_FLAGS'] = []
+	//        d['CMAKE_C_FLAGS'].append(
+	//            '-m{}'.format(self.get_multilib_variant_int())
+	//            )
+	//        # d['CMAKE_C_FLAGS'].append(
+	//        #    '-I{}'.format(
+	//        #        wayround_i2p.utils.path.join(
+	//        #            self.calculate_install_prefix(),
+	//        #            'include'
+	//        #            )
+	//        #        )
+	//        #    )
+
+	c_compiler, err := self.Calculate_C_Compiler()
+	if err != nil {
+		return nil, err
+	}
+
+	cxx_compiler, err := self.Calculate_CXX_Compiler()
+	if err != nil {
+		return nil, err
+	}
+
+	multilib_variant, err := self.CalculateMultilibVariant()
+	if err != nil {
+		return nil, err
+	}
+
+	ret := environ.New()
+
+	ret.Set("CMAKE_C_COMPILER", c_compiler)
+	ret.Set("CMAKE_CXX_COMPILER", cxx_compiler)
+	ret.Set("CMAKE_C_FLAGS", fmt.Sprintf("-m%s", multilib_variant))
+	ret.Set("CMAKE_CXX_FLAGS", fmt.Sprintf("-m%s", multilib_variant))
 
 	return ret, nil
 }

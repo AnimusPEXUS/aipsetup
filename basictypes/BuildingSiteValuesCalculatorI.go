@@ -56,8 +56,8 @@ type BuildingSiteValuesCalculatorI interface {
 	CalculateAutotoolsCCParameterValue() (string, error)
 	CalculateAutotoolsCXXParameterValue() (string, error)
 
-	CalculateAllOptionsMap() (environ.EnvVarEd, error)
-	CalculateCompilerOptionsMap() (environ.EnvVarEd, error)
+	CalculateAllAutotoolsOptionsMap() (environ.EnvVarEd, error)
+	CalculateAutotoolsCompilerOptionsMap() (environ.EnvVarEd, error)
 
 	CalculateAutotoolsHBTOptions() ([]string, error)
 }
