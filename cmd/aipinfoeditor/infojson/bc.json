@@ -18,7 +18,7 @@
   ],
   "Category": "gnu",
   "Groups": [
-    "core1"
+    "core0"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "bc",

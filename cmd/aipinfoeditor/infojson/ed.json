@@ -16,7 +16,9 @@
     "gnu_project"
   ],
   "Category": "gnu",
-  "Groups": [],
+  "Groups": [
+    "core0"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "ed",
   "TarballFilters": [],
