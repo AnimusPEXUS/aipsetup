@@ -15,30 +15,27 @@ import (
 
 func init() {
 	Index["glibc"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderGlibc(bs)
+		return NewBuilder_glibc(bs)
 	}
 }
 
-type BuilderGlibc struct {
-	bs basictypes.BuildingSiteCtlI
-
-	std_builder *BuilderStdAutotools
+type Builder_glibc struct {
+	Builder_std
 
 	slibdir string
 }
 
-func NewBuilderGlibc(bs basictypes.BuildingSiteCtlI) (*BuilderGlibc, error) {
+func NewBuilder_glibc(bs basictypes.BuildingSiteCtlI) (*Builder_glibc, error) {
 
-	self := new(BuilderGlibc)
-	self.bs = bs
+	self := new(Builder_glibc)
 
-	self.std_builder = NewBuilderStdAutotools(bs)
+	self.Builder_std = *NewBuilder_std(bs)
 
-	self.std_builder.SeparateBuildDir = true
-	self.std_builder.ForcedTarget = true
-	self.std_builder.ApplyHostSpecCompilerOptions = true
+	self.SeparateBuildDir = true
+	self.ForcedTarget = true
+	self.ApplyHostSpecCompilerOptions = true
 
-	self.std_builder.EditConfigureArgsCB = self.EditConfigureArgs
+	self.EditConfigureArgsCB = self.EditConfigureArgs
 
 	// calc := self.bs.GetBuildingSiteValuesCalculator()
 
@@ -54,20 +51,20 @@ func NewBuilderGlibc(bs basictypes.BuildingSiteCtlI) (*BuilderGlibc, error) {
 		self.slibdir = t
 	}
 
-	self.std_builder.EditBuildArgsCB = self.EditBuildArgs
-	self.std_builder.EditDistributeArgsCB = self.EditDistributeArgs
+	self.EditBuildArgsCB = self.EditBuildArgs
+	self.EditDistributeArgsCB = self.EditDistributeArgs
 
 	return self, nil
 }
 
-func (self *BuilderGlibc) DefineActions() (basictypes.BuilderActions, error) {
+func (self *Builder_glibc) DefineActions() (basictypes.BuilderActions, error) {
 
 	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return nil, err
 	}
 
-	ret, err := self.std_builder.DefineActions()
+	ret, err := self.Builder_std.DefineActions()
 	if err != nil {
 		return nil, err
 	}
@@ -96,7 +93,7 @@ func (self *BuilderGlibc) DefineActions() (basictypes.BuilderActions, error) {
 	return ret, nil
 }
 
-func (self *BuilderGlibc) _CalculateSlibdir() (string, error) {
+func (self *Builder_glibc) _CalculateSlibdir() (string, error) {
 	// # NOTE: on multilib installations glibc libraries shuld be allways
 	// #       installed in host_lib_dir. Else - multilib GCC could
 	// #       not be built
@@ -134,7 +131,7 @@ func (self *BuilderGlibc) _CalculateSlibdir() (string, error) {
 	return ret, nil
 }
 
-func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
+func (self *Builder_glibc) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 
@@ -241,23 +238,23 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 		ret = append(
 			ret,
 			[]string{
-			// TODO: 2018 mar 14. it was easy to comment/uncomment when it was
-			//       python script, but from now on this should be done somehow
-			//       wiser. to be done..
+				// TODO: 2018 mar 14. it was easy to comment/uncomment when it was
+				//       python script, but from now on this should be done somehow
+				//       wiser. to be done..
 
-			// # this can be commented whan gcc fully built and installed
-			// #"libc_cv_forced_unwind=yes",
-			//
-			// # this parameter is required to build `build_02+"
-			// # stage.  comment and completle rebuild this glibc
-			// # after rebuilding gcc without --without-headers and
-			// # with --with-sysroot parameter.
-			// #
-			// # "libc_cv_ssp=no"
-			// #
-			// # else You will see errors like this:
-			// #     gethnamaddr.c:185: undefined reference to
-			// #     `__stack_chk_guard"
+				// # this can be commented whan gcc fully built and installed
+				// #"libc_cv_forced_unwind=yes",
+				//
+				// # this parameter is required to build `build_02+"
+				// # stage.  comment and completle rebuild this glibc
+				// # after rebuilding gcc without --without-headers and
+				// # with --with-sysroot parameter.
+				// #
+				// # "libc_cv_ssp=no"
+				// #
+				// # else You will see errors like this:
+				// #     gethnamaddr.c:185: undefined reference to
+				// #     `__stack_chk_guard"
 
 			}...,
 		)
@@ -266,21 +263,21 @@ func (self *BuilderGlibc) EditConfigureArgs(log *logger.Logger, ret []string) ([
 	return ret, nil
 }
 
-func (self *BuilderGlibc) EditBuildArgs(log *logger.Logger, ret []string) ([]string, error) {
+func (self *Builder_glibc) EditBuildArgs(log *logger.Logger, ret []string) ([]string, error) {
 	ret = append(ret, "slibdir="+self.slibdir)
 	return ret, nil
 }
 
-func (self *BuilderGlibc) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
+func (self *Builder_glibc) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
 	ret = append(ret, "slibdir="+self.slibdir)
 	return ret, nil
 }
 
-func (self *BuilderGlibc) BuilderActionDistribute_01(
+func (self *Builder_glibc) BuilderActionDistribute_01(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditBuildArgsCB = func(
+	self.EditBuildArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
@@ -291,14 +288,14 @@ func (self *BuilderGlibc) BuilderActionDistribute_01(
 		}, nil
 	}
 
-	return self.std_builder.BuilderActionBuild(log)
+	return self.BuilderActionBuild(log)
 }
 
-func (self *BuilderGlibc) BuilderActionDistribute_01_2(
+func (self *Builder_glibc) BuilderActionDistribute_01_2(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditBuildArgsCB = func(
+	self.EditBuildArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
@@ -307,10 +304,10 @@ func (self *BuilderGlibc) BuilderActionDistribute_01_2(
 		}, nil
 	}
 
-	return self.std_builder.BuilderActionBuild(log)
+	return self.BuilderActionBuild(log)
 }
 
-func (self *BuilderGlibc) BuilderActionDistribute_01_3(
+func (self *Builder_glibc) BuilderActionDistribute_01_3(
 	log *logger.Logger,
 ) error {
 
@@ -360,7 +357,7 @@ func (self *BuilderGlibc) BuilderActionDistribute_01_3(
 	return nil
 }
 
-func (self *BuilderGlibc) BuilderActionDistribute_01_4(
+func (self *Builder_glibc) BuilderActionDistribute_01_4(
 	log *logger.Logger,
 ) error {
 	calc := self.bs.GetBuildingSiteValuesCalculator()
@@ -406,7 +403,7 @@ func (self *BuilderGlibc) BuilderActionDistribute_01_4(
 	return nil
 }
 
-func (self *BuilderGlibc) BuilderActionDistribute_01_5(
+func (self *Builder_glibc) BuilderActionDistribute_01_5(
 	log *logger.Logger,
 ) error {
 
@@ -441,7 +438,7 @@ func (self *BuilderGlibc) BuilderActionDistribute_01_5(
 	return nil
 }
 
-func (self *BuilderGlibc) BuilderActionIntermediateInstruction(
+func (self *Builder_glibc) BuilderActionIntermediateInstruction(
 	log *logger.Logger,
 ) error {
 	for _, i := range []string{
@@ -455,30 +452,30 @@ func (self *BuilderGlibc) BuilderActionIntermediateInstruction(
 	return errors.New("user action required")
 }
 
-func (self *BuilderGlibc) BuilderActionBuild_02(
+func (self *Builder_glibc) BuilderActionBuild_02(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditBuildArgsCB = func(
+	self.EditBuildArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
 		return []string{}, nil
 	}
 
-	return self.std_builder.BuilderActionBuild(log)
+	return self.BuilderActionBuild(log)
 }
 
-func (self *BuilderGlibc) BuilderActionDistribute_02(
+func (self *Builder_glibc) BuilderActionDistribute_02(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditDistributeArgsCB = func(
+	self.EditDistributeArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
 		return []string{"install", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
 	}
 
-	return self.std_builder.BuilderActionDistribute(log)
+	return self.BuilderActionDistribute(log)
 }

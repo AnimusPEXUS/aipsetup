@@ -15,33 +15,30 @@ import (
 
 func init() {
 	Index["gcc"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderGCC(bs), nil
+		return NewBuilder_gcc(bs), nil
 	}
 }
 
-type BuilderGCC struct {
-	bs basictypes.BuildingSiteCtlI
-
-	std_builder *BuilderStdAutotools
+type Builder_gcc struct {
+	Builder_std
 }
 
-func NewBuilderGCC(bs basictypes.BuildingSiteCtlI) *BuilderGCC {
+func NewBuilder_gcc(bs basictypes.BuildingSiteCtlI) *Builder_gcc {
 
-	self := new(BuilderGCC)
-	self.bs = bs
+	self := new(Builder_gcc)
 
-	self.std_builder = NewBuilderStdAutotools(bs)
+	self.Builder_std = *NewBuilder_std(bs)
 
-	self.std_builder.SeparateBuildDir = true
-	self.std_builder.ForcedTarget = true
+	self.SeparateBuildDir = true
+	self.ForcedTarget = true
 
-	self.std_builder.AfterExtractCB = self.AfterExtract
-	self.std_builder.EditConfigureArgsCB = self.EditConfigureArgs
-	self.std_builder.EditBuildConcurentJobsCountCB =
+	self.AfterExtractCB = self.AfterExtract
+	self.EditConfigureArgsCB = self.EditConfigureArgs
+	self.EditBuildConcurentJobsCountCB =
 		func(log *logger.Logger, ret int) int {
 			return 1
 		}
-	self.std_builder.EditDistributeEnvCB =
+	self.EditDistributeEnvCB =
 		func(
 			log *logger.Logger,
 			ret environ.EnvVarEd,
@@ -74,14 +71,14 @@ func NewBuilderGCC(bs basictypes.BuildingSiteCtlI) *BuilderGCC {
 	return self
 }
 
-func (self *BuilderGCC) DefineActions() (basictypes.BuilderActions, error) {
+func (self *Builder_gcc) DefineActions() (basictypes.BuilderActions, error) {
 
 	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return nil, err
 	}
 
-	ret, err := self.std_builder.DefineActions()
+	ret, err := self.Builder_std.DefineActions()
 	if err != nil {
 		return nil, err
 	}
@@ -112,7 +109,7 @@ func (self *BuilderGCC) DefineActions() (basictypes.BuilderActions, error) {
 	return ret, nil
 }
 
-func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
+func (self *Builder_gcc) AfterExtract(log *logger.Logger, err error) error {
 
 	if err != nil {
 		return err
@@ -189,7 +186,7 @@ func (self *BuilderGCC) AfterExtract(log *logger.Logger, err error) error {
 	return nil
 }
 
-func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
+func (self *Builder_gcc) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 
@@ -387,35 +384,35 @@ func (self *BuilderGCC) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 	return ret, nil
 }
 
-func (self *BuilderGCC) BuilderActionBuild_01(
+func (self *Builder_gcc) BuilderActionBuild_01(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditBuildArgsCB = func(
+	self.EditBuildArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
 		return []string{"all-gcc"}, nil
 	}
 
-	return self.std_builder.BuilderActionBuild(log)
+	return self.BuilderActionBuild(log)
 }
 
-func (self *BuilderGCC) BuilderActionDistribute_01(
+func (self *Builder_gcc) BuilderActionDistribute_01(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditDistributeArgsCB = func(
+	self.EditDistributeArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
 		return []string{"install-gcc", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
 	}
 
-	return self.std_builder.BuilderActionDistribute(log)
+	return self.BuilderActionDistribute(log)
 }
 
-func (self *BuilderGCC) BuilderActionIntermediateInstruction_1(
+func (self *Builder_gcc) BuilderActionIntermediateInstruction_1(
 	log *logger.Logger,
 ) error {
 	for _, i := range []string{
@@ -430,35 +427,35 @@ func (self *BuilderGCC) BuilderActionIntermediateInstruction_1(
 	return errors.New("user action required")
 }
 
-func (self *BuilderGCC) BuilderActionBuild_02(
+func (self *Builder_gcc) BuilderActionBuild_02(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditBuildArgsCB = func(
+	self.EditBuildArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
 		return []string{"all-target-libgcc"}, nil
 	}
 
-	return self.std_builder.BuilderActionBuild(log)
+	return self.BuilderActionBuild(log)
 }
 
-func (self *BuilderGCC) BuilderActionDistribute_02(
+func (self *Builder_gcc) BuilderActionDistribute_02(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditDistributeArgsCB = func(
+	self.EditDistributeArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
 		return []string{"install-target-libgcc", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
 	}
 
-	return self.std_builder.BuilderActionDistribute(log)
+	return self.BuilderActionDistribute(log)
 }
 
-func (self *BuilderGCC) BuilderActionIntermediateInstruction_2(
+func (self *Builder_gcc) BuilderActionIntermediateInstruction_2(
 	log *logger.Logger,
 ) error {
 	for _, i := range []string{
@@ -473,30 +470,30 @@ func (self *BuilderGCC) BuilderActionIntermediateInstruction_2(
 	return errors.New("user action required")
 }
 
-func (self *BuilderGCC) BuilderActionBuild_03(
+func (self *Builder_gcc) BuilderActionBuild_03(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditBuildArgsCB = func(
+	self.EditBuildArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
 		return []string{}, nil
 	}
 
-	return self.std_builder.BuilderActionBuild(log)
+	return self.BuilderActionBuild(log)
 }
 
-func (self *BuilderGCC) BuilderActionDistribute_03(
+func (self *Builder_gcc) BuilderActionDistribute_03(
 	log *logger.Logger,
 ) error {
 
-	self.std_builder.EditDistributeArgsCB = func(
+	self.EditDistributeArgsCB = func(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
 		return []string{"install", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
 	}
 
-	return self.std_builder.BuilderActionDistribute(log)
+	return self.BuilderActionDistribute(log)
 }

@@ -19,14 +19,12 @@ import (
 
 func init() {
 	Index["linux"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderLinux(bs)
+		return NewBuilder_linux(bs)
 	}
 }
 
-type BuilderLinux struct {
-	bs basictypes.BuildingSiteCtlI
-
-	std_builder *BuilderStdAutotools
+type Builder_linux struct {
+	Builder_std
 
 	crossbuild_params []string
 
@@ -35,18 +33,16 @@ type BuilderLinux struct {
 	dst_man_dir  string
 }
 
-func NewBuilderLinux(bs basictypes.BuildingSiteCtlI) (*BuilderLinux, error) {
+func NewBuilder_linux(bs basictypes.BuildingSiteCtlI) (*Builder_linux, error) {
 
-	self := new(BuilderLinux)
+	self := new(Builder_linux)
 
-	self.bs = bs
+	self.Builder_std = *NewBuilder_std(bs)
 
 	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return nil, err
 	}
-
-	self.std_builder = NewBuilderStdAutotools(bs)
 
 	self.crossbuild_params = make([]string, 0)
 
@@ -106,7 +102,7 @@ func NewBuilderLinux(bs basictypes.BuildingSiteCtlI) (*BuilderLinux, error) {
 	return self, nil
 }
 
-func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
+func (self *Builder_linux) DefineActions() (basictypes.BuilderActions, error) {
 
 	info, err := self.bs.ReadInfo()
 	if err != nil {
@@ -114,10 +110,10 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 	}
 
 	ret := basictypes.BuilderActions{
-		&basictypes.BuilderAction{"dst_cleanup", self.std_builder.BuilderActionDstCleanup},
-		&basictypes.BuilderAction{"src_cleanup", self.std_builder.BuilderActionSrcCleanup},
-		&basictypes.BuilderAction{"bld_cleanup", self.std_builder.BuilderActionBldCleanup},
-		&basictypes.BuilderAction{"extract", self.std_builder.BuilderActionExtract},
+		&basictypes.BuilderAction{"dst_cleanup", self.Builder_std.BuilderActionDstCleanup},
+		&basictypes.BuilderAction{"src_cleanup", self.Builder_std.BuilderActionSrcCleanup},
+		&basictypes.BuilderAction{"bld_cleanup", self.Builder_std.BuilderActionBldCleanup},
+		&basictypes.BuilderAction{"extract", self.Builder_std.BuilderActionExtract},
 		//&basictypes.BuilderAction{"patch", self.BuilderActionPatch},
 		// &basictypes.BuilderAction{"autogen", self.BuilderActionAutogen},
 		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
@@ -146,9 +142,9 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 		self.bs.GetLog().Info(" - only headers will be prepared")
 
 		ret = basictypes.BuilderActions{
-			&basictypes.BuilderAction{"dst_cleanup", self.std_builder.BuilderActionDstCleanup},
-			&basictypes.BuilderAction{"src_cleanup", self.std_builder.BuilderActionSrcCleanup},
-			&basictypes.BuilderAction{"extract", self.std_builder.BuilderActionExtract},
+			&basictypes.BuilderAction{"dst_cleanup", self.Builder_std.BuilderActionDstCleanup},
+			&basictypes.BuilderAction{"src_cleanup", self.Builder_std.BuilderActionSrcCleanup},
+			&basictypes.BuilderAction{"extract", self.Builder_std.BuilderActionExtract},
 
 			&basictypes.BuilderAction{"distr_headers_all", self.BuilderActionDistrHeadersAll},
 		}
@@ -158,15 +154,15 @@ func (self *BuilderLinux) DefineActions() (basictypes.BuilderActions, error) {
 	ret = append(
 		ret,
 		[]*basictypes.BuilderAction{
-			&basictypes.BuilderAction{"prepack", self.std_builder.BuilderActionPrePack},
-			&basictypes.BuilderAction{"pack", self.std_builder.BuilderActionPack},
+			&basictypes.BuilderAction{"prepack", self.Builder_std.BuilderActionPrePack},
+			&basictypes.BuilderAction{"pack", self.Builder_std.BuilderActionPack},
 		}...,
 	)
 
 	return ret, nil
 }
 
-func (self *BuilderLinux) BuilderActionConfigure(
+func (self *Builder_linux) BuilderActionConfigure(
 	log *logger.Logger,
 ) error {
 	log.Info("\n" +
@@ -176,7 +172,7 @@ func (self *BuilderLinux) BuilderActionConfigure(
 	return errors.New("user action required")
 }
 
-func (self *BuilderLinux) BuilderActionBuild(
+func (self *Builder_linux) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
 	at := &buildingtools.Autotools{}
@@ -198,7 +194,7 @@ func (self *BuilderLinux) BuilderActionBuild(
 	return nil
 }
 
-func (self *BuilderLinux) BuilderActionDistrKernel(
+func (self *Builder_linux) BuilderActionDistrKernel(
 	log *logger.Logger,
 ) error {
 
@@ -261,7 +257,7 @@ func (self *BuilderLinux) BuilderActionDistrKernel(
 	return nil
 }
 
-func (self *BuilderLinux) BuilderActionDistrModules(
+func (self *Builder_linux) BuilderActionDistrModules(
 	log *logger.Logger,
 ) error {
 
@@ -334,7 +330,7 @@ func (self *BuilderLinux) BuilderActionDistrModules(
 	return nil
 }
 
-func (self *BuilderLinux) BuilderActionDistrHeadersAll(
+func (self *Builder_linux) BuilderActionDistrHeadersAll(
 	log *logger.Logger,
 ) error {
 
@@ -410,7 +406,7 @@ func (self *BuilderLinux) BuilderActionDistrHeadersAll(
 	return nil
 }
 
-func (self *BuilderLinux) BuilderActionDistrMan(
+func (self *Builder_linux) BuilderActionDistrMan(
 	log *logger.Logger,
 ) error {
 
@@ -477,7 +473,7 @@ func (self *BuilderLinux) BuilderActionDistrMan(
 	return nil
 }
 
-func (self *BuilderLinux) BuilderActionDistrSource(
+func (self *Builder_linux) BuilderActionDistrSource(
 	log *logger.Logger,
 ) error {
 
@@ -538,7 +534,7 @@ func (self *BuilderLinux) BuilderActionDistrSource(
 	return nil
 }
 
-func (self *BuilderLinux) BuilderActionDistrSymLink(
+func (self *Builder_linux) BuilderActionDistrSymLink(
 	log *logger.Logger,
 ) error {
 

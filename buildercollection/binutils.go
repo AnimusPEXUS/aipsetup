@@ -13,34 +13,32 @@ import (
 
 func init() {
 	Index["binutils"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderBinutils(bs), nil
+		return NewBuilder_binutils(bs), nil
 	}
 }
 
-type BuilderBinutils struct {
-	bs basictypes.BuildingSiteCtlI
-
-	std_builder *BuilderStdAutotools
+type Builder_binutils struct {
+	Builder_std
 }
 
-func NewBuilderBinutils(bs basictypes.BuildingSiteCtlI) *BuilderBinutils {
+func NewBuilder_binutils(bs basictypes.BuildingSiteCtlI) *Builder_binutils {
 
-	self := new(BuilderBinutils)
+	self := new(Builder_binutils)
 	self.bs = bs
 
-	self.std_builder = NewBuilderStdAutotools(bs)
+	self.Builder_std = *NewBuilder_std(bs)
 
-	self.std_builder.AfterExtractCB = self.AfterExtract
-	self.std_builder.EditConfigureArgsCB = self.EditConfigureArgs
+	self.AfterExtractCB = self.AfterExtract
+	self.EditConfigureArgsCB = self.EditConfigureArgs
 
 	return self
 }
 
-func (self *BuilderBinutils) DefineActions() (basictypes.BuilderActions, error) {
-	return self.std_builder.DefineActions()
+func (self *Builder_binutils) DefineActions() (basictypes.BuilderActions, error) {
+	return self.DefineActions()
 }
 
-func (self *BuilderBinutils) AfterExtract(log *logger.Logger, err error) error {
+func (self *Builder_binutils) AfterExtract(log *logger.Logger, err error) error {
 
 	if err != nil {
 		return err
@@ -85,7 +83,7 @@ func (self *BuilderBinutils) AfterExtract(log *logger.Logger, err error) error {
 	return nil
 }
 
-func (self *BuilderBinutils) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
+func (self *Builder_binutils) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 

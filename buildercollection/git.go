@@ -7,22 +7,24 @@ import (
 
 func init() {
 	Index["git"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderGit(bs)
+		return NewBuilder_git(bs)
 	}
 }
 
-type BuilderGit struct {
-	BuilderStdAutotools
+type Builder_git struct {
+	Builder_std
 }
 
-func NewBuilderGit(bs basictypes.BuildingSiteCtlI) (*BuilderGit, error) {
-	self := new(BuilderGit)
-	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
+func NewBuilder_git(bs basictypes.BuildingSiteCtlI) (*Builder_git, error) {
+	self := new(Builder_git)
+
+	self.Builder_std = *NewBuilder_std(bs)
+
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil
 }
 
-func (self *BuilderGit) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
+func (self *Builder_git) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 	return append(
 		ret,
 		[]string{"--with-openssl",

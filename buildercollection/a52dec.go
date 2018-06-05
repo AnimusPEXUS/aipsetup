@@ -12,12 +12,14 @@ func init() {
 }
 
 type Builder_a52dec struct {
-	BuilderStdAutotools
+	Builder_std
 }
 
 func NewBuilder_a52dec(bs basictypes.BuildingSiteCtlI) (*Builder_a52dec, error) {
 	self := new(Builder_a52dec)
-	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
+
+	self.Builder_std = *NewBuilder_std(bs)
+
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil
 }

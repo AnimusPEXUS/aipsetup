@@ -32,13 +32,13 @@ var (
 )
 
 type Builder_ncurses struct {
-	BuilderStdAutotools
+	Builder_std
 }
 
 func NewBuilder_ncurses(bs basictypes.BuildingSiteCtlI) (*Builder_ncurses, error) {
 	self := new(Builder_ncurses)
 
-	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
+	self.Builder_std = *NewBuilder_std(bs)
 
 	self.EditActionsCB = self.EditActions
 	self.PatchCB = self.Patch

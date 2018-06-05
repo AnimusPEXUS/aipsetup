@@ -17,7 +17,7 @@ import (
 
 func init() {
 	Index["std"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderStdAutotools(bs), nil
+		return NewBuilder_std(bs), nil
 	}
 }
 
@@ -29,7 +29,7 @@ const (
 	Forbid
 )
 
-type BuilderStdAutotools struct {
+type Builder_std struct {
 
 	// NOTE: some comments in this file are left from python time and may be not
 	//       correspond to situation. (2018-03-12)
@@ -73,8 +73,8 @@ type BuilderStdAutotools struct {
 }
 
 // builders are independent of anything so have no moto to return errors
-func NewBuilderStdAutotools(buildingsite basictypes.BuildingSiteCtlI) *BuilderStdAutotools {
-	ret := new(BuilderStdAutotools)
+func NewBuilder_std(buildingsite basictypes.BuildingSiteCtlI) *Builder_std {
+	ret := new(Builder_std)
 
 	ret.bs = buildingsite
 
@@ -91,11 +91,11 @@ func NewBuilderStdAutotools(buildingsite basictypes.BuildingSiteCtlI) *BuilderSt
 	return ret
 }
 
-// func (self *BuilderStdAutotools) SetBuildingSite(bs basictypes.BuildingSiteCtlI) {
+// func (self *Builder_std) SetBuildingSite(bs basictypes.BuildingSiteCtlI) {
 // 	self.site = bs
 // }
 
-func (self *BuilderStdAutotools) DefineActions() (basictypes.BuilderActions, error) {
+func (self *Builder_std) DefineActions() (basictypes.BuilderActions, error) {
 
 	ret := basictypes.BuilderActions{
 
@@ -123,7 +123,7 @@ func (self *BuilderStdAutotools) DefineActions() (basictypes.BuilderActions, err
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionDstCleanup(
+func (self *Builder_std) BuilderActionDstCleanup(
 	log *logger.Logger,
 ) error {
 	dst_dir := self.bs.GetDIR_DESTDIR()
@@ -132,7 +132,7 @@ func (self *BuilderStdAutotools) BuilderActionDstCleanup(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionSrcCleanup(
+func (self *Builder_std) BuilderActionSrcCleanup(
 	log *logger.Logger,
 ) error {
 	src_dir := self.bs.GetDIR_SOURCE()
@@ -140,7 +140,7 @@ func (self *BuilderStdAutotools) BuilderActionSrcCleanup(
 	os.MkdirAll(src_dir, 0700)
 	return nil
 }
-func (self *BuilderStdAutotools) BuilderActionBldCleanup(
+func (self *Builder_std) BuilderActionBldCleanup(
 	log *logger.Logger,
 ) error {
 	bld_dir := self.bs.GetDIR_BUILDING()
@@ -149,7 +149,7 @@ func (self *BuilderStdAutotools) BuilderActionBldCleanup(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionExtract(
+func (self *Builder_std) BuilderActionExtract(
 	log *logger.Logger,
 ) error {
 	a_tools := new(buildingtools.Autotools)
@@ -182,7 +182,7 @@ func (self *BuilderStdAutotools) BuilderActionExtract(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionPatch(
+func (self *Builder_std) BuilderActionPatch(
 	log *logger.Logger,
 ) error {
 	if self.PatchCB != nil {
@@ -194,7 +194,7 @@ func (self *BuilderStdAutotools) BuilderActionPatch(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionAutogen(
+func (self *Builder_std) BuilderActionAutogen(
 	log *logger.Logger,
 ) error {
 	needs_autogen := false
@@ -288,7 +288,7 @@ func (self *BuilderStdAutotools) BuilderActionAutogen(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionConfigureEnvDef(
+func (self *Builder_std) BuilderActionConfigureEnvDef(
 	log *logger.Logger,
 ) (environ.EnvVarEd, error) {
 	env := environ.New()
@@ -349,7 +349,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureEnvDef(
 
 }
 
-func (self *BuilderStdAutotools) BuilderActionConfigureArgsDef(
+func (self *Builder_std) BuilderActionConfigureArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
 
@@ -359,22 +359,22 @@ func (self *BuilderStdAutotools) BuilderActionConfigureArgsDef(
 
 	prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
-		return ret, err
+		return nil, err
 	}
 
 	libdir, err := calc.CalculateInstallLibDir()
 	if err != nil {
-		return ret, err
+		return nil, err
 	}
 
-	opt_map, err := calc.CalculateAllAutotoolsOptionsMap()
+	opt_map, err := calc.CalculateAutotoolsAllOptionsMap()
 	if err != nil {
-		return ret, err
+		return nil, err
 	}
 
 	hbt_options, err := calc.CalculateAutotoolsHBTOptions()
 	if err != nil {
-		return ret, err
+		return nil, err
 	}
 
 	ret = append(
@@ -391,6 +391,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureArgsDef(
 		hbt_options...,
 	)
 
+	// replacement for std.py's self.all_automatic_flags_as_list()
 	ret = append(
 		ret,
 		opt_map.Strings()...,
@@ -406,7 +407,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureArgsDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionConfigureScriptNameDef(
+func (self *Builder_std) BuilderActionConfigureScriptNameDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -423,7 +424,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureScriptNameDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionConfigureDirDef(
+func (self *Builder_std) BuilderActionConfigureDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -440,7 +441,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureDirDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionConfigureWorkingDirDef(
+func (self *Builder_std) BuilderActionConfigureWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -460,7 +461,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureWorkingDirDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionConfigureRelativeExecutionDef(
+func (self *Builder_std) BuilderActionConfigureRelativeExecutionDef(
 	log *logger.Logger,
 ) (bool, error) {
 
@@ -477,7 +478,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureRelativeExecutionDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionConfigureIsArgToShellDef(
+func (self *Builder_std) BuilderActionConfigureIsArgToShellDef(
 	log *logger.Logger,
 ) (bool, error) {
 
@@ -494,7 +495,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigureIsArgToShellDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionConfigure(
+func (self *Builder_std) BuilderActionConfigure(
 	log *logger.Logger,
 ) error {
 	a_tools := new(buildingtools.Autotools)
@@ -557,7 +558,7 @@ func (self *BuilderStdAutotools) BuilderActionConfigure(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionBuildConcurentJobsCountDef(
+func (self *Builder_std) BuilderActionBuildConcurentJobsCountDef(
 	log *logger.Logger,
 ) int {
 
@@ -571,7 +572,7 @@ func (self *BuilderStdAutotools) BuilderActionBuildConcurentJobsCountDef(
 
 }
 
-func (self *BuilderStdAutotools) BuilderActionBuildEnvDef(
+func (self *Builder_std) BuilderActionBuildEnvDef(
 	log *logger.Logger,
 ) (environ.EnvVarEd, error) {
 	log.Info(
@@ -594,7 +595,7 @@ func (self *BuilderStdAutotools) BuilderActionBuildEnvDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionBuildArgsDef(
+func (self *Builder_std) BuilderActionBuildArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
 	ret := make([]string, 0)
@@ -610,7 +611,7 @@ func (self *BuilderStdAutotools) BuilderActionBuildArgsDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionBuildMakefileNameDef(
+func (self *Builder_std) BuilderActionBuildMakefileNameDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -627,7 +628,7 @@ func (self *BuilderStdAutotools) BuilderActionBuildMakefileNameDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionBuildMakefileDirDef(
+func (self *Builder_std) BuilderActionBuildMakefileDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -644,7 +645,7 @@ func (self *BuilderStdAutotools) BuilderActionBuildMakefileDirDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionBuildWorkingDirDef(
+func (self *Builder_std) BuilderActionBuildWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -664,7 +665,7 @@ func (self *BuilderStdAutotools) BuilderActionBuildWorkingDirDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionBuild(
+func (self *Builder_std) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
 	a_tools := new(buildingtools.Autotools)
@@ -724,7 +725,7 @@ func (self *BuilderStdAutotools) BuilderActionBuild(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionDistributeEnvDef(
+func (self *Builder_std) BuilderActionDistributeEnvDef(
 	log *logger.Logger,
 ) (environ.EnvVarEd, error) {
 
@@ -749,7 +750,7 @@ func (self *BuilderStdAutotools) BuilderActionDistributeEnvDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionDistributeDESTDIRDef(
+func (self *Builder_std) BuilderActionDistributeDESTDIRDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -766,7 +767,7 @@ func (self *BuilderStdAutotools) BuilderActionDistributeDESTDIRDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionDistributeArgsDef(
+func (self *Builder_std) BuilderActionDistributeArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
 	destdir_string, err := self.BuilderActionDistributeDESTDIRDef(log)
@@ -796,7 +797,7 @@ func (self *BuilderStdAutotools) BuilderActionDistributeArgsDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionDistributeMakefileNameDef(
+func (self *Builder_std) BuilderActionDistributeMakefileNameDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -813,7 +814,7 @@ func (self *BuilderStdAutotools) BuilderActionDistributeMakefileNameDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionDistributeMakefileDirDef(
+func (self *Builder_std) BuilderActionDistributeMakefileDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -830,7 +831,7 @@ func (self *BuilderStdAutotools) BuilderActionDistributeMakefileDirDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionDistributeWorkingDirDef(
+func (self *Builder_std) BuilderActionDistributeWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
@@ -850,7 +851,7 @@ func (self *BuilderStdAutotools) BuilderActionDistributeWorkingDirDef(
 	return ret, nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionDistribute(
+func (self *Builder_std) BuilderActionDistribute(
 	log *logger.Logger,
 ) error {
 	a_tools := new(buildingtools.Autotools)
@@ -908,7 +909,7 @@ func (self *BuilderStdAutotools) BuilderActionDistribute(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionPrePack(
+func (self *Builder_std) BuilderActionPrePack(
 	log *logger.Logger,
 ) error {
 	err := self.bs.PrePackager().Run(log)
@@ -918,7 +919,7 @@ func (self *BuilderStdAutotools) BuilderActionPrePack(
 	return nil
 }
 
-func (self *BuilderStdAutotools) BuilderActionPack(
+func (self *Builder_std) BuilderActionPack(
 	log *logger.Logger,
 ) error {
 	err := self.bs.Packager().Run(log)

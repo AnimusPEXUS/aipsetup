@@ -13,15 +13,6 @@ import (
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
-type (
-	EnvironmentOperationMode uint
-)
-
-const (
-	Copy EnvironmentOperationMode = iota
-	Clean
-)
-
 type Autotools struct {
 }
 
@@ -120,106 +111,106 @@ func (self *Autotools) Extract(
 	return nil
 }
 
-func (self *Autotools) GenerateConfigureIfNeeded(
-	directory string,
-	force bool,
-) error {
+//func (self *Autotools) GenerateConfigureIfNeeded(
+//	directory string,
+//	force bool,
+//) error {
 
-	presumed_configure_full_filename := path.Join(directory, "configure")
+//	presumed_configure_full_filename := path.Join(directory, "configure")
 
-	is_presumed_configure_full_filename_exists := false
+//	is_presumed_configure_full_filename_exists := false
 
-	if _, err := os.Stat(presumed_configure_full_filename); err == nil {
-		is_presumed_configure_full_filename_exists = true
-	}
+//	if _, err := os.Stat(presumed_configure_full_filename); err == nil {
+//		is_presumed_configure_full_filename_exists = true
+//	}
 
-	if !is_presumed_configure_full_filename_exists || force {
-		// ('makeconf.sh', ['./makeconf.sh']),
-		// ('autogen.sh', ['./autogen.sh']),
-		// ('bootstrap.sh', ['./bootstrap.sh']),
-		// ('bootstrap', ['./bootstrap']),
-		// ('genconfig.sh', ['./genconfig.sh']),
-		// ('configure.ac', ['autoreconf', '-i']),
-		// ('configure.in', ['autoreconf', '-i']),
+//	if !is_presumed_configure_full_filename_exists || force {
+//		// ('makeconf.sh', ['./makeconf.sh']),
+//		// ('autogen.sh', ['./autogen.sh']),
+//		// ('bootstrap.sh', ['./bootstrap.sh']),
+//		// ('bootstrap', ['./bootstrap']),
+//		// ('genconfig.sh', ['./genconfig.sh']),
+//		// ('configure.ac', ['autoreconf', '-i']),
+//		// ('configure.in', ['autoreconf', '-i']),
 
-		{
-			checked_file := path.Join(directory, "makeconf.sh")
+//		{
+//			checked_file := path.Join(directory, "makeconf.sh")
 
-			if _, err := os.Stat(checked_file); err == nil {
-				c := exec.Command("./makeconf.sh")
-				c.Dir = directory
-				return c.Run()
-			}
-		}
+//			if _, err := os.Stat(checked_file); err == nil {
+//				c := exec.Command("./makeconf.sh")
+//				c.Dir = directory
+//				return c.Run()
+//			}
+//		}
 
-		{
-			checked_file := path.Join(directory, "autogen.sh")
+//		{
+//			checked_file := path.Join(directory, "autogen.sh")
 
-			if _, err := os.Stat(checked_file); err == nil {
-				c := exec.Command("./autogen.sh")
-				c.Dir = directory
-				return c.Run()
-			}
-		}
+//			if _, err := os.Stat(checked_file); err == nil {
+//				c := exec.Command("./autogen.sh")
+//				c.Dir = directory
+//				return c.Run()
+//			}
+//		}
 
-		{
-			checked_file := path.Join(directory, "bootstrap.sh")
+//		{
+//			checked_file := path.Join(directory, "bootstrap.sh")
 
-			if _, err := os.Stat(checked_file); err == nil {
-				c := exec.Command("./bootstrap.sh")
-				c.Dir = directory
-				return c.Run()
-			}
-		}
+//			if _, err := os.Stat(checked_file); err == nil {
+//				c := exec.Command("./bootstrap.sh")
+//				c.Dir = directory
+//				return c.Run()
+//			}
+//		}
 
-		{
-			checked_file := path.Join(directory, "bootstrap")
+//		{
+//			checked_file := path.Join(directory, "bootstrap")
 
-			if _, err := os.Stat(checked_file); err == nil {
-				c := exec.Command("./bootstrap")
-				c.Dir = directory
-				return c.Run()
-			}
-		}
+//			if _, err := os.Stat(checked_file); err == nil {
+//				c := exec.Command("./bootstrap")
+//				c.Dir = directory
+//				return c.Run()
+//			}
+//		}
 
-		{
-			checked_file := path.Join(directory, "genconfig.sh")
+//		{
+//			checked_file := path.Join(directory, "genconfig.sh")
 
-			if _, err := os.Stat(checked_file); err == nil {
-				c := exec.Command("./genconfig.sh")
-				c.Dir = directory
-				return c.Run()
-			}
-		}
+//			if _, err := os.Stat(checked_file); err == nil {
+//				c := exec.Command("./genconfig.sh")
+//				c.Dir = directory
+//				return c.Run()
+//			}
+//		}
 
-		{
-			checked_file := path.Join(directory, "configure.ac")
+//		{
+//			checked_file := path.Join(directory, "configure.ac")
 
-			if _, err := os.Stat(checked_file); err == nil {
-				c := exec.Command("autoconf", "-i")
-				c.Dir = directory
-				return c.Run()
-			}
-		}
+//			if _, err := os.Stat(checked_file); err == nil {
+//				c := exec.Command("autoconf", "-i")
+//				c.Dir = directory
+//				return c.Run()
+//			}
+//		}
 
-		{
-			checked_file := path.Join(directory, "configure.in")
+//		{
+//			checked_file := path.Join(directory, "configure.in")
 
-			if _, err := os.Stat(checked_file); err == nil {
-				c := exec.Command("autoconf", "-i")
-				c.Dir = directory
-				return c.Run()
-			}
-		}
+//			if _, err := os.Stat(checked_file); err == nil {
+//				c := exec.Command("autoconf", "-i")
+//				c.Dir = directory
+//				return c.Run()
+//			}
+//		}
 
-		return errors.New(
-			"no acceptable configure script creating tools found",
-		)
+//		return errors.New(
+//			"no acceptable configure script creating tools found",
+//		)
 
-	}
+//	}
 
-	return nil
-}
+//	return nil
+//}
 
 func (self *Autotools) Configure(
 	args []string,
@@ -350,8 +341,6 @@ func (self *Autotools) Make(
 		return err
 	}
 
-	executable := make_program
-
 	int_env := make([]string, 0)
 	if env_mode == Copy {
 		int_env = append(int_env, os.Environ()...)
@@ -376,12 +365,12 @@ func (self *Autotools) Make(
 
 	int_args = append(int_args, args...)
 
-	cmd := exec.Command(executable, int_args...)
+	cmd := exec.Command(make_program, int_args...)
 	cmd.Env = int_env
 	cmd.Dir = working_dirpath
 
 	log.Info("Make Parameters:")
-	log.Info("  executable: " + executable)
+	log.Info("  executable: " + make_program)
 	log.Info("  arguments:")
 	for _, i := range int_args {
 		log.Info(fmt.Sprintf("    %s", i))

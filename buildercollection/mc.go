@@ -11,11 +11,11 @@ func init() {
 }
 
 type Builder_mc struct {
-	BuilderStdAutotools
+	Builder_std
 }
 
 func NewBuilder_mc(bs basictypes.BuildingSiteCtlI) (*Builder_mc, error) {
 	self := new(Builder_mc)
-	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
+	self.Builder_std = *NewBuilder_std(bs)
 	return self, nil
 }

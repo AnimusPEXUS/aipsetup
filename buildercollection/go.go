@@ -15,26 +15,23 @@ import (
 
 func init() {
 	Index["go"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderGo(bs)
+		return NewBuilder_go(bs)
 	}
 }
 
-var _ basictypes.BuilderI = &BuilderGo{}
+var _ basictypes.BuilderI = &Builder_go{}
 
-type BuilderGo struct {
-	bs basictypes.BuildingSiteCtlI
-
-	std_builder *BuilderStdAutotools
+type Builder_go struct {
+	Builder_std
 
 	os_name string
 	arch    string
 }
 
-func NewBuilderGo(bs basictypes.BuildingSiteCtlI) (*BuilderGo, error) {
-	self := new(BuilderGo)
+func NewBuilder_go(bs basictypes.BuildingSiteCtlI) (*Builder_go, error) {
+	self := new(Builder_go)
 
-	self.bs = bs
-	self.std_builder = NewBuilderStdAutotools(bs)
+	self.Builder_std = *NewBuilder_std(bs)
 
 	// TODO: dehardcode
 	self.os_name = "linux"
@@ -43,9 +40,9 @@ func NewBuilderGo(bs basictypes.BuildingSiteCtlI) (*BuilderGo, error) {
 	return self, nil
 }
 
-func (self *BuilderGo) DefineActions() (basictypes.BuilderActions, error) {
+func (self *Builder_go) DefineActions() (basictypes.BuilderActions, error) {
 
-	ret, err := self.std_builder.DefineActions()
+	ret, err := self.Builder_std.DefineActions()
 	if err != nil {
 		return nil, err
 	}
@@ -90,7 +87,7 @@ func (self *BuilderGo) DefineActions() (basictypes.BuilderActions, error) {
 	return ret, nil
 }
 
-func (self *BuilderGo) BuilderActionBuild(
+func (self *Builder_go) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
 	cwd := path.Join(self.bs.GetDIR_SOURCE(), "src")
@@ -124,7 +121,7 @@ func (self *BuilderGo) BuilderActionBuild(
 	return nil
 }
 
-func (self *BuilderGo) BuilderActionDistribute(
+func (self *Builder_go) BuilderActionDistribute(
 	log *logger.Logger,
 ) error {
 

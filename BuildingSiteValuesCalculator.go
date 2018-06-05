@@ -536,34 +536,6 @@ func (self *BuildingSiteValuesCalculator) CalculateMultilibVariant() (
 	return "", errors.New("CalculateMultilibVariant(): not supported cpu")
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCCParameterValue() (
-	string, error,
-) {
-	c, err := self.Calculate_C_Compiler()
-	if err != nil {
-		return "", err
-	}
-	mlv, err := self.CalculateMultilibVariant()
-	if err != nil {
-		return "", err
-	}
-	return fmt.Sprintf("%s -m%s", c, mlv), nil
-}
-
-func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCXXParameterValue() (
-	string, error,
-) {
-	c, err := self.Calculate_CXX_Compiler()
-	if err != nil {
-		return "", err
-	}
-	mlv, err := self.CalculateMultilibVariant()
-	if err != nil {
-		return "", err
-	}
-	return fmt.Sprintf("%s -m%s", c, mlv), nil
-}
-
 func (self *BuildingSiteValuesCalculator) CalculateAutotoolsHBTOptions() (
 	[]string, error,
 ) {
@@ -618,6 +590,34 @@ func (self *BuildingSiteValuesCalculator) CalculateAutotoolsHBTOptions() (
 	return ret, nil
 }
 
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCCParameterValue() (
+	string, error,
+) {
+	c, err := self.Calculate_C_Compiler()
+	if err != nil {
+		return "", err
+	}
+	mlv, err := self.CalculateMultilibVariant()
+	if err != nil {
+		return "", err
+	}
+	return fmt.Sprintf("%s -m%s", c, mlv), nil
+}
+
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCXXParameterValue() (
+	string, error,
+) {
+	c, err := self.Calculate_CXX_Compiler()
+	if err != nil {
+		return "", err
+	}
+	mlv, err := self.CalculateMultilibVariant()
+	if err != nil {
+		return "", err
+	}
+	return fmt.Sprintf("%s -m%s", c, mlv), nil
+}
+
 func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCompilerOptionsMap() (
 	environ.EnvVarEd, error,
 ) {
@@ -639,7 +639,7 @@ func (self *BuildingSiteValuesCalculator) CalculateAutotoolsCompilerOptionsMap()
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateAllAutotoolsOptionsMap() (
+func (self *BuildingSiteValuesCalculator) CalculateAutotoolsAllOptionsMap() (
 	environ.EnvVarEd, error,
 ) {
 
@@ -655,7 +655,7 @@ func (self *BuildingSiteValuesCalculator) CalculateAllAutotoolsOptionsMap() (
 	return ret, nil
 }
 
-func (self *BuildingSiteValuesCalculator) CalculateAllCMakeOptionsMap() (
+func (self *BuildingSiteValuesCalculator) CalculateCmakeAllOptionsMap() (
 	environ.EnvVarEd, error,
 ) {
 	//        if not 'CMAKE_C_COMPILER' in d:

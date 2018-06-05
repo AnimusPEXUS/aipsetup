@@ -7,22 +7,24 @@ import (
 
 func init() {
 	Index["dbus"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderDBus(bs)
+		return NewBuilder_dbus(bs)
 	}
 }
 
-type BuilderDBus struct {
-	BuilderStdAutotools
+type Builder_dbus struct {
+	Builder_std
 }
 
-func NewBuilderDBus(bs basictypes.BuildingSiteCtlI) (*BuilderDBus, error) {
-	self := new(BuilderDBus)
-	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
+func NewBuilder_dbus(bs basictypes.BuildingSiteCtlI) (*Builder_dbus, error) {
+	self := new(Builder_dbus)
+
+	self.Builder_std = *NewBuilder_std(bs)
+
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil
 }
 
-func (self *BuilderDBus) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
+func (self *Builder_dbus) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 	return append(
 		ret,
 		[]string{

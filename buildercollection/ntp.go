@@ -7,21 +7,23 @@ import (
 
 func init() {
 	Index["ntp"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilderNTP(bs)
+		return NewBuilder_ntp(bs)
 	}
 }
 
-type BuilderNTP struct {
-	BuilderStdAutotools
+type Builder_ntp struct {
+	Builder_std
 }
 
-func NewBuilderNTP(bs basictypes.BuildingSiteCtlI) (*BuilderNTP, error) {
-	self := new(BuilderNTP)
-	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
+func NewBuilder_ntp(bs basictypes.BuildingSiteCtlI) (*Builder_ntp, error) {
+	self := new(Builder_ntp)
+
+	self.Builder_std = *NewBuilder_std(bs)
+
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil
 }
 
-func (self *BuilderNTP) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
+func (self *Builder_ntp) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 	return append(ret, "--without-ntpsnmpd"), nil
 }

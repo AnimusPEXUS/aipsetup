@@ -12,12 +12,14 @@ func init() {
 }
 
 type Builder_avahi struct {
-	BuilderStdAutotools
+	Builder_std
 }
 
 func NewBuilder_avahi(bs basictypes.BuildingSiteCtlI) (*Builder_avahi, error) {
 	self := new(Builder_avahi)
-	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
+
+	self.Builder_std = *NewBuilder_std(bs)
+
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil
 }

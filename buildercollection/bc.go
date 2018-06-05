@@ -11,12 +11,14 @@ func init() {
 }
 
 type Builder_bc struct {
-	BuilderStdAutotools
+	Builder_std
 }
 
 func NewBuilder_bc(bs basictypes.BuildingSiteCtlI) (*Builder_bc, error) {
 	self := new(Builder_bc)
-	self.BuilderStdAutotools = *NewBuilderStdAutotools(bs)
+
+	self.Builder_std = *NewBuilder_std(bs)
+
 	self.ForcedAutogen = true
 	return self, nil
 }
