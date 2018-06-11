@@ -10,10 +10,9 @@ import (
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
-type CMake struct {
-}
+type CMake struct{}
 
-func (self *CMake) CMake(
+func (self CMake) CMake(
 	args []string,
 	env []string,
 	env_mode EnvironmentOperationMode,

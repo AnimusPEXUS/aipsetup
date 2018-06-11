@@ -13,10 +13,9 @@ import (
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
-type Autotools struct {
-}
+type Autotools struct{}
 
-func (self *Autotools) Extract(
+func (self Autotools) Extract(
 	filename string,
 	outputdir string,
 	tempdir string,
@@ -111,7 +110,7 @@ func (self *Autotools) Extract(
 	return nil
 }
 
-//func (self *Autotools) GenerateConfigureIfNeeded(
+//func (self Autotools) GenerateConfigureIfNeeded(
 //	directory string,
 //	force bool,
 //) error {
@@ -212,7 +211,7 @@ func (self *Autotools) Extract(
 //	return nil
 //}
 
-func (self *Autotools) Configure(
+func (self Autotools) Configure(
 	args []string,
 	env []string,
 	env_mode EnvironmentOperationMode,
@@ -318,7 +317,7 @@ working_dirpath  - absoluted automatically. working dir which shold be current
 	for startend make utility
 
 */
-func (self *Autotools) Make(
+func (self Autotools) Make(
 	args []string,
 	env []string,
 	env_mode EnvironmentOperationMode,
@@ -328,6 +327,14 @@ func (self *Autotools) Make(
 	make_program string,
 	log *logger.Logger,
 ) error {
+
+	if makefile_filename == "" {
+		makefile_filename = "Makefile"
+	}
+
+	if make_program == "" {
+		make_program = "make"
+	}
 
 	makefile_filename = path.Base(makefile_filename)
 

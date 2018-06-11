@@ -13,6 +13,10 @@ type BuilderAction struct {
 
 type BuilderActions []*BuilderAction
 
+func NewBuilderActions() BuilderActions {
+	return make(BuilderActions, 0)
+}
+
 func (self BuilderActions) Get(name string) (*BuilderAction, bool) {
 	for _, i := range self {
 		if i.Name == name {
@@ -110,36 +114,40 @@ func (self BuilderActions) MoveNamedBefore(index, name string) error {
 	return self.MoveBefore(index_index, name)
 }
 
-func (self BuilderActions) AddBefore(value BuilderActions, index int) BuilderActions {
+func (self BuilderActions) AddActionsBefore(value BuilderActions, index int) BuilderActions {
 	ret := self
 	ret = append(ret[:index], append(append(BuilderActions{}, value...), ret[index:]...)...)
 	return ret
 }
 
-func (self BuilderActions) AddAfter(value BuilderActions, index int) BuilderActions {
+func (self BuilderActions) AddActionsAfter(value BuilderActions, index int) BuilderActions {
 	ret := self
 	ret = append(ret[:index+1], append(append(BuilderActions{}, value...), ret[index+1:]...)...)
 	return ret
 }
 
-func (self BuilderActions) AddBeforeName(value BuilderActions, name string) (BuilderActions, error) {
+func (self BuilderActions) AddActionsBeforeName(value BuilderActions, name string) (BuilderActions, error) {
 
 	index := self.Index(name)
 	if index == -1 {
 		return nil, errors.New("index not found")
 	}
 
-	return self.AddBefore(value, index), nil
+	return self.AddActionsBefore(value, index), nil
 }
 
-func (self BuilderActions) AddAfterName(value BuilderActions, name string) (BuilderActions, error) {
+func (self BuilderActions) AddActionsAfterName(value BuilderActions, name string) (BuilderActions, error) {
 
 	index := self.Index(name)
 	if index == -1 {
 		return nil, errors.New("index not found")
 	}
 
-	return self.AddAfter(value, index), nil
+	return self.AddActionsAfter(value, index), nil
+}
+
+func (self BuilderActions) Append(value BuilderActions) (BuilderActions, error) {
+	return append(self, value...), nil
 }
 
 func (self BuilderActions) ActionList() []string {

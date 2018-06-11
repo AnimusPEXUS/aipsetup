@@ -52,7 +52,7 @@ func (self *Builder_ncurses) EditActions(ret basictypes.BuilderActions) (
 ) {
 	var err error
 
-	ret, err = ret.AddAfterName(
+	ret, err = ret.AddActionsAfterName(
 		basictypes.BuilderActions{
 			&basictypes.BuilderAction{
 				Name:     "make_lib_symlinks",
@@ -65,7 +65,7 @@ func (self *Builder_ncurses) EditActions(ret basictypes.BuilderActions) (
 		return nil, err
 	}
 
-	ret, err = ret.AddAfterName(
+	ret, err = ret.AddActionsAfterName(
 		basictypes.BuilderActions{
 			&basictypes.BuilderAction{
 				Name:     "make_pkgconfig_symlinks",

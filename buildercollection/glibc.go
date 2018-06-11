@@ -73,7 +73,7 @@ func (self *Builder_glibc) DefineActions() (basictypes.BuilderActions, error) {
 		ret = ret.Remove("build")
 		ret = ret.Remove("distribute")
 
-		ret = ret.AddAfter(
+		ret = ret.AddActionsAfter(
 			basictypes.BuilderActions{
 				&basictypes.BuilderAction{"distribute_01", self.BuilderActionDistribute_01},
 				&basictypes.BuilderAction{"distribute_01_2", self.BuilderActionDistribute_01_2},
