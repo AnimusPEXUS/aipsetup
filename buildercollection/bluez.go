@@ -7,7 +7,7 @@ import (
 
 func init() {
 	Index["bluez"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilder_binutils(bs), nil
+		return NewBuilder_bluez(bs), nil
 	}
 }
 

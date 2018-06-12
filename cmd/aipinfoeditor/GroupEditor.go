@@ -285,7 +285,7 @@ func (self *GroupEditor) ReloadInfo() error {
 				return err
 			}
 
-			gv, err = s.GetValue(it, 14)
+			gv, err = s.GetValue(it, 15)
 			if err != nil {
 				return err
 			}
@@ -494,7 +494,7 @@ func (self *GroupEditor) ApplyInfo() error {
 			}
 
 			if len(fres) == 0 {
-				err = s.SetValue(iter, 14, "")
+				err = s.SetValue(iter, 16, "")
 				if err != nil {
 					return err
 				}
@@ -522,12 +522,12 @@ func (self *GroupEditor) ApplyInfo() error {
 				sort.Strings(groups)
 
 				if len(groups) == 0 {
-					err = s.SetValue(iter, 14, "")
+					err = s.SetValue(iter, 16, "")
 					if err != nil {
 						return err
 					}
 				} else {
-					err = s.SetValue(iter, 14, strings.Join(groups, "\n"))
+					err = s.SetValue(iter, 16, strings.Join(groups, "\n"))
 					if err != nil {
 						return err
 					}

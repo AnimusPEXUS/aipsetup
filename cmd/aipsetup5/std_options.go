@@ -165,6 +165,20 @@ var (
 		Description: "named names are categories",
 	}
 
+	STD_NAMES_ARE_CATEGORIES_PRESERVE_NESTING = &cliapp.GetOptCheckListItem{
+		Name: "--cpn",
+		Description: "category preserve nesting. " +
+			"use with -c. creates subdirs and " +
+			"preserves categorization",
+	}
+
+	STD_NAMES_ARE_CATEGORIES_IS_PREFIXES = &cliapp.GetOptCheckListItem{
+		Name: "--cip",
+		Description: "category is prefix. " +
+			"use with -c. all packages " +
+			"category of which starts with value will match",
+	}
+
 	STD_NAMES_ARE_GROUPS = &cliapp.GetOptCheckListItem{
 		Name:        "-g",
 		Description: "named names are groups",

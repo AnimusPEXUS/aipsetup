@@ -97,7 +97,10 @@ func (self *MassBuildCtl) WriteInfo(info *basictypes.MassBuilderInfo) error {
 }
 
 func (self *MassBuildCtl) GetTarballsPath() string {
-	return path.Join(self.path, basictypes.MASSBUILDER_TARBALLS_DIR)
+	//	return path.Join(self.path, basictypes.MASSBUILDER_TARBALLS_DIR)
+	// NOTE: using self.path for tarballs storaging is better/handier
+	//       for fast mass building init creation
+	return self.path
 }
 
 func (self *MassBuildCtl) GetAspsPath() string {
@@ -214,7 +217,7 @@ dirs_search:
 			{
 				ib := path.Base(i.Name())
 				for _, i := range []string{
-					basictypes.MASSBUILDER_TARBALLS_DIR,
+					//					basictypes.MASSBUILDER_TARBALLS_DIR,
 					basictypes.MASSBUILDER_ASPS_DIR,
 				} {
 					if ib == i {

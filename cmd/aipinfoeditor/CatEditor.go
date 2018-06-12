@@ -280,7 +280,7 @@ func (self *CatEditor) ReloadInfo() error {
 				return err
 			}
 
-			gv, err = s.GetValue(it, 13)
+			gv, err = s.GetValue(it, 15)
 			if err != nil {
 				return err
 			}
@@ -484,7 +484,7 @@ func (self *CatEditor) ApplyInfo() error {
 				}
 
 			}
-			err = s.SetValue(iter, 13, cat)
+			err = s.SetValue(iter, 15, cat)
 			if err != nil {
 				return err
 			}

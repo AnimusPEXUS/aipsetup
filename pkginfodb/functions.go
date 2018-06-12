@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"path"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/versionfilterfunctions"
@@ -173,55 +174,39 @@ func ListPackagesByGroups(groups []string) ([]string, error) {
 			}
 		}
 		if !found {
-			return []string{}, errors.New("some of named groups are not found")
+			return nil, errors.New("some of named groups are not found")
 		}
 	}
 
 	return ret, nil
 }
 
-func ListPackagesByCategories(categories []string) ([]string, error) {
-	ret := make([]string, 0)
+func ListPackagesByCategories(categories []string, is_prefixes bool) ([]string, error) {
 
-	found_categories := set.NewSetString()
+	ret := set.NewSetString()
+
+	some_not_found := false
 
 	for k, v := range Index {
 		found := false
 		for _, v3 := range categories {
-			if v.Category == v3 {
+			if (!is_prefixes && (v.Category == v3)) ||
+				(is_prefixes && strings.HasPrefix(v.Category, v3)) {
 				found = true
-				found_categories.Add(v3)
-				break
-			}
-		}
-		if found {
-			found2 := false
-			for _, v2 := range ret {
-				if v2 == k {
-					found2 = true
-					break
-				}
-			}
-			if !found2 {
-				ret = append(ret, k)
-			}
-		}
-	}
-
-	for _, i := range categories {
-		found := false
-		for _, j := range found_categories.ListStrings() {
-			if i == j {
-				found = true
+				ret.Add(k)
 				break
 			}
 		}
 		if !found {
-			return []string{}, errors.New("some of categories are not found")
+			some_not_found = true
 		}
 	}
 
-	return ret, nil
+	if !some_not_found {
+		return nil, errors.New("some of categories are not found")
+	}
+
+	return ret.ListStrings(), nil
 }
 
 func CheckTarballMatchesInfo(

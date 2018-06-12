@@ -44,6 +44,8 @@ func SectionAipsetupRepo() *cliapp.AppCmdNode {
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
 					STD_NAMES_ARE_CATEGORIES,
+					STD_NAMES_ARE_CATEGORIES_PRESERVE_NESTING,
+					STD_NAMES_ARE_CATEGORIES_IS_PREFIXES,
 					STD_NAMES_ARE_GROUPS,
 				},
 			},
@@ -59,6 +61,7 @@ func SectionAipsetupRepo() *cliapp.AppCmdNode {
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
 					STD_NAMES_ARE_CATEGORIES,
+					STD_NAMES_ARE_CATEGORIES_IS_PREFIXES,
 					STD_NAMES_ARE_GROUPS,
 				},
 			},

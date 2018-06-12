@@ -7,6 +7,7 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/repository"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/logger"
@@ -44,6 +45,8 @@ func SectionAipsetupMBuild() *cliapp.AppCmdNode {
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
 					STD_NAMES_ARE_CATEGORIES,
+					STD_NAMES_ARE_CATEGORIES_PRESERVE_NESTING,
+					STD_NAMES_ARE_CATEGORIES_IS_PREFIXES,
 					STD_NAMES_ARE_GROUPS,
 				},
 
@@ -119,6 +122,10 @@ func CmdAipsetupMassBuildGetSrc(
 		return res
 	}
 
+	work_on_categories_preserve := getopt_result.DoesHaveNamedRetOptItem(
+		STD_NAMES_ARE_CATEGORIES_PRESERVE_NESTING.Name,
+	)
+
 	mbuild, err := aipsetup.NewMassBuilder(".", sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
@@ -135,16 +142,29 @@ func CmdAipsetupMassBuildGetSrc(
 		}
 	}
 
+	tarballs_not_found := make([]string, 0)
+
 	get_by_name_func := func(name string) error {
 
 		t, err := repo.DetermineNewestStableTarball(name)
 		if err != nil {
-			return err
+			tarballs_not_found = append(tarballs_not_found, name)
+			return nil
 		}
 
 		log.Info(path.Base(t))
 
-		err = repo.CopyTarballToDir(name, t, path.Join(mbuild.GetTarballsPath()))
+		target_dir := mbuild.GetTarballsPath()
+
+		if work_on_categories_preserve {
+			pkginfo, err := pkginfodb.Get(name)
+			if err != nil {
+				return err
+			}
+			target_dir = path.Join(target_dir, pkginfo.Category)
+		}
+
+		err = repo.CopyTarballToDir(name, t, target_dir)
 		if err != nil {
 			return err
 		}
@@ -159,6 +179,14 @@ func CmdAipsetupMassBuildGetSrc(
 	)
 	if res != nil && res.Code != 0 {
 		return res
+	}
+
+	if len(tarballs_not_found) != 0 {
+		sort.Strings(tarballs_not_found)
+		log.Error("Couldn't find tarballs for package(s):")
+		for _, i := range tarballs_not_found {
+			log.Error(fmt.Sprintf("  %s", i))
+		}
 	}
 
 	return nil

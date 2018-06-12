@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sort"
 
 	"github.com/AnimusPEXUS/aipsetup"
@@ -15,13 +16,42 @@ func MiscDoSomethingForGroupsCategoriesOrLists(
 	action func(name string) error,
 ) *cliapp.AppResult {
 
-	work_on_groups := getopt_result.DoesHaveNamedRetOptItem("-g")
-	work_on_categories := getopt_result.DoesHaveNamedRetOptItem("-c")
+	work_on_categories := getopt_result.DoesHaveNamedRetOptItem(
+		STD_NAMES_ARE_CATEGORIES.Name,
+	)
+
+	//	work_on_categories_preserve := getopt_result.DoesHaveNamedRetOptItem(
+	//		STD_NAMES_ARE_CATEGORIES_PRESERVE_NESTING.Name,
+	//	)
+
+	work_on_categories_prefixes := getopt_result.DoesHaveNamedRetOptItem(
+		STD_NAMES_ARE_CATEGORIES_IS_PREFIXES.Name,
+	)
+
+	work_on_groups := getopt_result.DoesHaveNamedRetOptItem(
+		STD_NAMES_ARE_GROUPS.Name,
+	)
+
+	//					STD_NAMES_ARE_CATEGORIES,
+	//					STD_NAMES_ARE_CATEGORIES_PRESERVE_NESTING,
+	//					STD_NAMES_ARE_CATEGORIES_IS_PREFIXES,
+	//					STD_NAMES_ARE_GROUPS,
+
+	if !work_on_categories && work_on_categories_prefixes {
+		return &cliapp.AppResult{
+			Code: 13,
+			Message: fmt.Sprintf(
+				"%s option can be used only with %s option",
+				STD_NAMES_ARE_CATEGORIES_IS_PREFIXES.Name,
+				STD_NAMES_ARE_CATEGORIES.Name,
+			),
+		}
+	}
 
 	if work_on_groups && work_on_categories {
 		return &cliapp.AppResult{
 			Code:    12,
-			Message: "mutual exclusive options given",
+			Message: "mutualy exclusive options given",
 		}
 	} else if !work_on_groups && !work_on_categories {
 		for _, i := range getopt_result.Args {
@@ -56,7 +86,13 @@ func MiscDoSomethingForGroupsCategoriesOrLists(
 			}
 		}
 	} else if work_on_categories {
-		pkgs, err := pkginfodb.ListPackagesByCategories(getopt_result.Args)
+
+		//		var pkgs []string
+
+		pkgs, err := pkginfodb.ListPackagesByCategories(
+			getopt_result.Args,
+			work_on_categories_prefixes,
+		)
 		if err != nil {
 			return &cliapp.AppResult{
 				Code:    11,
