@@ -18,8 +18,6 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/repository"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
-	"github.com/AnimusPEXUS/utils/tarballname"
-	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 )
 
 func IsDirRestrictedForWork(path string) bool {
@@ -197,96 +195,96 @@ func (self *BuildingSiteCtl) DetermineMainTarrball() (string, error) {
 }
 
 // TODO: somehow I don't like this method
-func (self *BuildingSiteCtl) ApplyMainTarball() error {
+//func (self *BuildingSiteCtl) ApplyMainTarball() error {
 
-	maintarball, err := self.DetermineMainTarrball()
-	if err != nil {
-		return err
-	}
+//	maintarball, err := self.DetermineMainTarrball()
+//	if err != nil {
+//		return err
+//	}
 
-	maintarball = path.Base(maintarball)
+//	maintarball = path.Base(maintarball)
 
-	lst, err := ioutil.ReadDir(self.GetDIR_TARBALL())
-	if err != nil {
-		return err
-	}
+//	lst, err := ioutil.ReadDir(self.GetDIR_TARBALL())
+//	if err != nil {
+//		return err
+//	}
 
-	for _, i := range lst {
-		if maintarball == path.Base(i.Name()) {
-			goto maintarball_found
-		}
-	}
+//	for _, i := range lst {
+//		if maintarball == path.Base(i.Name()) {
+//			goto maintarball_found
+//		}
+//	}
 
-	return errors.New("specified main tarball not found in tarball dir")
+//	return errors.New("specified main tarball not found in tarball dir")
 
-maintarball_found:
+//maintarball_found:
 
-	filelist := make([]string, 0)
+//	filelist := make([]string, 0)
 
-	filelist = append(filelist, maintarball)
+//	filelist = append(filelist, maintarball)
 
-	for _, i := range lst {
-		b := path.Base(i.Name())
-		found := false
+//	for _, i := range lst {
+//		b := path.Base(i.Name())
+//		found := false
 
-		for _, j := range filelist {
-			if j == b {
-				found = true
-				break
-			}
-		}
+//		for _, j := range filelist {
+//			if j == b {
+//				found = true
+//				break
+//			}
+//		}
 
-		if !found {
-			filelist = append(filelist, b)
-		}
-	}
+//		if !found {
+//			filelist = append(filelist, b)
+//		}
+//	}
 
-	info, err := self.ReadInfo()
-	if err != nil {
-		return err
-	}
+//	info, err := self.ReadInfo()
+//	if err != nil {
+//		return err
+//	}
 
-	tarball_info, err := pkginfodb.Get(info.PackageName)
-	if err != nil {
-		return err
-	}
+//	tarball_info, err := pkginfodb.Get(info.PackageName)
+//	if err != nil {
+//		return err
+//	}
 
-	{
+//	{
 
-		parser, err := tarballnameparsers.Get(tarball_info.TarballFileNameParser)
-		if err != nil {
-			return err
-		}
+//		parser, err := tarballnameparsers.Get(tarball_info.TarballFileNameParser)
+//		if err != nil {
+//			return err
+//		}
 
-		err = tarballname.IsPossibleTarballNameErr(filelist[0])
-		if err != nil {
-			return err
-		}
+//		err = tarballname.IsPossibleTarballNameErr(filelist[0])
+//		if err != nil {
+//			return err
+//		}
 
-		parsed, err := parser.Parse(filelist[0])
-		if err != nil {
-			return err
-		}
+//		parsed, err := parser.Parse(filelist[0])
+//		if err != nil {
+//			return err
+//		}
 
-		if t, err := parsed.Version.IntSliceString("."); err != nil {
-			return err
-		} else {
-			info.PackageVersion = t
-		}
+//		if t, err := parsed.Version.IntSliceString("."); err != nil {
+//			return err
+//		} else {
+//			info.PackageVersion = t
+//		}
 
-		if parsed.Status.StrSliceString("") != "" {
-			info.PackageStatus = parsed.Status.StrSliceString("")
-		}
+//		if parsed.Status.StrSliceString("") != "" {
+//			info.PackageStatus = parsed.Status.StrSliceString("")
+//		}
 
-	}
+//	}
 
-	err = self.WriteInfo(info)
-	if err != nil {
-		return err
-	}
+//	err = self.WriteInfo(info)
+//	if err != nil {
+//		return err
+//	}
 
-	return nil
-}
+//	return nil
+//}
 
 func (self *BuildingSiteCtl) getDIR_x(x string) string {
 	return path.Join(self.path, x)
@@ -636,7 +634,11 @@ func (self *BuildingSiteCtl) GetTarballs() error {
 			needed_stat_found := false
 			for _, j := range stats {
 
-				matches, err := pkginfodb.CheckTarballMatchesInfo(j.Name(), i)
+				if j.IsDir() {
+					continue
+				}
+
+				matches, err := pkginfodb.CheckTarballMatchesInfoByName(j.Name(), i)
 				if err != nil {
 					return err
 				}

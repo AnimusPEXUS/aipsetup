@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"path"
+	"sort"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
@@ -32,7 +33,23 @@ func DetermineTarballPackageInfoSingle(filename string) (
 		return "", nil, err
 	}
 	if len(res) != 1 {
-		return "", nil, errors.New("couldn't determine single package info by tarball name")
+
+		keys := make([]string, 0)
+
+		for k, _ := range res {
+			keys = append(keys, k)
+		}
+		sort.Strings(keys)
+
+		return "", nil,
+			errors.New(
+				fmt.Sprintf(
+					"couldn't determine single package info by tarball name. matches count %d: %v",
+					len(keys),
+					keys,
+				),
+			)
+
 	}
 	var name string
 	var info *basictypes.PackageInfo
@@ -49,57 +66,28 @@ func DetermineTarballPackageInfo(filename string) (
 	ret := make(map[string]*basictypes.PackageInfo)
 
 	filename_s_base := path.Base(filename)
-	filename_s_base_list := []string{filename_s_base}
 
-	//parsers_map := make(map[string]types.TarballNameParserI)
+	keys := IndexKeysSorted()
 
 searching:
-	for key, value := range Index {
+	for _, key := range keys {
 
-		name_parser_name := value.TarballFileNameParser
+		value := Index[key]
 
-		parser, err := tarballnameparsers.Get(name_parser_name)
+		match, err := CheckTarballMatchesInfo(filename_s_base, key, value)
 		if err != nil {
 			return nil, err
 		}
 
-		parse_result, err := parser.Parse(filename_s_base)
-		if err != nil {
-			fmt.Sprintln(
-				"can't parse %s with %s parser",
-				filename_s_base,
-				name_parser_name,
-			)
+		if !match {
 			continue searching
 		}
 
-		if parse_result.Name == value.TarballName {
-
-			fres, err := ApplyInfoFilter(value, filename_s_base_list)
-			if err != nil {
-				return nil, err
-			}
-
-			switch len(fres) {
-			case 0:
-			case 1:
-				ret[key] = value
-			default:
-				panic("this shoud be unreachable")
-			}
-
-		}
+		ret[key] = value
 
 	}
 
-	switch len(ret) {
-	case 0:
-		return ret, errors.New("not found")
-	case 1:
-		return ret, nil
-	default:
-		return ret, errors.New("too many matches")
-	}
+	return ret, nil
 }
 
 func ApplyInfoFilter(
@@ -209,15 +197,56 @@ func ListPackagesByCategories(categories []string, is_prefixes bool) ([]string, 
 	return ret.ListStrings(), nil
 }
 
-func CheckTarballMatchesInfo(
+func CheckTarballMatchesInfoByName(
 	tarballfilename string,
 	infoname string,
 ) (bool, error) {
-
-	res_name, _, err := DetermineTarballPackageInfoSingle(tarballfilename)
+	info, err := Get(infoname)
 	if err != nil {
 		return false, err
 	}
 
-	return res_name == infoname, nil
+	return CheckTarballMatchesInfo(tarballfilename, infoname, info)
+}
+
+func CheckTarballMatchesInfo(
+	tarballfilename string,
+	infoname string,
+	info *basictypes.PackageInfo,
+) (bool, error) {
+
+	if strings.Trim(info.TarballName, " \n") == "" {
+
+		return false,
+			errors.New(
+				fmt.Sprintf("package %s have invalid tarball base name", infoname),
+			)
+	}
+
+	tarballfilename = path.Base(tarballfilename)
+
+	parser, err := tarballnameparsers.Get(info.TarballFileNameParser)
+	if err != nil {
+		return false, err
+	}
+
+	parse_result, err := parser.Parse(tarballfilename)
+	if err != nil {
+		return false, err
+	}
+
+	if parse_result.Name != info.TarballName {
+		return false, nil // not an error
+	}
+
+	fres, err := ApplyInfoFilter(info, []string{tarballfilename})
+	if err != nil {
+		return false, err
+	}
+
+	if len(fres) != 1 {
+		return false, nil // not an error
+	}
+
+	return true, nil
 }

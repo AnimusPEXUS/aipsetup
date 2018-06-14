@@ -1,7 +1,6 @@
 /cmd/aipsetup5/aipsetup5
 /cmd/aipinfoeditor/aipinfoeditor
-/cmd/aipinfoeditor/infojson.tar.xz
-/cmd/aipinfoeditor/infojson2.tar.xz
+/cmd/aipinfoeditor/infojson*.tar.xz
 /tests
 *.qtpl.go
 *.glade~

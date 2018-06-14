@@ -3,6 +3,7 @@ package pkginfodb
 import (
 	"encoding/json"
 	"fmt"
+	"sort"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
@@ -29,4 +30,16 @@ func init() {
 		}
 		Index[name] = t
 	}
+}
+
+func IndexKeysSorted() []string {
+	ret := make([]string, 0)
+
+	for k, _ := range Index {
+		ret = append(ret, k)
+	}
+
+	sort.Strings(ret)
+
+	return ret
 }

@@ -413,9 +413,15 @@ func (self *MassBuildCtl) tarballsList() ([]string, error) {
 	ret := make([]string, 0)
 
 	for _, i := range files {
-		if tarballname.IsPossibleTarballName(i.Name()) {
-			ret = append(ret, path.Base(i.Name()))
+		if i.IsDir() {
+			continue
 		}
+
+		if !tarballname.IsPossibleTarballName(i.Name()) {
+			continue
+		}
+
+		ret = append(ret, path.Base(i.Name()))
 	}
 
 	return ret, nil
