@@ -16,7 +16,7 @@
   "Category": "crosstools",
   "Groups": [],
   "TarballFileNameParser": "std",
-  "TarballName": "",
+  "TarballName": "cb-binutils-x86-pc-linux-gnu",
   "TarballFilters": [],
   "TarballProvider": "",
   "TarballProviderArguments": [],

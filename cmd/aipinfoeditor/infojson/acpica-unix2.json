@@ -16,7 +16,7 @@
   "Category": "core",
   "Groups": [],
   "TarballFileNameParser": "std",
-  "TarballName": "",
+  "TarballName": "acpica-unix2",
   "TarballFilters": [],
   "TarballProvider": "",
   "TarballProviderArguments": [],

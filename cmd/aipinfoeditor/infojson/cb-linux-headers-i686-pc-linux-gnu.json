@@ -16,7 +16,7 @@
   "Category": "crosstools",
   "Groups": [],
   "TarballFileNameParser": "std",
-  "TarballName": "",
+  "TarballName": "cb-linux-headers-i686-pc-linux-gnu",
   "TarballFilters": [],
   "TarballProvider": "",
   "TarballProviderArguments": [],
