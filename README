@@ -2,17 +2,56 @@
 
   .. is system for creating and maintaining own GNU+Linux operating system.
 
-  It can (Python version could, but, I hope, I'll finally find forces to finish
-    this to Go rewrite):
-   * mirror tarballs used in distro to local hard drive
-   * build distribution packages
-   * install and uninstall packages
-   * build crosscompiler systems
-   * creating bootable flash drive with installer
+            [ GitHub homepage is: https://github.com/AnimusPEXUS/aipsetup ]
+
+== Development Status ==
+
+  Developping
+
+== Feature Readiness Table ==
+
+                              | aipsetup3 (python) | aipsetup5 (this)
+  -------------------------------------------------------------------
+  Install Software Packages   |         v          |        v
+  -------------------------------------------------------------------
+  Uninstall Software Packages |         v          |        v
+  -------------------------------------------------------------------
+  Build Software Packages     |         v          |(porting in progress)
+  -------------------------------------------------------------------
+  Store Software Packages     |         v          |        v
+  -------------------------------------------------------------------
+  Mirror and maintain local   |         v          |        v
+  tarball repository          | (badly and ugly)   |
+  -------------------------------------------------------------------
+  Mirror and maintain local   |         v          |        v
+  packages repository         | (badly and ugly)   |
+  -------------------------------------------------------------------
+  Refreshing local packages   |         v          |        v
+  databases after package     |                    |
+  operations                  |                    |
+  (Mime, Gtk, Pixbuff,        |                    |
+   Schemas, Immodules, etc..) |                    |
+  -------------------------------------------------------------------
+  Crosscompiler building      |         v          | not started yet,
+  and usage                   | (badly and ugly)   | not planned yet.
+  -------------------------------------------------------------------
+  Building bootable and       | done, but not      | not started yet,
+  rescue flash/optical images | tested long enough | but should be easy enough
+  -------------------------------------------------------------------
+  Doing system cleanups:
+    removing old .so files    |         v          |       o
+    -----------------------------------------------------------------
+    checking file and dir     |         v          |       o
+    permissions               |                    |
+    -----------------------------------------------------------------
+    automatic population of   |         v          |       o
+    /daemons                  |                    |
+
+== Some Basic Information ==
 
   Present AipSetup system in it's early stages was thought as Python's version
     rewrite, but power of Go language made it possible to extend it to be
-    more smart and self contained.
+    smarter and self-containier.
 
   Previous version was built with Python 3, but finally I had to discard Python
     from such responsive use: CPython realization and Python language it self
@@ -21,7 +60,7 @@
     building and installation problems.
 
   The early one aipsetup was a number of bash scripts.. this can be found on
-    SF.net under same name.
+    SF.net here: https://sourceforge.net/projects/aipsetup/files/aipsetup/.
 
   Both was hosted on GitHub, but I've considered those old versions too bad
     to continue providing them. If somebody wants to see them on GitHub,
@@ -29,11 +68,13 @@
 
 == Building and Installation ==
 
-This should be as easy as
-`go get github.com/AnimusPEXUS/aipsetup`
+  This should be as easy as
+    `go get github.com/AnimusPEXUS/aipsetup`
 
-aipsetup5 and info editor executables should be installed.
+  aipsetup5 and aipinfoeditor executables should be built and installed.
 
 == Accepting motivational gifts ==
 
   BTC: 1LRdzd5pnaiuctai9aHnftwNRrUMTmFrNe
+  WMZ: Z798305231352
+  WMR: R240123162461
