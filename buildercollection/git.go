@@ -12,13 +12,13 @@ func init() {
 }
 
 type Builder_git struct {
-	Builder_std
+	*Builder_std
 }
 
 func NewBuilder_git(bs basictypes.BuildingSiteCtlI) (*Builder_git, error) {
 	self := new(Builder_git)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil

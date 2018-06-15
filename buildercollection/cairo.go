@@ -12,13 +12,13 @@ func init() {
 }
 
 type Builder_cairo struct {
-	Builder_std
+	*Builder_std
 }
 
 func NewBuilder_cairo(bs basictypes.BuildingSiteCtlI) *Builder_cairo {
 	self := new(Builder_cairo)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 

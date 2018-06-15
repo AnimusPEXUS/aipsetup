@@ -12,13 +12,13 @@ func init() {
 }
 
 type Builder_dbus struct {
-	Builder_std
+	*Builder_std
 }
 
 func NewBuilder_dbus(bs basictypes.BuildingSiteCtlI) (*Builder_dbus, error) {
 	self := new(Builder_dbus)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil

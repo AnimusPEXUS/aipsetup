@@ -22,13 +22,13 @@ func init() {
 }
 
 type Builder_bash struct {
-	Builder_std
+	*Builder_std
 }
 
 func NewBuilder_bash(bs basictypes.BuildingSiteCtlI) (*Builder_bash, error) {
 	self := new(Builder_bash)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.PatchCB = self.Patch
 	self.EditConfigureArgsCB = self.EditConfigureArgs

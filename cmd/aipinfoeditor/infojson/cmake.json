@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "http://www.cmake.org",
-  "BuilderName": "std_cmake",
+  "BuilderName": "cmake",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

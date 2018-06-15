@@ -24,7 +24,7 @@ func init() {
 }
 
 type Builder_linux struct {
-	Builder_std
+	*Builder_std
 
 	crossbuild_params []string
 
@@ -37,7 +37,7 @@ func NewBuilder_linux(bs basictypes.BuildingSiteCtlI) (*Builder_linux, error) {
 
 	self := new(Builder_linux)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	info, err := self.bs.ReadInfo()
 	if err != nil {

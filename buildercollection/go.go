@@ -22,7 +22,7 @@ func init() {
 var _ basictypes.BuilderI = &Builder_go{}
 
 type Builder_go struct {
-	Builder_std
+	*Builder_std
 
 	os_name string
 	arch    string
@@ -31,7 +31,7 @@ type Builder_go struct {
 func NewBuilder_go(bs basictypes.BuildingSiteCtlI) (*Builder_go, error) {
 	self := new(Builder_go)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	// TODO: dehardcode
 	self.os_name = "linux"

@@ -20,14 +20,14 @@ func init() {
 }
 
 type Builder_gcc struct {
-	Builder_std
+	*Builder_std
 }
 
 func NewBuilder_gcc(bs basictypes.BuildingSiteCtlI) *Builder_gcc {
 
 	self := new(Builder_gcc)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.SeparateBuildDir = true
 	self.ForcedTarget = true

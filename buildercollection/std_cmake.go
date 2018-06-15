@@ -16,15 +16,19 @@ func init() {
 }
 
 type Builder_std_cmake struct {
-	Builder_std
+	*Builder_std
+
+	EditConfigureArgsCB func(log *logger.Logger, ret []string) ([]string, error)
 }
 
 func NewBuilder_std_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_std_cmake, error) {
 	self := new(Builder_std_cmake)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.EditActionsCB = self.EditActions
+
+	self.SeparateBuildDir = true
 	return self, nil
 }
 
@@ -145,6 +149,14 @@ func (self *Builder_std_cmake) BuilderActionConfigureArgsDef(
 				"-DLIBDIR_SUFFIX=64",
 			}...,
 		)
+	}
+
+	if self.EditConfigureArgsCB != nil {
+
+		ret, err = self.EditConfigureArgsCB(log, ret)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return ret, nil

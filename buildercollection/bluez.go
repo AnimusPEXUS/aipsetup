@@ -12,13 +12,13 @@ func init() {
 }
 
 type Builder_bluez struct {
-	Builder_std
+	*Builder_std
 }
 
 func NewBuilder_bluez(bs basictypes.BuildingSiteCtlI) *Builder_bluez {
 	self := new(Builder_bluez)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 

@@ -20,7 +20,7 @@ func init() {
 }
 
 type Builder_glibc struct {
-	Builder_std
+	*Builder_std
 
 	slibdir string
 }
@@ -29,7 +29,7 @@ func NewBuilder_glibc(bs basictypes.BuildingSiteCtlI) (*Builder_glibc, error) {
 
 	self := new(Builder_glibc)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.SeparateBuildDir = true
 	self.ForcedTarget = true

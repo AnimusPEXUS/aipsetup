@@ -377,10 +377,13 @@ func (self *Builder_std) BuilderActionConfigureArgsDef(
 		return nil, err
 	}
 
+	docdir := path.Join(prefix, "share", "doc")
+
 	ret = append(
 		ret,
 		fmt.Sprintf("--prefix=%s", prefix),
 		fmt.Sprintf("--libdir=%s", libdir),
+		fmt.Sprintf("--docdir=%s", docdir),
 		"--sysconfdir=/etc",
 		"--localstatedir=/var",
 		"--enable-shared",

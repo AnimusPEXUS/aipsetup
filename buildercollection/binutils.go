@@ -18,7 +18,7 @@ func init() {
 }
 
 type Builder_binutils struct {
-	Builder_std
+	*Builder_std
 }
 
 func NewBuilder_binutils(bs basictypes.BuildingSiteCtlI) *Builder_binutils {
@@ -26,7 +26,7 @@ func NewBuilder_binutils(bs basictypes.BuildingSiteCtlI) *Builder_binutils {
 	self := new(Builder_binutils)
 	self.bs = bs
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.AfterExtractCB = self.AfterExtract
 	self.EditConfigureArgsCB = self.EditConfigureArgs

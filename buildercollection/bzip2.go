@@ -21,7 +21,7 @@ func init() {
 }
 
 type Builder_bzip2 struct {
-	Builder_std
+	*Builder_std
 
 	fixed_CC     string
 	fixed_AR     string
@@ -40,7 +40,7 @@ func NewBuilder_bzip2(bs basictypes.BuildingSiteCtlI) (*Builder_bzip2, error) {
 
 	self := new(Builder_bzip2)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	calc := bs.GetBuildingSiteValuesCalculator()
 

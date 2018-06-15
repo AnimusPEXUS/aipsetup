@@ -15,13 +15,13 @@ func init() {
 }
 
 type Builder_autogen struct {
-	Builder_std
+	*Builder_std
 }
 
 func NewBuilder_autogen(bs basictypes.BuildingSiteCtlI) (*Builder_autogen, error) {
 	self := new(Builder_autogen)
 
-	self.Builder_std = *NewBuilder_std(bs)
+	self.Builder_std = NewBuilder_std(bs)
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil

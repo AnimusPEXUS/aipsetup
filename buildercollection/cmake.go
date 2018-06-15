@@ -1,7 +1,11 @@
 package buildercollection
 
 import (
+	"os"
+	"path"
+
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/logger"
 )
 
 func init() {
@@ -10,10 +14,8 @@ func init() {
 	}
 }
 
-// TODO: finish this
-
 type Builder_cmake struct {
-	Builder_std_cmake
+	*Builder_std_cmake
 }
 
 func NewBuilder_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_cmake, error) {
@@ -21,7 +23,64 @@ func NewBuilder_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_cmake, error) {
 	if t, err := NewBuilder_std_cmake(bs); err != nil {
 		return nil, err
 	} else {
-		self.Builder_std_cmake = *t
+		self.Builder_std_cmake = t
 	}
+
+	self.EditConfigureArgsCB = self.EditConfigureArgs
+
+	self.AfterDistributeCB = self.AfterDistribute
+
 	return self, nil
+}
+
+func (self *Builder_cmake) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	prefix, err := calc.CalculateInstallPrefix()
+	if err != nil {
+		return nil, err
+	}
+
+	ncurses_include_dir := path.Join(prefix, "include", "ncursesw")
+
+	ncursrs_opt := "-DCURSES_INCLUDE_PATH=" + ncurses_include_dir
+
+	log.Info("Calculated ncurses include dir is: " + ncurses_include_dir)
+
+	ret = append(ret, ncursrs_opt)
+
+	return ret, nil
+}
+
+func (self *Builder_cmake) AfterDistribute(log *logger.Logger, ret error) error {
+	if err != nil {
+		return err
+	}
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	prefix, err := calc.CalculateDstInstallPrefix()
+	if err != nil {
+		return err
+	}
+
+	prefix_doc = path.Join(prefix, "doc")
+	prefix_share = path.Join(prefix, "share")
+	prefix_share_doc = pathJoin(prefix_share, "doc")
+
+	if prefix_doc_s, err := os.Stat(prefix_doc); err != nil {
+		if os.IsNotExist(err) {
+			return nil
+		} else {
+			return err
+		}
+	}
+
+	os.MkdirAll(prefix_share)
+
+	if prefix_share_doc_s, err := os.Stat(prefix_doc); err != nil {
+	}
+
+	return nil
 }
