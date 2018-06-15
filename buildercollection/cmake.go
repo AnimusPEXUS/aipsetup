@@ -53,7 +53,7 @@ func (self *Builder_cmake) EditConfigureArgs(log *logger.Logger, ret []string) (
 	return ret, nil
 }
 
-func (self *Builder_cmake) AfterDistribute(log *logger.Logger, ret error) error {
+func (self *Builder_cmake) AfterDistribute(log *logger.Logger, err error) error {
 	if err != nil {
 		return err
 	}
@@ -65,11 +65,11 @@ func (self *Builder_cmake) AfterDistribute(log *logger.Logger, ret error) error 
 		return err
 	}
 
-	prefix_doc = path.Join(prefix, "doc")
-	prefix_share = path.Join(prefix, "share")
-	prefix_share_doc = pathJoin(prefix_share, "doc")
+	prefix_doc := path.Join(prefix, "doc")
+	prefix_share := path.Join(prefix, "share")
+	prefix_share_doc := path.Join(prefix_share, "doc")
 
-	if prefix_doc_s, err := os.Stat(prefix_doc); err != nil {
+	if _, err := os.Stat(prefix_doc); err != nil {
 		if os.IsNotExist(err) {
 			return nil
 		} else {
@@ -77,9 +77,17 @@ func (self *Builder_cmake) AfterDistribute(log *logger.Logger, ret error) error 
 		}
 	}
 
-	os.MkdirAll(prefix_share)
+	os.MkdirAll(prefix_share, 0700)
 
-	if prefix_share_doc_s, err := os.Stat(prefix_doc); err != nil {
+	if _, err := os.Stat(prefix_share_doc); err != nil {
+		if !os.IsNotExist(err) {
+			return err
+		}
+	}
+
+	err = os.Rename(prefix_doc, prefix_share_doc)
+	if err != nil {
+		return err
 	}
 
 	return nil

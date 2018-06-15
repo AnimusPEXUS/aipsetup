@@ -6,6 +6,7 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildingtools"
+	"github.com/AnimusPEXUS/utils/cmake"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -53,6 +54,25 @@ func (self *Builder_std_cmake) BuilderActionConfigureArgsDef(
 ) ([]string, error) {
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return nil, err
+	}
+
+	//	host_dir := self.bs.GetSystem().GetSystemValuesCalculator().CalculateHostDir(info.Host)
+
+	//	cm, err := cmake.NewCMake("", host_dir, "")
+	//	if err != nil {
+	//		return nil, err
+
+	//	}
+
+	//	cmake_root, err := cm.Get_CMAKE_ROOT()
+	//	if err != nil {
+	//		return nil, err
+
+	//	}
+
 	opt_map, err := calc.CalculateAutotoolsAllOptionsMap()
 	if err != nil {
 		return nil, err
@@ -86,9 +106,11 @@ func (self *Builder_std_cmake) BuilderActionConfigureArgsDef(
 	//            ]
 
 	ret := make([]string, 0)
+
 	ret = append(
 		ret,
 		[]string{
+			//			"-DCMAKE_ROOT=" + cmake_root,
 			"-DSYSCONFDIR=/etc",
 			"-DLOCALSTATEDIR=/var",
 		}...,
@@ -135,11 +157,6 @@ func (self *Builder_std_cmake) BuilderActionConfigureArgsDef(
 
 	ret = append(ret, minus_d_list...)
 
-	info, err := self.bs.ReadInfo()
-	if err != nil {
-		return nil, err
-	}
-
 	// TODO: better calculation required
 	if strings.HasPrefix(info.HostArch, "x86_64") {
 		ret = append(
@@ -176,6 +193,18 @@ func (self *Builder_std_cmake) BuilderActionConfigure(
 		return err
 	}
 
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	prefix, err := calc.CalculateInstallPrefix()
+	if err != nil {
+		return err
+	}
+
+	cm, err := cmake.NewCMake("", prefix, "")
+	if err != nil {
+		return err
+	}
+
 	cmake := new(buildingtools.CMake)
 
 	err = cmake.CMake(
@@ -185,7 +214,7 @@ func (self *Builder_std_cmake) BuilderActionConfigure(
 		"",
 		self.bs.GetDIR_SOURCE(),
 		self.bs.GetDIR_BUILDING(),
-		"",
+		cm.GetExecutable(),
 		log,
 	)
 	if err != nil {
