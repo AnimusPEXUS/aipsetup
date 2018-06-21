@@ -17,10 +17,11 @@ func main() {
 		Version:     "5.0",
 		SubCmds: []*cliapp.AppCmdNode{
 			SectionAipsetupSys(),
-			SectionAipsetupSysConfig(),
+			SectionAipsetupSysSetup(),
 			SectionAipsetupBuild(),
 			SectionAipsetupMBuild(),
 			SectionAipsetupRepo(),
+			SectionAipsetupConfig(),
 		},
 	}
 

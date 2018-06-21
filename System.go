@@ -2,8 +2,10 @@ package aipsetup
 
 import (
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"path"
 	"path/filepath"
 	"runtime"
@@ -199,4 +201,73 @@ func (self *System) GetSystemUpdates() *SystemUpdates {
 		self.sysupdates = NewSystemUpdates(self)
 	}
 	return self.sysupdates
+}
+
+func (self *System) GenLocale() error {
+
+	sys_calc := self.GetSystemValuesCalculator()
+
+	host, err := self.Host()
+	if err != nil {
+		return err
+	}
+
+	archs, err := self.Archs()
+	if err != nil {
+		return err
+	}
+
+	for _, arch := range archs {
+		prefix := sys_calc.CalculateHostArchDir(host, arch)
+		for _, libdirname := range basictypes.POSSIBLE_LIBDIR_NAMES {
+			prefix_lib := path.Join(prefix, libdirname)
+			prefix_lib_locale := path.Join(prefix_lib, "locale")
+			if _, err := os.Stat(prefix_lib); err != nil {
+				if os.IsNotExist(err) {
+					continue
+				}
+				return err
+			}
+
+			err := os.RemoveAll(prefix_lib_locale)
+			if err != nil {
+				if !os.IsNotExist(err) {
+					return err
+				}
+			}
+
+			err = os.MkdirAll(prefix_lib_locale, 0755)
+			if err != nil {
+				return err
+			}
+
+			for _, locale_name := range []string{
+				"en_US.UTF-8",
+			} {
+				locale_name_spl := strings.SplitN(locale_name, ".", 2)
+				prefix_lib_locale_name := path.Join(prefix_lib_locale, locale_name)
+				rel_locale_name_dir, err := filepath.Rel(self.Root(), prefix_lib_locale_name)
+				if err != nil {
+					return err
+				}
+
+				cmd_args := []string{
+					self.Root(),
+					"localedef",
+					"-f", locale_name_spl[1],
+					"-i", locale_name_spl[0],
+					rel_locale_name_dir,
+				}
+				fmt.Printf("Running %v inside %s\n", cmd_args[1:], self.Root())
+				c := exec.Command("chroot", cmd_args...)
+				c.Dir = self.Root()
+				err = c.Run()
+				if err != nil {
+					return err
+				}
+			}
+		}
+	}
+
+	return nil
 }

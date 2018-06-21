@@ -20,8 +20,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "libdrm",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://dri.freedesktop.org/libdrm/",
+    "-X=/AuthorshipAndAcknowledgements"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
