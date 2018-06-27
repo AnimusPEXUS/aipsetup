@@ -398,5 +398,6 @@ func CmdAipsetupSysGetASP(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
+	// TODO
 	return nil
 }

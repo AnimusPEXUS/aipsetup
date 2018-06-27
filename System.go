@@ -51,6 +51,7 @@ type System struct {
 
 	valuescalculator *SystemValuesCalculator
 	sysupdates       *SystemUpdates
+	userctl          *UserCtl
 }
 
 func NewSystem(root string, log *logger.Logger) *System {
@@ -270,4 +271,11 @@ func (self *System) GenLocale() error {
 	}
 
 	return nil
+}
+
+func (self *System) GetUserCtl() *UserCtl {
+	if self.userctl == nil {
+		self.userctl = NewUserCtl(self)
+	}
+	return self.userctl
 }
