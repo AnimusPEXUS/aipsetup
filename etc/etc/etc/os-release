@@ -1,0 +1,8 @@
+NAME=Lilith
+VERSION="1 (Unreleased)"
+ID=unicorn
+VERSION_ID=1
+PRETTY_NAME="Unicorn 1 (Unreleased)"
+ANSI_COLOR="0;34"
+HOME_URL="https://wayround.org/"
+BUG_REPORT_URL="mailto://animus@wayround.org"

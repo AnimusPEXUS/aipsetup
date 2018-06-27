@@ -41,6 +41,8 @@ const (
 	DIRNAME_VAR     = "var"
 	DIRNAME_OPT     = "opt"
 	DIRNAME_PROC    = "proc"
+
+	DIRNAME_DAEMONS = "daemons"
 )
 
 var (

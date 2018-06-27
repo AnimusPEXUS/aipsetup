@@ -1,0 +1,27 @@
+#!/bin/bash
+
+export PATH=/usr/sbin:/usr/bin
+
+export LANG='en_US.UTF-8'
+#export LC_ALL='en_US.UTF-8'
+
+#export LC_COLLATE=C
+
+export HOSTNAME="`hostname`"
+#export LESS="-M"
+
+export VISUAL=mcedit
+export EDITOR=mcedit
+
+export PS1='`tty` \t \u@\h:\w> '
+
+umask 022
+
+for i in /etc/profile.d/SET/*.sh
+do
+    source $i
+done
+unset i
+
+
+echo "Wellcome to `uname -s` `uname -r` (`tty`)"

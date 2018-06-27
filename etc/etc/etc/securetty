@@ -1,0 +1,41 @@
+# This file defines which devices root can log in on.
+
+# These are the ttys on the physical console:
+console
+tty1
+tty2
+tty3
+tty4
+tty5
+tty6
+/dev/console
+/dev/tty1
+/dev/tty2
+/dev/tty3
+/dev/tty4
+/dev/tty5
+/dev/tty6
+
+
+# These are some remote ttys, and uncommenting them might be less than fully secure:
+#ttyS0
+#ttyS1
+#ttyS2
+#ttyS3
+#ttyp0
+#ttyp1
+#ttyp2
+#ttyp3
+#ttyp4
+#ttyp5
+#ttyp6
+#ttyp7
+#pts/0
+#pts/1
+#pts/2
+#pts/3
+#pts/4
+#pts/5
+#pts/6
+#pts/7
+#pty/s0

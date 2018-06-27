@@ -158,7 +158,7 @@ func (self *UserCtl) UserNameById(id int) (string, error) {
 }
 
 func (self *UserCtl) CalcDaemonHomeDir(root string, daemon_name string) string {
-	return path.Join(root, "daemons", daemon_name)
+	return path.Join(root, basictypes.DIRNAME_DAEMONS, daemon_name)
 }
 
 func (self *UserCtl) CalcUserHomeDir(root string, user_name string) (ret string) {
@@ -396,6 +396,19 @@ func (self *UserCtl) RecreateDaemonHomes() error {
 
 		//chmod -R 750 /daemons/ssl
 
+	}
+
+	{
+		p := path.Join(self.sys.Root(), "/", basictypes.DIRNAME_DAEMONS)
+		err := os.Chown(p, 0, 0)
+		if err != nil {
+			return err
+		}
+
+		err = os.Chmod(p, 0755)
+		if err != nil {
+			return err
+		}
 	}
 
 	return nil
