@@ -1,12 +1,15 @@
 package aipsetup
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"path"
 	"sort"
 
 	"github.com/AnimusPEXUS/shadowusers"
+	"github.com/AnimusPEXUS/utils/filetools"
+	"github.com/AnimusPEXUS/utils/logger"
 )
 
 const SYS_UID_MAX = 999
@@ -127,7 +130,7 @@ func NewUserCtl(sys *System) *UserCtl {
 	return self
 }
 
-func (self *UserCtl) UserKeysSlice() []int {
+func (self *UserCtl) UserKeysSortedSlice() []int {
 	ret := make([]int, 0)
 
 	for k, _ := range USERS {
@@ -135,6 +138,23 @@ func (self *UserCtl) UserKeysSlice() []int {
 	}
 	sort.Ints(ret)
 	return ret
+}
+
+func (self *UserCtl) UserIdByName(name string) (int, error) {
+	for k, v := range USERS {
+		if v == name {
+			return k, nil
+		}
+	}
+	return -1, errors.New("not found")
+}
+
+func (self *UserCtl) UserNameById(id int) (string, error) {
+	name, ok := USERS[id]
+	if !ok {
+		return "", errors.New("not found")
+	}
+	return name, nil
 }
 
 func (self *UserCtl) CalcDaemonHomeDir(root string, daemon_name string) string {
@@ -217,7 +237,7 @@ func (self *UserCtl) RecreateUserDB() error {
 	}
 
 	su_ctl.Pth = path.Join("/root", "tmp", "newuserdb")
-	fmt.Println("new db placed under", su_ctl.Pth)
+	fmt.Println("new db going to be placed under", su_ctl.Pth)
 	os.MkdirAll(su_ctl.Pth, 0700)
 
 	for k, v := range USERS {
@@ -331,4 +351,266 @@ func (self *UserCtl) makeDaemon(
 	suctl.Shadows.Shadows = append(suctl.Shadows.Shadows, shadow)
 	suctl.Groups.Groups = append(suctl.Groups.Groups, group)
 	suctl.GShadows.GShadows = append(suctl.GShadows.GShadows, gshadow)
+}
+
+func (self *UserCtl) RecreateDaemonHomes() error {
+
+	ks := self.UserKeysSortedSlice()
+
+	for _, k := range ks {
+
+		i := USERS[k]
+
+		daemon_home_path := self.CalcDaemonHomeDir(self.sys.Root(), i)
+
+		_, err := os.Stat(daemon_home_path)
+		if err != nil {
+			if !os.IsNotExist(err) {
+				return err
+			}
+		}
+
+		err = os.MkdirAll(daemon_home_path, 0700)
+		if err != nil {
+			return err
+		}
+
+		err = os.Chown(daemon_home_path, k, k)
+		if err != nil {
+			return err
+		}
+
+		err = os.Chmod(daemon_home_path, 0700)
+		if err != nil {
+			return err
+		}
+
+		// TODO: port here standard ssl db access related permissions
+
+		// /daemons related excerpt from aipsetup3. (ejabberd is probably no more)
+
+		//chmod 750 /daemons/ejabberd
+		//chmod 750 /daemons/ejabberd/var
+		//chmod 750 /daemons/ejabberd/var/www
+		//chmod -R 750 /daemons/ejabberd/var/www/logs
+
+		//chmod -R 750 /daemons/ssl
+
+	}
+
+	return nil
+}
+
+// TODO
+//func (self *UserCtl) RecreateUserHomes() {
+//}
+
+func (self *UserCtl) ResetSystemPermissions(log *logger.Logger) error {
+
+	was_errors := false
+
+	loginfo := func(txt string) {
+		if log != nil {
+			log.Info(txt)
+		}
+	}
+
+	logerr := func(err error) {
+		was_errors = true
+		if log != nil {
+			log.Error(err)
+		}
+	}
+
+	r := self.sys.Root()
+	{
+		loginfo("chown root: /")
+		err := os.Chown(r, 0, 0)
+		if err != nil {
+			logerr(err)
+		}
+
+		loginfo("chmod 755 /")
+		err = os.Chmod(r, 0755)
+		if err != nil {
+			logerr(err)
+		}
+	}
+
+	{
+		p := path.Join(r, "/tmp")
+
+		loginfo("chown root: /tmp")
+		err := os.Chown(p, 0, 0)
+		if err != nil {
+			logerr(err)
+		}
+
+		loginfo("chmod 1777 /tmp")
+		err = os.Chmod(p, 01777)
+		if err != nil {
+			logerr(err)
+		}
+	}
+
+	// NOTE: imo Lilith system doesn't need this
+	//chown root:mail /var/mail
+	//chmod 1777 /var/mail
+
+	//# polkit settings
+	//chown root:root /etc/polkit-1/localauthority
+	//chmod 0700 /etc/polkit-1/localauthority
+	{
+		p := path.Join(r, "/etc", "polkit-1", "localauthority")
+
+		loginfo("chown root: " + p)
+		err := os.Chown(p, 0, 0)
+		if err != nil {
+			logerr(err)
+		}
+
+		loginfo("chmod 0700: " + p)
+		err = os.Chmod(p, 0700)
+		if err != nil {
+			logerr(err)
+		}
+	}
+
+	//#chown root:root /var/lib/polkit-1
+	//#chmod 0700 /var/lib/polkit-1
+
+	//chown root:root /etc/pam.d/polkit-1
+	//chmod 0700 /etc/pam.d/polkit-1
+	{
+		p := path.Join(r, "/etc", "pam.d", "polkit-1")
+
+		loginfo("chown root: " + p)
+		err := os.Chown(p, 0, 0)
+		if err != nil {
+			logerr(err)
+		}
+
+		loginfo("chmod 0700: " + p)
+		err = os.Chmod(p, 0700)
+		if err != nil {
+			logerr(err)
+		}
+	}
+
+	//# systemd service files
+
+	//for i in \
+	//    '/usr/lib/systemd/system' \
+	//    '/usr/lib/systemd/user' \
+	//    '/etc/systemd/system' \
+	//    '/etc/systemd/user'
+	//do
+
+	//    chmod 0755 "$i"
+	//    find "$i" -type d -exec chmod 755 '{}' ';'
+	//    find "$i" -type f -exec chmod 644 '{}' ';'
+
+	//done
+
+	{
+		for _, i := range []string{
+			"/usr/lib/systemd/system",
+			"/usr/lib/systemd/user",
+			"/etc/systemd/system",
+			"/etc/systemd/user",
+		} {
+			loginfo("systemd config files: " + i)
+			err := filetools.Walk(
+				path.Join(r, i),
+				func(pth string, dirs, files []os.FileInfo) error {
+					for _, i := range dirs {
+						fp := path.Join(pth, path.Base(i.Name()))
+						err := os.Chown(fp, 0, 0)
+						if err != nil {
+							return err
+						}
+						err = os.Chmod(fp, 0755)
+						if err != nil {
+							return err
+						}
+					}
+					for _, i := range files {
+						fp := path.Join(pth, path.Base(i.Name()))
+						err := os.Chown(fp, 0, 0)
+						if err != nil {
+							return err
+						}
+						err = os.Chmod(fp, 0644)
+						if err != nil {
+							return err
+						}
+					}
+					return nil
+				},
+			)
+			if err != nil {
+				logerr(err)
+			}
+		}
+	}
+
+	//chmod 4755 /usr/libexec/dbus-daemon-launch-helper
+	//chmod 4755 /usr/lib/polkit-1/polkit-agent-helper-1
+	//chmod 4755 /usr/bin/pkexec
+	{
+		for _, i := range []string{
+			"/usr/libexec/dbus-daemon-launch-helper",
+			"/usr/lib/polkit-1/polkit-agent-helper-1",
+			"/usr/bin/pkexec",
+		} {
+
+			p := path.Join(r, i)
+			loginfo("chown root: " + p)
+			err := os.Chown(p, 0, 0)
+			if err != nil {
+				logerr(err)
+			}
+
+			loginfo("chmod 4755 " + p)
+			err = os.Chmod(p, 04755)
+			if err != nil {
+				logerr(err)
+			}
+		}
+	}
+
+	//chmod 4755 "`which su`"
+	//chmod 4755 "`which sudo`"
+	{
+		for _, i := range []string{
+			"su",
+			"sudo",
+		} {
+			loginfo("which " + i + "?")
+			pth, err := filetools.Which(i, []string{})
+			if err != nil {
+				logerr(err)
+			} else {
+				loginfo("chown root: " + pth)
+				err := os.Chown(pth, 0, 0)
+				if err != nil {
+					logerr(err)
+				}
+
+				loginfo("chmod 4755 " + pth)
+				err = os.Chmod(pth, 04755)
+				if err != nil {
+					logerr(err)
+				}
+			}
+		}
+	}
+
+	//# chmod 4755 "`which mount`"
+	//# chmod 4755 "`which weston-launch`"
+	if was_errors {
+		return errors.New("was errors")
+	}
+
+	return nil
 }

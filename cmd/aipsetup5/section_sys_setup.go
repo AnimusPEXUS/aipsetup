@@ -23,7 +23,7 @@ func SectionAipsetupSysSetup() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
-				Name: "reset-userdb",
+				Name: "regen-userdb",
 				Description: "new (based on existing) userdb will be rendered and" +
 					" placed inside /root/tmp/newuserdb. \n" +
 					" You'll have to review it and move files to /etc manually",
@@ -37,7 +37,20 @@ func SectionAipsetupSysSetup() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
-				Name:     "reset-premissions",
+				Name: "regen-daemon-homes",
+				Description: "creates, chowns and chmods home dirs of users 1-999" +
+					" inside /daemons",
+				Callable: CmdAipsetupSysSetupResetDaemonHomes,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:     "reset-permissions",
 				Callable: CmdAipsetupSysSetupResetPermissions,
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
@@ -96,11 +109,54 @@ func CmdAipsetupSysSetupResetUsers(
 	return nil
 }
 
+func CmdAipsetupSysSetupResetDaemonHomes(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	user_ctl := sys.GetUserCtl()
+
+	err := user_ctl.RecreateDaemonHomes()
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:             10,
+			Message:          err.Error(),
+			DoNotPrintResult: false,
+		}
+	}
+
+	return nil
+}
+
 func CmdAipsetupSysSetupResetPermissions(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
-	//	root := "/"
+
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	user_ctl := sys.GetUserCtl()
+
+	err := user_ctl.ResetSystemPermissions(log)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:             10,
+			Message:          err.Error(),
+			DoNotPrintResult: false,
+		}
+	}
 
 	return nil
 }
