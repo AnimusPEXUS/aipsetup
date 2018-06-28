@@ -15,6 +15,9 @@ var Index map[string]*basictypes.PackageInfo
 func init() {
 	Index = make(map[string]*basictypes.PackageInfo)
 	for _, i := range db.AssetNames() {
+		if !strings.HasPrefix(i, "../cmd/aipinfoeditor/infojson/") {
+			continue
+		}
 		s := strings.Split(i, "/")
 		name := s[len(s)-1]
 		name = name[:len(name)-5]

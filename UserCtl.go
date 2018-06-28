@@ -7,6 +7,7 @@ import (
 	"path"
 	"sort"
 
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/shadowusers"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
@@ -460,7 +461,7 @@ func (self *UserCtl) ResetSystemPermissions(log *logger.Logger) error {
 		}
 
 		loginfo("chmod 1777 /tmp")
-		err = os.Chmod(p, 01777)
+		err = os.Chmod(p, os.FileMode(0777)|os.ModeSticky)
 		if err != nil {
 			logerr(err)
 		}
@@ -585,7 +586,7 @@ func (self *UserCtl) ResetSystemPermissions(log *logger.Logger) error {
 			}
 
 			loginfo("chmod 4755 " + p)
-			err = os.Chmod(p, 04755)
+			err = os.Chmod(p, os.FileMode(0755)|os.ModeSetuid)
 			if err != nil {
 				logerr(err)
 			}
@@ -611,7 +612,7 @@ func (self *UserCtl) ResetSystemPermissions(log *logger.Logger) error {
 				}
 
 				loginfo("chmod 4755 " + pth)
-				err = os.Chmod(pth, 04755)
+				err = os.Chmod(pth, os.FileMode(0755)|os.ModeSetuid)
 				if err != nil {
 					logerr(err)
 				}

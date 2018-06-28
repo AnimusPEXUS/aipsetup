@@ -2,14 +2,19 @@ package aipsetup
 
 import (
 	"errors"
+	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
 	"path/filepath"
+	"sort"
 	"syscall"
 
+	"github.com/AnimusPEXUS/aipsetup/etcfiles"
 	"github.com/AnimusPEXUS/utils/environ"
 	"github.com/AnimusPEXUS/utils/filetools"
+	"github.com/AnimusPEXUS/utils/logger"
+	"github.com/AnimusPEXUS/utils/set"
 )
 
 // TODO: this functionality is outdated and requires some improvements and
@@ -407,5 +412,115 @@ func (self *SystemUpdates) GtkQueryImmodules30() error {
 		self.sys.log.Error("  " + err.Error())
 		return err
 	}
+	return nil
+}
+
+func (self *SystemUpdates) InstallEtc(log *logger.Logger) error {
+
+	loginfo := func(txt string) {
+		if log != nil {
+			log.Info(txt)
+		}
+	}
+
+	//	logerr := func(err error) {
+	//		if log != nil {
+	//			log.Error(err)
+	//		}
+	//	}
+
+	r := self.sys.Root()
+
+	dirs := set.NewSetString()
+
+	an := etcfiles.AssetNames()
+
+	sort.Strings(an)
+
+	for _, i := range an {
+
+		dir := path.Dir(i)
+
+		dirs.Add(dir)
+
+		dir_pth := path.Join(r, "/", dir)
+		file_pth := path.Join(r, "/", i)
+
+		loginfo("replacing " + file_pth)
+
+		err := os.MkdirAll(dir_pth, 0755)
+		if err != nil {
+			return err
+		}
+
+		ass, err := etcfiles.Asset(i)
+		if err != nil {
+			return err
+		}
+
+		err = ioutil.WriteFile(file_pth, ass, 0755)
+		if err != nil {
+			return err
+		}
+
+		err = os.Chown(file_pth, 0, 0)
+		if err != nil {
+			return err
+		}
+
+		err = os.Chmod(file_pth, 0755)
+		if err != nil {
+			return err
+		}
+
+	}
+
+	{
+		dirs2 := set.NewSetString()
+
+		for _, i := range dirs2.ListStrings() {
+			t := i
+			for {
+				dirs2.Add(t)
+				t = path.Dir(t)
+				if t == "." {
+					break
+				}
+			}
+		}
+
+		dirs = dirs2
+	}
+
+	ss := dirs.ListStrings()
+	dirs = nil
+	sort.Strings(ss)
+
+	for _, i := range ss {
+		dir_pth := path.Join(r, "/", i)
+
+		err := os.Chown(dir_pth, 0, 0)
+		if err != nil {
+			return err
+		}
+
+		err = os.Chmod(dir_pth, 0755)
+		if err != nil {
+			return err
+		}
+	}
+
+	loginfo("replacing /etc/mtab")
+	p := path.Join(r, "/", "etc", "mtab")
+	err := os.Remove(p)
+	if err != nil {
+		return err
+	}
+
+	err = os.Symlink("../proc/self/mounts", p)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }

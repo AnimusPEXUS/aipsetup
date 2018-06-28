@@ -59,6 +59,17 @@ func SectionAipsetupSysSetup() *cliapp.AppCmdNode {
 				MinArgs:   0,
 				MaxArgs:   0,
 			},
+
+			&cliapp.AppCmdNode{
+				Name:     "reinstall-etc",
+				Callable: CmdAipsetupSysSetupReinstallEtc,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
 		},
 	}
 }
@@ -150,6 +161,30 @@ func CmdAipsetupSysSetupResetPermissions(
 	user_ctl := sys.GetUserCtl()
 
 	err := user_ctl.ResetSystemPermissions(log)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:             10,
+			Message:          err.Error(),
+			DoNotPrintResult: false,
+		}
+	}
+
+	return nil
+}
+
+func CmdAipsetupSysSetupReinstallEtc(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	err := sys.GetSystemUpdates().InstallEtc(log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:             10,
