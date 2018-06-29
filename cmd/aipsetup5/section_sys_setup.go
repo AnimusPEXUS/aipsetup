@@ -158,9 +158,7 @@ func CmdAipsetupSysSetupResetPermissions(
 		return res
 	}
 
-	user_ctl := sys.GetUserCtl()
-
-	err := user_ctl.ResetSystemPermissions(log)
+	err := sys.GetSystemUpdates().ResetSystemPermissions(log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:             10,

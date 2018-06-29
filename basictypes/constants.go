@@ -1,5 +1,10 @@
 package basictypes
 
+import (
+	"errors"
+	"sort"
+)
+
 const (
 	AIPSETUP_SYSTEM_CONFIG_FILENAME = "aipsetup5.system.ini"
 
@@ -43,6 +48,8 @@ const (
 	DIRNAME_PROC    = "proc"
 
 	DIRNAME_DAEMONS = "daemons"
+
+	SYS_UID_MAX = 999
 )
 
 var (
@@ -81,6 +88,112 @@ var (
 		"i686-pc-linux-gnu": []string{
 			"x86_64-pc-linux-gnu",
 		},
+	}
+
+	USERS = map[int]string{
+
+		// TODO: this list requires serious cleanup
+
+		// # users for groups
+
+		// # lspecial users 1-9
+		1: "nobody",
+		2: "nogroup",
+		3: "bin",
+		4: "ftp",
+		5: "mail",
+		6: "adm",
+		7: "gdm",
+		8: "wheel",
+
+		// # terminals 10-19
+		10: "pts",
+		11: "tty",
+
+		// # devices 20-38
+		20: "disk",
+		21: "usb",
+		22: "flash",
+		23: "mouse",
+		24: "lp",
+		25: "floppy",
+		26: "video",
+		27: "audio",
+		28: "cdrom",
+		29: "tape",
+		30: "pulse",
+		31: "pulse-access",
+		32: "usbfs",
+		33: "usbdev",
+		34: "usbbus",
+		35: "usblist",
+		36: "alsa",
+
+		// # daemons 40-99
+		39: "colord",
+
+		40: "messagebus",
+		41: "sshd",
+		42: "haldaemon",
+		//	43: "clamav",
+		44: "mysql",
+		45: "exim",
+		46: "postgres",
+		47: "httpd",
+		48: "cron",
+		//	49: "mrim",
+		//	50: "icq",
+		//	51: "pyvkt",
+		//	52: "j2j",
+		//	53: "gnunet",
+		//	54: "ejabberd",
+		55: "cupsd",
+		//	56: "bandersnatch",
+		//	57: "torrent",
+		58: "ssl",
+		//	59: "dovecot",
+		//	60: "dovenull",
+		//	61: "spamassassin",
+		//	62: "yacy",
+		//	63: "irc",
+		//	64: "hub",
+		//	65: "cynin",
+		//	66: "mailman",
+		//	67: "asterisk",
+		//	68: "bitcoin",
+		//	69: "adch",
+
+		//	70: "dialout",
+		71: "kmem",
+		72: "polkituser",
+		//	73: "nexuiz",
+		//	74: "couchdb",
+		75: "polkitd",
+		76: "kvm",
+
+		90: "mine", // TODO: remember what it is. minetest?
+
+		91: "utmp",
+		92: "lock",
+		93: "avahi",
+		94: "avahi-autoipd",
+		95: "netdev",
+		//	96: "freenet",
+		//	97: "jabberd2",
+		//	98: "mongodb",
+		99: "aipsetupserv",
+
+		100: "systemd-bus-proxy",
+		101: "systemd-network",
+		102: "systemd-resolve",
+		103: "systemd-timesync",
+		104: "systemd-journal",
+		105: "systemd-journal-gateway",
+		106: "systemd-journal-remote",
+		107: "systemd-journal-upload",
+
+		200: "tor",
+		//	201: "shinken",
 	}
 )
 
@@ -133,4 +246,31 @@ func IsAipsetupHostTargetSupported(host, target string) bool {
 	}
 
 	return false
+}
+
+func UserKeysSortedSlice() []int {
+	ret := make([]int, 0)
+
+	for k, _ := range USERS {
+		ret = append(ret, k)
+	}
+	sort.Ints(ret)
+	return ret
+}
+
+func UserIdByName(name string) (int, error) {
+	for k, v := range USERS {
+		if v == name {
+			return k, nil
+		}
+	}
+	return -1, errors.New("not found")
+}
+
+func UserNameById(id int) (string, error) {
+	name, ok := USERS[id]
+	if !ok {
+		return "", errors.New("not found")
+	}
+	return name, nil
 }
