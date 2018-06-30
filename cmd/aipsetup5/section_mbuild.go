@@ -187,6 +187,10 @@ func CmdAipsetupMassBuildGetSrc(
 		for _, i := range tarballs_not_found {
 			log.Error(fmt.Sprintf("  %s", i))
 		}
+		return &cliapp.AppResult{
+			Code:    12,
+			Message: "couldn't get needed tarballs",
+		}
 	}
 
 	return nil

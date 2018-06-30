@@ -34,7 +34,7 @@
     "tcl"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "strict",
+  "TarballStabilityClassifier": "tcltk",
   "TarballVersionComparator": "std",
   "DownloadPatches": false,
   "PatchesDownloadingScriptText": ""

@@ -112,7 +112,7 @@ func etcGitconfig() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/gitconfig", size: 32, mode: os.FileMode(420), modTime: time.Unix(1442692949, 0)}
+	info := bindataFileInfo{name: "etc/gitconfig", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -132,7 +132,7 @@ func etcHosts() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/hosts", size: 21, mode: os.FileMode(420), modTime: time.Unix(1435362005, 0)}
+	info := bindataFileInfo{name: "etc/hosts", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -152,7 +152,7 @@ func etcIssue() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/issue", size: 34, mode: os.FileMode(420), modTime: time.Unix(1435283852, 0)}
+	info := bindataFileInfo{name: "etc/issue", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -172,7 +172,7 @@ func etcLdSoConf() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/ld.so.conf", size: 200, mode: os.FileMode(420), modTime: time.Unix(1443615743, 0)}
+	info := bindataFileInfo{name: "etc/ld.so.conf", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -192,7 +192,7 @@ func etcLoginDefs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/login.defs", size: 10610, mode: os.FileMode(420), modTime: time.Unix(1435283852, 0)}
+	info := bindataFileInfo{name: "etc/login.defs", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -212,7 +212,7 @@ func etcNsswitchConf() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/nsswitch.conf", size: 135, mode: os.FileMode(420), modTime: time.Unix(1435283852, 0)}
+	info := bindataFileInfo{name: "etc/nsswitch.conf", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -232,7 +232,7 @@ func etcOsRelease() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/os-release", size: 195, mode: os.FileMode(493), modTime: time.Unix(1530119275, 0)}
+	info := bindataFileInfo{name: "etc/os-release", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -252,7 +252,7 @@ func etcProfile() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile", size: 373, mode: os.FileMode(493), modTime: time.Unix(1435283852, 0)}
+	info := bindataFileInfo{name: "etc/profile", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -272,7 +272,7 @@ func etcProtocols() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/protocols", size: 5748, mode: os.FileMode(493), modTime: time.Unix(1435283853, 0)}
+	info := bindataFileInfo{name: "etc/protocols", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -292,7 +292,7 @@ func etcSecuretty() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/securetty", size: 447, mode: os.FileMode(493), modTime: time.Unix(1435283853, 0)}
+	info := bindataFileInfo{name: "etc/securetty", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -312,7 +312,7 @@ func etcServices() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/services", size: 73508, mode: os.FileMode(493), modTime: time.Unix(1435283853, 0)}
+	info := bindataFileInfo{name: "etc/services", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -332,7 +332,7 @@ func etcShells() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/shells", size: 18, mode: os.FileMode(493), modTime: time.Unix(1435283853, 0)}
+	info := bindataFileInfo{name: "etc/shells", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -352,7 +352,7 @@ func etcPamDLogin() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/pam.d/login", size: 336, mode: os.FileMode(493), modTime: time.Unix(1530119079, 0)}
+	info := bindataFileInfo{name: "etc/pam.d/login", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -372,7 +372,7 @@ func etcPamDLogind() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/pam.d/logind", size: 249, mode: os.FileMode(493), modTime: time.Unix(1435283852, 0)}
+	info := bindataFileInfo{name: "etc/pam.d/logind", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -392,7 +392,7 @@ func etcPamDOther() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/pam.d/other", size: 204, mode: os.FileMode(493), modTime: time.Unix(1435283852, 0)}
+	info := bindataFileInfo{name: "etc/pam.d/other", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -412,7 +412,7 @@ func etcPamDPolkit1() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/pam.d/polkit-1", size: 155, mode: os.FileMode(493), modTime: time.Unix(1435283852, 0)}
+	info := bindataFileInfo{name: "etc/pam.d/polkit-1", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -432,7 +432,7 @@ func etcPamDSu() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/pam.d/su", size: 513, mode: os.FileMode(493), modTime: time.Unix(1530119220, 0)}
+	info := bindataFileInfo{name: "etc/pam.d/su", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -452,7 +452,7 @@ func etcPamDSystemAuth() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/pam.d/system-auth", size: 582, mode: os.FileMode(493), modTime: time.Unix(1435283852, 0)}
+	info := bindataFileInfo{name: "etc/pam.d/system-auth", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -472,7 +472,7 @@ func etcPamDSystemdUser() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/pam.d/systemd-user", size: 181, mode: os.FileMode(493), modTime: time.Unix(1435283852, 0)}
+	info := bindataFileInfo{name: "etc/pam.d/systemd-user", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -492,7 +492,7 @@ func etcProfileDSet000ClasspathSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/000.CLASSPATH.sh", size: 134, mode: os.FileMode(493), modTime: time.Unix(1442426723, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/000.CLASSPATH.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -512,7 +512,7 @@ func etcProfileDSet000DircolorsSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/000.DIRCOLORS.sh", size: 22, mode: os.FileMode(493), modTime: time.Unix(1435283853, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/000.DIRCOLORS.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -532,7 +532,7 @@ func etcProfileDSet000Ld_library_pathSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/000.LD_LIBRARY_PATH.sh", size: 35, mode: os.FileMode(493), modTime: time.Unix(1439409892, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/000.LD_LIBRARY_PATH.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -552,7 +552,7 @@ func etcProfileDSet000ManpathSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/000.MANPATH.sh", size: 82, mode: os.FileMode(493), modTime: time.Unix(1440769287, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/000.MANPATH.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -572,7 +572,7 @@ func etcProfileDSet000PathPy() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/000.PATH.py", size: 1166, mode: os.FileMode(493), modTime: time.Unix(1442189818, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/000.PATH.py", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -592,7 +592,7 @@ func etcProfileDSet000PathSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/000.PATH.sh", size: 45, mode: os.FileMode(493), modTime: time.Unix(1442425983, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/000.PATH.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -612,7 +612,7 @@ func etcProfileDSet000Pkg_config_pathSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/000.PKG_CONFIG_PATH.sh", size: 162, mode: os.FileMode(493), modTime: time.Unix(1440842722, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/000.PKG_CONFIG_PATH.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -632,7 +632,7 @@ func etcProfileDSet000Xdg_data_dirsSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/000.XDG_DATA_DIRS.sh", size: 201, mode: os.FileMode(493), modTime: time.Unix(1442236172, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/000.XDG_DATA_DIRS.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -652,7 +652,7 @@ func etcProfileDSet000LsSettingsSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/000.ls-settings.sh", size: 60, mode: os.FileMode(493), modTime: time.Unix(1435283853, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/000.ls-settings.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -672,7 +672,7 @@ func etcProfileDSet009LessSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/009.LESS.sh", size: 32, mode: os.FileMode(493), modTime: time.Unix(1442271511, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/009.LESS.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -692,7 +692,7 @@ func etcProfileDSet009McSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "etc/profile.d/SET/009.mc.sh", size: 288, mode: os.FileMode(493), modTime: time.Unix(1442237221, 0)}
+	info := bindataFileInfo{name: "etc/profile.d/SET/009.mc.sh", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }

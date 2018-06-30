@@ -5,14 +5,18 @@ import (
 	"fmt"
 	"path"
 	"sort"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/repository"
 	"github.com/AnimusPEXUS/aipsetup/repository/providers"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/tarballname"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
+	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
 )
 
 func SectionAipsetupRepo() *cliapp.AppCmdNode {
@@ -80,6 +84,15 @@ func SectionAipsetupRepo() *cliapp.AppCmdNode {
 						Description: "move. not copy.",
 					},
 				},
+			},
+
+			&cliapp.AppCmdNode{
+				Name:        "parse",
+				Callable:    CmdAipsetupRepoTarballParse,
+				Description: "parse tarball name and print results",
+				CheckArgs:   true,
+				MinArgs:     0,
+				MaxArgs:     -1,
 			},
 		},
 	}
@@ -321,4 +334,83 @@ func CmdAipsetupRepoGetSrc(
 	)
 
 	return ret
+}
+
+func CmdAipsetupRepoTarballParse(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	for _, i := range getopt_result.Args {
+
+		fmt.Println(i)
+
+		res, err := pkginfodb.DetermineTarballPackageInfo(i)
+		if err != nil {
+			fmt.Println("error:", err.Error())
+			continue
+		}
+
+		res_names := make([]string, 0)
+
+		for k, _ := range res {
+			res_names = append(res_names, k)
+		}
+
+		sort.Strings(res_names)
+
+		fmt.Printf(
+			"  results (count %d): %s.\n",
+			len(res_names),
+			strings.Join(res_names, ", "),
+		)
+
+		for _, j := range res_names {
+
+			fmt.Println("  parsing and classification for result:", j)
+
+			//			var name string
+			var info *basictypes.PackageInfo
+
+			for _, info = range res {
+			}
+
+			parser, err := tarballnameparsers.Get(info.TarballFileNameParser)
+			if err != nil {
+				fmt.Println("   error:", err.Error())
+				continue
+			}
+
+			result, err := parser.Parse(i)
+			if err != nil {
+				fmt.Println("   tarballname parsing error:", err.Error())
+				continue
+			}
+
+			fmt.Println("parse result")
+			fmt.Println(result.InfoText())
+
+			clssfier, err := tarballstabilityclassification.Get(info.TarballStabilityClassifier)
+			if err != nil {
+				fmt.Println("   error:", err.Error())
+				continue
+			}
+
+			clssfier_ret, err := clssfier.Check(result)
+			if err != nil {
+				fmt.Println("   classifier returned classification error:", err.Error())
+				continue
+			}
+
+			fmt.Println("classification result")
+			fmt.Println(clssfier_ret.String())
+
+			fmt.Println("======")
+
+		}
+
+		fmt.Println("-------")
+	}
+
+	return nil
 }

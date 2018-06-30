@@ -111,6 +111,7 @@ func (self *ProviderSRS) ListArg(i int) ([]string, error) {
 	default:
 		return []string{}, errors.New("not supported")
 	case 0:
+		//		return []string{"git", "svn"}, nil
 		return []string{"git"}, nil
 	}
 }
@@ -148,6 +149,27 @@ func (self *ProviderSRS) PerformUpdate() error {
 		if err != nil {
 			return err
 		}
+		//	case "svn":
+		//		p := self.repo.GetPackageSRSPath(self.pkg_info.TarballProviderArguments[2])
+
+		//		self.log.Info(fmt.Sprintf("working inside %s", p))
+
+		//		err := self.GetAndUpdateSvn(
+		//			p,
+		//			self.pkg_info.TarballProviderArguments[1],
+		//		)
+		//		if err != nil {
+		//			return err
+		//		}
+
+		//		err = self.MakeTarballsGit(
+		//			self.repo.GetPackageSRSPath(self.pkg_info.TarballProviderArguments[2]),
+		//			self.repo.GetPackageTarballsPath(self.pkg_name),
+		//			self.pkg_info,
+		//		)
+		//		if err != nil {
+		//			return err
+		//		}
 	}
 	return nil
 }
