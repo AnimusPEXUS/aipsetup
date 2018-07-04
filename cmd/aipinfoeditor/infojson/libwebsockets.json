@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "https://github.com/warmcat/libwebsockets",
-  "BuilderName": "std",
+  "BuilderName": "std_cmake",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

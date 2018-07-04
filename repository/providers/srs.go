@@ -9,23 +9,21 @@ from them by request.
 PackageInfo's provider attributes
 =================================
 
-  (! - necissery, ? - optional)
+  engine name, for instance 'git', 'svn', etc.. (only git is currently supported)
 
-  !engine: for instance 'git', 'svn', etc..
-  !uri: repository uri, for example "https://github.com/SELinuxProject/selinux.git"
+  if engine name equals to git:
+	repository url (required)
 
-	!tag_parser:string - name of parser to retrive name
-	!tag_name:string - value thich should match 'name' result of
-					tag_parser:string work.
+	TagParser default is equal to TarballFileNameParser
 
- 	?shared_repo:aipsetup_package_name: for example 'shared_repo:libselinux'
-          will use srs directory under libselinux package's directory.
-          If omited, equals to current package name
+	TagName regexp default is "^v"
 
-  ?tarball_format - extension for output tarballs string.
-          ...only ".tar.xz" is supported
+	TagStatus regexp default is "^$"
 
+	TagComparator default equals to TarballVersionComparator
 
+	TagFilters if defined, shold be other package info name - it's filters will
+		be used
 
 */
 
@@ -283,7 +281,7 @@ func (self *ProviderSRS) MakeTarballsGit(
 		TagParser = tt
 	}
 
-	TagName := "v"
+	TagName := "^v"
 	if tt, ok := t.GetSingle("TagName", true); ok {
 		TagName = tt
 	}
