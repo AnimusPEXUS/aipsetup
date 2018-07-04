@@ -31,8 +31,8 @@
     "-X=\\d{4}"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "openssh",
-  "TarballVersionComparator": "openssh",
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
   "DownloadPatches": false,
   "PatchesDownloadingScriptText": ""
 }

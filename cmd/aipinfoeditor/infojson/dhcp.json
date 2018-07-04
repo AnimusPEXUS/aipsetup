@@ -1,5 +1,5 @@
 {
-  "Description": "new dhcp is kea",
+  "Description": "deptecated! new dhcp is kea",
   "HomePage": "http://www.isc.org",
   "BuilderName": "dhcp",
   "Removable": true,
@@ -12,13 +12,9 @@
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],
-  "Tags": [
-    "group:core1"
-  ],
+  "Tags": [],
   "Category": "non_categorized",
-  "Groups": [
-    "core1"
-  ],
+  "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "dhcp",
   "TarballFilters": [],

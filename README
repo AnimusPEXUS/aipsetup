@@ -41,10 +41,10 @@
   Doing system cleanups:
     removing old .so files    |         v          |       o
     -----------------------------------------------------------------
-    checking file and dir     |         v          |       o
+    reset file and dir        |         v          |       v
     permissions               |                    |
     -----------------------------------------------------------------
-    automatic population of   |         v          |       o
+    automatic population of   |         v          |       v
     /daemons                  |                    |
 
 == Some Basic Information ==
@@ -72,6 +72,12 @@
     `go get github.com/AnimusPEXUS/aipsetup`
 
   aipsetup5 and aipinfoeditor executables should be built and installed.
+
+== Development ==
+
+  Running Makefile requires go-bindata installation:
+
+	https://github.com/jteeuwen/go-bindata
 
 == Accepting motivational gifts ==
 
