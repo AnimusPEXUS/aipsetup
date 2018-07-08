@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "pulseaudio",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.freedesktop.org/software/pulseaudio/releases/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "poppler",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://poppler.freedesktop.org/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

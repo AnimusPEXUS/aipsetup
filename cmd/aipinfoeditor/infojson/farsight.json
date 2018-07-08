@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "farsight",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://freedesktop.org/software/farstream/releases/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

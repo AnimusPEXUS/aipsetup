@@ -6,7 +6,7 @@
   "Reducible": true,
   "AutoReduce": true,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
   "BuildDeps": [],

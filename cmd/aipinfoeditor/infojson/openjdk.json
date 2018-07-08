@@ -1,7 +1,7 @@
 {
-  "Description": "",
-  "HomePage": "",
-  "BuilderName": "std",
+  "Description": "write something here, please",
+  "HomePage": "http://openjdk.java.net",
+  "BuilderName": "openjdk",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -12,18 +12,19 @@
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],
-  "Tags": [],
-  "Category": "freedesktop/libevdev",
+  "Tags": [
+    "group:core1"
+  ],
+  "Category": "non_categorized",
   "Groups": [
-    "fd"
+    "core1",
+    "java"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "libevdev",
+  "TarballName": "jdk",
   "TarballFilters": [],
-  "TarballProvider": "https",
-  "TarballProviderArguments": [
-    "https://www.freedesktop.org/software/libevdev/"
-  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": ["hg", "http://hg.openjdk.java.net/jdk10/jdk10/", "openjdk", "TagParser:openjdk_hg_tags", "TagTarballRenderer:std", "TagName:^jdk.*"],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "libinput",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.freedesktop.org/software/libinput/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

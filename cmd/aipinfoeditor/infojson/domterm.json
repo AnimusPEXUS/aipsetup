@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "https://github.com/PerBothner/DomTerm",
-  "BuilderName": "std",
+  "BuilderName": "domterm",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

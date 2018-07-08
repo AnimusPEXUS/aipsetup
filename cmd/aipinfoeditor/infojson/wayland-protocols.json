@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "wayland-protocols",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://wayland.freedesktop.org/releases/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

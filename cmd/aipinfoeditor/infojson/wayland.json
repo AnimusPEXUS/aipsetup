@@ -20,8 +20,13 @@
   "TarballFileNameParser": "std",
   "TarballName": "wayland",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://gitlab.freedesktop.org/wayland/wayland.git",
+    "wayland",
+    "TagName:^$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

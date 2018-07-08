@@ -20,8 +20,13 @@
   "TarballFileNameParser": "std",
   "TarballName": "weston",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://gitlab.freedesktop.org/wayland/weston.git",
+    "weston",
+    "TagName:^$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

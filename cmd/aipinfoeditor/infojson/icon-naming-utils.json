@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "icon-naming-utils",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://tango.freedesktop.org/releases/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

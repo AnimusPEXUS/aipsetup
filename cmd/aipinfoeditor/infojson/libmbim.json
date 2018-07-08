@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "libmbim",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.freedesktop.org/software/libmbim/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

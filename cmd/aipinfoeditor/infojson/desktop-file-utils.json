@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "desktop-file-utils",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.freedesktop.org/software/desktop-file-utils/releases/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

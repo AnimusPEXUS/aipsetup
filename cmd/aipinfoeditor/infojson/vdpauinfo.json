@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "vdpauinfo",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://people.freedesktop.org/~aplattner/vdpau/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

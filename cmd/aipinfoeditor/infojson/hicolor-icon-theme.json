@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "hicolor-icon-theme",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://icon-theme.freedesktop.org/releases/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

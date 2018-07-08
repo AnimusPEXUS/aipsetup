@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "",
+  "HomePage": "http://www.freedesktop.org/software/accountsservice",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -18,8 +18,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "accountsservice",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.freedesktop.org/software/accountsservice/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

@@ -18,10 +18,12 @@
   "TarballFileNameParser": "std",
   "TarballName": "telepathy-qt4-yell",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://telepathy.freedesktop.org/releases/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "gnome",
   "TarballVersionComparator": "std",
   "DownloadPatches": false,
   "PatchesDownloadingScriptText": ""
