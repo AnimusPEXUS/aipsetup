@@ -47,6 +47,7 @@ func (self *Builder_go) DefineActions() (basictypes.BuilderActions, error) {
 		return nil, err
 	}
 
+	ret = ret.Remove("autogen")
 	ret = ret.Remove("configure")
 
 	err = ret.Replace(

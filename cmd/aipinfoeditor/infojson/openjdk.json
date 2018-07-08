@@ -21,10 +21,17 @@
     "java"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "jdk",
+  "TarballName": "openjdk",
   "TarballFilters": [],
   "TarballProvider": "srs",
-  "TarballProviderArguments": ["hg", "http://hg.openjdk.java.net/jdk10/jdk10/", "openjdk", "TagParser:openjdk_hg_tags", "TagTarballRenderer:std", "TagName:^jdk.*"],
+  "TarballProviderArguments": [
+    "hg",
+    "http://hg.openjdk.java.net/jdk-updates/jdk10u/",
+    "openjdk",
+    "TagParser:openjdk_hg_tags",
+    "TagTarballRenderer:std",
+    "TagName:^jdk.*"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

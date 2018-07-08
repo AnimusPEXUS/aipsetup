@@ -72,7 +72,6 @@ func (self *Builder_std_cmake) BuilderActionConfigureArgsDef(
 	//	cmake_root, err := cm.Get_CMAKE_ROOT()
 	//	if err != nil {
 	//		return nil, err
-
 	//	}
 
 	opt_map, err := calc.CalculateAutotoolsAllOptionsMap()
