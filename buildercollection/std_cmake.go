@@ -46,6 +46,8 @@ func (self *Builder_std_cmake) EditActions(ret basictypes.BuilderActions) (
 		},
 	)
 
+	ret = ret.Remove("autogen")
+
 	return ret, nil
 }
 

@@ -162,6 +162,7 @@ func (self *Builder_bash) Patch(log *logger.Logger) error {
 				version_parsed_i_slice[1],
 				v3,
 			},
+			".",
 		).IntSliceString("."); err != nil {
 			return err
 		} else {
