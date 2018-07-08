@@ -18,18 +18,18 @@ PackageInfo provider's attributes
 
   if engine name equals to git or hg:
 
-	#2 TagParser default is equal to TarballFileNameParser
+	#3 TagParser default is equal to TarballFileNameParser
 
-	#3 TagName regexp default is "^v"
+	#4 TagName regexp default is "^v"
 
-	#4 TagStatus regexp default is "^$"
+	#5 TagStatus regexp default is "^$"
 
-	#5 TagComparator default equals to TarballVersionComparator
+	#6 TagComparator default equals to TarballVersionComparator
 
-	#6 TagFilters if defined, shold be other package info name - it's filters will
+	#7 TagFilters if defined, shold be other package info name - it's filters will
 		be used
 
-	#7 TagTarballRenderer name of tarball name parser, which shoild be used to render
+	#8 TagTarballRenderer name of tarball name parser, which shoild be used to render
 		tarball name for tag. default is equal to TagParser
 
 */
