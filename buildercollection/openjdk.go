@@ -121,12 +121,11 @@ func (self *Builder_openjdk) AfterOpenJDKDistribution(log *logger.Logger) error 
 
 	os.RemoveAll(path.Join(dst_dir, "bin"))
 
-	dst_jvm := ""
+	dst_jvm := path.Join(dst_dir, "jvm")
 	dst_jvm_jdk := ""
 	jdk_basename := ""
 
 	{
-		dst_jvm = path.Join(dst_dir, "jvm")
 
 		_, err := os.Stat(dst_jvm)
 		if err != nil {
@@ -189,17 +188,28 @@ func (self *Builder_openjdk) AfterOpenJDKDistribution(log *logger.Logger) error 
 		return err
 	}
 
+	// NOTE: this is old variant. looks like JKD10 doesnt have jre subdir
+	//	script := ""
+	//	script += `#!/bin/bash` + "\n"
+	//	script += `export JAVA_HOME=` + java_dir + `/jdk` + "\n"
+	//	script += `export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin` + "\n"
+	//	script += `export MANPATH=$MANPATH:$JAVA_HOME/man` + "\n"
+	//	script += `if [ "${#LD_LIBRARY_PATH}" -ne "0" ]; then` + "\n"
+	//	script += `    LD_LIBRARY_PATH+=":"` + "\n"
+	//	script += `fi` + "\n"
+	//	// TODO: following paths are hardcoded, should not be.
+	//	script += `export LD_LIBRARY_PATH+="$JAVA_HOME/jre/lib/i386:$JAVA_HOME/jre/lib/i386/client"` + "\n"
+	//	script += `export LD_LIBRARY_PATH+=":$JAVA_HOME/jre/lib/amd64:$JAVA_HOME/jre/lib/amd64/client"` + "\n"
+
 	script := ""
 	script += `#!/bin/bash` + "\n"
 	script += `export JAVA_HOME=` + java_dir + `/jdk` + "\n"
-	script += `export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin` + "\n"
+	script += `export PATH=$PATH:$JAVA_HOME/bin` + "\n"
 	script += `export MANPATH=$MANPATH:$JAVA_HOME/man` + "\n"
-	script += `if [ "${{#LD_LIBRARY_PATH}}" -ne "0" ]; then` + "\n"
+	script += `if [ "${#LD_LIBRARY_PATH}" -ne "0" ]; then` + "\n"
 	script += `    LD_LIBRARY_PATH+=":"` + "\n"
 	script += `fi` + "\n"
-	// TODO: following paths are hardcoded, should not be.
-	script += `export LD_LIBRARY_PATH+="$JAVA_HOME/jre/lib/i386:$JAVA_HOME/jre/lib/i386/client"` + "\n"
-	script += `export LD_LIBRARY_PATH+=":$JAVA_HOME/jre/lib/amd64:$JAVA_HOME/jre/lib/amd64/client"` + "\n"
+	script += `export LD_LIBRARY_PATH+="$JAVA_HOME/lib"` + "\n"
 
 	f, err := os.Create(java09)
 	if err != nil {
