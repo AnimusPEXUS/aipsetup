@@ -45,7 +45,7 @@ type Builder_std struct {
 	ForceCrossbuilder CrossBuildEnum
 	ForceCrossbuild   CrossBuildEnum
 
-	EditActionsCB                    func(basictypes.BuilderActions) (basictypes.BuilderActions, error)
+	EditActionsCB                    func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
 	AfterExtractCB                   func(log *logger.Logger, ret error) error
 	PatchCB                          func(log *logger.Logger) error
 	EditConfigureEnvCB               func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
@@ -691,7 +691,9 @@ func (self *Builder_std) BuilderActionBuild(
 
 	{
 		args2 := make([]string, 0)
-		args2 = append(args2, fmt.Sprintf("-j%d", cpu_count))
+		if cpu_count > 0 {
+			args2 = append(args2, fmt.Sprintf("-j%d", cpu_count))
+		}
 		args2 = append(args2, args...)
 		args = args2
 	}

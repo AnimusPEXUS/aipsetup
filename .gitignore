@@ -4,7 +4,7 @@
 /tests
 *.qtpl.go
 *.glade~
-/buildercollection/*.py
+/buildercollection/*.py*
 /cmd/aipinfoeditor/editors/netfilter
 /cmd/aipinfoeditor/editors/gnome
 /cmd/aipinfoeditor/se

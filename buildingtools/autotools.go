@@ -9,6 +9,7 @@ import (
 	"path"
 	"path/filepath"
 	"strings"
+	"syscall"
 
 	"github.com/AnimusPEXUS/utils/logger"
 )
@@ -294,6 +295,20 @@ func (self Autotools) Configure(
 
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
+
+	if !run_as_argument_to_shell {
+		jo := path.Join(working_dirpath, executable)
+		ex_stat, err := os.Stat(jo)
+		if err != nil {
+			return err
+		}
+		ex_stat_mode := ex_stat.Mode()
+		ex_stat_mode = ex_stat_mode | syscall.S_IXUSR
+		err = os.Chmod(jo, ex_stat_mode)
+		if err != nil {
+			return err
+		}
+	}
 
 	ret := cmd.Run()
 
