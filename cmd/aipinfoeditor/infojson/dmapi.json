@@ -14,7 +14,7 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": ["core0"],
   "TarballFileNameParser": "std",
   "TarballName": "dmapi",
   "TarballFilters": [],

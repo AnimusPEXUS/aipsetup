@@ -22,9 +22,22 @@ func NewBuilder_xfs(bs basictypes.BuildingSiteCtlI) *Builder_xfs {
 
 	self.EditDistributeArgsCB = self.EditDistributeArgs
 
-	self.ForcedAutogen = true
+	//	self.ForcedAutogen = true
 
 	return self
+}
+
+func (self *Builder_xfs) ActionCompletePreconfiguration(
+	log *logger.Logger,
+) error {
+	//	info, err := self.bs.ReadInfo()
+	//	if err != nil {
+	//		return err
+	//	}
+
+	self.bs.
+
+	return nil
 }
 
 func (self *Builder_xfs) EditDistributeArgs(
