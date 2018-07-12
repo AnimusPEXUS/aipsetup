@@ -35,8 +35,6 @@ func (self *Builder_xfs) ActionCompletePreconfiguration(
 	//		return err
 	//	}
 
-	self.bs.
-
 	return nil
 }
 
