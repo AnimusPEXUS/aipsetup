@@ -24,8 +24,6 @@ type Builder_binutils struct {
 func NewBuilder_binutils(bs basictypes.BuildingSiteCtlI) *Builder_binutils {
 
 	self := new(Builder_binutils)
-	self.bs = bs
-
 	self.Builder_std = NewBuilder_std(bs)
 
 	self.AfterExtractCB = self.AfterExtract
@@ -34,9 +32,9 @@ func NewBuilder_binutils(bs basictypes.BuildingSiteCtlI) *Builder_binutils {
 	return self
 }
 
-func (self *Builder_binutils) DefineActions() (basictypes.BuilderActions, error) {
-	return self.DefineActions()
-}
+//func (self *Builder_binutils) DefineActions() (basictypes.BuilderActions, error) {
+//	return self.Builder_std.DefineActions()
+//}
 
 func (self *Builder_binutils) AfterExtract(log *logger.Logger, err error) error {
 

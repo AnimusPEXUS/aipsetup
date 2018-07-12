@@ -193,12 +193,14 @@ func (self *Builder_glibc) EditConfigureArgs(log *logger.Logger, ret []string) (
 		}
 	}
 
+	ENABLE_KERNEL := "4.17"
+
 	ret = append(
 		ret,
 		[]string{
 
 			"--enable-obsolete-rpc",
-			"--enable-kernel=4.16",
+			"--enable-kernel=" + ENABLE_KERNEL,
 			"--enable-tls",
 			"--with-elf",
 			// # disabled those 3 items on 2 jul 2015

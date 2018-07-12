@@ -19,7 +19,9 @@
   "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "grub",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-\u003e= 2"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/grub"
