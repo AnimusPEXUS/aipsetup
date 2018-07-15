@@ -29,8 +29,13 @@ func NewBuilder_std_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_std_cmake, e
 
 	self.EditActionsCB = self.EditActions
 
-	self.SeparateBuildDir = true
+	self.EditConfigureWorkingDirCB = self.EditConfigureWorkingDir
+
 	return self, nil
+}
+
+func (self *Builder_std_cmake) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
+	return self.bs.GetDIR_BUILDING(), nil
 }
 
 func (self *Builder_std_cmake) EditActions(ret basictypes.BuilderActions) (

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"path"
 	"sort"
 
@@ -230,12 +231,36 @@ func CmdAipsetupMassBuildPerform(
 
 	failed := false
 
+	ts := basictypes.NewASPTimeStampFromCurrentTime()
+
+	fail_f, err := os.Create(
+		basictypes.MASSBUILDER_FAILED_LIST + "." + ts.String() + ".txt",
+	)
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    13,
+			Message: "error creating failed build list",
+		}
+	}
+
 	for _, i := range keys {
-		fmt.Println("arch", i)
+		t := fmt.Sprintf("arch %s", i)
+		fmt.Println(t)
+		fail_f.WriteString(t + "\n")
 		sort.Strings(f[i])
 		for _, j := range f[i] {
-			fmt.Println("   ", j)
+			t := fmt.Sprintf("   %s", j)
+			fmt.Println(t)
+			fail_f.WriteString(t + "\n")
 			failed = true
+		}
+	}
+
+	err = fail_f.Close()
+	if err != nil {
+		return &cliapp.AppResult{
+			Code:    14,
+			Message: "error saving failed build list",
 		}
 	}
 

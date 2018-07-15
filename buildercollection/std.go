@@ -34,20 +34,22 @@ type Builder_std struct {
 	// NOTE: some comments in this file are left from python time and may be not
 	//       correspond to situation. (2018-03-12)
 
+	// TODO: following fields should be replaced with callbacks
 	// # this is for builder_action_autogen() method
-	ForcedAutogen                bool
-	SeparateBuildDir             bool
-	SourceConfigureRelPath       string
-	ForcedTarget                 bool
-	ApplyHostSpecCompilerOptions bool
+	//	ForcedAutogen bool
+	//	SeparateBuildDir bool
+	//	SourceConfigureRelPath       string
+	//	ForcedTarget                 bool
+	//	ApplyHostSpecCompilerOptions bool
 
 	// # None - not used, bool - force value
-	ForceCrossbuilder CrossBuildEnum
-	ForceCrossbuild   CrossBuildEnum
+	//	ForceCrossbuilder CrossBuildEnum
+	//	ForceCrossbuild   CrossBuildEnum
 
 	EditActionsCB                    func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
 	AfterExtractCB                   func(log *logger.Logger, ret error) error
 	PatchCB                          func(log *logger.Logger) error
+	EditAutogenForceCB               func(log *logger.Logger, ret bool) (bool, error)
 	EditConfigureEnvCB               func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
 	EditConfigureArgsCB              func(log *logger.Logger, ret []string) ([]string, error)
 	EditConfigureScriptNameCB        func(log *logger.Logger, ret string) (string, error)
@@ -78,15 +80,15 @@ func NewBuilder_std(buildingsite basictypes.BuildingSiteCtlI) *Builder_std {
 
 	ret.bs = buildingsite
 
-	ret.ForcedAutogen = false
+	//	ret.ForcedAutogen = false
 
-	ret.SeparateBuildDir = false
-	ret.SourceConfigureRelPath = "."
-	ret.ForcedTarget = false
-	ret.ApplyHostSpecCompilerOptions = true
+	//	ret.SeparateBuildDir = false
+	//	ret.SourceConfigureRelPath = "."
+	//	ret.ForcedTarget = false
+	//	ret.ApplyHostSpecCompilerOptions = true
 
-	ret.ForceCrossbuilder = NoAction
-	ret.ForceCrossbuild = NoAction
+	//	ret.ForceCrossbuilder = NoAction
+	//	ret.ForceCrossbuild = NoAction
 
 	return ret
 }
@@ -194,9 +196,22 @@ func (self *Builder_std) BuilderActionPatch(
 	return nil
 }
 
-func (self *Builder_std) BuilderActionAutogen(
-	log *logger.Logger,
-) error {
+func (self *Builder_std) BuilderActionAutogenForce(log *logger.Logger) (bool, error) {
+
+	ret := false
+
+	if self.EditAutogenForceCB != nil {
+		var err error
+		ret, err = self.EditAutogenForceCB(log, ret)
+		if err != nil {
+			return false, err
+		}
+	}
+
+	return ret, nil
+}
+
+func (self *Builder_std) BuilderActionAutogen(log *logger.Logger) error {
 	needs_autogen := false
 
 	config_script_name, err := self.BuilderActionConfigureScriptNameDef(log)
@@ -204,10 +219,15 @@ func (self *Builder_std) BuilderActionAutogen(
 		return err
 	}
 
-	configure_dir := path.Join(
-		self.bs.GetDIR_SOURCE(),
-		self.SourceConfigureRelPath,
-	)
+	configure_dir, err := self.BuilderActionConfigureDirDef(log)
+	if err != nil {
+		return err
+	}
+
+	//	configure_dir := path.Join(
+	//		self.bs.GetDIR_SOURCE(),
+	//		self.SourceConfigureRelPath,
+	//	)
 
 	configure_path := path.Join(
 		configure_dir,
@@ -223,12 +243,17 @@ func (self *Builder_std) BuilderActionAutogen(
 		}
 	}
 
-	if !needs_autogen && !self.ForcedAutogen {
+	autogen_force, err := self.BuilderActionAutogenForce(log)
+	if err != nil {
+		return err
+	}
+
+	if !needs_autogen && !autogen_force {
 		log.Info("autogen usage not needed and not forced. continuing without it")
 		return nil
 	}
 
-	if self.ForcedAutogen {
+	if autogen_force {
 		log.Info("autogen usage forced")
 	}
 
@@ -449,9 +474,9 @@ func (self *Builder_std) BuilderActionConfigureWorkingDirDef(
 ) (string, error) {
 
 	ret := self.bs.GetDIR_SOURCE()
-	if self.SeparateBuildDir {
-		ret = self.bs.GetDIR_BUILDING()
-	}
+	//	if self.SeparateBuildDir {
+	//		ret = self.bs.GetDIR_BUILDING()
+	//	}
 
 	if self.EditConfigureWorkingDirCB != nil {
 		var err error

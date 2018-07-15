@@ -23,7 +23,8 @@ const (
 
 	MASSBUILDER_INFO_FILENAME = "00.massbuilder.info"
 	//	MASSBUILDER_TARBALLS_DIR  = "01.tarballs"
-	MASSBUILDER_ASPS_DIR = "01.asps"
+	MASSBUILDER_ASPS_DIR    = "01.asps"
+	MASSBUILDER_FAILED_LIST = "02.failed"
 
 	PACKAGE_INFO_FILENAME     = "package_info.json"
 	PACKAGE_INFO_FILENAME_V5  = "package_info_v5.json"

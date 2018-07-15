@@ -31,9 +31,9 @@ func NewBuilder_glibc(bs basictypes.BuildingSiteCtlI) (*Builder_glibc, error) {
 
 	self.Builder_std = NewBuilder_std(bs)
 
-	self.SeparateBuildDir = true
-	self.ForcedTarget = true
-	self.ApplyHostSpecCompilerOptions = true
+	//	self.SeparateBuildDir = true
+	//	self.ForcedTarget = true
+	//	self.ApplyHostSpecCompilerOptions = true
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
@@ -53,8 +53,13 @@ func NewBuilder_glibc(bs basictypes.BuildingSiteCtlI) (*Builder_glibc, error) {
 
 	self.EditBuildArgsCB = self.EditBuildArgs
 	self.EditDistributeArgsCB = self.EditDistributeArgs
+	self.EditConfigureWorkingDirCB = self.EditConfigureWorkingDir
 
 	return self, nil
+}
+
+func (self *Builder_glibc) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
+	return self.bs.GetDIR_BUILDING(), nil
 }
 
 func (self *Builder_glibc) DefineActions() (basictypes.BuilderActions, error) {

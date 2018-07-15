@@ -30,8 +30,10 @@ func NewBuilder_gcc(bs basictypes.BuildingSiteCtlI) *Builder_gcc {
 
 	self.Builder_std = NewBuilder_std(bs)
 
-	self.SeparateBuildDir = true
-	self.ForcedTarget = true
+	//	self.SeparateBuildDir = true
+	//	self.ForcedTarget = true
+
+	self.EditConfigureWorkingDirCB = self.EditConfigureWorkingDir
 
 	self.AfterExtractCB = self.AfterExtract
 	self.EditConfigureArgsCB = self.EditConfigureArgs
@@ -70,6 +72,10 @@ func NewBuilder_gcc(bs basictypes.BuildingSiteCtlI) *Builder_gcc {
 		}
 
 	return self
+}
+
+func (self *Builder_gcc) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
+	return self.bs.GetDIR_BUILDING(), nil
 }
 
 func (self *Builder_gcc) DefineActions() (basictypes.BuilderActions, error) {

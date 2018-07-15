@@ -316,6 +316,12 @@ func (self *Builder_ncurses) EditConfigureArgs(log *logger.Logger, ret []string)
 		ret = append(ret, "--without-ada")
 	}
 
+	for i := len(ret) - 1; i != -1; i -= 1 {
+		if strings.HasPrefix(ret[i], "--docdir=") {
+			ret = append(ret[:i], ret[i+1:]...)
+		}
+	}
+
 	return ret, nil
 }
 
@@ -425,9 +431,9 @@ func (self *Builder_ncurses) AfterDistributeNcursesLnNcursesw(log *logger.Logger
 	}
 
 	ncurses := path.Join(dst_install_prefix, "include", "ncurses")
-	ncursesw := path.Join(dst_install_prefix, "include", "ncursesw")
+	//	ncursesw := path.Join(dst_install_prefix, "include", "ncursesw")
 
-	err = os.Symlink(ncursesw, ncurses)
+	err = os.Symlink("ncursesw", ncurses)
 	if err != nil {
 		return err
 	}

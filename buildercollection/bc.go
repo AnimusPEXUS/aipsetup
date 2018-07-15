@@ -2,6 +2,7 @@ package buildercollection
 
 import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/logger"
 )
 
 func init() {
@@ -19,6 +20,10 @@ func NewBuilder_bc(bs basictypes.BuildingSiteCtlI) (*Builder_bc, error) {
 
 	self.Builder_std = NewBuilder_std(bs)
 
-	self.ForcedAutogen = true
+	self.EditAutogenForceCB = self.EditAutogenForce
 	return self, nil
+}
+
+func (*Builder_bc) EditAutogenForce(log *logger.Logger, ret bool) (bool, error) {
+	return true, nil
 }
