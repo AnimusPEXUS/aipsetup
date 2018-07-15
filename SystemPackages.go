@@ -465,6 +465,7 @@ func (self *SystemPackages) RemoveASP(
 	unregister_only bool,
 	called_by_reduce bool,
 	reduce_exclude_files []string,
+	force_removal_if_reduce_is_possible bool,
 ) error {
 
 	pkginfo, err := pkginfodb.Get(aspname.Name)
@@ -476,7 +477,7 @@ func (self *SystemPackages) RemoveASP(
 		return errors.New("this package is not removable")
 	}
 
-	if pkginfo.Reducible && !called_by_reduce {
+	if pkginfo.Reducible && !called_by_reduce && !force_removal_if_reduce_is_possible {
 		return errors.New(
 			"package is reducible. so can be removed only by reducing doe " +
 				"to installing new one",
@@ -546,7 +547,7 @@ func (self *SystemPackages) ReduceASP(
 	errors_while_reducing_asps := make([]*basictypes.ASPName, 0)
 	for _, i := range reduce_what_copy {
 		self.sys.log.Info("Reducing asp: " + i.String())
-		err := self.RemoveASP(i, false, true, fiba)
+		err := self.RemoveASP(i, false, true, fiba, false)
 		if err != nil {
 			self.sys.log.Error(err.Error())
 			// error should be reported, but process should continue.

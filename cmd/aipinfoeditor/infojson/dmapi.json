@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "http://xfs.org/",
-  "BuilderName": "std",
+  "BuilderName": "xfs",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -14,7 +14,9 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": ["core0"],
+  "Groups": [
+    "core0"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "dmapi",
   "TarballFilters": [],

@@ -2,6 +2,7 @@ package buildercollection
 
 import (
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"os"
 	"path"
@@ -104,6 +105,8 @@ func (self *Builder_gcc) DefineActions() (basictypes.BuilderActions, error) {
 			},
 			len(ret)-1,
 		)
+	} else {
+		self.AfterDistributeCB = self.AfterDistribute
 	}
 
 	return ret, nil
@@ -496,4 +499,29 @@ func (self *Builder_gcc) BuilderActionDistribute_03(
 	}
 
 	return self.BuilderActionDistribute(log)
+}
+
+func (self *Builder_gcc) AfterDistribute(log *logger.Logger, ret error) error {
+	if ret != nil {
+		return ret
+	}
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	dst_install_prefix, err := calc.CalculateDstInstallPrefix()
+	if err != nil {
+		return err
+	}
+
+	for _, i := range []string{"go", "gofmt"} {
+		old_name := path.Join(dst_install_prefix, "bin", i)
+		new_name := path.Join(dst_install_prefix, "bin", fmt.Sprintf("gcc_%s", i))
+
+		err = os.Rename(old_name, new_name)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
 }

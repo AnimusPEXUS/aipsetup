@@ -5,7 +5,6 @@ import (
 	"os"
 	"os/exec"
 	"path"
-	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/environ"
@@ -100,10 +99,10 @@ func (self *Builder_go) BuilderActionBuild(
 	env_new.Set("GOOS", self.os_name)
 	env_new.Set("GOARCH", self.arch)
 
-	log.Info(
-		"Environment Edits:\n\t\t" +
-			strings.Join(env_new.Strings(), ";\n\t\t"),
-	)
+	log.Info("Environment Edits:")
+	for _, i := range env_new.Strings() {
+		log.Info(" " + i)
+	}
 
 	env.UpdateWith(env_new)
 
@@ -202,7 +201,7 @@ func (self *Builder_go) BuilderActionDistribute(
 
 	_, err = f.WriteString(
 		fmt.Sprintf(
-			`#!/bin/env bash
+			`#!/bin/bash
 
 export GOROOT="%s"
 

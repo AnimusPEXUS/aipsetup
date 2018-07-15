@@ -710,3 +710,8 @@ func (self *BuildingSiteValuesCalculator) CalculateCmakeAllOptionsMap() (
 
 	return ret, nil
 }
+
+func (self *BuildingSiteValuesCalculator) CalculateOptAppDir(name string) string {
+	// TODO: finish this
+	return ""
+}

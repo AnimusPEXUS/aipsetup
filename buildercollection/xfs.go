@@ -1,7 +1,11 @@
 package buildercollection
 
 import (
+	"os"
+	"path"
+
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/buildingtools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -22,9 +26,29 @@ func NewBuilder_xfs(bs basictypes.BuildingSiteCtlI) *Builder_xfs {
 
 	self.EditDistributeArgsCB = self.EditDistributeArgs
 
-	//	self.ForcedAutogen = true
+	self.EditActionsCB = self.EditActions
 
 	return self
+}
+
+func (self *Builder_xfs) EditActions(
+	ret basictypes.BuilderActions,
+) (basictypes.BuilderActions, error) {
+
+	ret, err := ret.AddActionsBeforeName(
+		basictypes.BuilderActions{
+			&basictypes.BuilderAction{
+				Name:     "preconfiguration",
+				Callable: self.ActionCompletePreconfiguration,
+			},
+		},
+		"configure",
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return ret, nil
 }
 
 func (self *Builder_xfs) ActionCompletePreconfiguration(
@@ -34,6 +58,51 @@ func (self *Builder_xfs) ActionCompletePreconfiguration(
 	//	if err != nil {
 	//		return err
 	//	}
+
+	//	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	//	dst_install_prefix,err:=calc .CalculateDstInstallPrefix()
+	//	if err != nil {
+	//		return err
+	//	}
+
+	//	install_sh_path := path.Join(self.bs.GetDIR_SOURCE(), "include", "install-sh")
+	install_sh_path2 := path.Join(self.bs.GetDIR_SOURCE(), "install-sh")
+	configure_path := path.Join(self.bs.GetDIR_SOURCE(), "configure")
+
+	//	if _, err := os.Stat(install_sh_path); err == nil {
+
+	//		if _, err := os.Stat(install_sh_path2); err == nil {
+	//			return nil
+	//		}
+
+	//		err = os.Link(install_sh_path, install_sh_path2)
+	//		if err != nil {
+	//			return err
+	//		}
+	//	}
+
+	if _, err := os.Stat(install_sh_path2); err == nil {
+		return nil
+	}
+
+	os.Remove(configure_path)
+
+	a_tools := new(buildingtools.Autotools)
+
+	err := a_tools.Make(
+		[]string{"configure"},
+		[]string{},
+		buildingtools.Copy,
+		"Makefile",
+		self.bs.GetDIR_SOURCE(),
+		self.bs.GetDIR_SOURCE(),
+		"make",
+		log,
+	)
+	if err != nil {
+		return err
+	}
 
 	return nil
 }

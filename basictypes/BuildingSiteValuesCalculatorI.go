@@ -63,4 +63,6 @@ type BuildingSiteValuesCalculatorI interface {
 	CalculateAutotoolsHBTOptions() ([]string, error)
 
 	CalculateCmakeAllOptionsMap() (environ.EnvVarEd, error)
+
+	CalculateOptAppDir(name string) string
 }

@@ -71,6 +71,7 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 				Callable: CmdAipsetupSysRemove,
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
+					STD_FORCE,
 					// STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
 				},
 				CheckArgs: true,
@@ -363,6 +364,8 @@ func CmdAipsetupSysRemove(
 		return res
 	}
 
+	force_if_reduce_possible := getopt_result.DoesHaveNamedRetOptItem(STD_FORCE.Name)
+
 	// host, hostarch, target, res := StdRoutineGetInstallationHHaT(getopt_result, sys)
 	// if res != nil && res.Code != 0 {
 	// 	return res
@@ -379,7 +382,7 @@ func CmdAipsetupSysRemove(
 			}
 		}
 
-		err = sys.ASPs.RemoveASP(iname, false, false, nil)
+		err = sys.ASPs.RemoveASP(iname, false, false, nil, force_if_reduce_possible)
 		if err != nil {
 			return &cliapp.AppResult{
 				Code:    10,

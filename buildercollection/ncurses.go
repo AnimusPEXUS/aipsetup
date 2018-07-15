@@ -78,6 +78,19 @@ func (self *Builder_ncurses) EditActions(ret basictypes.BuilderActions) (
 		return nil, err
 	}
 
+	ret, err = ret.AddActionsAfterName(
+		basictypes.BuilderActions{
+			&basictypes.BuilderAction{
+				Name:     "make_ln_ncurses_to_ncursesw",
+				Callable: self.AfterDistributeNcursesLnNcursesw,
+			},
+		},
+		"make_pkgconfig_symlinks",
+	)
+	if err != nil {
+		return nil, err
+	}
+
 	return ret, nil
 }
 
@@ -118,7 +131,7 @@ func (self *Builder_ncurses) Patch(log *logger.Logger) error {
 				continue
 			}
 
-			if strings.HasSuffix(i.Name(), ".asc") {
+			if !strings.HasSuffix(i.Name(), ".patch.gz") {
 				continue
 			}
 
@@ -393,6 +406,28 @@ func (self *Builder_ncurses) AfterDistributePkgConfig(log *logger.Logger) error 
 		dst_pc_lib_dir,
 		"*w.pc", "w.pc", ".pc",
 	)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (self *Builder_ncurses) AfterDistributeNcursesLnNcursesw(log *logger.Logger) error {
+
+	log.Info("Making headers ncurses symlink to ncursesw")
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	dst_install_prefix, err := calc.CalculateDstInstallPrefix()
+	if err != nil {
+		return err
+	}
+
+	ncurses := path.Join(dst_install_prefix, "include", "ncurses")
+	ncursesw := path.Join(dst_install_prefix, "include", "ncursesw")
+
+	err = os.Symlink(ncursesw, ncurses)
 	if err != nil {
 		return err
 	}

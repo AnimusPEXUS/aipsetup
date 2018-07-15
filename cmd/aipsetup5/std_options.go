@@ -183,6 +183,11 @@ var (
 		Name:        "-g",
 		Description: "named names are groups",
 	}
+
+	STD_FORCE = &cliapp.GetOptCheckListItem{
+		Name:        "-f",
+		Description: "force",
+	}
 )
 
 func StdRoutineGetRootOption(getopt_result *cliapp.GetOptResult) (

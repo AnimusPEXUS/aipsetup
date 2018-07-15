@@ -22,11 +22,9 @@
   "TarballFileNameParser": "std",
   "TarballName": "xfsdump",
   "TarballFilters": [],
-  "TarballProvider": "srs",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "git",
-    "git://git.kernel.org/pub/scm/fs/xfs/xfsdump-dev.git",
-    "xfsdump"
+    "https://kernel.org/pub/linux/utils/fs/xfs/xfsdump/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
