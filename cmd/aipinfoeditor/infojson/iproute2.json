@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://None",
-  "BuilderName": "iproute2",
+  "HomePage": "https://wiki.linuxfoundation.org/networking/iproute2",
+  "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
