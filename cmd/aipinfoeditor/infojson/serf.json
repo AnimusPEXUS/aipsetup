@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "https://serf.apache.org/",
-  "BuilderName": "std",
+  "BuilderName": "serf",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

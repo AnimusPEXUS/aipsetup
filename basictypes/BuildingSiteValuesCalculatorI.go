@@ -65,4 +65,6 @@ type BuildingSiteValuesCalculatorI interface {
 	CalculateCmakeAllOptionsMap() (environ.EnvVarEd, error)
 
 	CalculateOptAppDir(name string) string
+
+	CalculateInstallPrefixExecutable(name string) (string, error)
 }

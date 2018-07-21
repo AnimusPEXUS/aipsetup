@@ -8,11 +8,15 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/environ"
+	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/systemtriplet"
 	"github.com/AnimusPEXUS/utils/textlist"
 )
 
 var _ basictypes.BuildingSiteValuesCalculatorI = &BuildingSiteValuesCalculator{}
+
+// TODO: possibly some of BuildingSiteValuesCalculator functions should be moved
+//		to SystemValuesCalculator
 
 type BuildingSiteValuesCalculator struct {
 	site basictypes.BuildingSiteCtlI
@@ -488,6 +492,7 @@ func (self *BuildingSiteValuesCalculator) Calculate_PATH() (
 func (self *BuildingSiteValuesCalculator) Calculate_C_Compiler() (
 	string, error,
 ) {
+
 	info, err := self.site.ReadInfo()
 	if err != nil {
 		return "", err
@@ -714,4 +719,19 @@ func (self *BuildingSiteValuesCalculator) CalculateCmakeAllOptionsMap() (
 func (self *BuildingSiteValuesCalculator) CalculateOptAppDir(name string) string {
 	// TODO: finish this
 	return ""
+}
+
+func (self *BuildingSiteValuesCalculator) CalculateInstallPrefixExecutable(name string) (string, error) {
+
+	PATH, err := self.Calculate_PATH()
+	if err != nil {
+		return "", err
+	}
+
+	program, err := filetools.Which(name, PATH)
+	if err != nil {
+		return "", err
+	}
+
+	return program, nil
 }

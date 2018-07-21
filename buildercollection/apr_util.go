@@ -2,7 +2,6 @@ package buildercollection
 
 import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -34,12 +33,7 @@ func (self *Builder_apr_util) EditConfigureArgs(log *logger.Logger, ret []string
 		return nil, err
 	}
 
-	PATH, err := calc.Calculate_PATH()
-	if err != nil {
-		return nil, err
-	}
-
-	apr_1_config, err := filetools.Which("apr-1-config", PATH)
+	apr_1_config, err := calc.CalculateInstallPrefixExecutable("apr-1-config")
 	if err != nil {
 		return nil, err
 	}

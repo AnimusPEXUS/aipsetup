@@ -2,7 +2,6 @@ package buildercollection
 
 import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -28,7 +27,9 @@ func NewBuilder_glib(bs basictypes.BuildingSiteCtlI) *Builder_glib {
 
 func (self *Builder_glib) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	res, err := filetools.Which("python3", []string{})
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	res, err := calc.CalculateInstallPrefixExecutable("python3")
 	if err != nil {
 		return nil, err
 	}

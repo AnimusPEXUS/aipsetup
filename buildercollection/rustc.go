@@ -6,7 +6,6 @@ import (
 	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -143,7 +142,9 @@ func (self *Builder_rustc) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
 
-	python2, err := filetools.Which("python2", []string{})
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	python2, err := calc.CalculateInstallPrefixExecutable("python2")
 	if err != nil {
 		return err
 	}
@@ -164,7 +165,10 @@ func (self *Builder_rustc) BuilderActionBuild(
 func (self *Builder_rustc) BuilderActionDistribute(
 	log *logger.Logger,
 ) error {
-	python2, err := filetools.Which("python2", []string{})
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	python2, err := calc.CalculateInstallPrefixExecutable("python2")
 	if err != nil {
 		return err
 	}
