@@ -22,11 +22,12 @@
   "TarballFileNameParser": "std",
   "TarballName": "apr",
   "TarballFilters": [
-    "- basename-re win"
+    "- basename-re win",
+    "- basename-re _"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://mirror.linux-ia64.org/apache/apr/"
+    "https://archive.apache.org/dist/apr/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

@@ -27,7 +27,8 @@ func NewBuilder_git(bs basictypes.BuildingSiteCtlI) (*Builder_git, error) {
 func (self *Builder_git) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 	return append(
 		ret,
-		[]string{"--with-openssl",
+		[]string{
+			"--with-openssl",
 			"--with-curl",
 			"--with-expat",
 		}...,

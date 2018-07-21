@@ -211,6 +211,16 @@ func (self *Builder_std_cmake) BuilderActionConfigure(
 		return err
 	}
 
+	cd, err := self.BuilderActionConfigureDirDef(log)
+	if err != nil {
+		return err
+	}
+
+	wd, err := self.BuilderActionConfigureWorkingDirDef(log)
+	if err != nil {
+		return err
+	}
+
 	cmake := new(buildingtools.CMake)
 
 	err = cmake.CMake(
@@ -218,8 +228,8 @@ func (self *Builder_std_cmake) BuilderActionConfigure(
 		env.Strings(),
 		buildingtools.Copy,
 		"",
-		self.bs.GetDIR_SOURCE(),
-		self.bs.GetDIR_BUILDING(),
+		cd,
+		wd,
 		cm.GetExecutable(),
 		log,
 	)

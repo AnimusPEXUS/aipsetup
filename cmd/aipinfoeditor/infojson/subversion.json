@@ -9,7 +9,9 @@
   "Deprecated": false,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
-  "BuildDeps": [],
+  "BuildDeps": [
+    "serf"
+  ],
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [

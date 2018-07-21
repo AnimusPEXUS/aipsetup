@@ -20,8 +20,12 @@
   "TarballFileNameParser": "std",
   "TarballName": "llvm",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://git.llvm.org/git/llvm.git/",
+    "llvm"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

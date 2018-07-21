@@ -1,9 +1,12 @@
 package buildercollection
 
 import (
+	"os"
+	"os/exec"
 	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -72,10 +75,39 @@ func (self *Builder_rustc) EditActions(ret basictypes.BuilderActions) (basictype
 func (self *Builder_rustc) BuilderActionConfigure(
 	log *logger.Logger,
 ) error {
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	install_prefix, err := calc.CalculateInstallPrefix()
+	if err != nil {
+		return err
+	}
+
 	src_config_toml := path.Join(self.bs.GetDIR_SOURCE(), "config.toml")
 
-	prefix = install_prefix
-	sysconfdir = "/etc"
+	//	prefix := path.Join(self.bs.GetDIR_DESTDIR(), install_prefix)
+	//	sysconfdir := "/etc"
+	//	docdir := path.Join(prefix, "share", "doc")
+	//	libdir, err := calc.CalculateInstallLibDir()
+	//	if err != nil {
+	//		return err
+	//	}
+	//	localstatedir := "/var"
+
+	prefix := path.Join(self.bs.GetDIR_DESTDIR(), install_prefix)
+	sysconfdir := path.Join(self.bs.GetDIR_DESTDIR(), "/etc")
+	docdir := path.Join(prefix, "share", "doc")
+	libdir, err := calc.CalculateInstallLibDir()
+	if err != nil {
+		return err
+	}
+	libdir = path.Join(self.bs.GetDIR_DESTDIR(), libdir)
+	localstatedir := path.Join(self.bs.GetDIR_DESTDIR(), "/var")
+
+	err = os.MkdirAll(prefix, 0700)
+	if err != nil {
+		return err
+	}
 
 	cfg_txt := `
 [llvm]
@@ -83,7 +115,7 @@ func (self *Builder_rustc) BuilderActionConfigure(
 [install]
 ` +
 		"prefix = '" + prefix + "'\n" +
-		"sysconfdir = '" + etc + "'\n" +
+		"sysconfdir = '" + sysconfdir + "'\n" +
 		"docdir = '" + docdir + "'\n" +
 		"libdir = '" + libdir + "'\n" +
 		"localstatedir = '" + localstatedir + "'\n" +
@@ -92,17 +124,60 @@ func (self *Builder_rustc) BuilderActionConfigure(
 [dist]
 `
 
+	f, err := os.Create(src_config_toml)
+	if err != nil {
+		return err
+	}
+
+	f.WriteString(cfg_txt)
+
+	err = f.Close()
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (self *Builder_rustc) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
+
+	python2, err := filetools.Which("python2", []string{})
+	if err != nil {
+		return err
+	}
+
+	cmd := exec.Command(python2, "./x.py", "build")
+	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Stdout = log.StdoutLbl()
+	cmd.Stderr = log.StderrLbl()
+
+	err = cmd.Run()
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (self *Builder_rustc) BuilderActionDistribute(
 	log *logger.Logger,
 ) error {
+	python2, err := filetools.Which("python2", []string{})
+	if err != nil {
+		return err
+	}
+
+	cmd := exec.Command(python2, "./x.py", "install")
+	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Stdout = log.StdoutLbl()
+	cmd.Stderr = log.StderrLbl()
+
+	err = cmd.Run()
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
