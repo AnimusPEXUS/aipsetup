@@ -104,7 +104,7 @@ func (self *ProviderSRS) ListArg(i int) ([]string, error) {
 		return []string{}, errors.New("not supported")
 	case 0:
 		//		return []string{"git", "svn"}, nil
-		return []string{"git"}, nil
+		return []string{"git", "hg"}, nil
 	}
 }
 

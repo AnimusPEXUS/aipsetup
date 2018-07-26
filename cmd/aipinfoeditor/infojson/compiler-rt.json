@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "compiler-rt",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "llvm.org",
+  "TarballProviderArguments": [
+    "compiler-rt"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

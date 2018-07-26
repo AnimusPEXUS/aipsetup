@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "cfe",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "llvm.org",
+  "TarballProviderArguments": [
+    "cfe"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

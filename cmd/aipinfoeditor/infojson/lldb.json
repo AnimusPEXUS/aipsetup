@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "lldb",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "llvm.org",
+  "TarballProviderArguments": [
+    "lldb"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

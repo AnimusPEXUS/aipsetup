@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "openmp",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "llvm.org",
+  "TarballProviderArguments": [
+    "openmp"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

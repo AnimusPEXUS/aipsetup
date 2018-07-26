@@ -215,6 +215,8 @@ func CheckTarballMatchesInfo(
 	info *basictypes.PackageInfo,
 ) (bool, error) {
 
+	// TODO: looks like it would be good, if parse_result would also be returned
+
 	if strings.Trim(info.TarballName, " \n") == "" {
 
 		return false,

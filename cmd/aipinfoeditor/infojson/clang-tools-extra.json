@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "clang-tools-extra",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "llvm.org",
+  "TarballProviderArguments": [
+    "clang-tools-extra"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

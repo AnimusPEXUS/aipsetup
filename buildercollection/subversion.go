@@ -25,12 +25,21 @@ func NewBuilder_subversion(bs basictypes.BuildingSiteCtlI) (*Builder_subversion,
 }
 
 func (self *Builder_subversion) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
-	return append(
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	install_prefix, err := calc.CalculateInstallPrefix()
+	if err != nil {
+		return nil, err
+	}
+
+	ret = append(
 		ret,
 		[]string{
-			"--with-ssl",
-			"--with-openssl",
+			"--with-serf=" + install_prefix,
+			//			"--with-ssl",
+			//			"--with-openssl",
 			"--without-python",
 		}...,
-	), nil
+	)
+	return ret, nil
 }

@@ -22,11 +22,7 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "scons-src",
-  "TarballFilters": [
-    "- basename-re .*",
-    "+ version-\u003c 2",
-    "+ version-\u003e= 3"
-  ],
+  "TarballFilters": [],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
     "git",

@@ -1,9 +1,15 @@
 package providers
 
 import (
+	"bytes"
+	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
+	"net/http"
+	"net/url"
 	"path"
+	"regexp"
 	"sort"
 	"strings"
 
@@ -12,23 +18,24 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/repository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/logger"
-	"github.com/AnimusPEXUS/utils/sfnetwalk"
+	"github.com/AnimusPEXUS/utils/set"
 	"github.com/AnimusPEXUS/utils/tarballname"
 	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 	"github.com/AnimusPEXUS/utils/tarballstabilityclassification"
 	"github.com/AnimusPEXUS/utils/tarballversion"
 	"github.com/AnimusPEXUS/utils/tarballversion/versioncomparators"
+	"github.com/antchfx/htmlquery"
 )
 
-var _ types.ProviderI = &ProviderSFNet{}
+var LLVM_PATH_VERSIONED_PREFIX_C = regexp.MustCompile(`^(?:\d+\.?)+\/(.*)$`)
+
+var _ types.ProviderI = &ProviderLLVMorg{}
 
 func init() {
-	Index["sf.net"] = NewProviderSFNet
+	Index["llvm.org"] = NewProviderLLVMorg
 }
 
-type ProviderSFNet struct {
-	// TODO: feelds sanity reqiores review
-
+type ProviderLLVMorg struct {
 	repo                types.RepositoryI
 	pkg_name            string
 	pkg_info            *basictypes.PackageInfo
@@ -38,12 +45,12 @@ type ProviderSFNet struct {
 
 	cache *cache01.CacheDir
 
-	sfw *sfnetwalk.SFNetWalk
+	//	sfw *sfnetwalk.SFNetWalk
 
-	project string
+	//	project string
 }
 
-func NewProviderSFNet(
+func NewProviderLLVMorg(
 	repo types.RepositoryI,
 	pkg_name string,
 	pkg_info *basictypes.PackageInfo,
@@ -52,7 +59,7 @@ func NewProviderSFNet(
 	log *logger.Logger,
 ) (types.ProviderI, error) {
 
-	self := &ProviderSFNet{
+	self := &ProviderLLVMorg{
 		repo:                repo,
 		pkg_name:            pkg_name,
 		pkg_info:            pkg_info,
@@ -61,19 +68,10 @@ func NewProviderSFNet(
 		log:                 log,
 	}
 
-	switch len(pkg_info.TarballProviderArguments) {
-	case 0:
-	case 1:
-		self.project = pkg_info.TarballProviderArguments[0]
-	default:
-		return nil, errors.New("invalid arguments count")
-	}
-
 	if t, err := cache01.NewCacheDir(
 		path.Join(
 			self.repo.GetCachesDir(),
-			"sf.net",
-			self.project,
+			"llvm.org",
 		),
 		nil,
 	); err != nil {
@@ -85,65 +83,165 @@ func NewProviderSFNet(
 	return self, nil
 }
 
-func (self *ProviderSFNet) ProviderDescription() string {
-	return ""
+func (self *ProviderLLVMorg) ProviderDescription() string {
+	return "download tarballs from llvm.org"
 }
 
-func (self *ProviderSFNet) ArgCount() int {
+func (self *ProviderLLVMorg) ArgCount() int {
 	return 1
 }
 
-func (self *ProviderSFNet) CanListArg(i int) bool {
-	return false
+func (self *ProviderLLVMorg) CanListArg(i int) bool {
+	switch i {
+	default:
+		return false
+	case 0:
+		return true
+	}
 }
 
-func (self *ProviderSFNet) ListArg(i int) ([]string, error) {
-	return []string{}, errors.New("not supported")
+func (self *ProviderLLVMorg) ListArg(i int) ([]string, error) {
+	switch i {
+	default:
+		return []string{}, errors.New("not supported")
+	case 0:
+		return []string{
+			"llvm",
+			"cfe",
+			"compiler-rt",
+			"libcxx",
+			"libcxxabi",
+			"libunwind",
+			"lld",
+			"lldb",
+			"openmp",
+			"polly",
+			"clang-lools-extra",
+			"",
+		}, nil
+	}
 }
 
-func (self *ProviderSFNet) Tarballs() ([]string, error) {
+func (self *ProviderLLVMorg) Tarballs() ([]string, error) {
 	return []string{}, nil
 }
 
-func (self *ProviderSFNet) TarballNames() ([]string, error) {
+func (self *ProviderLLVMorg) TarballNames() ([]string, error) {
 	return []string{}, nil
 }
 
-func (self *ProviderSFNet) _GetSFW() (*sfnetwalk.SFNetWalk, error) {
-	if self.sfw == nil {
+func (self *ProviderLLVMorg) LogI(txt string) {
+	if self.log != nil {
+		self.log.Info(txt)
+	}
+}
 
-		h, err := sfnetwalk.NewSFNetWalk(
-			self.project,
-			self.cache,
-			self.log,
-		)
-		if err != nil {
-			return nil, err
+func (self *ProviderLLVMorg) LogE(txt string) {
+	if self.log != nil {
+		self.log.Error(txt)
+	}
+}
+
+func (self *ProviderLLVMorg) readPageNC() ([]string, error) {
+
+	self.LogI("updating llvm.org downloads cache")
+
+	u := &url.URL{
+		Scheme: "https",
+		Host:   "releases.llvm.org",
+		Path:   "/download.html",
+	}
+
+	http_res, err := http.Get(u.String())
+	if err != nil {
+		return nil, err
+	}
+
+	b := new(bytes.Buffer)
+	_, err = io.Copy(b, http_res.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	doc, err := htmlquery.Parse(b)
+
+	ret := set.NewSetString()
+
+	file_list_table_res := htmlquery.Find(doc, `.//a`)
+
+	for _, i := range file_list_table_res {
+
+		href := ""
+
+		for _, j := range i.Attr {
+			if j.Key == "href" {
+				href = j.Val
+				break
+			}
 		}
-		self.sfw = h
+
+		if href == "" {
+			continue
+		}
+
+		if LLVM_PATH_VERSIONED_PREFIX_C.MatchString(href) {
+			href_basename := path.Base(LLVM_PATH_VERSIONED_PREFIX_C.FindStringSubmatch(href)[1])
+			if tarballname.IsPossibleTarballName(href_basename) {
+				ret.AddStrings(href_basename)
+			}
+		}
+
 	}
-	return self.sfw, nil
+
+	t := ret.ListStrings()
+	ret = nil
+
+	sort.Strings(t)
+
+	return t, nil
 }
 
-func (self *ProviderSFNet) PerformUpdate() error {
-	htw, err := self._GetSFW()
+func (self *ProviderLLVMorg) readPage() ([]string, error) {
+	c, err := self.cache.Cache(
+		"downloads_page",
+		func() ([]byte, error) {
+			res, err := self.readPageNC()
+			if err != nil {
+				return nil, err
+			}
+
+			ret, err := json.Marshal(res)
+			if err != nil {
+				return nil, err
+			}
+
+			return ret, nil
+		},
+	)
+
+	ret := make([]string, 0)
+
+	res, err := c.GetValue()
+	if err != nil {
+		return nil, err
+	}
+
+	err = json.Unmarshal(res, &ret)
+	if err != nil {
+		return nil, err
+	}
+
+	return ret, nil
+}
+
+func (self *ProviderLLVMorg) PerformUpdate() error {
+
+	page_parse_result, err := self.readPage()
 	if err != nil {
 		return err
 	}
 
-	tree, err := htw.Tree("/")
-	if err != nil {
-		return err
-	}
-
-	tree_keys := make([]string, 0)
-	for k, _ := range tree {
-		tree_keys = append(tree_keys, k)
-	}
-
-	sort.Strings(tree_keys)
-
-	filtered_keys := make([]string, 0)
+	filtered_page_parse_result := make([]string, 0)
 
 	parser, err := tarballnameparsers.Get(self.pkg_info.TarballFileNameParser)
 	if err != nil {
@@ -162,7 +260,7 @@ func (self *ProviderSFNet) PerformUpdate() error {
 		return err
 	}
 
-	for _, i := range tree_keys {
+	for _, i := range page_parse_result {
 		if strings.HasSuffix(i, "/") {
 			continue
 		}
@@ -180,16 +278,18 @@ func (self *ProviderSFNet) PerformUpdate() error {
 			continue
 		}
 
-		fres, err := pkginfodb.ApplyInfoFilter(
-			self.pkg_info,
-			[]string{i},
-		)
-		if err != nil {
-			return err
-		}
+		{
+			fres, err := pkginfodb.ApplyInfoFilter(
+				self.pkg_info,
+				[]string{i},
+			)
+			if err != nil {
+				return err
+			}
 
-		if len(fres) != 1 {
-			continue
+			if len(fres) != 1 {
+				continue
+			}
 		}
 
 		if ok, err := stability_classifier.IsStable(parse_res); err != nil {
@@ -200,11 +300,11 @@ func (self *ProviderSFNet) PerformUpdate() error {
 			}
 		}
 
-		filtered_keys = append(filtered_keys, i)
+		filtered_page_parse_result = append(filtered_page_parse_result, i)
 	}
 
 	self.log.Info("tarball list gotten from site")
-	for _, i := range filtered_keys {
+	for _, i := range filtered_page_parse_result {
 		self.log.Info(fmt.Sprintf("  %s", i))
 	}
 
@@ -217,7 +317,7 @@ func (self *ProviderSFNet) PerformUpdate() error {
 		return err
 	}
 
-	for _, i := range filtered_keys {
+	for _, i := range filtered_page_parse_result {
 		version_tree.Add(path.Base(i))
 	}
 
@@ -303,15 +403,35 @@ func (self *ProviderSFNet) PerformUpdate() error {
 		return err
 	}
 	return nil
+
 }
 
-func (self *ProviderSFNet) GetDownloadingURIForFile(name string) (string, error) {
+func (self *ProviderLLVMorg) GetDownloadingURIForFile(name string) (string, error) {
+
 	name = path.Base(name)
 
-	htw, err := self._GetSFW()
+	_, info, err := pkginfodb.DetermineTarballPackageInfoSingle(name)
 	if err != nil {
 		return "", err
 	}
 
-	return htw.GetDownloadingURIForFile(name)
+	parser, err := tarballnameparsers.Get(info.TarballFileNameParser)
+	if err != nil {
+		return "", err
+	}
+
+	parsed, err := parser.Parse(name)
+	if err != nil {
+		return "", err
+	}
+
+	// https://releases.llvm.org/6.0.1/llvm-6.0.1.src.tar.xz
+
+	l := fmt.Sprintf(
+		"https://releases.llvm.org/%s/%s",
+		parsed.Version.StrSliceString("."),
+		name,
+	)
+
+	return l, nil
 }

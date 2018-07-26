@@ -22,13 +22,9 @@
   "TarballFileNameParser": "std",
   "TarballName": "emscripten",
   "TarballFilters": [],
-  "TarballProvider": "srs",
+  "TarballProvider": "llvm.org",
   "TarballProviderArguments": [
-    "git",
-    "https://github.com/kripken/emscripten.git",
-    "emscripten",
-    "TagName:^$",
-    "TagStatus:"
+    "emscripten"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "std",
