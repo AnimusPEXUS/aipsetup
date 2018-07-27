@@ -9,6 +9,7 @@ type PackageInfo struct {
 	Removable          bool
 	Reducible          bool
 	AutoReduce         bool
+	NonBuildable       bool
 	NonInstallable     bool
 	Deprecated         bool
 	PrimaryInstallOnly bool

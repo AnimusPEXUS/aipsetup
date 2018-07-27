@@ -30,27 +30,31 @@ var TableStructure = [][3]interface{}{
 	[3]interface{}{4, glib.TYPE_BOOLEAN, "Removable"},
 	[3]interface{}{5, glib.TYPE_BOOLEAN, "Reducible"},
 	[3]interface{}{6, glib.TYPE_BOOLEAN, "Auto Reduce"},
-	[3]interface{}{7, glib.TYPE_BOOLEAN, "NonInstallable"},
-	[3]interface{}{8, glib.TYPE_BOOLEAN, "Deprecated"},
-	[3]interface{}{9, glib.TYPE_BOOLEAN, "PrimaryOnly"},
-	[3]interface{}{10, glib.TYPE_STRING, "Package Building Dependencies"},
-	[3]interface{}{11, glib.TYPE_STRING, "Building Dependencies"},
-	[3]interface{}{12, glib.TYPE_STRING, "Shared Object Dependencies"},
-	[3]interface{}{13, glib.TYPE_STRING, "Runtime Dependencies"},
-	[3]interface{}{14, glib.TYPE_STRING, "Tags"},
-	[3]interface{}{15, glib.TYPE_STRING, "Category"},
-	[3]interface{}{16, glib.TYPE_STRING, "Groups"},
-	[3]interface{}{17, glib.TYPE_STRING, "Tarball Parser"},
-	[3]interface{}{18, glib.TYPE_STRING, "Tarball Name"},
-	[3]interface{}{19, glib.TYPE_STRING, "Tarball Filters"},
-	[3]interface{}{20, glib.TYPE_STRING, "Tarball Provider"},
-	[3]interface{}{21, glib.TYPE_STRING, "Provider Arguments"},
-	[3]interface{}{22, glib.TYPE_STRING, "Tarball Stability Classifier"},
-	[3]interface{}{23, glib.TYPE_STRING, "Tarball Version Comparator"},
-	[3]interface{}{24, glib.TYPE_INT, "Tarball Sync Depth"},
-	[3]interface{}{25, glib.TYPE_BOOLEAN, "Download Patches"},
-	[3]interface{}{26, glib.TYPE_STRING, "Patches Downloading Script Text"},
+	[3]interface{}{7, glib.TYPE_BOOLEAN, "NonBuildable"},
+	[3]interface{}{8, glib.TYPE_BOOLEAN, "NonInstallable"},
+	[3]interface{}{9, glib.TYPE_BOOLEAN, "Deprecated"},
+	[3]interface{}{10, glib.TYPE_BOOLEAN, "PrimaryOnly"},
+	[3]interface{}{11, glib.TYPE_STRING, "Package Building Dependencies"},
+	[3]interface{}{12, glib.TYPE_STRING, "Building Dependencies"},
+	[3]interface{}{13, glib.TYPE_STRING, "Shared Object Dependencies"},
+	[3]interface{}{14, glib.TYPE_STRING, "Runtime Dependencies"},
+	[3]interface{}{15, glib.TYPE_STRING, "Tags"},
+	[3]interface{}{16, glib.TYPE_STRING, "Category"},
+	[3]interface{}{17, glib.TYPE_STRING, "Groups"},
+	[3]interface{}{18, glib.TYPE_STRING, "Tarball Parser"},
+	[3]interface{}{19, glib.TYPE_STRING, "Tarball Name"},
+	[3]interface{}{20, glib.TYPE_STRING, "Tarball Filters"},
+	[3]interface{}{21, glib.TYPE_STRING, "Tarball Provider"},
+	[3]interface{}{22, glib.TYPE_STRING, "Provider Arguments"},
+	[3]interface{}{23, glib.TYPE_STRING, "Tarball Stability Classifier"},
+	[3]interface{}{24, glib.TYPE_STRING, "Tarball Version Comparator"},
+	[3]interface{}{25, glib.TYPE_INT, "Tarball Sync Depth"},
+	[3]interface{}{26, glib.TYPE_BOOLEAN, "Download Patches"},
+	[3]interface{}{27, glib.TYPE_STRING, "Patches Downloading Script Text"},
 }
+
+const CAT_EDITOR_CAT_COLUMN = 16
+const GROUP_EDITOR_GROUPS_COLUMN = 17
 
 type UIMainWindow struct {
 	window     *gtk.Window
@@ -224,8 +228,8 @@ func UIMainWindowNew() (*UIMainWindow, error) {
 
 					c.SetResizable(true)
 					c.SetClickable(true)
-					c.SetFixedWidth(50)
-					c.SetMaxWidth(50)
+					c.SetFixedWidth(70)
+					//					c.SetMaxWidth(70)
 					c.SetSortColumnID(i[0].(int))
 
 					self.info_table.AppendColumn(c)
@@ -506,7 +510,7 @@ func (self *UIMainWindow) LoadTable() error {
 						[]int{
 							0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 							10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-							20, 21, 22, 23, 24, 25, 26,
+							20, 21, 22, 23, 24, 25, 26, 27,
 						},
 						[]interface{}{
 							k,
@@ -518,6 +522,7 @@ func (self *UIMainWindow) LoadTable() error {
 							v.Removable,
 							v.Reducible,
 							v.AutoReduce,
+							v.NonBuildable,
 							v.NonInstallable,
 							v.Deprecated,
 							v.PrimaryInstallOnly,
@@ -712,44 +717,46 @@ func (self *UIMainWindow) _IterToPackageInfo(iter *gtk.TreeIter) (
 		case 6:
 			ret.AutoReduce = vv.(bool)
 		case 7:
-			ret.NonInstallable = vv.(bool)
+			ret.NonBuildable = vv.(bool)
 		case 8:
-			ret.Deprecated = vv.(bool)
+			ret.NonInstallable = vv.(bool)
 		case 9:
-			ret.PrimaryInstallOnly = vv.(bool)
+			ret.Deprecated = vv.(bool)
 		case 10:
-			ret.BuildPkgDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.PrimaryInstallOnly = vv.(bool)
 		case 11:
-			ret.BuildDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.BuildPkgDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 12:
-			ret.SODeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.BuildDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 13:
-			ret.RunTimeDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.SODeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 14:
-			ret.Tags = textlist.RemoveZeroLengthItems(tags.NewFromString(vv.(string)).Values())
+			ret.RunTimeDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 15:
-			ret.Category = vv.(string)
+			ret.Tags = textlist.RemoveZeroLengthItems(tags.NewFromString(vv.(string)).Values())
 		case 16:
-			ret.Groups = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.Category = vv.(string)
 		case 17:
-			ret.TarballFileNameParser = vv.(string)
+			ret.Groups = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 18:
-			ret.TarballName = vv.(string)
+			ret.TarballFileNameParser = vv.(string)
 		case 19:
-			ret.TarballFilters = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.TarballName = vv.(string)
 		case 20:
-			ret.TarballProvider = vv.(string)
+			ret.TarballFilters = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 21:
-			ret.TarballProviderArguments = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.TarballProvider = vv.(string)
 		case 22:
-			ret.TarballStabilityClassifier = vv.(string)
+			ret.TarballProviderArguments = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 23:
-			ret.TarballVersionComparator = vv.(string)
+			ret.TarballStabilityClassifier = vv.(string)
 		case 24:
-			ret.TarballProviderVersionSyncDepth = vv.(int)
+			ret.TarballVersionComparator = vv.(string)
 		case 25:
-			ret.DownloadPatches = vv.(bool)
+			ret.TarballProviderVersionSyncDepth = vv.(int)
 		case 26:
+			ret.DownloadPatches = vv.(bool)
+		case 27:
 			ret.PatchesDownloadingScriptText = vv.(string)
 		}
 	}
