@@ -37,8 +37,11 @@ func (self Autotools) Extract(
 	os.MkdirAll(outputdir, 0700)
 
 	// TODO: mega fast decision. this should be replaced by internal functionality
-	log.Info("starting tar utility")
-	c := exec.Command("tar", "-vxf", filename, "-C", tempdir)
+	opts := []string{"-vxf", filename, "-C", tempdir}
+
+	//	log.Info("starting tar utility with opts: " + fmt.Sprint(opts))
+
+	c := exec.Command("tar", opts...)
 
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()

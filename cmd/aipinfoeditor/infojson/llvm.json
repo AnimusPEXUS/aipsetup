@@ -8,7 +8,10 @@
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,
-  "BuildPkgDeps": [],
+  "BuildPkgDeps": [
+    "cfe",
+    "clang-extra-tools"
+  ],
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],

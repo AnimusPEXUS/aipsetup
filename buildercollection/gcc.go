@@ -228,7 +228,7 @@ func (self *Builder_gcc) EditConfigureArgs(log *logger.Logger, ret []string) ([]
 				"--sysconfdir=/etc",
 				"--localstatedir=/var",
 				"--enable-shared",
-				"--disable-gold",
+				//				"--disable-gold",
 			}...,
 		)
 	}
@@ -241,7 +241,7 @@ func (self *Builder_gcc) EditConfigureArgs(log *logger.Logger, ret []string) ([]
 		ret = append(
 			ret,
 			[]string{
-				"--disable-gold",
+				//				"--disable-gold",
 
 				"--enable-tls",
 				"--enable-nls",
@@ -302,7 +302,7 @@ func (self *Builder_gcc) EditConfigureArgs(log *logger.Logger, ret []string) ([]
 				"--enable-libada",
 				"--enable-shared",
 
-				"--disable-gold",
+				//				"--disable-gold",
 			}...,
 		)
 	}
@@ -318,7 +318,7 @@ func (self *Builder_gcc) EditConfigureArgs(log *logger.Logger, ret []string) ([]
 			ret,
 			[]string{
 				"--with-system-zlib",
-				"--disable-gold",
+				//				"--disable-gold",
 
 				"--enable-tls",
 				"--enable-nls",
