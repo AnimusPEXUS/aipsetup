@@ -5,6 +5,7 @@
   "Removable": false,
   "Reducible": true,
   "AutoReduce": false,
+  "NonBuildable": false,
   "NonInstallable": false,
   "Deprecated": false,
   "PrimaryInstallOnly": false,

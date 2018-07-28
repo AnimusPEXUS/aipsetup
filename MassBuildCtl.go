@@ -134,17 +134,22 @@ func (self *MassBuildCtl) PerformMassBuilding() (
 	fret := make(map[string][]string)
 
 	for _, i := range tarballs {
-		bi := path.Base(i)
-		for _, arch := range archs {
-			{
-				_, pkginfo, err := pkginfodb.DetermineTarballPackageInfoSingle(bi)
-				if err != nil {
-					return nil, nil, err
-				}
 
-				if pkginfo.PrimaryInstallOnly && host != arch {
-					continue
-				}
+		bi := path.Base(i)
+
+		_, pkginfo, err := pkginfodb.DetermineTarballPackageInfoSingle(bi)
+		if err != nil {
+			return nil, nil, err
+		}
+
+		if pkginfo.NonBuildable {
+			continue
+		}
+
+		for _, arch := range archs {
+
+			if pkginfo.PrimaryInstallOnly && host != arch {
+				continue
 			}
 
 			self.log.Info("-----//=********************--")
