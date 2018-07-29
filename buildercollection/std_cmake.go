@@ -19,7 +19,7 @@ func init() {
 type Builder_std_cmake struct {
 	*Builder_std
 
-	EditConfigureArgsCB func(log *logger.Logger, ret []string) ([]string, error)
+	//	EditConfigureArgsCB func(log *logger.Logger, ret []string) ([]string, error)
 }
 
 func NewBuilder_std_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_std_cmake, error) {

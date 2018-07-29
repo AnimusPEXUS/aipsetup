@@ -1,7 +1,7 @@
 {
-  "Description": "",
+  "Description": "not buildable. should be placed inside llvm source",
   "HomePage": "",
-  "BuilderName": "std",
+  "BuilderName": "llvm_components",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -15,7 +15,9 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "lang/llvm",
-  "Groups": [],
+  "Groups": [
+    "llvm"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "dragonegg",
   "TarballFilters": [],

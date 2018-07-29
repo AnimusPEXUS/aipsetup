@@ -1,7 +1,7 @@
 {
-  "Description": "not buildable. should be places inside llvm source",
+  "Description": "not buildable. should be placed inside llvm source",
   "HomePage": "http://llvm.org",
-  "BuilderName": "",
+  "BuilderName": "llvm_components",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

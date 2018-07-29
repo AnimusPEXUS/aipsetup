@@ -11,7 +11,10 @@
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [
     "cfe",
-    "clang-extra-tools"
+    "clang-tools-extra",
+    "polly",
+    "compiler-rt",
+    "openmp"
   ],
   "BuildDeps": [],
   "SODeps": [],
