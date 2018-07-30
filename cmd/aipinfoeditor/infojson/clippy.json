@@ -1,0 +1,39 @@
+{
+  "Description": "",
+  "HomePage": "https://github.com/rust-lang-nursery/rust-clippy",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "github_hosted"
+  ],
+  "Category": "langs/rust",
+  "Groups": [
+    "rust"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "clippy",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/rust-lang-nursery/rust-clippy.git",
+    "clippy",
+    "TagName:^v$",
+    "TagStatus:"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

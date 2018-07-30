@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "https://github.com/rust-lang/cargo",
-  "BuilderName": "std",
+  "BuilderName": "std_cargo",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -18,7 +18,7 @@
   ],
   "Category": "langs/rust",
   "Groups": [
-    "langs"
+    "rust"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "cargo",

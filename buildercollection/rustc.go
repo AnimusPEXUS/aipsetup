@@ -93,6 +93,21 @@ func (self *Builder_rustc) BuilderActionConfigure(
 	//	}
 	//	localstatedir := "/var"
 
+	llvmconfig, err := calc.CalculateInstallPrefixExecutable("llvm-config")
+	if err != nil {
+		return err
+	}
+
+	rustc, err := calc.CalculateInstallPrefixExecutable("rustc")
+	if err != nil {
+		return err
+	}
+
+	cargo, err := calc.CalculateInstallPrefixExecutable("cargo")
+	if err != nil {
+		return err
+	}
+
 	prefix := path.Join(self.bs.GetDIR_DESTDIR(), install_prefix)
 	sysconfdir := path.Join(self.bs.GetDIR_DESTDIR(), "/etc")
 	docdir := path.Join(prefix, "share", "doc")
@@ -110,7 +125,14 @@ func (self *Builder_rustc) BuilderActionConfigure(
 
 	cfg_txt := `
 [llvm]
+` +
+		"llvm-config = '" + llvmconfig + "'\n" +
+		`
 [build]
+` +
+		"rustc = '" + rustc + "'\n" +
+		"cargo = '" + cargo + "'\n" +
+		`
 [install]
 ` +
 		"prefix = '" + prefix + "'\n" +
