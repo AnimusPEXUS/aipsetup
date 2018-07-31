@@ -257,6 +257,7 @@ reading_lines:
 func (self *SystemPackages) RemoveASP_DestDir(
 	aspname *basictypes.ASPName,
 	exclude_files []string,
+	keep_shared_objects bool,
 ) error {
 
 	lib_dirs := make([]string, 0)
@@ -344,9 +345,7 @@ func (self *SystemPackages) RemoveASP_DestDir(
 			res = lst.ListStrings()
 		}
 
-		{
-			sort.Sort(sort.Reverse(sort.StringSlice(res)))
-		}
+		sort.Sort(sort.Reverse(sort.StringSlice(res)))
 
 	deleting_files:
 		for _, i := range res {
@@ -354,25 +353,28 @@ func (self *SystemPackages) RemoveASP_DestDir(
 			i_joined := path.Join(self.sys.Root(), "/", i)
 			i_joined_dir := path.Dir(i_joined)
 
-			// exclude shared objects
-			// TODO: todo
-			for _, j := range lib_dirs {
-				j_joined := path.Join(self.sys.Root(), "/", j)
-				if _t, err := filepath.Abs(j); err != nil {
-					return err
-				} else {
-					j_joined = _t
-				}
+			if keep_shared_objects {
+				// exclude shared objects
+				for _, j := range lib_dirs {
 
-				if i_joined_dir == j_joined {
-					elf_obj, err := elf.Open(i_joined)
-					if err == nil && elf_obj.Type == elf.ET_DYN {
-						elf_obj.Close()
-						self.sys.log.Info(" Shared OBJ Exclusion: " + i_joined)
-						continue deleting_files
+					j_joined := path.Join(self.sys.Root(), "/", j)
+
+					if _t, err := filepath.Abs(j); err != nil {
+						return err
+					} else {
+						j_joined = _t
 					}
-				}
 
+					if i_joined_dir == j_joined {
+						elf_obj, err := elf.Open(i_joined)
+						if err == nil && elf_obj.Type == elf.ET_DYN {
+							elf_obj.Close()
+							self.sys.log.Info(" Shared OBJ Exclusion: " + i_joined)
+							continue deleting_files
+						}
+					}
+
+				}
 			}
 
 			for _, j := range exclude_files {
@@ -485,7 +487,11 @@ func (self *SystemPackages) RemoveASP(
 	}
 
 	if !unregister_only {
-		err = self.RemoveASP_DestDir(aspname, reduce_exclude_files)
+		err = self.RemoveASP_DestDir(
+			aspname,
+			reduce_exclude_files,
+			!pkginfo.DontPreserveSharedObjects,
+		)
 		if err != nil {
 			return err
 		}

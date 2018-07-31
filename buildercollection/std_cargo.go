@@ -4,9 +4,11 @@ import (
 	"os"
 	"os/exec"
 	"path"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/logger"
+	"github.com/AnimusPEXUS/utils/systemtriplet"
 )
 
 func init() {
@@ -35,9 +37,20 @@ func (self *Builder_std_cargo) EditActions(ret basictypes.BuilderActions) (basic
 	ret = ret.Remove("patch")
 	ret = ret.Remove("autogen")
 	ret = ret.Remove("configure")
-	ret = ret.Remove("build")
+	//	ret = ret.Remove("build")
 
 	err := ret.Replace(
+		"build",
+		&basictypes.BuilderAction{
+			Name:     "build",
+			Callable: self.BuilderActionBuild,
+		},
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	err = ret.Replace(
 		"distribute",
 		&basictypes.BuilderAction{
 			Name:     "distribute",
@@ -49,6 +62,52 @@ func (self *Builder_std_cargo) EditActions(ret basictypes.BuilderActions) (basic
 	}
 
 	return ret, nil
+}
+
+func (self *Builder_std_cargo) BuilderActionBuild(
+	log *logger.Logger,
+) error {
+
+	calc := self.bs.GetBuildingSiteValuesCalculator()
+
+	cargo, err := calc.CalculateInstallPrefixExecutable("cargo")
+	if err != nil {
+		return err
+	}
+
+	log.Info("cargo is: " + cargo)
+
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	//	target := info.HostArch
+
+	tri, err := systemtriplet.NewFromString(info.HostArch)
+	if err != nil {
+		return err
+	}
+
+	tri.Company = "unknown"
+
+	//	target := "x86_64-unknown-linux-gnu"
+
+	args := []string{"build", "--target", tri.String()}
+
+	log.Info("cargo args: " + strings.Join(args, " "))
+
+	cmd := exec.Command(cargo, args...)
+	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Stdout = log.StdoutLbl()
+	cmd.Stderr = log.StderrLbl()
+
+	err = cmd.Run()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (self *Builder_std_cargo) BuilderActionDistribute(
@@ -69,7 +128,11 @@ func (self *Builder_std_cargo) BuilderActionDistribute(
 
 	dst_install_prefix_crates_toml := path.Join(dst_install_prefix, ".crates.toml")
 
-	cmd := exec.Command(cargo, "install", "--root="+dst_install_prefix)
+	args := []string{"install", "--root", dst_install_prefix}
+
+	log.Info("cargo args: " + strings.Join(args, " "))
+
+	cmd := exec.Command(cargo, args...)
 	cmd.Dir = self.bs.GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()

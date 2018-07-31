@@ -75,6 +75,11 @@ func (self *Builder_rustc) BuilderActionConfigure(
 	log *logger.Logger,
 ) error {
 
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
@@ -98,15 +103,15 @@ func (self *Builder_rustc) BuilderActionConfigure(
 		return err
 	}
 
-	rustc, err := calc.CalculateInstallPrefixExecutable("rustc")
-	if err != nil {
-		return err
-	}
+	//	rustc, err := calc.CalculateInstallPrefixExecutable("rustc")
+	//	if err != nil {
+	//		return err
+	//	}
 
-	cargo, err := calc.CalculateInstallPrefixExecutable("cargo")
-	if err != nil {
-		return err
-	}
+	//	cargo, err := calc.CalculateInstallPrefixExecutable("cargo")
+	//	if err != nil {
+	//		return err
+	//	}
 
 	prefix := path.Join(self.bs.GetDIR_DESTDIR(), install_prefix)
 	sysconfdir := path.Join(self.bs.GetDIR_DESTDIR(), "/etc")
@@ -126,12 +131,16 @@ func (self *Builder_rustc) BuilderActionConfigure(
 	cfg_txt := `
 [llvm]
 ` +
-		"llvm-config = '" + llvmconfig + "'\n" +
 		`
 [build]
 ` +
-		"rustc = '" + rustc + "'\n" +
-		"cargo = '" + cargo + "'\n" +
+		//		"rustc = '" + rustc + "'\n" +
+		//		"cargo = '" + cargo + "'\n" +
+		"build = 'x86_64-unknown-linux-gnu'" + "\n" +
+		"host = ['x86_64-unknown-linux-gnu']" + "\n" +
+		"target = ['x86_64-unknown-linux-gnu']" + "\n" +
+		//		"target = ['x86_64-pc-linux-gnu', 'i686-pc-linux-gnu']" + "\n" +
+		//		"target = ['" + info.HostArch + "']" + "\n" +
 		`
 [install]
 ` +
@@ -143,7 +152,14 @@ func (self *Builder_rustc) BuilderActionConfigure(
 		`
 [rust]
 [dist]
-`
+[target.` + info.HostArch + `]
+` +
+		//		"cc = '" + info.Host + "-gcc'\n" +
+		//		"cxx = '" + info.Host + "-g++'\n" +
+		//		"ar = '" + info.Host + "-ar'\n" +
+		//		"linker = '" + info.Host + "-gcc'\n" +
+		"llvm-config = '" + llvmconfig + "'\n" +
+		""
 
 	f, err := os.Create(src_config_toml)
 	if err != nil {

@@ -30,31 +30,32 @@ var TableStructure = [][3]interface{}{
 	[3]interface{}{4, glib.TYPE_BOOLEAN, "Removable"},
 	[3]interface{}{5, glib.TYPE_BOOLEAN, "Reducible"},
 	[3]interface{}{6, glib.TYPE_BOOLEAN, "Auto Reduce"},
-	[3]interface{}{7, glib.TYPE_BOOLEAN, "NonBuildable"},
-	[3]interface{}{8, glib.TYPE_BOOLEAN, "NonInstallable"},
-	[3]interface{}{9, glib.TYPE_BOOLEAN, "Deprecated"},
-	[3]interface{}{10, glib.TYPE_BOOLEAN, "PrimaryOnly"},
-	[3]interface{}{11, glib.TYPE_STRING, "Package Building Dependencies"},
-	[3]interface{}{12, glib.TYPE_STRING, "Building Dependencies"},
-	[3]interface{}{13, glib.TYPE_STRING, "Shared Object Dependencies"},
-	[3]interface{}{14, glib.TYPE_STRING, "Runtime Dependencies"},
-	[3]interface{}{15, glib.TYPE_STRING, "Tags"},
-	[3]interface{}{16, glib.TYPE_STRING, "Category"},
-	[3]interface{}{17, glib.TYPE_STRING, "Groups"},
-	[3]interface{}{18, glib.TYPE_STRING, "Tarball Parser"},
-	[3]interface{}{19, glib.TYPE_STRING, "Tarball Name"},
-	[3]interface{}{20, glib.TYPE_STRING, "Tarball Filters"},
-	[3]interface{}{21, glib.TYPE_STRING, "Tarball Provider"},
-	[3]interface{}{22, glib.TYPE_STRING, "Provider Arguments"},
-	[3]interface{}{23, glib.TYPE_STRING, "Tarball Stability Classifier"},
-	[3]interface{}{24, glib.TYPE_STRING, "Tarball Version Comparator"},
-	[3]interface{}{25, glib.TYPE_INT, "Tarball Sync Depth"},
-	[3]interface{}{26, glib.TYPE_BOOLEAN, "Download Patches"},
-	[3]interface{}{27, glib.TYPE_STRING, "Patches Downloading Script Text"},
+	[3]interface{}{7, glib.TYPE_BOOLEAN, "Dont Preserve Shared Objects"},
+	[3]interface{}{8, glib.TYPE_BOOLEAN, "Non Buildable"},
+	[3]interface{}{9, glib.TYPE_BOOLEAN, "Non Installable"},
+	[3]interface{}{10, glib.TYPE_BOOLEAN, "Deprecated"},
+	[3]interface{}{11, glib.TYPE_BOOLEAN, "PrimaryOnly"},
+	[3]interface{}{12, glib.TYPE_STRING, "Package Building Dependencies"},
+	[3]interface{}{13, glib.TYPE_STRING, "Building Dependencies"},
+	[3]interface{}{14, glib.TYPE_STRING, "Shared Object Dependencies"},
+	[3]interface{}{15, glib.TYPE_STRING, "Runtime Dependencies"},
+	[3]interface{}{16, glib.TYPE_STRING, "Tags"},
+	[3]interface{}{17, glib.TYPE_STRING, "Category"},
+	[3]interface{}{18, glib.TYPE_STRING, "Groups"},
+	[3]interface{}{19, glib.TYPE_STRING, "Tarball Parser"},
+	[3]interface{}{20, glib.TYPE_STRING, "Tarball Name"},
+	[3]interface{}{21, glib.TYPE_STRING, "Tarball Filters"},
+	[3]interface{}{22, glib.TYPE_STRING, "Tarball Provider"},
+	[3]interface{}{23, glib.TYPE_STRING, "Provider Arguments"},
+	[3]interface{}{24, glib.TYPE_STRING, "Tarball Stability Classifier"},
+	[3]interface{}{25, glib.TYPE_STRING, "Tarball Version Comparator"},
+	[3]interface{}{26, glib.TYPE_INT, "Tarball Sync Depth"},
+	[3]interface{}{27, glib.TYPE_BOOLEAN, "Download Patches"},
+	[3]interface{}{28, glib.TYPE_STRING, "Patches Downloading Script Text"},
 }
 
-const CAT_EDITOR_CAT_COLUMN = 16
-const GROUP_EDITOR_GROUPS_COLUMN = 17
+const CAT_EDITOR_CAT_COLUMN = 17
+const GROUP_EDITOR_GROUPS_COLUMN = 18
 
 type UIMainWindow struct {
 	window     *gtk.Window
@@ -164,19 +165,19 @@ func UIMainWindowNew() (*UIMainWindow, error) {
 						c.SetFixedWidth(200)
 					case 2:
 						c.SetFixedWidth(250)
-					case 14:
-						fallthrough
 					case 15:
 						fallthrough
 					case 16:
-						c.SetFixedWidth(150)
-					case 18:
+						fallthrough
+					case 17:
 						c.SetFixedWidth(150)
 					case 19:
+						c.SetFixedWidth(150)
+					case 20:
 						c.SetFixedWidth(200)
-					case 21:
+					case 22:
 						c.SetFixedWidth(400)
-					case 26:
+					case 27:
 						c.SetFixedWidth(500)
 					}
 
@@ -510,7 +511,7 @@ func (self *UIMainWindow) LoadTable() error {
 						[]int{
 							0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 							10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-							20, 21, 22, 23, 24, 25, 26, 27,
+							20, 21, 22, 23, 24, 25, 26, 27, 28,
 						},
 						[]interface{}{
 							k,
@@ -522,6 +523,7 @@ func (self *UIMainWindow) LoadTable() error {
 							v.Removable,
 							v.Reducible,
 							v.AutoReduce,
+							v.DontPreserveSharedObjects,
 							v.NonBuildable,
 							v.NonInstallable,
 							v.Deprecated,
@@ -717,46 +719,48 @@ func (self *UIMainWindow) _IterToPackageInfo(iter *gtk.TreeIter) (
 		case 6:
 			ret.AutoReduce = vv.(bool)
 		case 7:
-			ret.NonBuildable = vv.(bool)
+			ret.DontPreserveSharedObjects = vv.(bool)
 		case 8:
-			ret.NonInstallable = vv.(bool)
+			ret.NonBuildable = vv.(bool)
 		case 9:
-			ret.Deprecated = vv.(bool)
+			ret.NonInstallable = vv.(bool)
 		case 10:
-			ret.PrimaryInstallOnly = vv.(bool)
+			ret.Deprecated = vv.(bool)
 		case 11:
-			ret.BuildPkgDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.PrimaryInstallOnly = vv.(bool)
 		case 12:
-			ret.BuildDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.BuildPkgDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 13:
-			ret.SODeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.BuildDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 14:
-			ret.RunTimeDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.SODeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 15:
-			ret.Tags = textlist.RemoveZeroLengthItems(tags.NewFromString(vv.(string)).Values())
+			ret.RunTimeDeps = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 16:
-			ret.Category = vv.(string)
+			ret.Tags = textlist.RemoveZeroLengthItems(tags.NewFromString(vv.(string)).Values())
 		case 17:
-			ret.Groups = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.Category = vv.(string)
 		case 18:
-			ret.TarballFileNameParser = vv.(string)
+			ret.Groups = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 19:
-			ret.TarballName = vv.(string)
+			ret.TarballFileNameParser = vv.(string)
 		case 20:
-			ret.TarballFilters = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.TarballName = vv.(string)
 		case 21:
-			ret.TarballProvider = vv.(string)
+			ret.TarballFilters = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 22:
-			ret.TarballProviderArguments = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
+			ret.TarballProvider = vv.(string)
 		case 23:
-			ret.TarballStabilityClassifier = vv.(string)
+			ret.TarballProviderArguments = textlist.RemoveZeroLengthItems(strings.Split(vv.(string), "\n"))
 		case 24:
-			ret.TarballVersionComparator = vv.(string)
+			ret.TarballStabilityClassifier = vv.(string)
 		case 25:
-			ret.TarballProviderVersionSyncDepth = vv.(int)
+			ret.TarballVersionComparator = vv.(string)
 		case 26:
-			ret.DownloadPatches = vv.(bool)
+			ret.TarballProviderVersionSyncDepth = vv.(int)
 		case 27:
+			ret.DownloadPatches = vv.(bool)
+		case 28:
 			ret.PatchesDownloadingScriptText = vv.(string)
 		}
 	}

@@ -5,6 +5,7 @@
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
+  "DontPreserveSharedObjects": true,
   "NonBuildable": false,
   "NonInstallable": false,
   "Deprecated": false,

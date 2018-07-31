@@ -6,13 +6,14 @@ type PackageInfo struct {
 
 	BuilderName string
 
-	Removable          bool
-	Reducible          bool
-	AutoReduce         bool
-	NonBuildable       bool
-	NonInstallable     bool
-	Deprecated         bool
-	PrimaryInstallOnly bool
+	Removable                 bool
+	Reducible                 bool
+	AutoReduce                bool
+	DontPreserveSharedObjects bool
+	NonBuildable              bool
+	NonInstallable            bool
+	Deprecated                bool
+	PrimaryInstallOnly        bool
 
 	BuildPkgDeps []string
 
