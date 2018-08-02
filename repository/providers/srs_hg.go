@@ -10,7 +10,6 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/utils/tags"
 	"github.com/AnimusPEXUS/utils/tarballname"
@@ -94,8 +93,9 @@ func (self *SRSHg) GetAndUpdate(
 func (self *SRSHg) MakeTarballs(
 	hg_dir string,
 	output_dir string,
-	info *basictypes.PackageInfo,
 ) error {
+
+	info := self.srs.pkg_info
 
 	t := tags.New(info.TarballProviderArguments)
 

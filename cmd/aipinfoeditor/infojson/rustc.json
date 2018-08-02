@@ -30,7 +30,8 @@
     "https://github.com/rust-lang/rust.git",
     "rustc",
     "TagName:^$",
-    "TagStatus:"
+    "TagStatus:",
+    "EnableSubmodules:1"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "std",

@@ -18,19 +18,22 @@ PackageInfo provider's attributes
 
   if engine name equals to git or hg:
 
-	#3 TagParser default is equal to TarballFileNameParser
+	TagParser default is equal to TarballFileNameParser
 
-	#4 TagName regexp default is "^v"
+	TagName regexp default is "^v"
 
-	#5 TagStatus regexp default is "^$"
+	TagStatus regexp default is "^$"
 
-	#6 TagComparator default equals to TarballVersionComparator
+	TagComparator default equals to TarballVersionComparator
 
-	#7 TagFilters if defined, shold be other package info name - it's filters will
+	TagFilters if defined, shold be other package info name - it's filters will
 		be used
 
-	#8 TagTarballRenderer name of tarball name parser, which shoild be used to render
+	TagTarballRenderer name of tarball name parser, which shoild be used to render
 		tarball name for tag. default is equal to TagParser
+
+	EnableSubmodules (only git) get submodules and use git-archive-all python script
+		to archive tarballs
 
 */
 
@@ -139,7 +142,6 @@ func (self *ProviderSRS) PerformUpdate() error {
 		err = subtool.MakeTarballs(
 			self.repo.GetPackageSRSPath(self.pkg_info.TarballProviderArguments[2]),
 			self.repo.GetPackageTarballsPath(self.pkg_name),
-			self.pkg_info,
 		)
 		if err != nil {
 			return err
@@ -163,7 +165,6 @@ func (self *ProviderSRS) PerformUpdate() error {
 		err = subtool.MakeTarballs(
 			self.repo.GetPackageSRSPath(self.pkg_info.TarballProviderArguments[2]),
 			self.repo.GetPackageTarballsPath(self.pkg_name),
-			self.pkg_info,
 		)
 		if err != nil {
 			return err

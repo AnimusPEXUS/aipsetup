@@ -10,7 +10,6 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/utils/tags"
 	"github.com/AnimusPEXUS/utils/tarballname"
@@ -33,8 +32,18 @@ func NewSRSGit(srs *ProviderSRS) *SRSGit {
 func (self *SRSGit) GetAndUpdate(
 	git_dir string,
 	git_source_url string,
-	// info *basictypes.PackageInfo,
 ) error {
+
+	info := self.srs.pkg_info
+
+	t := tags.New(info.TarballProviderArguments)
+
+	EnableSubmodules := false
+	if tt, ok := t.GetSingle("EnableSubmodules", true); ok {
+		EnableSubmodules = tt == "1" ||
+			strings.ToLower(tt) == "yes" ||
+			strings.ToLower(tt) == "true"
+	}
 
 	// git_source_url := info.TarballProviderArguments[2]
 	git_subdir := path.Join(git_dir, ".git")
@@ -62,7 +71,6 @@ func (self *SRSGit) GetAndUpdate(
 
 		self.srs.log.Info(fmt.Sprintf("getting %s", git_source_url))
 
-		// "--recurse-submodules",
 		c := exec.Command("git", "clone", git_source_url, ".")
 		c.Dir = git_dir
 		c.Stdout = os.Stdout
@@ -77,7 +85,18 @@ func (self *SRSGit) GetAndUpdate(
 
 		self.srs.log.Info(fmt.Sprintf("updating %s", git_source_url))
 
-		// , "--recurse-submodules"
+		err = self.Checkout(git_dir, "master")
+		if err != nil {
+			return err
+		}
+
+		if EnableSubmodules {
+			err = self.UpdateSubmodules(git_dir)
+			if err != nil {
+				return err
+			}
+		}
+
 		c := exec.Command("git", "pull")
 		c.Dir = git_dir
 		c.Stdout = os.Stdout
@@ -90,14 +109,22 @@ func (self *SRSGit) GetAndUpdate(
 
 	}
 
+	if EnableSubmodules {
+		err = self.UpdateSubmodules(git_dir)
+		if err != nil {
+			return err
+		}
+	}
+
 	return nil
 }
 
 func (self *SRSGit) MakeTarballs(
 	git_dir string,
 	output_dir string,
-	info *basictypes.PackageInfo,
 ) error {
+
+	info := self.srs.pkg_info
 
 	t := tags.New(info.TarballProviderArguments)
 
@@ -136,6 +163,13 @@ func (self *SRSGit) MakeTarballs(
 	}
 
 	TagFilters, TagFiltersUse := t.GetSingle("TagFilters", true)
+
+	EnableSubmodules := false
+	if tt, ok := t.GetSingle("EnableSubmodules", true); ok {
+		EnableSubmodules = tt == "1" ||
+			strings.ToLower(tt) == "yes" ||
+			strings.ToLower(tt) == "true"
+	}
 
 	// TODO: do srs SyncDepth should also be moved from InfoDB to srs args?
 	truncate_versions := info.TarballProviderVersionSyncDepth
@@ -335,6 +369,7 @@ func (self *SRSGit) MakeTarballs(
 		self.srs.log.Info("-----------------")
 		self.srs.log.Info("archiving")
 
+	acceptable_tags_loop:
 		for _, i := range acceptable_tags {
 
 			i_parsed, err := parser.Parse(i)
@@ -360,33 +395,139 @@ func (self *SRSGit) MakeTarballs(
 
 			if _, err := os.Stat(tag_filename_done); err == nil {
 				downloaded_files = append(downloaded_files, tag_filename)
-				continue
+				continue acceptable_tags_loop
 			}
 
 			target_file := self.srs.repo.GetTarballFilePath(self.srs.pkg_name, tag_filename)
 
 			self.srs.log.Info(fmt.Sprintf("  %s", tag_filename))
 
-			c := exec.Command(
-				"git",
-				"archive",
-				fmt.Sprintf("--prefix=%s/", tag_filename_noext),
-				"-o", target_file,
-				i,
-			)
-			c.Dir = git_dir
-			c.Stdout = os.Stdout
-			c.Stderr = os.Stderr
+			// handeling submodules requires differens strategy
+			if !EnableSubmodules {
 
-			if c.Run() != nil {
-				was_errors = true
-			} else {
+				c := exec.Command(
+					"git",
+					"archive",
+					fmt.Sprintf("--prefix=%s/", tag_filename_noext),
+					"-o", target_file,
+					i,
+				)
+				c.Dir = git_dir
+				c.Stdout = os.Stdout
+				c.Stderr = os.Stderr
+
+				err = c.Run()
+
+				if err != nil {
+					was_errors = true
+					self.srs.log.Error(err)
+					continue acceptable_tags_loop
+				}
+
 				downloaded_files = append(downloaded_files, tag_filename)
 				if f, err := os.Create(tag_filename_done); err != nil {
-					return err
+					was_errors = true
+					self.srs.log.Error(err)
+					continue acceptable_tags_loop
 				} else {
-					f.Close()
+
+					err = f.Close()
+					if err != nil {
+						was_errors = true
+						self.srs.log.Error(err)
+						continue acceptable_tags_loop
+					}
 				}
+
+			} else {
+
+				self.srs.log.Info("Checking out tag " + i)
+
+				err = self.Checkout(git_dir, i)
+
+				if err != nil {
+					was_errors = true
+					self.srs.log.Error(err)
+					continue acceptable_tags_loop
+
+				}
+
+				err = self.UpdateSubmodules(git_dir)
+				if err != nil {
+					was_errors = true
+					self.srs.log.Error(err)
+					continue acceptable_tags_loop
+				}
+
+				if !strings.HasSuffix(target_file, ".xz") {
+					was_errors = true
+					self.srs.log.Error(errors.New("programming error"))
+					continue acceptable_tags_loop
+				}
+
+				target_file = target_file[:len(target_file)-len(".xz")]
+
+				args := []string{
+					fmt.Sprintf("--prefix=%s/", tag_filename_noext),
+					"--force-submodules",
+					target_file,
+				}
+
+				self.srs.log.Info(" archiving with submodules " + strings.Join(args, " "))
+
+				c := exec.Command("git-archive-all", args...)
+				c.Dir = git_dir
+				c.Stdout = os.Stdout
+				c.Stderr = os.Stderr
+
+				err = c.Run()
+				if err != nil {
+					was_errors = true
+					self.srs.log.Error(err)
+					continue acceptable_tags_loop
+				}
+
+				c = exec.Command("xz", "-9v", target_file)
+				c.Dir = git_dir
+				c.Stdout = os.Stdout
+				c.Stderr = os.Stderr
+
+				err = c.Run()
+				if err != nil {
+					was_errors = true
+					self.srs.log.Error(err)
+					continue acceptable_tags_loop
+				}
+
+				downloaded_files = append(downloaded_files, tag_filename)
+				if f, err := os.Create(tag_filename_done); err != nil {
+					was_errors = true
+					self.srs.log.Error(err)
+					continue acceptable_tags_loop
+				} else {
+
+					err = f.Close()
+					if err != nil {
+						was_errors = true
+						self.srs.log.Error(err)
+						continue acceptable_tags_loop
+					}
+				}
+
+				err = self.Checkout(git_dir, "master")
+				if err != nil {
+					was_errors = true
+					self.srs.log.Error(err)
+					continue acceptable_tags_loop
+				}
+
+				err = self.UpdateSubmodules(git_dir)
+				if err != nil {
+					was_errors = true
+					self.srs.log.Error(err)
+					continue acceptable_tags_loop
+				}
+
 			}
 
 		}
@@ -415,5 +556,47 @@ func (self *SRSGit) MakeTarballs(
 		return err
 	}
 
+	return nil
+}
+
+func (self *SRSGit) UpdateSubmodules(git_dir string) error {
+
+	args := []string{
+		"submodule",
+		"update",
+		"--init",
+		"--recursive",
+		"--force",
+	}
+
+	self.srs.log.Info("Updating submodules. git args: " + strings.Join(args, " "))
+
+	c := exec.Command("git", args...)
+	c.Dir = git_dir
+	c.Stdout = os.Stdout
+	c.Stderr = os.Stderr
+
+	err := c.Run()
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (self *SRSGit) Checkout(git_dir string, target string) error {
+
+	args := []string{"checkout", "--force", target}
+
+	self.srs.log.Info("Checking out. git args: " + strings.Join(args, " "))
+
+	c := exec.Command("git", args...)
+	c.Dir = git_dir
+	c.Stdout = os.Stdout
+	c.Stderr = os.Stderr
+
+	err := c.Run()
+	if err != nil {
+		return err
+	}
 	return nil
 }

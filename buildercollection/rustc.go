@@ -6,6 +6,7 @@ import (
 	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/environ"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -89,75 +90,87 @@ func (self *Builder_rustc) BuilderActionConfigure(
 
 	src_config_toml := path.Join(self.bs.GetDIR_SOURCE(), "config.toml")
 
-	//	prefix := path.Join(self.bs.GetDIR_DESTDIR(), install_prefix)
-	//	sysconfdir := "/etc"
-	//	docdir := path.Join(prefix, "share", "doc")
+	prefix := install_prefix
+	sysconfdir := "/etc"
+	docdir := path.Join(prefix, "share", "doc", "rust-"+info.PackageVersion)
 	//	libdir, err := calc.CalculateInstallLibDir()
 	//	if err != nil {
 	//		return err
 	//	}
-	//	localstatedir := "/var"
+	localstatedir := "/var"
 
 	llvmconfig, err := calc.CalculateInstallPrefixExecutable("llvm-config")
 	if err != nil {
 		return err
 	}
 
-	//	rustc, err := calc.CalculateInstallPrefixExecutable("rustc")
-	//	if err != nil {
-	//		return err
-	//	}
-
-	//	cargo, err := calc.CalculateInstallPrefixExecutable("cargo")
-	//	if err != nil {
-	//		return err
-	//	}
-
-	prefix := path.Join(self.bs.GetDIR_DESTDIR(), install_prefix)
-	sysconfdir := path.Join(self.bs.GetDIR_DESTDIR(), "/etc")
-	docdir := path.Join(prefix, "share", "doc")
-	libdir, err := calc.CalculateInstallLibDir()
+	rustc, err := calc.CalculateInstallPrefixExecutable("rustc")
 	if err != nil {
 		return err
 	}
-	libdir = path.Join(self.bs.GetDIR_DESTDIR(), libdir)
-	localstatedir := path.Join(self.bs.GetDIR_DESTDIR(), "/var")
+
+	cargo, err := calc.CalculateInstallPrefixExecutable("cargo")
+	if err != nil {
+		return err
+	}
+
+	//	prefix := path.Join(self.bs.GetDIR_DESTDIR(), install_prefix)
+	//	sysconfdir := path.Join(self.bs.GetDIR_DESTDIR(), "/etc")
+	//	docdir := path.Join(prefix, "share", "doc", "rust-"+info.PackageVersion)
+
+	//	//	libdir, err := calc.CalculateInstallLibDir()
+	//	//	if err != nil {
+	//	//		return err
+	//	//	}
+	//	//	libdir = path.Join(self.bs.GetDIR_DESTDIR(), libdir)
+	//	localstatedir := path.Join(self.bs.GetDIR_DESTDIR(), "/var")
 
 	err = os.MkdirAll(prefix, 0700)
 	if err != nil {
 		return err
 	}
 
+	//	bits, err := calc.CalculateMultilibVariant()
+	//	if err != nil {
+	//		return err
+	//	}
+
 	cfg_txt := `
 [llvm]
 ` +
+		"link-shared = true\n" +
 		`
 [build]
 ` +
-		//		"rustc = '" + rustc + "'\n" +
-		//		"cargo = '" + cargo + "'\n" +
+		"rustc = '" + rustc + "'\n" +
+		"cargo = '" + cargo + "'\n" +
 		"build = 'x86_64-unknown-linux-gnu'" + "\n" +
 		"host = ['x86_64-unknown-linux-gnu']" + "\n" +
 		"target = ['x86_64-unknown-linux-gnu']" + "\n" +
 		//		"target = ['x86_64-pc-linux-gnu', 'i686-pc-linux-gnu']" + "\n" +
 		//		"target = ['" + info.HostArch + "']" + "\n" +
+		//		"local-rebuild = true\n" +
+		"verbose = 1\n" +
+		//		"vendor = true\n" +
+		//		"extended = true\n" +
 		`
 [install]
 ` +
 		"prefix = '" + prefix + "'\n" +
 		"sysconfdir = '" + sysconfdir + "'\n" +
 		"docdir = '" + docdir + "'\n" +
-		"libdir = '" + libdir + "'\n" +
+		//		"libdir = '" + libdir + "'\n" +
 		"localstatedir = '" + localstatedir + "'\n" +
 		`
 [rust]
 [dist]
-[target.` + info.HostArch + `]
+[target.` + "x86_64-unknown-linux-gnu" + `]
 ` +
-		//		"cc = '" + info.Host + "-gcc'\n" +
-		//		"cxx = '" + info.Host + "-g++'\n" +
+		//		"cc = '" + info.Host + "-gcc -m" + bits + "'\n" +
+		//		"cxx = '" + info.Host + "-g++ -m" + bits + "'\n" +
 		//		"ar = '" + info.Host + "-ar'\n" +
-		//		"linker = '" + info.Host + "-gcc'\n" +
+		//		"linker = '" + info.Host + "-gcc -m" + bits + "'\n" +
+
 		"llvm-config = '" + llvmconfig + "'\n" +
 		""
 
@@ -211,10 +224,14 @@ func (self *Builder_rustc) BuilderActionDistribute(
 		return err
 	}
 
+	e := environ.NewFromStrings(os.Environ())
+	e.Set("DESTDIR", self.bs.GetDIR_DESTDIR())
+
 	cmd := exec.Command(python2, "./x.py", "install")
 	cmd.Dir = self.bs.GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
+	cmd.Env = e.Strings()
 
 	err = cmd.Run()
 	if err != nil {
