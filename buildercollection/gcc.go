@@ -137,9 +137,13 @@ func (self *Builder_gcc) AfterExtract(log *logger.Logger, err error) error {
 	}
 
 	NEEDED_PACKAGES := []string{
-		// TODO: I don't know what to do
+		// TODO: #0 I don't know what to do
+		// TODO: #1 probably, the best move here is to ignore packages absence
 		"gmp",
-		"mpc", "mpfr", "isl", "cloog",
+		"mpc",
+		"mpfr",
+		"isl",
+		"cloog",
 		// #"gmp",
 		// # NOTE: sometimes gcc could not compile with gmp.
 		// #       so use system gmp

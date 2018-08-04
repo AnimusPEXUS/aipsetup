@@ -19,7 +19,7 @@
   ],
   "Category": "nettools",
   "Groups": [
-    "core1",
+    "core0",
     "netfilter"
   ],
   "TarballFileNameParser": "std",
