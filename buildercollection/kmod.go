@@ -83,7 +83,7 @@ func (self *Builder_kmod) MakeLinks(log *logger.Logger) error {
 		}
 	}
 
-	err = os.Symlink("./kmod", path.Join(sbin, "lsmod"))
+	err = os.Symlink("./kmod", path.Join(bin, "lsmod"))
 	if err != nil {
 		return err
 	}

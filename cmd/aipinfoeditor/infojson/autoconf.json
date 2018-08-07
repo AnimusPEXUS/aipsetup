@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "https://www.gnu.org/software/autoconf",
-  "BuilderName": "std",
+  "BuilderName": "autoconf",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

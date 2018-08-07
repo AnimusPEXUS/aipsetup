@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "https://www.gnu.org/software/autoconf",
-  "BuilderName": "std",
+  "BuilderName": "autoconf",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -18,7 +18,9 @@
     "gnu_project"
   ],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "core0"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "autoconf",
   "TarballFilters": [
@@ -31,6 +33,6 @@
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
-  "DownloadPatches": false,
-  "PatchesDownloadingScriptText": ""
+  "DownloadPatches": true,
+  "PatchesDownloadingScriptText": "#!/bin/bash\nwget -cr -nd -np -A 'autoconf-2.13-consolidated_fixes-*.patch' 'http://www.linuxfromscratch.org/patches/blfs/svn/'"
 }

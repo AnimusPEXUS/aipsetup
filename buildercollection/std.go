@@ -320,7 +320,7 @@ func (self *Builder_std) BuilderActionConfigureEnvDef(
 
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 
-	pkgcp, err := calc.CalculatePkgConfigSearchPaths()
+	pkgconfig, err := calc.GetPrefixPkgConfig()
 	if err != nil {
 		return env, err
 	}
@@ -355,7 +355,7 @@ func (self *Builder_std) BuilderActionConfigureEnvDef(
 		return env, err
 	}
 
-	env.Set("PKG_CONFIG_PATH", strings.Join(pkgcp, ":"))
+	env.Set("PKG_CONFIG_PATH", pkgconfig.GetPKG_CONFIG_PATH())
 	env.Set("LD_LIBRARY_PATH", strings.Join(ldlp, ":"))
 	env.Set("LIBRARY_PATH", strings.Join(lp, ":"))
 	env.Set("C_INCLUDE_PATH", strings.Join(ci, ":"))

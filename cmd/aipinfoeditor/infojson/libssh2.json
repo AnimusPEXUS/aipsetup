@@ -21,7 +21,9 @@
   "TarballName": "libssh2",
   "TarballFilters": [],
   "TarballProvider": "https",
-  "TarballProviderArguments": ["https://www.libssh2.org/download/"],
+  "TarballProviderArguments": [
+    "https://www.libssh2.org/download/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

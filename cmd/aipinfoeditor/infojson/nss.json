@@ -21,9 +21,13 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "nss",
-  "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballFilters": [
+    "- basename-re .*nspr.*"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.mozilla.org/pub/security/nss/releases/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

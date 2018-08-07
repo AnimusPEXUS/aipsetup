@@ -1,6 +1,9 @@
 package basictypes
 
-import "github.com/AnimusPEXUS/utils/environ"
+import (
+	"github.com/AnimusPEXUS/utils/environ"
+	"github.com/AnimusPEXUS/utils/pkgconfig"
+)
 
 type BuildingSiteValuesCalculatorI interface {
 	CalculateMultihostDir() string
@@ -43,7 +46,7 @@ type BuildingSiteValuesCalculatorI interface {
 
 	CalculateMainMultiarchLibDirName() (string, error)
 
-	CalculatePkgConfigSearchPaths() ([]string, error)
+	//	CalculatePkgConfigSearchPaths() ([]string, error)
 
 	Calculate_LD_LIBRARY_PATH() ([]string, error)
 	Calculate_LIBRARY_PATH() ([]string, error)
@@ -67,4 +70,6 @@ type BuildingSiteValuesCalculatorI interface {
 	CalculateOptAppDir(name string) string
 
 	CalculateInstallPrefixExecutable(name string) (string, error)
+
+	GetPrefixPkgConfig() (*pkgconfig.PkgConfig, error)
 }

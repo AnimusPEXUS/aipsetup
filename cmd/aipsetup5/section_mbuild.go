@@ -202,6 +202,12 @@ func CmdAipsetupMassBuildPerform(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
+
+	type ResStru struct {
+		name string
+		lst  map[string][]string
+	}
+
 	log := adds.PassData.(*logger.Logger)
 
 	_, sys, res := StdRoutineGetRootOptionAndSystemObject(
@@ -217,51 +223,62 @@ func CmdAipsetupMassBuildPerform(
 		return &cliapp.AppResult{Code: 10, Message: err.Error()}
 	}
 
-	_, f, err := mbuild.PerformMassBuilding()
+	s, f, err := mbuild.PerformMassBuilding()
 	if err != nil {
 		return &cliapp.AppResult{Code: 11, Message: err.Error()}
 	}
 
-	keys := make([]string, 0)
-	for k, _ := range f {
-		keys = append(keys, k)
+	t := []*ResStru{
+		&ResStru{
+			name: "success",
+			lst:  s,
+		},
+		&ResStru{
+			name: "fail",
+			lst:  f,
+		},
 	}
-
-	sort.Strings(keys)
-
-	failed := false
 
 	ts := basictypes.NewASPTimeStampFromCurrentTime()
 
-	fail_f, err := os.Create(
-		basictypes.MASSBUILDER_FAILED_LIST + "." + ts.String() + ".txt",
-	)
-	if err != nil {
-		return &cliapp.AppResult{
-			Code:    13,
-			Message: "error creating failed build list",
-		}
-	}
+	failed := false
 
-	for _, i := range keys {
-		t := fmt.Sprintf("arch %s", i)
-		fmt.Println(t)
-		fail_f.WriteString(t + "\n")
-		sort.Strings(f[i])
-		for _, j := range f[i] {
-			t := fmt.Sprintf("   %s", j)
-			fmt.Println(t)
-			fail_f.WriteString(t + "\n")
-			failed = true
-		}
-	}
+	for i := 0; i != len(t); i++ {
 
-	err = fail_f.Close()
-	if err != nil {
-		return &cliapp.AppResult{
-			Code:    14,
-			Message: "error saving failed build list",
+		f, err := os.Create("02." + ts.String() + "." + t[i].name + ".txt")
+
+		if err != nil {
+			return &cliapp.AppResult{
+				Code:    13,
+				Message: "error creating " + t[i].name + " build report",
+			}
 		}
+
+		keys := make([]string, 0)
+
+		for k, _ := range t[i].lst {
+			keys = append(keys, k)
+		}
+
+		sort.Strings(keys)
+
+		for _, j := range keys {
+			t2 := fmt.Sprintf("arch %s", j)
+			fmt.Println(t2)
+			f.WriteString(t2 + "\n")
+			sort.Strings(t[i].lst[j])
+			for _, k := range t[i].lst[j] {
+				t2 := fmt.Sprintf("  "+t[i].name+" - %s", k)
+				fmt.Println(t2)
+				f.WriteString(t2 + "\n")
+				if !failed && i == 1 {
+					failed = true
+				}
+			}
+		}
+
+		f.Close()
+
 	}
 
 	if failed {

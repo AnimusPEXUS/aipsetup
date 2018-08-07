@@ -294,18 +294,23 @@ func CmdAipsetupSysInstall(
 		return res
 	}
 
-	errors := false
+	errors_lst := make([][2]string, 0)
 
 	for _, i := range getopt_result.Args {
 		res := sys.ASPs.InstallASP(i)
 
 		if res != nil {
 			log.Error(res.Error())
-			errors = true
+			errors_lst = append(errors_lst, [2]string{i, res.Error()})
 		}
 	}
 
-	if errors {
+	if len(errors_lst) != 0 {
+
+		for _, i := range errors_lst {
+			fmt.Println("  ", i[0], ":", i[1])
+		}
+
 		return &cliapp.AppResult{
 			Code:    10,
 			Message: "some packages was installed with errors",

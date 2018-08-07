@@ -171,11 +171,11 @@ func UIMainWindowNew() (*UIMainWindow, error) {
 						fallthrough
 					case 17:
 						c.SetFixedWidth(150)
-					case 19:
-						c.SetFixedWidth(150)
-					case 20:
+					case 21:
 						c.SetFixedWidth(200)
 					case 22:
+						c.SetFixedWidth(50)
+					case 23:
 						c.SetFixedWidth(400)
 					case 27:
 						c.SetFixedWidth(500)

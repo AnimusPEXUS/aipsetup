@@ -9,6 +9,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/environ"
 	"github.com/AnimusPEXUS/utils/filetools"
+	"github.com/AnimusPEXUS/utils/pkgconfig"
 	"github.com/AnimusPEXUS/utils/systemtriplet"
 	"github.com/AnimusPEXUS/utils/textlist"
 )
@@ -296,37 +297,37 @@ func (self *BuildingSiteValuesCalculator) CalculateMainMultiarchLibDirName() (
 	return "", errors.New("host or [host/hostarch] value not supported")
 }
 
-func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths() ([]string, error) {
+//func (self *BuildingSiteValuesCalculator) CalculatePkgConfigSearchPaths() ([]string, error) {
 
-	inst_prefix, err := self.CalculateInstallPrefix()
-	if err != nil {
-		return []string{}, err
-	}
+//	inst_prefix, err := self.CalculateInstallPrefix()
+//	if err != nil {
+//		return []string{}, err
+//	}
 
-	ret := make([]string, 0)
+//	ret := make([]string, 0)
 
-	prefix, err := self.CalculateInstallPrefix()
-	if err != nil {
-		return []string{}, nil
-	}
+//	prefix, err := self.CalculateInstallPrefix()
+//	if err != nil {
+//		return []string{}, nil
+//	}
 
-	for _, i := range []string{
-		path.Join(prefix, basictypes.DIRNAME_SHARE, "pkgconfig"),
-		path.Join(prefix, basictypes.DIRNAME_LIB, "pkgconfig"),
-		path.Join(prefix, basictypes.DIRNAME_LIB64, "pkgconfig"),
-		path.Join(inst_prefix, basictypes.DIRNAME_SHARE, "pkgconfig"),
-		path.Join(inst_prefix, basictypes.DIRNAME_LIB, "pkgconfig"),
-		path.Join(inst_prefix, basictypes.DIRNAME_LIB64, "pkgconfig"),
-	} {
-		if s, err := os.Stat(i); err == nil && s.IsDir() {
-			ret = append(ret, i)
-		}
-	}
+//	for _, i := range []string{
+//		path.Join(prefix, basictypes.DIRNAME_SHARE, "pkgconfig"),
+//		path.Join(prefix, basictypes.DIRNAME_LIB, "pkgconfig"),
+//		path.Join(prefix, basictypes.DIRNAME_LIB64, "pkgconfig"),
+//		path.Join(inst_prefix, basictypes.DIRNAME_SHARE, "pkgconfig"),
+//		path.Join(inst_prefix, basictypes.DIRNAME_LIB, "pkgconfig"),
+//		path.Join(inst_prefix, basictypes.DIRNAME_LIB64, "pkgconfig"),
+//	} {
+//		if s, err := os.Stat(i); err == nil && s.IsDir() {
+//			ret = append(ret, i)
+//		}
+//	}
 
-	ret = textlist.RemoveDuplicatedStrings(ret)
+//	ret = textlist.RemoveDuplicatedStrings(ret)
 
-	return ret, nil
-}
+//	return ret, nil
+//}
 
 func (self *BuildingSiteValuesCalculator) Calculate_LD_LIBRARY_PATH() (
 	[]string,
@@ -734,4 +735,19 @@ func (self *BuildingSiteValuesCalculator) CalculateInstallPrefixExecutable(name 
 	}
 
 	return program, nil
+}
+
+func (self *BuildingSiteValuesCalculator) GetPrefixPkgConfig() (*pkgconfig.PkgConfig, error) {
+
+	path, err := self.Calculate_PATH()
+	if err != nil {
+		return nil, err
+	}
+
+	ret, err := pkgconfig.NewPkgConfig(path, []string{})
+	if err != nil {
+		return nil, err
+	}
+
+	return ret, nil
 }
