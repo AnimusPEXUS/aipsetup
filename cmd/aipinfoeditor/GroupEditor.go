@@ -285,7 +285,7 @@ func (self *GroupEditor) ReloadInfo() error {
 				return err
 			}
 
-			gv, err = s.GetValue(it, 15)
+			gv, err = s.GetValue(it, GROUP_EDITOR_GROUPS_COLUMN)
 			if err != nil {
 				return err
 			}

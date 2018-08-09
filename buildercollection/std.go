@@ -46,30 +46,32 @@ type Builder_std struct {
 	//	ForceCrossbuilder CrossBuildEnum
 	//	ForceCrossbuild   CrossBuildEnum
 
-	EditActionsCB                    func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
-	AfterExtractCB                   func(log *logger.Logger, ret error) error
-	PatchCB                          func(log *logger.Logger) error
-	EditAutogenForceCB               func(log *logger.Logger, ret bool) (bool, error)
-	EditConfigureEnvCB               func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
-	EditConfigureArgsCB              func(log *logger.Logger, ret []string) ([]string, error)
-	EditConfigureScriptNameCB        func(log *logger.Logger, ret string) (string, error)
-	EditConfigureDirCB               func(log *logger.Logger, ret string) (string, error)
-	EditConfigureWorkingDirCB        func(log *logger.Logger, ret string) (string, error)
-	EditConfigureRelativeExecutionCB func(log *logger.Logger, ret bool) (bool, error)
-	EditConfigureIsArgToShellCB      func(log *logger.Logger, ret bool) (bool, error)
-	EditBuildConcurentJobsCountCB    func(log *logger.Logger, ret int) int
-	EditBuildEnvCB                   func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
-	EditBuildArgsCB                  func(log *logger.Logger, ret []string) ([]string, error)
-	EditBuildMakefileNameCB          func(log *logger.Logger, ret string) (string, error)
-	EditBuildMakefileDirCB           func(log *logger.Logger, ret string) (string, error)
-	EditBuildWorkingDirCB            func(log *logger.Logger, ret string) (string, error)
-	EditDistributeEnvCB              func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
-	EditDistributeDESTDIRCB          func(log *logger.Logger, ret string) (string, error)
-	EditDistributeArgsCB             func(log *logger.Logger, ret []string) ([]string, error)
-	EditDistributeMakefileNameCB     func(log *logger.Logger, ret string) (string, error)
-	EditDistributeMakefileCB         func(log *logger.Logger, ret string) (string, error)
-	EditDistributeWorkingDirCB       func(log *logger.Logger, ret string) (string, error)
-	AfterDistributeCB                func(log *logger.Logger, ret error) error
+	EditActionsCB                       func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
+	AfterExtractCB                      func(log *logger.Logger, ret error) error
+	PatchCB                             func(log *logger.Logger) error
+	EditExtractMoreThanOneExtractedOkCB func(log *logger.Logger, value bool) (bool, error)
+	EditExtractUnwrapCB                 func(log *logger.Logger, value bool) (bool, error)
+	EditAutogenForceCB                  func(log *logger.Logger, ret bool) (bool, error)
+	EditConfigureEnvCB                  func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
+	EditConfigureArgsCB                 func(log *logger.Logger, ret []string) ([]string, error)
+	EditConfigureScriptNameCB           func(log *logger.Logger, ret string) (string, error)
+	EditConfigureDirCB                  func(log *logger.Logger, ret string) (string, error)
+	EditConfigureWorkingDirCB           func(log *logger.Logger, ret string) (string, error)
+	EditConfigureRelativeExecutionCB    func(log *logger.Logger, ret bool) (bool, error)
+	EditConfigureIsArgToShellCB         func(log *logger.Logger, ret bool) (bool, error)
+	EditBuildConcurentJobsCountCB       func(log *logger.Logger, ret int) int
+	EditBuildEnvCB                      func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
+	EditBuildArgsCB                     func(log *logger.Logger, ret []string) ([]string, error)
+	EditBuildMakefileNameCB             func(log *logger.Logger, ret string) (string, error)
+	EditBuildMakefileDirCB              func(log *logger.Logger, ret string) (string, error)
+	EditBuildWorkingDirCB               func(log *logger.Logger, ret string) (string, error)
+	EditDistributeEnvCB                 func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
+	EditDistributeDESTDIRCB             func(log *logger.Logger, ret string) (string, error)
+	EditDistributeArgsCB                func(log *logger.Logger, ret []string) ([]string, error)
+	EditDistributeMakefileNameCB        func(log *logger.Logger, ret string) (string, error)
+	EditDistributeMakefileCB            func(log *logger.Logger, ret string) (string, error)
+	EditDistributeWorkingDirCB          func(log *logger.Logger, ret string) (string, error)
+	AfterDistributeCB                   func(log *logger.Logger, ret error) error
 
 	bs basictypes.BuildingSiteCtlI
 }
@@ -156,6 +158,25 @@ func (self *Builder_std) BuilderActionExtract(
 ) error {
 	a_tools := new(buildingtools.Autotools)
 
+	more_than_one_extracted_ok := false
+	unwrap := true
+
+	if self.EditExtractMoreThanOneExtractedOkCB != nil {
+		var err error
+		more_than_one_extracted_ok, err = self.EditExtractMoreThanOneExtractedOkCB(log, more_than_one_extracted_ok)
+		if err != nil {
+			return err
+		}
+	}
+
+	if self.EditExtractUnwrapCB != nil {
+		var err error
+		unwrap, err = self.EditExtractUnwrapCB(log, unwrap)
+		if err != nil {
+			return err
+		}
+	}
+
 	main_tarball, err := self.bs.DetermineMainTarrball()
 	if err != nil {
 		return err
@@ -165,8 +186,8 @@ func (self *Builder_std) BuilderActionExtract(
 		path.Join(self.bs.GetDIR_TARBALL(), main_tarball),
 		self.bs.GetDIR_SOURCE(),
 		path.Join(self.bs.GetDIR_TEMP(), "primary_tarball"),
-		true,
-		false,
+		unwrap,
+		more_than_one_extracted_ok,
 		false,
 		log,
 	)
@@ -660,7 +681,12 @@ func (self *Builder_std) BuilderActionBuildMakefileDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.bs.GetDIR_SOURCE()
+	ret, err := self.BuilderActionConfigureDirDef(log)
+	if err != nil {
+		return "", err
+	}
+
+	//	ret := self.bs.GetDIR_SOURCE()
 
 	if self.EditBuildMakefileDirCB != nil {
 		var err error

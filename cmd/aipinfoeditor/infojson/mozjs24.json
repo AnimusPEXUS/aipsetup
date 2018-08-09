@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "",
+  "HomePage": "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey",
   "BuilderName": "mozjs",
   "Removable": true,
   "Reducible": true,
@@ -8,7 +8,7 @@
   "DontPreserveSharedObjects": false,
   "NonBuildable": false,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
   "BuildDeps": [],
@@ -17,13 +17,20 @@
   "Tags": [],
   "Category": "non_categorized",
   "Groups": [
+    "core0",
     "web"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "mozjs",
-  "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballFilters": [
+    "- version-\u003e 0",
+    "+ version-\u003e= 24",
+    "- version-\u003e= 25"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.mozilla.org/pub/spidermonkey/releases/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

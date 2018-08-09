@@ -75,8 +75,8 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 					// STD_OPTION_NAMED_INSTALLATION_TO_TARGET,
 				},
 				CheckArgs: true,
-				MinArgs:   1,
-				MaxArgs:   1,
+				MinArgs:   -1,
+				MaxArgs:   -1,
 			},
 
 			&cliapp.AppCmdNode{
@@ -297,6 +297,8 @@ func CmdAipsetupSysInstall(
 	errors_lst := make([][2]string, 0)
 
 	for _, i := range getopt_result.Args {
+		log.Info("Installing " + i)
+
 		res := sys.ASPs.InstallASP(i)
 
 		if res != nil {
@@ -379,6 +381,8 @@ func CmdAipsetupSysRemove(
 	// names := getopt_result.Args
 
 	for _, i := range getopt_result.Args {
+		log.Info("Removing" + i)
+
 		iname, err := basictypes.NewASPNameFromString(i)
 		if err != nil {
 			return &cliapp.AppResult{
