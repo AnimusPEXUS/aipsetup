@@ -49,9 +49,11 @@ type Builder_std struct {
 	EditActionsCB                       func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
 	AfterExtractCB                      func(log *logger.Logger, ret error) error
 	PatchCB                             func(log *logger.Logger) error
-	EditExtractMoreThanOneExtractedOkCB func(log *logger.Logger, value bool) (bool, error)
-	EditExtractUnwrapCB                 func(log *logger.Logger, value bool) (bool, error)
+	AfterAutogenCB                      func(log *logger.Logger, ret error) error
+	EditExtractMoreThanOneExtractedOkCB func(log *logger.Logger, ret bool) (bool, error)
+	EditExtractUnwrapCB                 func(log *logger.Logger, ret bool) (bool, error)
 	EditAutogenForceCB                  func(log *logger.Logger, ret bool) (bool, error)
+	EditAutogenFailIsOkCB               func(log *logger.Logger, ret bool) (bool, error)
 	EditConfigureEnvCB                  func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
 	EditConfigureArgsCB                 func(log *logger.Logger, ret []string) ([]string, error)
 	EditConfigureScriptNameCB           func(log *logger.Logger, ret string) (string, error)
@@ -235,6 +237,16 @@ func (self *Builder_std) BuilderActionAutogenForce(log *logger.Logger) (bool, er
 func (self *Builder_std) BuilderActionAutogen(log *logger.Logger) error {
 	needs_autogen := false
 
+	var err error
+
+	fail_is_ok := false
+	if self.EditAutogenFailIsOkCB != nil {
+		fail_is_ok, err = self.EditAutogenFailIsOkCB(log, fail_is_ok)
+		if err != nil {
+			return err
+		}
+	}
+
 	config_script_name, err := self.BuilderActionConfigureScriptNameDef(log)
 	if err != nil {
 		return err
@@ -318,7 +330,11 @@ func (self *Builder_std) BuilderActionAutogen(log *logger.Logger) error {
 		err = c.Run()
 		if err != nil {
 			log.Error("  error: " + err.Error())
-			return err
+			if fail_is_ok {
+				return nil
+			} else {
+				return err
+			}
 		}
 
 		log.Info("autogen exited success code")
@@ -328,7 +344,14 @@ func (self *Builder_std) BuilderActionAutogen(log *logger.Logger) error {
 	}
 
 	if !generated {
-		return errors.New("couldn't find suitable generator")
+		err = errors.New("couldn't find suitable generator")
+	}
+
+	if self.AfterAutogenCB != nil {
+		err = self.AfterAutogenCB(log, err)
+		if err != nil {
+			return err
+		}
 	}
 
 	return nil

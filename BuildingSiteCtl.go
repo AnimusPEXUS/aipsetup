@@ -389,7 +389,7 @@ main_loop:
 	for _, i := range actions {
 		for _, j := range targets {
 			if i.Name == j {
-				l.Info(fmt.Sprintf("---====//////[START %s]\\\\\\\\\\\\====---", j))
+				l.Info(fmt.Sprintf("---===="+`//////`+"[STRT %s]"+`\\\\\\`+"====---", j))
 				lo, err := self.CreateLogger(j, true)
 				if err != nil {
 					return err
@@ -397,9 +397,10 @@ main_loop:
 				err = i.Callable(lo)
 				lo.Close()
 				if err != nil {
+					l.Error(fmt.Sprintf("---===="+`++++++`+"[FAIL %s]"+`++++++`+"====---", j))
 					return err
 				}
-				l.Info(fmt.Sprintf("---====\\\\\\\\\\\\[STOP  %s]//////====---", j))
+				l.Info(fmt.Sprintf("---===="+`\\\\\\`+"[STOP %s]"+`//////`+"====---", j))
 				continue main_loop
 			}
 		}
