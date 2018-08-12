@@ -66,7 +66,9 @@ func SectionAipsetupMBuild() *cliapp.AppCmdNode {
 
 				CheckArgs: true,
 				MinArgs:   0,
-				MaxArgs:   0,
+				MaxArgs:   -1,
+
+				Description: "if args count == 0, all tarballs wil be tried.",
 			},
 		},
 	}
@@ -223,7 +225,7 @@ func CmdAipsetupMassBuildPerform(
 		return &cliapp.AppResult{Code: 10, Message: err.Error()}
 	}
 
-	s, f, err := mbuild.PerformMassBuilding()
+	s, f, err := mbuild.PerformMassBuilding(getopt_result.Args)
 	if err != nil {
 		return &cliapp.AppResult{Code: 11, Message: err.Error()}
 	}

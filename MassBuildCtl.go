@@ -107,11 +107,14 @@ func (self *MassBuildCtl) GetAspsPath() string {
 	return path.Join(self.path, basictypes.MASSBUILDER_ASPS_DIR)
 }
 
-func (self *MassBuildCtl) PerformMassBuilding() (
+// if len(tarballs) == 0  - all will be done
+func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 	map[string][]string,
 	map[string][]string,
 	error,
 ) {
+	var err error
+
 	info, err := self.ReadInfo()
 	if err != nil {
 		return nil, nil, err
@@ -125,9 +128,11 @@ func (self *MassBuildCtl) PerformMassBuilding() (
 	host := info.Host
 	archs := info.HostArchs
 
-	tarballs, err := self.tarballsList()
-	if err != nil {
-		return nil, nil, err
+	if len(tarballs) == 0 {
+		tarballs, err = self.tarballsList()
+		if err != nil {
+			return nil, nil, err
+		}
 	}
 
 	sret := make(map[string][]string)
@@ -210,10 +215,10 @@ func (self *MassBuildCtl) checkAlreadyReady(
 func (self *MassBuildCtl) findBuildingSite(
 	pkgname, version,
 	host, hostarch string,
-) (*BuildingSiteCtl, error) {
+) (*BuildingSiteCtl, bool, error) {
 	files, err := ioutil.ReadDir(self.path)
 	if err != nil {
-		return nil, err
+		return nil, false, err
 	}
 
 dirs_search:
@@ -248,11 +253,11 @@ dirs_search:
 				nbs_info.PackageVersion == version &&
 				nbs_info.Host == host &&
 				nbs_info.HostArch == hostarch {
-				return nbs, nil
+				return nbs, true, nil
 			}
 		}
 	}
-	return nil, errors.New("not found")
+	return nil, false, nil
 }
 
 func (self *MassBuildCtl) createBuildingSite(
@@ -340,6 +345,8 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 		return err
 	}
 
+	already_done := false
+
 	if ok, err := self.checkAlreadyReady(
 		pkgname,
 		vstr,
@@ -349,7 +356,7 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 	} else {
 		if ok {
 			self.log.Info("  already done")
-			return nil
+			already_done = true
 		}
 	}
 
@@ -359,48 +366,76 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 		"trying to find " + pkgname + "-" + vstr + "-" + host + "-" + hostarch,
 	)
 
-	if tbs, err := self.findBuildingSite(
-		pkgname, vstr, host, hostarch,
-	); err != nil {
-		self.log.Info("  finding error: " + err.Error())
-		tbs, err := self.createBuildingSite(pkgname, host, hostarch, tarball_parsed)
+	if tbs, found, err := self.findBuildingSite(pkgname, vstr, host, hostarch); err != nil {
+		self.log.Error("  finding error: " + err.Error())
+		return err
+	} else {
+
+		if found {
+			bs = tbs
+			self.log.Info("  found existing bs: " + bs.path)
+		} else {
+
+			if already_done {
+				return nil
+			} else {
+				self.log.Info("  creating new bs")
+				tbs, err := self.createBuildingSite(pkgname, host, hostarch, tarball_parsed)
+				if err != nil {
+					return err
+				}
+				self.log.Info("     " + tbs.GetPath())
+				bs = tbs
+			}
+		}
+	}
+
+	if already_done {
+		self.log.Info(
+			"this bs's package already complete, so this bs going to be removed",
+		)
+	}
+
+	if !already_done {
+
+		self.log.Info("getting sources and patches..")
+
+		err = bs.GetSources()
 		if err != nil {
 			return err
 		}
-		bs = tbs
-	} else {
-		bs = tbs
-		self.log.Info("  using existing: " + bs.path)
+
+		self.log.Info("getting action list..")
+
+		bs_actions, err := bs.ListActions()
+		if err != nil {
+			return err
+		}
+
+		self.log.Info("running actions: " + strings.Join(bs_actions, ", ") + "..")
+
+		err = bs.Run(bs_actions)
+		if err != nil {
+			return err
+		}
+
+		self.log.Info("run complete")
+
 	}
-
-	self.log.Info("getting sources and patches..")
-
-	err = bs.GetSources()
-	if err != nil {
-		return err
-	}
-
-	self.log.Info("getting action list..")
-
-	bs_actions, err := bs.ListActions()
-	if err != nil {
-		return err
-	}
-
-	self.log.Info("running actions: " + strings.Join(bs_actions, ", ") + "..")
-
-	err = bs.Run(bs_actions)
-	if err != nil {
-		return err
-	}
-
-	self.log.Info("run complete")
 
 	if ok, err := self.checkAlreadyReady(pkgname, vstr, host, hostarch); err != nil {
 		return err
 	} else {
 		if !ok {
-			return errors.New("not built yet")
+			return errors.New("not built yet. but we need it to be. so this is error")
+		} else {
+			self.log.Info("removing bs which already done")
+			err = os.RemoveAll(bs.GetPath())
+			if err != nil {
+				return err
+			}
+			return nil
+
 		}
 	}
 
