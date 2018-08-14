@@ -89,6 +89,11 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 				CheckArgs: true,
 				MinArgs:   1,
 				MaxArgs:   -1,
+
+				Description: "you have to pass asp filename. all other found " +
+					"installations of this package and of same arch - will be reduced. " +
+					"passing multiple asp names, is same as running 'reduce-to' " +
+					"separately for each of them",
 			},
 
 			&cliapp.AppCmdNode{

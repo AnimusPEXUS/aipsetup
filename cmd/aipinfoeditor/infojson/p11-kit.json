@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "https://p11-glue.github.io/",
-  "BuilderName": "p11_kit",
+  "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

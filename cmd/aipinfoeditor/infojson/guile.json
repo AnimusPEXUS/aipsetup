@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "https://www.gnu.org/software/guile",
-  "BuilderName": "std",
+  "BuilderName": "guile",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -24,7 +24,10 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "guile",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-\u003e 0",
+    "+ version-\u003e= 2.2"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://ftp.gnu.org/gnu/guile"

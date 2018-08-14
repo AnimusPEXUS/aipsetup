@@ -358,6 +358,16 @@ func (self *BuildingSiteCtl) Run(targets []string) error {
 		return err
 	}
 
+	l.Info("Determined Package Info")
+	{
+		json, err := tarball_info.RenderJSON()
+		if err != nil {
+			return err
+		}
+
+		l.Info(json)
+	}
+
 	builder_name := tarball_info.BuilderName
 
 	builder, err := buildercollection.Get(builder_name, self)

@@ -1,5 +1,10 @@
 package basictypes
 
+import (
+	"bytes"
+	"encoding/json"
+)
+
 type PackageInfo struct {
 	Description string
 	HomePage    string
@@ -40,4 +45,20 @@ type PackageInfo struct {
 
 	DownloadPatches              bool
 	PatchesDownloadingScriptText string
+}
+
+func (self *PackageInfo) RenderJSON() (string, error) {
+	data, err := json.Marshal(self)
+	if err != nil {
+		return "", err
+	}
+
+	b := &bytes.Buffer{}
+
+	err = json.Indent(b, data, "  ", "  ")
+	if err != nil {
+		return "", err
+	}
+
+	return b.String(), nil
 }
