@@ -160,6 +160,8 @@ func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 			continue
 		}
 
+		all_archs_succeeded := true
+
 		for _, arch := range archs {
 
 			if pkginfo.PrimaryInstallOnly && host != arch {
@@ -172,6 +174,8 @@ func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 			res := self.fullBuildTarball(bi, host, arch)
 			if res != nil {
 				self.log.Error("building failed: " + res.Error())
+			} else {
+				all_archs_succeeded = false
 			}
 
 			var vret map[string][]string
@@ -187,6 +191,16 @@ func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 			}
 			vret[arch] = append(vret[arch], bi)
 			self.log.Info("")
+		}
+
+		if all_archs_succeeded {
+			self.log.Info("moving succeeded tarball to separate dir")
+			dtbp := self.GetDoneTarballsPath()
+			tbm := path.Base(bi)
+			err = os.Rename(bi, path.Join(dtbp, tbm))
+			if err != nil {
+				return nil, nil, err
+			}
 		}
 	}
 
@@ -441,16 +455,6 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 	if bs != nil && already_done {
 		self.log.Info("removing bs which already done")
 		err = os.RemoveAll(bs.GetPath())
-		if err != nil {
-			return err
-		}
-	}
-
-	self.log.Info("moving succeeded tarball to separate dir")
-	{
-		dtbp := self.GetDoneTarballsPath()
-		tbm := path.Base(tarballname)
-		err = os.Rename(tarballname, path.Join(dtbp, tbm))
 		if err != nil {
 			return err
 		}
