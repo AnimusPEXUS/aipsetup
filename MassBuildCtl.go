@@ -426,6 +426,8 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 
 		self.log.Info("run complete")
 
+		already_done = true
+
 	}
 
 	if ok, err := self.checkAlreadyReady(pkgname, vstr, host, hostarch); err != nil {
@@ -436,10 +438,12 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 		}
 	}
 
-	self.log.Info("removing bs which already done")
-	err = os.RemoveAll(bs.GetPath())
-	if err != nil {
-		return err
+	if bs != nil && already_done {
+		self.log.Info("removing bs which already done")
+		err = os.RemoveAll(bs.GetPath())
+		if err != nil {
+			return err
+		}
 	}
 
 	self.log.Info("moving succeeded tarball to separate dir")
