@@ -31,8 +31,7 @@
     "git",
     "https://github.com/acpica/acpica.git",
     "acpica-unix",
-    "TagName:^R$",
-    "TagFilters:+"
+    "TagName:^R$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

@@ -34,8 +34,7 @@
     "git",
     "https://git.kernel.org/pub/scm/linux/kernel/git/morgan/libcap.git",
     "libcap",
-    "TagName:^libcap$",
-    "TagFilters:+"
+    "TagName:^libcap$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

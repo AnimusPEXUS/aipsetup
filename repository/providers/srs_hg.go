@@ -133,7 +133,19 @@ func (self *SRSHg) MakeTarballs(
 		TagTarballRenderer = tt
 	}
 
-	TagFilters, TagFiltersUse := t.GetSingle("TagFilters", true)
+	TagFiltersUse := true
+	TagFilterskgName := self.srs.pkg_name
+
+	{
+		TagFiltersTagTxt, TagFiltersTagPassed := t.GetSingle("TagFilters", true)
+		if TagFiltersTagPassed {
+			if TagFiltersTagTxt == "-" {
+				TagFiltersUse = false
+			} else {
+				TagFilterskgName = TagFiltersTagTxt
+			}
+		}
+	}
 
 	// TODO: do srs SyncDepth should also be moved from InfoDB to srs args?
 	truncate_versions := info.TarballProviderVersionSyncDepth
@@ -217,17 +229,12 @@ func (self *SRSHg) MakeTarballs(
 			}
 
 			if TagFiltersUse {
-				info := self.srs.pkg_info
-				switch TagFilters {
-				case "+":
-					info = self.srs.pkg_info
-				default:
-					var err error
-					info, err = pkginfodb.Get(TagFilters)
-					if err != nil {
-						return errors.New("can't get named info filters for srs")
-					}
+
+				info, err = pkginfodb.Get(TagFilterskgName)
+				if err != nil {
+					return errors.New("can't get named info filters for srs")
 				}
+
 				fres, err := pkginfodb.ApplyInfoFilter(
 					info,
 					[]string{i},

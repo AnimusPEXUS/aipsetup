@@ -27,7 +27,8 @@
   "TarballName": "openssl",
   "TarballFilters": [
     "- version-\u003e 0",
-    "+ version-\u003e= 1.1"
+    "+ version-\u003e= 1.0",
+    "- version-\u003e= 1.1"
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [

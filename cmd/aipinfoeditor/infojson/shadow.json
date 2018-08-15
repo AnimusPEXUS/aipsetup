@@ -31,8 +31,7 @@
     "git",
     "https://github.com/shadow-maint/shadow",
     "shadow",
-    "TagName:^$",
-    "TagFilters:+"
+    "TagName:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

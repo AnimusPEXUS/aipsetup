@@ -32,8 +32,7 @@
     "https://www.kismetwireless.net/git/kismet.git",
     "kismet",
     "TagName:^[kK]ismet$",
-    "TagStatus:",
-    "TagFilters:+"
+    "TagStatus:"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "kismet",

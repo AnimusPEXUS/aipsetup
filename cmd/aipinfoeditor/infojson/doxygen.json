@@ -32,8 +32,7 @@
     "git",
     "https://github.com/doxygen/doxygen.git",
     "doxygen",
-    "TagName:^Release$",
-    "TagFilters:+"
+    "TagName:^Release$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
