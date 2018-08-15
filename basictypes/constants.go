@@ -21,10 +21,9 @@ const (
 	DIR_LISTS      = "06.LISTS"
 	DIR_TEMP       = "07.TEMP"
 
-	MASSBUILDER_INFO_FILENAME  = "00.massbuilder.info"
-	MASSBUILDER_ASPS_DIR       = "01.asps"
-	MASSBUILDER_FAILED_LIST    = "02.failed"
-	MASSBUILDER_SUCCEEDED_LIST = "02.succeeded"
+	MASSBUILDER_INFO_FILENAME = "00.massbuilder.info"
+	MASSBUILDER_ASPS_DIR      = "01.asps"
+	MASSBUILDER_DONE_TARBALLS = "03.done_tarballs"
 
 	PACKAGE_INFO_FILENAME     = "package_info.json"
 	PACKAGE_INFO_FILENAME_V5  = "package_info_v5.json"

@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/logger"
 )
@@ -63,6 +65,18 @@ func SectionAipsetupSysSetup() *cliapp.AppCmdNode {
 			&cliapp.AppCmdNode{
 				Name:     "reinstall-etc",
 				Callable: CmdAipsetupSysSetupReinstallEtc,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:             "make-system-workable",
+				ShortDescription: "runs all abowe commands in right order",
+				Callable:         CmdAipsetupSysSetupMakeWorkable,
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
 				},
@@ -189,6 +203,88 @@ func CmdAipsetupSysSetupReinstallEtc(
 			Message:          err.Error(),
 			DoNotPrintResult: false,
 		}
+	}
+
+	return nil
+}
+
+func CmdAipsetupSysSetupMakeWorkable(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	type Item struct {
+		name string
+		call func(*cliapp.GetOptResult, *cliapp.AdditionalInfo) *cliapp.AppResult
+		res  *cliapp.AppResult
+	}
+
+	log := adds.PassData.(*logger.Logger)
+
+	actions := []*Item{
+		&Item{
+			name: "regenerating locales",
+			call: CmdAipsetupSysSetupGenLocale,
+			res:  nil,
+		},
+		&Item{
+			name: "resetting users",
+			call: CmdAipsetupSysSetupResetUsers,
+			res:  nil,
+		},
+		&Item{
+			name: "resetting daemon home directories",
+			call: CmdAipsetupSysSetupResetDaemonHomes,
+			res:  nil,
+		},
+		&Item{
+			name: "resetting permissions",
+			call: CmdAipsetupSysSetupResetPermissions,
+			res:  nil,
+		},
+		&Item{
+			name: "reinstalling essential etc files",
+			call: CmdAipsetupSysSetupReinstallEtc,
+			res:  nil,
+		},
+	}
+
+	was_errors := false
+
+	for _, i := range actions {
+		i.res = i.call(getopt_result, adds)
+		if i.res != nil && i.res.Code != 0 {
+			was_errors = true
+		}
+	}
+
+	log.Info("^---^---^---^---^---^---^---")
+	log.Info("          RESULTS")
+	log.Info("--v---v---v---v---v---v---v-")
+
+	for _, i := range actions {
+
+		if i.res == nil || i.res.Code == 0 {
+			msg := fmt.Sprintf("=> %s : OK", i.name)
+			log.Info(msg)
+		} else {
+			msg := fmt.Sprintf(
+				"=> %s : FAILED : code %d ; message : %s",
+				i.name,
+				i.res.Code,
+				i.res.Message,
+			)
+			log.Error(msg)
+			if i.name == "resetting permissions" {
+				log.Info("     (yes, sometimes it fails. but it's ok in most cases.")
+				log.Info("            rerun separately to be sure.)")
+			}
+		}
+
+	}
+
+	if was_errors {
+		return &cliapp.AppResult{Code: 10, Message: "there was errors"}
 	}
 
 	return nil

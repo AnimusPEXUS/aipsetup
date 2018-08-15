@@ -107,6 +107,10 @@ func (self *MassBuildCtl) GetAspsPath() string {
 	return path.Join(self.path, basictypes.MASSBUILDER_ASPS_DIR)
 }
 
+func (self *MassBuildCtl) GetDoneTarballsPath() string {
+	return path.Join(self.path, basictypes.MASSBUILDER_DONE_TARBALLS)
+}
+
 // if len(tarballs) == 0  - all will be done
 func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 	map[string][]string,
@@ -121,6 +125,11 @@ func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 	}
 
 	err = os.MkdirAll(self.GetAspsPath(), 0700)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	err = os.MkdirAll(self.GetDoneTarballsPath(), 0700)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -163,8 +172,6 @@ func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 			res := self.fullBuildTarball(bi, host, arch)
 			if res != nil {
 				self.log.Error("building failed: " + res.Error())
-			} else {
-				// self.log.Info("building succeeded. removing buildingsite")
 			}
 
 			var vret map[string][]string
@@ -376,9 +383,7 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 			self.log.Info("  found existing bs: " + bs.path)
 		} else {
 
-			if already_done {
-				return nil
-			} else {
+			if !already_done {
 				self.log.Info("  creating new bs")
 				tbs, err := self.createBuildingSite(pkgname, host, hostarch, tarball_parsed)
 				if err != nil {
@@ -428,14 +433,22 @@ func (self *MassBuildCtl) fullBuildTarball(tarballname, host, hostarch string) e
 	} else {
 		if !ok {
 			return errors.New("not built yet. but we need it to be. so this is error")
-		} else {
-			self.log.Info("removing bs which already done")
-			err = os.RemoveAll(bs.GetPath())
-			if err != nil {
-				return err
-			}
-			return nil
+		}
+	}
 
+	self.log.Info("removing bs which already done")
+	err = os.RemoveAll(bs.GetPath())
+	if err != nil {
+		return err
+	}
+
+	self.log.Info("moving succeeded tarball to separate dir")
+	{
+		dtbp := self.GetDoneTarballsPath()
+		tbm := path.Base(tarballname)
+		err = os.Rename(tarballname, path.Join(dtbp, tbm))
+		if err != nil {
+			return err
 		}
 	}
 
