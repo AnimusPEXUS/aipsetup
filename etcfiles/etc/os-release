@@ -1,8 +1,8 @@
 NAME=Lilith
-VERSION="1 (Unreleased)"
-ID=unicorn
+VERSION="1"
+ID=lilith
 VERSION_ID=1
-PRETTY_NAME="Unicorn 1 (Unreleased)"
+PRETTY_NAME="Lilith 1 (Unreleased)"
 ANSI_COLOR="0;34"
-HOME_URL="https://wayround.org/"
-BUG_REPORT_URL="mailto://animus@wayround.org"
+HOME_URL="https://github.com/AnimusPEXUS/aipsetup/"
+BUG_REPORT_URL="mailto://AnimusPEXUS@ProtonMail.COM"
