@@ -39,6 +39,20 @@ func NewBuilder_openssl(bs basictypes.BuildingSiteCtlI) (*Builder_openssl, error
 
 func (self *Builder_openssl) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 	ret = ret.Remove("build")
+
+	// TODO: I don't like this. Need to add some better comparators
+	//	if info.PackageVersion == "1.0" || strings.HasPrefix(info.PackageVersion, "1.0.") {
+	//		ret = ret.AddActionsAfterName(
+	//			basictypes.BuilderActions{
+	//				&basictypes.BuilderAction{
+	//					Name : "depend",
+	//					Callable: self.BuilderActionMakeDepend
+	//				},
+	//			},
+	//			"configure",
+	//			)
+	//	}
+
 	return ret, nil
 }
 
@@ -59,13 +73,41 @@ func (self *Builder_openssl) EditConfigureArgs(log *logger.Logger, ret []string)
 		return nil, err
 	}
 
-	ret = []string{
-		"--prefix=" + install_prefix,
-		"--openssldir=/etc/ssl",
-		"shared",
-		"zlib-dynamic",
-		platform,
+	ret = make([]string, 0)
+
+	ret = append(
+		ret,
+		[]string{
+			"--prefix=" + install_prefix,
+			"--openssldir=/etc/ssl",
+		}...,
+	)
+
+	libdir_slice := []string{install_prefix, "lib"}
+
+	if info.PackageVersion == "0.9" || strings.HasPrefix(info.PackageVersion, "0.9.") {
+		libdir_slice = append(libdir_slice, "openssl-0.9")
 	}
+
+	if info.PackageVersion == "1.0" || strings.HasPrefix(info.PackageVersion, "1.0.") {
+		libdir_slice = append(libdir_slice, "openssl-1.0")
+	}
+
+	ret = append(
+		ret,
+		[]string{
+			"--libdir=" + path.Join(libdir_slice...),
+		}...,
+	)
+
+	ret = append(
+		ret,
+		[]string{
+			"shared",
+			"zlib-dynamic",
+			platform,
+		}...,
+	)
 
 	return ret, nil
 }
@@ -87,6 +129,7 @@ func (self *Builder_openssl) EditDistributeArgs(log *logger.Logger, ret []string
 	//	}
 
 	ret = []string{
+		"depend",
 		"install",
 		// FIXME: fix path join
 		"MANDIR=" + path.Join(install_prefix, "share", "man"),

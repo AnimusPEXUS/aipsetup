@@ -174,7 +174,6 @@ func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 			res := self.fullBuildTarball(bi, host, arch)
 			if res != nil {
 				self.log.Error("building failed: " + res.Error())
-			} else {
 				all_archs_succeeded = false
 			}
 
