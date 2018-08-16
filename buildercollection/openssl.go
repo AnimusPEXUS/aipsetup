@@ -1,10 +1,17 @@
 package buildercollection
 
 import (
+	"bytes"
+	"errors"
+	"fmt"
+	"io/ioutil"
+	"os"
 	"path"
+	"regexp"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -34,25 +41,53 @@ func NewBuilder_openssl(bs basictypes.BuildingSiteCtlI) (*Builder_openssl, error
 	self.EditConfigureScriptNameCB = self.EditConfigureScriptName
 	self.EditDistributeArgsCB = self.EditDistributeArgs
 
+	self.EditConfigureIsArgToShellCB = self.EditConfigureIsArgToShell
+
+	self.EditConfigureShellCB = self.EditConfigureShell
+	//	self.AfterDistributeCB = self.AfterDistribute
+
 	return self, nil
+}
+
+func (self *Builder_openssl) veredName() (string, error) {
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return "", err
+	}
+
+	spl := strings.Split(info.PackageVersion, ".")
+
+	ret := fmt.Sprintf(
+		"openssl-%s.%s",
+		spl[0],
+		spl[1],
+	)
+
+	return ret, nil
+}
+
+func (self *Builder_openssl) EditConfigureShell(log *logger.Logger, ret string) (string, error) {
+	return "perl", nil
+}
+
+func (self *Builder_openssl) EditConfigureIsArgToShell(log *logger.Logger, ret bool) (bool, error) {
+	return true, nil
 }
 
 func (self *Builder_openssl) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 	ret = ret.Remove("build")
-
-	// TODO: I don't like this. Need to add some better comparators
-	//	if info.PackageVersion == "1.0" || strings.HasPrefix(info.PackageVersion, "1.0.") {
-	//		ret = ret.AddActionsAfterName(
-	//			basictypes.BuilderActions{
-	//				&basictypes.BuilderAction{
-	//					Name : "depend",
-	//					Callable: self.BuilderActionMakeDepend
-	//				},
-	//			},
-	//			"configure",
-	//			)
-	//	}
-
+	ret, err := ret.AddActionsAfterName(
+		basictypes.BuilderActions{
+			&basictypes.BuilderAction{
+				Name:     "after_distribute",
+				Callable: self.BuilderActionAfterDistribute,
+			},
+		},
+		"distribute",
+	)
+	if err != nil {
+		return nil, err
+	}
 	return ret, nil
 }
 
@@ -83,14 +118,20 @@ func (self *Builder_openssl) EditConfigureArgs(log *logger.Logger, ret []string)
 		}...,
 	)
 
-	libdir_slice := []string{install_prefix, "lib"}
+	libdir_slice := []string{"lib"}
 
-	if info.PackageVersion == "0.9" || strings.HasPrefix(info.PackageVersion, "0.9.") {
-		libdir_slice = append(libdir_slice, "openssl-0.9")
-	}
+	{
 
-	if info.PackageVersion == "1.0" || strings.HasPrefix(info.PackageVersion, "1.0.") {
-		libdir_slice = append(libdir_slice, "openssl-1.0")
+		ver_name, err := self.veredName()
+		if err != nil {
+			return nil, err
+		}
+
+		// TODO: I don't like this. Need to add some better comparators
+		spl := strings.Split(info.PackageVersion, ".")
+		if !(spl[0] == "1" && spl[1] == "1") {
+			libdir_slice = append(libdir_slice, ver_name)
+		}
 	}
 
 	ret = append(
@@ -134,9 +175,151 @@ func (self *Builder_openssl) EditDistributeArgs(log *logger.Logger, ret []string
 		// FIXME: fix path join
 		"MANDIR=" + path.Join(install_prefix, "share", "man"),
 		// "MANSUFFIX=ssl",
-		//		"INSTALL_PREFIX=" + dst_install_prefix,
+		"INSTALL_PREFIX=" + self.bs.GetDIR_DESTDIR(),
 		"DESTDIR=" + self.bs.GetDIR_DESTDIR(),
 	}
 
 	return ret, nil
+}
+
+func (self *Builder_openssl) BuilderActionAfterDistribute(log *logger.Logger) error {
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	spl := strings.Split(info.PackageVersion, ".")
+
+	// TODO: I don't like this. Need to add some better version comparators
+
+	if spl[0] == "1" && spl[1] == "1" {
+		return nil
+	}
+
+	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
+	if err != nil {
+		return err
+	}
+
+	ver_name, err := self.veredName()
+	if err != nil {
+		return err
+	}
+
+	lib_dir := path.Join(dst_install_prefix, "lib")
+	lib_ossl_dir := ""
+	lib_dir_files, err := ioutil.ReadDir(lib_dir)
+	if err != nil {
+		return err
+	}
+
+	include_openssl := path.Join(dst_install_prefix, "include", "openssl")
+
+	include_openssl_ver := path.Join(dst_install_prefix, "include", ver_name)
+
+	err = os.Rename(include_openssl, include_openssl_ver)
+	if err != nil {
+		return err
+	}
+
+	for _, i := range lib_dir_files {
+		if strings.HasPrefix(i.Name(), "open") {
+			lib_ossl_dir = path.Join(lib_dir, i.Name())
+			break
+		}
+	}
+
+	if lib_ossl_dir == "" {
+		return errors.New("openssl* dir not found inside lib dir")
+	}
+
+	lib_ossl_dir_files, err := ioutil.ReadDir(lib_ossl_dir)
+	if err != nil {
+		return err
+	}
+
+	for _, i := range lib_ossl_dir_files {
+		fn := path.Join(lib_ossl_dir, i.Name())
+		if yes, err := regexp.MatchString(`lib.*\.so.*`, i.Name()); err != nil {
+			return err
+		} else {
+			if yes {
+				if s, err := os.Lstat(fn); err != nil {
+					//				if !os.IsNotExist(err ) {
+					return err
+					//				}
+				} else {
+					if !filetools.Is(s.Mode()).Symlink() {
+						nname := path.Join(lib_dir, i.Name())
+						// yes - hardlink
+						err = os.Link(fn, nname)
+						if err != nil {
+							return err
+						}
+					}
+				}
+			}
+		}
+	}
+
+	lib_ossl_pkgconfig_dir := path.Join(lib_ossl_dir, "pkgconfig")
+
+	if _, err := os.Stat(lib_ossl_pkgconfig_dir); err != nil {
+		return err
+	}
+
+	lib_ossl_pkgconfig_dir_files, err := ioutil.ReadDir(lib_ossl_pkgconfig_dir)
+	if err != nil {
+		return err
+	}
+
+	for _, i := range lib_ossl_pkgconfig_dir_files {
+		fn := path.Join(lib_ossl_pkgconfig_dir, i.Name())
+		if strings.HasSuffix(i.Name(), ".pc") {
+
+			ft, err := ioutil.ReadFile(fn)
+			if err != nil {
+				return err
+			}
+
+			ft = bytes.Replace(
+				ft,
+				[]byte("includedir=${prefix}/include"),
+				[]byte("includedir=${prefix}/include/"+ver_name),
+				-1,
+			)
+
+			err = ioutil.WriteFile(
+				fn[:len(fn)-3]+ver_name[len(ver_name)-4:]+".pc",
+				ft,
+				0700,
+			)
+			if err != nil {
+				return err
+			}
+
+			err = os.Remove(fn)
+			if err != nil {
+				return err
+			}
+
+		}
+	}
+
+	err = os.Rename(lib_ossl_pkgconfig_dir, path.Join(lib_dir, "pkgconfig"))
+	if err != nil {
+		return err
+	}
+
+	err = os.RemoveAll(path.Join(dst_install_prefix, "bin"))
+	if err != nil {
+		return err
+	}
+
+	err = os.RemoveAll(path.Join(dst_install_prefix, "share"))
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

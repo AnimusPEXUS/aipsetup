@@ -32,6 +32,7 @@ func NewPrePackager(site *BuildingSiteCtl) *PrePackager {
 
 func (self *PrePackager) Run(log *logger.Logger) error {
 	for _, i := range [](func(log *logger.Logger) error){
+		self.DestDirRenameEtc,
 		self.DestDirMoveRootToUsr,
 		self.DestDirMoveUsrToPrefix,
 	} {
@@ -40,6 +41,72 @@ func (self *PrePackager) Run(log *logger.Logger) error {
 			return err
 		}
 	}
+	return nil
+}
+
+func (self *PrePackager) DestDirRenameEtc(log *logger.Logger) error {
+
+	info, err := self.site.ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	log.Info("checking if /etc should be renamed")
+
+	if info.Host == info.HostArch {
+		log.Info("   no it's not: this is primary installation package")
+		return nil
+	}
+
+	dst_dir := self.site.GetDIR_DESTDIR()
+	dst_etc_dir := path.Join(dst_dir, "etc")
+	new_etc_name := fmt.Sprintf("etc.%s.%s.backup", info.Host, info.HostArch)
+	new_etc_dir := path.Join(dst_dir, new_etc_name)
+
+	if _, err := os.Stat(dst_etc_dir); err != nil {
+		if !os.IsNotExist(err) {
+			return err
+		}
+		log.Info("  /etc is not exists - exiting")
+		return nil
+	}
+
+	err = os.Rename(dst_etc_dir, new_etc_dir)
+	if err != nil {
+		return err
+	}
+
+	etc_profile_d := path.Join(dst_etc_dir, "profile.d")
+	etc_profile_d_set := path.Join(etc_profile_d, "SET")
+
+	new_etc_profile_d := path.Join(new_etc_dir, "profile.d")
+	new_etc_profile_d_set := path.Join(new_etc_profile_d, "SET")
+
+	if _, err := os.Stat(new_etc_profile_d_set); err != nil {
+		if !os.IsNotExist(err) {
+			return err
+		}
+		log.Info(
+			"  /" + path.Join(
+				new_etc_name,
+				"profile.d",
+				"SET",
+			) +
+				" is not exists - exiting",
+		)
+		return nil
+	}
+
+	err = os.MkdirAll(etc_profile_d, 0700)
+	if err != nil {
+		return err
+	}
+
+	err = os.Rename(new_etc_profile_d_set, etc_profile_d_set)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 

@@ -315,7 +315,9 @@ func (self Autotools) Configure(
 
 	ret := cmd.Run()
 
-	log.Info(cmd.ProcessState.String())
+	if ret != nil {
+		log.Error("process exited with error: " + ret.Error())
+	}
 
 	return ret
 }

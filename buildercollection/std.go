@@ -60,6 +60,7 @@ type Builder_std struct {
 	EditConfigureDirCB                  func(log *logger.Logger, ret string) (string, error)
 	EditConfigureWorkingDirCB           func(log *logger.Logger, ret string) (string, error)
 	EditConfigureRelativeExecutionCB    func(log *logger.Logger, ret bool) (bool, error)
+	EditConfigureShellCB                func(log *logger.Logger, ret string) (string, error)
 	EditConfigureIsArgToShellCB         func(log *logger.Logger, ret bool) (bool, error)
 	EditBuildConcurentJobsCountCB       func(log *logger.Logger, ret int) int
 	EditBuildEnvCB                      func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
@@ -550,6 +551,23 @@ func (self *Builder_std) BuilderActionConfigureRelativeExecutionDef(
 	return ret, nil
 }
 
+func (self *Builder_std) BuilderActionConfigureShellDef(
+	log *logger.Logger,
+) (string, error) {
+
+	ret := "bash"
+
+	if self.EditConfigureShellCB != nil {
+		var err error
+		ret, err = self.EditConfigureShellCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
+}
+
 func (self *Builder_std) BuilderActionConfigureIsArgToShellDef(
 	log *logger.Logger,
 ) (bool, error) {
@@ -606,6 +624,11 @@ func (self *Builder_std) BuilderActionConfigure(
 		return err
 	}
 
+	shell, err := self.BuilderActionConfigureShellDef(log)
+	if err != nil {
+		return err
+	}
+
 	is_arg_to_shell, err := self.BuilderActionConfigureIsArgToShellDef(log)
 	if err != nil {
 		return err
@@ -620,7 +643,7 @@ func (self *Builder_std) BuilderActionConfigure(
 		wd,
 		is_rel,
 		is_arg_to_shell,
-		"bash",
+		shell,
 		log,
 	)
 	if err != nil {
