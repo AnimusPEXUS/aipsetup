@@ -57,6 +57,8 @@ func (self *Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 	log.Info("Checking paths correctness")
 
 	var allowed_in_root = []string{"multihost", "etc", "var", "boot"}
+	// also all dirs starting with etc. should be allowed in root
+
 	// others not allowed in root
 
 	var allowed_in_host = []string{
@@ -108,7 +110,7 @@ func (self *Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 		for _, i := range files {
 
 			for _, j := range allowed_in_root {
-				if i.Name() == j {
+				if i.Name() == j || strings.HasPrefix(i.Name(), "etc.") {
 					continue loop
 				}
 			}

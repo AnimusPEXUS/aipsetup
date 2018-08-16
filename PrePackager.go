@@ -54,9 +54,11 @@ func (self *PrePackager) DestDirRenameEtc(log *logger.Logger) error {
 	log.Info("checking if /etc should be renamed")
 
 	if info.Host == info.HostArch {
-		log.Info("   no it's not: this is primary installation package")
+		log.Info("   no, it's not: this is primary installation package")
 		return nil
 	}
+
+	log.Info("   Yes: this is secondary installation")
 
 	dst_dir := self.site.GetDIR_DESTDIR()
 	dst_etc_dir := path.Join(dst_dir, "etc")
@@ -70,6 +72,8 @@ func (self *PrePackager) DestDirRenameEtc(log *logger.Logger) error {
 		log.Info("  /etc is not exists - exiting")
 		return nil
 	}
+
+	log.Info("  /etc going to be renamed as /" + new_etc_name)
 
 	err = os.Rename(dst_etc_dir, new_etc_dir)
 	if err != nil {
@@ -96,6 +100,10 @@ func (self *PrePackager) DestDirRenameEtc(log *logger.Logger) error {
 		)
 		return nil
 	}
+
+	log.Info(
+		"/" + new_etc_name + "/profile.d/SET is found and will be moved to /etc",
+	)
 
 	err = os.MkdirAll(etc_profile_d, 0700)
 	if err != nil {

@@ -792,7 +792,8 @@ func (self *BuildingSiteCtl) PrintCalculations() error {
 		"Calculated --host --build --target options for autotools configurations:",
 	)
 
-	if ops, err := self.GetBuildingSiteValuesCalculator().CalculateAutotoolsHBTOptions(); err != nil {
+	if ops, err := self.GetBuildingSiteValuesCalculator().
+		CalculateAutotoolsHBTOptions(); err != nil {
 		fmt.Println(" error:", err)
 	} else {
 		for _, i := range ops {

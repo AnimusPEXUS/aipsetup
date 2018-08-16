@@ -321,5 +321,10 @@ func (self *Builder_openssl) BuilderActionAfterDistribute(log *logger.Logger) er
 		return err
 	}
 
+	err = os.RemoveAll(path.Join(self.bs.GetDIR_DESTDIR(), "etc"))
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
