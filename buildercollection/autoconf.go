@@ -41,13 +41,8 @@ func NewBuilder_autoconf(bs basictypes.BuildingSiteCtlI) (*Builder_autoconf, err
 }
 
 func (self *Builder_autoconf) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
-	err := ret.Replace(
-		"patch",
-		&basictypes.BuilderAction{
-			Name:     "patch",
-			Callable: self.BuilderActionPatch,
-		},
-	)
+
+	err := ret.ReplaceShort("patch", self.BuilderActionPatch)
 	if err != nil {
 		return nil, err
 	}
@@ -103,27 +98,31 @@ func (self *Builder_autoconf) BuilderActionPatch(
 
 func (self *Builder_autoconf) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	//	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
-	//	if err != nil {
-	//		return nil, err
-	//	}
+	info, err := self.bs.ReadInfo()
+	if err != nil {
+		return nil, err
+	}
 
 	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
 
-	//	dst_dir := self.bs.GetDIR_DESTDIR()
-
 	ret = append(
 		ret,
 		[]string{
-			"--program-suffix=2.13",
 			"--datarootdir=" + path.Join(dst_install_prefix, "share"),
-			//			"--datadir=" + path.Join(dst_install_prefix, "share"),
-			//			"--infodir=" + path.Join(dst_install_prefix, "share", "info"),
 		}...,
 	)
+
+	if info.PackageName == "autoconf" && info.PackageVersion == "2.13" {
+		ret = append(
+			ret,
+			[]string{
+				"--program-suffix=2.13",
+			}...,
+		)
+	}
 
 	for i := len(ret) - 1; i != -1; i -= 1 {
 		if strings.HasPrefix(ret[i], "--docdir=") ||
