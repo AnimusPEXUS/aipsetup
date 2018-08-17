@@ -6,9 +6,11 @@ import (
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
+type BuilderActionCallable func(log *logger.Logger) error
+
 type BuilderAction struct {
 	Name     string
-	Callable func(log *logger.Logger) error
+	Callable BuilderActionCallable
 }
 
 type BuilderActions []*BuilderAction
@@ -36,6 +38,19 @@ func (self BuilderActions) Replace(name string, action *BuilderAction) error {
 	}
 
 	return errors.New("not found")
+}
+
+func (self BuilderActions) ReplaceShort(name string, callable BuilderActionCallable) error {
+
+	ret := self.Replace(
+		name,
+		&BuilderAction{
+			Name:     name,
+			Callable: callable,
+		},
+	)
+
+	return ret
 }
 
 func (self BuilderActions) Remove(name string) BuilderActions {

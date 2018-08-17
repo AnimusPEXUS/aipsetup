@@ -63,6 +63,7 @@ func (self *Builder_autoconf) BuilderActionPatch(
 		return err
 	}
 
+	// TODO: create and use better version comparator
 	if info.PackageName == "autoconf" && info.PackageVersion == "2.13" {
 		ptch_dir := self.bs.GetDIR_PATCHES()
 		ptch_dir_files, err := ioutil.ReadDir(ptch_dir)
@@ -102,19 +103,25 @@ func (self *Builder_autoconf) BuilderActionPatch(
 
 func (self *Builder_autoconf) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	//	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	//	if err != nil {
+	//		return nil, err
+	//	}
+
+	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
 
-	dst_dir := self.bs.GetDIR_DESTDIR()
+	//	dst_dir := self.bs.GetDIR_DESTDIR()
 
 	ret = append(
 		ret,
 		[]string{
 			"--program-suffix=2.13",
-			"--datadir=" + path.Join(dst_dir, install_prefix, "share"),
-			"--infodir=" + path.Join(dst_dir, install_prefix, "share", "info"),
+			"--datarootdir=" + path.Join(dst_install_prefix, "share"),
+			//			"--datadir=" + path.Join(dst_install_prefix, "share"),
+			//			"--infodir=" + path.Join(dst_install_prefix, "share", "info"),
 		}...,
 	)
 
