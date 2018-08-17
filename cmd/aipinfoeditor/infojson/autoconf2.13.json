@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "https://www.gnu.org/software/autoconf",
-  "BuilderName": "autoconf",
+  "BuilderName": "autoconf2.13",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
