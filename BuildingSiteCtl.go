@@ -410,7 +410,7 @@ main_loop:
 					l.Error(fmt.Sprintf("---===="+`++++++`+"[FAIL %s]"+`++++++`+"====---", j))
 					return err
 				}
-				l.Info(fmt.Sprintf("---===="+`\\\\\\`+"[STOP %s]"+`//////`+"====---", j))
+				l.Info(fmt.Sprintf("---===="+`\\\\\\`+"[DONE %s]"+`//////`+"====---", j))
 				continue main_loop
 			}
 		}

@@ -26,6 +26,8 @@ func NewBuilder_make(bs basictypes.BuildingSiteCtlI) (*Builder_make, error) {
 
 	self.Builder_std = NewBuilder_std(bs)
 
+	self.EditActionsCB = self.EditActions
+
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
 	return self, nil
@@ -59,7 +61,6 @@ func (self *Builder_make) BuilderActionPatch(log *logger.Logger) error {
 		if err != nil {
 			return err
 		}
-
 	}
 
 	return nil
