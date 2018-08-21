@@ -35,7 +35,10 @@ func NewBuilder_make(bs basictypes.BuildingSiteCtlI) (*Builder_make, error) {
 
 func (self *Builder_make) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	err := ret.ReplaceShort("patch", self.BuilderActionPatch)
+	ret, err := ret.AddActionAfterNameShort(
+		"extract",
+		"patch", self.BuilderActionPatch,
+	)
 	if err != nil {
 		return nil, err
 	}

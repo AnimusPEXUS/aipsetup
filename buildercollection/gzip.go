@@ -36,7 +36,10 @@ func NewBuilder_gzip(bs basictypes.BuildingSiteCtlI) (*Builder_gzip, error) {
 
 func (self *Builder_gzip) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	err := ret.ReplaceShort("patch", self.BuilderActionPatch)
+	ret, err := ret.AddActionAfterNameShort(
+		"extract",
+		"patch", self.BuilderActionPatch,
+	)
 	if err != nil {
 		return nil, err
 	}

@@ -26,16 +26,23 @@ func NewBuilder_less(bs basictypes.BuildingSiteCtlI) (*Builder_less, error) {
 
 	self.Builder_std = NewBuilder_std(bs)
 
-	self.AfterDistributeCB = self.AfterDistribute
-
 	return self, nil
 }
 
-func (self *Builder_less) AfterDistribute(log *logger.Logger, ret error) error {
+func (self *Builder_less) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	if ret != nil {
-		return ret
+	ret, err := ret.AddActionAfterNameShort(
+		"distribute",
+		"after-distribute", self.BuilderActionAfterDistribute,
+	)
+	if err != nil {
+		return nil, err
 	}
+
+	return ret, nil
+}
+
+func (self *Builder_less) BuilderActionAfterDistribute(log *logger.Logger) error {
 
 	dir := path.Join(self.bs.GetDIR_DESTDIR(), "etc", "profile.d", "SET")
 	file := path.Join(dir, "009.LESS.sh")

@@ -30,13 +30,33 @@ func NewBuilder_bash(bs basictypes.BuildingSiteCtlI) (*Builder_bash, error) {
 
 	self.Builder_std = NewBuilder_std(bs)
 
-	self.PatchCB = self.Patch
 	self.EditConfigureArgsCB = self.EditConfigureArgs
-	self.AfterDistributeCB = self.AfterDistribute
+
 	return self, nil
 }
 
-func (self *Builder_bash) Patch(log *logger.Logger) error {
+func (self *Builder_bash) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
+
+	ret, err := ret.AddActionAfterNameShort(
+		"extract",
+		"patch", self.BuilderActionPatch,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	ret, err = ret.AddActionAfterNameShort(
+		"distribute",
+		"after-distribute", self.BuilderActionAfterDistribute,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return ret, nil
+}
+
+func (self *Builder_bash) BuilderActionPatch(log *logger.Logger) error {
 
 	bash_patch_name_regexp, err := regexp.Compile(`^bash(\d)(\d)-(\d+)$`)
 	if err != nil {
@@ -201,10 +221,7 @@ func (self *Builder_bash) EditConfigureArgs(log *logger.Logger, ret []string) ([
 	return ret, nil
 }
 
-func (self *Builder_bash) AfterDistribute(log *logger.Logger, err error) error {
-	if err != nil {
-		return err
-	}
+func (self *Builder_bash) BuilderActionAfterDistribute(log *logger.Logger) error {
 
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 

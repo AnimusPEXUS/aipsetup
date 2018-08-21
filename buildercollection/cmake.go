@@ -28,9 +28,22 @@ func NewBuilder_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_cmake, error) {
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
-	self.AfterDistributeCB = self.AfterDistribute
+	self.EditActionsCB = self.EditActions
 
 	return self, nil
+}
+
+func (self *Builder_cmake) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
+
+	ret, err := ret.AddActionAfterNameShort(
+		"distribute",
+		"after-distribute", self.BuilderActionAfterDistribute,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return ret, nil
 }
 
 func (self *Builder_cmake) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
@@ -53,10 +66,7 @@ func (self *Builder_cmake) EditConfigureArgs(log *logger.Logger, ret []string) (
 	return ret, nil
 }
 
-func (self *Builder_cmake) AfterDistribute(log *logger.Logger, err error) error {
-	if err != nil {
-		return err
-	}
+func (self *Builder_cmake) BuilderActionAfterDistribute(log *logger.Logger) error {
 
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 

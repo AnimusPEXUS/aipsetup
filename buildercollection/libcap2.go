@@ -54,10 +54,14 @@ func (self *Builder_libcap2) EditActions(ret basictypes.BuilderActions) (basicty
 
 	if info.PackageName == "libcap2" && info.PackageVersion == "2.25" {
 
-		err := ret.ReplaceShort("patch", self.BuilderActionPatch)
+		ret, err = ret.AddActionAfterNameShort(
+			"extract",
+			"patch", self.BuilderActionPatch,
+		)
 		if err != nil {
 			return nil, err
 		}
+
 	}
 
 	return ret, nil

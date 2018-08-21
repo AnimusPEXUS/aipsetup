@@ -40,14 +40,25 @@ func NewBuilder_autoconf213(bs basictypes.BuildingSiteCtlI) (*Builder_autoconf21
 
 	self.EditDistributeArgsCB = self.EditDistributeArgs
 
-	self.AfterDistributeCB = self.AfterDistribute
+	//	self.AfterDistributeCB = self.AfterDistribute
 
 	return self, nil
 }
 
 func (self *Builder_autoconf213) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	err := ret.ReplaceShort("patch", self.BuilderActionPatch)
+	ret, err := ret.AddActionAfterNameShort(
+		"extract",
+		"patch", self.BuilderActionPatch,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	ret, err = ret.AddActionAfterNameShort(
+		"distribute",
+		"after-distribute", self.BuilderActionAfterDistribute,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -162,10 +173,7 @@ func (self *Builder_autoconf213) EditDistributeArgs(log *logger.Logger, ret []st
 	return ret, nil
 }
 
-func (self *Builder_autoconf213) AfterDistribute(log *logger.Logger, ret error) error {
-	if ret != nil {
-		return ret
-	}
+func (self *Builder_autoconf213) BuilderActionAfterDistribute(log *logger.Logger) error {
 
 	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	if err != nil {

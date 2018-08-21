@@ -30,7 +30,6 @@ func NewBuilder_libcap(bs basictypes.BuildingSiteCtlI) (*Builder_libcap, error) 
 	self.EditActionsCB = self.EditActions
 
 	self.EditDistributeArgsCB = self.EditDistributeArgs
-	self.AfterDistributeCB = self.AfterDistribute
 
 	return self, nil
 }
@@ -46,36 +45,6 @@ func (self *Builder_libcap) EditActions(ret basictypes.BuilderActions) (basictyp
 }
 
 func (self *Builder_libcap) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
-	//            'all',
-	//            'install',
-	//            'prefix={}'.format(self.calculate_install_prefix()),
-	//            'lib={}'.format(lib),
-	//            #'exec_prefix={}'.format(self.get_host_dir()),
-	//            #'lib_prefix={}'.format(self.get_host_dir()),
-	//            #'inc_prefix={}'.format(self.get_host_dir()),
-	//            #'man_prefix={}'.format(self.get_host_dir()),
-	//            'DESTDIR={}'.format(self.get_dst_dir()),
-	//            #'PKGCONFIGDIR={}'.format(
-	//            #    wayround_i2p.utils.path.join(
-	//            #        self.get_dst_host_dir(),
-	//            #       'lib',
-	//            #        'pkgconfig'
-	//            #        )
-	//            #    ),
-	//            'RAISE_SETFCAP=no',
-	//            'PAM_CAP=yes',
-	//            #'SYSTEM_HEADERS={}'.format(
-	//            #    wayround_i2p.utils.path.join(
-	//            #        self.get_host_dir(),
-	//            #        'include'
-	//            #        )
-	//            #    ),
-	//            #'CFLAGS=-I{}'.format(
-	//            #    wayround_i2p.utils.path.join(
-	//            #        self.get_host_dir(),
-	//            #        'include'
-	//            #        )
-	//            #    )
 
 	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
@@ -98,11 +67,4 @@ func (self *Builder_libcap) EditDistributeArgs(log *logger.Logger, ret []string)
 	}
 
 	return ret, nil
-}
-
-func (self *Builder_libcap) AfterDistribute(log *logger.Logger, err error) error {
-	if err != nil {
-		return err
-	}
-	return nil
 }

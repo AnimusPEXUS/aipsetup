@@ -112,7 +112,10 @@ func (self *Builder_gcc) DefineActions() (basictypes.BuilderActions, error) {
 			len(ret)-1,
 		)
 	} else {
-		self.AfterDistributeCB = self.AfterDistribute
+		ret, err = ret.AddActionAfterNameShort("distribute", "after-distribute", self.BuilderActionAfterDistribute)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return ret, nil
@@ -511,10 +514,7 @@ func (self *Builder_gcc) BuilderActionDistribute_03(
 	return self.BuilderActionDistribute(log)
 }
 
-func (self *Builder_gcc) AfterDistribute(log *logger.Logger, ret error) error {
-	if ret != nil {
-		return ret
-	}
+func (self *Builder_gcc) BuilderActionAfterDistribute(log *logger.Logger) error {
 
 	calc := self.bs.GetBuildingSiteValuesCalculator()
 

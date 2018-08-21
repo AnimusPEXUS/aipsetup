@@ -41,7 +41,6 @@ func NewBuilder_ncurses(bs basictypes.BuildingSiteCtlI) (*Builder_ncurses, error
 	self.Builder_std = NewBuilder_std(bs)
 
 	self.EditActionsCB = self.EditActions
-	self.PatchCB = self.Patch
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 	return self, nil
 }
@@ -50,42 +49,34 @@ func (self *Builder_ncurses) EditActions(ret basictypes.BuilderActions) (
 	basictypes.BuilderActions,
 	error,
 ) {
-	var err error
 
-	ret, err = ret.AddActionsAfterName(
-		basictypes.BuilderActions{
-			&basictypes.BuilderAction{
-				Name:     "make_lib_symlinks",
-				Callable: self.AfterDistributeLinks,
-			},
-		},
+	ret, err := ret.AddActionAfterNameShort(
+		"extract",
+		"patch", self.BuilderActionPatch,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	ret, err = ret.AddActionAfterNameShort(
 		"distribute",
+		"make_lib_symlinks", self.AfterDistributeLinks,
 	)
 	if err != nil {
 		return nil, err
 	}
 
-	ret, err = ret.AddActionsAfterName(
-		basictypes.BuilderActions{
-			&basictypes.BuilderAction{
-				Name:     "make_pkgconfig_symlinks",
-				Callable: self.AfterDistributePkgConfig,
-			},
-		},
+	ret, err = ret.AddActionAfterNameShort(
 		"make_lib_symlinks",
+		"make_pkgconfig_symlinks", self.AfterDistributePkgConfig,
 	)
 	if err != nil {
 		return nil, err
 	}
 
-	ret, err = ret.AddActionsAfterName(
-		basictypes.BuilderActions{
-			&basictypes.BuilderAction{
-				Name:     "make_ln_ncurses_to_ncursesw",
-				Callable: self.AfterDistributeNcursesLnNcursesw,
-			},
-		},
+	ret, err = ret.AddActionAfterNameShort(
 		"make_pkgconfig_symlinks",
+		"make_ln_ncurses_to_ncursesw", self.AfterDistributeNcursesLnNcursesw,
 	)
 	if err != nil {
 		return nil, err
@@ -94,7 +85,7 @@ func (self *Builder_ncurses) EditActions(ret basictypes.BuilderActions) (
 	return ret, nil
 }
 
-func (self *Builder_ncurses) Patch(log *logger.Logger) error {
+func (self *Builder_ncurses) BuilderActionPatch(log *logger.Logger) error {
 
 	info, err := self.bs.ReadInfo()
 	if err != nil {
