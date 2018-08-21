@@ -46,9 +46,10 @@ type Builder_std struct {
 	//	ForceCrossbuilder CrossBuildEnum
 	//	ForceCrossbuild   CrossBuildEnum
 
+	//	PatchCB                             func(log *logger.Logger) error
+
 	EditActionsCB                       func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
 	AfterExtractCB                      func(log *logger.Logger, ret error) error
-	PatchCB                             func(log *logger.Logger) error
 	AfterAutogenCB                      func(log *logger.Logger, ret error) error
 	EditExtractMoreThanOneExtractedOkCB func(log *logger.Logger, ret bool) (bool, error)
 	EditExtractUnwrapCB                 func(log *logger.Logger, ret bool) (bool, error)
@@ -74,7 +75,7 @@ type Builder_std struct {
 	EditDistributeMakefileNameCB        func(log *logger.Logger, ret string) (string, error)
 	EditDistributeMakefileCB            func(log *logger.Logger, ret string) (string, error)
 	EditDistributeWorkingDirCB          func(log *logger.Logger, ret string) (string, error)
-	AfterDistributeCB                   func(log *logger.Logger, ret error) error
+	//	AfterDistributeCB                   func(log *logger.Logger, ret error) error
 
 	bs basictypes.BuildingSiteCtlI
 }
@@ -110,7 +111,7 @@ func (self *Builder_std) DefineActions() (basictypes.BuilderActions, error) {
 		&basictypes.BuilderAction{"src_cleanup", self.BuilderActionSrcCleanup},
 		&basictypes.BuilderAction{"bld_cleanup", self.BuilderActionBldCleanup},
 		&basictypes.BuilderAction{"extract", self.BuilderActionExtract},
-		&basictypes.BuilderAction{"patch", self.BuilderActionPatch},
+		//		&basictypes.BuilderAction{"patch", self.BuilderActionPatch},
 		&basictypes.BuilderAction{"autogen", self.BuilderActionAutogen},
 		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
 		&basictypes.BuilderAction{"build", self.BuilderActionBuild},
@@ -208,17 +209,17 @@ func (self *Builder_std) BuilderActionExtract(
 	return nil
 }
 
-func (self *Builder_std) BuilderActionPatch(
-	log *logger.Logger,
-) error {
-	if self.PatchCB != nil {
-		err := self.PatchCB(log)
-		if err != nil {
-			return err
-		}
-	}
-	return nil
-}
+//func (self *Builder_std) BuilderActionPatch(
+//	log *logger.Logger,
+//) error {
+//	if self.PatchCB != nil {
+//		err := self.PatchCB(log)
+//		if err != nil {
+//			return err
+//		}
+//	}
+//	return nil
+//}
 
 func (self *Builder_std) BuilderActionAutogenForce(log *logger.Logger) (bool, error) {
 
@@ -872,6 +873,7 @@ func (self *Builder_std) BuilderActionDistributeDESTDIRDef(
 func (self *Builder_std) BuilderActionDistributeArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
+
 	destdir_string, err := self.BuilderActionDistributeDESTDIRDef(log)
 	if err != nil {
 		return nil, err
@@ -1001,12 +1003,12 @@ func (self *Builder_std) BuilderActionDistribute(
 		return err
 	}
 
-	if self.AfterDistributeCB != nil {
-		err = self.AfterDistributeCB(log, err)
-		if err != nil {
-			return err
-		}
-	}
+	//	if self.AfterDistributeCB != nil {
+	//		err = self.AfterDistributeCB(log, err)
+	//		if err != nil {
+	//			return err
+	//		}
+	//	}
 
 	return nil
 }
