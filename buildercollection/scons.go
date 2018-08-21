@@ -33,7 +33,6 @@ func NewBuilder_scons(bs basictypes.BuildingSiteCtlI) *Builder_scons {
 
 func (self *Builder_scons) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	ret = ret.Remove("patch")
 	ret = ret.Remove("autogen")
 	ret = ret.Remove("configure")
 

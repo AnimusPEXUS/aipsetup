@@ -33,7 +33,6 @@ func NewBuilder_rustc(bs basictypes.BuildingSiteCtlI) (*Builder_rustc, error) {
 
 func (self *Builder_rustc) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	ret = ret.Remove("patch")
 	ret = ret.Remove("autogen")
 
 	err := ret.Replace(

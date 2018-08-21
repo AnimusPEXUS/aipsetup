@@ -29,7 +29,6 @@ func NewBuilder_serf(bs basictypes.BuildingSiteCtlI) (*Builder_serf, error) {
 
 func (self *Builder_serf) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	ret = ret.Remove("patch")
 	ret = ret.Remove("autogen")
 	ret = ret.Remove("configure")
 

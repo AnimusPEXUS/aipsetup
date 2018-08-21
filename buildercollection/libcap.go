@@ -39,7 +39,6 @@ func (self *Builder_libcap) EditActions(ret basictypes.BuilderActions) (basictyp
 	ret = ret.Remove("configure")
 	ret = ret.Remove("autogen")
 	ret = ret.Remove("build")
-	ret = ret.Remove("patch")
 
 	return ret, nil
 }

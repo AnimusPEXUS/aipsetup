@@ -34,7 +34,6 @@ func NewBuilder_std_cargo(bs basictypes.BuildingSiteCtlI) (*Builder_std_cargo, e
 
 func (self *Builder_std_cargo) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	ret = ret.Remove("patch")
 	ret = ret.Remove("autogen")
 	ret = ret.Remove("configure")
 	//	ret = ret.Remove("build")

@@ -34,7 +34,6 @@ func NewBuilder_git_manpages(bs basictypes.BuildingSiteCtlI) (*Builder_git_manpa
 
 func (self *Builder_git_manpages) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	ret = ret.Remove("patch")
 	ret = ret.Remove("autogen")
 	ret = ret.Remove("configure")
 	ret = ret.Remove("build")
