@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "",
-  "BuilderName": "std_cmake",
+  "BuilderName": "libssh",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

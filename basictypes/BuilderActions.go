@@ -40,19 +40,6 @@ func (self BuilderActions) Replace(name string, action *BuilderAction) error {
 	return errors.New("not found")
 }
 
-func (self BuilderActions) ReplaceShort(name string, callable BuilderActionCallable) error {
-
-	ret := self.Replace(
-		name,
-		&BuilderAction{
-			Name:     name,
-			Callable: callable,
-		},
-	)
-
-	return ret
-}
-
 func (self BuilderActions) Remove(name string) BuilderActions {
 
 	ret := self
@@ -171,4 +158,67 @@ func (self BuilderActions) ActionList() []string {
 		ret = append(ret, i.Name)
 	}
 	return ret
+}
+
+// Short Functions
+
+func (self BuilderActions) ReplaceShort(name string, callable BuilderActionCallable) error {
+
+	ret := self.Replace(
+		name,
+		&BuilderAction{
+			Name:     name,
+			Callable: callable,
+		},
+	)
+
+	return ret
+}
+
+func NewBuilderActionsLenOne(name string, callable BuilderActionCallable) BuilderActions {
+	ret := BuilderActions{
+		&BuilderAction{
+			Name:     name,
+			Callable: callable,
+		},
+	}
+	return ret
+}
+
+func (self BuilderActions) AddActionAfterNameShort(
+	name string,
+	new_name string, callable BuilderActionCallable,
+) (BuilderActions, error) {
+
+	ret, err := self.AddActionsAfterName(
+		NewBuilderActionsLenOne(
+			new_name,
+			callable,
+		),
+		name,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return ret, nil
+}
+
+func (self BuilderActions) AddActionBeforeNameShort(
+	name string,
+	new_name string, callable BuilderActionCallable,
+) (BuilderActions, error) {
+
+	ret, err := self.AddActionsBeforeName(
+		NewBuilderActionsLenOne(
+			new_name,
+			callable,
+		),
+		name,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return ret, nil
 }
