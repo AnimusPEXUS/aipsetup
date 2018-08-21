@@ -100,10 +100,26 @@ func (self *Builder_libcap2) EditDistributeArgs(log *logger.Logger, ret []string
 		return nil, err
 	}
 
+	env, err := self.BuilderActionConfigureEnvDef(log)
+	if err != nil {
+		return nil, err
+	}
+
+	mlv, err := self.bs.GetBuildingSiteValuesCalculator().CalculateMultilibVariant()
+	if err != nil {
+		return nil, err
+	}
+
+	CC := env.Get("CC", "gcc -m"+mlv)
+	if err != nil {
+		return nil, err
+	}
+
 	ret = []string{
 		"-j1",
 		"all",
 		"install",
+		"CC=" + CC,
 		"prefix=" + install_prefix,
 		//		"lib=" + main_multiarch_libdir_name,
 		"lib=lib",
