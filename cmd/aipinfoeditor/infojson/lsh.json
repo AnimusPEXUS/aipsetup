@@ -18,7 +18,9 @@
     "gnu_project"
   ],
   "Category": "gnu",
-  "Groups": [],
+  "Groups": [
+    "core0"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "lsh",
   "TarballFilters": [],
@@ -27,7 +29,7 @@
     "https://ftp.gnu.org/gnu/lsh"
   ],
   "TarballProviderVersionSyncDepth": 0,
-  "TarballStabilityClassifier": "std",
+  "TarballStabilityClassifier": "gnome",
   "TarballVersionComparator": "std",
   "DownloadPatches": false,
   "PatchesDownloadingScriptText": ""

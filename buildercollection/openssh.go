@@ -35,14 +35,9 @@ func NewBuilder_openssh(bs basictypes.BuildingSiteCtlI) (*Builder_openssh, error
 }
 
 func (self *Builder_openssh) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
-	ret, err := ret.AddActionsBeforeName(
-		basictypes.BuilderActions{
-			&basictypes.BuilderAction{
-				Name:     "rename_configs",
-				Callable: self.RenameConfigs,
-			},
-		},
+	ret, err := ret.AddActionBeforeNameShort(
 		"prepack",
+		"rename_configs", self.RenameConfigs,
 	)
 	if err != nil {
 		return nil, err
@@ -52,12 +47,39 @@ func (self *Builder_openssh) EditActions(ret basictypes.BuilderActions) (basicty
 
 func (self *Builder_openssh) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
+	pkgconfig, err := self.bs.GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
+	if err != nil {
+		return nil, err
+	}
+
+	//	LIBSSH_CFLAGS, err := pkgconfig.CommandOutput("--cflags", "libssh2")
+	//	if err != nil {
+	//		return nil, err
+	//	}
+
+	//	LIBSSH_LIBS, err := pkgconfig.CommandOutput("--libs", "libssh2")
+	//	if err != nil {
+	//		return nil, err
+	//	}
+
+	OPENSSL100_CFLAGS, err := pkgconfig.CommandOutput("--cflags", "openssl-1.0")
+	if err != nil {
+		return nil, err
+	}
+
+	OPENSSL100_LIBS, err := pkgconfig.CommandOutput("--libs", "openssl-1.0")
+	if err != nil {
+		return nil, err
+	}
+
 	ret = append(
 		ret,
 		[]string{
 			"--with-tcp-wrappers",
 			"--with-pam",
 			"--sysconfdir=/etc/ssh",
+			"CFLAGS=" + OPENSSL100_CFLAGS,
+			"LDFLAGS=" + OPENSSL100_LIBS,
 		}...,
 	)
 

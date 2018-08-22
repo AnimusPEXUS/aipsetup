@@ -16,12 +16,16 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": ["core0"],
+  "Groups": [
+    "core0"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "libssh",
   "TarballFilters": [],
   "TarballProvider": "https",
-  "TarballProviderArguments": ["https://www.libssh.org/files/"],
+  "TarballProviderArguments": [
+    "https://www.libssh.org/files/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

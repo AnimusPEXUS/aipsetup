@@ -39,14 +39,9 @@ func NewBuilder_openjdk(bs basictypes.BuildingSiteCtlI) (*Builder_openjdk, error
 }
 
 func (self *Builder_openjdk) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
-	ret, err := ret.AddActionsAfterName(
-		basictypes.BuilderActions{
-			&basictypes.BuilderAction{
-				Name:     "after_distribute",
-				Callable: self.AfterOpenJDKDistribution,
-			},
-		},
+	ret, err := ret.AddActionAfterNameShort(
 		"distribute",
+		"after-distribute", self.AfterOpenJDKDistribution,
 	)
 	if err != nil {
 		return nil, err

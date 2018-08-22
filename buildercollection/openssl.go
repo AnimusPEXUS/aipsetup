@@ -1,7 +1,6 @@
 package buildercollection
 
 import (
-	"bytes"
 	"errors"
 	"fmt"
 	"io/ioutil"
@@ -76,14 +75,9 @@ func (self *Builder_openssl) EditConfigureIsArgToShell(log *logger.Logger, ret b
 
 func (self *Builder_openssl) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 	ret = ret.Remove("build")
-	ret, err := ret.AddActionsAfterName(
-		basictypes.BuilderActions{
-			&basictypes.BuilderAction{
-				Name:     "after_distribute",
-				Callable: self.BuilderActionAfterDistribute,
-			},
-		},
+	ret, err := ret.AddActionAfterNameShort(
 		"distribute",
+		"after-distribute", self.BuilderActionAfterDistribute,
 	)
 	if err != nil {
 		return nil, err
@@ -282,16 +276,44 @@ func (self *Builder_openssl) BuilderActionAfterDistribute(log *logger.Logger) er
 				return err
 			}
 
-			ft = bytes.Replace(
-				ft,
-				[]byte("includedir=${prefix}/include"),
-				[]byte("includedir=${prefix}/include/"+ver_name),
-				-1,
-			)
+			ft_lines := strings.Split(string(ft), "\n")
+
+			for i := len(ft_lines) - 1; i != -1; i-- {
+				if ft_lines[i] == "includedir=${prefix}/include" {
+					ft_lines[i] = "includedir=${prefix}/include/" + ver_name
+				}
+
+				if strings.HasPrefix(ft_lines[i], "Requires:") {
+					t := strings.SplitN(ft_lines[i], ":", 2)[1]
+					tss := strings.Split(t, " ")
+					for k, v := range tss {
+						fmt.Println(" tss", k, v)
+					}
+					for j := len(tss) - 1; j != -1; j-- {
+						if len(tss[j]) == 0 {
+							tss = append(tss[:j], tss[j+1:]...)
+						} else {
+							if ok, err := regexp.MatchString(`\s+`, tss[j]); err != nil {
+								return err
+							} else {
+								if ok {
+									tss = append(tss[:j], tss[j+1:]...)
+								}
+							}
+						}
+					}
+
+					for j := 0; j != len(tss); j++ {
+						tss[j] = tss[j] + "-1.0"
+					}
+
+					ft_lines[i] = "Requires: " + strings.Join(tss, " ")
+				}
+			}
 
 			err = ioutil.WriteFile(
 				fn[:len(fn)-3]+ver_name[len(ver_name)-4:]+".pc",
-				ft,
+				[]byte(strings.Join(ft_lines, "\n")),
 				0700,
 			)
 			if err != nil {

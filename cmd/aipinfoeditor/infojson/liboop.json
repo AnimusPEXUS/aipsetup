@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "http://www.lysator.liu.se/liboop/",
-  "BuilderName": "std",
+  "BuilderName": "liboop",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -16,12 +16,16 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "core0"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "liboop",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.lysator.liu.se/pub/liboop/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
