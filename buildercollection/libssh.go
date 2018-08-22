@@ -35,6 +35,8 @@ func (self *Builder_libssh) EditConfigureArgs(log *logger.Logger, ret []string) 
 		ret,
 		[]string{
 			"-DWITH_STATIC_LIB=ON",
+			"-DBUILD_SHARED_LIBS=ON",
+			"-DENABLE_ZLIB_COMPRESSION=ON",
 		}...,
 	)
 

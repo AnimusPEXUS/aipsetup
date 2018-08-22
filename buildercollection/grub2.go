@@ -27,7 +27,13 @@ func NewBuilder_grub2(bs basictypes.BuildingSiteCtlI) *Builder_grub2 {
 
 func (self *Builder_grub2) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	ret = append(ret, "--disable-werror")
+	ret = append(
+		ret,
+		[]string{
+			"--disable-werror",
+			"--disable-efiemu",
+		}...,
+	)
 
 	return ret, nil
 }

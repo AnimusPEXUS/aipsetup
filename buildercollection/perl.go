@@ -54,10 +54,10 @@ func (self *Builder_perl) EditConfigureArgs(log *logger.Logger, ret []string) ([
 	}
 
 	//	for i := len(ret) - 1; i != -1; i -= 1 {
-	//		if strings.HasPrefix(ret[i], "CC=") ||
-	//			strings.HasPrefix(ret[i], "CXX=") ||
-	//			strings.HasPrefix(ret[i], "GCC=") {
-	//			ret = append(ret[:i], ret[i+1:]...)
+	//		for _, j := range []string{"CC", "CXX", "GCC"} {
+	//			if strings.HasPrefix(ret[i], j+"=") {
+	//				ret = append(ret[:i], ret[i+1:]...)
+	//			}
 	//		}
 	//	}
 
