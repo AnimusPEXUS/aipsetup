@@ -36,7 +36,7 @@ func (self *Builder_std_simple_makefile) EditActions(ret basictypes.BuilderActio
 
 func (self *Builder_std_simple_makefile) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
