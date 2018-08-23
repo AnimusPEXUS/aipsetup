@@ -1,7 +1,9 @@
 package buildercollection
 
 import (
+	"os"
 	"os/exec"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/environ"
@@ -23,11 +25,12 @@ type Builder_std_meson struct {
 	// TODO: it's possible, what action editing possibility is not neeeded at all for
 	//       meson based projects. but I'm not sure yet.. maybe after-distribution
 	//       actions will find use
-	EditActionsCB       func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
-	EditConfigureEnvCB  func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
-	EditConfigureArgsCB func(log *logger.Logger, ret []string) ([]string, error)
-	EditBuildEnvCB      func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
-	EditBuildArgsCB     func(log *logger.Logger, ret []string) ([]string, error)
+	EditActionsCB               func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
+	EditConfigureEnvCB          func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
+	EditConfigureArgsCB         func(log *logger.Logger, ret []string) ([]string, error)
+	EditConfigureDefBuildTypeCB func(log *logger.Logger, ret string) (string, error)
+	EditBuildEnvCB              func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
+	EditBuildArgsCB             func(log *logger.Logger, ret []string) ([]string, error)
 }
 
 func NewBuilder_std_meson(bs basictypes.BuildingSiteCtlI) (*Builder_std_meson, error) {
@@ -112,6 +115,29 @@ func (self *Builder_std_meson) BuilderActionConfigureArgsDef(
 		return nil, err
 	}
 
+filtering:
+	for i := len(ret) - 1; i != -1; i -= 1 {
+
+		for _, j := range []string{"--enable-shared"} {
+			if ret[i] == j {
+				ret = append(ret[:i], ret[i+1:]...)
+				continue filtering
+			}
+		}
+
+		for _, j := range []string{
+			"CC", "CXX", "GCC",
+			"--host", "--build", "--docdir",
+		} {
+			if strings.HasPrefix(ret[i], j+"=") {
+				ret = append(ret[:i], ret[i+1:]...)
+				// TODO: add such continue into all similar places or, finally,
+				//       make special filtering function
+				continue filtering
+			}
+		}
+	}
+
 	if self.EditConfigureArgsCB != nil {
 		ret, err = self.EditConfigureArgsCB(log, ret)
 		if err != nil {
@@ -122,9 +148,29 @@ func (self *Builder_std_meson) BuilderActionConfigureArgsDef(
 	return ret, nil
 }
 
+func (self *Builder_std_meson) BuilderActionConfigureDefBuildType(
+	log *logger.Logger,
+) (string, error) {
+
+	var err error
+
+	ret := "release"
+
+	if self.EditConfigureDefBuildTypeCB != nil {
+		ret, err = self.EditConfigureDefBuildTypeCB(log, ret)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	return ret, nil
+}
+
 func (self *Builder_std_meson) BuilderActionConfigure(log *logger.Logger) error {
 
-	env := environ.New()
+	// TODO: move this to separate builder tool, like cmake and autotools
+
+	env := environ.NewFromStrings(os.Environ())
 
 	nenv, err := self.BuilderActionConfigureEnvDef(log)
 	if err != nil {
@@ -138,9 +184,21 @@ func (self *Builder_std_meson) BuilderActionConfigure(log *logger.Logger) error 
 		return err
 	}
 
+	buildtype, err := self.BuilderActionConfigureDefBuildType(log)
+	if err != nil {
+		return err
+	}
+
 	args2 := make([]string, 0)
-	args2 = append(args2, []string{"../01.SOURCE"}...)
+	args2 = append(args2, "--buildtype="+buildtype)
 	args2 = append(args2, args...)
+	args2 = append(args2, "../01.SOURCE")
+
+	log.Info("meson arguments: " + strings.Join(args2, " "))
+	for _, i := range args2 {
+		log.Info("   " + i)
+
+	}
 
 	c := exec.Command(self.meson, args2...)
 	c.Stdout = log.StdoutLbl()
@@ -197,7 +255,7 @@ func (self *Builder_std_meson) BuilderActionBuildArgsDef(
 
 func (self *Builder_std_meson) BuilderActionBuild(log *logger.Logger) error {
 
-	env := environ.New()
+	env := environ.NewFromStrings(os.Environ())
 
 	nenv, err := self.BuilderActionBuildEnvDef(log)
 	if err != nil {
@@ -212,10 +270,9 @@ func (self *Builder_std_meson) BuilderActionBuild(log *logger.Logger) error {
 	}
 
 	args2 := make([]string, 0)
-	args2 = append(args2, []string{"../01.SOURCE"}...)
 	args2 = append(args2, args...)
 
-	c := exec.Command(self.ninja, "build")
+	c := exec.Command(self.ninja)
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()
 	c.Dir = self.GetBuildingSiteCtl().GetDIR_BUILDING()
@@ -231,16 +288,24 @@ func (self *Builder_std_meson) BuilderActionBuild(log *logger.Logger) error {
 
 func (self *Builder_std_meson) BuilderActionDistribute(log *logger.Logger) error {
 
-	c := exec.Command(
-		self.ninja,
-		"install",
-		"DESTDIR="+self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
-	)
+	env := environ.NewFromStrings(os.Environ())
+
+	nenv, err := self.BuilderActionBuildEnvDef(log)
+	if err != nil {
+		return err
+	}
+
+	nenv.Set("DESTDIR", self.GetBuildingSiteCtl().GetDIR_DESTDIR())
+
+	env.UpdateWith(nenv)
+
+	c := exec.Command(self.ninja, "install")
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()
 	c.Dir = self.GetBuildingSiteCtl().GetDIR_BUILDING()
+	c.Env = env.Strings()
 
-	err := c.Run()
+	err = c.Run()
 	if err != nil {
 		return err
 	}
