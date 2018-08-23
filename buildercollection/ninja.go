@@ -49,7 +49,7 @@ func (self *Builder_ninja) EditActions(ret basictypes.BuilderActions) (basictype
 
 func (self *Builder_ninja) BuilderActionBuild(log *logger.Logger) error {
 
-	python3, err := self.bs.GetBuildingSiteValuesCalculator().
+	python3, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateInstallPrefixExecutable("python3")
 	if err != nil {
 		return err
@@ -58,7 +58,7 @@ func (self *Builder_ninja) BuilderActionBuild(log *logger.Logger) error {
 	c := exec.Command(python3, "./configure.py", "--bootstrap")
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()
-	c.Dir = self.bs.GetDIR_SOURCE()
+	c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 
 	err = c.Run()
 	if err != nil {
@@ -70,7 +70,7 @@ func (self *Builder_ninja) BuilderActionBuild(log *logger.Logger) error {
 
 func (self *Builder_ninja) BuilderActionDistribute(log *logger.Logger) error {
 
-	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().
+	dst_install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateDstInstallPrefix()
 	if err != nil {
 		return err
@@ -84,7 +84,7 @@ func (self *Builder_ninja) BuilderActionDistribute(log *logger.Logger) error {
 	}
 
 	err = filetools.CopyWithInfo(
-		path.Join(self.bs.GetDIR_SOURCE(), "ninja"),
+		path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "ninja"),
 		path.Join(dst_install_prefix_bin, "ninja"),
 		log,
 	)

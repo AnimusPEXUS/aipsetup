@@ -108,7 +108,7 @@ func (self *Builder_std) DefineActions() (basictypes.BuilderActions, error) {
 func (self *Builder_std) BuilderActionDstCleanup(
 	log *logger.Logger,
 ) error {
-	dst_dir := self.bs.GetDIR_DESTDIR()
+	dst_dir := self.GetBuildingSiteCtl().GetDIR_DESTDIR()
 	os.RemoveAll(dst_dir)
 	os.MkdirAll(dst_dir, 0700)
 	return nil
@@ -117,7 +117,7 @@ func (self *Builder_std) BuilderActionDstCleanup(
 func (self *Builder_std) BuilderActionSrcCleanup(
 	log *logger.Logger,
 ) error {
-	src_dir := self.bs.GetDIR_SOURCE()
+	src_dir := self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	os.RemoveAll(src_dir)
 	os.MkdirAll(src_dir, 0700)
 	return nil
@@ -125,7 +125,7 @@ func (self *Builder_std) BuilderActionSrcCleanup(
 func (self *Builder_std) BuilderActionBldCleanup(
 	log *logger.Logger,
 ) error {
-	bld_dir := self.bs.GetDIR_BUILDING()
+	bld_dir := self.GetBuildingSiteCtl().GetDIR_BUILDING()
 	os.RemoveAll(bld_dir)
 	os.MkdirAll(bld_dir, 0700)
 	return nil
@@ -155,15 +155,15 @@ func (self *Builder_std) BuilderActionExtract(
 		}
 	}
 
-	main_tarball, err := self.bs.DetermineMainTarrball()
+	main_tarball, err := self.GetBuildingSiteCtl().DetermineMainTarrball()
 	if err != nil {
 		return err
 	}
 
 	err = a_tools.Extract(
-		path.Join(self.bs.GetDIR_TARBALL(), main_tarball),
-		self.bs.GetDIR_SOURCE(),
-		path.Join(self.bs.GetDIR_TEMP(), "primary_tarball"),
+		path.Join(self.GetBuildingSiteCtl().GetDIR_TARBALL(), main_tarball),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		path.Join(self.GetBuildingSiteCtl().GetDIR_TEMP(), "primary_tarball"),
 		unwrap,
 		more_than_one_extracted_ok,
 		false,
@@ -321,7 +321,7 @@ func (self *Builder_std) BuilderActionConfigureEnvDef(
 ) (environ.EnvVarEd, error) {
 	env := environ.New()
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	pkgconfig, err := calc.GetPrefixPkgConfig()
 	if err != nil {
@@ -383,7 +383,7 @@ func (self *Builder_std) BuilderActionConfigureArgsDef(
 
 	ret := make([]string, 0)
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
@@ -459,7 +459,7 @@ func (self *Builder_std) BuilderActionConfigureDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.bs.GetDIR_SOURCE()
+	ret := self.GetBuildingSiteCtl().GetDIR_SOURCE()
 
 	if self.EditConfigureDirCB != nil {
 		var err error
@@ -476,7 +476,7 @@ func (self *Builder_std) BuilderActionConfigureWorkingDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.bs.GetDIR_SOURCE()
+	ret := self.GetBuildingSiteCtl().GetDIR_SOURCE()
 
 	if self.EditConfigureWorkingDirCB != nil {
 		var err error
@@ -839,7 +839,7 @@ func (self *Builder_std) BuilderActionDistributeArgsDef(
 		fmt.Sprintf(
 			"%s=%s",
 			destdir_string,
-			self.bs.GetDIR_DESTDIR(),
+			self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 		),
 	)
 
@@ -875,7 +875,7 @@ func (self *Builder_std) BuilderActionDistributeMakefileDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.bs.GetDIR_SOURCE()
+	ret := self.GetBuildingSiteCtl().GetDIR_SOURCE()
 
 	if self.EditDistributeMakefileCB != nil {
 		var err error
@@ -962,7 +962,7 @@ func (self *Builder_std) BuilderActionDistribute(
 func (self *Builder_std) BuilderActionPrePack(
 	log *logger.Logger,
 ) error {
-	err := self.bs.PrePackager().Run(log)
+	err := self.GetBuildingSiteCtl().PrePackager().Run(log)
 	if err != nil {
 		return err
 	}
@@ -972,7 +972,7 @@ func (self *Builder_std) BuilderActionPrePack(
 func (self *Builder_std) BuilderActionPack(
 	log *logger.Logger,
 ) error {
-	err := self.bs.Packager().Run(log)
+	err := self.GetBuildingSiteCtl().Packager().Run(log)
 	if err != nil {
 		return err
 	}
