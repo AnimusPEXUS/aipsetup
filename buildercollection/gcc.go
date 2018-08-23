@@ -80,6 +80,8 @@ func (self *Builder_gcc) EditConfigureWorkingDir(log *logger.Logger, ret string)
 
 func (self *Builder_gcc) DefineActions() (basictypes.BuilderActions, error) {
 
+	// TODO: use EditActionsCB instead?
+
 	info, err := self.bs.ReadInfo()
 	if err != nil {
 		return nil, err

@@ -34,20 +34,6 @@ type Builder_std struct {
 	// NOTE: some comments in this file are left from python time and may be not
 	//       correspond to situation. (2018-03-12)
 
-	// TODO: following fields should be replaced with callbacks
-	// # this is for builder_action_autogen() method
-	//	ForcedAutogen bool
-	//	SeparateBuildDir bool
-	//	SourceConfigureRelPath       string
-	//	ForcedTarget                 bool
-	//	ApplyHostSpecCompilerOptions bool
-
-	// # None - not used, bool - force value
-	//	ForceCrossbuilder CrossBuildEnum
-	//	ForceCrossbuild   CrossBuildEnum
-
-	//	PatchCB                             func(log *logger.Logger) error
-
 	EditActionsCB                       func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
 	AfterExtractCB                      func(log *logger.Logger, ret error) error
 	AfterAutogenCB                      func(log *logger.Logger, ret error) error
@@ -75,7 +61,6 @@ type Builder_std struct {
 	EditDistributeMakefileNameCB        func(log *logger.Logger, ret string) (string, error)
 	EditDistributeMakefileCB            func(log *logger.Logger, ret string) (string, error)
 	EditDistributeWorkingDirCB          func(log *logger.Logger, ret string) (string, error)
-	//	AfterDistributeCB                   func(log *logger.Logger, ret error) error
 
 	bs basictypes.BuildingSiteCtlI
 }
@@ -86,22 +71,12 @@ func NewBuilder_std(buildingsite basictypes.BuildingSiteCtlI) *Builder_std {
 
 	ret.bs = buildingsite
 
-	//	ret.ForcedAutogen = false
-
-	//	ret.SeparateBuildDir = false
-	//	ret.SourceConfigureRelPath = "."
-	//	ret.ForcedTarget = false
-	//	ret.ApplyHostSpecCompilerOptions = true
-
-	//	ret.ForceCrossbuilder = NoAction
-	//	ret.ForceCrossbuild = NoAction
-
 	return ret
 }
 
-// func (self *Builder_std) SetBuildingSite(bs basictypes.BuildingSiteCtlI) {
-// 	self.site = bs
-// }
+func (self *Builder_std) GetBuildingSiteCtl() basictypes.BuildingSiteCtlI {
+	return self.bs
+}
 
 func (self *Builder_std) DefineActions() (basictypes.BuilderActions, error) {
 
@@ -111,7 +86,6 @@ func (self *Builder_std) DefineActions() (basictypes.BuilderActions, error) {
 		&basictypes.BuilderAction{"src_cleanup", self.BuilderActionSrcCleanup},
 		&basictypes.BuilderAction{"bld_cleanup", self.BuilderActionBldCleanup},
 		&basictypes.BuilderAction{"extract", self.BuilderActionExtract},
-		//		&basictypes.BuilderAction{"patch", self.BuilderActionPatch},
 		&basictypes.BuilderAction{"autogen", self.BuilderActionAutogen},
 		&basictypes.BuilderAction{"configure", self.BuilderActionConfigure},
 		&basictypes.BuilderAction{"build", self.BuilderActionBuild},
@@ -209,18 +183,6 @@ func (self *Builder_std) BuilderActionExtract(
 	return nil
 }
 
-//func (self *Builder_std) BuilderActionPatch(
-//	log *logger.Logger,
-//) error {
-//	if self.PatchCB != nil {
-//		err := self.PatchCB(log)
-//		if err != nil {
-//			return err
-//		}
-//	}
-//	return nil
-//}
-
 func (self *Builder_std) BuilderActionAutogenForce(log *logger.Logger) (bool, error) {
 
 	ret := false
@@ -258,11 +220,6 @@ func (self *Builder_std) BuilderActionAutogen(log *logger.Logger) error {
 	if err != nil {
 		return err
 	}
-
-	//	configure_dir := path.Join(
-	//		self.bs.GetDIR_SOURCE(),
-	//		self.SourceConfigureRelPath,
-	//	)
 
 	configure_path := path.Join(
 		configure_dir,
@@ -520,9 +477,6 @@ func (self *Builder_std) BuilderActionConfigureWorkingDirDef(
 ) (string, error) {
 
 	ret := self.bs.GetDIR_SOURCE()
-	//	if self.SeparateBuildDir {
-	//		ret = self.bs.GetDIR_BUILDING()
-	//	}
 
 	if self.EditConfigureWorkingDirCB != nil {
 		var err error
@@ -589,7 +543,6 @@ func (self *Builder_std) BuilderActionConfigureIsArgToShellDef(
 func (self *Builder_std) BuilderActionConfigure(
 	log *logger.Logger,
 ) error {
-	a_tools := new(buildingtools.Autotools)
 
 	env := environ.New()
 
@@ -634,6 +587,8 @@ func (self *Builder_std) BuilderActionConfigure(
 	if err != nil {
 		return err
 	}
+
+	a_tools := new(buildingtools.Autotools)
 
 	err = a_tools.Configure(
 		args,
@@ -732,8 +687,6 @@ func (self *Builder_std) BuilderActionBuildMakefileDirDef(
 	if err != nil {
 		return "", err
 	}
-
-	//	ret := self.bs.GetDIR_SOURCE()
 
 	if self.EditBuildMakefileDirCB != nil {
 		var err error
@@ -1002,13 +955,6 @@ func (self *Builder_std) BuilderActionDistribute(
 	if err != nil {
 		return err
 	}
-
-	//	if self.AfterDistributeCB != nil {
-	//		err = self.AfterDistributeCB(log, err)
-	//		if err != nil {
-	//			return err
-	//		}
-	//	}
 
 	return nil
 }
