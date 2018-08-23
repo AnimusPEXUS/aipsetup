@@ -34,7 +34,7 @@ func NewBuilder_std_python_pkg(
 
 	self.EditActionsCB = self.EditActions
 
-	if python, err := self.bs.GetBuildingSiteValuesCalculator().
+	if python, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateInstallPrefixExecutable("python" + python_number); err != nil {
 		return nil, err
 	} else {
@@ -47,15 +47,10 @@ func NewBuilder_std_python_pkg(
 func (self *Builder_std_python_pkg) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
 	ret = ret.Remove("autogen")
-
 	ret = ret.Remove("configure")
+	ret = ret.Remove("build")
 
-	err := ret.ReplaceShort("build", self.BuilderActionBuild)
-	if err != nil {
-		return nil, err
-	}
-
-	err = ret.ReplaceShort("distribute", self.BuilderActionDistribute)
+	err := ret.ReplaceShort("distribute", self.BuilderActionDistribute)
 	if err != nil {
 		return nil, err
 	}
@@ -63,27 +58,17 @@ func (self *Builder_std_python_pkg) EditActions(ret basictypes.BuilderActions) (
 	return ret, nil
 }
 
-func (self *Builder_std_python_pkg) BuilderActionBuild(log *logger.Logger) error {
-
-	c := exec.Command(self.python, "./setup.py", "--bootstrap")
-	c.Stdout = log.StdoutLbl()
-	c.Stderr = log.StderrLbl()
-	c.Dir = self.bs.GetDIR_SOURCE()
-
-	err := c.Run()
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (self *Builder_std_python_pkg) BuilderActionDistribute(log *logger.Logger) error {
 
-	c := exec.Command(self.python, "./setup.py", "install")
+	c := exec.Command(
+		self.python,
+		"./setup.py",
+		"install",
+		"--root="+self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
+	)
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()
-	c.Dir = self.bs.GetDIR_SOURCE()
+	c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 
 	err := c.Run()
 	if err != nil {
