@@ -31,7 +31,7 @@ func NewBuilder_psmisc(bs basictypes.BuildingSiteCtlI) (*Builder_psmisc, error) 
 
 func (self *Builder_psmisc) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	pkgconfig, err := self.bs.GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
+	pkgconfig, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
 	if err != nil {
 		return nil, err
 	}

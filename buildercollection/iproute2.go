@@ -31,7 +31,7 @@ func NewBuilder_iproute2(bs basictypes.BuildingSiteCtlI) *Builder_iproute2 {
 }
 
 func (self *Builder_iproute2) EditBuildArgs(log *logger.Logger, ret []string) ([]string, error) {
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
@@ -68,7 +68,7 @@ func (self *Builder_iproute2) EditDistributeArgs(log *logger.Logger, ret []strin
 
 	ret = append(ret, self.makefile_flags...)
 
-	//	calc := self.bs.GetBuildingSiteValuesCalculator()
+	//	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	//	install_prefix, err := calc.CalculateInstallPrefix()
 	//	if err != nil {

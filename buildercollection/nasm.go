@@ -47,7 +47,7 @@ func (self *Builder_nasm) EditActions(ret basictypes.BuilderActions) (basictypes
 
 func (self *Builder_nasm) BuilderActionPatch(log *logger.Logger) error {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -64,7 +64,7 @@ func (self *Builder_nasm) BuilderActionPatch(log *logger.Logger) error {
 			}
 
 			c := exec.Command("sed", args...)
-			c.Dir = self.bs.GetDIR_SOURCE()
+			c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 			c.Stdout = log.StdoutLbl()
 			c.Stderr = log.StderrLbl()
 

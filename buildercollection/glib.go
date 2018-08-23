@@ -27,7 +27,7 @@ func NewBuilder_glib(bs basictypes.BuildingSiteCtlI) *Builder_glib {
 
 func (self *Builder_glib) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	res, err := calc.CalculateInstallPrefixExecutable("python3")
 	if err != nil {

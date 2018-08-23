@@ -35,7 +35,7 @@ func NewBuilder_std_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_std_cmake, e
 }
 
 func (self *Builder_std_cmake) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
-	return self.bs.GetDIR_BUILDING(), nil
+	return self.GetBuildingSiteCtl().GetDIR_BUILDING(), nil
 }
 
 func (self *Builder_std_cmake) EditActions(ret basictypes.BuilderActions) (
@@ -59,14 +59,14 @@ func (self *Builder_std_cmake) EditActions(ret basictypes.BuilderActions) (
 func (self *Builder_std_cmake) BuilderActionConfigureArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
 
-	//	host_dir := self.bs.GetSystem().GetSystemValuesCalculator().CalculateHostDir(info.Host)
+	//	host_dir := self.GetBuildingSiteCtl().GetSystem().GetSystemValuesCalculator().CalculateHostDir(info.Host)
 
 	//	cm, err := cmake.NewCMake("", host_dir, "")
 	//	if err != nil {
@@ -199,7 +199,7 @@ func (self *Builder_std_cmake) BuilderActionConfigure(
 		return err
 	}
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {

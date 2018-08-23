@@ -49,7 +49,7 @@ func (self *Builder_findutils) EditActions(ret basictypes.BuilderActions) (basic
 
 func (self *Builder_findutils) BuilderActionPatch(log *logger.Logger) error {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -58,7 +58,7 @@ func (self *Builder_findutils) BuilderActionPatch(log *logger.Logger) error {
 		log.Info("findutils 4.6.0 requires patching")
 
 		{
-			c_files, err := filepath.Glob(path.Join(self.bs.GetDIR_SOURCE(), "gl/lib/*.c"))
+			c_files, err := filepath.Glob(path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "gl/lib/*.c"))
 			if err != nil {
 				return err
 			}
@@ -67,7 +67,7 @@ func (self *Builder_findutils) BuilderActionPatch(log *logger.Logger) error {
 			args = append(args, c_files...)
 
 			c := exec.Command("sed", args...)
-			c.Dir = self.bs.GetDIR_SOURCE()
+			c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 			c.Stdout = log.StdoutLbl()
 			c.Stderr = log.StderrLbl()
 
@@ -84,7 +84,7 @@ func (self *Builder_findutils) BuilderActionPatch(log *logger.Logger) error {
 				"/unistd/a #include <sys/sysmacros.h>",
 				"gl/lib/mountlist.c",
 			)
-			c.Dir = self.bs.GetDIR_SOURCE()
+			c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 			c.Stdout = log.StdoutLbl()
 			c.Stderr = log.StderrLbl()
 
@@ -95,7 +95,7 @@ func (self *Builder_findutils) BuilderActionPatch(log *logger.Logger) error {
 		}
 
 		{
-			stdio_impl_h := path.Join(self.bs.GetDIR_SOURCE(), "gl/lib/stdio-impl.h")
+			stdio_impl_h := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "gl/lib/stdio-impl.h")
 
 			data, err := ioutil.ReadFile(stdio_impl_h)
 			if err != nil {

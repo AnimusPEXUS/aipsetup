@@ -50,7 +50,7 @@ func (self *Builder_mc) EditActions(ret basictypes.BuilderActions) (basictypes.B
 
 func (self *Builder_mc) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	//	pkgconfig, err := self.bs.GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
+	//	pkgconfig, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
 	//	if err != nil {
 	//		return nil, err
 	//	}
@@ -98,7 +98,7 @@ func (self *Builder_mc) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 
 func (self *Builder_mc) BuilderActionAddASPSupport(log *logger.Logger) error {
 
-	exts_file := path.Join(self.bs.GetDIR_DESTDIR(), "etc", "mc", "mc.ext")
+	exts_file := path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), "etc", "mc", "mc.ext")
 
 	var lines []string
 
@@ -127,7 +127,7 @@ func (self *Builder_mc) BuilderActionAddASPSupport(log *logger.Logger) error {
 	b := &bytes.Buffer{}
 
 	{
-		install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+		install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 		if err != nil {
 			return err
 		}

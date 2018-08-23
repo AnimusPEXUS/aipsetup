@@ -65,7 +65,7 @@ func (self *Builder_scons) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	python, err := calc.CalculateInstallPrefixExecutable("python2")
 	if err != nil {
@@ -78,12 +78,12 @@ func (self *Builder_scons) BuilderActionBuild(
 		python,
 		[]string{
 			"./bootstrap.py",
-			self.bs.GetDIR_SOURCE(),
+			self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 			"build",
 			//			"scons",
 		}...,
 	)
-	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
 
@@ -99,7 +99,7 @@ func (self *Builder_scons) BuilderActionDistribute(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	python, err := calc.CalculateInstallPrefixExecutable("python2")
 	if err != nil {
@@ -121,7 +121,7 @@ func (self *Builder_scons) BuilderActionDistribute(
 			"--prefix=" + dst_instll_prefix,
 		}...,
 	)
-	cmd.Dir = path.Join(self.bs.GetDIR_SOURCE(), "build", "scons")
+	cmd.Dir = path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "build", "scons")
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
 

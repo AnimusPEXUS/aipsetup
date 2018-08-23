@@ -128,7 +128,7 @@ func (self *Builder_llvm) AfterExtract(log *logger.Logger, ret error) error {
 
 	log.Info("Looking for additional packages to extract them...")
 
-	tarb_dir := self.bs.GetDIR_TARBALL()
+	tarb_dir := self.GetBuildingSiteCtl().GetDIR_TARBALL()
 
 	tarb_dir_files, err := ioutil.ReadDir(tarb_dir)
 	if err != nil {
@@ -189,8 +189,8 @@ func (self *Builder_llvm) AfterExtract(log *logger.Logger, ret error) error {
 		log.Info("Extracting " + i[0])
 		err = a_tools.Extract(
 			path.Join(tarb_dir, i[2]),
-			path.Join(self.bs.GetDIR_SOURCE(), i[1]),
-			path.Join(self.bs.GetDIR_TEMP(), i[0]),
+			path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), i[1]),
+			path.Join(self.GetBuildingSiteCtl().GetDIR_TEMP(), i[0]),
 			true,
 			false,
 			false,
@@ -206,12 +206,12 @@ func (self *Builder_llvm) AfterExtract(log *logger.Logger, ret error) error {
 
 func (self *Builder_llvm) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	PATH, err := calc.Calculate_PATH()
 	if err != nil {
@@ -244,7 +244,7 @@ func (self *Builder_llvm) EditConfigureArgs(log *logger.Logger, ret []string) ([
 			//			"-DLLVM_ENABLE_LIBCXX=yes",
 			//			"-DLLVM_ENABLE_LIBCXXABI=yes",
 			//			"-DLIBCXXABI_LIBCXX_INCLUDES=" +
-			//				path.Join(self.bs.GetDIR_SOURCE(), "projects", "libcxx", "include"),
+			//				path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "projects", "libcxx", "include"),
 
 			//			"-DLLVM_ENABLE_MODULES=yes",
 

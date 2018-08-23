@@ -37,7 +37,7 @@ func (self *Builder_expect) AfterExtract(log *logger.Logger, ret error) error {
 	tcl_found := ""
 	tk_found := ""
 
-	tarb_dir := self.bs.GetDIR_TARBALL()
+	tarb_dir := self.GetBuildingSiteCtl().GetDIR_TARBALL()
 
 	tarb_dir_files, err := ioutil.ReadDir(tarb_dir)
 	if err != nil {
@@ -68,8 +68,8 @@ func (self *Builder_expect) AfterExtract(log *logger.Logger, ret error) error {
 	} {
 		err = a_tools.Extract(
 			path.Join(tarb_dir, i[0]),
-			self.bs.GetPath(),
-			path.Join(self.bs.GetDIR_TEMP(), i[1]),
+			self.GetBuildingSiteCtl().GetPath(),
+			path.Join(self.GetBuildingSiteCtl().GetDIR_TEMP(), i[1]),
 			false,
 			false,
 			false,
@@ -85,7 +85,7 @@ func (self *Builder_expect) AfterExtract(log *logger.Logger, ret error) error {
 
 func (self *Builder_expect) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}

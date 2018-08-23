@@ -53,7 +53,7 @@ func (self *Builder_nss) EditBuildConcurentJobsCount(log *logger.Logger, ret int
 }
 
 func (self *Builder_nss) EditConfigureDir(log *logger.Logger, ret string) (string, error) {
-	return path.Join(self.bs.GetDIR_SOURCE(), "nss"), nil
+	return path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "nss"), nil
 }
 
 func (self *Builder_nss) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
@@ -92,7 +92,7 @@ func (self *Builder_nss) EditActions(ret basictypes.BuilderActions) (basictypes.
 
 func (self *Builder_nss) BuilderActionConfigure(log *logger.Logger) error {
 
-	makefile := path.Join(self.bs.GetDIR_SOURCE(), "nss", "Makefile")
+	makefile := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "nss", "Makefile")
 
 	makefile_text, err := ioutil.ReadFile(makefile)
 	if err != nil {
@@ -116,12 +116,12 @@ func (self *Builder_nss) BuilderActionConfigure(log *logger.Logger) error {
 
 func (self *Builder_nss) EditBuildArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
 
-	if variant, err := self.bs.GetBuildingSiteValuesCalculator().
+	if variant, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateMultilibVariant(); err != nil {
 		return nil, err
 	} else {
@@ -151,9 +151,9 @@ func (self *Builder_nss) EditBuildArgs(log *logger.Logger, ret []string) ([]stri
 
 func (self *Builder_nss) BuilderActionDistribute(log *logger.Logger) error {
 
-	build_dist_dir := path.Join(self.bs.GetDIR_SOURCE(), "dist")
+	build_dist_dir := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "dist")
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -164,12 +164,12 @@ func (self *Builder_nss) BuilderActionDistribute(log *logger.Logger) error {
 		ver = append(ver, "0")
 	}
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return err
 	}
 
-	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
+	dst_install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	if err != nil {
 		return err
 	}

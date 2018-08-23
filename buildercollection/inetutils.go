@@ -27,7 +27,7 @@ func NewBuilder_inetutils(bs basictypes.BuildingSiteCtlI) *Builder_inetutils {
 
 func (self *Builder_inetutils) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	pkgconfig, err := self.bs.GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
+	pkgconfig, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
 	if err != nil {
 		return nil, err
 	}

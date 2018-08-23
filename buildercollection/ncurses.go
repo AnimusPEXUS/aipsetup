@@ -87,14 +87,14 @@ func (self *Builder_ncurses) EditActions(ret basictypes.BuilderActions) (
 
 func (self *Builder_ncurses) BuilderActionPatch(log *logger.Logger) error {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
 
 	ver_str := info.PackageVersion
 
-	patches_dir := path.Join(self.bs.GetDIR_PATCHES(), ver_str)
+	patches_dir := path.Join(self.GetBuildingSiteCtl().GetDIR_PATCHES(), ver_str)
 
 	{
 		_, err := os.Stat(patches_dir)
@@ -208,7 +208,7 @@ func (self *Builder_ncurses) BuilderActionPatch(log *logger.Logger) error {
 		rolling_full_path := path.Join(patches_dir, rolling_name)
 
 		c = exec.Command("bash", rolling_full_path)
-		c.Dir = self.bs.GetDIR_SOURCE()
+		c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 		c.Stdout = log.StdoutLbl()
 		c.Stderr = log.StderrLbl()
 
@@ -247,7 +247,7 @@ func (self *Builder_ncurses) BuilderActionPatch(log *logger.Logger) error {
 		i_full_path := path.Join(patches_dir, i)
 
 		c = exec.Command("patch", "-p1", "-i", i_full_path)
-		c.Dir = self.bs.GetDIR_SOURCE()
+		c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 		c.Stdout = log.StdoutLbl()
 		c.Stderr = log.StderrLbl()
 
@@ -264,12 +264,12 @@ func (self *Builder_ncurses) BuilderActionPatch(log *logger.Logger) error {
 
 func (self *Builder_ncurses) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
@@ -354,7 +354,7 @@ func (self *Builder_ncurses) AfterDistributeLinks(log *logger.Logger) error {
 
 	log.Info("Going to make lib symlinks")
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dst_lib_dir, err := calc.CalculateDstInstallLibDir()
 	if err != nil {
@@ -387,7 +387,7 @@ func (self *Builder_ncurses) AfterDistributePkgConfig(log *logger.Logger) error 
 
 	log.Info("Going to make pkgconfig symlinks")
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dst_lib_dir, err := calc.CalculateDstInstallPrefix()
 	if err != nil {
@@ -414,7 +414,7 @@ func (self *Builder_ncurses) AfterDistributeNcursesLnNcursesw(log *logger.Logger
 
 	log.Info("Making headers ncurses symlink to ncursesw")
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dst_install_prefix, err := calc.CalculateDstInstallPrefix()
 	if err != nil {

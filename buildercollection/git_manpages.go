@@ -67,15 +67,15 @@ func (self *Builder_git_manpages) BuilderActionExtract(log *logger.Logger) error
 
 	a_tools := new(buildingtools.Autotools)
 
-	main_tarball, err := self.bs.DetermineMainTarrball()
+	main_tarball, err := self.GetBuildingSiteCtl().DetermineMainTarrball()
 	if err != nil {
 		return err
 	}
 
 	err = a_tools.Extract(
-		path.Join(self.bs.GetDIR_TARBALL(), main_tarball),
-		self.bs.GetDIR_SOURCE(),
-		path.Join(self.bs.GetDIR_TEMP(), "primary_tarball"),
+		path.Join(self.GetBuildingSiteCtl().GetDIR_TARBALL(), main_tarball),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		path.Join(self.GetBuildingSiteCtl().GetDIR_TEMP(), "primary_tarball"),
 		false,
 		true,
 		false,
@@ -90,9 +90,9 @@ func (self *Builder_git_manpages) BuilderActionExtract(log *logger.Logger) error
 
 func (self *Builder_git_manpages) BuilderActionDistribute(log *logger.Logger) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
-	src_dir_dirs, err := ioutil.ReadDir(self.bs.GetDIR_SOURCE())
+	src_dir_dirs, err := ioutil.ReadDir(self.GetBuildingSiteCtl().GetDIR_SOURCE())
 	if err != nil {
 		return err
 	}
@@ -109,7 +109,7 @@ func (self *Builder_git_manpages) BuilderActionDistribute(log *logger.Logger) er
 	for _, i := range src_dir_dirs {
 		if i.IsDir() && strings.HasPrefix(i.Name(), "man") {
 			err = os.Rename(
-				path.Join(self.bs.GetDIR_SOURCE(), i.Name()),
+				path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), i.Name()),
 				path.Join(dst_install_prefix_man, i.Name()),
 			)
 		}

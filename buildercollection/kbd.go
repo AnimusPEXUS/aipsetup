@@ -33,7 +33,7 @@ func NewBuilder_kbd(bs basictypes.BuildingSiteCtlI) (*Builder_kbd, error) {
 
 func (self *Builder_kbd) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateInstallPrefix()
 
 	if err != nil {

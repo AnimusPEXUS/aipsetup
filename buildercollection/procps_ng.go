@@ -31,7 +31,7 @@ func NewBuilder_procps_ng(bs basictypes.BuildingSiteCtlI) (*Builder_procps_ng, e
 
 func (self *Builder_procps_ng) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	//	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().
+	//	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 	//		CalculateInstallPrefix()
 
 	//	if err != nil {
@@ -45,7 +45,7 @@ func (self *Builder_procps_ng) EditConfigureArgs(log *logger.Logger, ret []strin
 		}...,
 	)
 
-	pkgconfig, err := self.bs.GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
+	pkgconfig, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
 	if err != nil {
 		return nil, err
 	}

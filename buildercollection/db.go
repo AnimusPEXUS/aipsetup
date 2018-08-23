@@ -35,12 +35,12 @@ func NewBuilder_db(bs basictypes.BuildingSiteCtlI) (*Builder_db, error) {
 }
 
 func (self *Builder_db) EditConfigureDir(log *logger.Logger, ret string) (string, error) {
-	ret = path.Join(self.bs.GetDIR_SOURCE(), "dist")
+	ret = path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "dist")
 	return ret, nil
 }
 
 func (self *Builder_db) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
-	ret = path.Join(self.bs.GetDIR_SOURCE(), "build_unix")
+	ret = path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "build_unix")
 	return ret, nil
 }
 
@@ -55,7 +55,7 @@ func (self *Builder_db) EditConfigureScriptName(log *logger.Logger, ret string) 
 
 func (self *Builder_db) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
@@ -88,7 +88,7 @@ func (self *Builder_db) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 }
 
 func (self *Builder_db) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {

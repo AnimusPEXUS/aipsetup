@@ -33,7 +33,7 @@ func NewBuilder_autoconf(bs basictypes.BuildingSiteCtlI) (*Builder_autoconf, err
 
 func (self *Builder_autoconf) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return nil, err
 	}

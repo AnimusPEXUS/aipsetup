@@ -43,7 +43,7 @@ func (self *Builder_libcap2) EditBuildConcurentJobsCount(log *logger.Logger, ret
 
 func (self *Builder_libcap2) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ q
 `))
 
 	c := exec.Command("ed", "./Makefile")
-	c.Dir = path.Join(self.bs.GetDIR_SOURCE(), "libcap")
+	c.Dir = path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "libcap")
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()
 	c.Stdin = patch
@@ -95,7 +95,7 @@ q
 
 func (self *Builder_libcap2) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
@@ -105,7 +105,7 @@ func (self *Builder_libcap2) EditDistributeArgs(log *logger.Logger, ret []string
 		return nil, err
 	}
 
-	mlv, err := self.bs.GetBuildingSiteValuesCalculator().CalculateMultilibVariant()
+	mlv, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateMultilibVariant()
 	if err != nil {
 		return nil, err
 	}
@@ -123,7 +123,7 @@ func (self *Builder_libcap2) EditDistributeArgs(log *logger.Logger, ret []string
 		"prefix=" + install_prefix,
 		//		"lib=" + main_multiarch_libdir_name,
 		"lib=lib",
-		"DESTDIR=" + self.bs.GetDIR_DESTDIR(),
+		"DESTDIR=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 		"RAISE_SETFCAP=no",
 		"PAM_CAP=yes",
 	}

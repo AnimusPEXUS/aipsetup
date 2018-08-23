@@ -25,7 +25,7 @@ func NewBuilder_subversion(bs basictypes.BuildingSiteCtlI) (*Builder_subversion,
 }
 
 func (self *Builder_subversion) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {

@@ -39,7 +39,7 @@ func NewBuilder_linux(bs basictypes.BuildingSiteCtlI) (*Builder_linux, error) {
 
 	self.Builder_std = NewBuilder_std(bs)
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -104,7 +104,7 @@ func NewBuilder_linux(bs basictypes.BuildingSiteCtlI) (*Builder_linux, error) {
 
 func (self *Builder_linux) DefineActions() (basictypes.BuilderActions, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -132,14 +132,14 @@ func (self *Builder_linux) DefineActions() (basictypes.BuilderActions, error) {
 
 	if info.ThisIsCrossbuilder() || info.ThisIsSubarchBuilding() { // TODO: simplify
 		if info.ThisIsCrossbuilder() {
-			self.bs.GetLog().Info("Crossbuilder building detected")
+			self.GetBuildingSiteCtl().GetLog().Info("Crossbuilder building detected")
 		}
 
 		if info.ThisIsSubarchBuilding() {
-			self.bs.GetLog().Info("Subarch building detected")
+			self.GetBuildingSiteCtl().GetLog().Info("Subarch building detected")
 		}
 
-		self.bs.GetLog().Info(" - only headers will be prepared")
+		self.GetBuildingSiteCtl().GetLog().Info(" - only headers will be prepared")
 
 		ret = basictypes.BuilderActions{
 			&basictypes.BuilderAction{"dst_cleanup", self.Builder_std.BuilderActionDstCleanup},
@@ -182,8 +182,8 @@ func (self *Builder_linux) BuilderActionBuild(
 		[]string{},
 		buildingtools.Copy,
 		"Makefile",
-		self.bs.GetDIR_SOURCE(),
-		self.bs.GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 		"make",
 		log,
 	)
@@ -223,8 +223,8 @@ func (self *Builder_linux) BuilderActionDistrKernel(
 		[]string{},
 		buildingtools.Copy,
 		"Makefile",
-		self.bs.GetDIR_SOURCE(),
-		self.bs.GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 		"make",
 		log,
 	)
@@ -232,7 +232,7 @@ func (self *Builder_linux) BuilderActionDistrKernel(
 		return err
 	}
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -268,7 +268,7 @@ func (self *Builder_linux) BuilderActionDistrModules(
 		args,
 		[]string{
 			"modules_install",
-			fmt.Sprintf("INSTALL_MOD_PATH=%s", self.bs.GetDIR_DESTDIR()),
+			fmt.Sprintf("INSTALL_MOD_PATH=%s", self.GetBuildingSiteCtl().GetDIR_DESTDIR()),
 		}...,
 	)
 	args = append(
@@ -281,8 +281,8 @@ func (self *Builder_linux) BuilderActionDistrModules(
 		[]string{},
 		buildingtools.Copy,
 		"Makefile",
-		self.bs.GetDIR_SOURCE(),
-		self.bs.GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 		"make",
 		log,
 	)
@@ -290,12 +290,12 @@ func (self *Builder_linux) BuilderActionDistrModules(
 		return err
 	}
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
 
-	modules_dir := path.Join(self.bs.GetDIR_DESTDIR(), basictypes.DIRNAME_LIB, "modules")
+	modules_dir := path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), basictypes.DIRNAME_LIB, "modules")
 
 	files, err := ioutil.ReadDir(modules_dir)
 	if err != nil {
@@ -336,19 +336,19 @@ func (self *Builder_linux) BuilderActionDistrHeadersAll(
 
 	var install_hdr_path string
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
 
 	if info.ThisIsCrossbuilder() {
 		install_hdr_path = path.Join(
-			self.bs.GetDIR_DESTDIR(), "usr", "crossbuilders",
+			self.GetBuildingSiteCtl().GetDIR_DESTDIR(), "usr", "crossbuilders",
 			info.CrossbuilderTarget,
 		)
 
 	} else {
-		install_hdr_path = path.Join(self.bs.GetDIR_DESTDIR(), "usr")
+		install_hdr_path = path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), "usr")
 	}
 
 	at := &buildingtools.Autotools{}
@@ -371,8 +371,8 @@ func (self *Builder_linux) BuilderActionDistrHeadersAll(
 		[]string{},
 		buildingtools.Copy,
 		"Makefile",
-		self.bs.GetDIR_SOURCE(),
-		self.bs.GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 		"make",
 		log,
 	)
@@ -429,8 +429,8 @@ func (self *Builder_linux) BuilderActionDistrMan(
 		[]string{},
 		buildingtools.Copy,
 		"Makefile",
-		self.bs.GetDIR_SOURCE(),
-		self.bs.GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 		"make",
 		log,
 	)
@@ -445,7 +445,7 @@ func (self *Builder_linux) BuilderActionDistrMan(
 
 	man_files, err := filepath.Glob(
 		path.Join(
-			self.bs.GetDIR_SOURCE(),
+			self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 			"Documentation",
 			"DocBook",
 			"man",
@@ -477,7 +477,7 @@ func (self *Builder_linux) BuilderActionDistrSource(
 	log *logger.Logger,
 ) error {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -485,7 +485,7 @@ func (self *Builder_linux) BuilderActionDistrSource(
 	source_linux_dir_basename := fmt.Sprintf("linux-%s", info.PackageVersion)
 
 	dst_dir := path.Join(
-		self.bs.GetDIR_DESTDIR(),
+		self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 		"usr",
 		"src",
 		source_linux_dir_basename,
@@ -497,7 +497,7 @@ func (self *Builder_linux) BuilderActionDistrSource(
 	}
 
 	err = filetools.CopyTree(
-		self.bs.GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 		dst_dir,
 		false,
 		true,
@@ -510,7 +510,7 @@ func (self *Builder_linux) BuilderActionDistrSource(
 		return err
 	}
 
-	// src_file_list, err := ioutil.ReadDir(self.bs.GetDIR_SOURCE())
+	// src_file_list, err := ioutil.ReadDir(self.GetBuildingSiteCtl().GetDIR_SOURCE())
 	// if err != nil {
 	// 	return err
 	// }
@@ -521,7 +521,7 @@ func (self *Builder_linux) BuilderActionDistrSource(
 	// 	cmd := exec.Command(
 	// 		"cp",
 	// 		"-afv",
-	// 		path.Join(self.bs.GetDIR_SOURCE(), i.Name()),
+	// 		path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), i.Name()),
 	// 		dst_dir,
 	// 	)
 	// 	cmd.Stdout = log.StdoutLbl()
@@ -538,7 +538,7 @@ func (self *Builder_linux) BuilderActionDistrSymLink(
 	log *logger.Logger,
 ) error {
 
-	dst_usr_src_dir := path.Join(self.bs.GetDIR_DESTDIR(), "usr", "src")
+	dst_usr_src_dir := path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), "usr", "src")
 	dst_usr_src_dir_linux := ""
 
 	dst_usr_src_dir_files, err := ioutil.ReadDir(dst_usr_src_dir)

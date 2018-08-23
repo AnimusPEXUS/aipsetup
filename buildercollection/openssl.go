@@ -49,7 +49,7 @@ func NewBuilder_openssl(bs basictypes.BuildingSiteCtlI) (*Builder_openssl, error
 }
 
 func (self *Builder_openssl) veredName() (string, error) {
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return "", err
 	}
@@ -87,7 +87,7 @@ func (self *Builder_openssl) EditActions(ret basictypes.BuilderActions) (basicty
 
 func (self *Builder_openssl) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -97,7 +97,7 @@ func (self *Builder_openssl) EditConfigureArgs(log *logger.Logger, ret []string)
 		platform = "linux-x86_64"
 	}
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
@@ -153,12 +153,12 @@ func (self *Builder_openssl) EditConfigureScriptName(log *logger.Logger, ret str
 
 func (self *Builder_openssl) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
 
-	//	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
+	//	dst_install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	//	if err != nil {
 	//		return nil, err
 	//	}
@@ -169,15 +169,15 @@ func (self *Builder_openssl) EditDistributeArgs(log *logger.Logger, ret []string
 		// FIXME: fix path join
 		"MANDIR=" + path.Join(install_prefix, "share", "man"),
 		// "MANSUFFIX=ssl",
-		"INSTALL_PREFIX=" + self.bs.GetDIR_DESTDIR(),
-		"DESTDIR=" + self.bs.GetDIR_DESTDIR(),
+		"INSTALL_PREFIX=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
+		"DESTDIR=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 	}
 
 	return ret, nil
 }
 
 func (self *Builder_openssl) BuilderActionAfterDistribute(log *logger.Logger) error {
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -190,7 +190,7 @@ func (self *Builder_openssl) BuilderActionAfterDistribute(log *logger.Logger) er
 		return nil
 	}
 
-	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
+	dst_install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	if err != nil {
 		return err
 	}
@@ -343,7 +343,7 @@ func (self *Builder_openssl) BuilderActionAfterDistribute(log *logger.Logger) er
 		return err
 	}
 
-	err = os.RemoveAll(path.Join(self.bs.GetDIR_DESTDIR(), "etc"))
+	err = os.RemoveAll(path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), "etc"))
 	if err != nil {
 		return err
 	}

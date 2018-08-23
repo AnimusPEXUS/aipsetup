@@ -62,20 +62,20 @@ type Builder_std struct {
 	EditDistributeMakefileCB            func(log *logger.Logger, ret string) (string, error)
 	EditDistributeWorkingDirCB          func(log *logger.Logger, ret string) (string, error)
 
-	bs basictypes.BuildingSiteCtlI
+	bs_ren basictypes.BuildingSiteCtlI
 }
 
 // builders are independent of anything so have no moto to return errors
-func NewBuilder_std(buildingsite basictypes.BuildingSiteCtlI) *Builder_std {
+func NewBuilder_std(bs basictypes.BuildingSiteCtlI) *Builder_std {
 	ret := new(Builder_std)
 
-	ret.bs = buildingsite
+	ret.bs_ren = bs
 
 	return ret
 }
 
 func (self *Builder_std) GetBuildingSiteCtl() basictypes.BuildingSiteCtlI {
-	return self.bs
+	return self.bs_ren
 }
 
 func (self *Builder_std) DefineActions() (basictypes.BuilderActions, error) {

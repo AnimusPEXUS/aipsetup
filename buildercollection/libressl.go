@@ -42,7 +42,7 @@ func NewBuilder_libressl(bs basictypes.BuildingSiteCtlI) (*Builder_libressl, err
 }
 
 func (self *Builder_libressl) veredName() (string, error) {
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return "", err
 	}
@@ -68,7 +68,7 @@ func (self *Builder_libressl) EditConfigureIsArgToShell(log *logger.Logger, ret 
 
 func (self *Builder_libressl) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +78,7 @@ func (self *Builder_libressl) EditConfigureArgs(log *logger.Logger, ret []string
 		platform = "linux-x86_64"
 	}
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
@@ -134,12 +134,12 @@ func (self *Builder_libressl) EditConfigureScriptName(log *logger.Logger, ret st
 
 func (self *Builder_libressl) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
 
-	//	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
+	//	dst_install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	//	if err != nil {
 	//		return nil, err
 	//	}
@@ -150,8 +150,8 @@ func (self *Builder_libressl) EditDistributeArgs(log *logger.Logger, ret []strin
 		// FIXME: fix path join
 		"MANDIR=" + path.Join(install_prefix, "share", "man"),
 		// "MANSUFFIX=ssl",
-		"INSTALL_PREFIX=" + self.bs.GetDIR_DESTDIR(),
-		"DESTDIR=" + self.bs.GetDIR_DESTDIR(),
+		"INSTALL_PREFIX=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
+		"DESTDIR=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 	}
 
 	return ret, nil

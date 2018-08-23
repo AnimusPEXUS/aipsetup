@@ -52,7 +52,7 @@ func (self *Builder_syslinux) EditDistributeArgs(log *logger.Logger, ret []strin
 		"bios", "efi32", "efi64",
 		"installer",
 		"install",
-		"INSTALLROOT=" + self.bs.GetDIR_DESTDIR(),
+		"INSTALLROOT=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 	}
 
 	return ret, nil

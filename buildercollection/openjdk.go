@@ -85,12 +85,12 @@ func (self *Builder_openjdk) EditDistributeDESTDIR(log *logger.Logger, ret strin
 
 func (self *Builder_openjdk) AfterOpenJDKDistribution(log *logger.Logger) error {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
@@ -99,7 +99,7 @@ func (self *Builder_openjdk) AfterOpenJDKDistribution(log *logger.Logger) error 
 
 	java_dir := path.Join(install_prefix, "opt", "java")
 
-	dst_dir := self.bs.GetDIR_DESTDIR()
+	dst_dir := self.GetBuildingSiteCtl().GetDIR_DESTDIR()
 
 	dst_java_dir := path.Join(dst_dir, java_dir)
 

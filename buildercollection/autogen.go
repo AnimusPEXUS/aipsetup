@@ -29,7 +29,7 @@ func NewBuilder_autogen(bs basictypes.BuildingSiteCtlI) (*Builder_autogen, error
 
 func (self *Builder_autogen) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	inst_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {

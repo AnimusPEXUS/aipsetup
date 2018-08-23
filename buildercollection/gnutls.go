@@ -35,31 +35,31 @@ func (self *Builder_gnutls) EditConfigureArgs(log *logger.Logger, ret []string) 
 
 	suffix := "-2.0"
 
-	guile_config, err := self.bs.GetBuildingSiteValuesCalculator().
+	guile_config, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateInstallPrefixExecutable("guile-config" + suffix)
 	if err != nil {
 		return nil, err
 	}
 
-	guile_snarf, err := self.bs.GetBuildingSiteValuesCalculator().
+	guile_snarf, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateInstallPrefixExecutable("guile-snarf" + suffix)
 	if err != nil {
 		return nil, err
 	}
 
-	guile_tools, err := self.bs.GetBuildingSiteValuesCalculator().
+	guile_tools, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateInstallPrefixExecutable("guile-tools" + suffix)
 	if err != nil {
 		return nil, err
 	}
 
-	guile, err := self.bs.GetBuildingSiteValuesCalculator().
+	guile, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateInstallPrefixExecutable("guile" + suffix)
 	if err != nil {
 		return nil, err
 	}
 
-	//	pkg_config, err := self.bs.GetBuildingSiteValuesCalculator().
+	//	pkg_config, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 	//		GetPrefixPkgConfig()
 	//	if err != nil {
 	//		return nil, err

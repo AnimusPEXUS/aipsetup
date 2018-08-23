@@ -63,7 +63,7 @@ func (self *Builder_bash) BuilderActionPatch(log *logger.Logger) error {
 		return err
 	}
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -88,7 +88,7 @@ func (self *Builder_bash) BuilderActionPatch(log *logger.Logger) error {
 
 	patches := make([]string, 0)
 
-	all_patches_files, err := ioutil.ReadDir(self.bs.GetDIR_PATCHES())
+	all_patches_files, err := ioutil.ReadDir(self.GetBuildingSiteCtl().GetDIR_PATCHES())
 	if err != nil {
 		return err
 	}
@@ -164,10 +164,10 @@ func (self *Builder_bash) BuilderActionPatch(log *logger.Logger) error {
 			return err
 		}
 
-		full_patch_file_path := path.Join(self.bs.GetDIR_PATCHES(), i)
+		full_patch_file_path := path.Join(self.GetBuildingSiteCtl().GetDIR_PATCHES(), i)
 
 		c := exec.Command("patch", "-i", full_patch_file_path, "-p0")
-		c.Dir = self.bs.GetDIR_SOURCE()
+		c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 		c.Stderr = log.StderrLbl()
 		c.Stdout = log.StdoutLbl()
 		res := c.Run()
@@ -191,7 +191,7 @@ func (self *Builder_bash) BuilderActionPatch(log *logger.Logger) error {
 
 	}
 
-	err = self.bs.WriteInfo(info)
+	err = self.GetBuildingSiteCtl().WriteInfo(info)
 	if err != nil {
 		return err
 	}
@@ -205,7 +205,7 @@ func (self *Builder_bash) BuilderActionPatch(log *logger.Logger) error {
 
 func (self *Builder_bash) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -223,7 +223,7 @@ func (self *Builder_bash) EditConfigureArgs(log *logger.Logger, ret []string) ([
 
 func (self *Builder_bash) BuilderActionAfterDistribute(log *logger.Logger) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dst_install_prefix, err := calc.CalculateDstInstallPrefix()
 	if err != nil {

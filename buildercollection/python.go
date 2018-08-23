@@ -46,9 +46,9 @@ func (self *Builder_python) EditConfigureArgs(
 	//  changing prograaming language of aipsetup.
 	// This module will contain commentaries left from pythonish aipsetup.
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}

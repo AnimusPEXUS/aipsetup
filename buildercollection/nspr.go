@@ -36,7 +36,7 @@ func NewBuilder_nspr(bs basictypes.BuildingSiteCtlI) (*Builder_nspr, error) {
 }
 
 func (self *Builder_nspr) EditConfigureDir(log *logger.Logger, ret string) (string, error) {
-	return path.Join(self.bs.GetDIR_SOURCE(), "nspr"), nil
+	return path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "nspr"), nil
 }
 
 func (self *Builder_nspr) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
@@ -53,7 +53,7 @@ func (self *Builder_nspr) EditConfigureArgs(log *logger.Logger, ret []string) ([
 		}...,
 	)
 
-	if variant, err := self.bs.GetBuildingSiteValuesCalculator().
+	if variant, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateMultilibVariant(); err != nil {
 		return nil, err
 	} else {

@@ -45,12 +45,12 @@ func (self *Builder_libcap) EditActions(ret basictypes.BuilderActions) (basictyp
 
 func (self *Builder_libcap) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
 
-	main_multiarch_libdir_name, err := self.bs.GetBuildingSiteValuesCalculator().CalculateMainMultiarchLibDirName()
+	main_multiarch_libdir_name, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateMainMultiarchLibDirName()
 	if err != nil {
 		return nil, err
 	}
@@ -60,7 +60,7 @@ func (self *Builder_libcap) EditDistributeArgs(log *logger.Logger, ret []string)
 		"install",
 		"prefix=" + install_prefix,
 		"lib=" + main_multiarch_libdir_name,
-		"DESTDIR=" + self.bs.GetDIR_DESTDIR(),
+		"DESTDIR=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 		"RAISE_SETFCAP=no",
 		"PAM_CAP=yes",
 	}

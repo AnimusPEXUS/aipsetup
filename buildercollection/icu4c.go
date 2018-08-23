@@ -31,7 +31,7 @@ func NewBuilder_icu4c(bs basictypes.BuildingSiteCtlI) *Builder_icu4c {
 }
 
 func (self *Builder_icu4c) EditConfigureDir(log *logger.Logger, ret string) (string, error) {
-	return path.Join(self.bs.GetDIR_SOURCE(), "source"), nil
+	return path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "source"), nil
 }
 
 func (self *Builder_icu4c) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {

@@ -37,7 +37,7 @@ func (self *Builder_qtox) EditConfigureEnv(
 	environ.EnvVarEd,
 	error,
 ) {
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 	prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
 		return nil, err

@@ -47,7 +47,7 @@ func (self *Builder_openssh) EditActions(ret basictypes.BuilderActions) (basicty
 
 func (self *Builder_openssh) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	pkgconfig, err := self.bs.GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
+	pkgconfig, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
 	if err != nil {
 		return nil, err
 	}
@@ -88,7 +88,7 @@ func (self *Builder_openssh) EditConfigureArgs(log *logger.Logger, ret []string)
 
 func (self *Builder_openssh) RenameConfigs(log *logger.Logger) error {
 
-	ssh_dir := path.Join(self.bs.GetDIR_DESTDIR(), "etc", "ssh")
+	ssh_dir := path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), "etc", "ssh")
 
 	err := os.Rename(
 		path.Join(ssh_dir, "sshd_config"),

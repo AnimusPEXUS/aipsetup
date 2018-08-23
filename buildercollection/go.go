@@ -90,7 +90,7 @@ func (self *Builder_go) DefineActions() (basictypes.BuilderActions, error) {
 func (self *Builder_go) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
-	cwd := path.Join(self.bs.GetDIR_SOURCE(), "src")
+	cwd := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "src")
 
 	env := environ.NewFromStrings(os.Environ())
 
@@ -125,12 +125,12 @@ func (self *Builder_go) BuilderActionDistribute(
 	log *logger.Logger,
 ) error {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	host_lib_dir, err := calc.CalculateHostLibDir()
 	if err != nil {
@@ -145,11 +145,11 @@ func (self *Builder_go) BuilderActionDistribute(
 
 	go_dir := fmt.Sprintf("go-%s-%s-bootstrap", os_name, arch)
 
-	godir_path := path.Join(self.bs.GetPath(), go_dir)
+	godir_path := path.Join(self.GetBuildingSiteCtl().GetPath(), go_dir)
 
 	dir_path := path.Join(host_lib_dir, gogo_version_string)
 
-	dst_dir_path := path.Join(self.bs.GetDIR_DESTDIR(), dir_path)
+	dst_dir_path := path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), dir_path)
 
 	err = os.MkdirAll(dst_dir_path, 0755)
 	if err != nil {
@@ -171,7 +171,7 @@ func (self *Builder_go) BuilderActionDistribute(
 	}
 
 	dst_etc_dir := path.Join(
-		self.bs.GetDIR_DESTDIR(),
+		self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 		"etc",
 		"profile.d",
 		"SET",

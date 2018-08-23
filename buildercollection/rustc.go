@@ -75,19 +75,19 @@ func (self *Builder_rustc) BuilderActionConfigure(
 	log *logger.Logger,
 ) error {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
 		return err
 	}
 
-	src_config_toml := path.Join(self.bs.GetDIR_SOURCE(), "config.toml")
+	src_config_toml := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "config.toml")
 
 	prefix := install_prefix
 	sysconfdir := "/etc"
@@ -113,16 +113,16 @@ func (self *Builder_rustc) BuilderActionConfigure(
 		return err
 	}
 
-	//	prefix := path.Join(self.bs.GetDIR_DESTDIR(), install_prefix)
-	//	sysconfdir := path.Join(self.bs.GetDIR_DESTDIR(), "/etc")
+	//	prefix := path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), install_prefix)
+	//	sysconfdir := path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), "/etc")
 	//	docdir := path.Join(prefix, "share", "doc", "rust-"+info.PackageVersion)
 
 	//	//	libdir, err := calc.CalculateInstallLibDir()
 	//	//	if err != nil {
 	//	//		return err
 	//	//	}
-	//	//	libdir = path.Join(self.bs.GetDIR_DESTDIR(), libdir)
-	//	localstatedir := path.Join(self.bs.GetDIR_DESTDIR(), "/var")
+	//	//	libdir = path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), libdir)
+	//	localstatedir := path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), "/var")
 
 	err = os.MkdirAll(prefix, 0700)
 	if err != nil {
@@ -192,7 +192,7 @@ func (self *Builder_rustc) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	python2, err := calc.CalculateInstallPrefixExecutable("python2")
 	if err != nil {
@@ -200,7 +200,7 @@ func (self *Builder_rustc) BuilderActionBuild(
 	}
 
 	cmd := exec.Command(python2, "./x.py", "build")
-	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
 
@@ -216,7 +216,7 @@ func (self *Builder_rustc) BuilderActionDistribute(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	python2, err := calc.CalculateInstallPrefixExecutable("python2")
 	if err != nil {
@@ -224,10 +224,10 @@ func (self *Builder_rustc) BuilderActionDistribute(
 	}
 
 	e := environ.NewFromStrings(os.Environ())
-	e.Set("DESTDIR", self.bs.GetDIR_DESTDIR())
+	e.Set("DESTDIR", self.GetBuildingSiteCtl().GetDIR_DESTDIR())
 
 	cmd := exec.Command(python2, "./x.py", "install")
-	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
 	cmd.Env = e.Strings()

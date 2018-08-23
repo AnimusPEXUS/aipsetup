@@ -50,21 +50,21 @@ func (self *Builder_xfs) EditActions(
 //func (self *Builder_xfs) ActionCompletePreconfiguration(
 //	log *logger.Logger,
 //) error {
-//	//	info, err := self.bs.ReadInfo()
+//	//	info, err := self.GetBuildingSiteCtl().ReadInfo()
 //	//	if err != nil {
 //	//		return err
 //	//	}
 
-//	//	calc := self.bs.GetBuildingSiteValuesCalculator()
+//	//	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 //	//	dst_install_prefix,err:=calc .CalculateDstInstallPrefix()
 //	//	if err != nil {
 //	//		return err
 //	//	}
 
-//	//	install_sh_path := path.Join(self.bs.GetDIR_SOURCE(), "include", "install-sh")
-//	install_sh_path2 := path.Join(self.bs.GetDIR_SOURCE(), "install-sh")
-//	configure_path := path.Join(self.bs.GetDIR_SOURCE(), "configure")
+//	//	install_sh_path := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "include", "install-sh")
+//	install_sh_path2 := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "install-sh")
+//	configure_path := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "configure")
 
 //	//	if _, err := os.Stat(install_sh_path); err == nil {
 
@@ -91,8 +91,8 @@ func (self *Builder_xfs) EditActions(
 //		[]string{},
 //		buildingtools.Copy,
 //		"Makefile",
-//		self.bs.GetDIR_SOURCE(),
-//		self.bs.GetDIR_SOURCE(),
+//		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+//		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 //		"make",
 //		log,
 //	)
@@ -111,7 +111,7 @@ func (self *Builder_xfs) EditDistributeArgs(
 	error,
 ) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -148,7 +148,7 @@ func (self *Builder_xfs) EditDistributeArgs(
 	//		}
 	//	}
 
-	ret = append(ret, "DESTDIR="+self.bs.GetDIR_DESTDIR())
+	ret = append(ret, "DESTDIR="+self.GetBuildingSiteCtl().GetDIR_DESTDIR())
 
 	return ret, nil
 }

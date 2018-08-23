@@ -47,7 +47,7 @@ func NewBuilder_gcc(bs basictypes.BuildingSiteCtlI) *Builder_gcc {
 			ret environ.EnvVarEd,
 		) (environ.EnvVarEd, error) {
 
-			calc := self.bs.GetBuildingSiteValuesCalculator()
+			calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 			hostdir, err := calc.CalculateHostDir()
 			if err != nil {
@@ -75,14 +75,14 @@ func NewBuilder_gcc(bs basictypes.BuildingSiteCtlI) *Builder_gcc {
 }
 
 func (self *Builder_gcc) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
-	return self.bs.GetDIR_BUILDING(), nil
+	return self.GetBuildingSiteCtl().GetDIR_BUILDING(), nil
 }
 
 func (self *Builder_gcc) DefineActions() (basictypes.BuilderActions, error) {
 
 	// TODO: use EditActionsCB instead?
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -129,13 +129,13 @@ func (self *Builder_gcc) AfterExtract(log *logger.Logger, err error) error {
 		return err
 	}
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
 
 	a_tools := new(buildingtools.Autotools)
-	tar_dir := self.bs.GetDIR_TARBALL()
+	tar_dir := self.GetBuildingSiteCtl().GetDIR_TARBALL()
 	files, err := ioutil.ReadDir(tar_dir)
 	if err != nil {
 		return err
@@ -189,8 +189,8 @@ func (self *Builder_gcc) AfterExtract(log *logger.Logger, err error) error {
 		if filename != "" {
 			err = a_tools.Extract(
 				path.Join(tar_dir, filename),
-				path.Join(self.bs.GetDIR_SOURCE(), i),
-				self.bs.GetDIR_TEMP(),
+				path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), i),
+				self.GetBuildingSiteCtl().GetDIR_TEMP(),
 				true,
 				false,
 				true,
@@ -206,9 +206,9 @@ func (self *Builder_gcc) AfterExtract(log *logger.Logger, err error) error {
 
 func (self *Builder_gcc) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -424,7 +424,7 @@ func (self *Builder_gcc) BuilderActionDistribute_01(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
-		return []string{"install-gcc", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
+		return []string{"install-gcc", "DESTDIR=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR()}, nil
 	}
 
 	return self.BuilderActionDistribute(log)
@@ -467,7 +467,7 @@ func (self *Builder_gcc) BuilderActionDistribute_02(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
-		return []string{"install-target-libgcc", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
+		return []string{"install-target-libgcc", "DESTDIR=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR()}, nil
 	}
 
 	return self.BuilderActionDistribute(log)
@@ -510,7 +510,7 @@ func (self *Builder_gcc) BuilderActionDistribute_03(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
-		return []string{"install", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
+		return []string{"install", "DESTDIR=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR()}, nil
 	}
 
 	return self.BuilderActionDistribute(log)
@@ -518,7 +518,7 @@ func (self *Builder_gcc) BuilderActionDistribute_03(
 
 func (self *Builder_gcc) BuilderActionAfterDistribute(log *logger.Logger) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dst_install_prefix, err := calc.CalculateDstInstallPrefix()
 	if err != nil {

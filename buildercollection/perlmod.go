@@ -47,7 +47,7 @@ func (self *Builder_perlmod) EditActions(ret basictypes.BuilderActions) (basicty
 
 func (self *Builder_perlmod) BuilderActionConfigure(log *logger.Logger) error {
 
-	perl, err := self.bs.GetBuildingSiteValuesCalculator().
+	perl, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateInstallPrefixExecutable("perl")
 	if err != nil {
 		return err
@@ -56,7 +56,7 @@ func (self *Builder_perlmod) BuilderActionConfigure(log *logger.Logger) error {
 	c := exec.Command(perl, "Makefile.PL")
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()
-	c.Dir = self.bs.GetDIR_SOURCE()
+	c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 
 	err = c.Run()
 	if err != nil {

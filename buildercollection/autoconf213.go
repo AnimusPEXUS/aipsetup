@@ -69,7 +69,7 @@ func (self *Builder_autoconf213) EditActions(ret basictypes.BuilderActions) (bas
 func (self *Builder_autoconf213) BuilderActionPatch(
 	log *logger.Logger,
 ) error {
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -78,7 +78,7 @@ func (self *Builder_autoconf213) BuilderActionPatch(
 		return errors.New("this builder is for autoconf-2.13 only")
 	}
 
-	ptch_dir := self.bs.GetDIR_PATCHES()
+	ptch_dir := self.GetBuildingSiteCtl().GetDIR_PATCHES()
 	ptch_dir_files, err := ioutil.ReadDir(ptch_dir)
 	if err != nil {
 		return err
@@ -100,7 +100,7 @@ func (self *Builder_autoconf213) BuilderActionPatch(
 	pth_name := ptch_dir_files_ls[len(ptch_dir_files_ls)-1]
 
 	cmd := exec.Command("patch", "-p1", path.Join(ptch_dir, pth_name))
-	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
 
@@ -114,7 +114,7 @@ func (self *Builder_autoconf213) BuilderActionPatch(
 
 func (self *Builder_autoconf213) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
@@ -140,10 +140,6 @@ func (self *Builder_autoconf213) EditConfigureArgs(log *logger.Logger, ret []str
 	return ret, nil
 }
 
-//func (self *Builder_autoconf213) EditDistributeDESTDIR(log *logger.Logger, ret string) (string, error) {
-//	return "prefix", nil
-//}
-
 func (self *Builder_autoconf213) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
 
 	//	ret = []string{}
@@ -155,7 +151,7 @@ func (self *Builder_autoconf213) EditDistributeArgs(log *logger.Logger, ret []st
 		}
 	}
 
-	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
+	dst_install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	if err != nil {
 		return nil, err
 	}
@@ -175,18 +171,12 @@ func (self *Builder_autoconf213) EditDistributeArgs(log *logger.Logger, ret []st
 
 func (self *Builder_autoconf213) BuilderActionAfterDistribute(log *logger.Logger) error {
 
-	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
+	dst_install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	if err != nil {
 		return err
 	}
 
-	//	share_autoconf := path.Join(dst_install_prefix, "share", "autoconf")
 	share_info := path.Join(dst_install_prefix, "share", "info")
-
-	//	err = os.Rename(share_autoconf, share_autoconf+"2.13")
-	//	if err != nil {
-	//		return err
-	//	}
 
 	err = os.RemoveAll(share_info)
 	if err != nil {

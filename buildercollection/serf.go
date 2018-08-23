@@ -78,7 +78,7 @@ func (self *Builder_serf) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	scons, err := calc.CalculateInstallPrefixExecutable("scons")
 	if err != nil {
@@ -115,7 +115,7 @@ func (self *Builder_serf) BuilderActionBuild(
 	params = append(params, comp_opt_map.Strings()...)
 
 	cmd := exec.Command(scons, params...)
-	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
 
@@ -131,7 +131,7 @@ func (self *Builder_serf) BuilderActionDistribute(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	scons, err := calc.CalculateInstallPrefixExecutable("scons")
 	if err != nil {
@@ -145,11 +145,11 @@ func (self *Builder_serf) BuilderActionDistribute(
 
 	params := []string{
 		"install",
-		"--install-sandbox=" + self.bs.GetDIR_DESTDIR(),
+		"--install-sandbox=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 	}
 
 	cmd := exec.Command(scons, params...)
-	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
 

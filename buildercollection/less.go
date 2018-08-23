@@ -44,7 +44,7 @@ func (self *Builder_less) EditActions(ret basictypes.BuilderActions) (basictypes
 
 func (self *Builder_less) BuilderActionAfterDistribute(log *logger.Logger) error {
 
-	dir := path.Join(self.bs.GetDIR_DESTDIR(), "etc", "profile.d", "SET")
+	dir := path.Join(self.GetBuildingSiteCtl().GetDIR_DESTDIR(), "etc", "profile.d", "SET")
 	file := path.Join(dir, "009.LESS.sh")
 
 	err := os.MkdirAll(dir, 0700)

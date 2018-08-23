@@ -121,7 +121,7 @@ func (self *Builder_bzip2) BuilderActionBuild(log *logger.Logger) error {
 	//            source_configure_reldir=self.source_configure_reldir
 	//            )
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
@@ -148,8 +148,8 @@ func (self *Builder_bzip2) BuilderActionBuild(log *logger.Logger) error {
 		[]string{},
 		buildingtools.Copy,
 		"",
-		self.bs.GetDIR_SOURCE(),
-		self.bs.GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 		"",
 		log,
 	)
@@ -162,7 +162,7 @@ func (self *Builder_bzip2) BuilderActionBuild(log *logger.Logger) error {
 
 func (self *Builder_bzip2) BuilderActionDistribute(log *logger.Logger) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateDstInstallPrefix()
 	if err != nil {
@@ -179,8 +179,8 @@ func (self *Builder_bzip2) BuilderActionDistribute(log *logger.Logger) error {
 		[]string{},
 		buildingtools.Copy,
 		"",
-		self.bs.GetDIR_SOURCE(),
-		self.bs.GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 		"",
 		log,
 	)
@@ -221,7 +221,7 @@ func (self *Builder_bzip2) BuilderActionSO(log *logger.Logger) error {
 	//            make_filename='Makefile-libbz2_so'
 	//            )
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
@@ -239,8 +239,8 @@ func (self *Builder_bzip2) BuilderActionSO(log *logger.Logger) error {
 		[]string{},
 		buildingtools.Copy,
 		"Makefile-libbz2_so",
-		self.bs.GetDIR_SOURCE(),
-		self.bs.GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 		"",
 		log,
 	)
@@ -251,7 +251,7 @@ func (self *Builder_bzip2) BuilderActionSO(log *logger.Logger) error {
 }
 
 func (self *Builder_bzip2) BuilderActionCopySo(log *logger.Logger) error {
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateDstInstallPrefix()
 	if err != nil {
@@ -262,7 +262,7 @@ func (self *Builder_bzip2) BuilderActionCopySo(log *logger.Logger) error {
 
 	sos, err := filepath.Glob(
 		strings.Join(
-			[]string{self.bs.GetDIR_SOURCE(), "*.so*"},
+			[]string{self.GetBuildingSiteCtl().GetDIR_SOURCE(), "*.so*"},
 			"/",
 		),
 	)
@@ -274,7 +274,7 @@ func (self *Builder_bzip2) BuilderActionCopySo(log *logger.Logger) error {
 
 		base := path.Base(i)
 
-		j := path.Join(self.bs.GetDIR_SOURCE(), base)
+		j := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), base)
 		j2 := path.Join(di, base)
 
 		err = filetools.CopyWithInfo(j, j2, log)
@@ -288,7 +288,7 @@ func (self *Builder_bzip2) BuilderActionCopySo(log *logger.Logger) error {
 }
 
 func (self *Builder_bzip2) BuilderActionFixLinks(log *logger.Logger) error {
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dst_install_prefix, err := calc.CalculateDstInstallPrefix()
 	if err != nil {
@@ -334,7 +334,7 @@ func (self *Builder_bzip2) BuilderActionFixLinks(log *logger.Logger) error {
 
 func (self *Builder_bzip2) BuilderActionFixLibdirName(log *logger.Logger) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dst_install_prefix, err := calc.CalculateDstInstallPrefix()
 	if err != nil {
@@ -354,7 +354,7 @@ func (self *Builder_bzip2) BuilderActionFixLibdirName(log *logger.Logger) error 
 	//		return err
 	//	}
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -378,7 +378,7 @@ func (self *Builder_bzip2) BuilderActionFixLibdirName(log *logger.Logger) error 
 
 func (self *Builder_bzip2) BuilderActionFixMandirPosition(log *logger.Logger) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dst_install_prefix, err := calc.CalculateDstInstallPrefix()
 	if err != nil {

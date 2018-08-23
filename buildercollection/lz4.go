@@ -34,9 +34,9 @@ func NewBuilder_lz4(bs basictypes.BuildingSiteCtlI) (*Builder_lz4, error) {
 }
 
 //func (self *Builder_lz4) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
-//	return self.bs.GetDIR_BUILDING(), nil
+//	return self.GetBuildingSiteCtl().GetDIR_BUILDING(), nil
 //}
 
 func (self *Builder_lz4) EditConfigureDir(log *logger.Logger, ret string) (string, error) {
-	return path.Join(self.bs.GetDIR_SOURCE(), "contrib", "cmake_unofficial"), nil
+	return path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "contrib", "cmake_unofficial"), nil
 }

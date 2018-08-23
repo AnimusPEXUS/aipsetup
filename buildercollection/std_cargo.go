@@ -67,7 +67,7 @@ func (self *Builder_std_cargo) BuilderActionBuild(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	cargo, err := calc.CalculateInstallPrefixExecutable("cargo")
 	if err != nil {
@@ -76,7 +76,7 @@ func (self *Builder_std_cargo) BuilderActionBuild(
 
 	log.Info("cargo is: " + cargo)
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -97,7 +97,7 @@ func (self *Builder_std_cargo) BuilderActionBuild(
 	log.Info("cargo args: " + strings.Join(args, " "))
 
 	cmd := exec.Command(cargo, args...)
-	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
 
@@ -113,7 +113,7 @@ func (self *Builder_std_cargo) BuilderActionDistribute(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	cargo, err := calc.CalculateInstallPrefixExecutable("cargo")
 	if err != nil {
@@ -132,7 +132,7 @@ func (self *Builder_std_cargo) BuilderActionDistribute(
 	log.Info("cargo args: " + strings.Join(args, " "))
 
 	cmd := exec.Command(cargo, args...)
-	cmd.Dir = self.bs.GetDIR_SOURCE()
+	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()
 

@@ -49,7 +49,7 @@ func (self *Builder_mozjs) EditExtractUnwrap(log *logger.Logger, value bool) (bo
 }
 
 func (self *Builder_mozjs) EditConfigureDir(log *logger.Logger, ret string) (string, error) {
-	ret = path.Join(self.bs.GetDIR_SOURCE(), "js", "src")
+	ret = path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "js", "src")
 	return ret, nil
 }
 

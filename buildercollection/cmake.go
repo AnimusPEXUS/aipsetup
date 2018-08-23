@@ -48,7 +48,7 @@ func (self *Builder_cmake) EditActions(ret basictypes.BuilderActions) (basictype
 
 func (self *Builder_cmake) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {
@@ -68,7 +68,7 @@ func (self *Builder_cmake) EditConfigureArgs(log *logger.Logger, ret []string) (
 
 func (self *Builder_cmake) BuilderActionAfterDistribute(log *logger.Logger) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	prefix, err := calc.CalculateDstInstallPrefix()
 	if err != nil {

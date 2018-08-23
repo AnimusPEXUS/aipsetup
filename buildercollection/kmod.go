@@ -65,7 +65,7 @@ func (self *Builder_kmod) EditConfigureArgs(log *logger.Logger, ret []string) ([
 
 func (self *Builder_kmod) MakeLinks(log *logger.Logger) error {
 
-	dst_install_prefix, err := self.bs.GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
+	dst_install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
 	if err != nil {
 		return err
 	}

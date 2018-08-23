@@ -28,7 +28,7 @@ func NewBuilder_apr(bs basictypes.BuildingSiteCtlI) *Builder_apr {
 
 func (self *Builder_apr) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	install_prefix, err := calc.CalculateInstallPrefix()
 	if err != nil {

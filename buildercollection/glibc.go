@@ -37,7 +37,7 @@ func NewBuilder_glibc(bs basictypes.BuildingSiteCtlI) (*Builder_glibc, error) {
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
-	// calc := self.bs.GetBuildingSiteValuesCalculator()
+	// calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	// if t, err := calc.CalculateInstallLibDir(); err != nil {
 	// 	return nil, err
@@ -59,12 +59,12 @@ func NewBuilder_glibc(bs basictypes.BuildingSiteCtlI) (*Builder_glibc, error) {
 }
 
 func (self *Builder_glibc) EditConfigureWorkingDir(log *logger.Logger, ret string) (string, error) {
-	return self.bs.GetDIR_BUILDING(), nil
+	return self.GetBuildingSiteCtl().GetDIR_BUILDING(), nil
 }
 
 func (self *Builder_glibc) DefineActions() (basictypes.BuilderActions, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -111,7 +111,7 @@ func (self *Builder_glibc) _CalculateSlibdir() (string, error) {
 	// TODO: do something smart about this problem
 
 	// === garbage code start ===
-	// info,err := self.bs.ReadInfo()
+	// info,err := self.GetBuildingSiteCtl().ReadInfo()
 	// if err != nil {
 	// 	return "", nil
 	// }
@@ -126,7 +126,7 @@ func (self *Builder_glibc) _CalculateSlibdir() (string, error) {
 	// }
 	// === garbage code end ===
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	ret, err := calc.CalculateHostLibDir()
 	if err != nil {
@@ -138,9 +138,9 @@ func (self *Builder_glibc) _CalculateSlibdir() (string, error) {
 
 func (self *Builder_glibc) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
@@ -291,7 +291,7 @@ func (self *Builder_glibc) BuilderActionDistribute_01(
 		return []string{
 			"install-bootstrap-headers=yes",
 			"install-headers",
-			"DESTDIR=" + self.bs.GetDIR_DESTDIR(),
+			"DESTDIR=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR(),
 		}, nil
 	}
 
@@ -318,14 +318,14 @@ func (self *Builder_glibc) BuilderActionDistribute_01_3(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
 	if err != nil {
 		return err
 	}
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -336,7 +336,7 @@ func (self *Builder_glibc) BuilderActionDistribute_01_3(
 	}
 
 	gres, err := filepath.Glob(
-		path.Join(self.bs.GetDIR_BUILDING(), "csu", "*crt*.o"),
+		path.Join(self.GetBuildingSiteCtl().GetDIR_BUILDING(), "csu", "*crt*.o"),
 	)
 	if err != nil {
 		return err
@@ -367,14 +367,14 @@ func (self *Builder_glibc) BuilderActionDistribute_01_3(
 func (self *Builder_glibc) BuilderActionDistribute_01_4(
 	log *logger.Logger,
 ) error {
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
 	if err != nil {
 		return err
 	}
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -414,14 +414,14 @@ func (self *Builder_glibc) BuilderActionDistribute_01_5(
 	log *logger.Logger,
 ) error {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
 	dhcd, err := calc.CalculateDstHostCrossbuildersDir()
 	if err != nil {
 		return err
 	}
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return err
 	}
@@ -481,7 +481,7 @@ func (self *Builder_glibc) BuilderActionDistribute_02(
 		log *logger.Logger,
 		ret []string,
 	) ([]string, error) {
-		return []string{"install", "DESTDIR=" + self.bs.GetDIR_DESTDIR()}, nil
+		return []string{"install", "DESTDIR=" + self.GetBuildingSiteCtl().GetDIR_DESTDIR()}, nil
 	}
 
 	return self.BuilderActionDistribute(log)

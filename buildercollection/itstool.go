@@ -31,7 +31,7 @@ func NewBuilder_itstool(bs basictypes.BuildingSiteCtlI) (*Builder_itstool, error
 
 func (self *Builder_itstool) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	python, err := self.bs.GetBuildingSiteValuesCalculator().
+	python, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().
 		CalculateInstallPrefixExecutable("python2")
 	if err != nil {
 		return nil, err

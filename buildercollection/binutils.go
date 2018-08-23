@@ -43,7 +43,7 @@ func (self *Builder_binutils) AfterExtract(log *logger.Logger, err error) error 
 	}
 
 	a_tools := new(buildingtools.Autotools)
-	tar_dir := self.bs.GetDIR_TARBALL()
+	tar_dir := self.GetBuildingSiteCtl().GetDIR_TARBALL()
 	files, err := ioutil.ReadDir(tar_dir)
 	if err != nil {
 		return err
@@ -66,8 +66,8 @@ func (self *Builder_binutils) AfterExtract(log *logger.Logger, err error) error 
 
 		err = a_tools.Extract(
 			path.Join(tar_dir, filename),
-			path.Join(self.bs.GetDIR_SOURCE(), i),
-			self.bs.GetDIR_TEMP(),
+			path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), i),
+			self.GetBuildingSiteCtl().GetDIR_TEMP(),
 			true,
 			false,
 			true,
@@ -83,9 +83,9 @@ func (self *Builder_binutils) AfterExtract(log *logger.Logger, err error) error 
 
 func (self *Builder_binutils) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	calc := self.bs.GetBuildingSiteValuesCalculator()
+	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}

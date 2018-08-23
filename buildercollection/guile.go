@@ -33,7 +33,7 @@ func NewBuilder_guile(bs basictypes.BuildingSiteCtlI) (*Builder_guile, error) {
 
 func (self *Builder_guile) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	info, err := self.bs.ReadInfo()
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
 		return nil, err
 	}
