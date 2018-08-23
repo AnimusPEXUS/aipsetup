@@ -74,7 +74,7 @@ func SectionAipsetupSysSetup() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
-				Name:             "make-system-workable",
+				Name:             "make-good",
 				ShortDescription: "runs all abowe commands in right order",
 				Callable:         CmdAipsetupSysSetupMakeWorkable,
 				AvailableOptions: cliapp.GetOptCheckList{

@@ -14,21 +14,16 @@
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],
-  "Tags": [
-    "gnu_project",
-    "group:core0"
-  ],
+  "Tags": [],
   "Category": "gnu",
   "Groups": [
     "core0"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "make",
+  "TarballName": "meson",
   "TarballFilters": [],
   "TarballProvider": "https",
-  "TarballProviderArguments": [
-    "https://ftp.gnu.org/gnu/make"
-  ],
+  "TarballProviderArguments": [],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

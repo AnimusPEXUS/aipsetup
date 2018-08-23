@@ -35,6 +35,6 @@
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
-  "DownloadPatches": false,
-  "PatchesDownloadingScriptText": ""
+  "DownloadPatches": true,
+  "PatchesDownloadingScriptText": "#!/bin/bash\nwget -cr -nd -np -A 'systemd-239-glibc_statx_fix-*.patch' 'http://www.linuxfromscratch.org/patches/blfs/svn/'"
 }
