@@ -99,7 +99,7 @@ func (self *Builder_autoconf213) BuilderActionPatch(
 
 	pth_name := ptch_dir_files_ls[len(ptch_dir_files_ls)-1]
 
-	cmd := exec.Command("patch", "-p1", path.Join(ptch_dir, pth_name))
+	cmd := exec.Command("patch", "-p1", "-i", path.Join(ptch_dir, pth_name))
 	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	cmd.Stdout = log.StdoutLbl()
 	cmd.Stderr = log.StderrLbl()

@@ -31,9 +31,23 @@ func NewBuilder_systemd(bs basictypes.BuildingSiteCtlI) (*Builder_systemd, error
 		self.Builder_std_meson = t
 	}
 
+	self.EditActionsCB = self.EditActions
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
 	return self, nil
+}
+
+func (self *Builder_systemd) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
+
+	ret, err := ret.AddActionAfterNameShort(
+		"extract",
+		"patch", self.BuilderActionPatch,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return ret, nil
 }
 
 func (self *Builder_systemd) BuilderActionPatch(
@@ -69,12 +83,12 @@ func (self *Builder_systemd) BuilderActionPatch(
 
 	pth_name := ptch_dir_files_ls[len(ptch_dir_files_ls)-1]
 
-	cmd := exec.Command("patch", "-p1", path.Join(ptch_dir, pth_name))
-	cmd.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
-	cmd.Stdout = log.StdoutLbl()
-	cmd.Stderr = log.StderrLbl()
+	c := exec.Command("patch", "-p1", "-i", path.Join(ptch_dir, pth_name))
+	c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
+	c.Stdout = log.StdoutLbl()
+	c.Stderr = log.StderrLbl()
 
-	err = cmd.Run()
+	err = c.Run()
 	if err != nil {
 		return err
 	}
@@ -84,11 +98,18 @@ func (self *Builder_systemd) BuilderActionPatch(
 
 func (self *Builder_systemd) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
+	install_prefix, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	if err != nil {
+		return nil, err
+	}
+
 	ret = append(
 		ret,
 		[]string{
 			"-Ddefault_library=both", // TODO: promote this option to std_meson?
-
+			"-Dpamconfdir=/etc/pam.d",
+			"-Dpamlibdir=" + path.Join(install_prefix, "lib", "security"),
+			"-Ddbuspolicydir=/etc/dbus-1/system.d",
 		}...,
 	)
 

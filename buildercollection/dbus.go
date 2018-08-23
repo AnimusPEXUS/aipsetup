@@ -44,7 +44,7 @@ func (self *Builder_dbus) EditConfigureArgs(log *logger.Logger, ret []string) ([
 			// NOTE: cyrcular dep with dbus-glib
 			// NOTE: dbus-glib is deprecated
 			//# '--without-dbus-glib'
-
+			"--with-system-socket=/run/dbus/system_bus_socket",
 		}...,
 	), nil
 }

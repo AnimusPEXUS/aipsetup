@@ -364,7 +364,7 @@ func (self *SystemUpdates) GlibCompileSchemas() error {
 			if res != nil {
 				was_errors = true
 				self.sys.log.Error(
-					"  error at " + i + " " + err.Error(),
+					"  error at " + i + " " + res.Error(),
 				)
 			}
 		}
