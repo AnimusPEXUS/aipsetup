@@ -110,7 +110,9 @@ func (self *Packager) DestDirCheckCorrectness(log *logger.Logger) error {
 		for _, i := range files {
 
 			for _, j := range allowed_in_root {
-				if i.Name() == j || strings.HasPrefix(i.Name(), "etc.") {
+				if i.Name() == j ||
+					strings.HasPrefix(i.Name(), "etc.") ||
+					strings.HasPrefix(i.Name(), "var.") {
 					continue loop
 				}
 			}
