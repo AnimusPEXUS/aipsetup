@@ -53,12 +53,13 @@ func (self *Builder_perl) EditConfigureArgs(log *logger.Logger, ret []string) ([
 		"-e",
 	}
 
-	//	for i := len(ret) - 1; i != -1; i -= 1 {
-	//		for _, j := range []string{"CC", "CXX", "GCC"} {
-	//			if strings.HasPrefix(ret[i], j+"=") {
-	//				ret = append(ret[:i], ret[i+1:]...)
-	//			}
-	//		}
+	//	ret, err = buildingtools.FilterAutotoolsConfigOptions(
+	//		ret,
+	//		[]string{},
+	//		[]string{ "CC=", "CXX=", "GCC="},
+	//	)
+	//	if err != nil {
+	//		return nil, err
 	//	}
 
 	return ret, nil

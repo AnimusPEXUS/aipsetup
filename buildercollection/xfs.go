@@ -16,100 +16,57 @@ type Builder_xfs struct {
 }
 
 func NewBuilder_xfs(bs basictypes.BuildingSiteCtlI) *Builder_xfs {
+
 	self := new(Builder_xfs)
 
 	self.Builder_std = NewBuilder_std(bs)
 
-	self.EditDistributeArgsCB = self.EditDistributeArgs
+	self.EditConfigureArgsCB = self.EditConfigureArgs
 
-	self.EditActionsCB = self.EditActions
+	self.EditDistributeArgsCB = self.EditDistributeArgs
 
 	return self
 }
 
-func (self *Builder_xfs) EditActions(
-	ret basictypes.BuilderActions,
-) (basictypes.BuilderActions, error) {
+func (self *Builder_xfs) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	//	ret, err := ret.AddActionsBeforeName(
-	//		basictypes.BuilderActions{
-	//			&basictypes.BuilderAction{
-	//				Name:     "preconfiguration",
-	//				Callable: self.ActionCompletePreconfiguration,
-	//			},
-	//		},
-	//		"configure",
-	//	)
+	pkgconfig, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().GetPrefixPkgConfig()
+	if err != nil {
+		return nil, err
+	}
+
+	//	ncurses_cflags, err := pkgconfig.CommandOutput("--cflags", "ncurses")
 	//	if err != nil {
 	//		return nil, err
 	//	}
 
+	//	ncurses_libs, err := pkgconfig.CommandOutput("--libs", "ncurses")
+	//	if err != nil {
+	//		return nil, err
+	//	}
+
+	ncursesw_cflags, err := pkgconfig.CommandOutput("--cflags", "ncursesw")
+	if err != nil {
+		return nil, err
+	}
+
+	//	ncursesw_libs, err := pkgconfig.CommandOutput("--libs", "ncursesw")
+	//	if err != nil {
+	//		return nil, err
+	//	}
+
+	ret = append(
+		ret,
+		// NOTE: I don't like this very match!
+		[]string{
+			"CFLAGS=" + ncursesw_cflags,
+		}...,
+	)
+
 	return ret, nil
 }
 
-//func (self *Builder_xfs) ActionCompletePreconfiguration(
-//	log *logger.Logger,
-//) error {
-//	//	info, err := self.GetBuildingSiteCtl().ReadInfo()
-//	//	if err != nil {
-//	//		return err
-//	//	}
-
-//	//	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
-
-//	//	dst_install_prefix,err:=calc .CalculateDstInstallPrefix()
-//	//	if err != nil {
-//	//		return err
-//	//	}
-
-//	//	install_sh_path := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "include", "install-sh")
-//	install_sh_path2 := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "install-sh")
-//	configure_path := path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "configure")
-
-//	//	if _, err := os.Stat(install_sh_path); err == nil {
-
-//	//		if _, err := os.Stat(install_sh_path2); err == nil {
-//	//			return nil
-//	//		}
-
-//	//		err = os.Link(install_sh_path, install_sh_path2)
-//	//		if err != nil {
-//	//			return err
-//	//		}
-//	//	}
-
-//	if _, err := os.Stat(install_sh_path2); err == nil {
-//		return nil
-//	}
-
-//	os.Remove(configure_path)
-
-//	a_tools := new(buildingtools.Autotools)
-
-//	err := a_tools.Make(
-//		[]string{"configure"},
-//		[]string{},
-//		buildingtools.Copy,
-//		"Makefile",
-//		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
-//		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
-//		"make",
-//		log,
-//	)
-//	if err != nil {
-//		return err
-//	}
-
-//	return nil
-//}
-
-func (self *Builder_xfs) EditDistributeArgs(
-	log *logger.Logger,
-	ret []string,
-) (
-	[]string,
-	error,
-) {
+func (self *Builder_xfs) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
 
 	info, err := self.GetBuildingSiteCtl().ReadInfo()
 	if err != nil {
@@ -119,8 +76,6 @@ func (self *Builder_xfs) EditDistributeArgs(
 	ret = make([]string, 0)
 
 	ret = append(ret, "install")
-
-	// NOTE: looks like install-lib and install-dev has been deprecated
 
 	{
 		add_install_dev := true
@@ -134,19 +89,6 @@ func (self *Builder_xfs) EditDistributeArgs(
 			ret = append(ret, "install-dev")
 		}
 	}
-
-	//	{
-	//		add_install_lib := true
-	//		for _, i := range []string{"acl", "attr", "xfsprogs", "xfsdump", "dmapi"} {
-	//			if info.PackageName == i {
-	//				add_install_lib = false
-	//				break
-	//			}
-	//		}
-	//		if add_install_lib {
-	//			ret = append(ret, "install-lib")
-	//		}
-	//	}
 
 	ret = append(ret, "DESTDIR="+self.GetBuildingSiteCtl().GetDIR_DESTDIR())
 

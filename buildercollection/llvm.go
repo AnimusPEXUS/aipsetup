@@ -9,7 +9,6 @@ import (
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/buildingtools"
-	"github.com/AnimusPEXUS/utils/environ"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/pkgconfig"
 	"github.com/AnimusPEXUS/utils/tarballname"
@@ -40,7 +39,6 @@ func NewBuilder_llvm(bs basictypes.BuildingSiteCtlI) (*Builder_llvm, error) {
 
 	self.AfterExtractCB = self.AfterExtract
 	self.EditConfigureArgsCB = self.EditConfigureArgs
-	self.EditConfigureEnvCB = self.EditConfigureEnv
 
 	return self, nil
 }
@@ -115,15 +113,10 @@ func (self *Builder_llvm) AfterExtract(log *logger.Logger, ret error) error {
 
 		[3]string{"cfe", "tools/clang", ""},
 		[3]string{"clang-tools-extra", "tools/clang/tools/extra", ""},
-		//		[3]string{"lld", "tools/lld", ""},
 		[3]string{"polly", "tools/polly", ""},
 
 		[3]string{"compiler-rt", "projects/compiler-rt", ""},
 		[3]string{"openmp", "projects/openmp", ""},
-
-		//		[3]string{"libcxx", "projects/libcxx", ""},
-		//		[3]string{"libcxxabi", "projects/libcxxabi", ""},
-		//		[3]string{"libunwind", "projects/libunwind", ""},
 	}
 
 	log.Info("Looking for additional packages to extract them...")
@@ -138,15 +131,6 @@ func (self *Builder_llvm) AfterExtract(log *logger.Logger, ret error) error {
 	for _, i := range tarb_dir_files {
 		i_name := i.Name()
 		if tarballname.IsPossibleTarballName(i_name) {
-
-			//			for _, j := range findings_table {
-
-			//				if strings.HasPrefix(i_name, j[0]) {
-			//					j[2] = i_name
-			//					log.Info(fmt.Sprintf("%s found to be %s", j[0], j[2]))
-			//				}
-
-			//			}
 
 			for j := 0; j != len(findings_table); j++ {
 
@@ -241,32 +225,10 @@ func (self *Builder_llvm) EditConfigureArgs(log *logger.Logger, ret []string) ([
 			"-DLLVM_BUILD_DOCS=on",
 			"-DLLVM_DEFAULT_TARGET_TRIPLE=" + info.HostArch,
 
-			//			"-DLLVM_ENABLE_LIBCXX=yes",
-			//			"-DLLVM_ENABLE_LIBCXXABI=yes",
-			//			"-DLIBCXXABI_LIBCXX_INCLUDES=" +
-			//				path.Join(self.GetBuildingSiteCtl().GetDIR_SOURCE(), "projects", "libcxx", "include"),
-
-			//			"-DLLVM_ENABLE_MODULES=yes",
-
 			"-DLLVM_ENABLE_FFI=yes",
 			"-DFFI_INCLUDE_DIR=" + lst[0],
 		}...,
 	)
 
-	//	for i := len(ret) - 1; i != -1; i -= 1 {
-	//		for _, j := range []string{"-DCC=", "-DCXX="} {
-	//			if strings.HasPrefix(ret[i], j) {
-	//				ret = append(ret[:i], ret[i+1:]...)
-	//			}
-	//		}
-	//	}
-
-	return ret, nil
-}
-
-func (self *Builder_llvm) EditConfigureEnv(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error) {
-	//	for _, i := range []string{"CC", "CXX"} {
-	//		ret.Del(i)
-	//	}
 	return ret, nil
 }

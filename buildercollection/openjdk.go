@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/aipsetup/buildingtools"
 	"github.com/AnimusPEXUS/utils/environ"
 	"github.com/AnimusPEXUS/utils/logger"
 )
@@ -51,13 +52,13 @@ func (self *Builder_openjdk) EditActions(ret basictypes.BuilderActions) (basicty
 
 func (self *Builder_openjdk) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	for i := len(ret) - 1; i != -1; i -= 1 {
-		if ret[i] == "--enable-shared" ||
-			strings.HasPrefix(ret[i], "CC=") ||
-			strings.HasPrefix(ret[i], "CXX=") ||
-			strings.HasPrefix(ret[i], "GCC=") {
-			ret = append(ret[:i], ret[i+1:]...)
-		}
+	ret, err := buildingtools.FilterAutotoolsConfigOptions(
+		ret,
+		[]string{"--enable-shared"},
+		[]string{"CC=", "CXX=", "GCC="},
+	)
+	if err != nil {
+		return nil, err
 	}
 
 	ret = append(
