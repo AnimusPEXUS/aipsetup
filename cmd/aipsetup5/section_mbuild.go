@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/exec"
 	"path"
 	"sort"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
@@ -20,6 +22,24 @@ func SectionAipsetupMBuild() *cliapp.AppCmdNode {
 
 		Name: "mbuild",
 		SubCmds: []*cliapp.AppCmdNode{
+
+			&cliapp.AppCmdNode{
+				Callable: CmdAipsetupMassGetDistroTarballs,
+				Name:     "get-all",
+
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+					STD_OPTION_MASS_BUILD_CURRENT_HOST,
+					STD_OPTION_MASS_BUILD_FOR_HOST,
+					STD_OPTION_MASS_BUILD_FOR_HOSTARCHS,
+					STD_OPTION_MASS_BUILD_CROSSBUILDER,
+					STD_OPTION_MASS_BUILD_CROSSBUILDING,
+				},
+
+				MaxArgs:   0,
+				MinArgs:   0,
+				CheckArgs: true,
+			},
 
 			&cliapp.AppCmdNode{
 				Callable: CmdAipsetupMassBuildInit,
@@ -74,10 +94,143 @@ func SectionAipsetupMBuild() *cliapp.AppCmdNode {
 	}
 }
 
-func CmdAipsetupMassBuildInit(
+func CmdAipsetupMassGetDistroTarballs(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	_, _, res := StdRoutineGetRootOptionAndSystemObject(
+		getopt_result,
+		log,
+	)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	cwd, err := os.Getwd()
+	if err != nil {
+		return &cliapp.AppResult{Code: 10}
+	}
+
+	aipsetup_exec := os.Args[0]
+
+	group_errors := make(map[string]error)
+
+	for _, i := range []string{
+		"cross", "core0", "core1", "sdl", "perlmod", "gl",
+		"gtk", "crypt", "llvm", "media", "netfilter", "qt",
+		"rust", "sec", "wayland", "web", "xml",
+	} {
+		dir := path.Join(cwd, i)
+
+		log.Info("doing " + dir)
+
+		err := os.MkdirAll(dir, 0700)
+		if err != nil {
+			return &cliapp.AppResult{Code: 11}
+		}
+
+		llog_f, err := os.Create(path.Join(dir, "00.GetAll.log"))
+		if err != nil {
+			return &cliapp.AppResult{Code: 11}
+		}
+
+		llog := logger.New()
+		llog.AddOutput(llog_f)
+		llog.AddOutput(os.Stdout)
+
+		c := exec.Command(aipsetup_exec, "mbuild", "init")
+		c.Dir = dir
+		res := c.Run()
+		if res != nil {
+			group_errors[i] = res
+			continue
+		}
+
+		c = exec.Command(aipsetup_exec, "mbuild", "get-src", "-g", i)
+		c.Dir = dir
+		c.Stdout = llog.StdoutLbl()
+		c.Stderr = llog.StderrLbl()
+		res = c.Run()
+		if res != nil {
+			group_errors[i] = res
+		}
+
+	}
+
+	cat_errors := make(map[string]error)
+
+	for _, i := range []string{"x/", "freedesktop/"} {
+
+		cn := "cat_" + strings.Split(i, "/")[0]
+
+		dir := path.Join(cwd, cn)
+
+		log.Info("doing " + dir)
+
+		err := os.MkdirAll(dir, 0700)
+		if err != nil {
+			return &cliapp.AppResult{Code: 11}
+		}
+
+		llog_f, err := os.Create(path.Join(dir, "00.GetAll.log"))
+		if err != nil {
+			return &cliapp.AppResult{Code: 11}
+		}
+
+		llog := logger.New()
+		llog.AddOutput(llog_f)
+		llog.AddOutput(os.Stdout)
+
+		c := exec.Command(aipsetup_exec, "mbuild", "init")
+		c.Dir = dir
+		res := c.Run()
+		if res != nil {
+			cat_errors[i] = res
+			continue
+		}
+
+		c = exec.Command(aipsetup_exec, "mbuild", "get-src", "-c", "--cpn", "--cip", i)
+		c.Dir = dir
+		c.Stdout = llog.StdoutLbl()
+		c.Stderr = llog.StderrLbl()
+		res = c.Run()
+		if res != nil {
+			cat_errors[i] = res
+		}
+	}
+
+	if len(group_errors) != 0 {
+		log.Error("group getting errors:")
+		for k, v := range group_errors {
+			log.Error("   " + k + ": " + v.Error())
+		}
+	}
+
+	if len(cat_errors) != 0 {
+		log.Error("category getting errors:")
+		for k, v := range cat_errors {
+			log.Error("   " + k + ": " + v.Error())
+		}
+	}
+
+	if len(group_errors) != 0 && len(cat_errors) != 0 {
+		return &cliapp.AppResult{
+			Code: 10,
+		}
+	}
+
+	return nil
+}
+
+func subCmdAipsetupMassBuildInit(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+	wd string,
+) *cliapp.AppResult {
+
 	log := adds.PassData.(*logger.Logger)
 
 	_, sys, res := StdRoutineGetRootOptionAndSystemObject(
@@ -88,7 +241,7 @@ func CmdAipsetupMassBuildInit(
 		return res
 	}
 
-	mbuild, err := aipsetup.NewMassBuilder(".", sys, log)
+	mbuild, err := aipsetup.NewMassBuilder(wd, sys, log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 10, Message: err.Error()}
 	}
@@ -114,9 +267,10 @@ func CmdAipsetupMassBuildInit(
 	return nil
 }
 
-func CmdAipsetupMassBuildGetSrc(
+func subCmdAipsetupMassBuildGetSrc(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
+	wd string,
 ) *cliapp.AppResult {
 	log := adds.PassData.(*logger.Logger)
 
@@ -129,7 +283,7 @@ func CmdAipsetupMassBuildGetSrc(
 		STD_NAMES_ARE_CATEGORIES_PRESERVE_NESTING.Name,
 	)
 
-	mbuild, err := aipsetup.NewMassBuilder(".", sys, log)
+	mbuild, err := aipsetup.NewMassBuilder(wd, sys, log)
 	if err != nil {
 		return &cliapp.AppResult{
 			Code:    11,
@@ -197,7 +351,20 @@ func CmdAipsetupMassBuildGetSrc(
 	}
 
 	return nil
+}
 
+func CmdAipsetupMassBuildInit(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+	return subCmdAipsetupMassBuildInit(getopt_result, adds, ".")
+}
+
+func CmdAipsetupMassBuildGetSrc(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+	return subCmdAipsetupMassBuildGetSrc(getopt_result, adds, ".")
 }
 
 func CmdAipsetupMassBuildPerform(

@@ -16,7 +16,9 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "media_libs/SDL",
-  "Groups": [],
+  "Groups": [
+    "sdl"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "SDL_sound",
   "TarballFilters": [],

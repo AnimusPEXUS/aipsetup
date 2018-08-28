@@ -18,7 +18,9 @@
     "sf_hosted:warzone2100"
   ],
   "Category": "media_libs/SDL",
-  "Groups": [],
+  "Groups": [
+    "sdl"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "SDL",
   "TarballFilters": [],

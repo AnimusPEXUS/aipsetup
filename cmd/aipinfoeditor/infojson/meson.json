@@ -6,8 +6,8 @@
   "Reducible": true,
   "AutoReduce": true,
   "DontPreserveSharedObjects": false,
-  "NonBuildable": false,
-  "NonInstallable": false,
+  "NonBuildable": true,
+  "NonInstallable": true,
   "Deprecated": false,
   "PrimaryInstallOnly": true,
   "BuildPkgDeps": [],
@@ -17,7 +17,6 @@
   "Tags": [],
   "Category": "gnu",
   "Groups": [
-    "core0"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "meson",
