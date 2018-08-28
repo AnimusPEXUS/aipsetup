@@ -14,9 +14,7 @@
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],
-  "Tags": [
-    "group:core1"
-  ],
+  "Tags": [],
   "Category": "non_categorized",
   "Groups": [
     "core1"
@@ -24,7 +22,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "kismet",
   "TarballFilters": [
-    "- !basename-re ^[kK]ismet\\-\\d{4}\\-\\d{2}(\\-[Rr][Cc]?\\d+)?(\\.|$)"
+    "- !basename-re ^[kK]ismet\\-\\d{4}[\\-\\.]\\d+(\\-[Rr][Cc]?\\d*)?.*"
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
