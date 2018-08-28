@@ -144,6 +144,38 @@ func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 		}
 	}
 
+	{
+		self.log.Info("searching for package determination problems...")
+		package_determination_errors := make(map[string]error, 0)
+
+		counter := 0
+
+		for _, i := range tarballs {
+
+			counter++
+
+			fmt.Printf(" %v%%   \r", 100.0/(float64(len(tarballs))/float64(counter)))
+
+			bi := path.Base(i)
+
+			_, _, err := pkginfodb.DetermineTarballPackageInfoSingle(bi)
+			if err != nil {
+				package_determination_errors[bi] = err
+			}
+
+		}
+
+		if len(package_determination_errors) != 0 {
+			self.log.Error("package determination problems has been found")
+			for k, v := range package_determination_errors {
+				self.log.Error(fmt.Sprintf("   %s: %s\n", k, v))
+			}
+			return nil, nil, errors.New("discovered package determination problems")
+		} else {
+			self.log.Info("   not found")
+		}
+	}
+
 	sret := make(map[string][]string)
 	fret := make(map[string][]string)
 

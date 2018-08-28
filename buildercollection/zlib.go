@@ -39,6 +39,7 @@ func NewBuilder_zlib(bs basictypes.BuildingSiteCtlI) (*Builder_zlib, error) {
 }
 
 func (self *Builder_zlib) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
+
 	ret = ret.Remove("build")
 
 	//	ret, err := ret.AddActionAfterNameShort(

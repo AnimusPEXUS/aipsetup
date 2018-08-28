@@ -399,7 +399,13 @@ main_loop:
 	for _, i := range actions {
 		for _, j := range targets {
 			if i.Name == j {
-				l.Info(fmt.Sprintf("---===="+`//////`+"[STRT %s]"+`\\\\\\`+"====---", j))
+				l.Info(
+					fmt.Sprintf(
+						"---===="+`//////`+"[%s:STRT %s]"+`\\\\\\`+"====---",
+						info.PackageName,
+						j,
+					),
+				)
 				lo, err := self.CreateLogger(j, true)
 				if err != nil {
 					return err
@@ -407,10 +413,22 @@ main_loop:
 				err = i.Callable(lo)
 				lo.Close()
 				if err != nil {
-					l.Error(fmt.Sprintf("---===="+`++++++`+"[FAIL %s]"+`++++++`+"====---", j))
+					l.Error(
+						fmt.Sprintf(
+							"---===="+`++++++`+"[%s:FAIL %s]"+`++++++`+"====---",
+							info.PackageName,
+							j,
+						),
+					)
 					return err
 				}
-				l.Info(fmt.Sprintf("---===="+`\\\\\\`+"[DONE %s]"+`//////`+"====---", j))
+				l.Info(
+					fmt.Sprintf(
+						"---===="+`\\\\\\`+"[%s:DONE %s]"+`//////`+"====---",
+						info.PackageName,
+						j,
+					),
+				)
 				continue main_loop
 			}
 		}
