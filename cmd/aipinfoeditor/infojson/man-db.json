@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "https://savannah.nongnu.org/projects/man-db",
-  "BuilderName": "std",
+  "BuilderName": "mandb",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

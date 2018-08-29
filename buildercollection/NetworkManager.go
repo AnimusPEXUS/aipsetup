@@ -22,6 +22,10 @@ func NewBuilder_NetworkManager(bs basictypes.BuildingSiteCtlI) (*Builder_Network
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
+	self.EditBuildConcurentJobsCountCB = func(log *logger.Logger, ret int) int {
+		return 1
+	}
+
 	return self, nil
 }
 

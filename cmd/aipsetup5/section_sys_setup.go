@@ -238,13 +238,13 @@ func CmdAipsetupSysSetupMakeWorkable(
 			res:  nil,
 		},
 		&Item{
-			name: "resetting permissions",
-			call: CmdAipsetupSysSetupResetPermissions,
+			name: "reinstalling essential etc files",
+			call: CmdAipsetupSysSetupReinstallEtc,
 			res:  nil,
 		},
 		&Item{
-			name: "reinstalling essential etc files",
-			call: CmdAipsetupSysSetupReinstallEtc,
+			name: "resetting permissions",
+			call: CmdAipsetupSysSetupResetPermissions,
 			res:  nil,
 		},
 	}

@@ -15,10 +15,9 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [
-    "sf_hosted:log4c"
   ],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": ["core1"],
   "TarballFileNameParser": "std",
   "TarballName": "log4c",
   "TarballFilters": [],
