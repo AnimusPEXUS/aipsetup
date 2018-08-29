@@ -401,7 +401,7 @@ main_loop:
 			if i.Name == j {
 				l.Info(
 					fmt.Sprintf(
-						"---===="+`//////`+"[%s:STRT %s]"+`\\\\\\`+"====---",
+						"---===="+`//////`+"[%s : STRT %s]"+`\\\\\\`+"====---",
 						info.PackageName,
 						j,
 					),
@@ -415,7 +415,7 @@ main_loop:
 				if err != nil {
 					l.Error(
 						fmt.Sprintf(
-							"---===="+`++++++`+"[%s:FAIL %s]"+`++++++`+"====---",
+							"---===="+`++++++`+"[%s : FAIL %s]"+`++++++`+"====---",
 							info.PackageName,
 							j,
 						),
@@ -424,7 +424,7 @@ main_loop:
 				}
 				l.Info(
 					fmt.Sprintf(
-						"---===="+`\\\\\\`+"[%s:DONE %s]"+`//////`+"====---",
+						"---===="+`\\\\\\`+"[%s : DONE %s]"+`//////`+"====---",
 						info.PackageName,
 						j,
 					),

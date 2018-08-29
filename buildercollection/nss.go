@@ -283,7 +283,7 @@ func (self *Builder_nss) BuilderActionDistribute(log *logger.Logger) error {
 		}
 
 		dst_pkgconfig_dir := path.Join(dst_lib, "pkgconfig")
-		dst_pkgconfig_dir_file := path.Join(dst_pkgconfig_dir, "nss.pkg")
+		dst_pkgconfig_dir_file := path.Join(dst_pkgconfig_dir, "nss.pc")
 
 		pkg_config_tpl, err := template.New("pkg_config").Parse(`
 prefix={{.Prefix}}
