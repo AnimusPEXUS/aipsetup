@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "https://sourceforge.net/projects/net-snmp",
-  "BuilderName": "net_snmp",
+  "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

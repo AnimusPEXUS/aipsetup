@@ -413,6 +413,8 @@ main_loop:
 				err = i.Callable(lo)
 				lo.Close()
 				if err != nil {
+					l.Error("(aipsetup message) action exited with following aipsetup error:")
+					l.Error(err)
 					l.Error(
 						fmt.Sprintf(
 							"---===="+`++++++`+"[ %s : FAIL %s ]"+`++++++`+"====---",

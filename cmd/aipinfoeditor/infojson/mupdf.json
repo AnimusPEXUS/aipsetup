@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "https://mupdf.com/",
-  "BuilderName": "std",
+  "BuilderName": "mupdf",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
