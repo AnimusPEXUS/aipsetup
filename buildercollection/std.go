@@ -858,7 +858,10 @@ func (self *Builder_std) BuilderActionDistributeMakefileNameDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := "Makefile"
+	ret, err := self.BuilderActionBuildMakefileNameDef(log)
+	if err != nil {
+		return "", err
+	}
 
 	if self.EditDistributeMakefileNameCB != nil {
 		var err error
@@ -875,7 +878,10 @@ func (self *Builder_std) BuilderActionDistributeMakefileDirDef(
 	log *logger.Logger,
 ) (string, error) {
 
-	ret := self.GetBuildingSiteCtl().GetDIR_SOURCE()
+	ret, err := self.BuilderActionBuildMakefileDirDef(log)
+	if err != nil {
+		return "", err
+	}
 
 	if self.EditDistributeMakefileCB != nil {
 		var err error
