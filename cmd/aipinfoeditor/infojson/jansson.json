@@ -16,10 +16,14 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": ["core1"],
+  "Groups": [
+    "core1"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "jansson",
-  "TarballFilters": ["- basename-re doc"],
+  "TarballFilters": [
+    "- basename-re doc"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "http://www.digip.org/jansson/releases/"

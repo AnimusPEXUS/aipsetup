@@ -6,7 +6,6 @@ import (
 	"os/exec"
 	"path"
 	"sort"
-	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
@@ -99,15 +98,9 @@ func CmdAipsetupMassGetDistroTarballs(
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
 
-	log := adds.PassData.(*logger.Logger)
+	// TODO: fix options
 
-	_, _, res := StdRoutineGetRootOptionAndSystemObject(
-		getopt_result,
-		log,
-	)
-	if res != nil && res.Code != 0 {
-		return res
-	}
+	log := adds.PassData.(*logger.Logger)
 
 	cwd, err := os.Getwd()
 	if err != nil {
@@ -116,110 +109,91 @@ func CmdAipsetupMassGetDistroTarballs(
 
 	aipsetup_exec := os.Args[0]
 
-	group_errors := make(map[string]error)
+	err = MiscDoSomethingForGroupsCategoriesOrListsAllAtOnce(
+		cwd,
+		func(
+			name string,
+			wd string,
+		) error {
 
-	for _, i := range []string{
-		"cross", "core0", "core1", "sdl", "perlmod", "gl",
-		"gtk", "crypt", "llvm", "media", "netfilter", "qt",
-		"rust", "sec", "wayland", "web", "xml",
-	} {
-		dir := path.Join(cwd, i)
+			log.Info("doing " + wd)
 
-		log.Info("doing " + dir)
+			err := MiscDoSomethingForGroupsCategoriesOrListsAllAtOnce_Sub(
+				wd,
+				"00.BuildGetAll.log",
+				func(log *logger.Logger) error {
+					c := exec.Command(aipsetup_exec, "mbuild", "init")
+					c.Dir = wd
+					err = c.Run()
+					if err != nil {
+						return err
+					}
 
-		err := os.MkdirAll(dir, 0700)
-		if err != nil {
-			return &cliapp.AppResult{Code: 11}
-		}
+					c = exec.Command(aipsetup_exec, "mbuild", "get-src", "-g", name)
+					c.Dir = wd
+					c.Stdout = log.StdoutLbl()
+					c.Stderr = log.StderrLbl()
+					err = c.Run()
+					if err != nil {
+						return err
+					}
 
-		llog_f, err := os.Create(path.Join(dir, "00.GetAll.log"))
-		if err != nil {
-			return &cliapp.AppResult{Code: 11}
-		}
+					return nil
 
-		llog := logger.New()
-		llog.AddOutput(llog_f)
-		llog.AddOutput(os.Stdout)
+				},
+			)
+			if err != nil {
+				return err
+			}
 
-		c := exec.Command(aipsetup_exec, "mbuild", "init")
-		c.Dir = dir
-		res := c.Run()
-		if res != nil {
-			group_errors[i] = res
-			continue
-		}
+			return nil
+		},
+		func(
+			name string,
+			wd string,
+		) error {
 
-		c = exec.Command(aipsetup_exec, "mbuild", "get-src", "-g", i)
-		c.Dir = dir
-		c.Stdout = llog.StdoutLbl()
-		c.Stderr = llog.StderrLbl()
-		res = c.Run()
-		if res != nil {
-			group_errors[i] = res
-		}
+			log.Info("doing " + wd)
 
-	}
+			err := MiscDoSomethingForGroupsCategoriesOrListsAllAtOnce_Sub(
+				wd,
+				"00.BuildGetAll.log",
+				func(log *logger.Logger) error {
+					c := exec.Command(aipsetup_exec, "mbuild", "init")
+					c.Dir = wd
+					err = c.Run()
+					if err != nil {
+						return err
+					}
 
-	cat_errors := make(map[string]error)
+					c = exec.Command(
+						aipsetup_exec,
+						"mbuild", "get-src",
+						"-c", "--cpn", "--cip",
+						name+"/",
+					)
+					c.Dir = wd
+					c.Stdout = log.StdoutLbl()
+					c.Stderr = log.StderrLbl()
+					err = c.Run()
+					if err != nil {
+						return err
+					}
 
-	for _, i := range []string{"x/", "freedesktop/"} {
+					return nil
 
-		cn := "cat_" + strings.Split(i, "/")[0]
+				},
+			)
+			if err != nil {
+				return err
+			}
 
-		dir := path.Join(cwd, cn)
-
-		log.Info("doing " + dir)
-
-		err := os.MkdirAll(dir, 0700)
-		if err != nil {
-			return &cliapp.AppResult{Code: 11}
-		}
-
-		llog_f, err := os.Create(path.Join(dir, "00.GetAll.log"))
-		if err != nil {
-			return &cliapp.AppResult{Code: 11}
-		}
-
-		llog := logger.New()
-		llog.AddOutput(llog_f)
-		llog.AddOutput(os.Stdout)
-
-		c := exec.Command(aipsetup_exec, "mbuild", "init")
-		c.Dir = dir
-		res := c.Run()
-		if res != nil {
-			cat_errors[i] = res
-			continue
-		}
-
-		c = exec.Command(aipsetup_exec, "mbuild", "get-src", "-c", "--cpn", "--cip", i)
-		c.Dir = dir
-		c.Stdout = llog.StdoutLbl()
-		c.Stderr = llog.StderrLbl()
-		res = c.Run()
-		if res != nil {
-			cat_errors[i] = res
-		}
-	}
-
-	if len(group_errors) != 0 {
-		log.Error("group getting errors:")
-		for k, v := range group_errors {
-			log.Error("   " + k + ": " + v.Error())
-		}
-	}
-
-	if len(cat_errors) != 0 {
-		log.Error("category getting errors:")
-		for k, v := range cat_errors {
-			log.Error("   " + k + ": " + v.Error())
-		}
-	}
-
-	if len(group_errors) != 0 && len(cat_errors) != 0 {
-		return &cliapp.AppResult{
-			Code: 10,
-		}
+			return nil
+		},
+		log,
+	)
+	if err != nil {
+		return &cliapp.AppResult{Code: 10, Message: err.Error()}
 	}
 
 	return nil

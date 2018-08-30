@@ -3,6 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
+	"os"
+	"os/exec"
 	"path"
 	"sort"
 	"strings"
@@ -61,6 +63,22 @@ func SectionAipsetupRepo() *cliapp.AppCmdNode {
 				CheckArgs:   true,
 				MinArgs:     1,
 				MaxArgs:     -1,
+
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+					STD_NAMES_ARE_CATEGORIES,
+					STD_NAMES_ARE_CATEGORIES_IS_PREFIXES,
+					STD_NAMES_ARE_GROUPS,
+				},
+			},
+
+			&cliapp.AppCmdNode{
+				Name:        "up-all",
+				Callable:    CmdAipsetupRepoUpAll,
+				Description: "update packages of all groups and categories",
+				CheckArgs:   true,
+				MinArgs:     0,
+				MaxArgs:     0,
 
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
@@ -181,6 +199,96 @@ func CmdAipsetupRepoUp(
 
 	return nil
 
+}
+
+func CmdAipsetupRepoUpAll(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	// TODO: fix options
+
+	log := adds.PassData.(*logger.Logger)
+
+	cwd, err := os.Getwd()
+	if err != nil {
+		return &cliapp.AppResult{Code: 10}
+	}
+
+	aipsetup_exec := os.Args[0]
+
+	err = MiscDoSomethingForGroupsCategoriesOrListsAllAtOnce(
+		cwd,
+		func(
+			name string,
+			wd string,
+		) error {
+
+			log.Info("doing " + wd)
+
+			err := MiscDoSomethingForGroupsCategoriesOrListsAllAtOnce_Sub(
+				wd,
+				"00.RepoUpAll.log",
+				func(log *logger.Logger) error {
+					c := exec.Command(aipsetup_exec, "repo", "up", "-g", name)
+					c.Dir = wd
+					c.Stdout = log.StdoutLbl()
+					c.Stderr = log.StderrLbl()
+					err := c.Run()
+					if err != nil {
+						return err
+					}
+
+					return nil
+				},
+			)
+			if err != nil {
+				return err
+			}
+
+			return nil
+		},
+		func(
+			name string,
+			wd string,
+		) error {
+
+			log.Info("doing " + wd)
+
+			err := MiscDoSomethingForGroupsCategoriesOrListsAllAtOnce_Sub(
+				wd,
+				"00.RepoUpAll.log",
+				func(log *logger.Logger) error {
+					c := exec.Command(
+						aipsetup_exec,
+						"repo", "up",
+						"-c", "--cpn", "--cip",
+						name+"/",
+					)
+					c.Dir = wd
+					c.Stdout = log.StdoutLbl()
+					c.Stderr = log.StderrLbl()
+					err := c.Run()
+					if err != nil {
+						return err
+					}
+
+					return nil
+				},
+			)
+			if err != nil {
+				return err
+			}
+
+			return nil
+		},
+		log,
+	)
+	if err != nil {
+		return &cliapp.AppResult{Code: 10, Message: err.Error()}
+	}
+
+	return nil
 }
 
 func CmdAipsetupRepoPut(

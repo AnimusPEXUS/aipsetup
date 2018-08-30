@@ -16,8 +16,7 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "gnu",
-  "Groups": [
-  ],
+  "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "meson",
   "TarballFilters": [],

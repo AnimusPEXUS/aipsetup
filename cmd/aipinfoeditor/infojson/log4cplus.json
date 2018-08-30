@@ -14,10 +14,11 @@
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],
-  "Tags": [
-  ],
+  "Tags": [],
   "Category": "non_categorized",
-  "Groups": ["core1"],
+  "Groups": [
+    "core1"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "log4cplus",
   "TarballFilters": [],

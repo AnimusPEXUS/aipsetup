@@ -195,6 +195,14 @@ var (
 		200: "tor",
 		//	201: "shinken",
 	}
+
+	LILITH_GROUPS = []string{
+		"cross", "core0", "core1", "sdl", "perlmod", "gl",
+		"gtk", "crypt", "llvm", "media", "netfilter", "qt",
+		"rust", "sec", "wayland", "web", "xml",
+	}
+
+	LILITH_CATEGORIES = []string{"x", "freedesktop"}
 )
 
 func IsAipsetuHostSupported(name string) bool {
