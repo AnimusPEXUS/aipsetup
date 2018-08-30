@@ -50,9 +50,10 @@ func (self *Builder_NetworkManager) EditConfigureArgs(log *logger.Logger, ret []
 	ret = append(
 		ret,
 		[]string{
-			"CFLAGS=" + nss_cflags,
-			"LDFLAGS=" + nss_libs,
+			"NSS_CFLAGS=" + nss_cflags,
+			"NSS_LDFLAGS=" + nss_libs,
 
+			"--without-libnm-glib",
 			"--with-suspend-resume=systemd",
 			"--with-session-tracking=systemd",
 		}...,

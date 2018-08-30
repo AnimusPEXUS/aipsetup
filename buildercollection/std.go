@@ -185,13 +185,14 @@ func (self *Builder_std) BuilderActionExtract(
 
 func (self *Builder_std) BuilderActionAutogenForce(log *logger.Logger) (bool, error) {
 
-	ret := false
+	// NOTE: changed to true at Thu Aug 30 23:22:05 MSK 2018 - experiment started
+	ret := true
 
 	if self.EditAutogenForceCB != nil {
 		var err error
 		ret, err = self.EditAutogenForceCB(log, ret)
 		if err != nil {
-			return false, err
+			return true, err
 		}
 	}
 
@@ -241,21 +242,21 @@ func (self *Builder_std) BuilderActionAutogen(log *logger.Logger) error {
 	}
 
 	if !needs_autogen && !autogen_force {
-		log.Info("autogen usage not needed and not forced. continuing without it")
+		log.Info("configure generator usage not needed and not forced. continuing without it")
 		return nil
 	}
 
 	if autogen_force {
-		log.Info("autogen usage forced")
+		log.Info("configure generator usage forced")
 	}
 
 	if needs_autogen {
-		log.Info("detected need to use autogen")
+		log.Info("detected need to use configure generator")
 	}
 
 	generated := false
 
-	log.Info("searching for suitable generator")
+	log.Info("searching for suitable configure generator")
 	for _, i := range [][]string{
 		[]string{"makeconf.sh", "./makeconf.sh"},
 		[]string{"autogen.sh", "./autogen.sh"},
@@ -296,14 +297,14 @@ func (self *Builder_std) BuilderActionAutogen(log *logger.Logger) error {
 			}
 		}
 
-		log.Info("autogen exited success code")
+		log.Info("configure generator exited success code")
 
 		generated = true
 		break
 	}
 
 	if !generated {
-		err = errors.New("couldn't find suitable generator")
+		err = errors.New("couldn't find suitable configure generator")
 	}
 
 	if self.AfterAutogenCB != nil {
@@ -650,6 +651,7 @@ func (self *Builder_std) BuilderActionBuildArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
 	ret := make([]string, 0)
+	ret = append(ret, "V=1")
 
 	if self.EditBuildArgsCB != nil {
 		var err error

@@ -41,7 +41,7 @@ func (self *Builder_dbus) EditConfigureArgs(log *logger.Logger, ret []string) ([
 			// NOTE: cyrcular dep with systemd.
 			//       build without systemd may be required once
 			"--enable-user-session",
-			//			"--enable-systemd",
+			"--enable-systemd",
 			//#'--disable-systemd',
 
 			// NOTE: cyrcular dep with dbus-glib
