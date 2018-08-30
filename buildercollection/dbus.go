@@ -30,21 +30,27 @@ func (self *Builder_dbus) EditConfigureArgs(log *logger.Logger, ret []string) ([
 		[]string{
 			"--with-x",
 			// "--enable-selinux", #lib needed
-			"--enable-libaudit",
-			"--enable-dnotify",
-			"--enable-inotify",
+
+			//			"--enable-libaudit",
+			//			"--enable-dnotify",
+			//			"--enable-inotify",
+
 			// '--enable-kqueue', #BSD needed
 			// '--enable-launchd', #MacOS needed
 
 			// NOTE: cyrcular dep with systemd.
 			//       build without systemd may be required once
-			"--enable-systemd",
+			"--enable-user-session",
+			//			"--enable-systemd",
 			//#'--disable-systemd',
 
 			// NOTE: cyrcular dep with dbus-glib
 			// NOTE: dbus-glib is deprecated
 			//# '--without-dbus-glib'
+
 			"--with-system-socket=/run/dbus/system_bus_socket",
+			"--with-console-auth-dir=/run/console",
+			"--with-system-pid-file=/run/dbus/pid",
 		}...,
 	), nil
 }

@@ -2,7 +2,8 @@ package buildercollection
 
 import (
 	"bytes"
-	"os"
+	"errors"
+	"io/ioutil"
 	"path"
 	"strings"
 	"text/template"
@@ -36,7 +37,7 @@ func (self *Builder_mc) EditActions(ret basictypes.BuilderActions) (basictypes.B
 	ret, err := ret.AddActionsBeforeName(
 		basictypes.BuilderActions{
 			&basictypes.BuilderAction{
-				Name:     "add_asp_open_support",
+				Name:     "add-asp-support",
 				Callable: self.BuilderActionAddASPSupport,
 			},
 		},
@@ -82,10 +83,10 @@ func (self *Builder_mc) EditConfigureArgs(log *logger.Logger, ret []string) ([]s
 
 			// NOTE: for some reason mc (4.8.21) can't be built with FLAGS
 			//       (some scripting issues)
-			//       and can't find values for lbicrypt manually, so
+			//       and can't find values for libcrypt manually, so
 			//       sftp is disabled for now
 
-			"--disable-vfs-sftp",
+			//			"--disable-vfs-sftp",
 			//						"LIBSSH_CFLAGS=" + LIBSSH_CFLAGS,
 			//						"LIBSSH_LIBS=" + LIBSSH_LIBS,
 			//			"CFLAGS=" + LIBCRYPTO_CFLAGS,
@@ -104,23 +105,14 @@ func (self *Builder_mc) BuilderActionAddASPSupport(log *logger.Logger) error {
 
 	{
 
-		f, err := os.Open(exts_file)
-		if err != nil {
-			return err
-		}
-
-		defer f.Close()
-
-		by := make([]byte, 0)
-
-		_, err = f.Read(by)
+		by, err := ioutil.ReadFile(exts_file)
 		if err != nil {
 			return err
 		}
 
 		b_str := string(by)
 
-		strings.Split(b_str, "\n")
+		lines = strings.Split(b_str, "\n")
 
 	}
 
@@ -155,16 +147,30 @@ shell/i/.asp
 			b,
 			struct{ Prefix string }{Prefix: install_prefix},
 		)
+		if err != nil {
+			return err
+		}
+
 	}
 
-	f, err := os.Create(exts_file)
-	if err != nil {
-		return err
+	bs_lines := strings.Split(b.String(), "\n")
+
+	tar_line := -1
+
+	for ii, i := range lines {
+		if i == "# tar" {
+			tar_line = ii
+			break
+		}
 	}
 
-	defer f.Close()
+	if tar_line == -1 {
+		return errors.New("tar line not found")
+	}
 
-	_, err = b.WriteTo(f)
+	lines = append(lines[:tar_line], append(bs_lines, lines[tar_line:]...)...)
+
+	err := ioutil.WriteFile(exts_file, []byte(strings.Join(lines, "\n")), 0700)
 	if err != nil {
 		return err
 	}
