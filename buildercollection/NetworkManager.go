@@ -22,9 +22,11 @@ func NewBuilder_NetworkManager(bs basictypes.BuildingSiteCtlI) (*Builder_Network
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
-	self.EditBuildConcurentJobsCountCB = func(log *logger.Logger, ret int) int {
-		return 1
-	}
+	// NOTE: python version of NetworkManager had this option enabled, so
+	//       I live it here for now in disabled state
+	//	self.EditBuildConcurentJobsCountCB = func(log *logger.Logger, ret int) int {
+	//		return 1
+	//	}
 
 	return self, nil
 }

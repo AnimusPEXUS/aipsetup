@@ -83,7 +83,7 @@ func uiMainGlade() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "ui/main.glade", size: 15871, mode: os.FileMode(420), modTime: time.Unix(1530543258, 0)}
+	info := bindataFileInfo{name: "ui/main.glade", size: 15871, mode: os.FileMode(384), modTime: time.Unix(1530543258, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }

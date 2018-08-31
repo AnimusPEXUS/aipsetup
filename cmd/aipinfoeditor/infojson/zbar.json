@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "https://sourceforge.net/projects/zbar",
-  "BuilderName": "zbare",
+  "BuilderName": "zbar",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
