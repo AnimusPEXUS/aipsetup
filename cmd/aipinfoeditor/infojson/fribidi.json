@@ -16,12 +16,18 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": ["core1"],
+  "Groups": [
+    "core1"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "fribidi",
   "TarballFilters": [],
   "TarballProvider": "srs",
-  "TarballProviderArguments": ["git", "https://github.com/fribidi/fribidi.git", "fribidi"],
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/fribidi/fribidi.git",
+    "fribidi"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

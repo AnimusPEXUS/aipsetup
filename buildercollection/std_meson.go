@@ -227,7 +227,8 @@ func (self *Builder_std_meson) BuilderActionBuildEnvDef(
 func (self *Builder_std_meson) BuilderActionBuildArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
-	ret := make([]string, 0)
+
+	ret := []string{"-v"}
 
 	if self.EditBuildArgsCB != nil {
 		var err error
@@ -259,7 +260,7 @@ func (self *Builder_std_meson) BuilderActionBuild(log *logger.Logger) error {
 	args2 := make([]string, 0)
 	args2 = append(args2, args...)
 
-	c := exec.Command(self.ninja)
+	c := exec.Command(self.ninja, args2...)
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()
 	c.Dir = self.GetBuildingSiteCtl().GetDIR_BUILDING()

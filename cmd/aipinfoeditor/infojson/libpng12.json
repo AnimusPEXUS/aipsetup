@@ -21,7 +21,11 @@
   "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "libpng",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-\u003c 1.2",
+    "- version-\u003e= 1.4",
+    "- basename-re no\\-config"
+  ],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [
     "libpng"

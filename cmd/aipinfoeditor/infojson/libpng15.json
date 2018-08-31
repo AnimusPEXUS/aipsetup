@@ -8,7 +8,7 @@
   "DontPreserveSharedObjects": false,
   "NonBuildable": false,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
   "BuildDeps": [],
@@ -21,7 +21,11 @@
   "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "libpng",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-\u003c 1.5",
+    "- version-\u003e= 1.6",
+    "- basename-re no\\-config"
+  ],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [
     "libpng"

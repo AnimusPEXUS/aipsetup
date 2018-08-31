@@ -113,6 +113,13 @@ func CmdAipsetupBuildRun(
 		}
 	}
 
+	if actions == nil {
+		return &cliapp.AppResult{
+			Code:    20,
+			Message: "builder returned nil in place of actions",
+		}
+	}
+
 	// copy(targets, actions)
 
 	action := actions[0] + "+"
