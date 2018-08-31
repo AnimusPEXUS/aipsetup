@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "http://www.invisible-island.net",
-  "BuilderName": "std",
+  "BuilderName": "xterm",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

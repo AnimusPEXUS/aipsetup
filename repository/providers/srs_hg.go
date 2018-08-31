@@ -265,6 +265,7 @@ func (self *SRSHg) MakeTarballs(
 
 		version_tree, err := tarballversion.NewVersionTree(
 			TagName,
+			true,
 			parser,
 			comparator,
 		)

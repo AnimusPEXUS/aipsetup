@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "https://wiki.gnome.org/Projects/",
-  "BuilderName": "std",
+  "BuilderName": "std_meson",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

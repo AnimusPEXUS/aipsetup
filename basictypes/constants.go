@@ -202,7 +202,10 @@ var (
 		"rust", "sec", "wayland", "web", "xml",
 	}
 
-	LILITH_CATEGORIES = []string{"x", "freedesktop"}
+	LILITH_CATEGORIES = []string{
+		"x", "freedesktop",
+		"media_alsa",
+	}
 )
 
 func IsAipsetuHostSupported(name string) bool {

@@ -267,6 +267,7 @@ func (self *ProviderHttps) PerformUpdate() error {
 
 	version_tree, err := tarballversion.NewVersionTree(
 		self.pkg_info.TarballName,
+		false,
 		parser,
 		comparator,
 	)
@@ -276,6 +277,11 @@ func (self *ProviderHttps) PerformUpdate() error {
 
 	for _, i := range filtered_keys {
 		version_tree.Add(path.Base(i))
+	}
+
+	if self.pkg_name == "libsigc++" {
+		fmt.Println("libsigc++ debug")
+		fmt.Println(version_tree.TreeString())
 	}
 
 	depth := self.pkg_info.TarballProviderVersionSyncDepth

@@ -313,6 +313,7 @@ func (self *ProviderLLVMorg) PerformUpdate() error {
 
 	version_tree, err := tarballversion.NewVersionTree(
 		self.pkg_info.TarballName,
+		false,
 		parser,
 		comparator,
 	)

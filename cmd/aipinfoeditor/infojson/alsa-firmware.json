@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "alsa-firmware",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.mirrorservice.org/sites/ftp.alsa-project.org/pub/firmware/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

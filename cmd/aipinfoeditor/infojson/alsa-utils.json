@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "alsa-utils",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.mirrorservice.org/sites/ftp.alsa-project.org/pub/utils/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

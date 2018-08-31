@@ -186,13 +186,14 @@ func (self *Builder_std) BuilderActionExtract(
 func (self *Builder_std) BuilderActionAutogenForce(log *logger.Logger) (bool, error) {
 
 	// NOTE: changed to true at Thu Aug 30 23:22:05 MSK 2018 - experiment started
-	ret := true
+	// NOTE: the above experiment failed at Fri Aug 31 05:38:52 MSK 2018
+	ret := false
 
 	if self.EditAutogenForceCB != nil {
 		var err error
 		ret, err = self.EditAutogenForceCB(log, ret)
 		if err != nil {
-			return true, err
+			return false, err
 		}
 	}
 
@@ -650,8 +651,8 @@ func (self *Builder_std) BuilderActionBuildEnvDef(
 func (self *Builder_std) BuilderActionBuildArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
-	ret := make([]string, 0)
-	ret = append(ret, "V=1")
+
+	ret := []string{"V=1"}
 
 	if self.EditBuildArgsCB != nil {
 		var err error

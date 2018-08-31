@@ -287,6 +287,7 @@ func (self *SRSGit) MakeTarballs(
 
 		version_tree, err := tarballversion.NewVersionTree(
 			TagName,
+			true,
 			parser,
 			comparator,
 		)
