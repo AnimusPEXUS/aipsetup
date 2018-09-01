@@ -23,7 +23,9 @@
   "TarballName": "babl",
   "TarballFilters": [],
   "TarballProvider": "https",
-  "TarballProviderArguments": ["https://download.gimp.org/pub/babl/"],
+  "TarballProviderArguments": [
+    "https://download.gimp.org/pub/babl/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

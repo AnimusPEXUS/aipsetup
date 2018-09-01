@@ -26,9 +26,14 @@ func (self Autotools) Extract(
 	log *logger.Logger,
 ) error {
 
+	log.Info("temporarery dir is " + tempdir)
+
 	os.RemoveAll(tempdir)
 	os.MkdirAll(tempdir, 0700)
-	defer os.RemoveAll(tempdir)
+	defer func(tempdir string) {
+		log.Info("removing temporarery dir")
+		os.RemoveAll(tempdir)
+	}(tempdir)
 
 	if cleanup_outputdir {
 		os.RemoveAll(outputdir)
@@ -36,12 +41,25 @@ func (self Autotools) Extract(
 
 	os.MkdirAll(outputdir, 0700)
 
-	// TODO: mega fast decision. this should be replaced by internal functionality
-	opts := []string{"-vxf", filename, "-C", tempdir}
+	var c *exec.Cmd
 
-	//	log.Info("starting tar utility with opts: " + fmt.Sprint(opts))
+	if strings.HasSuffix(filename, ".zip") {
 
-	c := exec.Command("tar", opts...)
+		opts := []string{"-qq", "-o", filename, "-d", tempdir}
+
+		log.Info("unzip " + strings.Join(opts, " "))
+
+		c = exec.Command("unzip", opts...)
+
+	} else {
+
+		// TODO: mega fast decision. this should be replaced by internal functionality
+		opts := []string{"-vxf", filename, "-C", tempdir}
+
+		log.Info("tar " + strings.Join(opts, " "))
+
+		c = exec.Command("tar", opts...)
+	}
 
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()
@@ -49,11 +67,11 @@ func (self Autotools) Extract(
 	c_res := c.Run()
 
 	if c_res != nil {
-		log.Error("error running tar utility: " + c_res.Error())
+		log.Error("extraction error: " + c_res.Error())
 		return c_res
 	}
 
-	log.Info("tar exited ok")
+	log.Info("extraction ended ok")
 
 	info, err := ioutil.ReadDir(tempdir)
 	if err != nil {
@@ -61,8 +79,12 @@ func (self Autotools) Extract(
 	}
 
 	log.Info(
-		fmt.Sprintf("tar work resulted in %d files", len(info)),
+		fmt.Sprintf("extraction work resulted in %d files", len(info)),
 	)
+	if len(info) == 0 {
+		log.Error("  what is error :-(")
+		return errors.New("extracted 0 files")
+	}
 
 	directory_to_work_with := tempdir
 
@@ -78,6 +100,8 @@ func (self Autotools) Extract(
 
 	if unwrap {
 
+		log.Info("unwrapping")
+
 		extracted_dir := ""
 
 		for _, i := range info {
@@ -88,7 +112,7 @@ func (self Autotools) Extract(
 		}
 
 		if extracted_dir == "" {
-			return errors.New("unwrap failed no directories extracted")
+			return errors.New("unwrap failed and no directories extracted")
 		}
 
 		directory_to_work_with = path.Join(directory_to_work_with, extracted_dir)
@@ -99,7 +123,9 @@ func (self Autotools) Extract(
 		return err
 	}
 
+	log.Info("moving files to " + outputdir)
 	for _, i := range info {
+		log.Info("   " + i.Name())
 		err = os.Rename(
 			path.Join(directory_to_work_with, i.Name()),
 			path.Join(outputdir, i.Name()),
@@ -109,7 +135,7 @@ func (self Autotools) Extract(
 		}
 	}
 
-	log.Info("extraction procedure ended without errors")
+	log.Info("extraction procedure went without errors")
 
 	return nil
 }

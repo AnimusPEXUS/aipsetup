@@ -21,9 +21,12 @@
   "Groups": [
     "media"
   ],
-  "TarballFileNameParser": "std",
+  "TarballFileNameParser": "freeimage",
   "TarballName": "FreeImage",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- basename-re .*",
+    "+ basename-re ^FreeImage\\d+\\.zip$"
+  ],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [
     "freeimage"

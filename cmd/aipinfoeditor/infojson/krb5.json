@@ -28,6 +28,7 @@
   "TarballProviderArguments": [
     "git",
     "https://github.com/krb5/krb5.git",
+    "krb5",
     "TagName:^krb5$",
     "TagStatus:^final$"
   ],

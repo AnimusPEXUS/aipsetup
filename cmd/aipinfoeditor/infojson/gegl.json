@@ -23,7 +23,9 @@
   "TarballName": "gegl",
   "TarballFilters": [],
   "TarballProvider": "https",
-  "TarballProviderArguments": ["https://download.gimp.org/pub/gegl/"],
+  "TarballProviderArguments": [
+    "https://download.gimp.org/pub/gegl/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
