@@ -24,7 +24,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/gal2-0"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/gal2-0"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

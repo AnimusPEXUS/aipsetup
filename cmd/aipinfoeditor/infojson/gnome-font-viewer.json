@@ -24,7 +24,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/gnome-font-viewer"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/gnome-font-viewer"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

@@ -24,7 +24,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/cantarell-fonts"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/cantarell-fonts"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

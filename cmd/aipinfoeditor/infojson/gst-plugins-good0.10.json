@@ -24,7 +24,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/gst-plugins-good/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "gnome",

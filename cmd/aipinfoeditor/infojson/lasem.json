@@ -24,7 +24,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/lasem"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/lasem"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

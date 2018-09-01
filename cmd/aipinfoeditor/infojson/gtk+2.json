@@ -28,7 +28,7 @@
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/gtk+"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/gtk+"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

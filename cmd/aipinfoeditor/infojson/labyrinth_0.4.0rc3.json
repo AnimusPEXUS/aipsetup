@@ -24,7 +24,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/labyrinth_0.4.0rc3"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/labyrinth_0.4.0rc3"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

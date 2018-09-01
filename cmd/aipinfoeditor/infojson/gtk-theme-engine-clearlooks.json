@@ -24,7 +24,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/gtk-theme-engine-clearlooks"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/gtk-theme-engine-clearlooks"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

@@ -25,7 +25,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/libxklavier"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/libxklavier"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

@@ -24,7 +24,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/NetworkManager-fortisslvpn"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/NetworkManager-fortisslvpn"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

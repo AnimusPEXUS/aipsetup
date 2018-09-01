@@ -24,7 +24,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/rygel-gst-0-10-media-engine"
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/rygel-gst-0-10-media-engine"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",
