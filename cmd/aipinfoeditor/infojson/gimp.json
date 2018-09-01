@@ -15,11 +15,10 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [
-    "gnome_project"
+    "gtk_project"
   ],
-  "Category": "wm/gnome",
+  "Category": "",
   "Groups": [
-    "gnome",
     "media"
   ],
   "TarballFileNameParser": "std",
@@ -27,7 +26,14 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.gnome.org/mirror/gnome.org/sources/gimp"
+    "https://download.gimp.org/mirror/pub/gimp/",
+    "-X=help",
+    "-X=historical",
+    "-X=lgm",
+    "-X=net-fu",
+    "-X=plug-ins",
+    "-X=stable",
+    "-X=old"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

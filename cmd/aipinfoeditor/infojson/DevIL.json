@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "https://sourceforge.net/projects/openil",
-  "BuilderName": "std",
+  "BuilderName": "devil",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

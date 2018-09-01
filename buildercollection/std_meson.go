@@ -23,9 +23,6 @@ type Builder_std_meson struct {
 
 	builder_std *Builder_std
 
-	// TODO: it's possible, what action editing possibility is not neeeded at all for
-	//       meson based projects. but I'm not sure yet.. maybe after-distribution
-	//       actions will find use
 	EditActionsCB               func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
 	EditConfigureEnvCB          func(log *logger.Logger, ret environ.EnvVarEd) (environ.EnvVarEd, error)
 	EditConfigureArgsCB         func(log *logger.Logger, ret []string) ([]string, error)

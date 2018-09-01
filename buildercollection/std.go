@@ -652,7 +652,9 @@ func (self *Builder_std) BuilderActionBuildArgsDef(
 	log *logger.Logger,
 ) ([]string, error) {
 
-	ret := []string{"V=1"}
+	ret := []string{
+		"V=1",
+	}
 
 	if self.EditBuildArgsCB != nil {
 		var err error

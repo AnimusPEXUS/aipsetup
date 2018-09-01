@@ -19,7 +19,7 @@ func init() {
 type Builder_std_cmake struct {
 	*Builder_std
 
-	//	EditConfigureArgsCB func(log *logger.Logger, ret []string) ([]string, error)
+	EditBuildArgsCB func(log *logger.Logger, ret []string) ([]string, error)
 }
 
 func NewBuilder_std_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_std_cmake, error) {
@@ -30,6 +30,8 @@ func NewBuilder_std_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_std_cmake, e
 	self.EditActionsCB = self.EditActions
 
 	self.EditConfigureWorkingDirCB = self.EditConfigureWorkingDir
+
+	self.Builder_std.EditBuildArgsCB = self.EditBuildArgs
 
 	return self, nil
 }
@@ -238,4 +240,35 @@ func (self *Builder_std_cmake) BuilderActionConfigure(
 	}
 
 	return nil
+}
+
+func (self *Builder_std_cmake) EditBuildArgs(log *logger.Logger, ret []string) ([]string, error) {
+
+	log.Info("Overriding Builder_std Build arguments")
+
+	ret, err := buildingtools.FilterAutotoolsConfigOptions(
+		ret,
+		[]string{},
+		[]string{"V="},
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	ret = append(
+		ret,
+		[]string{
+			"VERBOSE=1",
+		}...,
+	)
+
+	if self.EditBuildArgsCB != nil {
+		var err error
+		ret, err = self.EditBuildArgsCB(log, ret)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	return ret, nil
 }
