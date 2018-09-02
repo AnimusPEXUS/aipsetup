@@ -6,7 +6,9 @@
 
 == Development Status ==
 
-  Developing
+  Developing. Porting builder base from old, pythonish, version of
+  aipsetup which is located here:
+       https://github.com/AnimusPEXUS/wayround_i2p_aipsetup
 
 == Feature Readiness Table ==
 
@@ -61,10 +63,6 @@
 
   The early one aipsetup was a number of bash scripts.. this can be found on
     SF.net here: https://sourceforge.net/projects/aipsetup/files/aipsetup/.
-
-  Both was hosted on GitHub, but I've considered those old versions too bad
-    to continue providing them. If somebody wants to see them on GitHub,
-    please, state so in Issues section.
 
 == Building and Installation ==
 
