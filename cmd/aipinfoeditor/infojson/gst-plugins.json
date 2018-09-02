@@ -22,7 +22,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "gst-plugins",
   "TarballFilters": [
-    "- version-= 0.10"
+    "- version-== 0.10"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

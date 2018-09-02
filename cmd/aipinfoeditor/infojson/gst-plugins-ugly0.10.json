@@ -21,7 +21,7 @@
   "TarballName": "gst-plugins-ugly",
   "TarballFilters": [
     "- basename-re .*",
-    "+ version-= 0.10"
+    "+ version-== 0.10"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
