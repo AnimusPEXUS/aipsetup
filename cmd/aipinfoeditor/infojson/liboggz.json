@@ -22,8 +22,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "liboggz",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.osuosl.org/pub/xiph/releases/liboggz/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

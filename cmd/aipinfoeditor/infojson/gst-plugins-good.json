@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://wiki.gnome.org/Projects/",
+  "HomePage": "https://gstreamer.freedesktop.org/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -27,7 +27,7 @@
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://ftp.acc.umu.se/mirror/gnome.org/sources/gst-plugins-good"
+    "https://gstreamer.freedesktop.org/src/gst-plugins-good/"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

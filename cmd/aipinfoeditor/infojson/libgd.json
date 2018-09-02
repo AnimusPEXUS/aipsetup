@@ -22,8 +22,14 @@
   "TarballFileNameParser": "std",
   "TarballName": "libgd",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/libgd/libgd.git",
+    "libgd",
+    "TagName:^gd$",
+    "TagSuffix:^$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

@@ -22,8 +22,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "libshout",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.osuosl.org/pub/xiph/releases/libshout/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

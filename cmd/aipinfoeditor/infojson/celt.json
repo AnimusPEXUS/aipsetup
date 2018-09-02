@@ -22,8 +22,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "celt",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.osuosl.org/pub/xiph/releases/celt/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

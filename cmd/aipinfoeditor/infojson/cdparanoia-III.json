@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "cdparanoia-III",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.osuosl.org/pub/xiph/releases/cdparanoia/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

@@ -22,8 +22,14 @@
   "TarballFileNameParser": "std",
   "TarballName": "libsndfile",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/erikd/libsndfile.git",
+    "libsndfile",
+    "TagName:^$",
+    "TagStatus:^$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

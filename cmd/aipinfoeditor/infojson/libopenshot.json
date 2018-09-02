@@ -1,5 +1,5 @@
 {
-  "Description": "",
+  "Description": "http://www.openshotstudios.com/",
   "HomePage": "",
   "BuilderName": "std_cmake",
   "Removable": true,
@@ -22,8 +22,12 @@
   "TarballFileNameParser": "std",
   "TarballName": "libopenshot",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/OpenShot/libopenshot.git",
+    "libopenshot"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://www.freedesktop.org",
+  "HomePage": "https://gstreamer.freedesktop.org/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -20,8 +20,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "gstreamer-editing-services",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://gstreamer.freedesktop.org/src/gstreamer-editing-services/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

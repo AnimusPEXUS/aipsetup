@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "",
+  "HomePage": "https://gstreamer.freedesktop.org/",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -20,7 +20,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "gst-plugin",
   "TarballFilters": [],
-  "TarballProvider": "",
+  "TarballProvider": "https",
   "TarballProviderArguments": [],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

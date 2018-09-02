@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "http://www.ece.uvic.ca",
+  "HomePage": "http://www.ece.uvic.ca/~mdadams/jasper",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -8,7 +8,7 @@
   "DontPreserveSharedObjects": false,
   "NonBuildable": false,
   "NonInstallable": false,
-  "Deprecated": true,
+  "Deprecated": false,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
   "BuildDeps": [],
@@ -22,8 +22,14 @@
   "TarballFileNameParser": "std",
   "TarballName": "jasper",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/mdadams/jasper.git",
+    "jasper",
+    "TagName:^version$",
+    "TagStatus:^$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
