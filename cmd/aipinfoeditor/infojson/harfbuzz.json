@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "http://www.freedesktop.org/wiki/Software/HarfBuzz",
-  "BuilderName": "std_cmake",
+  "BuilderName": "harfbuzz",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

@@ -23,7 +23,9 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "glew",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- basename-re \\d{4}"
+  ],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [
     "glew"

@@ -71,7 +71,14 @@ func (self *SRSGit) GetAndUpdate(
 
 		self.srs.log.Info(fmt.Sprintf("getting %s", git_source_url))
 
-		c := exec.Command("git", "clone", git_source_url, ".")
+		var c *exec.Cmd
+
+		if self.srs.use_torsocks {
+			c = exec.Command("torsocks", "git", "clone", git_source_url, ".")
+		} else {
+			c = exec.Command("git", "clone", git_source_url, ".")
+		}
+
 		c.Dir = git_dir
 		c.Stdout = os.Stdout
 		c.Stderr = os.Stderr
@@ -97,7 +104,14 @@ func (self *SRSGit) GetAndUpdate(
 			}
 		}
 
-		c := exec.Command("git", "pull")
+		var c *exec.Cmd
+
+		if self.srs.use_torsocks {
+			c = exec.Command("torsocks", "git", "pull")
+		} else {
+			c = exec.Command("git", "pull")
+		}
+
 		c.Dir = git_dir
 		c.Stdout = os.Stdout
 		c.Stderr = os.Stderr
@@ -213,7 +227,12 @@ func (self *SRSGit) MakeTarballs(
 
 		{
 			b := &bytes.Buffer{}
-			c := exec.Command("git", "tag")
+			var c *exec.Cmd
+			if self.srs.use_torsocks {
+				c = exec.Command("torsocks", "git", "tag")
+			} else {
+				c = exec.Command("git", "tag")
+			}
 			c.Dir = git_dir
 			c.Stdout = b
 			err := c.Run()
@@ -413,13 +432,26 @@ func (self *SRSGit) MakeTarballs(
 			// handeling submodules requires differens strategy
 			if !EnableSubmodules {
 
-				c := exec.Command(
-					"git",
-					"archive",
-					fmt.Sprintf("--prefix=%s/", tag_filename_noext),
-					"-o", target_file,
-					i,
-				)
+				var c *exec.Cmd
+
+				if self.srs.use_torsocks {
+					c = exec.Command(
+						"torsocks",
+						"git",
+						"archive",
+						fmt.Sprintf("--prefix=%s/", tag_filename_noext),
+						"-o", target_file,
+						i,
+					)
+				} else {
+					c = exec.Command(
+						"git",
+						"archive",
+						fmt.Sprintf("--prefix=%s/", tag_filename_noext),
+						"-o", target_file,
+						i,
+					)
+				}
 				c.Dir = git_dir
 				c.Stdout = os.Stdout
 				c.Stderr = os.Stderr
@@ -579,7 +611,13 @@ func (self *SRSGit) UpdateSubmodules(git_dir string) error {
 
 	self.srs.log.Info("Updating submodules. git args: " + strings.Join(args, " "))
 
-	c := exec.Command("git", args...)
+	var c *exec.Cmd
+
+	if self.srs.use_torsocks {
+		c = exec.Command("torsocks", append([]string{"git"}, args...)...)
+	} else {
+		c = exec.Command("git", args...)
+	}
 	c.Dir = git_dir
 	c.Stdout = os.Stdout
 	c.Stderr = os.Stderr
@@ -597,7 +635,13 @@ func (self *SRSGit) Checkout(git_dir string, target string) error {
 
 	self.srs.log.Info("Checking out. git args: " + strings.Join(args, " "))
 
-	c := exec.Command("git", args...)
+	var c *exec.Cmd
+
+	if self.srs.use_torsocks {
+		c = exec.Command("torsocks", append([]string{"git"}, args...)...)
+	} else {
+		c = exec.Command("git", args...)
+	}
 	c.Dir = git_dir
 	c.Stdout = os.Stdout
 	c.Stderr = os.Stderr
