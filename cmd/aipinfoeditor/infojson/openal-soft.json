@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "http://connect.creativelabs.com/openal/Downloads/",
+  "HomePage": "http://www.openal-soft.org/",
   "BuilderName": "std_cmake",
   "Removable": true,
   "Reducible": true,
@@ -22,8 +22,8 @@
   "TarballFileNameParser": "std",
   "TarballName": "openal-soft",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": ["git", "https://github.com/kcat/openal-soft.git", "openal-soft", "TagName:^openal-soft$", "TagStatus: ^$"],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
