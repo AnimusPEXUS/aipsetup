@@ -24,14 +24,17 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "openjpeg",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-\u003c 2",
+    "- version-\u003e= 3"
+  ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
     "git",
     "https://github.com/uclouvain/openjpeg.git",
     "openjpeg1",
-    "TagName:version.",
-    "TagStatus:"
+    "TagName:^v(ersion)?$",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "std",

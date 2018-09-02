@@ -23,7 +23,13 @@
   "TarballName": "openal-soft",
   "TarballFilters": [],
   "TarballProvider": "srs",
-  "TarballProviderArguments": ["git", "https://github.com/kcat/openal-soft.git", "openal-soft", "TagName:^openal-soft$", "TagStatus: ^$"],
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/kcat/openal-soft.git",
+    "openal-soft",
+    "TagName:^openal-soft$",
+    "TagStatus: ^$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

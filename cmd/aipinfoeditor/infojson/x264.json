@@ -23,7 +23,11 @@
   "TarballName": "x264",
   "TarballFilters": [],
   "TarballProvider": "srs",
-  "TarballProviderArguments": ["git", "https://git.videolan.org/git/x264.git", "x264"],
+  "TarballProviderArguments": [
+    "git",
+    "https://git.videolan.org/git/x264.git",
+    "x264"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

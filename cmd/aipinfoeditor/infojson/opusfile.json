@@ -23,7 +23,9 @@
   "TarballName": "opusfile",
   "TarballFilters": [],
   "TarballProvider": "https",
-  "TarballProviderArguments": ["https://ftp.osuosl.org/pub/xiph/releases/opus/"],
+  "TarballProviderArguments": [
+    "https://ftp.osuosl.org/pub/xiph/releases/opus/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
