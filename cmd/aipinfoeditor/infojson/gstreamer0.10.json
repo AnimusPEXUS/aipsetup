@@ -20,8 +20,11 @@
   "Category": "wm_gnome",
   "Groups": [],
   "TarballFileNameParser": "std",
-  "TarballName": "gstreamer0.10",
-  "TarballFilters": [],
+  "TarballName": "gstreamer",
+  "TarballFilters": [
+    "- basename-re .*",
+    "+ version-= 0.10"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://gstreamer.freedesktop.org/src/gstreamer/"

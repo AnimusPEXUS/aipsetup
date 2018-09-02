@@ -20,8 +20,11 @@
   "Category": "wm_gnome",
   "Groups": [],
   "TarballFileNameParser": "std",
-  "TarballName": "gst-python0.10",
-  "TarballFilters": [],
+  "TarballName": "gst-python",
+  "TarballFilters": [
+    "- basename-re .*",
+    "+ version-= 0.10"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://gstreamer.freedesktop.org/src/gst-python/"

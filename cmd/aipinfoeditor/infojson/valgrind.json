@@ -24,7 +24,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "valgrind",
   "TarballFilters": [
-    "- !tarball-status-re ^$"
+    "- !status-re ^$"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

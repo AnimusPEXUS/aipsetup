@@ -25,7 +25,7 @@
   "TarballName": "foomatic-filters",
   "TarballFilters": [
     "- basename-re \\d{4}",
-    "- !tarball-status-re ^$"
+    "- !status-re ^$"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

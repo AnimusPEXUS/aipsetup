@@ -19,7 +19,9 @@
   "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "gst-libav",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-= 0.10"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://gstreamer.freedesktop.org/src/gst-libav/"

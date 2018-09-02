@@ -20,8 +20,11 @@
   "Category": "freedesktop/gstreamer",
   "Groups": [],
   "TarballFileNameParser": "std",
-  "TarballName": "gst-plugins-base0.10",
-  "TarballFilters": [],
+  "TarballName": "gst-plugins-base",
+  "TarballFilters": [
+    "- basename-re .*",
+    "+ version-= 0.10"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://gstreamer.freedesktop.org/src/gst-plugins-base/"

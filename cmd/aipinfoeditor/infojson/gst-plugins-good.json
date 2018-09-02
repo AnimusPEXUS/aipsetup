@@ -24,7 +24,9 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "gst-plugins-good",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-= 0.10"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://gstreamer.freedesktop.org/src/gst-plugins-good/"

@@ -19,7 +19,10 @@
   "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "gst-plugins-bad",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- basename-re .*",
+    "+ version-= 0.10"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://gstreamer.freedesktop.org/src/gst-plugins-bad/"

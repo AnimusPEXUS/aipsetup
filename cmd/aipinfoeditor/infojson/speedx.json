@@ -16,12 +16,16 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "gnu",
-  "Groups": ["media"],
+  "Groups": [
+    "media"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "speedx",
   "TarballFilters": [],
   "TarballProvider": "https",
-  "TarballProviderArguments": ["https://ftp.osuosl.org/pub/xiph/releases/speex/"],
+  "TarballProviderArguments": [
+    "https://ftp.osuosl.org/pub/xiph/releases/speex/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

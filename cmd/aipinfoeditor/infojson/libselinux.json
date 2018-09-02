@@ -24,7 +24,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "libselinux",
   "TarballFilters": [
-    "- !tarball-status-re ^$"
+    "- !status-re ^$"
   ],
   "TarballProvider": "srs",
   "TarballProviderArguments": [

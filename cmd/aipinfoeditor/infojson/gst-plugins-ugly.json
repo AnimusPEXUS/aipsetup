@@ -21,7 +21,9 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "gst-plugins-ugly",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-= 0.10"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/"

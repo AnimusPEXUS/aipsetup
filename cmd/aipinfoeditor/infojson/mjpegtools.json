@@ -23,7 +23,9 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "mjpegtools",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- !status-re ^$"
+  ],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [
     "mjpeg"

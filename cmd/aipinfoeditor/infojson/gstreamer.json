@@ -24,7 +24,9 @@
   ],
   "TarballFileNameParser": "std",
   "TarballName": "gstreamer",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-= 0.10"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://gstreamer.freedesktop.org/src/gstreamer/"

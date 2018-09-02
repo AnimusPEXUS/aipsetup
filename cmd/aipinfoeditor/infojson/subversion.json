@@ -26,7 +26,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "subversion",
   "TarballFilters": [
-    "- !tarball-status-re ^$"
+    "- !status-re ^$"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

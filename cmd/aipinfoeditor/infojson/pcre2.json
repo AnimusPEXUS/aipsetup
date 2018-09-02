@@ -25,7 +25,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "pcre2",
   "TarballFilters": [
-    "- !tarball-status-re ^$"
+    "- !status-re ^$"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

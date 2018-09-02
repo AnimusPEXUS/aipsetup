@@ -26,7 +26,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "tor",
   "TarballFilters": [
-    "- !tarball-status-re ^$"
+    "- !status-re ^$"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

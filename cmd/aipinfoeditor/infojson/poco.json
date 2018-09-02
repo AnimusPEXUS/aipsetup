@@ -24,7 +24,7 @@
   "TarballFileNameParser": "std",
   "TarballName": "poco",
   "TarballFilters": [
-    "- !tarball-status-re ^all$"
+    "- !status-re ^all$"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
