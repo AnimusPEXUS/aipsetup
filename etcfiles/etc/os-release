@@ -1,8 +1,8 @@
-NAME=Lilith
-VERSION="1"
-ID=lilith
-VERSION_ID=1
-PRETTY_NAME="Lilith 1 (Unreleased)"
-ANSI_COLOR="0;34"
+NAME=Horizon
+VERSION="6"
+ID=Horizon
+VERSION_ID=6
+PRETTY_NAME="Horizon GNU+Linux 6 (Pilot)"
+ANSI_COLOR="0;92"
 HOME_URL="https://github.com/AnimusPEXUS/aipsetup/"
-BUG_REPORT_URL="mailto://AnimusPEXUS@ProtonMail.COM"
+BUG_REPORT_URL="https://github.com/AnimusPEXUS/aipsetup/issues"

@@ -52,7 +52,7 @@ func MiscDoSomethingForGroupsCategoriesOrListsAllAtOnce(
 
 	group_errors := make(map[string]error)
 
-	for _, i := range basictypes.LILITH_GROUPS {
+	for _, i := range basictypes.HORIZON_GROUPS {
 		dir := path.Join(wd, i)
 
 		res := cb_for_group(i, dir)
@@ -64,7 +64,7 @@ func MiscDoSomethingForGroupsCategoriesOrListsAllAtOnce(
 
 	cat_errors := make(map[string]error)
 
-	for _, i := range basictypes.LILITH_CATEGORIES {
+	for _, i := range basictypes.HORIZON_CATEGORIES {
 		cn := "cat_" + i
 
 		dir := path.Join(wd, cn)

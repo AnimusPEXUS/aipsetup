@@ -154,9 +154,8 @@ func (self *Builder_binutils) EditConfigureArgs(log *logger.Logger, ret []string
 			"--enable-lto",
 			"--enable-ld",
 
-			// # NOTE: no google software in Lilith distro
-			"--disable-gold",
-			"--without-gold",
+			//			"--disable-gold",
+			//			"--without-gold",
 
 			// # this is required. else libs will be searched in /lib and
 			// # /usr/lib, but not in /multihost/xxx/lib!:
