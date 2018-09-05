@@ -295,6 +295,10 @@ dirs_search:
 				continue
 			}
 
+			if !nbs.IsBuildingSite() {
+				continue
+			}
+
 			nbs_info, err := nbs.ReadInfo()
 			if err != nil {
 				self.log.Error(err.Error())

@@ -234,7 +234,13 @@ func CheckTarballMatchesInfo(
 
 	parse_result, err := parser.Parse(tarballfilename)
 	if err != nil {
-		return false, err
+		// WARNING: Parser returns error in any nonparsed situation,
+		//          but wee should treat this as "no match".
+		// TODO:    but "nonparsed situation" may be also produced by
+		//          aipsetup errors on it's own, so, probably,
+		//          parsers should indicate, if error is internal or external.
+		// NOTE:    changed error to nil at Wed Sep  5 09:50:55 MSK 2018
+		return false, nil
 	}
 
 	if parse_result.Name != info.TarballName {
