@@ -128,6 +128,7 @@ var (
 		34: "usbbus",
 		35: "usblist",
 		36: "alsa",
+		37: "render",
 
 		// # daemons 40-99
 		39: "colord",
@@ -191,6 +192,7 @@ var (
 		105: "systemd-journal-gateway",
 		106: "systemd-journal-remote",
 		107: "systemd-journal-upload",
+		108: "systemd-coredump",
 
 		200: "tor",
 		//	201: "shinken",

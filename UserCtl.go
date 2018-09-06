@@ -98,7 +98,7 @@ func (self *UserCtl) RecreateUserDB() error {
 		)
 	}
 
-	su_ctl.Pth = path.Join("/root", "tmp", "newuserdb")
+	// su_ctl.Pth = path.Join("/root", "tmp", "newuserdb")
 	fmt.Println("new db going to be placed under", su_ctl.Pth)
 	os.MkdirAll(su_ctl.Pth, 0700)
 

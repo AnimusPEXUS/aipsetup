@@ -7,6 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/shadowusers"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 )
@@ -110,6 +112,94 @@ func (self *BootImgCtl) InstallAipSetup() error {
 		path.Join(self.os_files, "bin", "aipsetup"),
 		self.log,
 	)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (self *BootImgCtl) RemoveUsers() error {
+	susers := shadowusers.NewCtl(path.Join(self.os_files, "etc"))
+	err := susers.ReadAll()
+	if err != nil {
+		return err
+	}
+
+	simple_users := make([]int, 0)
+	simple_users_names := make([]string, 0)
+
+	for _, i := range susers.Passwds.Passwds {
+		if i.UserId > basictypes.SYS_UID_MAX {
+			simple_users = append(simple_users, i.UserId)
+			simple_users_names = append(simple_users_names, i.Login)
+		}
+	}
+
+	for i := len(susers.Passwds.Passwds) - 1; i != -1; i-- {
+		if susers.Passwds.Passwds[i].UserId > basictypes.SYS_UID_MAX {
+			susers.Passwds.Passwds = append(
+				susers.Passwds.Passwds[:i],
+				susers.Passwds.Passwds[i+1:]...,
+			)
+		}
+	}
+
+	for i := len(susers.Groups.Groups) - 1; i != -1; i-- {
+		del := false
+
+		for _, j := range simple_users {
+			if susers.Groups.Groups[i].GID == j {
+				del = true
+				break
+			}
+		}
+
+		if del {
+			susers.Groups.Groups = append(
+				susers.Groups.Groups[:i],
+				susers.Groups.Groups[i+1:]...,
+			)
+		}
+	}
+
+	for i := len(susers.Shadows.Shadows) - 1; i != -1; i-- {
+		del := false
+
+		for _, j := range simple_users_names {
+			if susers.Shadows.Shadows[i].Login == j {
+				del = true
+				break
+			}
+		}
+
+		if del {
+			susers.Shadows.Shadows = append(
+				susers.Shadows.Shadows[:i],
+				susers.Shadows.Shadows[i+1:]...,
+			)
+		}
+	}
+
+	for i := len(susers.GShadows.GShadows) - 1; i != -1; i-- {
+		del := false
+
+		for _, j := range simple_users_names {
+			if susers.GShadows.GShadows[i].Name == j {
+				del = true
+				break
+			}
+		}
+
+		if del {
+			susers.GShadows.GShadows = append(
+				susers.GShadows.GShadows[:i],
+				susers.GShadows.GShadows[i+1:]...,
+			)
+		}
+	}
+
+	err = susers.WriteAll()
 	if err != nil {
 		return err
 	}
