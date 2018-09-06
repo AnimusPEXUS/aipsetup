@@ -8,13 +8,13 @@ import (
 	"path"
 	"path/filepath"
 	"sort"
-	"syscall"
 
 	"github.com/AnimusPEXUS/aipsetup/etcfiles"
 	"github.com/AnimusPEXUS/utils/environ"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/set"
+	"golang.org/x/sys/unix"
 )
 
 // TODO: this functionality is outdated and requires some improvements and
@@ -79,7 +79,7 @@ func (self *SystemUpdates) UpdatesAfterPkgInstall() error {
 
 func (self *SystemUpdates) Sync() error {
 	self.sys.log.Info("Running sync")
-	syscall.Sync()
+	unix.Sync()
 	return nil
 }
 

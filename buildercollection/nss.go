@@ -206,6 +206,8 @@ func (self *Builder_nss) BuilderActionDistribute(log *logger.Logger) error {
 				false,
 				true,
 				log,
+				false,
+				true,
 				func(src, dst string, log logger.LoggerI) error {
 					err := filetools.CopyWithOptions(
 						src,
@@ -241,6 +243,8 @@ func (self *Builder_nss) BuilderActionDistribute(log *logger.Logger) error {
 					true,
 					true,
 					log,
+					false,
+					true,
 					func(src, dst string, log logger.LoggerI) error {
 						err := filetools.CopyWithOptions(
 							src,

@@ -199,6 +199,8 @@ func (self *PrePackager) DestDirMoveRootToUsr(log *logger.Logger) error {
 			true,
 			false,
 			log,
+			false,
+			true,
 			filetools.CopyWithInfo,
 		)
 		if err != nil {
@@ -307,6 +309,8 @@ func (self *PrePackager) DestDirMoveUsrToPrefix(log *logger.Logger) error {
 				true,
 				false,
 				log,
+				false,
+				true,
 				filetools.CopyWithInfo,
 			)
 			if err != nil {

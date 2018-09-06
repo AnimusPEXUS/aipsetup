@@ -9,9 +9,9 @@ import (
 	"path"
 	"path/filepath"
 	"strings"
-	"syscall"
 
 	"github.com/AnimusPEXUS/utils/logger"
+	"golang.org/x/sys/unix"
 )
 
 type Autotools struct{}
@@ -332,7 +332,7 @@ func (self Autotools) Configure(
 			return err
 		}
 		ex_stat_mode := ex_stat.Mode()
-		ex_stat_mode = ex_stat_mode | syscall.S_IXUSR
+		ex_stat_mode = ex_stat_mode | unix.S_IXUSR
 		err = os.Chmod(jo, ex_stat_mode)
 		if err != nil {
 			return err

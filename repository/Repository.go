@@ -593,6 +593,8 @@ func (self *Repository) CopyPatchesToDir(
 		true,
 		true,
 		self.log,
+		false,
+		true,
 		filetools.CopyWithInfo,
 	)
 

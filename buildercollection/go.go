@@ -164,6 +164,8 @@ func (self *Builder_go) BuilderActionDistribute(
 		false,
 		true,
 		log,
+		false,
+		true,
 		filetools.CopyWithInfo,
 	)
 	if err != nil {

@@ -504,6 +504,8 @@ func (self *Builder_linux) BuilderActionDistrSource(
 		false,
 		true,
 		log,
+		false,
+		true,
 		filetools.CopyWithInfo,
 	)
 	if err != nil {
