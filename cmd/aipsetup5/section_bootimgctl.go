@@ -45,7 +45,54 @@ func SectionAipsetupBootImg() *cliapp.AppCmdNode {
 				MinArgs:   0,
 				MaxArgs:   0,
 			},
+
+			&cliapp.AppCmdNode{
+				Name:     "reset-root-passwd",
+				Callable: CmdAipsetupBootImgResetRootPasswd,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:     "cleanup-fs",
+				Callable: CmdAipsetupBootImgCleanupOSFS,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:     "cleanup-linux",
+				Callable: CmdAipsetupBootImgCleanupLinuxSrc,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:     "mksquashfs",
+				Callable: CmdAipsetupBootImgSquashOSFiles,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
 		},
+
+		Description: "Do all actions in this list, and in the end" +
+			" chroot to osfiles and 'aipsetup sys-setup make-good'",
 	}
 
 }
@@ -103,6 +150,86 @@ func CmdAipsetupBootImgRemoveUsers(
 	}
 
 	err = bic.RemoveUsers()
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	return nil
+}
+
+func CmdAipsetupBootImgResetRootPasswd(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	err = bic.ResetRootPasswd()
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	return nil
+}
+
+func CmdAipsetupBootImgCleanupOSFS(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	err = bic.CleanupOSFS()
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	return nil
+}
+
+func CmdAipsetupBootImgCleanupLinuxSrc(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	err = bic.CleanupLinuxSrc()
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	return nil
+}
+
+func CmdAipsetupBootImgSquashOSFiles(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	err = bic.SquashOSFiles()
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
