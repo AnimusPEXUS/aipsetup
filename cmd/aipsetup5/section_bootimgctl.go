@@ -113,8 +113,8 @@ func SectionAipsetupBootImg() *cliapp.AppCmdNode {
 			},
 		},
 
-		Description: "Do all actions in this list, and in the end" +
-			" chroot to osfiles and 'aipsetup sys-setup make-good'",
+		Description: "Do 'all-above' action and before mksquashfs in the end" +
+			" chroot into osfiles and 'aipsetup sys-setup make-good'",
 	}
 
 }
