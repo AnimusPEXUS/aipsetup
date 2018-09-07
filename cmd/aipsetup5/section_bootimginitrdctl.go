@@ -58,10 +58,18 @@ func SectionAipsetupBootImgInitRd() *cliapp.AppCmdNode {
 				MinArgs:   0,
 				MaxArgs:   0,
 			},
-		},
 
-		Description: "Do 'all-above' action and before mksquashfs" +
-			" chroot into osfiles and 'aipsetup5 sys-setup make-good'",
+			&cliapp.AppCmdNode{
+				Name:     "compress",
+				Callable: CmdAipsetupBootImgInitRdCompressOSFiles,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
+		},
 	}
 
 }
@@ -139,6 +147,26 @@ func CmdAipsetupBootImgInitRdDoEverythingBeforeCompress(
 	}
 
 	err = bic.DoEverythingBeforePack()
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	return nil
+}
+
+func CmdAipsetupBootImgInitRdCompressOSFiles(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	bic, err := aipsetup.NewBootImgInitRdCtl("/", ".", log)
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	err = bic.CompressOSFiles()
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}

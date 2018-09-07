@@ -23,6 +23,7 @@ func main() {
 			SectionAipsetupBuild(),
 			SectionAipsetupMBuild(),
 			SectionAipsetupBootImg(),
+			SectionAipsetupBootImgSquash(),
 			SectionAipsetupBootImgInitRd(),
 			SectionAipsetupRepo(),
 			SectionAipsetupConfig(),

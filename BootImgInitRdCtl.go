@@ -3,6 +3,7 @@ package aipsetup
 import (
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"path"
 	"path/filepath"
 
@@ -16,6 +17,7 @@ type BootImgInitRdCtl struct {
 	src_root      string
 	wd_path       string
 	os_files      string
+	initrd_tar    string
 	initrd_tar_xz string
 	log           *logger.Logger
 }
@@ -36,8 +38,9 @@ func NewBootImgInitRdCtl(
 	}
 
 	self.wd_path = wd_path
-	self.os_files = path.Join(wd_path, "osfiles")
-	self.initrd_tar_xz = path.Join(wd_path, "initrd.tar.xz")
+	self.os_files = path.Join(wd_path, "osfiles-rd")
+	self.initrd_tar = path.Join(wd_path, "initrd.tar")
+	self.initrd_tar_xz = self.initrd_tar + ".xz"
 	self.log = log
 
 	return self, nil
@@ -108,7 +111,7 @@ func (self *BootImgInitRdCtl) CopyOSFiles() error {
 
 	for _, i := range []string{
 		"mnt", "run", "tmp", "root", "dev",
-		"proc", "sys", "root_new", "root_old",
+		"proc", "sys", "root_new", "root_old", "boot",
 	} {
 		err := os.MkdirAll(path.Join(self.os_files, i), 0700)
 		if err != nil {
@@ -203,6 +206,45 @@ func (self *BootImgInitRdCtl) DoEverythingBeforePack() error {
 		self.WriteInit,
 	} {
 		err := i()
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (self *BootImgInitRdCtl) CompressOSFiles() error {
+
+	{
+		rd_files, err := ioutil.ReadDir(self.os_files)
+		if err != nil {
+			return err
+		}
+
+		tar_rd_files := []string{}
+
+		for _, i := range rd_files {
+			tar_rd_files = append(tar_rd_files, i.Name())
+		}
+
+		args := []string{"-cvf", self.initrd_tar}
+		args = append(args, tar_rd_files...)
+		c := exec.Command("tar", args...)
+		c.Stdout = os.Stdout
+		c.Stderr = os.Stderr
+		c.Dir = self.os_files
+		err = c.Run()
+		if err != nil {
+			return err
+		}
+	}
+
+	{
+		c := exec.Command("xz", "-9kv", self.initrd_tar)
+		c.Stdout = os.Stdout
+		c.Stderr = os.Stderr
+		c.Dir = self.wd_path
+		err := c.Run()
 		if err != nil {
 			return err
 		}

@@ -6,10 +6,10 @@ import (
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
-func SectionAipsetupBootImg() *cliapp.AppCmdNode {
+func SectionAipsetupBootImgSquash() *cliapp.AppCmdNode {
 
 	return &cliapp.AppCmdNode{
-		Name: "boot-img",
+		Name: "boot-img-squash",
 		SubCmds: []*cliapp.AppCmdNode{
 
 			&cliapp.AppCmdNode{
@@ -126,7 +126,7 @@ func CmdAipsetupBootImgCopyOSFiles(
 
 	log := adds.PassData.(*logger.Logger)
 
-	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	bic, err := aipsetup.NewBootImgSquashCtl("/", ".", log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -146,7 +146,7 @@ func CmdAipsetupBootImgInstallAipSetup(
 
 	log := adds.PassData.(*logger.Logger)
 
-	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	bic, err := aipsetup.NewBootImgSquashCtl("/", ".", log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -166,7 +166,7 @@ func CmdAipsetupBootImgRemoveUsers(
 
 	log := adds.PassData.(*logger.Logger)
 
-	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	bic, err := aipsetup.NewBootImgSquashCtl("/", ".", log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -186,7 +186,7 @@ func CmdAipsetupBootImgResetRootPasswd(
 
 	log := adds.PassData.(*logger.Logger)
 
-	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	bic, err := aipsetup.NewBootImgSquashCtl("/", ".", log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -206,7 +206,7 @@ func CmdAipsetupBootImgCleanupOSFS(
 
 	log := adds.PassData.(*logger.Logger)
 
-	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	bic, err := aipsetup.NewBootImgSquashCtl("/", ".", log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -226,7 +226,7 @@ func CmdAipsetupBootImgCleanupLinuxSrc(
 
 	log := adds.PassData.(*logger.Logger)
 
-	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	bic, err := aipsetup.NewBootImgSquashCtl("/", ".", log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -246,7 +246,7 @@ func CmdAipsetupBootImgInstallOverlayInit(
 
 	log := adds.PassData.(*logger.Logger)
 
-	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	bic, err := aipsetup.NewBootImgSquashCtl("/", ".", log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -266,7 +266,7 @@ func CmdAipsetupBootImgDoEverythingBeforeSquash(
 
 	log := adds.PassData.(*logger.Logger)
 
-	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	bic, err := aipsetup.NewBootImgSquashCtl("/", ".", log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
@@ -286,7 +286,7 @@ func CmdAipsetupBootImgSquashOSFiles(
 
 	log := adds.PassData.(*logger.Logger)
 
-	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	bic, err := aipsetup.NewBootImgSquashCtl("/", ".", log)
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
