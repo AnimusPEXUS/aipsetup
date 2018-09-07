@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "",
+  "HomePage": "https://dracut.wiki.kernel.org/index.php/Main_Page",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -18,13 +18,13 @@
     "kernelorg_hosted"
   ],
   "Category": "kernel",
-  "Groups": [],
+  "Groups": ["core0"],
   "TarballFileNameParser": "std",
   "TarballName": "dracut",
   "TarballFilters": [],
   "TarballProvider": "https",
   "TarballProviderArguments": [
-    "https://cdn.kernel.org/pub/"
+    "https://mirrors.edge.kernel.org/pub/linux/utils/boot/dracut/"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

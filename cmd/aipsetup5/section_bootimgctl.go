@@ -80,6 +80,28 @@ func SectionAipsetupBootImg() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
+				Name:     "overlay-init",
+				Callable: CmdAipsetupBootImgInstallOverlayInit,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:     "all-above",
+				Callable: CmdAipsetupBootImgDoEverythingBeforeSquash,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MinArgs:   0,
+				MaxArgs:   0,
+			},
+
+			&cliapp.AppCmdNode{
 				Name:     "mksquashfs",
 				Callable: CmdAipsetupBootImgSquashOSFiles,
 				AvailableOptions: cliapp.GetOptCheckList{
@@ -210,6 +232,46 @@ func CmdAipsetupBootImgCleanupLinuxSrc(
 	}
 
 	err = bic.CleanupLinuxSrc()
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	return nil
+}
+
+func CmdAipsetupBootImgInstallOverlayInit(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	err = bic.InstallOverlayInit()
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	return nil
+}
+
+func CmdAipsetupBootImgDoEverythingBeforeSquash(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	bic, err := aipsetup.NewBootImgCtl("/", ".", log)
+	if err != nil {
+		return &cliapp.AppResult{Code: 20, Message: err.Error()}
+	}
+
+	err = bic.DoEverythingBeforeSquash()
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}

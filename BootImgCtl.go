@@ -99,7 +99,10 @@ func (self *BootImgCtl) CopyOSFiles() error {
 		}
 	}
 
-	for _, i := range []string{"mnt", "run", "tmp", "root", "dev"} {
+	for _, i := range []string{
+		"mnt", "run", "tmp", "root", "dev",
+		"proc", "sys", "overlay", "overlay_merged",
+	} {
 		err := os.MkdirAll(path.Join(self.os_files, i), 0700)
 		if err != nil {
 			return err
@@ -117,7 +120,7 @@ func (self *BootImgCtl) InstallAipSetup() error {
 
 	err = filetools.CopyWithInfo(
 		exe,
-		path.Join(self.os_files, "bin", "aipsetup"),
+		path.Join(self.os_files, "bin", "aipsetup5"),
 		self.log,
 	)
 	if err != nil {
@@ -296,7 +299,61 @@ func (self *BootImgCtl) CleanupLinuxSrc() error {
 	return nil
 }
 
+func (self *BootImgCtl) InstallOverlayInit() error {
+	overlay_init_file := path.Join(self.os_files, "overlay_init.sh")
+	overlay_init_sh := `#!/bin/bash
+
+mount -t tmpfs tmpfs /overlay
+
+mkdir /overlay/upper
+mkdir /overlay/work
+
+mount -t overlay overlay \
+-olowerdir=/,upperdir=/overlay/upper,workdir=/overlay/work /overlay_merged
+
+exec chroot /overlay_merged /bin/bash
+`
+	err := ioutil.WriteFile(
+		overlay_init_file,
+		[]byte(overlay_init_sh),
+		0700,
+	)
+	if err != nil {
+		return err
+	}
+
+	err = os.Chmod(overlay_init_file, 0700)
+	if err != nil {
+		return err
+	}
+
+	return nil
+
+}
+
+func (self *BootImgCtl) DoEverythingBeforeSquash() error {
+	for _, i := range [](func() error){
+		self.CopyOSFiles,
+		self.InstallAipSetup,
+		self.RemoveUsers,
+		self.ResetRootPasswd,
+		self.CleanupOSFS,
+		self.CleanupLinuxSrc,
+		self.InstallOverlayInit,
+	} {
+		err := i()
+		if err != nil {
+			return err
+		}
+	}
+	self.log.Info(
+		"now, it's better for you to chroot into new system and `aipsetup5 sys-setup make-good`",
+	)
+	return nil
+}
+
 func (self *BootImgCtl) SquashOSFiles() error {
+	os.Remove(self.squashed_fs)
 	c := exec.Command("mksquashfs", self.os_files, self.squashed_fs, "-comp", "xz")
 	c.Stdout = os.Stdout
 	c.Stderr = os.Stderr
