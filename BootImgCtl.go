@@ -303,6 +303,8 @@ func (self *BootImgCtl) InstallOverlayInit() error {
 	overlay_init_file := path.Join(self.os_files, "overlay_init.sh")
 	overlay_init_sh := `#!/bin/bash
 
+umount /root_old
+
 mount -t tmpfs tmpfs /overlay
 
 mkdir /overlay/upper
@@ -328,7 +330,6 @@ exec chroot /overlay_merged /bin/bash
 	}
 
 	return nil
-
 }
 
 func (self *BootImgCtl) DoEverythingBeforeSquash() error {
