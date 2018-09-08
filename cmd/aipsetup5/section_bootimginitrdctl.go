@@ -60,8 +60,8 @@ func SectionAipsetupBootImgInitRd() *cliapp.AppCmdNode {
 			},
 
 			&cliapp.AppCmdNode{
-				Name:     "compress",
-				Callable: CmdAipsetupBootImgInitRdCompressOSFiles,
+				Name:     "mksquashfs",
+				Callable: CmdAipsetupBootImgInitRdSquashOSFiles,
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
 				},
@@ -154,7 +154,7 @@ func CmdAipsetupBootImgInitRdDoEverythingBeforeCompress(
 	return nil
 }
 
-func CmdAipsetupBootImgInitRdCompressOSFiles(
+func CmdAipsetupBootImgInitRdSquashOSFiles(
 	getopt_result *cliapp.GetOptResult,
 	adds *cliapp.AdditionalInfo,
 ) *cliapp.AppResult {
@@ -166,7 +166,7 @@ func CmdAipsetupBootImgInitRdCompressOSFiles(
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}
 
-	err = bic.CompressOSFiles()
+	err = bic.SquashOSFiles()
 	if err != nil {
 		return &cliapp.AppResult{Code: 20, Message: err.Error()}
 	}

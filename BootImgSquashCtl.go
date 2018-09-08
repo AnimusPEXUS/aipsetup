@@ -35,7 +35,7 @@ func NewBootImgSquashCtl(src_root string, wd_path string, log *logger.Logger) (*
 
 	self.wd_path = wd_path
 	self.os_files = path.Join(wd_path, "osfiles")
-	self.squashed_fs = path.Join(wd_path, "squash.fs")
+	self.squashed_fs = path.Join(wd_path, "root.squash")
 	self.log = log
 
 	return self, nil

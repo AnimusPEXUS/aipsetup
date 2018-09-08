@@ -85,7 +85,7 @@ func (self *BootImgCtl) CheckFiles() error {
 		return errors.New("no files inside " + self.kernel_dir + " dir")
 	}
 
-	if _, err := os.Stat(self.initrd_ctl.initrd_tar_xz); err != nil {
+	if _, err := os.Stat(self.initrd_ctl.initrd_file); err != nil {
 		if !os.IsNotExist(err) {
 			return err
 		} else {
@@ -199,10 +199,10 @@ func (self *BootImgCtl) InstallGrub() error {
 
 func (self *BootImgCtl) CopyFiles() error {
 
-	self.log.Info("copy " + self.initrd_ctl.initrd_tar_xz)
+	self.log.Info("copy " + self.initrd_ctl.initrd_file)
 	err := filetools.CopyWithInfo(
-		self.initrd_ctl.initrd_tar_xz,
-		path.Join(self.mnt_dir, path.Base(self.initrd_ctl.initrd_tar_xz)),
+		self.initrd_ctl.initrd_file,
+		path.Join(self.mnt_dir, path.Base(self.initrd_ctl.initrd_file)),
 		self.log,
 	)
 	if err != nil {
@@ -258,7 +258,7 @@ func (self *BootImgCtl) CreateGrubCfg() error {
 menuentry start {
 	search --fs-uuid --set=root ` + basictypes.BOOT_IMAGE_BOOT_PARTITION_FS_UUID + `
 	linux /` + kernel + `
-	initrd /` + path.Base(self.initrd_ctl.initrd_tar_xz) + `
+	initrd /` + path.Base(self.initrd_ctl.initrd_file) + ` root=/dev/ram0 init=/sbin/init
 }
 `
 	cfg_path := path.Join(self.mnt_dir, "grub", "grub.cfg")

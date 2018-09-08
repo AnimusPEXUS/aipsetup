@@ -14,12 +14,12 @@ import (
 )
 
 type BootImgInitRdCtl struct {
-	src_root      string
-	wd_path       string
-	os_files      string
-	initrd_tar    string
-	initrd_tar_xz string
-	log           *logger.Logger
+	src_root    string
+	wd_path     string
+	os_files    string
+	initrd_file string
+	//	initrd_tar_xz string
+	log *logger.Logger
 }
 
 func NewBootImgInitRdCtl(
@@ -39,8 +39,8 @@ func NewBootImgInitRdCtl(
 
 	self.wd_path = wd_path
 	self.os_files = path.Join(wd_path, "osfiles-rd")
-	self.initrd_tar = path.Join(wd_path, "initrd.tar")
-	self.initrd_tar_xz = self.initrd_tar + ".xz"
+	self.initrd_file = path.Join(wd_path, "initrd.squash")
+	//	self.initrd_file_xz = self.initrd_file + ".xz"
 	self.log = log
 
 	return self, nil
@@ -257,41 +257,54 @@ func (self *BootImgInitRdCtl) DoEverythingBeforePack() error {
 	return nil
 }
 
-func (self *BootImgInitRdCtl) CompressOSFiles() error {
+//func (self *BootImgInitRdCtl) CompressOSFiles() error {
 
-	{
-		rd_files, err := ioutil.ReadDir(self.os_files)
-		if err != nil {
-			return err
-		}
+//	{
+//		rd_files, err := ioutil.ReadDir(self.os_files)
+//		if err != nil {
+//			return err
+//		}
 
-		tar_rd_files := []string{}
+//		tar_rd_files := []string{}
 
-		for _, i := range rd_files {
-			tar_rd_files = append(tar_rd_files, i.Name())
-		}
+//		for _, i := range rd_files {
+//			tar_rd_files = append(tar_rd_files, i.Name())
+//		}
 
-		args := []string{"-cvf", self.initrd_tar}
-		args = append(args, tar_rd_files...)
-		c := exec.Command("tar", args...)
-		c.Stdout = os.Stdout
-		c.Stderr = os.Stderr
-		c.Dir = self.os_files
-		err = c.Run()
-		if err != nil {
-			return err
-		}
-	}
+//		args := []string{"-cvf", self.initrd_file}
+//		args = append(args, tar_rd_files...)
+//		c := exec.Command("tar", args...)
+//		c.Stdout = os.Stdout
+//		c.Stderr = os.Stderr
+//		c.Dir = self.os_files
+//		err = c.Run()
+//		if err != nil {
+//			return err
+//		}
+//	}
 
-	{
-		c := exec.Command("xz", "-9kv", self.initrd_tar)
-		c.Stdout = os.Stdout
-		c.Stderr = os.Stderr
-		c.Dir = self.wd_path
-		err := c.Run()
-		if err != nil {
-			return err
-		}
+//	{
+//		c := exec.Command("xz", "-9kv", self.initrd_file)
+//		c.Stdout = os.Stdout
+//		c.Stderr = os.Stderr
+//		c.Dir = self.wd_path
+//		err := c.Run()
+//		if err != nil {
+//			return err
+//		}
+//	}
+//	return nil
+//}
+
+func (self *BootImgInitRdCtl) SquashOSFiles() error {
+	os.Remove(self.initrd_file)
+	c := exec.Command("mksquashfs", self.os_files, self.initrd_file, "-comp", "xz")
+	c.Stdout = os.Stdout
+	c.Stderr = os.Stderr
+	c.Dir = self.wd_path
+	err := c.Run()
+	if err != nil {
+		return err
 	}
 	return nil
 }
