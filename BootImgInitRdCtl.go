@@ -14,12 +14,12 @@ import (
 )
 
 type BootImgInitRdCtl struct {
-	src_root    string
-	wd_path     string
-	os_files    string
-	initrd_file string
-	//	initrd_tar_xz string
-	log *logger.Logger
+	src_root         string
+	wd_path          string
+	os_files         string
+	initrd_file      string
+	initrd_file_comp string
+	log              *logger.Logger
 }
 
 func NewBootImgInitRdCtl(
@@ -40,7 +40,7 @@ func NewBootImgInitRdCtl(
 	self.wd_path = wd_path
 	self.os_files = path.Join(wd_path, "osfiles-rd")
 	self.initrd_file = path.Join(wd_path, "initrd.squash")
-	//	self.initrd_file_xz = self.initrd_file + ".xz"
+	self.initrd_file_comp = self.initrd_file + ".xz"
 	self.log = log
 
 	return self, nil
@@ -169,7 +169,7 @@ export LD_LIBRARY_PATH=/lib:/lib64
 mount -t proc proc /proc
 mount -t sysfs sysfs /sys
 mount -o ro PARTUUID=` + basictypes.BOOT_IMAGE_BOOT_PARTITION_UUID + ` /boot
-mount /boot/squash.fs /root_new
+mount /boot/root.squash /root_new
 
 # echo "testing overlayfs"
 # /bin/bash
@@ -305,6 +305,17 @@ func (self *BootImgInitRdCtl) SquashOSFiles() error {
 	err := c.Run()
 	if err != nil {
 		return err
+	}
+
+	{
+		c := exec.Command("xz", "-9kv", self.initrd_file)
+		c.Stdout = os.Stdout
+		c.Stderr = os.Stderr
+		c.Dir = self.wd_path
+		err := c.Run()
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }
