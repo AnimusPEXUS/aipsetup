@@ -137,7 +137,14 @@ func (self *BootImgInitRdCtl) MakeSymlinks() error {
 		if err != nil {
 			return err
 		}
+	}
 
+	err = os.Symlink(
+		path.Join("multihost", "x86_64-pc-linux-gnu"),
+		path.Join(self.os_files, "usr"),
+	)
+	if err != nil {
+		return err
 	}
 
 	return nil
@@ -201,14 +208,25 @@ exec chroot . /overlay_init.sh
 
 func (self *BootImgInitRdCtl) CleanupLinux() error {
 	{
+		// TODO: it's better to move boot files to ../kernel
 		boot_dir := path.Join(self.os_files, "boot")
 		boot_dir_files, err := ioutil.ReadDir(boot_dir)
 		if err != nil {
 			return err
 		}
 
+		err = os.Mkdir(path.Join(self.wd_path, "kernel"), 0700)
+		if err != nil {
+			if !os.IsExist(err) {
+				return err
+			}
+		}
+
 		for _, i := range boot_dir_files {
-			err := os.RemoveAll(path.Join(boot_dir, i.Name()))
+			err = os.Rename(
+				path.Join(boot_dir, i.Name()),
+				path.Join(self.wd_path, "kernel", i.Name()),
+			)
 			if err != nil {
 				return err
 			}

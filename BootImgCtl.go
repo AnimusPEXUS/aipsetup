@@ -255,7 +255,7 @@ func (self *BootImgCtl) CreateGrubCfg() error {
 	}
 
 	txt := `
-menuitem start {
+menuentry start {
 	search --fs-uuid --set=root ` + basictypes.BOOT_IMAGE_BOOT_PARTITION_FS_UUID + `
 	linux /` + kernel + `
 	initrd /` + path.Base(self.initrd_ctl.initrd_tar_xz) + `
