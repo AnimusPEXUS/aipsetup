@@ -264,22 +264,41 @@ func (self *BootImgSquashCtl) CleanupOSFS() error {
 		}
 	}
 
-	sd_journals_pth := path.Join(self.os_files, "var", "log", "journal")
+	{
+		sd_journals_pth := path.Join(self.os_files, "var", "log", "journal")
 
-	err := os.MkdirAll(sd_journals_pth, 0700)
-	if err != nil {
-		return err
-	}
-
-	sd_journals_pth_files, err := ioutil.ReadDir(sd_journals_pth)
-	if err != nil {
-		return err
-	}
-
-	for _, i := range sd_journals_pth_files {
-		err = os.RemoveAll(i.Name())
+		err := os.MkdirAll(sd_journals_pth, 0700)
 		if err != nil {
 			return err
+		}
+
+		sd_journals_pth_files, err := ioutil.ReadDir(sd_journals_pth)
+		if err != nil {
+			return err
+		}
+
+		for _, i := range sd_journals_pth_files {
+			err = os.RemoveAll(i.Name())
+			if err != nil {
+				return err
+			}
+		}
+	}
+
+	{
+		etc_ssh := path.Join(self.os_files, "etc", "ssh")
+		etc_ssh_files, err := ioutil.ReadDir(etc_ssh)
+		if err != nil {
+			return err
+		}
+
+		for _, i := range etc_ssh_files {
+			if strings.HasPrefix(i.Name(), "ssh_host") {
+				err = os.Remove(path.Join(etc_ssh, i.Name()))
+				if err != nil {
+					return err
+				}
+			}
 		}
 	}
 
@@ -303,6 +322,8 @@ func (self *BootImgSquashCtl) InstallOverlayInit() error {
 	overlay_init_file := path.Join(self.os_files, "overlay_init.sh")
 	overlay_init_sh := `#!/bin/bash
 
+set -x
+
 umount /root_old
 
 mount -t tmpfs tmpfs /overlay
@@ -310,8 +331,9 @@ mount -t tmpfs tmpfs /overlay
 mkdir /overlay/upper
 mkdir /overlay/work
 
-mount -t overlay overlay \
--olowerdir=/,upperdir=/overlay/upper,workdir=/overlay/work /overlay_merged
+mount -t overlay overlay -olowerdir=/,upperdir=/overlay/upper,workdir=/overlay/work /overlay_merged
+
+mount --move /boot /overlay_merged/boot
 
 exec chroot /overlay_merged /bin/bash
 `

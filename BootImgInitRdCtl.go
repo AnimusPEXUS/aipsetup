@@ -7,6 +7,7 @@ import (
 	"path"
 	"path/filepath"
 	"sort"
+	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
@@ -163,15 +164,16 @@ echo '|  WELCOME TO HORIZON LIVE IMAGE  |'
 echo '|                                 |'
 echo '|=================================+'
 
-
 export LD_LIBRARY_PATH=/lib:/lib64
 
 # this should be already mounted by kernel
 # mount -t devtmpfs devtmpfs /dev
 
+set -x
+
 mount -t proc proc /proc
 mount -t sysfs sysfs /sys
-mount -o ro PARTUUID=` + basictypes.BOOT_IMAGE_BOOT_PARTITION_UUID + ` /boot
+mount -o ro PARTUUID=` + strings.ToLower(basictypes.BOOT_IMAGE_BOOT_PARTITION_UUID) + ` /boot
 mount /boot/root.squash /root_new
 
 # echo "testing overlayfs"
