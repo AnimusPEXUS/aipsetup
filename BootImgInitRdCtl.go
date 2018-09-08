@@ -6,6 +6,7 @@ import (
 	"os/exec"
 	"path"
 	"path/filepath"
+	"sort"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
@@ -40,7 +41,7 @@ func NewBootImgInitRdCtl(
 	self.wd_path = wd_path
 	self.os_files = path.Join(wd_path, "osfiles-rd")
 	self.initrd_file = path.Join(wd_path, "initrd.squash")
-	self.initrd_file_comp = self.initrd_file + ".xz"
+	self.initrd_file_comp = self.initrd_file + ".gz"
 	self.log = log
 
 	return self, nil
@@ -61,6 +62,8 @@ func (self *BootImgInitRdCtl) CopyOSFiles() error {
 	if err != nil {
 		return err
 	}
+
+	sort.Strings(pkg_names)
 
 	for _, i := range pkg_names {
 
@@ -307,15 +310,15 @@ func (self *BootImgInitRdCtl) SquashOSFiles() error {
 		return err
 	}
 
-	{
-		c := exec.Command("xz", "-9kv", self.initrd_file)
-		c.Stdout = os.Stdout
-		c.Stderr = os.Stderr
-		c.Dir = self.wd_path
-		err := c.Run()
-		if err != nil {
-			return err
-		}
-	}
+	//	{
+	//		c := exec.Command("gzip", "-9kv", self.initrd_file)
+	//		c.Stdout = os.Stdout
+	//		c.Stderr = os.Stderr
+	//		c.Dir = self.wd_path
+	//		err := c.Run()
+	//		if err != nil {
+	//			return err
+	//		}
+	//	}
 	return nil
 }

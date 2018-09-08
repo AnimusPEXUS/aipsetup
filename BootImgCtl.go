@@ -8,6 +8,7 @@ import (
 	"os/exec"
 	"path"
 	"path/filepath"
+	"strconv"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
@@ -29,6 +30,8 @@ type BootImgCtl struct {
 	loop_dev   string
 	loop_devp1 string
 	loop_devp2 string
+
+	initrd_filename string
 
 	log *logger.Logger
 }
@@ -71,6 +74,8 @@ func NewBootImgCtl(
 	self.loop_devp1 = self.loop_dev + "p1"
 	self.loop_devp2 = self.loop_dev + "p2"
 
+	self.initrd_filename = initrd_ctl.initrd_file
+
 	self.log = log
 
 	return self, nil
@@ -85,7 +90,7 @@ func (self *BootImgCtl) CheckFiles() error {
 		return errors.New("no files inside " + self.kernel_dir + " dir")
 	}
 
-	if _, err := os.Stat(self.initrd_ctl.initrd_file_comp); err != nil {
+	if _, err := os.Stat(self.initrd_filename); err != nil {
 		if !os.IsNotExist(err) {
 			return err
 		} else {
@@ -199,10 +204,10 @@ func (self *BootImgCtl) InstallGrub() error {
 
 func (self *BootImgCtl) CopyFiles() error {
 
-	self.log.Info("copy " + self.initrd_ctl.initrd_file_comp)
+	self.log.Info("copy " + self.initrd_filename)
 	err := filetools.CopyWithInfo(
-		self.initrd_ctl.initrd_file_comp,
-		path.Join(self.mnt_dir, path.Base(self.initrd_ctl.initrd_file_comp)),
+		self.initrd_filename,
+		path.Join(self.mnt_dir, path.Base(self.initrd_filename)),
 		self.log,
 	)
 	if err != nil {
@@ -254,13 +259,31 @@ func (self *BootImgCtl) CreateGrubCfg() error {
 		}
 	}
 
+	ramdisk_size := 0
+
+	{
+		s, err := os.Stat(self.initrd_filename)
+		if err != nil {
+			return err
+		}
+		ramdisk_size = int(float64(s.Size())/1024) + 1
+	}
+
 	txt := `
 menuentry start {
+
+	insmod gzio
+	insmod xzio
+	insmod part_gpt
+	insmod ext2
+	insmod squash4
+
 	search --fs-uuid --set=root ` + basictypes.BOOT_IMAGE_BOOT_PARTITION_FS_UUID + `
-	linux /` + kernel + ` root=/dev/ram0 init=/sbin/init
-	initrd /` + path.Base(self.initrd_ctl.initrd_file_comp) + `
+	linux /` + kernel + ` ramdisk_size=` + strconv.Itoa(ramdisk_size) + `
+	initrd /` + path.Base(self.initrd_filename) + `
 }
 `
+	// root=/dev/ram0 init=/sbin/init initrd=/` + path.Base(self.initrd_filename) + `
 	cfg_path := path.Join(self.mnt_dir, "grub", "grub.cfg")
 
 	err := ioutil.WriteFile(cfg_path, []byte(txt), 0755)

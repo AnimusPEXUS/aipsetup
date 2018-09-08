@@ -101,7 +101,7 @@ func (self *BootImgSquashCtl) CopyOSFiles() error {
 
 	for _, i := range []string{
 		"mnt", "run", "tmp", "root", "dev",
-		"proc", "sys", "overlay", "overlay_merged",
+		"proc", "sys", "overlay", "overlay_merged", "boot",
 	} {
 		err := os.MkdirAll(path.Join(self.os_files, i), 0700)
 		if err != nil {
