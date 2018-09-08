@@ -37,8 +37,8 @@
   Crosscompiler building      |         v          | not started yet,
   and usage                   | (badly and ugly)   | not planned yet.
   -------------------------------------------------------------------
-  Building bootable and       | done, but not      | not started yet,
-  rescue flash/optical images | tested long enough | but should be easy enough
+  Building bootable and       | done, but not      |       v
+  rescue flash/optical images | tested long enough |
   -------------------------------------------------------------------
   Doing system cleanups:
     removing old .so files    |         v          |       o

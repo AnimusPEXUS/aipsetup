@@ -115,7 +115,7 @@ func (self *BootImgInitRdCtl) CopyOSFiles() error {
 
 	for _, i := range []string{
 		"mnt", "run", "tmp", "root", "dev",
-		"proc", "sys", "root_new", "root_old", "boot",
+		"proc", "sys", "root_new", "boot",
 	} {
 		err := os.MkdirAll(path.Join(self.os_files, i), 0700)
 		if err != nil {
