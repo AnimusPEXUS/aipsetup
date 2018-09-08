@@ -347,9 +347,7 @@ func (self *BootImgSquashCtl) DoEverythingBeforeSquash() error {
 			return err
 		}
 	}
-	self.log.Info(
-		"now, it's better for you to chroot into new system and `aipsetup5 sys-setup make-good`",
-	)
+
 	return nil
 }
 

@@ -21,7 +21,8 @@
   "Category": "kernel",
   "Groups": [
     "cross",
-    "fi"
+    "fi",
+    "fib"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "linux",

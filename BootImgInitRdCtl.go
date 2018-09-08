@@ -199,11 +199,37 @@ exec chroot . /overlay_init.sh
 	return nil
 }
 
+func (self *BootImgInitRdCtl) CleanupLinux() error {
+	{
+		boot_dir := path.Join(self.os_files, "boot")
+		boot_dir_files, err := ioutil.ReadDir(boot_dir)
+		if err != nil {
+			return err
+		}
+
+		for _, i := range boot_dir_files {
+			err := os.RemoveAll(path.Join(boot_dir, i.Name()))
+			if err != nil {
+				return err
+			}
+		}
+	}
+	{
+		src_dir := path.Join(self.os_files, "usr", "src")
+		err := os.RemoveAll(src_dir)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 func (self *BootImgInitRdCtl) DoEverythingBeforePack() error {
 	for _, i := range [](func() error){
 		self.CopyOSFiles,
 		self.MakeSymlinks,
 		self.WriteInit,
+		self.CleanupLinux,
 	} {
 		err := i()
 		if err != nil {
