@@ -219,7 +219,7 @@ TEMP_PATH="$HOME/gopath_work"
 export GOPATH+=":$TEMP_PATH"
 export PATH+=":$TEMP_PATH/bin"
 
-unset TEMP_GOPATH
+unset TEMP_PATH
 
 `,
 			dir_path,
