@@ -40,10 +40,10 @@ func init() {
 //	ret = append(
 //		ret,
 //		[]string{
-//			"-DFT_WITH_BZIP2=ON",
-//			"-DFT_WITH_HARFBUZZ=ON",
-//			"-DFT_WITH_PNG=ON",
-//			"-DFT_WITH_ZLIB=ON",
+//			"-DFT_WITH_BZIP2=y",
+//			"-DFT_WITH_HARFBUZZ=y",
+//			"-DFT_WITH_PNG=y",
+//			"-DFT_WITH_ZLIB=y",
 //		}...,
 //	)
 
@@ -62,6 +62,10 @@ func NewBuilder_freetype(bs basictypes.BuildingSiteCtlI) (*Builder_freetype, err
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
+	self.EditBuildArgsCB = self.EditBuildArgs
+
+	self.EditDistributeArgsCB = self.EditDistributeArgs
+
 	return self, nil
 }
 
@@ -70,18 +74,38 @@ func (self *Builder_freetype) EditConfigureArgs(log *logger.Logger, ret []string
 	ret = append(
 		ret,
 		[]string{
-			//			"--with-bzip2=yes",
-			//			"--with-png=yes",
-			//			"--with-zlib=yes",
+			"--with-bzip2",
+			"--with-png",
+			"--with-zlib",
+			"--with-harfbuzz",
 
 			// NOTE: harfbuzz <-> freetype is the circular dep. so it
 			//       might be required to build freetype without
 			//       harfbuzz once before building harfbuzz on it's
 			//       own.
 			//
-			"--with-harfbuzz",
+			//			"--without-harfbuzz",
+
+			//"WIN32=",
+			//			"RC=",
 		}...,
 	)
 
+	return ret, nil
+}
+
+func (self *Builder_freetype) EditBuildArgs(log *logger.Logger, ret []string) ([]string, error) {
+	ret = append(
+		ret,
+		[]string{"RC="}...,
+	)
+	return ret, nil
+}
+
+func (self *Builder_freetype) EditDistributeArgs(log *logger.Logger, ret []string) ([]string, error) {
+	ret = append(
+		ret,
+		[]string{"RC="}...,
+	)
 	return ret, nil
 }

@@ -70,7 +70,7 @@ func (self *Builder_harfbuzz) EditConfigureArgs(log *logger.Logger, ret []string
 	ret = append(
 		ret,
 		[]string{
-			"--without-freetype",
+			"--with-freetype",
 			//			"--with-bzip2=yes",
 			//			"--with-harfbuzz=yes",
 			//			"--with-png=yes",
