@@ -55,6 +55,19 @@ func (self *Builder_cmake) EditConfigureArgs(log *logger.Logger, ret []string) (
 		return nil, err
 	}
 
+	//	ret, err = buildingtools.FilterAutotoolsConfigOptions(
+	//		ret,
+	//		[]string{},
+	//		[]string{
+	//			"--libdir=",
+	//			"--sysconfdir=",
+	//			"--localstatedir=",
+	//		},
+	//	)
+	//	if err != nil {
+	//		return nil, err
+	//	}
+
 	ncurses_include_dir := path.Join(prefix, "include", "ncursesw")
 
 	ncursrs_opt := "-DCURSES_INCLUDE_PATH=" + ncurses_include_dir

@@ -154,7 +154,7 @@ func (self *MassBuildCtl) PerformMassBuilding(tarballs []string) (
 
 			counter++
 
-			fmt.Printf(" %v%%   \r", 100.0/(float64(len(tarballs))/float64(counter)))
+			fmt.Printf(" %.2f%%   \r", 100.0/(float64(len(tarballs))/float64(counter)))
 
 			bi := path.Base(i)
 

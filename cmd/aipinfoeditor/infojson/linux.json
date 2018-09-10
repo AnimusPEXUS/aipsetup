@@ -33,7 +33,9 @@
     "-X=/pub/linux/kernel/people",
     "-X=/pub/linux/kernel/projects",
     "-X=/pub/linux/kernel/ports",
-    "-X=/pub/linux/kernel/testing"
+    "-X=/pub/linux/kernel/testing",
+    "-X=/pub/linux/kernel/Historyc",
+    "-X=testing"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

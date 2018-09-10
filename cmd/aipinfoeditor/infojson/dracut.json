@@ -18,7 +18,9 @@
     "kernelorg_hosted"
   ],
   "Category": "kernel",
-  "Groups": ["core0"],
+  "Groups": [
+    "core0"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "dracut",
   "TarballFilters": [],

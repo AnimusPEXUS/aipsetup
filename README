@@ -37,16 +37,16 @@
   Crosscompiler building      |         v          | not started yet,
   and usage                   | (badly and ugly)   | not planned yet.
   -------------------------------------------------------------------
-  Building bootable and       | done, but not      |       v
+  Building bootable and       | done, but not      |        v
   rescue flash/optical images | tested long enough |
   -------------------------------------------------------------------
   Doing system cleanups:
-    removing old .so files    |         v          |       o
+    removing old .so files    |         v          |        o
     -----------------------------------------------------------------
-    reset file and dir        |         v          |       v
+    reset file and dir        |         v          |        v
     permissions               |                    |
     -----------------------------------------------------------------
-    automatic population of   |         v          |       v
+    automatic population of   |         v          |        v
     /daemons                  |                    |
 
 == Some Basic Information ==

@@ -615,7 +615,7 @@ func (self *Builder_std) BuilderActionBuildConcurentJobsCountDef(
 	log *logger.Logger,
 ) int {
 
-	ret := runtime.NumCPU()
+	ret := runtime.NumCPU() * 2
 
 	if self.EditBuildConcurentJobsCountCB != nil {
 		ret = self.EditBuildConcurentJobsCountCB(log, ret)

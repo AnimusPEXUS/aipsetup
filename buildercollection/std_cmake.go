@@ -19,6 +19,7 @@ func init() {
 type Builder_std_cmake struct {
 	*Builder_std
 
+	EditActionsCB   func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
 	EditBuildArgsCB func(log *logger.Logger, ret []string) ([]string, error)
 }
 
@@ -26,8 +27,6 @@ func NewBuilder_std_cmake(bs basictypes.BuildingSiteCtlI) (*Builder_std_cmake, e
 	self := new(Builder_std_cmake)
 
 	self.Builder_std = NewBuilder_std(bs)
-
-	self.EditActionsCB = self.EditActions
 
 	self.EditConfigureWorkingDirCB = self.EditConfigureWorkingDir
 
@@ -40,20 +39,33 @@ func (self *Builder_std_cmake) EditConfigureWorkingDir(log *logger.Logger, ret s
 	return self.GetBuildingSiteCtl().GetDIR_BUILDING(), nil
 }
 
-func (self *Builder_std_cmake) EditActions(ret basictypes.BuilderActions) (
-	basictypes.BuilderActions,
-	error,
-) {
+func (self *Builder_std_cmake) DefineActions() (basictypes.BuilderActions, error) {
 
-	ret.Replace(
+	ret, err := self.Builder_std.DefineActions()
+	if err != nil {
+		return nil, err
+	}
+
+	ret = ret.Remove("autogen")
+
+	err = ret.Replace(
 		"configure",
 		&basictypes.BuilderAction{
 			"configure",
 			self.BuilderActionConfigure,
 		},
 	)
+	if err != nil {
+		return nil, err
+	}
 
-	ret = ret.Remove("autogen")
+	if self.EditActionsCB != nil {
+		var err error
+		ret, err = self.EditActionsCB(ret)
+		if err != nil {
+			return nil, err
+		}
+	}
 
 	return ret, nil
 }
