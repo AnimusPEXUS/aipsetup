@@ -1,64 +1,66 @@
 package buildercollection
 
-import (
-	"path"
+// NOTE: libxml2 is the same. butI won't delete this file for now
 
-	"github.com/AnimusPEXUS/aipsetup/basictypes"
-	"github.com/AnimusPEXUS/utils/logger"
-)
+//import (
+//	"path"
 
-func init() {
-	Index["libxslt"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilder_libxslt(bs), nil
-	}
-}
+//	"github.com/AnimusPEXUS/aipsetup/basictypes"
+//	"github.com/AnimusPEXUS/utils/logger"
+//)
 
-type Builder_libxslt struct {
-	*Builder_std
+//func init() {
+//	Index["libxslt"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
+//		return NewBuilder_libxslt(bs), nil
+//	}
+//}
 
-	python_name string
-}
+//type Builder_libxslt struct {
+//	*Builder_std
 
-func NewBuilder_libxslt(bs basictypes.BuildingSiteCtlI) *Builder_libxslt {
+//	python_name string
+//}
 
-	self := new(Builder_libxslt)
+//func NewBuilder_libxslt(bs basictypes.BuildingSiteCtlI) *Builder_libxslt {
 
-	self.Builder_std = NewBuilder_std(bs)
-	self.EditConfigureArgsCB = self.EditConfigureArgs
+//	self := new(Builder_libxslt)
 
-	self.python_name = "python2.7"
+//	self.Builder_std = NewBuilder_std(bs)
+//	self.EditConfigureArgsCB = self.EditConfigureArgs
 
-	return self
-}
+//	self.python_name = "python2.7"
 
-func (self *Builder_libxslt) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
+//	return self
+//}
 
-	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
+//func (self *Builder_libxslt) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	python2, err := calc.CalculateInstallPrefixExecutable(self.python_name)
-	if err != nil {
-		return nil, err
-	}
+//	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
-	install_prefix, err := calc.CalculateInstallPrefix()
-	if err != nil {
-		return nil, err
-	}
+//	python2, err := calc.CalculateInstallPrefixExecutable(self.python_name)
+//	if err != nil {
+//		return nil, err
+//	}
 
-	ret = append(
-		ret,
-		[]string{
-			"--with-python=" + python2,
-			"--with-python-install-dir=" + path.Join(
-				install_prefix,
-				"lib",
-				self.python_name,
-				"site-packages",
-			),
-			"--with-python=" + install_prefix,
-			"PYTHON=" + python2,
-		}...,
-	)
+//	install_prefix, err := calc.CalculateInstallPrefix()
+//	if err != nil {
+//		return nil, err
+//	}
 
-	return ret, nil
-}
+//	ret = append(
+//		ret,
+//		[]string{
+//			"--with-python=" + python2,
+//			"--with-python-install-dir=" + path.Join(
+//				install_prefix,
+//				"lib",
+//				self.python_name,
+//				"site-packages",
+//			),
+//			"--with-python=" + install_prefix,
+//			"PYTHON=" + python2,
+//		}...,
+//	)
+
+//	return ret, nil
+//}
