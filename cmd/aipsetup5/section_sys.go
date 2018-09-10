@@ -4,9 +4,11 @@ import (
 	"fmt"
 	"sort"
 
+	"github.com/AnimusPEXUS/aipsetup"
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/logger"
+	"github.com/AnimusPEXUS/utils/set"
 )
 
 func SectionAipsetupSys() *cliapp.AppCmdNode {
@@ -129,6 +131,18 @@ func SectionAipsetupSys() *cliapp.AppCmdNode {
 				Name:             "list-files",
 				ShortDescription: "list files installed by named asp",
 				Callable:         CmdAipsetupSysASPFiles,
+				AvailableOptions: cliapp.GetOptCheckList{
+					STD_ROOT_OPTION,
+				},
+				CheckArgs: true,
+				MaxArgs:   1,
+				MinArgs:   1,
+			},
+
+			&cliapp.AppCmdNode{
+				Name:             "find",
+				ShortDescription: "try to find which packages installed named files",
+				Callable:         CmdAipsetupSysFindPkgByInstalledFileNames,
 				AvailableOptions: cliapp.GetOptCheckList{
 					STD_ROOT_OPTION,
 				},
@@ -417,4 +431,70 @@ func CmdAipsetupSysGetASP(
 ) *cliapp.AppResult {
 	// TODO
 	return nil
+}
+
+func CmdAipsetupSysFindPkgByInstalledFileNames(
+	getopt_result *cliapp.GetOptResult,
+	adds *cliapp.AdditionalInfo,
+) *cliapp.AppResult {
+
+	log := adds.PassData.(*logger.Logger)
+
+	_, sys, res := StdRoutineGetRootOptionAndSystemObject(getopt_result, log)
+	if res != nil && res.Code != 0 {
+		return res
+	}
+
+	mode := "sub"
+
+	{
+		mode_itm := getopt_result.GetLastNamedRetOptItem("-m=")
+		if mode_itm != nil {
+			mode = mode_itm.Value
+		}
+
+		mode_valid := false
+
+		for _, i := range []string{"sub", "re", "fm"} {
+			if mode == i {
+				mode_valid = true
+				break
+			}
+		}
+		if !mode_valid {
+			return &cliapp.AppResult{Code: 10, Message: "invalid value for -m="}
+		}
+
+	}
+
+	pattern := getopt_result.Args[0]
+
+	sys_pkg := aipsetup.NewSystemPackages(sys)
+	res2, err := sys_pkg.FindPackagesByInstalledFilenames(
+		mode,
+		pattern,
+		func(perc float64, ind, count int) {
+			fmt.Printf("%.2f%% %d of %d   \r", perc, ind, count)
+		},
+	)
+	if err != nil {
+		return &cliapp.AppResult{Code: 11, Message: err.Error()}
+	}
+
+	asps := set.NewSetString()
+
+	for k, _ := range res2 {
+		asps.AddStrings(k)
+	}
+
+	for _, i := range asps.ListStringsSorted() {
+		fmt.Println(i, ":")
+		sort.Strings(res2[i])
+		for _, j := range res2[i] {
+			fmt.Println("  ", j)
+		}
+	}
+
+	return nil
+
 }

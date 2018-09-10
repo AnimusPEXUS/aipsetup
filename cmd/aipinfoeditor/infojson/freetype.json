@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "https://www.freetype.org/",
-  "BuilderName": "std_cmake",
+  "BuilderName": "freetype",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

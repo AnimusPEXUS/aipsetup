@@ -1,7 +1,9 @@
 package buildercollection
 
 import (
+	"bytes"
 	"fmt"
+	"html/template"
 	"io/ioutil"
 	"os"
 	"path"
@@ -86,6 +88,7 @@ func (self *Builder_bzip2) EditActions(ret basictypes.BuilderActions) (
 		&basictypes.BuilderAction{"fix_links", self.BuilderActionFixLinks},
 		&basictypes.BuilderAction{"fix_libdir_name", self.BuilderActionFixLibdirName},
 		&basictypes.BuilderAction{"fix_mandir_position", self.BuilderActionFixMandirPosition},
+		&basictypes.BuilderAction{"generate_pkg-config", self.MakePkgConfig},
 	}
 
 	ret, err := ret.AddActionsBeforeName(new_actions, "prepack")
@@ -405,6 +408,119 @@ func (self *Builder_bzip2) BuilderActionFixMandirPosition(log *logger.Logger) er
 	}
 
 	err = os.Rename(dst_install_prefix_man, dst_install_prefix_share_man)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (self *Builder_bzip2) MakePkgConfig(log *logger.Logger) error {
+
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
+	if err != nil {
+		return err
+	}
+
+	ver := strings.Split(info.PackageVersion, ".")
+
+	for len(ver) < 3 {
+		ver = append(ver, "0")
+	}
+
+	install_prefix, err := self.GetBuildingSiteCtl().
+		GetBuildingSiteValuesCalculator().CalculateInstallPrefix()
+	if err != nil {
+		return err
+	}
+
+	//	dst_install_prefix, err := self.GetBuildingSiteCtl().
+	//		GetBuildingSiteValuesCalculator().CalculateDstInstallPrefix()
+	//	if err != nil {
+	//		return err
+	//	}
+
+	libdir, err := self.GetBuildingSiteCtl().
+		GetBuildingSiteValuesCalculator().CalculateInstallLibDir()
+	if err != nil {
+		return err
+	}
+
+	dst_libdir, err := self.GetBuildingSiteCtl().
+		GetBuildingSiteValuesCalculator().CalculateDstInstallLibDir()
+	if err != nil {
+		return err
+	}
+
+	//	dst_lib_files, err := ioutil.ReadDir(dst_libdir)
+	//	if err != nil {
+	//		return err
+	//	}
+
+	//	lib_names := make([]string, 0)
+
+	//	for _, i := range dst_lib_files {
+	//		i_name := i.Name()
+	//		if strings.HasPrefix(i_name, "lib") && strings.HasSuffix(i_name, ".so") {
+	//			lib_names = append(lib_names, i_name[3:len(i_name)-3])
+	//		}
+	//	}
+
+	pkg_config_dir_path := path.Join(dst_libdir, "pkgconfig")
+	pkg_config_file_path := path.Join(pkg_config_dir_path, "bzip2.pc")
+
+	pkg_config_tpl, err := template.New("pkg_config").Parse(`
+prefix={{.Prefix}}
+exec_prefix={{.Prefix}}
+libdir={{.Libdir}}
+includedir=${exec_prefix}/include
+
+Name: bzip2
+Description: bzip2 compressor
+Version: {{.Major_version}}.{{.Minor_version}}.{{.Patch_version}}
+Libs: -L${libdir} -lbz2
+Cflags: -I${includedir}
+`)
+	if err != nil {
+		return err
+	}
+
+	b := &bytes.Buffer{}
+
+	err = pkg_config_tpl.Execute(
+		b,
+		struct {
+			Prefix        string
+			Libdir        string
+			Major_version string
+			Minor_version string
+			Patch_version string
+			//			Libs          string
+		}{
+			Prefix:        install_prefix,
+			Libdir:        libdir,
+			Major_version: ver[0],
+			Minor_version: ver[1],
+			Patch_version: ver[2],
+			//			Libs:          "-l" + strings.Join(lib_names, " -l"),
+		},
+	)
+	if err != nil {
+		return err
+	}
+
+	err = os.MkdirAll(pkg_config_dir_path, 0700)
+	if err != nil {
+		return err
+	}
+
+	f, err := os.Create(pkg_config_file_path)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	_, err = b.WriteTo(f)
 	if err != nil {
 		return err
 	}

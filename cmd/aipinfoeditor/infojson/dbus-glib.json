@@ -19,7 +19,6 @@
   ],
   "Category": "freedesktop/dbus",
   "Groups": [
-    "core0"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "dbus-glib",

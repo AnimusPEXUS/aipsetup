@@ -30,6 +30,8 @@ func NewBuilder_bash(bs basictypes.BuildingSiteCtlI) (*Builder_bash, error) {
 
 	self.Builder_std = NewBuilder_std(bs)
 
+	self.EditActionsCB = self.EditActions
+
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
 	return self, nil

@@ -11,6 +11,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 
@@ -1048,4 +1049,76 @@ func (self *SystemPackages) FindSystemPackageRegistrationByName(
 	aspname *basictypes.ASPName,
 ) (*SystemPackageRegistration, error) {
 	return FindSystemPackageRegistrationByName(aspname, self.sys)
+}
+
+// TODO: mode should be enum
+func (self *SystemPackages) FindPackagesByInstalledFilenames(
+	mode string,
+	pattern string,
+	progress_cb func(perc float64, ind, count int),
+) (map[string]([]string), error) {
+
+	asps, err := self.ListAllInstalledASPs()
+	if err != nil {
+		return nil, err
+	}
+
+	ret := make(map[string]([]string))
+
+	register_found_file := func(pkg string, file string) {
+		_, ok := ret[pkg]
+		if !ok {
+			ret[pkg] = make([]string, 0)
+		}
+		ret[pkg] = append(ret[pkg], file)
+	}
+
+	asps_l := len(asps)
+	for ii, i := range asps {
+
+		if progress_cb != nil {
+			progress_cb(
+				100.0/(float64(asps_l)/float64(ii)),
+				ii,
+				asps_l,
+			)
+		}
+
+		i_asp_str := i.String()
+		files, err := self.ListInstalledASPFiles(i)
+		if err != nil {
+			return nil, err
+		}
+		for _, j := range files {
+			switch mode {
+			default:
+				panic("programming error")
+			case "sub":
+				if strings.Contains(j, pattern) {
+					register_found_file(i_asp_str, j)
+				}
+			case "re":
+				ok, err := regexp.MatchString(pattern, j)
+				if err != nil {
+					return nil, err
+				}
+
+				if ok {
+					register_found_file(i_asp_str, j)
+				}
+
+			case "fm":
+				ok, err := filepath.Match(pattern, j)
+				if err != nil {
+					return nil, err
+				}
+
+				if ok {
+					register_found_file(i_asp_str, j)
+				}
+			}
+		}
+	}
+
+	return ret, nil
 }
