@@ -34,7 +34,7 @@
     "-X=/pub/linux/kernel/projects",
     "-X=/pub/linux/kernel/ports",
     "-X=/pub/linux/kernel/testing",
-    "-X=/pub/linux/kernel/Historyc",
+    "-X=/pub/linux/kernel/Historic",
     "-X=testing"
   ],
   "TarballProviderVersionSyncDepth": 0,
