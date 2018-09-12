@@ -399,23 +399,22 @@ main_loop:
 	for _, i := range actions {
 		for _, j := range targets {
 			if i.Name == j {
-				l.Info(
+				lo, err := self.CreateLogger(j, true)
+				if err != nil {
+					return err
+				}
+				lo.Info(
 					fmt.Sprintf(
 						"---===="+`//////`+"[ %s : STRT %s ]"+`\\\\\\`+"====---",
 						info.PackageName,
 						j,
 					),
 				)
-				lo, err := self.CreateLogger(j, true)
-				if err != nil {
-					return err
-				}
 				err = i.Callable(lo)
-				lo.Close()
 				if err != nil {
-					l.Error("(aipsetup message) action exited with following aipsetup error:")
-					l.Error(err)
-					l.Error(
+					lo.Error("(aipsetup message) action exited with following aipsetup error:")
+					lo.Error(err)
+					lo.Error(
 						fmt.Sprintf(
 							"---===="+`++++++`+"[ %s : FAIL %s ]"+`++++++`+"====---",
 							info.PackageName,
@@ -424,13 +423,14 @@ main_loop:
 					)
 					return err
 				}
-				l.Info(
+				lo.Info(
 					fmt.Sprintf(
 						"---===="+`\\\\\\`+"[ %s : DONE %s ]"+`//////`+"====---",
 						info.PackageName,
 						j,
 					),
 				)
+				lo.Close()
 				continue main_loop
 			}
 		}

@@ -1,7 +1,7 @@
 {
-  "Description": "",
-  "HomePage": "https://gstreamer.freedesktop.org/",
-  "BuilderName": "std",
+  "Description": "write something here, please",
+  "HomePage": "http://www.sane-project.org",
+  "BuilderName": "sane_frontends",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -15,15 +15,20 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [],
-  "Category": "freedesktop/gstreamer",
+  "Category": "non_categorized",
   "Groups": [
     "media"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "gst-plugin",
+  "TarballName": "sane-frontends",
   "TarballFilters": [],
-  "TarballProvider": "https",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://gitlab.com/sane-project/frontends.git",
+    "sane-frontends",
+    "TagName:^RELEASE$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

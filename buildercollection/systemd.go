@@ -110,6 +110,9 @@ func (self *Builder_systemd) EditConfigureArgs(log *logger.Logger, ret []string)
 			"-Dpamconfdir=/etc/pam.d",
 			"-Dpamlibdir=" + path.Join(install_prefix, "lib", "security"),
 			"-Ddbuspolicydir=/etc/dbus-1/system.d",
+			"-Dsysusers=false",
+			"-Dinstall-tests=false",
+			"-Dfirstboot=false",
 		}...,
 	)
 

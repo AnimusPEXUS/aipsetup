@@ -3,6 +3,7 @@ package buildercollection
 import (
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
@@ -234,6 +235,22 @@ func (self *Builder_std) BuilderActionAutogen(log *logger.Logger) error {
 			return err
 		} else {
 			needs_autogen = true
+		}
+	}
+
+	{
+		txt, err := ioutil.ReadFile(configure_path)
+		if err != nil {
+			if !os.IsNotExist(err) {
+				return err
+			}
+		} else {
+			if !strings.Contains(string(txt), "--docdir=") {
+				log.Error(
+					"--docdir= isn't found inside of configure. forcing configure regeneration..",
+				)
+				needs_autogen = true
+			}
 		}
 	}
 

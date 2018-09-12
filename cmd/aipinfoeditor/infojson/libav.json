@@ -20,8 +20,13 @@
   "TarballFileNameParser": "std",
   "TarballName": "libav",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://git.libav.org/libav.git",
+    "libav",
+    "TagStatus:^$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

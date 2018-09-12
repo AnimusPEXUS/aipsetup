@@ -25,7 +25,7 @@
   "TarballName": "gstreamer",
   "TarballFilters": [
     "- basename-re .*",
-    "+ version-=\u003e 0.10",
+    "+ version-\u003e= 0.10",
     "- version-\u003e= 0.11"
   ],
   "TarballProvider": "https",
@@ -34,7 +34,7 @@
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "gnome",
-  "TarballVersionComparator": "gnome",
+  "TarballVersionComparator": "std",
   "DownloadPatches": false,
   "PatchesDownloadingScriptText": ""
 }

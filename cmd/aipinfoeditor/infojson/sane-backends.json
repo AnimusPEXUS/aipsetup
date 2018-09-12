@@ -22,8 +22,13 @@
   "TarballFileNameParser": "std",
   "TarballName": "sane-backends",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://gitlab.com/sane-project/backends.git",
+    "sane-backends",
+    "TagName:^RELEASE$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

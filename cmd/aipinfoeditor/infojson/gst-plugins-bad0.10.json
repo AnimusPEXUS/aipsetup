@@ -23,7 +23,7 @@
   "TarballName": "gst-plugins-bad",
   "TarballFilters": [
     "- basename-re .*",
-    "+ version-=\u003e 0.10",
+    "+ version-\u003e= 0.10",
     "- version-\u003e= 0.11"
   ],
   "TarballProvider": "https",

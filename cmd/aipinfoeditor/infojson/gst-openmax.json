@@ -1,5 +1,5 @@
 {
-  "Description": "write something here, please",
+  "Description": "no \u003e 0.10 tarballs",
   "HomePage": "https://gstreamer.freedesktop.org/",
   "BuilderName": "std",
   "Removable": true,
@@ -8,7 +8,7 @@
   "DontPreserveSharedObjects": false,
   "NonBuildable": false,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
   "BuildDeps": [],

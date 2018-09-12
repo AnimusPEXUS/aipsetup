@@ -19,7 +19,9 @@
     "sf_hosted:linuxwacom"
   ],
   "Category": "wm/gnome",
-  "Groups": ["fd"],
+  "Groups": [
+    "fd"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "libwacom",
   "TarballFilters": [],
