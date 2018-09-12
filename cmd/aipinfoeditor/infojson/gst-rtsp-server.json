@@ -16,7 +16,9 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "freedesktop/gstreamer",
-  "Groups": [],
+  "Groups": [
+    "media"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "gst-rtsp-server",
   "TarballFilters": [],

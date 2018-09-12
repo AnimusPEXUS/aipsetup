@@ -16,7 +16,9 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "freedesktop/gstreamer",
-  "Groups": [],
+  "Groups": [
+    "media"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "gstreamer-sharp",
   "TarballFilters": [],

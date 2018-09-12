@@ -1,6 +1,6 @@
 {
-  "Description": "write something here, please",
-  "HomePage": "https://gstreamer.freedesktop.org/",
+  "Description": "",
+  "HomePage": "http://www.freedesktop.org",
   "BuilderName": "std",
   "Removable": true,
   "Reducible": true,
@@ -15,16 +15,18 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [],
-  "Category": "freedesktop/gstreamer",
+  "Category": "",
   "Groups": [
-    "media"
+    "fd"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "gstreamer-editing-services",
+  "TarballName": "libjingle",
   "TarballFilters": [],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://gstreamer.freedesktop.org/src/gstreamer-editing-services/"
+    "git",
+    "https://chromium.googlesource.com/external/webrtc",
+    "webrtc"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

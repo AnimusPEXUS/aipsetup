@@ -15,14 +15,15 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [],
-  "Category": "non_categorized",
+  "Category": "freedesktop/gstreamer",
   "Groups": [
     "media"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "gst-plugins-bad",
   "TarballFilters": [
-    "- version-== 0.10"
+    "- version-\u003e= 0.10",
+    "+ version-\u003e= 0.11"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

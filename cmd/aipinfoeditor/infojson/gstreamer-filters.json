@@ -16,7 +16,9 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "freedesktop/farstream",
-  "Groups": [],
+  "Groups": [
+    "media"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "gstreamer-filters",
   "TarballFilters": [],

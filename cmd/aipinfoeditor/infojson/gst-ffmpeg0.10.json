@@ -8,7 +8,7 @@
   "DontPreserveSharedObjects": false,
   "NonBuildable": false,
   "NonInstallable": false,
-  "Deprecated": true,
+  "Deprecated": false,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
   "BuildDeps": [],
@@ -16,12 +16,15 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "freedesktop/gstreamer",
-  "Groups": [],
+  "Groups": [
+    "media"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "gst-ffmpeg",
   "TarballFilters": [
     "- basename-re .*",
-    "+ version-== 0.10"
+    "+ version-=\u003e 0.10",
+    "- version-\u003e= 0.11"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

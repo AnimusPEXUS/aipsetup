@@ -19,13 +19,16 @@
     "sf_hosted:linuxwacom"
   ],
   "Category": "wm/gnome",
-  "Groups": [],
+  "Groups": ["fd"],
   "TarballFileNameParser": "std",
   "TarballName": "libwacom",
   "TarballFilters": [],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://ftp.acc.umu.se/mirror/gnome.org/sources/libwacom"
+    "git",
+    "https://github.com/linuxwacom/libwacom.git",
+    "libwacom",
+    "TagName:^libwacom$"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "gnome",

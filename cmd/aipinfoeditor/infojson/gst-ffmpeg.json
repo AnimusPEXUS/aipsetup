@@ -22,7 +22,8 @@
   "TarballFileNameParser": "std",
   "TarballName": "gst-ffmpeg",
   "TarballFilters": [
-    "- version-== 0.10"
+    "- version-\u003e= 0.10",
+    "+ version-\u003e= 0.11"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [

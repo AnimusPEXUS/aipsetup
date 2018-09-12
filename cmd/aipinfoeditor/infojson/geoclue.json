@@ -22,8 +22,13 @@
   "TarballFileNameParser": "std",
   "TarballName": "geoclue",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://gitlab.freedesktop.org/geoclue/geoclue.git",
+    "geoclue",
+    "TagName:^$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

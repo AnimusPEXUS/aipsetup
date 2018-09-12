@@ -15,13 +15,15 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [],
-  "Category": "non_categorized",
+  "Category": "freedesktop/farstream",
   "Groups": [
     "fd"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "farstream",
-  "TarballFilters": [],
+  "TarballFilters": [
+    "- version-== 0.1"
+  ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
     "https://freedesktop.org/software/farstream/releases/"

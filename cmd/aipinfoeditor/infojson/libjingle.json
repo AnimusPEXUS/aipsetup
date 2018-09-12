@@ -1,5 +1,5 @@
 {
-  "Description": "write something here, please",
+  "Description": "now it is part of webrtc",
   "HomePage": "http://www.freedesktop.org",
   "BuilderName": "std",
   "Removable": true,
@@ -8,7 +8,7 @@
   "DontPreserveSharedObjects": false,
   "NonBuildable": false,
   "NonInstallable": false,
-  "Deprecated": false,
+  "Deprecated": true,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
   "BuildDeps": [],

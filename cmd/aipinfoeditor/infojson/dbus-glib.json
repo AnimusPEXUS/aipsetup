@@ -18,8 +18,7 @@
     "group:core0"
   ],
   "Category": "freedesktop/dbus",
-  "Groups": [
-  ],
+  "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "dbus-glib",
   "TarballFilters": [],

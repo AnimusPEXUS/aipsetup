@@ -15,8 +15,10 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [],
-  "Category": "freedesktop/farstream",
-  "Groups": [],
+  "Category": "freedesktop/gstreamer",
+  "Groups": [
+    "media"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "gst-plugins-farsight",
   "TarballFilters": [],

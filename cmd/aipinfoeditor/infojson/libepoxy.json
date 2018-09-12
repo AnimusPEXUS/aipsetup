@@ -21,7 +21,7 @@
   "Category": "wm/gnome",
   "Groups": [
     "fd",
-    "gnome"
+    "gtk"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "libepoxy",

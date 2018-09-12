@@ -16,11 +16,14 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "freedesktop/gstreamer",
-  "Groups": [],
+  "Groups": [
+    "media"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "gst-libav",
   "TarballFilters": [
-    "- version-== 0.10"
+    "- version-\u003e= 0.10",
+    "+ version-\u003e= 0.11"
   ],
   "TarballProvider": "https",
   "TarballProviderArguments": [
