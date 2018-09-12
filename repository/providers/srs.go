@@ -40,11 +40,9 @@ PackageInfo provider's attributes
 import (
 	"errors"
 	"fmt"
-	"os"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/repository/types"
-	"github.com/AnimusPEXUS/utils/environ"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -65,8 +63,6 @@ type ProviderSRS struct {
 	sys                 basictypes.SystemI
 	tarballs_output_dir string
 	log                 *logger.Logger
-
-	use_torsocks bool
 }
 
 func NewProviderSRS(
@@ -85,11 +81,6 @@ func NewProviderSRS(
 		tarballs_output_dir: tarballs_output_dir,
 		log:                 log,
 	}
-
-	e := environ.NewFromStrings(os.Environ())
-	use_tor_socks := e.Get("AIPSETUP_SRS_USE_TORSOCKS", "0")
-
-	self.use_torsocks = use_tor_socks != "0"
 
 	return self, nil
 }
