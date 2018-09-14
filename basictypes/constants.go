@@ -204,7 +204,7 @@ var (
 	HORIZON_GROUPS = []string{
 		"cross", "core0", "core1", "sdl", "perlmod", "gl",
 		"gtk", "crypt", "llvm", "media", "netfilter", "qt",
-		"rust", "sec", "wayland", "web", "xml",
+		"rust", "sec", "wayland", "web", "xml", "lang",
 	}
 
 	HORIZON_CATEGORIES = []string{

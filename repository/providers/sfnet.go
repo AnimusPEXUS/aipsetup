@@ -5,12 +5,14 @@ import (
 	"fmt"
 	"path"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
 	"github.com/AnimusPEXUS/aipsetup/repository/types"
 	"github.com/AnimusPEXUS/utils/cache01"
+	"github.com/AnimusPEXUS/utils/cliapp"
 	"github.com/AnimusPEXUS/utils/logger"
 	"github.com/AnimusPEXUS/utils/sfnetwalk"
 	"github.com/AnimusPEXUS/utils/tarballname"
@@ -41,6 +43,9 @@ type ProviderSFNet struct {
 	sfw *sfnetwalk.SFNetWalk
 
 	project string
+
+	excludes []string
+	maxdepth int
 }
 
 func NewProviderSFNet(
@@ -62,6 +67,9 @@ func NewProviderSFNet(
 	}
 
 	getoptres := cliapp.GetOpt(pkg_info.TarballProviderArguments)
+
+	self.maxdepth = -1
+	self.project = getoptres.Args[0]
 
 	maxdepth_res := getoptres.GetLastNamedRetOptItem("-maxdepth")
 	if maxdepth_res != nil {
@@ -131,6 +139,8 @@ func (self *ProviderSFNet) _GetSFW() (*sfnetwalk.SFNetWalk, error) {
 			self.project,
 			self.cache,
 			self.log,
+			self.excludes,
+			self.maxdepth,
 		)
 		if err != nil {
 			return nil, err

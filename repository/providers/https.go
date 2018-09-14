@@ -47,7 +47,6 @@ type ProviderHttps struct {
 	path   string
 
 	excludes []string
-
 	maxdepth int
 }
 
