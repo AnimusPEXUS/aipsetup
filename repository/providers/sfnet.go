@@ -61,12 +61,27 @@ func NewProviderSFNet(
 		log:                 log,
 	}
 
-	switch len(pkg_info.TarballProviderArguments) {
-	case 0:
-	case 1:
-		self.project = pkg_info.TarballProviderArguments[0]
-	default:
+	getoptres := cliapp.GetOpt(pkg_info.TarballProviderArguments)
+
+	maxdepth_res := getoptres.GetLastNamedRetOptItem("-maxdepth")
+	if maxdepth_res != nil {
+		i, err := strconv.Atoi(maxdepth_res.Value)
+		if err != nil {
+			return nil, errors.New("invalid value for maxdepth")
+		}
+		self.maxdepth = i
+	}
+
+	if len(getoptres.Args) < 1 {
 		return nil, errors.New("invalid arguments count")
+	}
+
+	self.excludes = []string{}
+
+	exes := getoptres.GetAllNamedRetOptItems("-X")
+
+	for _, i := range exes {
+		self.excludes = append(self.excludes, i.Value)
 	}
 
 	if t, err := cache01.NewCacheDir(
