@@ -22,9 +22,12 @@
   "TarballFileNameParser": "std",
   "TarballName": "wayland-protocols",
   "TarballFilters": [],
-  "TarballProvider": "https",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "https://wayland.freedesktop.org/releases/"
+    "git",
+    "https://anongit.freedesktop.org/git/wayland/wayland-protocols.git",
+    "wayland-protocols",
+    "TagName:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

@@ -1,7 +1,7 @@
 {
-  "Description": "",
-  "HomePage": "",
-  "BuilderName": "SDL2",
+  "Description": "write something here, please",
+  "HomePage": "https://www.libsdl.org/",
+  "BuilderName": "SDL",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -14,7 +14,8 @@
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],
-  "Tags": [],
+  "Tags": [
+  ],
   "Category": "media_libs/SDL",
   "Groups": [
     "sdl"
@@ -22,8 +23,11 @@
   "TarballFileNameParser": "std",
   "TarballName": "SDL2",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.libsdl.org/release/",
+    "-maxdepth=1"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

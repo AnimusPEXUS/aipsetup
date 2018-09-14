@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/warzone2100",
+  "HomePage": "https://www.libsdl.org/",
   "BuilderName": "SDL",
   "Removable": true,
   "Reducible": true,
@@ -15,7 +15,6 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [
-    "sf_hosted:warzone2100"
   ],
   "Category": "media_libs/SDL",
   "Groups": [
@@ -24,9 +23,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "SDL",
   "TarballFilters": [],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "https",
   "TarballProviderArguments": [
-    "warzone2100"
+    "https://www.libsdl.org/release/",
+    "-maxdepth=1"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
