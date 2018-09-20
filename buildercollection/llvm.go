@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"path"
+	"runtime"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
@@ -40,7 +41,13 @@ func NewBuilder_llvm(bs basictypes.BuildingSiteCtlI) (*Builder_llvm, error) {
 	self.AfterExtractCB = self.AfterExtract
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
+	self.EditBuildConcurentJobsCountCB = self.EditBuildConcurentJobsCount
+
 	return self, nil
+}
+
+func (self *Builder_llvm) EditBuildConcurentJobsCount(log *logger.Logger, ret int) int {
+	return runtime.NumCPU()
 }
 
 func (self *Builder_llvm) AfterExtract(log *logger.Logger, ret error) error {
@@ -227,6 +234,8 @@ func (self *Builder_llvm) EditConfigureArgs(log *logger.Logger, ret []string) ([
 
 			"-DLLVM_ENABLE_FFI=yes",
 			"-DFFI_INCLUDE_DIR=" + lst[0],
+
+			"-DLLVM_ENABLE_RTTI=yes",
 		}...,
 	)
 
