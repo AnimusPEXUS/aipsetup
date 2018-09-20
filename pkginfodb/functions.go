@@ -197,7 +197,7 @@ func ListPackagesByCategories(categories []string, is_prefixes bool) ([]string, 
 	return ret.ListStrings(), nil
 }
 
-func CheckTarballMatchesInfoByName(
+func CheckTarballMatchesInfoByInfoName(
 	tarballfilename string,
 	infoname string,
 ) (bool, error) {

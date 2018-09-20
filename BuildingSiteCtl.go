@@ -18,6 +18,7 @@ import (
 	"github.com/AnimusPEXUS/aipsetup/repository"
 	"github.com/AnimusPEXUS/utils/filetools"
 	"github.com/AnimusPEXUS/utils/logger"
+	"github.com/AnimusPEXUS/utils/tarballname/tarballnameparsers"
 )
 
 func IsDirRestrictedForWork(path string) bool {
@@ -636,6 +637,7 @@ func (self *BuildingSiteCtl) GetTarballs() error {
 
 	if len(from_path) == 0 {
 		all_needed_tarballs_gotted := true
+
 		for _, i := range pkg_list {
 			t, err := repo.DetermineNewestStableTarball(i)
 			if err != nil {
@@ -669,9 +671,39 @@ func (self *BuildingSiteCtl) GetTarballs() error {
 					continue
 				}
 
-				matches, err := pkginfodb.CheckTarballMatchesInfoByName(j.Name(), i)
+				i_info, err := pkginfodb.Get(i)
 				if err != nil {
 					return err
+				}
+
+				matches, err := pkginfodb.CheckTarballMatchesInfoByInfoName(j.Name(), i)
+				if err != nil {
+					return err
+				}
+
+				if bs_info.PackageName == i {
+					// check version too
+
+					// TODO: this is some fast shitty hack and I don't like this.
+					//       probably building site info have to contain reqired
+					//       versions along with info.BuildPkgDeps too
+					if matches {
+						parser, err := tarballnameparsers.Get(
+							i_info.TarballFileNameParser,
+						)
+						if err != nil {
+							return err
+						}
+
+						parsed, err := parser.Parse(j.Name())
+						if err != nil {
+							return err
+						}
+
+						matches = parsed.Version.StrSliceString(".") ==
+							bs_info.PackageVersion
+
+					}
 				}
 
 				if matches {
