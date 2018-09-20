@@ -14,8 +14,7 @@
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],
-  "Tags": [
-  ],
+  "Tags": [],
   "Category": "media_libs/SDL",
   "Groups": [
     "sdl"

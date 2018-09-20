@@ -15,14 +15,19 @@ func init() {
 }
 
 type Builder_colord struct {
-	*Builder_std
+	*Builder_std_meson
 }
 
 func NewBuilder_colord(bs basictypes.BuildingSiteCtlI) (*Builder_colord, error) {
 
 	self := new(Builder_colord)
 
-	self.Builder_std = NewBuilder_std(bs)
+	Builder_std_meson, err := NewBuilder_std_meson(bs)
+	if err != nil {
+		return nil, err
+	}
+
+	self.Builder_std_meson = Builder_std_meson
 
 	self.EditConfigureArgsCB = self.EditConfigureArgs
 
@@ -34,9 +39,11 @@ func (self *Builder_colord) EditConfigureArgs(log *logger.Logger, ret []string) 
 	ret = append(
 		ret,
 		[]string{
-			"--disable-argyllcms-sensor",
-			"--enable-vala",
-			"--with-daemon-user=colord",
+			"-Dargyllcms_sensor=false",
+			"-Dvapi=true",
+			"-Ddaemon_user=colord",
+			"-Dman=false",
+			"-Ddocs=false",
 		}...,
 	)
 
