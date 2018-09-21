@@ -1,5 +1,5 @@
 {
-  "Description": "write something here, please",
+  "Description": "required by avahi",
   "HomePage": "http://www.freedesktop.org",
   "BuilderName": "std_py23",
   "Removable": true,
@@ -8,7 +8,7 @@
   "DontPreserveSharedObjects": false,
   "NonBuildable": false,
   "NonInstallable": false,
-  "Deprecated": true,
+  "Deprecated": false,
   "PrimaryInstallOnly": false,
   "BuildPkgDeps": [],
   "BuildDeps": [],

@@ -10,6 +10,12 @@
   aipsetup which is located here:
        https://github.com/AnimusPEXUS/wayround_i2p_aipsetup
 
+== Actual Distribution Realization ==
+
+  Horizon GNU+Linux
+
+  Instructions - https://github.com/AnimusPEXUS/aipsetup/wiki
+
 == Feature Readiness Table ==
 
                               | aipsetup3 (python) | aipsetup5 (this)
