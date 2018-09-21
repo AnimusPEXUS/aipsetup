@@ -152,6 +152,17 @@ func (self BuilderActions) Append(value BuilderActions) (BuilderActions, error) 
 	return append(self, value...), nil
 }
 
+func (self BuilderActions) AppendSingle(
+	name string,
+	callable BuilderActionCallable,
+) (
+	BuilderActions,
+	error,
+) {
+	ret := append(self, &BuilderAction{Name: name, Callable: callable})
+	return ret, nil
+}
+
 func (self BuilderActions) ActionList() []string {
 	ret := make([]string, 0)
 	for _, i := range self {
