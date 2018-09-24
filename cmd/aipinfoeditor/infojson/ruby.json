@@ -17,13 +17,18 @@
   "Tags": [],
   "Category": "non_categorized",
   "Groups": [
-    "langs"
+    "lang"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "ruby",
-  "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballFilters": [
+    "- !status-re ^$"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://cache.ruby-lang.org/pub/ruby/",
+    "-X=binaries"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

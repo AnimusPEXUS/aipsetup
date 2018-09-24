@@ -17,12 +17,12 @@
   "Tags": [],
   "Category": "non_categorized",
   "Groups": [
-    "langs"
+    "lang"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "php",
   "TarballFilters": [],
-  "TarballProvider": "",
+  "TarballProvider": "php.net",
   "TarballProviderArguments": [],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

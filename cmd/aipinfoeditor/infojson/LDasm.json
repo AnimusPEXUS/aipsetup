@@ -15,8 +15,10 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [],
-  "Category": "langs",
-  "Groups": [],
+  "Category": "lang",
+  "Groups": [
+    "lang"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "LDasm",
   "TarballFilters": [],

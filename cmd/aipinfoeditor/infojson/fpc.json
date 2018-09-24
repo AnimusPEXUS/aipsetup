@@ -19,7 +19,7 @@
   ],
   "Category": "langs/pascal",
   "Groups": [
-    "langs"
+    "lang"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "fpc",

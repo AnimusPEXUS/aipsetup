@@ -20,7 +20,7 @@
   "Category": "langs/go",
   "Groups": [
     "core0",
-    "langs"
+    "lang"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "go",
