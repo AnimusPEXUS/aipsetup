@@ -1,9 +1,13 @@
 package buildercollection
 
 import (
+	"io/ioutil"
+	"os"
 	"os/exec"
+	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
+	"github.com/AnimusPEXUS/utils/environ"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -107,10 +111,40 @@ func (self *Builder_fpc) BuilderActionDistribute(log *logger.Logger) error {
 		"LD=" + settings["LD"],
 	}
 
+	tmp_dir := self.GetBuildingSiteCtl().GetDIR_TEMP()
+
+	tmp_bin_dir := path.Join(tmp_dir, "bin")
+
+	err = os.MkdirAll(tmp_bin_dir, 0700)
+	if err != nil {
+		return err
+	}
+
+	ld_script_filename := path.Join(
+		tmp_bin_dir,
+		settings["CPU_TARGET"]+"-linux-ld",
+	)
+
+	script := `#!/bin/bash
+
+` + settings["LD"] + ` $@
+
+`
+
+	err = ioutil.WriteFile(ld_script_filename, []byte(script), 0700)
+	if err != nil {
+		return err
+	}
+
+	env := environ.NewFromStrings(os.Environ())
+
+	env.Set("PATH", env.Get("PATH", "/bin")+":"+tmp_bin_dir)
+
 	c := exec.Command("make", cmd...)
 	c.Dir = self.GetBuildingSiteCtl().GetDIR_SOURCE()
 	c.Stdout = log.StdoutLbl()
 	c.Stderr = log.StderrLbl()
+	c.Env = env.Strings()
 	err = c.Run()
 	if err != nil {
 		return err
