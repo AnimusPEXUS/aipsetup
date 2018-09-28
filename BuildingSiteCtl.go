@@ -700,8 +700,12 @@ func (self *BuildingSiteCtl) GetTarballs() error {
 							return err
 						}
 
-						matches = parsed.Version.StrSliceString(".") ==
-							bs_info.PackageVersion
+						iss, err := parsed.Version.IntSliceString(".")
+						if err != nil {
+							return err
+						}
+
+						matches = iss == bs_info.PackageVersion
 
 					}
 				}
