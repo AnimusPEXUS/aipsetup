@@ -158,7 +158,7 @@ var (
 		//	59: "dovecot",
 		//	60: "dovenull",
 		//	61: "spamassassin",
-		//	62: "yacy",
+		62: "docker",
 		//	63: "irc",
 		//	64: "hub",
 		//	65: "cynin",

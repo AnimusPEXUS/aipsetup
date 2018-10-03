@@ -12,8 +12,10 @@ import (
 	"path"
 	"path/filepath"
 	"regexp"
+	"runtime"
 	"sort"
 	"strings"
+	"sync"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/pkginfodb"
@@ -1065,7 +1067,13 @@ func (self *SystemPackages) FindPackagesByInstalledFilenames(
 
 	ret := make(map[string]([]string))
 
+	m := sync.Mutex{}
+	m1 := sync.Mutex{}
+	g := sync.WaitGroup{}
+
 	register_found_file := func(pkg string, file string) {
+		m.Lock()
+		defer m.Unlock()
 		_, ok := ret[pkg]
 		if !ok {
 			ret[pkg] = make([]string, 0)
@@ -1074,50 +1082,72 @@ func (self *SystemPackages) FindPackagesByInstalledFilenames(
 	}
 
 	asps_l := len(asps)
+	thread_errors := make([]error, 0)
+	guard := make(chan struct{}, runtime.NumCPU()*2+2)
 	for ii, i := range asps {
 
-		if progress_cb != nil {
-			progress_cb(
-				100.0/(float64(asps_l)/float64(ii)),
-				ii,
-				asps_l,
-			)
-		}
+		g.Add(1)
 
-		i_asp_str := i.String()
-		files, err := self.ListInstalledASPFiles(i)
-		if err != nil {
-			return nil, err
-		}
-		for _, j := range files {
-			switch mode {
-			default:
-				panic("programming error")
-			case "sub":
-				if strings.Contains(j, pattern) {
-					register_found_file(i_asp_str, j)
-				}
-			case "re":
-				ok, err := regexp.MatchString(pattern, j)
-				if err != nil {
-					return nil, err
-				}
+		guard <- struct{}{}
+		go func() {
 
-				if ok {
-					register_found_file(i_asp_str, j)
-				}
+			defer g.Done()
+			defer func() { <-guard }()
 
-			case "fm":
-				ok, err := filepath.Match(pattern, j)
-				if err != nil {
-					return nil, err
-				}
+			if progress_cb != nil {
+				m1.Lock()
+				progress_cb(
+					100.0/(float64(asps_l)/float64(ii)),
+					ii,
+					asps_l,
+				)
+				m1.Unlock()
+			}
 
-				if ok {
-					register_found_file(i_asp_str, j)
+			i_asp_str := i.String()
+			files, err := self.ListInstalledASPFiles(i)
+			if err != nil {
+				thread_errors = append(thread_errors, err)
+				return
+			}
+			for _, j := range files {
+				switch mode {
+				default:
+					panic("programming error")
+				case "sub":
+					if strings.Contains(j, pattern) {
+						register_found_file(i_asp_str, j)
+					}
+				case "re":
+					ok, err := regexp.MatchString(pattern, j)
+					if err != nil {
+						thread_errors = append(thread_errors, err)
+						return
+					}
+
+					if ok {
+						register_found_file(i_asp_str, j)
+					}
+
+				case "fm":
+					ok, err := filepath.Match(pattern, j)
+					if err != nil {
+						thread_errors = append(thread_errors, err)
+						return
+					}
+
+					if ok {
+						register_found_file(i_asp_str, j)
+					}
 				}
 			}
-		}
+		}()
+	}
+
+	g.Wait()
+
+	if len(thread_errors) != 0 {
+		return nil, thread_errors[0]
 	}
 
 	return ret, nil

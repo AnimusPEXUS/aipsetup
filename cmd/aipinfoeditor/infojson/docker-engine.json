@@ -1,7 +1,7 @@
 {
   "Description": "",
   "HomePage": "https://github.com/docker/engine",
-  "BuilderName": "std",
+  "BuilderName": "docker_engine",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -9,7 +9,7 @@
   "NonBuildable": false,
   "NonInstallable": false,
   "Deprecated": false,
-  "PrimaryInstallOnly": false,
+  "PrimaryInstallOnly": true,
   "BuildPkgDeps": [],
   "BuildDeps": [],
   "SODeps": [],
