@@ -18,7 +18,9 @@
     "gnome_project"
   ],
   "Category": "wm/gnome",
-  "Groups": [],
+  "Groups": [
+    "gtk"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "libpeas",
   "TarballFilters": [],

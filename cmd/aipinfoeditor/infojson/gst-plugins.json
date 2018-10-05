@@ -1,7 +1,7 @@
 {
   "Description": "write something here, please",
   "HomePage": "https://gstreamer.freedesktop.org/",
-  "BuilderName": "std",
+  "BuilderName": "gst_plugins",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,

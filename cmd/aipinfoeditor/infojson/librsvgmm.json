@@ -20,6 +20,7 @@
   "Category": "wm/gnome",
   "Groups": [
     "gnome",
+    "gtk",
     "media"
   ],
   "TarballFileNameParser": "std",
