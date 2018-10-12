@@ -18,7 +18,7 @@
     "gnome_project"
   ],
   "Category": "wm/gnome",
-  "Groups": [],
+  "Groups": ["fd"],
   "TarballFileNameParser": "std",
   "TarballName": "folks",
   "TarballFilters": [],

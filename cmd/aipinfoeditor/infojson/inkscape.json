@@ -16,13 +16,17 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": ["media"],
   "TarballFileNameParser": "std",
   "TarballName": "inkscape",
   "TarballFilters": [],
-  "TarballProvider": "launchpad.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "inkscape"
+    "git",
+    "https://gitlab.com/inkscape/inkscape.git",
+    "inkscape",
+    "TagName:^INKSCAPE$",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

@@ -22,8 +22,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "libcanberra",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "http://0pointer.de/lennart/projects/libcanberra/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

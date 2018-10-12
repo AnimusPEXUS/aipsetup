@@ -22,8 +22,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "SDL_ttf",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.libsdl.org/projects/SDL_ttf/release/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

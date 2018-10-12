@@ -22,8 +22,10 @@
   "TarballFileNameParser": "std",
   "TarballName": "SDL_sound",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://icculus.org/SDL_sound/downloads/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

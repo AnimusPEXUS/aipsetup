@@ -18,7 +18,9 @@
     "github_hosted"
   ],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "gtk"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "libproxy",
   "TarballFilters": [],
