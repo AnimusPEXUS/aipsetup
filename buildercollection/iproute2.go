@@ -68,29 +68,5 @@ func (self *Builder_iproute2) EditDistributeArgs(log *logger.Logger, ret []strin
 
 	ret = append(ret, self.makefile_flags...)
 
-	//	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
-
-	//	install_prefix, err := calc.CalculateInstallPrefix()
-	//	if err != nil {
-	//		return err
-	//	}
-
-	//	opts, err := calc.CalculateAutotoolsAllOptionsMap()
-	//	if err != nil {
-	//		return err
-	//	}
-
-	//	ret = append(ret, opts.Strings()...)
-
-	//	ret = append(
-	//		ret,
-	//		[]string{
-	//			"PREFIX=" + install_prefix,
-	//			"SBINDIR=" + path.Join(install_prefix, "sbin"),
-	//			"KERNEL_INCLUDE" + path.Join(install_prefix, "include"),
-	//			"DBM_INCLUDE" + path.Join(install_prefix, "include"),
-	//		},
-	//	)
-
 	return ret, nil
 }

@@ -18,16 +18,19 @@
     "github_hosted"
   ],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "core1",
+    "vz"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "protobuf",
   "TarballFilters": [],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
     "git",
-    "https://github.com/google/protobuf.git",
+    "https://github.com/protocolbuffers/protobuf.git",
     "protobuf",
-    "TagStatus:"
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 3,
   "TarballStabilityClassifier": "std",

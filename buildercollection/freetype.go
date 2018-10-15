@@ -74,6 +74,9 @@ func (self *Builder_freetype) EditConfigureArgs(log *logger.Logger, ret []string
 	ret = append(
 		ret,
 		[]string{
+			"--enable-biarch-config",
+			"--enable-freetype-config",
+
 			"--with-bzip2",
 			"--with-png",
 			"--with-zlib",

@@ -9,14 +9,16 @@
   "NonBuildable": false,
   "NonInstallable": false,
   "Deprecated": false,
-  "PrimaryInstallOnly": false,
+  "PrimaryInstallOnly": true,
   "BuildPkgDeps": [],
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": ["media"],
+  "Groups": [
+    "media"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "inkscape",
   "TarballFilters": [],

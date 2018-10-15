@@ -39,6 +39,21 @@ func (self *Builder_mesalib) EditConfigureArgs(log *logger.Logger, ret []string)
 		ret,
 		[]string{
 
+			"-Dgles1=true",
+			"-Dgles2=true",
+			"-Dglx=auto",
+
+			"-Dosmesa=gallium",
+			"-Dosmesa-bits=8",
+
+			"-Dplatforms=x11,drm,wayland",
+
+			"-Dtools=all",
+
+			"-Dvulkan-drivers=intel",
+
+			"-Dgallium-drivers=nouveau,svga,swrast,virgl",
+
 			//			//            # NOTE: on OpenGL version printed by glxinfo or qtdiag
 			//			//            #       http://permalink.gmane.org/gmane.comp.video.mesa3d.user/3311
 
