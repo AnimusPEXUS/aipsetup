@@ -17,7 +17,8 @@
   "Tags": [],
   "Category": "freedesktop/colord",
   "Groups": [
-    "fd"
+    "fd",
+    "gtk"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "colord",

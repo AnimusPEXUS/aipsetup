@@ -18,7 +18,10 @@
     "gnome_project"
   ],
   "Category": "wm/gnome",
-  "Groups": [],
+  "Groups": [
+    "fd",
+    "gtk"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "libnotify",
   "TarballFilters": [],

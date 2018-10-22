@@ -19,7 +19,10 @@
     "sf_hosted:gswitchit"
   ],
   "Category": "wm/gnome",
-  "Groups": [],
+  "Groups": [
+    "fd",
+    "gtk"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "libxklavier",
   "TarballFilters": [],

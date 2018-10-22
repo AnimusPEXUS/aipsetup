@@ -17,7 +17,8 @@
   "Tags": [],
   "Category": "freedesktop/dri",
   "Groups": [
-    "fd"
+    "fd",
+    "gtk"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "libdrm",

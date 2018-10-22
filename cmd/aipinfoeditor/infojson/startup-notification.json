@@ -20,7 +20,8 @@
   "Category": "wm/gnome",
   "Groups": [
     "fd",
-    "gnome"
+    "gnome",
+    "gtk"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "startup-notification",

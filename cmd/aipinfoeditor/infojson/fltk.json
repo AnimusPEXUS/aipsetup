@@ -16,12 +16,18 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "gtk"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "fltk",
-  "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballFilters": [
+    "- !basename-re source"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "http://fltk.org/pub/fltk/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
