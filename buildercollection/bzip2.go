@@ -81,7 +81,7 @@ func (self *Builder_bzip2) EditActions(ret basictypes.BuilderActions) (
 	ret = ret.Remove("distribute")
 
 	new_actions := basictypes.BuilderActions{
-		&basictypes.BuilderAction{"build", self.BuilderActionBuild},
+		//		&basictypes.BuilderAction{"build", self.BuilderActionBuild},
 		&basictypes.BuilderAction{"distribute", self.BuilderActionDistribute},
 		&basictypes.BuilderAction{"so", self.BuilderActionSO},
 		&basictypes.BuilderAction{"copy_so", self.BuilderActionCopySo},
@@ -99,69 +99,69 @@ func (self *Builder_bzip2) EditActions(ret basictypes.BuilderActions) (
 	return ret, nil
 }
 
-func (self *Builder_bzip2) BuilderActionBuild(log *logger.Logger) error {
+//func (self *Builder_bzip2) BuilderActionBuild(log *logger.Logger) error {
 
-	//        if self.get_host_from_pkgi() != 'x86_64-pc-linux-gnu':
-	//            raise Exception("fix for others is required")
+//	//        if self.get_host_from_pkgi() != 'x86_64-pc-linux-gnu':
+//	//            raise Exception("fix for others is required")
 
-	//        ret = autotools.make_high(
-	//            self.buildingsite_path,
-	//            log=log,
-	//            options=[],
-	//            arguments=[
-	//                'PREFIX={}'.format(self.calculate_install_prefix()),
-	//                'CFLAGS=  -fpic -fPIC -Wall -Winline -O2 -g '
-	//                '-D_FILE_OFFSET_BITS=64',
-	//                'libbz2.a',
-	//                'bzip2',
-	//                'bzip2recover'
-	//                ] + [self.custom_data['thr']['CC']] +
-	//            [self.custom_data['thr']['AR']] +
-	//            [self.custom_data['thr']['RANLIB']],
-	//            environment={},
-	//            environment_mode='copy',
-	//            use_separate_buildding_dir=self.separate_build_dir,
-	//            source_configure_reldir=self.source_configure_reldir
-	//            )
+//	//        ret = autotools.make_high(
+//	//            self.buildingsite_path,
+//	//            log=log,
+//	//            options=[],
+//	//            arguments=[
+//	//                'PREFIX={}'.format(self.calculate_install_prefix()),
+//	//                'CFLAGS=  -fpic -fPIC -Wall -Winline -O2 -g '
+//	//                '-D_FILE_OFFSET_BITS=64',
+//	//                'libbz2.a',
+//	//                'bzip2',
+//	//                'bzip2recover'
+//	//                ] + [self.custom_data['thr']['CC']] +
+//	//            [self.custom_data['thr']['AR']] +
+//	//            [self.custom_data['thr']['RANLIB']],
+//	//            environment={},
+//	//            environment_mode='copy',
+//	//            use_separate_buildding_dir=self.separate_build_dir,
+//	//            source_configure_reldir=self.source_configure_reldir
+//	//            )
 
-	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
+//	calc := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator()
 
-	install_prefix, err := calc.CalculateInstallPrefix()
-	if err != nil {
-		return err
-	}
+//	install_prefix, err := calc.CalculateInstallPrefix()
+//	if err != nil {
+//		return err
+//	}
 
-	args := []string{
-		"PREFIX=" + install_prefix,
-	}
+//	args := []string{
+//		"PREFIX=" + install_prefix,
+//	}
 
-	args = append(args, self.flags()...)
+//	args = append(args, self.flags()...)
 
-	args = append(
-		args,
-		[]string{
-			"libbz2.a",
-			"bzip2",
-			"bzip2recover",
-		}...,
-	)
+//	args = append(
+//		args,
+//		[]string{
+//			"libbz2.a",
+//			"bzip2",
+//			"bzip2recover",
+//		}...,
+//	)
 
-	err = buildingtools.Autotools{}.Make(
-		args,
-		[]string{},
-		buildingtools.Copy,
-		"",
-		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
-		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
-		"",
-		log,
-	)
-	if err != nil {
-		return err
-	}
+//	err = buildingtools.Autotools{}.Make(
+//		args,
+//		[]string{},
+//		buildingtools.Copy,
+//		"",
+//		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+//		self.GetBuildingSiteCtl().GetDIR_SOURCE(),
+//		"",
+//		log,
+//	)
+//	if err != nil {
+//		return err
+//	}
 
-	return nil
-}
+//	return nil
+//}
 
 func (self *Builder_bzip2) BuilderActionDistribute(log *logger.Logger) error {
 
@@ -177,6 +177,9 @@ func (self *Builder_bzip2) BuilderActionDistribute(log *logger.Logger) error {
 	err = att.Make(
 		[]string{
 			"PREFIX=" + install_prefix,
+			"libbz2.a",
+			"bzip2",
+			"bzip2recover",
 			"install",
 		},
 		[]string{},

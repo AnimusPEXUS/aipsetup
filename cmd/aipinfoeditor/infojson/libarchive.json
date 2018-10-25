@@ -16,12 +16,20 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "core1"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "libarchive",
-  "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballFilters": [
+    "- basename-re 9[01]\\d+"
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/libarchive/libarchive.git",
+    "libarchive"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",
