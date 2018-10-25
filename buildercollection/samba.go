@@ -41,6 +41,16 @@ func (self *Builder_samba) EditConfigureArgs(log *logger.Logger, ret []string) (
 
 	//	log.Info(fmt.Sprintf("%#v\n", pkginfodb.Index["samba"]))
 
+	info, err := self.GetBuildingSiteCtl().ReadInfo()
+	if err != nil {
+		return nil, err
+	}
+
+	variant, err := self.GetBuildingSiteCtl().GetBuildingSiteValuesCalculator().CalculateMultilibVariant()
+	if err != nil {
+		return nil, err
+	}
+
 	ret = append(
 		ret,
 		[]string{
@@ -51,14 +61,15 @@ func (self *Builder_samba) EditConfigureArgs(log *logger.Logger, ret []string) (
 			"--sysconfdir=/etc/samba",
 			"--with-configdir=/etc/samba",
 			"--with-privatedir=/etc/samba/private",
+			"--hostcc=" + info.Host + "-gcc -m" + variant,
 		}...,
 	)
 
-	ret, err := buildingtools.FilterAutotoolsConfigOptions(
+	ret, err = buildingtools.FilterAutotoolsConfigOptions(
 		ret,
 		[]string{"--enable-shared"},
-		[]string{},
-		//"--host", "--build", "--docdir"
+		[]string{"CC=", "CXX=", "GCC=", "--host", "--build"},
+		//, "--docdir"
 	)
 	if err != nil {
 		return nil, err
