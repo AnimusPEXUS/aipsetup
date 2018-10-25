@@ -202,9 +202,36 @@ var (
 	}
 
 	HORIZON_GROUPS = []string{
-		"cross", "core0", "core1", "sdl", "perlmod", "gl",
-		"gtk", "crypt", "llvm", "media", "netfilter", "qt",
-		"rust", "sec", "wayland", "web", "xml", "lang", "containers", "vz",
+		"cross",
+		"core0",
+		"core1",
+
+		"xml",
+		"docbook",
+
+		"netfilter",
+		"crypt",
+		"sec",
+
+		"llvm",
+		"rust",
+		"lang",
+
+		"perlmod",
+
+		"media",
+
+		"sdl",
+		"gl",
+		"wayland",
+
+		"gtk",
+		"qt",
+
+		"web",
+
+		"containers",
+		"vz",
 	}
 
 	HORIZON_CATEGORIES = []string{

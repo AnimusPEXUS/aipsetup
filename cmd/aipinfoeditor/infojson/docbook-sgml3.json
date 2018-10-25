@@ -16,12 +16,18 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": [],
-  "TarballFileNameParser": "std",
+  "Groups": [
+    "docbook"
+  ],
+  "TarballFileNameParser": "infozip",
   "TarballName": "docbk",
-  "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballFilters": [
+    "- version-\u003e= 4"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://docbook.org/sgml/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

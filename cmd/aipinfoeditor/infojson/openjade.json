@@ -18,7 +18,9 @@
     "sf_hosted:openjade"
   ],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "docbook"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "openjade",
   "TarballFilters": [],

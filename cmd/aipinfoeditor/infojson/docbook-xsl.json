@@ -18,7 +18,9 @@
     "sf_hosted:docbook"
   ],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "docbook"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "docbook-xsl",
   "TarballFilters": [],

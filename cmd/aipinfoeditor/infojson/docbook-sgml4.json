@@ -16,12 +16,16 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "docbook"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "docbook",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://docbook.org/sgml/"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

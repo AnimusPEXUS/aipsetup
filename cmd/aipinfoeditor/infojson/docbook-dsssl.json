@@ -1,7 +1,7 @@
 {
-  "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/docbook2x",
-  "BuilderName": "std",
+  "Description": "",
+  "HomePage": "https://sourceforge.net/projects/docbook",
+  "BuilderName": "",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -15,18 +15,18 @@
   "SODeps": [],
   "RunTimeDeps": [],
   "Tags": [
-    "sf_hosted:docbook2x"
+    "sf_hosted:docbook"
   ],
   "Category": "non_categorized",
   "Groups": [
     "docbook"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "docbook2X",
+  "TarballName": "docbook-dsssl",
   "TarballFilters": [],
   "TarballProvider": "sf.net",
   "TarballProviderArguments": [
-    "docbook2x"
+    "docbook"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

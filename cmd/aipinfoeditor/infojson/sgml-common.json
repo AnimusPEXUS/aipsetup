@@ -16,7 +16,9 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "docbook"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "sgml-common",
   "TarballFilters": [],

@@ -19,7 +19,8 @@
   ],
   "Category": "non_categorized",
   "Groups": [
-    "core0"
+    "core0",
+    "docbook"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "itstool",
