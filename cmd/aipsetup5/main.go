@@ -12,14 +12,15 @@ func main() {
 	app := cliapp.AppCmdNode{
 		Name:        "aipsetup",
 		Description: "Horizon GNU/Linux system's package manager",
-		DevStatus:   "rc",
+		DevStatus:   "development",
 		License:     "GPLv3+",
-		Version:     "5.0",
+		Version:     "5.1",
 		Developers:  []string{"AnimusPEXUS"},
 		URIs:        []string{"https://github.com/AnimusPEXUS/aipsetup"},
 		SubCmds: []*cliapp.AppCmdNode{
 			SectionAipsetupSys(),
 			SectionAipsetupSysSetup(),
+			SectionAipsetupSysDocBook(),
 			SectionAipsetupBuild(),
 			SectionAipsetupMBuild(),
 			SectionAipsetupBootImg(),
