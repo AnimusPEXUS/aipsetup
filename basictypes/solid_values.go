@@ -207,7 +207,7 @@ var (
 		"core1",
 
 		"xml",
-		"docbook",
+		//		"docbook", // merged with 'xml'
 
 		"netfilter",
 		"crypt",

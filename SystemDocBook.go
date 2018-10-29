@@ -15,53 +15,6 @@ import (
 	"github.com/antchfx/xquery/xml"
 )
 
-const _ = `
-OLD_DOCBOOK_INSTRUCTION
-
-1. Get sources:
-    aipsetup pkg-client-src get-lat docbook-sgml3
-        will get docbk31.zip
-    aipsetup pkg-client-src get-lat docbook-sgml4
-        will get docbook-4.5.zip
-    aipsetup pkg-client-src get-lat docbook-xml4
-        will get docbook-xml-4.5.zip
-    aipsetup pkg-client-src get-lat docbook-xsl
-        will get docbook-xsl-[some version].tar[.some compressor]
-
-    BIG FAT NOTE: YOU DO NOT NEED ALPHAS, BETAS AND RELISE CANDIDATES!!!
-                  DO NOT PLAY WITH VERSIONS SUCH AS:
-                  docbook-4.5b or docbook-4.5CR.
-
-                  IF AIPSETUP DOWNLOADS SUCH FILES DO NOT TRUST IT AND
-                  DOWNLOAD RIGHT FILES MANUALLY!!
-
-2. Build files (root rights not required for this):
-   aipsetup build full -d *
-
-3. Install completed files (root rights required):
-   aipsetup sys install *
-
-4. Use command "aipsetup docbook install" as root
-
-At this point docbook must be installed
-
-NOTE: xmlcatalog command from vanilla libxml2-2.9.2.tar.gz has bug,
-      which leads to incorrect work with xml catalog, which leads to
-      damagede docbook installation
-
-      following patch need to be appyed on libxml2-2.9.2 for xmlcatalog
-      to work properly:
-
-sed \
-  -e /xmlInitializeCatalog/d \
-  -e 's/((ent->checked =.*&&/(((ent->checked == 0) ||\
-          ((ent->children == NULL) \&\& (ctxt->options \& XML_PARSE_NOENT))) \&\&/' \
-  -i parser.c
-
-    this patch is taken from here:
-    http://www.linuxfromscratch.org/blfs/view/stable/general/libxml2.html
-`
-
 const DOCBOOK_INSTRUCTION = `
 DocBook (re)installation instruction
 -------------------------------------------------------------------------------
@@ -148,32 +101,41 @@ func (self *DocBookCtl) LogE(txt string) {
 
 func (self *DocBookCtl) InstallDockBook() error {
 
-	//	BD_SuperCatalogSGML :=
-	//		path.Join(self.settings.BaseDir, self.settings.SuperCatalogSGML)
+	var err error
 
-	//	BD_SuperCatalogXML :=
-	//		path.Join(self.settings.BaseDir, self.settings.SuperCatalogXML)
+	BaseDir := self.settings.BaseDir
 
-	BD_SysSGMLDir :=
-		path.Join(self.settings.BaseDir, self.settings.SysSGMLDir)
+	SuperCatalogSGML := self.settings.SuperCatalogSGML
 
-	BD_SysXMLDir :=
-		path.Join(self.settings.BaseDir, self.settings.SysXMLDir)
+	SuperCatalogXML := self.settings.SuperCatalogXML
 
-	BD_XMLCatalog :=
-		path.Join(self.settings.BaseDir, self.settings.XMLCatalog)
+	SysSGMLDir := self.settings.SysSGMLDir
+
+	SysXMLDir := self.settings.SysXMLDir
+
+	XMLCatalog := self.settings.XMLCatalog
+
+	//	BD_SuperCatalogSGML := path.Join(BaseDir, SuperCatalogSGML)
+
+	//	BD_SuperCatalogXML := path.Join(BaseDir, SuperCatalogXML)
+
+	BD_SysSGMLDir := path.Join(BaseDir, SysSGMLDir)
+
+	BD_SysXMLDir := path.Join(BaseDir, SysXMLDir)
+
+	BD_XMLCatalog := path.Join(BaseDir, XMLCatalog)
 
 	sgml_dirs := []string{
-		"dockbook-3.1",
-		"dockbook-4.5",
+		"docbook-3.1",
+		"docbook-4.5",
 	}
 
 	xml_dirs := []string{
-		//		"dockbook-xml-4.5",
+		//		"docbook-xml-4.5",
 	}
 
 	xsl_dirs := []string{
-		//		"dockbook-xml-4.5",
+		//		"docbook-xml-4.5",
 	}
 
 	for _, i := range sgml_dirs {
@@ -183,7 +145,7 @@ func (self *DocBookCtl) InstallDockBook() error {
 			return errors.New(p + " not found")
 		}
 		if !s.IsDir() {
-			return errors.New(p + " not dir")
+			return errors.New(p + " not a dir")
 		}
 	}
 
@@ -229,64 +191,96 @@ func (self *DocBookCtl) InstallDockBook() error {
 		return errors.New("must be exactly one xsl directory inside of " + BD_SysXMLDir)
 	}
 
-	for _, i := range sgml_dirs {
-		target_dir := path.Join(self.settings.SysSGMLDir, i)
+	self.LogI("Installing DocBook")
 
-		self.ImportToSuperDocBookCatalog(
+	self.LogI("  SGML")
+
+	for _, i := range sgml_dirs {
+		self.LogI(fmt.Sprintf("    %s", i))
+		target_dir := path.Join(SysSGMLDir, i)
+
+		err := self.ImportToSuperDocBookCatalog(
 			target_dir,
-			self.settings.BaseDir,
-			self.settings.SuperCatalogSGML,
-			self.settings.SuperCatalogXML,
+			BaseDir,
+			SuperCatalogSGML,
+			SuperCatalogXML,
 		)
+		if err != nil {
+			return err
+		}
 
 		if strings.HasSuffix(i, "4.5") {
-			self.MakeNewDocbook_4_5_LookLikeOld(
-				self.settings.BaseDir,
+			err = self.MakeNewDocbook_4_5_LookLikeOld(
+				BaseDir,
 				target_dir,
 			)
+			if err != nil {
+				return err
+			}
 		}
 
 		if strings.HasSuffix(i, "3.1") {
-			self.MakeNewDocbook_3_1_LookLikeOld(
-				self.settings.BaseDir,
+			err = self.MakeNewDocbook_3_1_LookLikeOld(
+				BaseDir,
 				target_dir,
 			)
+			if err != nil {
+				return err
+			}
 		}
 
 	}
 
+	self.LogI("  XML")
+
 	for _, i := range xml_dirs {
-		target_dir := path.Join(self.settings.SysXMLDir, i)
+		self.LogI(fmt.Sprintf("    %s", i))
+		target_dir := path.Join(SysXMLDir, i)
 
-		self.ImportToSuperDocBookCatalog(
+		err := self.ImportToSuperDocBookCatalog(
 			target_dir,
-			self.settings.BaseDir,
-			self.settings.SuperCatalogSGML,
-			self.settings.SuperCatalogXML,
+			BaseDir,
+			SuperCatalogSGML,
+			SuperCatalogXML,
 		)
+		if err != nil {
+			return err
+		}
 
-		self.MakeNewDockBookXMLLookLikeOld(
-			self.settings.BaseDir,
+		err = self.MakeNewDockBookXMLLookLikeOld(
+			BaseDir,
 			target_dir,
-			self.settings.SuperCatalogXML,
-			self.settings.XMLCatalog,
+			SuperCatalogXML,
+			XMLCatalog,
 		)
+		if err != nil {
+			return err
+		}
 
 	}
+
+	self.LogI("  XSL")
 
 	for _, i := range xsl_dirs {
-		target_dir := path.Join(self.settings.SysXMLDir, i)
+		self.LogI(fmt.Sprintf("    %s", i))
+		target_dir := path.Join(SysXMLDir, i)
 
-		self.ImportXSLToXMLCatalog(
+		err := self.ImportXSLToXMLCatalog(
 			target_dir,
-			self.settings.BaseDir,
+			BaseDir,
 			true, // TODO: this value is under question
-			self.settings.XMLCatalog,
+			XMLCatalog,
 		)
+		if err != nil {
+			return err
+		}
 
 	}
 
-	self.ImportDocBookToCatalog(BD_XMLCatalog)
+	err = self.ImportDocBookToCatalog(BD_XMLCatalog, SuperCatalogXML)
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -308,6 +302,9 @@ func (self *DocBookCtl) ImportToSuperDocBookCatalog(
 	for _, i := range files {
 
 		if i.Name() == "docbook.cat" {
+
+			self.LogI("installing docbook.cat to " + super_catalog_sgml)
+
 			c := exec.Command(
 				// TODO: no guessing, use 'which'
 				"xmlcatalog",
@@ -362,6 +359,8 @@ func (self *DocBookCtl) MakeNewDocbook_x_x_LookLikeOld(
 	ver string,
 ) error {
 
+	self.LogI("making " + strings.Join(strings.Split(ver, ""), ".") + " look like old")
+
 	installed_docbook_xml_dir_fn :=
 		path.Join(
 			base_dir,
@@ -383,10 +382,10 @@ func (self *DocBookCtl) MakeNewDocbook_x_x_LookLikeOld(
 	data_str_lines := strings.Split(data_str, "\n")
 
 	if ver == "31" {
-		//    logging.info("Adding support for older docbook-4.* versions")
+		self.LogI("Adding support for older docbook-4.* versions")
 
 		for _, i := range []string{"3.0"} {
-			//		logging.info("    {}".format(i))
+			self.LogI(fmt.Sprintf("    %s", i))
 
 			new_line :=
 				`UBLIC "-//Davenport//DTD DocBook V` + i + `//EN" "docbook.dtd"` //+"\n"
@@ -401,10 +400,10 @@ func (self *DocBookCtl) MakeNewDocbook_x_x_LookLikeOld(
 		}
 	} else if ver == "45" {
 
-		//    logging.info("Adding support for older docbook-4.* versions")
+		self.LogI("Adding support for older docbook-4.* versions")
 
 		for _, i := range []string{"4.4", "4.3", "4.2", "4.1", "4.0"} {
-			//		logging.info("    {}".format(i))
+			self.LogI(fmt.Sprintf("    %s", i))
 
 			new_line :=
 				`PUBLIC "-//OASIS//DTD DocBook V` + i + `//EN" "docbook.dtd"` //+"\n"
@@ -588,31 +587,32 @@ func (self *DocBookCtl) ImportXSLToXMLCatalog(
 
 func (self *DocBookCtl) ImportDocBookToCatalog(
 	base_dir_etc_xml_catalog string,
+	super_catalog_xml string,
 ) error {
 
 	for _, each := range [][]string{
 		[]string{
 			"xmlcatalog", "--noout", "--add", "delegatePublic",
 			"-//OASIS//ENTITIES DocBook XML",
-			"file:///etc/xml/docbook", // TODO: no hardcode
+			"file://" + super_catalog_xml,
 			base_dir_etc_xml_catalog,
 		},
 		[]string{
 			"xmlcatalog", "--noout", "--add", "delegatePublic",
 			"-//OASIS//DTD DocBook XML",
-			"file:///etc/xml/docbook", // TODO: no hardcode
+			"file://" + super_catalog_xml,
 			base_dir_etc_xml_catalog,
 		},
 		[]string{
 			"xmlcatalog", "--noout", "--add", "delegateSystem",
 			"http://www.oasis-open.org/docbook/",
-			"file:///etc/xml/docbook", // TODO: no hardcode
+			"file://" + super_catalog_xml,
 			base_dir_etc_xml_catalog,
 		},
 		[]string{
 			"xmlcatalog", "--noout", "--add", "delegateURI",
 			"http://www.oasis-open.org/docbook/",
-			"file:///etc/xml/docbook", // TODO: no hardcode
+			"file://" + super_catalog_xml,
 			base_dir_etc_xml_catalog,
 		},
 	} {
@@ -634,16 +634,24 @@ func (self *DocBookCtl) ImportCatalogXMLToSuperDocBookCatalog(
 	super_docbook_catalog_xml string,
 ) error {
 
+	self.LogI(
+		fmt.Sprintf(
+			"installing %s to %s",
+			target_catalog_xml,
+			super_docbook_catalog_xml,
+		),
+	)
+
 	target_catalog_xml_fn := path.Join(base_dir, target_catalog_xml)
 
-	//	target_catalog_xml_dir := path.Dir(target_catalog_xml)
+	target_catalog_xml_dir := path.Dir(target_catalog_xml)
 	//	target_catalog_xml_fn_dir := path.Dir(target_catalog_xml_fn)
 
 	//    target_catalog_xml_fn_dir_virtual = target_catalog_xml_fn_dir
 	//    target_catalog_xml_fn_dir_virtual = wayround_i2p.utils.path.remove_base(
 	//        target_catalog_xml_fn_dir_virtual, base_dir
 	//        )
-	//	target_catalog_xml_fn_dir_virtual := target_catalog_xml_dir
+	target_catalog_xml_fn_dir_virtual := target_catalog_xml_dir
 
 	super_docbook_catalog_xml_fn := path.Join(
 		base_dir,
@@ -675,10 +683,60 @@ func (self *DocBookCtl) ImportCatalogXMLToSuperDocBookCatalog(
 
 	node := tmp_cat_lxml.FirstChild
 	for node != nil {
+
 		if node.Type == xmlquery.ElementNode {
-			fmt.Println("node.Data", node.Data)
-			os.Exit(666)
+
+			tag := node.Data
+
+			src_uri := ""
+			for _, i := range node.Attr {
+				if i.Name.Local == "uri" {
+					src_uri = i.Value
+				}
+			}
+
+			if src_uri == "" {
+				goto exit
+			}
+
+			dst_uri := src_uri
+
+			for _, i := range []string{"http://", "https://", "file://"} {
+				if strings.HasPrefix(src_uri, i) {
+					goto no_change
+				}
+			}
+
+			dst_uri = path.Join("/", target_catalog_xml_fn_dir_virtual, src_uri)
+
+		no_change:
+
+			tagId := ""
+			for _, i := range node.Attr {
+				if i.Name.Local == tag+"Id" {
+					tagId = i.Value
+				}
+			}
+
+			if tagId == "" {
+				goto exit
+			}
+
+			self.LogI("adding " + tagId)
+
+			c := exec.Command(
+				"xmlcatalog", "--noout", "--add",
+				tag, tagId,
+				"file://"+dst_uri,
+				super_docbook_catalog_xml_fn,
+			)
+			err := c.Run()
+			if err != nil {
+				return err
+			}
+
 		}
+	exit:
 		node = node.NextSibling
 	}
 

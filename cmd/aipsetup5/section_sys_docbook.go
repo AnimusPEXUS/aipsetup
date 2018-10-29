@@ -66,13 +66,17 @@ func CmdAipsetupSysDocBookInstall(
 
 	dbs := &aipsetup.InstallDockBookSettings{}
 	dbs.SetDefaults(host)
+	dbs.BaseDir = sys.Root()
 	dbs.Log = log
 
 	db_ctl := aipsetup.NewDocBookCtl(dbs)
 
-	err := db_ctl.InstallDockBook()
+	err = db_ctl.InstallDockBook()
 	if err != nil {
-		return err
+		return &cliapp.AppResult{
+			Code:    16,
+			Message: err.Error(),
+		}
 	}
 
 	return nil

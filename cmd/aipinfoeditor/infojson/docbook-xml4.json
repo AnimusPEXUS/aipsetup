@@ -17,7 +17,7 @@
   "Tags": [],
   "Category": "non_categorized",
   "Groups": [
-    "docbook"
+    "xml"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "docbook-xml",

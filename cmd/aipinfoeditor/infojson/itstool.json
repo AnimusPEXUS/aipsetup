@@ -20,7 +20,7 @@
   "Category": "non_categorized",
   "Groups": [
     "core0",
-    "docbook"
+    "xml"
   ],
   "TarballFileNameParser": "std",
   "TarballName": "itstool",
