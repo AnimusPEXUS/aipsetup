@@ -231,7 +231,10 @@ func (self *SRSGit) MakeTarballs(
 				continue
 			}
 
-			matched, err := regexp.MatchString(TagName, parse_res.Name)
+			matched, err := regexp.MatchString(
+				TagName,
+				parse_res.Name,
+			)
 			if err != nil {
 				return err
 			}
@@ -291,6 +294,7 @@ func (self *SRSGit) MakeTarballs(
 			TagName,
 			true,
 			parser,
+			true,
 			comparator,
 		)
 		if err != nil {
@@ -298,9 +302,9 @@ func (self *SRSGit) MakeTarballs(
 		}
 
 		for _, i := range acceptable_tags {
-			b := path.Base(i)
+			//			b := path.Base(i) // name basing is not appicable to tags
 
-			err = version_tree.Add(b)
+			err = version_tree.Add(i)
 			if err != nil {
 				return err
 			}

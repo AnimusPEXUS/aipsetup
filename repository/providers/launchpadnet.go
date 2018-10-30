@@ -210,6 +210,7 @@ func (self *ProviderLaunchpadNet) PerformUpdate() error {
 		self.pkg_info.TarballName,
 		false,
 		parser,
+		false,
 		comparator,
 	)
 	if err != nil {

@@ -267,6 +267,7 @@ func (self *SRSHg) MakeTarballs(
 			TagName,
 			true,
 			parser,
+			true,
 			comparator,
 		)
 		if err != nil {
@@ -274,9 +275,9 @@ func (self *SRSHg) MakeTarballs(
 		}
 
 		for _, i := range acceptable_tags {
-			b := path.Base(i)
+			//			b := path.Base(i) // not a filename
 
-			err = version_tree.Add(b)
+			err = version_tree.Add(i)
 			if err != nil {
 				return err
 			}

@@ -219,6 +219,7 @@ func (self *ProviderGNUPGOrg) PerformUpdate() error {
 		self.pkg_info.TarballName,
 		false,
 		parser,
+		false,
 		comparator,
 	)
 	if err != nil {

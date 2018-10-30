@@ -24,9 +24,14 @@
   "TarballFileNameParser": "std",
   "TarballName": "docbook-xsl",
   "TarballFilters": [],
-  "TarballProvider": "sf.net",
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "docbook"
+    "git",
+    "https://github.com/docbook/xslt10-stylesheets.git",
+    "docbook-xsl",
+    "TagParser:release/version",
+    "TagName:.*",
+    "TagTarballRenderer:std"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
