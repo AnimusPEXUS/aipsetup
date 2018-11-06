@@ -58,6 +58,7 @@ func (self *Builder_samba) EditConfigureArgs(log *logger.Logger, ret []string) (
 			//			"--with-pam_smbpass",
 			"--enable-fhs",
 			"--with-systemd",
+			"--systemd-install-service",
 			"--sysconfdir=/etc/samba",
 			"--with-configdir=/etc/samba",
 			"--with-privatedir=/etc/samba/private",

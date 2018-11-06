@@ -65,9 +65,9 @@ type InstallDockBookSettings struct {
 	SuperCatalogXML  string
 	SysSGMLDir       string
 	SysXMLDir        string
-	SysXSLDir        string
-	XMLCatalog       string
-	Log              *logger.Logger
+	//	SysXSLDir        string
+	XMLCatalog string
+	Log        *logger.Logger
 }
 
 func (self *InstallDockBookSettings) SetDefaults(host_triplet string) {
@@ -76,7 +76,7 @@ func (self *InstallDockBookSettings) SetDefaults(host_triplet string) {
 	self.SuperCatalogXML = "/etc/xml/docbook"
 	self.SysSGMLDir = path.Join("/multihost", host_triplet, "/share/sgml/docbook")
 	self.SysXMLDir = path.Join("/multihost", host_triplet, "/share/xml/docbook")
-	self.SysXSLDir = path.Join("/multihost", host_triplet, "/share/xsl/docbook")
+	//	self.SysXSLDir = path.Join("/multihost", host_triplet, "/share/xsl/docbook")
 	self.XMLCatalog = "/etc/xml/catalog"
 }
 
@@ -115,7 +115,7 @@ func (self *DocBookCtl) InstallDockBook() error {
 
 	SysXMLDir := self.settings.SysXMLDir
 
-	SysXSLDir := self.settings.SysXSLDir
+	//	SysXSLDir := self.settings.SysXSLDir
 
 	XMLCatalog := self.settings.XMLCatalog
 
@@ -127,7 +127,7 @@ func (self *DocBookCtl) InstallDockBook() error {
 
 	BD_SysXMLDir := path.Join(BaseDir, SysXMLDir)
 
-	BD_SysXSLDir := path.Join(BaseDir, SysXSLDir)
+	//	BD_SysXSLDir := path.Join(BaseDir, SysXSLDir)
 
 	BD_XMLCatalog := path.Join(BaseDir, XMLCatalog)
 
@@ -169,7 +169,7 @@ func (self *DocBookCtl) InstallDockBook() error {
 	}
 
 	{
-		files, err := ioutil.ReadDir(BD_SysXSLDir)
+		files, err := ioutil.ReadDir(BD_SysXMLDir)
 		if err != nil {
 			return err
 		}

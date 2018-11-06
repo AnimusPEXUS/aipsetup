@@ -81,7 +81,13 @@ func (self *Builder_docbook_sgml3) BuilderActionDistribute(log *logger.Logger) e
 		return err
 	}
 
-	xml_dir := path.Join(dst_install_prefix, "share", self.sgml_or_xml, "docbook")
+	share_subdir := "sgml"
+	switch self.sgml_or_xml {
+	case "xml", "xsl":
+		share_subdir = "xml"
+	}
+
+	xml_dir := path.Join(dst_install_prefix, "share", share_subdir, "docbook")
 
 	xml_dir_plus_name := ""
 

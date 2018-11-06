@@ -1,5 +1,8 @@
 package buildercollection
 
+// NOTE: some comments in this file are left from python time and may be not
+//       correspond to situation. (2018-03-12)
+
 import (
 	"errors"
 	"fmt"
@@ -31,10 +34,6 @@ const (
 )
 
 type Builder_std struct {
-
-	// NOTE: some comments in this file are left from python time and may be not
-	//       correspond to situation. (2018-03-12)
-
 	EditActionsCB                       func(ret basictypes.BuilderActions) (basictypes.BuilderActions, error)
 	AfterExtractCB                      func(log *logger.Logger, ret error) error
 	AfterAutogenCB                      func(log *logger.Logger, ret error) error

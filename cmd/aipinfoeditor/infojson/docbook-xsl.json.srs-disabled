@@ -1,0 +1,41 @@
+{
+  "Description": "",
+  "HomePage": "https://sourceforge.net/projects/docbook",
+  "BuilderName": "docbook_xsl",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": true,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "sf_hosted:docbook"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "xml"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "docbook-xsl",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/docbook/xslt10-stylesheets.git",
+    "docbook-xsl",
+    "TagParser:release/version",
+    "TagName:.*",
+    "TagTarballRenderer:std"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}
