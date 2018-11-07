@@ -3,10 +3,12 @@ package providers
 import (
 	"errors"
 	"io/ioutil"
+	"path"
 	"strings"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
 	"github.com/AnimusPEXUS/aipsetup/repository/types"
+	"github.com/AnimusPEXUS/utils/cache01"
 	"github.com/AnimusPEXUS/utils/logger"
 )
 
@@ -14,7 +16,7 @@ var _ types.ProviderI = &ProviderGitHub{}
 
 func init() {
 	// TODO: this provider needs completion
-	//	Index["srs"] = NewProviderGitHub
+	//	Index["github"] = NewProviderGitHub
 }
 
 type ProviderGitHub struct {
@@ -24,6 +26,8 @@ type ProviderGitHub struct {
 	sys                 basictypes.SystemI
 	tarballs_output_dir string
 	log                 *logger.Logger
+
+	cache *cache01.CacheDir
 
 	githubv4_token string
 }
@@ -79,7 +83,22 @@ func (self *ProviderGitHub) TarballNames() ([]string, error) {
 }
 
 func (self *ProviderGitHub) PerformUpdate() error {
+
+	_, err := cache01.NewCacheDir(
+		path.Join(
+			self.repo.GetCachesDir(),
+			"githubv4util",
+			"user/repo", // TODO
+		),
+		nil,
+	)
+	if err != nil {
+		return err
+	}
+
 	//	c := &http.Client{}
 	//	gh4 := githubv4.NewClient(c)
+
+	//	githubv4util.NewGitHubV4Util
 	return nil
 }

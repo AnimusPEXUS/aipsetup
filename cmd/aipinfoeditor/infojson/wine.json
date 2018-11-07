@@ -1,6 +1,6 @@
 {
   "Description": "write something here, please",
-  "HomePage": "https://sourceforge.net/projects/wine",
+  "HomePage": "https://www.winehq.org/",
   "BuilderName": "wine",
   "Removable": true,
   "Reducible": true,
@@ -9,22 +9,26 @@
   "NonBuildable": false,
   "NonInstallable": false,
   "Deprecated": false,
-  "PrimaryInstallOnly": false,
+  "PrimaryInstallOnly": true,
   "BuildPkgDeps": [],
   "BuildDeps": [],
   "SODeps": [],
   "RunTimeDeps": [],
-  "Tags": [
-    "sf_hosted:wine"
-  ],
+  "Tags": [],
   "Category": "non_categorized",
   "Groups": [],
   "TarballFileNameParser": "std",
   "TarballName": "wine",
-  "TarballFilters": [],
-  "TarballProvider": "sf.net",
+  "TarballFilters": [
+    "- basename-re \\d{4}"
+  ],
+  "TarballProvider": "srs",
   "TarballProviderArguments": [
-    "wine"
+    "git",
+    "https://github.com/wine-mirror/wine.git",
+    "wine",
+    "TagName:^wine$",
+    "TagStatus:^$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

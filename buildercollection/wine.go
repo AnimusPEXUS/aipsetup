@@ -2,6 +2,7 @@ package buildercollection
 
 import (
 	"errors"
+	"os"
 	"path"
 
 	"github.com/AnimusPEXUS/aipsetup/basictypes"
@@ -12,7 +13,7 @@ import (
 
 func init() {
 	Index["wine"] = func(bs basictypes.BuildingSiteCtlI) (basictypes.BuilderI, error) {
-		return NewBuilder_wine(bs)
+		return NewBuilder_wine(bs, false)
 	}
 }
 
@@ -26,8 +27,13 @@ type Builder_wine struct {
 	build_with_wow64_part2_builder *Builder_wine
 }
 
-func NewBuilder_wine(bs basictypes.BuildingSiteCtlI) (*Builder_wine, error) {
+func NewBuilder_wine(
+	bs basictypes.BuildingSiteCtlI,
+	build_with_wow64_part2 bool,
+) (*Builder_wine, error) {
 	self := new(Builder_wine)
+
+	self.build_with_wow64_part2 = build_with_wow64_part2
 
 	self.Builder_std = NewBuilder_std(bs)
 
@@ -47,13 +53,12 @@ func NewBuilder_wine(bs basictypes.BuildingSiteCtlI) (*Builder_wine, error) {
 
 	self.build_with_wow64 = info.Host == "x86_64-pc-linux-gnu"
 
-	if self.build_with_wow64 {
-		w, err := NewBuilder_wine(bs)
+	if self.build_with_wow64 && !build_with_wow64_part2 {
+		w, err := NewBuilder_wine(bs, true)
 		if err != nil {
 			return nil, err
 		}
 		self.build_with_wow64_part2_builder = w
-		self.build_with_wow64_part2 = true
 	}
 
 	subdir := "wine32"
@@ -69,6 +74,10 @@ func NewBuilder_wine(bs basictypes.BuildingSiteCtlI) (*Builder_wine, error) {
 			self.GetBuildingSiteCtl().GetDIR_SOURCE(),
 			subdir,
 		)
+		err := os.MkdirAll(ret, 0700)
+		if err != nil {
+			return "", err
+		}
 		return ret, nil
 	}
 
@@ -85,6 +94,11 @@ func (self *Builder_wine) isWine64() bool {
 func (self *Builder_wine) EditActions(ret basictypes.BuilderActions) (basictypes.BuilderActions, error) {
 
 	if self.build_with_wow64_part2 {
+
+		if !self.build_with_wow64 {
+			return nil, errors.New("invalid programming")
+		}
+
 		ret = basictypes.BuilderActions{
 			&basictypes.BuilderAction{
 				Name:     "configure",

@@ -18,6 +18,9 @@ func init() {
 		if !strings.HasPrefix(i, "../cmd/aipinfoeditor/infojson/") {
 			continue
 		}
+		if !strings.HasSuffix(i, ".json") {
+			continue
+		}
 		s := strings.Split(i, "/")
 		name := s[len(s)-1]
 		name = name[:len(name)-5]

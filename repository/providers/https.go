@@ -38,7 +38,7 @@ type ProviderHttps struct {
 	tarballs_output_dir string
 	log                 *logger.Logger
 
-	cache *cache01.CacheDir
+	//	cache *cache01.CacheDir
 
 	htw *htmlwalk.HTMLWalk
 
@@ -100,18 +100,18 @@ func NewProviderHttps(
 	self.host = u.Host
 	self.path = u.Path
 
-	if t, err := cache01.NewCacheDir(
-		path.Join(
-			self.repo.GetCachesDir(),
-			"https",
-			url.PathEscape(self.scheme+"://"+self.host),
-		),
-		nil,
-	); err != nil {
-		return nil, err
-	} else {
-		self.cache = t
-	}
+	//	if t, err := cache01.NewCacheDir(
+	//		path.Join(
+	//			self.repo.GetCachesDir(),
+	//			"https",
+	//			url.PathEscape(self.scheme+"://"+self.host),
+	//		),
+	//		nil,
+	//	); err != nil {
+	//		return nil, err
+	//	} else {
+	//		self.cache = t
+	//	}
 
 	return self, nil
 }
@@ -143,10 +143,22 @@ func (self *ProviderHttps) Tarballs() ([]string, error) {
 func (self *ProviderHttps) _GetHTW() (*htmlwalk.HTMLWalk, error) {
 	if self.htw == nil {
 
+		cache, err := cache01.NewCacheDir(
+			path.Join(
+				self.repo.GetCachesDir(),
+				"https",
+				url.PathEscape(self.scheme+"://"+self.host),
+			),
+			nil,
+		)
+		if err != nil {
+			return nil, err
+		}
+
 		h, err := htmlwalk.NewHTMLWalk(
 			self.scheme,
 			self.host,
-			self.cache,
+			cache,
 			self.log,
 			self.excludes,
 			self.maxdepth,
