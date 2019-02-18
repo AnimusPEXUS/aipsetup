@@ -18,7 +18,9 @@
     "sf_hosted:squirrel-sql"
   ],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "db"
+  ],
   "TarballFileNameParser": "std",
   "TarballName": "mysql",
   "TarballFilters": [],

@@ -31,7 +31,7 @@ func NewBuilder_inkscape(bs basictypes.BuildingSiteCtlI) (*Builder_inkscape, err
 
 func (self *Builder_inkscape) EditConfigureArgs(log *logger.Logger, ret []string) ([]string, error) {
 
-	//	ret = append(ret, "--enable-gtk3-experimental")
+	ret = append(ret, "--enable-gtk3-experimental")
 
 	return ret, nil
 }

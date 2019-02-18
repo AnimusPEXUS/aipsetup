@@ -1,6 +1,6 @@
 {
   "Description": "",
-  "HomePage": "",
+  "HomePage": "https://www.mongodb.com/",
   "BuilderName": "mongodb",
   "Removable": true,
   "Reducible": true,
@@ -16,12 +16,20 @@
   "RunTimeDeps": [],
   "Tags": [],
   "Category": "non_categorized",
-  "Groups": [],
+  "Groups": [
+    "db"
+  ],
   "TarballFileNameParser": "std",
-  "TarballName": "mongodb-src-r",
+  "TarballName": "mongodb",
   "TarballFilters": [],
-  "TarballProvider": "",
-  "TarballProviderArguments": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/mongodb/mongo.git",
+    "mongodb",
+    "TagName:^r$",
+    "TagStatus:^$"
+  ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",
   "TarballVersionComparator": "std",

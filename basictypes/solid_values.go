@@ -232,6 +232,8 @@ var (
 
 		"containers",
 		"vz",
+
+		"db",
 	}
 
 	HORIZON_CATEGORIES = []string{
