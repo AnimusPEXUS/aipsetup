@@ -1,7 +1,7 @@
 {
   "Description": "",
-  "HomePage": "",
-  "BuilderName": "dart",
+  "HomePage": "https://gn.googlesource.com/gn/",
+  "BuilderName": "gn",
   "Removable": true,
   "Reducible": true,
   "AutoReduce": true,
@@ -17,22 +17,20 @@
   "Tags": [
     "group:core0"
   ],
-  "Category": "langs/dart",
+  "Category": "",
   "Groups": [
     "core0",
-    "lang"
+    "builders"
   ],
   "TarballFileNameParser": "std",
-  "TarballName": "dart",
-  "TarballFilters": [
-    "- basename-re dev"
-  ],
+  "TarballName": "gn",
+  "TarballFilters": [],
   "TarballProvider": "srs",
   "TarballProviderArguments": [
     "git",
-    "https://github.com/dart-lang/sdk.git",
-    "dart",
-    "TagName:^$"
+    "https://gn.googlesource.com/gn",
+    "gn",
+    "TagName:^gn$"
   ],
   "TarballProviderVersionSyncDepth": 0,
   "TarballStabilityClassifier": "std",

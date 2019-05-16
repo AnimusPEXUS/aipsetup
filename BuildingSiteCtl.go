@@ -406,7 +406,7 @@ main_loop:
 				}
 				lo.Info(
 					fmt.Sprintf(
-						"---===="+`//////`+"[ %s : STRT %s ]"+`\\\\\\`+"====---",
+						"---===="+`//////`+"[ %10s : STRT %10s ]"+`\\\\\\`+"====---",
 						info.PackageName,
 						j,
 					),
@@ -417,7 +417,7 @@ main_loop:
 					lo.Error(err)
 					lo.Error(
 						fmt.Sprintf(
-							"---===="+`++++++`+"[ %s : FAIL %s ]"+`++++++`+"====---",
+							"---===="+`++++++`+"[ %10s  : FAIL %10s  ]"+`++++++`+"====---",
 							info.PackageName,
 							j,
 						),
@@ -426,7 +426,7 @@ main_loop:
 				}
 				lo.Info(
 					fmt.Sprintf(
-						"---===="+`\\\\\\`+"[ %s : DONE %s ]"+`//////`+"====---",
+						"---===="+`\\\\\\`+"[ %10s  : DONE %10s  ]"+`//////`+"====---",
 						info.PackageName,
 						j,
 					),
