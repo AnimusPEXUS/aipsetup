@@ -160,7 +160,7 @@ func (self *BootImgInitRdCtl) WriteInit() error {
 
 echo '+=(initrd)========================+'
 echo '|                                 |'
-echo '|  WELCOME TO HORIZON LIVE IMAGE  |'
+echo '|  WELCOME TO LILITH LIVE IMAGE   |'
 echo '|                                 |'
 echo '|=================================+'
 

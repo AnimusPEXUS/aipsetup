@@ -11,7 +11,7 @@ func main() {
 
 	app := cliapp.AppCmdNode{
 		Name:        "aipsetup",
-		Description: "Horizon GNU/Linux system's package manager",
+		Description: "Lilith GNU/Linux system's package manager",
 		DevStatus:   "development",
 		License:     "GPLv3+",
 		Version:     "5.1",

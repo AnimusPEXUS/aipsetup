@@ -573,7 +573,7 @@ func (self *SystemUpdates) ResetSystemPermissions(log *logger.Logger) error {
 		}
 	}
 
-	// NOTE: imo Horizon system doesn't need this
+	// NOTE: imo Lilith system doesn't need this
 	//chown root:mail /var/mail
 	//chmod 1777 /var/mail
 

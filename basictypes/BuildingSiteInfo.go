@@ -43,8 +43,8 @@ type BuildingSiteInfo struct {
 	NewVersion              string `json:"new_version"`
 }
 
-func (self *BuildingSiteInfo) SetInfoHorizon50() {
-	self.SystemTitle = "Horizon"
+func (self *BuildingSiteInfo) SetInfoLilith50() {
+	self.SystemTitle = "Lilith"
 	self.SystemVersion = "5.0"
 }
 

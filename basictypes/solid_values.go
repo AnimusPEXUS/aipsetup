@@ -8,9 +8,9 @@ import (
 const (
 	AIPSETUP_SYSTEM_CONFIG_FILENAME = "aipsetup5.system.ini"
 
-	HORIZON_ROOT_MULTIHOST_DIRNAME         = "multihost"
-	HORIZON_MULTIHOST_MULTIARCH_DIRNAME    = "multiarch"
-	HORIZON_MULTIHOST_CROSSBULDERS_DIRNAME = "crossbuilders"
+	LILITH_ROOT_MULTIHOST_DIRNAME         = "multihost"
+	LILITH_MULTIHOST_MULTIARCH_DIRNAME    = "multiarch"
+	LILITH_MULTIHOST_CROSSBULDERS_DIRNAME = "crossbuilders"
 
 	DIR_TARBALL    = "00.TARBALL"
 	DIR_SOURCE     = "01.SOURCE"
@@ -201,7 +201,7 @@ var (
 		//	201: "shinken",
 	}
 
-	HORIZON_GROUPS = []string{
+	LILITH_GROUPS = []string{
 		"cross",
 		"core0",
 		"core1",
@@ -236,7 +236,7 @@ var (
 		"db",
 	}
 
-	HORIZON_CATEGORIES = []string{
+	LILITH_CATEGORIES = []string{
 		"x", "freedesktop",
 		"media_alsa",
 	}
