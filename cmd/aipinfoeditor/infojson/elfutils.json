@@ -1,0 +1,39 @@
+{
+  "Description": "",
+  "HomePage": "https://sourceware.org/elfutils/",
+  "BuilderName": "elfutils",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core1"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core1"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "elfutils",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "git://sourceware.org/git/elfutils.git",
+    "elfutils",
+    "TagName:^elfutils$"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

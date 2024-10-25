@@ -1,0 +1,35 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.cpan.org",
+  "BuilderName": "perlmod",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "langs/perl_modules",
+  "Groups": [
+    "perlmod"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "XML-SAX",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.cpan.org/modules/by-module/XML/",
+    "-maxdepth=1"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

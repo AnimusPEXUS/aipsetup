@@ -1,0 +1,37 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://ppp.samba.org/",
+  "BuilderName": "ppp",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core1"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core1",
+    "ppp"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "ppp",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.samba.org/ftp/ppp/"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

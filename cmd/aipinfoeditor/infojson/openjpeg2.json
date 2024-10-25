@@ -1,0 +1,44 @@
+{
+  "Description": "",
+  "HomePage": "https://github.com/uclouvain/openjpeg",
+  "BuilderName": "openjpeg",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "github_hosted",
+    "sf_hosted:openjpeg.mirror"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "media"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "openjpeg",
+  "TarballFilters": [
+    "- version-\u003c 2",
+    "- version-\u003e= 3"
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/uclouvain/openjpeg.git",
+    "openjpeg1",
+    "TagName:^v(ersion)?$",
+    "TagStatus:^$"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

@@ -1,0 +1,36 @@
+{
+  "Description": "",
+  "HomePage": "https://sourceforge.net/projects/mad",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "sf_hosted:mad"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "media"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "madplay",
+  "TarballFilters": [],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "mad"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

@@ -1,0 +1,34 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/iperf2",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "sf_hosted:iperf2"
+  ],
+  "Category": "non_categorized",
+  "Groups": [],
+  "TarballFileNameParser": "std",
+  "TarballName": "iperf",
+  "TarballFilters": [],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "iperf2"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

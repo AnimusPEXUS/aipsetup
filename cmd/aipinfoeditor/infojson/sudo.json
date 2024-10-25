@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.sudo.ws",
+  "BuilderName": "sudo",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core1"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core1"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "sudo",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.sudo.ws/dist/",
+    "-X=beta",
+    "-X=OLD",
+    "-X=misc",
+    "-X=packages"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "openssh",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

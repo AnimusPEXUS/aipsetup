@@ -1,0 +1,35 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.oracle.com\nhttp://www.linuxfromscratch.org/blfs/view/cvs/server/db.html",
+  "BuilderName": "db",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core0",
+    "fi"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "db",
+  "TarballFilters": [],
+  "TarballProvider": "",
+  "TarballProviderArguments": [],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

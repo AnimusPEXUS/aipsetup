@@ -1,0 +1,44 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://wiki.gnome.org/Projects/",
+  "BuilderName": "mc",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "github_hosted",
+    "gnome_project",
+    "gnu_project",
+    "group:core0"
+  ],
+  "Category": "wm/gnome",
+  "Groups": [
+    "core0",
+    "fi",
+    "gnome"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "mc",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/MidnightCommander/mc.git",
+    "mc",
+    "TagName:^$"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

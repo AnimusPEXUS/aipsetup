@@ -1,0 +1,37 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/infozip",
+  "BuilderName": "infozip",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": true,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0",
+    "sf_hosted:infozip"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core0"
+  ],
+  "TarballFileNameParser": "infozip",
+  "TarballName": "zip",
+  "TarballFilters": [],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "infozip"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "strict",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

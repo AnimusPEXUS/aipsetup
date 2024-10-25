@@ -1,0 +1,36 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://wiki.gnome.org/Projects/",
+  "BuilderName": "clutter",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "gnome_project"
+  ],
+  "Category": "wm/gnome",
+  "Groups": [
+    "gtk"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "clutter",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/clutter"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

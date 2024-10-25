@@ -1,0 +1,39 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.linux-pam.org/",
+  "BuilderName": "linux_pam",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core1",
+    "kernelorg_hosted"
+  ],
+  "Category": "kernel",
+  "Groups": [
+    "core1"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "Linux-PAM",
+  "TarballFilters": [
+    "- status-re docs"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "http://www.linux-pam.org/library/"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

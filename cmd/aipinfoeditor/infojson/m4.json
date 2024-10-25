@@ -1,0 +1,37 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://www.gnu.org/software/m4",
+  "BuilderName": "m4",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "gnu_project",
+    "group:core0"
+  ],
+  "Category": "gnu",
+  "Groups": [
+    "core0"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "m4",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnu.org/gnu/m4"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

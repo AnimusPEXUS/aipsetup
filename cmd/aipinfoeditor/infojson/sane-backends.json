@@ -1,0 +1,37 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.sane-project.org",
+  "BuilderName": "sane_backends",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "non_categorized",
+  "Groups": [
+    "media"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "sane-backends",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://gitlab.com/sane-project/backends.git",
+    "sane-backends",
+    "TagName:^RELEASE$"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.apache.org",
+  "BuilderName": "subversion",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [
+    "serf"
+  ],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core1"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core1"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "subversion",
+  "TarballFilters": [
+    "- !status-re ^$"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www-eu.apache.org/dist/subversion/"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

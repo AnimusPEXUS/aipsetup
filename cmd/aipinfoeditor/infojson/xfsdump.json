@@ -1,0 +1,36 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://xfs.org/",
+  "BuilderName": "xfs",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core0"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "xfsdump",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://kernel.org/pub/linux/utils/fs/xfs/xfsdump/"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

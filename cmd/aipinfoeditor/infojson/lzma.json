@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.tukaani.org",
+  "BuilderName": "std",
+  "Removable": false,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core0",
+    "fi",
+    "fib"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "lzma",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://git.tukaani.org/lzma.git",
+    "lzma"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

@@ -1,0 +1,36 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/squirrel-sql",
+  "BuilderName": "mysql",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "sf_hosted:squirrel-sql"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "db"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "mysql",
+  "TarballFilters": [],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "squirrel-sql"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

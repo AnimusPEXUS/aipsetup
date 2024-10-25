@@ -1,0 +1,42 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://openjdk.java.net",
+  "BuilderName": "openjdk",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core1"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core1",
+    "java"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "openjdk",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "hg",
+    "http://hg.openjdk.java.net/jdk-updates/jdk10u/",
+    "openjdk",
+    "TagParser:openjdk_hg_tags",
+    "TagTarballRenderer:std",
+    "TagName:^jdk.*"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

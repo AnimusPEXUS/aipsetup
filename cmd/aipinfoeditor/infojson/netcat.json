@@ -1,0 +1,34 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/netcat",
+  "BuilderName": "",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "sf_hosted:netcat"
+  ],
+  "Category": "non_categorized",
+  "Groups": [],
+  "TarballFileNameParser": "std",
+  "TarballName": "netcat",
+  "TarballFilters": [],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "netcat"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

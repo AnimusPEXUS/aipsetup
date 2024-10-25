@@ -1,0 +1,40 @@
+{
+  "Description": "go is only_primary_install as it's already pretty portable",
+  "HomePage": "",
+  "BuilderName": "go",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": true,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "langs/go",
+  "Groups": [
+    "core0",
+    "lang"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "go",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://go.googlesource.com/go",
+    "go",
+    "TagName:^go$"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

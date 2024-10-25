@@ -1,0 +1,39 @@
+{
+  "Description": "",
+  "HomePage": "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey",
+  "BuilderName": "mozjs",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "non_categorized",
+  "Groups": [
+    "core0",
+    "web"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "mozjs",
+  "TarballFilters": [
+    "- version-\u003e 0",
+    "+ version-\u003e= 52",
+    "- version-\u003e= 53"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnome.org/pub/gnome/teams/releng/tarballs-needing-help/mozjs/"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

@@ -1,0 +1,37 @@
+{
+  "Description": "",
+  "HomePage": "https://git.netfilter.org/",
+  "BuilderName": "",
+  "Removable": false,
+  "Reducible": false,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "nettools",
+  "Groups": [
+    "netfilter"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "ebtables",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "git://git.netfilter.org/ebtables",
+    "ebtables",
+    "TagName:^ebtables$"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

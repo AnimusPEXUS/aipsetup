@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://xmlsoft.org",
+  "BuilderName": "libxml2",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "gnome_project"
+  ],
+  "Category": "wm/gnome",
+  "Groups": [
+    "gnome",
+    "gtk",
+    "xml"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "libxslt",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://git.gnome.org/browse/libxslt",
+    "libxslt"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

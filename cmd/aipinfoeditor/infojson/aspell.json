@@ -1,0 +1,34 @@
+{
+  "Description": "",
+  "HomePage": "https://www.gnu.org/software/aspell",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "gnu_project"
+  ],
+  "Category": "gnu/aspell",
+  "Groups": [],
+  "TarballFileNameParser": "std",
+  "TarballName": "aspell",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnu.org/gnu/aspell"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

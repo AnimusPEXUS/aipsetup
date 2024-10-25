@@ -1,0 +1,40 @@
+{
+  "Description": "",
+  "HomePage": "https://gn.googlesource.com/gn/",
+  "BuilderName": "gn",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": true,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "",
+  "Groups": [
+    "core0",
+    "builders"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "gn",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://gn.googlesource.com/gn",
+    "gn",
+    "TagName:^gn$"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

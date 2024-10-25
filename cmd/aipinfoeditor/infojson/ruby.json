@@ -1,0 +1,37 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.ruby-lang.org",
+  "BuilderName": "ruby",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "non_categorized",
+  "Groups": [
+    "lang"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "ruby",
+  "TarballFilters": [
+    "- !status-re ^$"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://cache.ruby-lang.org/pub/ruby/",
+    "-X=binaries"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

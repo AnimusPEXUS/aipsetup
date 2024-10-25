@@ -1,0 +1,39 @@
+{
+  "Description": "deprecated https://www.google.com/url?sa=t\u0026rct=j\u0026q=\u0026esrc=s\u0026source=web\u0026cd=1\u0026cad=rja\u0026uact=8\u0026ved=0ahUKEwiThYi5-Z3ZAhVJKywKHZdDAscQFggrMAA\u0026url=https%3A%2F%2Ffedoramagazine.org%2Fbuild-network-bridge-fedora%2F\u0026usg=AOvVaw3n9SkjCquOyxkbkcvJ1EXQ \n use iproute2",
+  "HomePage": "https://sourceforge.net/projects/bridge",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": true,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core1",
+    "sf_hosted:bridge"
+  ],
+  "Category": "core",
+  "Groups": [
+    "core1"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "bridge-utils",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "git://git.kernel.org/pub/scm/linux/kernel/git/shemminger/bridge-utils.git",
+    "bridge-utils"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

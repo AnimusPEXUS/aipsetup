@@ -1,0 +1,38 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/libpng",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": true,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "sf_hosted:libpng"
+  ],
+  "Category": "non_categorized",
+  "Groups": [],
+  "TarballFileNameParser": "std",
+  "TarballName": "libpng",
+  "TarballFilters": [
+    "- version-\u003c 1.2",
+    "- version-\u003e= 1.4",
+    "- basename-re no\\-config"
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "libpng"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

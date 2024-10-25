@@ -1,0 +1,38 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://wiki.gnome.org/Projects/",
+  "BuilderName": "NetworkManager",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "gnome_project",
+    "group:core1"
+  ],
+  "Category": "wm/gnome",
+  "Groups": [
+    "core1",
+    "gnome"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "NetworkManager",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/NetworkManager"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

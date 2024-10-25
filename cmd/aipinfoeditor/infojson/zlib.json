@@ -1,0 +1,41 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://www.zlib.net/",
+  "BuilderName": "zlib",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0",
+    "sf_hosted:libpng"
+  ],
+  "Category": "gnu",
+  "Groups": [
+    "core0",
+    "fi",
+    "fib"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "zlib",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/madler/zlib.git",
+    "zlib"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

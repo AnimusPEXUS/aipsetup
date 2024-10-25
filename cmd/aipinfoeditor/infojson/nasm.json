@@ -1,0 +1,44 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.nasm.us",
+  "BuilderName": "nasm",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core0"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "nasm",
+  "TarballFilters": [
+    "- basename-re doc",
+    "- basename-re macosx",
+    "- basename-re dos",
+    "- basename-re win\\d",
+    "- basename-re linux",
+    "- basename-re os\\d"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.nasm.us/pub/nasm/releasebuilds/",
+    "-X=rc\\d"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

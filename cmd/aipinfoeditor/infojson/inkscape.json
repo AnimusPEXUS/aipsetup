@@ -1,0 +1,38 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.sourceforge.net",
+  "BuilderName": "inkscape",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": true,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "non_categorized",
+  "Groups": [
+    "media"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "inkscape",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://gitlab.com/inkscape/inkscape.git",
+    "inkscape",
+    "TagName:^INKSCAPE$",
+    "TagStatus:^$"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

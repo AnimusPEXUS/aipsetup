@@ -1,0 +1,32 @@
+{
+  "Description": "part of man-db",
+  "HomePage": "",
+  "BuilderName": "man",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": true,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core1"
+  ],
+  "Category": "kernel",
+  "Groups": [],
+  "TarballFileNameParser": "std",
+  "TarballName": "man",
+  "TarballFilters": [],
+  "TarballProvider": "",
+  "TarballProviderArguments": [],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

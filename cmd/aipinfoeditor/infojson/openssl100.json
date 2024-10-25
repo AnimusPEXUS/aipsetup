@@ -1,0 +1,46 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "http://www.openssl.org",
+  "BuilderName": "openssl",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core0",
+    "crypt",
+    "fi"
+  ],
+  "TarballFileNameParser": "openssl",
+  "TarballName": "openssl",
+  "TarballFilters": [
+    "- version-\u003e 0",
+    "+ version-\u003e= 1.0",
+    "- version-\u003e= 1.1"
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/openssl/openssl.git",
+    "openssl",
+    "TagName:^OpenSSL$",
+    "TagStatus:^[a-z]{0,3}$"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "openssl",
+  "TarballVersionComparator": "openssl",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

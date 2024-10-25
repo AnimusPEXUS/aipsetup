@@ -1,0 +1,40 @@
+{
+  "Description": "",
+  "HomePage": "https://github.com/SELinuxProject/selinux",
+  "BuilderName": "libselinux",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "github_hosted"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "sec"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "sepolgen",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/SELinuxProject/selinux.git",
+    "checkpolicy",
+    "TagName:sepolgen",
+    "TagStatus:"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

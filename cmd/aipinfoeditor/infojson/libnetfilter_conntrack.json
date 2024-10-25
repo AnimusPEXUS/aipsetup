@@ -1,0 +1,37 @@
+{
+  "Description": "",
+  "HomePage": "https://git.netfilter.org/",
+  "BuilderName": "",
+  "Removable": false,
+  "Reducible": false,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "nettools",
+  "Groups": [
+    "netfilter"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "libnetfilter_conntrack",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "git://git.netfilter.org/libnetfilter_conntrack",
+    "libnetfilter_conntrack",
+    "TagName:^libnetfilter_conntrack$"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

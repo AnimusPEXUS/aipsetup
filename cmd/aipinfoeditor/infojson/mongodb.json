@@ -1,0 +1,38 @@
+{
+  "Description": "",
+  "HomePage": "https://www.mongodb.com/",
+  "BuilderName": "mongodb",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "non_categorized",
+  "Groups": [
+    "db"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "mongodb",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/mongodb/mongo.git",
+    "mongodb",
+    "TagName:^r$",
+    "TagStatus:^$"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

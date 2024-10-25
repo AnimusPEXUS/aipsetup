@@ -1,0 +1,38 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://www.gnu.org/software/mpc",
+  "BuilderName": "std",
+  "Removable": false,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "gnu_project",
+    "group:cross"
+  ],
+  "Category": "gnu",
+  "Groups": [
+    "cross",
+    "fi"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "mpc",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnu.org/gnu/mpc"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

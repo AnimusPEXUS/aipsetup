@@ -1,0 +1,45 @@
+{
+  "Description": "",
+  "HomePage": "http://www.kernel.org/",
+  "BuilderName": "linux",
+  "Removable": false,
+  "Reducible": true,
+  "AutoReduce": false,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:cross",
+    "kernelorg_hosted"
+  ],
+  "Category": "kernel",
+  "Groups": [
+    "cross",
+    "fi",
+    "fib"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "linux",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://cdn.kernel.org/pub/linux/kernel/",
+    "-X=/pub/linux/kernel/people",
+    "-X=/pub/linux/kernel/projects",
+    "-X=/pub/linux/kernel/ports",
+    "-X=/pub/linux/kernel/testing",
+    "-X=/pub/linux/kernel/Historic",
+    "-X=testing"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

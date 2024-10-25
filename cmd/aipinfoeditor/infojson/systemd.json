@@ -1,0 +1,40 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://github.com/systemd/systemd",
+  "BuilderName": "systemd",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "github_hosted",
+    "group:core0"
+  ],
+  "Category": "freedesktop/systemd",
+  "Groups": [
+    "core0"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "systemd",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/systemd/systemd.git",
+    "systemd",
+    "TagStatus:^$"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": true,
+  "PatchesDownloadingScriptText": "#!/bin/bash\nwget -cr -nd -np -A 'systemd-239-glibc_statx_fix-*.patch' 'http://www.linuxfromscratch.org/patches/blfs/svn/'"
+}

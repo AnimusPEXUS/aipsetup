@@ -1,0 +1,42 @@
+{
+  "Description": "",
+  "HomePage": "https://github.com/ibus/ibus",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "github_hosted"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "gtk"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "ibus",
+  "TarballFilters": [
+    "- basename-re \\d{4}"
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/ibus/ibus.git",
+    "ibus",
+    "TagName:^$",
+    "TagStatus:"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

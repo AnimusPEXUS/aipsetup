@@ -1,0 +1,34 @@
+{
+  "Description": "dbus-glib is a deprecated API for use of D-Bus from GLib applications. Do not use it in new code.\nSince version 2.26, GLib's accompanying GIO library provides a high-level API for D-Bus, \"GDBus\", based on an independent reimplementation of the D-Bus protocol. The maintainers of D-Bus recommend that GLib applications should use GDBus instead of dbus-glib.\n\nbut some applications still using it (NetworkManager)",
+  "HomePage": "http://www.freedesktop.org",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": true,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "freedesktop/dbus",
+  "Groups": [],
+  "TarballFileNameParser": "std",
+  "TarballName": "dbus-glib",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://dbus.freedesktop.org/releases/"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

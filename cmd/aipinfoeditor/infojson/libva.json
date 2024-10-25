@@ -1,0 +1,42 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://github.com/intel/libva",
+  "BuilderName": "std_meson",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "github_hosted"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "gl"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "libva",
+  "TarballFilters": [
+    "- !basename-re \\d+\\.\\d+\\.\\d+"
+  ],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "https://github.com/intel/libva",
+    "libva",
+    "TagName:^$",
+    "TagStatus:^$"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

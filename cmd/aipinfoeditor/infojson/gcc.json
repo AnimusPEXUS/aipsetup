@@ -1,0 +1,46 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://www.gnu.org/software/gcc",
+  "BuilderName": "gcc",
+  "Removable": false,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": true,
+  "BuildPkgDeps": [
+    "glibc",
+    "cloog",
+    "gmp",
+    "mpc",
+    "mpfr",
+    "isl",
+    "binutils"
+  ],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "gnu_project",
+    "group:cross"
+  ],
+  "Category": "gnu",
+  "Groups": [
+    "cross",
+    "fi"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "gcc",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.gnu.org/gnu/gcc"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "gcc",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

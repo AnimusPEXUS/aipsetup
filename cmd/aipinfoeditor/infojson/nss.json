@@ -1,0 +1,36 @@
+{
+  "Description": "",
+  "HomePage": "",
+  "BuilderName": "nss",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "non_categorized",
+  "Groups": [
+    "web"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "nss",
+  "TarballFilters": [
+    "- basename-re .*nspr.*"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.mozilla.org/pub/security/nss/releases/"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

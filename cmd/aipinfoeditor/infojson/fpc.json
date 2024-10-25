@@ -1,0 +1,56 @@
+{
+  "Description": "",
+  "HomePage": "https://sourceforge.net/projects/freepascal",
+  "BuilderName": "fpc",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "sf_hosted:lazarus"
+  ],
+  "Category": "langs/pascal",
+  "Groups": [
+    "lang"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "fpc",
+  "TarballFilters": [
+    "- !basename-re source"
+  ],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "freepascal",
+    "-X=/AIX",
+    "-X=/Solaris",
+    "-X=/Bootstrap",
+    "-X=/OS_2",
+    "-X=/Haiku",
+    "-X=/DOS_Go32v2 Single Pieces",
+    "-X=/DOS_Go32v2",
+    "-X=/Linux",
+    "-X=/FreeBSD",
+    "-X=/Documentation",
+    "-X=/Mac OS X",
+    "-X=/Win32",
+    "-X=/OpenBSD",
+    "-X=/WII",
+    "-X=/NDS",
+    "-X=/GBA",
+    "-X=/NetBSD",
+    "-X=/JVM"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

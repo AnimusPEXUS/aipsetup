@@ -1,0 +1,39 @@
+{
+  "Description": "",
+  "HomePage": "https://www.pcre.org/",
+  "BuilderName": "pcre",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core0",
+    "fi"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "pcre2",
+  "TarballFilters": [
+    "- !status-re ^$"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.pcre.org/pub/pcre/"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

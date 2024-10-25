@@ -1,0 +1,34 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://www.x.org/",
+  "BuilderName": "std",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "x/font",
+  "Groups": [],
+  "TarballFileNameParser": "std",
+  "TarballName": "font-xfree86-type1",
+  "TarballFilters": [
+    "- basename-re 9\\d+"
+  ],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://www.mirrorservice.org/sites/ftp.x.org/pub/"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

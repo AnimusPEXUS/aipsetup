@@ -1,0 +1,34 @@
+{
+  "Description": "not buildable. should be placed inside llvm source",
+  "HomePage": "",
+  "BuilderName": "llvm_components",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": true,
+  "NonInstallable": true,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "lang/llvm",
+  "Groups": [
+    "llvm"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "clang-tools-extra",
+  "TarballFilters": [],
+  "TarballProvider": "llvm.org",
+  "TarballProviderArguments": [
+    "clang-tools-extra"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

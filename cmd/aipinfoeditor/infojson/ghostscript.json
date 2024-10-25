@@ -1,0 +1,41 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://www.ghostscript.com/",
+  "BuilderName": "ghostscript",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "gnu_project"
+  ],
+  "Category": "",
+  "Groups": [
+    "core1",
+    "media"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "ghostscript",
+  "TarballFilters": [],
+  "TarballProvider": "srs",
+  "TarballProviderArguments": [
+    "git",
+    "git://git.ghostscript.com/ghostpdl.git",
+    "ghostscript",
+    "TagName:^ghostscript$",
+    "TagStatus:^$"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

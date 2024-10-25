@@ -1,0 +1,34 @@
+{
+  "Description": "",
+  "HomePage": "https://wiki.gnome.org/Projects/",
+  "BuilderName": "",
+  "Removable": false,
+  "Reducible": false,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [],
+  "Category": "wm/gnome",
+  "Groups": [
+    "gnome"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "libgrss",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://ftp.acc.umu.se/mirror/gnome.org/sources/libgrss"
+  ],
+  "TarballProviderVersionSyncDepth": 3,
+  "TarballStabilityClassifier": "gnome",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

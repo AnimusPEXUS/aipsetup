@@ -1,0 +1,36 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/pptpclient",
+  "BuilderName": "pptp",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "sf_hosted:pptpclient"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "ppp"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "pptp",
+  "TarballFilters": [],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "pptpclient"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

@@ -1,0 +1,36 @@
+{
+  "Description": "required by glibc",
+  "HomePage": "",
+  "BuilderName": "tzdata",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "group:core0"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "core0"
+  ],
+  "TarballFileNameParser": "openssl",
+  "TarballName": "tzdata",
+  "TarballFilters": [],
+  "TarballProvider": "https",
+  "TarballProviderArguments": [
+    "https://data.iana.org/time-zones/releases/"
+  ],
+  "TarballProviderVersionSyncDepth": -1,
+  "TarballStabilityClassifier": "openssl",
+  "TarballVersionComparator": "openssl",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}

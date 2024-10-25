@@ -1,0 +1,36 @@
+{
+  "Description": "write something here, please",
+  "HomePage": "https://sourceforge.net/projects/wxwindows",
+  "BuilderName": "wxwidgets",
+  "Removable": true,
+  "Reducible": true,
+  "AutoReduce": true,
+  "DontPreserveSharedObjects": false,
+  "NonBuildable": false,
+  "NonInstallable": false,
+  "Deprecated": false,
+  "PrimaryInstallOnly": false,
+  "BuildPkgDeps": [],
+  "BuildDeps": [],
+  "SODeps": [],
+  "RunTimeDeps": [],
+  "Tags": [
+    "sf_hosted:wxwindows"
+  ],
+  "Category": "non_categorized",
+  "Groups": [
+    "wx"
+  ],
+  "TarballFileNameParser": "std",
+  "TarballName": "wxWidgets",
+  "TarballFilters": [],
+  "TarballProvider": "sf.net",
+  "TarballProviderArguments": [
+    "wxwindows"
+  ],
+  "TarballProviderVersionSyncDepth": 0,
+  "TarballStabilityClassifier": "std",
+  "TarballVersionComparator": "std",
+  "DownloadPatches": false,
+  "PatchesDownloadingScriptText": ""
+}
