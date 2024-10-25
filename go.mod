@@ -1,6 +1,6 @@
 module github.com/AnimusPEXUS/aipsetup
 
-go 1.14
+go 1.23
 
 require (
 	github.com/AnimusPEXUS/gotk3collection v0.0.0-20180120235023-bb53fb323a68
