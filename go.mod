@@ -1,15 +1,22 @@
 module github.com/AnimusPEXUS/aipsetup
 
-go 1.23
+go 1.23.2
 
 require (
-	github.com/AnimusPEXUS/gotk3collection v0.0.0-20180120235023-bb53fb323a68
-	github.com/AnimusPEXUS/shadowusers v0.0.0-20180627163605-fd74be22e8b9
-	github.com/AnimusPEXUS/utils v0.0.0-20201122223243-05b398805837
-	github.com/antchfx/htmlquery v1.2.3
+	github.com/AnimusPEXUS/gotk3collection v0.0.0-20241025223507-2bed3329267f
+	github.com/AnimusPEXUS/shadowusers v0.0.0-20241025220055-3be27a951085
+	github.com/AnimusPEXUS/utils v0.0.0-20241025221812-cf07509df5dc
+	github.com/antchfx/htmlquery v1.3.3
 	github.com/antchfx/xquery v0.0.0-20180515051857-ad5b8c7a47b0
-	github.com/go-ini/ini v1.62.0
-	github.com/gotk3/gotk3 v0.5.0
-	github.com/ulikunitz/xz v0.5.8
-	golang.org/x/sys v0.0.0-20201119102817-f84b799fce68
+	github.com/go-ini/ini v1.67.0
+	github.com/gotk3/gotk3 v0.6.4
+	github.com/ulikunitz/xz v0.5.12
+	golang.org/x/sys v0.26.0
+)
+
+require (
+	github.com/antchfx/xpath v1.3.2 // indirect
+	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
+	golang.org/x/net v0.7.0 // indirect
+	golang.org/x/text v0.7.0 // indirect
 )
